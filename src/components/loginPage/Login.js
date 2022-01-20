@@ -2,6 +2,8 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
+import { ip } from '../../ip'
+
 import loginImg from '../../images/loginLeft.png';
 import google from '../../images/googleIcon.png';
 import loginIcon from '../../images/userIcon.png';
@@ -23,6 +25,32 @@ const Login = () => {
         login: Yup.string().required('login kritilmagan ...'),
         password: Yup.string().required('parol kiritilmagan...'),
     })
+
+    // const onSubmit = (values) => {
+    //     axios.post(`${ip}/api/sign-in`, {
+    //         login: values.login,
+    //         password: values.password
+    //      })
+    //          .then(res => {
+    //              setToken(res.data.accessToken)
+    //              localStorage.setItem('soft-ais-token', res.data.accessToken)
+    //          })
+    //         .catch(err => {
+    //             setError(true)
+    //         })
+    //  }
+
+    //  useEffect(() => {
+    //     if(localStorage.getItem('soft-ais-token')) {
+    //         axios.get(`${ip}/api/me`, {headers: { 'x-access-token': token}})
+    //             .then(res => {
+    //                 setUser(res.data.data)
+    //             })
+    //             .catch(err => {
+    //                 // console.log(err)
+    //             })
+    //     }
+    // }, [token])
 
     return (
         <div className="login_page">

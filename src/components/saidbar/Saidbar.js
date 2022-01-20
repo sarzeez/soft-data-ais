@@ -38,11 +38,12 @@ const Saidbar = () => {
     const { width } = useWindowDimensions();
     const sidebarWidth = width < 1370 ? 200 : 300;
     const isDarkMode = useSelector(state => state.theme.theme_data);
-    
-    // const [checkedItemTitle, setCheckedItemTitle] = useState('Dashboard');
+
     const [newStaffModal, setNewStaffModal] = useState(false);
     const dispatch = useDispatch();
     const [collapsed, setCollapsed] = useState(false);
+
+    const [user, setUser] = useState(null)
 
     const toggle = () => {
         setCollapsed(!collapsed);
@@ -60,6 +61,9 @@ const Saidbar = () => {
         // setCheckedItemTitle(title)
         dispatch(isRefresh(id))
     }
+
+    
+
 
     return (
         <BrowserRouter>

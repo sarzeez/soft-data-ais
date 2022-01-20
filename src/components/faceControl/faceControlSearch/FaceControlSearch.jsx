@@ -29,7 +29,7 @@ export default function FaceControlSearch() {
     const [faceCameraData, setFaceCameraData] = useState(null)
     const [selectedGroupCameras, setSelectedGroupCameras] = useState(null)
     const [faceControlData, setFaceControlData] = useState(null)
-    const [faceControlPaginationLimit, setFaceControlPaginationLimit] = useState(16)
+    const [faceControlPaginationLimit, setFaceControlPaginationLimit] = useState(12)
     const [faceControlPaginationCurrent, setFaceControlPaginationCurrent] = useState(1)
     const [faceControlTotal, setFaceControlTotal] = useState(null)
 
@@ -94,7 +94,6 @@ export default function FaceControlSearch() {
         else {
             setMood([e])
         }
-
     }
 
     const onChangeDateFrom = (e, a) => {
