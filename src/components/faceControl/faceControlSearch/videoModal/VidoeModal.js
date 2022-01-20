@@ -1,0 +1,42 @@
+import React, { useRef } from "react";
+import { Modal } from "antd";
+import { Player } from "video-react";
+
+import "video-react/dist/video-react.css";
+
+const VideoModal = ({ visible, setVisible }) => {
+
+    const videoRef = useRef(null)
+    const hideModal = () => {
+        setVisible(false)
+    };
+
+    const pause = () => {
+        videoRef.current.actions.pause();
+    };
+
+    return (
+            <Modal
+                title="Product name"
+                visible={visible}
+                centered
+                footer={null}
+                onCancel={hideModal}
+                afterClose={pause}
+                bodyStyle={{ padding: 0 }}
+                closeIcon = {<h1>asdf</h1>}
+                >
+                <Player
+                    autoPlay
+                    ref={videoRef}
+                >
+                    <source
+                    src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+                    type="video/mp4"
+                    />
+                </Player>
+            </Modal>
+    )
+}
+
+export default VideoModal

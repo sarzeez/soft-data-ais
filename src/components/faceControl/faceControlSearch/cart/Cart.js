@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ImageDemo from "./image";
 import moment from "moment";
 import { emojes } from '../../../../assets/face-icons/icons'
 import "./cart.css"
 
+import { BsPlayBtn } from 'react-icons/bs'
+
+import VideoModal from '../videoModal/VidoeModal';
+
 const mood = ["", "Tabassum", "Jahldor", "Xafa", "Jirkangan", "Qo'rqqan", "Hayratda", "E'tiborsiz", "Kulgan", "", "Xursand", "Ikkilangan", "Baqirgan"]
 
 const Cart = ({ item, isDarkMode }) => {
+
+    const [visible, setVisible] = useState(false)
+
     return (
         <div className={`j_card ${isDarkMode && 'darkModeCard darkModeBorder'}`}>
             <div className="j_cardInfo">
+                <VideoModal visible={visible} setVisible={setVisible}/>
                 <div className="j_cardInfoTop">
                     <div className="j_cardInfoTopLeft">
+                        <div onClick={() => setVisible(true)} className='face-control-video-block'>
+                            <BsPlayBtn color='#fff' size={20}/>
+                        </div>
                         <ImageDemo id = {item.id} />
                         <div className="visit_time_info">
                             <p className="ddmmyy">{moment(item.the_date).format("DD.MM.YYYY")}</p>
