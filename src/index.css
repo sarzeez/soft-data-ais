@@ -1,0 +1,21 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.darkModeColor {
+  color: #fff !important;
+}
+.darkModeBackground{
+  background: #283142 !important;
+}
+.darkModeLayautBg{
+  background: #1B2531 !important;
+}
+.darkModeCard{
+  background: #343D50 !important;
+}
+.darkModeBorder{
+  border: none !important;
+}

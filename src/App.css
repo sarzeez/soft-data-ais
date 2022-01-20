@@ -1,0 +1,25 @@
+@font-face {
+  font-family: quantum;
+  src: url(./fonts/Quantum.otf);
+}
+@font-face {
+  font-family: Open Sans;
+  src: url(./fonts/OpenSans/OpenSans-Regular.ttf);
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

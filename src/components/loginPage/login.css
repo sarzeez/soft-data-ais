@@ -1,0 +1,159 @@
+.login_page{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+.page_left{
+    position: relative;
+    width: 50%;
+    height: 100vh;
+}
+.left_img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+.left_img_logo{
+    position: absolute;
+    z-index: 33;
+    top: 50%;
+    left: 20%;
+}
+
+
+.page_right{
+    width: 50%;
+    height: 100vh;
+}
+.rihgt_inner{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.title_top {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+.title{
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 40px;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+
+.login_label{
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    margin: 10px 0;
+}
+.login_input{
+    position: relative;
+}
+.login_icon{
+    position: absolute;
+   top: 25px;
+    left: 12px;
+}
+.login_input input{
+    width: 345px;
+    height: 55px;
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding-left: 45px;
+}
+.login_input input:focus-visible{
+    outline: none;
+}
+
+.parol_input{
+    position: relative;
+}
+
+.parol_input input{
+    width: 345px;
+    height: 55px;
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding-left: 45px;
+}
+.parol_input input:focus-visible{
+    outline: none;
+}
+
+.login_buttons{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.in_button{
+    width: 345px;
+    height: 50px;
+    background: #29B85D;
+    border-radius: 5px;
+    margin: 15px 0;
+    border: none;
+
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+.google_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 345px;
+    height: 50px;
+    background: #2D3748;
+    border-radius: 5px;
+    border: none;
+
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+.google_button img{
+    padding-right: 10px;
+}
+
+.sign_text{
+    display: flex;
+    justify-content: center;
+    margin-top: 25%;
+}
+.sign_text .sign{
+    margin-right: 5px;
+}
+
+.sign_up{
+    text-decoration: none;
+}

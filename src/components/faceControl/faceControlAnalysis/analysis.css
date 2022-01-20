@@ -1,0 +1,240 @@
+.analysis-container {
+    width: calc(100% - 0px);
+    padding: 0 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #F0F2F5;
+    /*border-radius: 10px;*/
+}
+.analysis_header{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 10px 0;
+}
+.anaylsis-button-group {
+    display: flex;
+}
+
+.anaylsis-button-group button{
+    height: 40px;
+    padding: 0 20px;
+    border: none;
+    border: 1px solid #e0e0e0;
+    border-left: none;
+    cursor: pointer;
+    background-color: #fff;
+    color: #9EAEC5;
+    transition: all .3 ;
+}
+
+.analysis-active-button {
+    background-color: #29B85D !important;
+    color: #fff !important;
+    
+}
+
+.anaylsis-button-group button:hover{
+    background-color: #efefef;
+}
+
+.anaylsis-button-group button:last-child{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+/*--JINS BO'YICHA KO'RSATKICHLAR ayol erkak---*/
+
+.apexcharts-legend.apx-legend-position-bottom.apexcharts-align-center{
+   /*display: none!important;*/
+}
+
+.analysis-top {
+    width: 100%;
+    display: grid;
+    margin-top: 25px;
+    /*grid-gap: 20px;*/
+    /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
+    /*flex-wrap: wrap;*/
+}
+
+.analysis-top-item {
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    padding-bottom: 0px !important;
+    background-color: #fff;
+    /* margin-left: 15px; */
+}
+
+.analysis-top-item h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+.analysis-top-item > .doors_title > h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #9EAEC5;
+    text-transform: uppercase;
+    margin-right: 5px;
+}
+.analysis-top-item > .doors_title > h2 {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+}
+.doors_title{
+    display: flex;
+    flex-direction: row;
+}
+.analysis-top-item-text {
+    display: flex;
+    align-items: center;
+}
+
+.analysis-top-item-text p:first-child{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.analysis-top-item-text p:last-child{
+    font-size: 14px;
+    color: #29B85D;
+    margin-left: 10px;
+}
+
+/* --- body --- */
+
+.analysis-body {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    padding-bottom: 0 !important;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.analysis-body-text-block {
+    width: 100%;
+    /* max-width: 400px; */
+    /* background-color: red; */
+}
+
+.analysis-body-chart-block {
+    margin-top: 10px;
+    width: calc(100% - 0px) !important;
+}
+
+.analysis-container h2 {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #9EAEC5;
+}
+
+.analysis-body-text-block p {
+    font-size: 16px;
+}
+
+.analysis-body-text-block  p:nth-child(2) {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.analysis-body-text-block  p:nth-child(3) {
+    color: #29B85D !important;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.analysis-body-text-block  p:nth-child(4) {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* --- footer --- */
+.analysis-footer {
+    width: 100%;
+    max-width: calc(100% - 0px) !important;
+    display: flex;
+    margin-top: 20px;
+}
+
+
+.analysis-footer-left {
+    flex-basis: 25%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+.pieChart_title{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+}
+.chart_title{
+    display: flex;
+}
+.title_round{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+    margin-top: 5px;
+    background-color: #29b85d;
+}
+
+
+.analysis-footer-right {
+    flex-basis: 75%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.apx-legend-position-right{
+    width: 2px!important;
+    display: none !important;
+    background-color: #29b85d!important;
+}
+
+
+
+/*------carousel-----*/
+.prev{
+    /* width: 18px;
+    height: 11px; */
+    position: absolute;
+    top: 120px;
+    right: 60px;
+    width: 25px;
+    cursor: pointer;
+}
+.next{
+    /* width: 18px;
+    height: 11px; */
+    position: absolute;
+    top: 120px;
+    right: 15px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.nexprev{
+    border: none;
+    outline: none;
+    height: 0;
+}
+.gZZBOx {
+    display: none!important;
+}
