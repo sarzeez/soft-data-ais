@@ -58,7 +58,7 @@ const OnlineDoors = () => {
         <div className="online_doors_content">
             <div className="face_control_search_header">
                 <div className="content_top">
-                    <p className={`Content_title ${isDarkMode && 'darkModeColor'}`}>Online boshqaruv</p>
+                    <p className={`Content_title ${isDarkMode && 'darkModeColor'}`}>Online boshqaruvi</p>
                 </div>
             </div>
 
