@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios'
 
 import { ip } from '../../ip'
 
@@ -13,9 +14,9 @@ import softlogo from '../../images/softdatalogo.png'
 import './login.css'
 
 
-const Login = () => {
-    // const [token, setToken] = useState(null)
-    // const [error, setError] = useState(false)
+const Login = ({ setUser }) => {
+    const [token, setToken] = useState(null)
+    const [error, setError] = useState(false)
 
     const initialValues = {
         login: '',
@@ -26,31 +27,32 @@ const Login = () => {
         password: Yup.string().required('parol kiritilmagan...'),
     })
 
-    // const onSubmit = (values) => {
-    //     axios.post(`${ip}/api/sign-in`, {
-    //         login: values.login,
-    //         password: values.password
-    //      })
-    //          .then(res => {
-    //              setToken(res.data.accessToken)
-    //              localStorage.setItem('soft-ais-token', res.data.accessToken)
-    //          })
-    //         .catch(err => {
-    //             setError(true)
-    //         })
-    //  }
+    const onSubmit = (values) => {
+        axios.post(`${ip}/api/sign-in`, {
+            login: values.login,
+            password: values.password
+         })
+             .then(res => {
+                 setToken(res.data.accessToken)
+                 localStorage.setItem('soft-ais-token', res.data.accessToken)
+             })
+            .catch(err => {
+                setError(true)
+            })
+     }
 
-    //  useEffect(() => {
-    //     if(localStorage.getItem('soft-ais-token')) {
-    //         axios.get(`${ip}/api/me`, {headers: { 'x-access-token': token}})
-    //             .then(res => {
-    //                 setUser(res.data.data)
-    //             })
-    //             .catch(err => {
-    //                 // console.log(err)
-    //             })
-    //     }
-    // }, [token])
+     useEffect(() => {
+        if(localStorage.getItem('soft-ais-token')) {
+            axios.get(`${ip}/api/me`, {headers: { 'x-access-token': localStorage.getItem('soft-ais-token')}})
+                .then(res => {
+                    setUser(res.data.data)
+                    console.log(res.data)
+                })
+                .catch(err => {
+                    // console.log(err)
+                })
+        }
+    }, [token])
 
     return (
         <div className="login_page">
@@ -69,7 +71,7 @@ const Login = () => {
                     <div className="login_forms">
                         <Formik
                             initialValues = {initialValues}
-                            // onSubmit = {onSubmit}
+                            onSubmit = {onSubmit}
                             validationSchema = {validationSchema}
                         >
                             {
