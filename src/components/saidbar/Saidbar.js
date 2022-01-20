@@ -3,10 +3,10 @@ import 'antd/dist/antd.css';
 import {Layout, Menu, Switch} from 'antd';
 import { BrowserRouter } from 'react-router-dom'
 import {MenuUnfoldOutlined, MenuFoldOutlined,} from '@ant-design/icons';
-import { UserOutlined } from '@ant-design/icons';
+// import { UserOutlined } from '@ant-design/icons';
 import {Link} from "react-router-dom";
 
-import dashboard from '../../images/dashIMG/dashboard.svg';
+// import dashboard from '../../images/dashIMG/dashboard.svg';
 import face from '../../images/dashIMG/face.svg';
 import search from '../../images/dashIMG/search.svg';
 import setting from '../../images/dashIMG/settings.svg';
@@ -35,6 +35,9 @@ const { SubMenu } = Menu;
 
 const Saidbar = () => {
 
+    const [openKeys, setOpenKeys] = React.useState(['sub1']);
+    const rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
+
     const { width } = useWindowDimensions();
     const sidebarWidth = width < 1370 ? 200 : 300;
     const isDarkMode = useSelector(state => state.theme.theme_data);
@@ -61,6 +64,15 @@ const Saidbar = () => {
         dispatch(isRefresh(id))
     }
 
+    const onOpenChange = keys => {
+        const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1);
+        if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
+          setOpenKeys(keys);
+        } else {
+          setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
+        }
+      };
+
     return (
         <BrowserRouter>
                 <Layout  style={{height: '100vh'}}>
@@ -73,9 +85,13 @@ const Saidbar = () => {
                         </div>
                         <hr/>
 
-                        <Menu theme={isDarkMode ? 'dark' : 'light'} className={`siderBackColor ${isDarkMode && 'darkModeBackground'}`}
+                        <Menu 
+                            theme={isDarkMode ? 'dark' : 'light'} 
+                            className={`siderBackColor ${isDarkMode && 'darkModeBackground'}`}
+                            onOpenChange={onOpenChange}
+                            openKeys={openKeys}
                             mode="inline"
-                            defaultSelectedKeys={['1']}
+                            defaultSelectedKeys={['2']}
                             defaultOpenKeys={['sub1']}
                         >
                             <div>
@@ -93,7 +109,7 @@ const Saidbar = () => {
                             {/*    </Menu.Item>*/}
                             {/*</SubMenu>*/}
 
-                            <SubMenu key="sub2" icon={<img src={face} alt=""/>} title=" Yuzni aniqlash" >
+                            <SubMenu key="sub1" icon={<img src={face} alt=""/>} title=" Yuzni aniqlash" >
                                 <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Face Control Qidiruv', 2)}
                                            key="2" icon={<img src={search} alt=""/>}>
                                     <Link to="/face-control-search">
@@ -113,7 +129,7 @@ const Saidbar = () => {
                                     </Link>
                                 </Menu.Item>
                             </SubMenu>
-                            <SubMenu key="sub3" icon={<img src={access} alt=""/>} title="Kirishni boshqarish">
+                            <SubMenu key="sub2" icon={<img src={access} alt=""/>} title="Kirishni boshqarish">
                                 <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 5)} key="5"
                                            icon={<img src={tableimg} alt=""/>}>
                                     <Link to="/access-control-search">
@@ -138,7 +154,7 @@ const Saidbar = () => {
                                 {/*        Online*/}
                                 {/*    </Link>*/}
                                 {/*</Menu.Item>*/}
-                                <Menu.Item className="saidbar_link"  key="9"  icon={<img src={doorKey} alt=""/>}   >
+                                <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control Online Doors', 8)}  key="9"  icon={<img src={doorKey} alt=""/>}   >
                                     <Link to="/access-control-online-doors">
                                         Onlayn boshqaruv
                                     </Link>
