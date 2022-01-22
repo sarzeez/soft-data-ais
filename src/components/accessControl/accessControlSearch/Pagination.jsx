@@ -12,7 +12,7 @@ const AccessControlSearchPagination = (props) => {
         total = {accessTableTotal}
         showSizeChanger={true}
         pageSize={accessTablePaginationLimit}
-        pageSizeOptions={[10, 20, 50, 100]}
+        pageSizeOptions={[24, 36, 48, 60]}
     />;
 }
 

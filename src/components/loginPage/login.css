@@ -104,11 +104,6 @@
     outline: none;
 }
 
-.login_buttons{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
 .in_button{
     width: 345px;
     height: 50px;
@@ -116,6 +111,7 @@
     border-radius: 5px;
     margin: 15px 0;
     border: none;
+    cursor: pointer;
 
     font-family: Gilroy;
     font-style: normal;

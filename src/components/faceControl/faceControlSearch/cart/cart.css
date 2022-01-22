@@ -1,51 +1,23 @@
 .j_card{
     border: 1px solid #DDDDDD;
     border-radius: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 17px;
 }
 .j_card p {
     margin-bottom: 0 !important;
     margin-top: 0 !important;
 }
 
-.j_card .j_line{
-    height: 1px;
-    background-color: #DDDDDD;
-}
-
-.j_cardHeader{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-}
-.j_cardHeader p{
-    margin: 12px 0;
-}
-.j_cardHeader .j_date-p{
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    color: #1D1C1C;
-}
-.j_cardHeader  .j_minute-p{
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    color: #29B85D;
-    margin-left: 20px;
-}
 .j_cardInfo{
-    padding: 6px;
+    height: 100%;
+    padding: 8px;
 }
 .j_cardInfoTop{
     display: flex;
-    align-items: center;
     justify-content: space-between;
 }
 .j_cardInfoTopLeft{
     position: relative;
-    height: 150px;
 }
 
 .face-control-video-block {
@@ -76,14 +48,13 @@
 
 .visit_time_info{
     position: absolute;
-    top: 105px;
-    left: 10px;
-    width: 100px;
+    top: 135px;
+    width: 100%;
     height: 40px;
     background: #29b85d;
-    border-radius: 4px;
     text-align: center;
-    z-index: 6;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .ddmmyy{
     font-family: Open Sans;
@@ -105,23 +76,47 @@
 }
 
 .j_cardInfoTopLeft img {
-    /* width: 108px; */
-    /* height: 121px; */
     width: 120px;
-    height: 150px;
-    border-radius: 5px;
+    height: 135px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 .j_cardInfoTopRight{
-    min-width: 260px;
+    position: relative;
+    min-width: 160px;
     display: grid;
-    grid-row-gap: 5px;
-    grid-column-gap: 5px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 8px;
+    /*grid-column-gap: 5px;*/
+    grid-template-columns: 1fr 1fr;
+    padding-left: 3px;
+}
+.line{
+    position: absolute;
+    top: 31%;
+    width: 100%;
+    height: 1px;
+    background-color: #E5E9EE;
+    margin-left: 5px;
+}
+.line_2{
+    position: absolute;
+    top: 66%;
+    width: 100%;
+    height: 1px;
+    background-color: #E5E9EE;
+    margin-left: 5px;
+}
+.y_line{
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    left: 50%;
+    background-color: #E5E9EE;
 }
 
 .j_cardInfoTopRight img{
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
 }
 
 .j_cardInfoTopRight div {
@@ -162,4 +157,39 @@
     overflow: hidden; 
     width: 85px;
     white-space: nowrap;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 1870px) {
+    .j_card{
+        margin-bottom: 12px;
+    }
+    .j_cardInfo{
+        width: 265px;
+        height: 160px;
+    }
+    .j_cardInfoTopRight img{
+        width: 20px;
+        height: 20px;
+    }
+    .j_cardInfoTopLeft img {
+        width: 95px;
+        height: 110px;
+    }
+    .visit_time_info{
+        top: 100px;
+    }
+    .j_cardInfoTopRight{
+        position: relative;
+        min-width: 160px;
+        display: grid;
+        grid-row-gap: 10px;
+    }
+    .j_cardInfoTopRight p{
+        font-size: 13px;
+    }
 }

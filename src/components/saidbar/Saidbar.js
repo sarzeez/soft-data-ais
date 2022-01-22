@@ -1,11 +1,11 @@
-import React, { useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import 'antd/dist/antd.css';
 import {Layout, Menu, Switch} from 'antd';
 import { BrowserRouter } from 'react-router-dom'
 import {MenuUnfoldOutlined, MenuFoldOutlined,} from '@ant-design/icons';
-// import { UserOutlined } from '@ant-design/icons';
 import {Link} from "react-router-dom";
-
+import logo from '../../images/Logo.svg';
+import shortlogo from '../../images/shortLogo.svg';
 // import dashboard from '../../images/dashIMG/dashboard.svg';
 import face from '../../images/dashIMG/face.svg';
 import search from '../../images/dashIMG/search.svg';
@@ -22,18 +22,18 @@ import useWindowDimensions from '../../hooks/hooks';
 
 
 import searchIcon from "../../images/headerimg/searchIcon.png";
-import headerImg from "../../images/headerimg/headerImg.png";
 
 import NewStaff from '../newStaff/newStaff';
 import RootPage from '../../pages/root';
 
 import './style.css';
+import {ip} from "../../ip";
 
 
 const {Header, Sider, Content} = Layout;
 const { SubMenu } = Menu;
 
-const Saidbar = () => {
+const Saidbar = ({ user}) => {
 
     const [openKeys, setOpenKeys] = React.useState(['sub1']);
     const rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
@@ -45,6 +45,7 @@ const Saidbar = () => {
     const [newStaffModal, setNewStaffModal] = useState(false);
     const dispatch = useDispatch();
     const [collapsed, setCollapsed] = useState(false);
+
 
     const toggle = () => {
         setCollapsed(!collapsed);
@@ -71,7 +72,6 @@ const Saidbar = () => {
           setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
         }
     };
-    
 
     return (
         <BrowserRouter>
@@ -79,25 +79,23 @@ const Saidbar = () => {
                     <Sider width={sidebarWidth} theme={isDarkMode ? 'dark' : 'light'} className={`siderBackColor ${isDarkMode && 'darkModeBackground'}`}  trigger={null} collapsible collapsed={collapsed}>
                         <div className="logo">
                             {
-                                collapsed ? <span className={`logoText ${isDarkMode && 'darkModeColor'}`}> <span className="grenText">S</span>D</span> :
-                                    <div className="fullText"> <span className={`logoText ${isDarkMode && 'darkModeColor'}`} ><span className="grenText">Soft</span>Data</span> <p className={`softdev ${isDarkMode && 'darkModeColor'}`}>Software Development</p> </div>
+                                collapsed ? <img src={shortlogo} alt=""/> :  <img src={logo} alt=""/>
                             }
                         </div>
-                        <hr/>
 
                         <Menu 
                             theme={isDarkMode ? 'dark' : 'light'} 
-                            className={`siderBackColor ${isDarkMode && 'darkModeBackground'}`}
+                            className={`siderBackColor_menu ${isDarkMode && 'darkModeBackground'}`}
                             onOpenChange={onOpenChange}
                             openKeys={openKeys}
                             mode="inline"
                             defaultSelectedKeys={['2']}
                             defaultOpenKeys={['sub1']}
                         >
-                            <div>
+                            <div className="dashboard">
                                 {
-                                    collapsed ? <p className="close_saidbar_title" style={{textAlign: "center"}}>Boshqaruv paneli</p> :
-                                        <p className="saidbar_title" style={{textAlign: "center"}}>Boshqaruv paneli</p>
+                                    collapsed ? <p className="saidbar_title" style={{textAlign: "center"}}>Boshqaruv paneli</p> :
+                                        <p className="close_saidbar_title " >Boshqaruv paneli</p>
                                 }
                             </div>
                             {/*<SubMenu key="sub1" icon={<img src={dashboard} alt=""/>} title="Ko'rsatkichlar paneli">*/}
@@ -116,16 +114,16 @@ const Saidbar = () => {
                                         Qidiruv
                                     </Link>
                                 </Menu.Item>
-                                <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Face Control Sozlamalar', 3)}
-                                           key="3"  icon={<img src={setting} alt=""/>}>
-                                    <Link to="/face-control-setting">
-                                        Sozlamalar
-                                    </Link>
-                                </Menu.Item>
-                                <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Face Control Statistika', 4)}
-                                           key="4" icon={<img src={analisy} alt=""/>}>
+                                <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Face Control Statistika', 3)}
+                                           key="3" icon={<img src={analisy} alt=""/>}>
                                     <Link to="/face-control-analysis">
                                       Statistika
+                                    </Link>
+                                </Menu.Item>
+                                <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Face Control Sozlamalar', 4)}
+                                           key="4"  icon={<img src={setting} alt=""/>}>
+                                    <Link to="/face-control-setting">
+                                        Sozlamalar
                                     </Link>
                                 </Menu.Item>
                             </SubMenu>
@@ -136,27 +134,27 @@ const Saidbar = () => {
                                         Jadval
                                     </Link>
                                 </Menu.Item>
-                                <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 6)} key="6"
-                                           icon={<img src={setting} alt=""/>}>
-                                    <Link to="/acsess-setting">
-                                        Sozlamalar
-                                    </Link>
-                                </Menu.Item>
-                                <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 7)} key="7"
-                                           icon={<img src={setting} alt=""/>} >
-                                    <Link to="/access-control-addUser">
-                                        Odam qo'shish
-                                    </Link>
-                                </Menu.Item>
-                                {/*<Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 8)} key="8"*/}
+                                {/*<Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 6)} key="6"*/}
+                                {/*           icon={<img src={setting} alt=""/>} >*/}
+                                {/*    <Link to="/access-control-addUser">*/}
+                                {/*        Odam qo'shish*/}
+                                {/*    </Link>*/}
+                                {/*</Menu.Item>*/}
+                                {/*<Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 7)} key="7"*/}
                                 {/*           icon={<img src={doorKey}/>}  >*/}
                                 {/*    <Link to="/access-control-online">*/}
                                 {/*        Online*/}
                                 {/*    </Link>*/}
                                 {/*</Menu.Item>*/}
-                                <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control Online Doors', 8)}  key="9"  icon={<img src={doorKey} alt=""/>}   >
+                                <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control Online Doors', 8)}  key="8"  icon={<img src={doorKey} alt=""/>}   >
                                     <Link to="/access-control-online-doors">
                                         Onlayn boshqaruv
+                                    </Link>
+                                </Menu.Item>
+                                <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 9)} key="9"
+                                           icon={<img src={setting} alt=""/>}>
+                                    <Link to="/acsess-setting">
+                                        Sozlamalar
                                     </Link>
                                 </Menu.Item>
                             </SubMenu>
@@ -174,14 +172,12 @@ const Saidbar = () => {
                                 })}
                             </div>
                             <div className="header_navbar">
-                                <div className="search">
-                                    <img className="searchIcon" src={searchIcon} alt=""/>
-                                    <input className={`search_input ${isDarkMode && 'darkModeBackground, darkModeColor'} `} type="search" placeholder="Поиск..."/>
-                                </div>
                                 <div className="header_right">
                                     <Switch onChange={handleChangeTheme} />
                                     <div onClick={addNewStaff} className="rount_img">
-                                        <img src={headerImg} alt=""/>
+                                        {
+                                            user && <img src={`${ip}/api/admins/${user.id}/img`} alt=""/>
+                                        }
                                     </div>
                                 </div>
                             </div>

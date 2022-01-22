@@ -56,7 +56,7 @@ const OnlineDoors = () => {
 
     return (
         <div className="online_doors_content">
-            <div className="face_control_search_header">
+            <div className="online_doors_title">
                 <div className="content_top">
                     <p className={`Content_title ${isDarkMode && 'darkModeColor'}`}>Online boshqaruv</p>
                 </div>
@@ -89,9 +89,9 @@ const OnlineDoors = () => {
                                     <div className="doors_right">
                                         <div className="box_right_top">
                                             <div className="right_top_info">
-                                                <div className="doors_right_label">Ism</div>
+                                                <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ism111</div>
                                                 <div className="doors_right_box">{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.fullname}</div>
-                                                <div className="doors_right_label">Toifasi</div>
+                                                <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Toifasi</div>
                                                 <div className="doors_right_box">{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.rank}</div>
                                             </div>
                                             <div className="img_box">
@@ -99,17 +99,17 @@ const OnlineDoors = () => {
                                             </div>
                                         </div>
 
-                                        <div className="doors_right_label">Lavozimi</div>
+                                        <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Lavozimi</div>
                                         <div className="doors_right_box">{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.user_type}</div>
-                                        <div className="doors_right_label">Ruxsat turi</div>
+                                        <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ruxsat turi</div>
                                         <div className="doors_right_box">{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.access_type}</div>
                                     </div>
                                 :
                                     <div className="doords_right_no" >
                                         <img className="doors_right_icon" src={recIcon} alt=""/>
 
-                                        <h1 className="doots_right_title">Ma’lumot topilmadi</h1>
-                                        <p className="doors_right_p">Ushbu shaxs ma’lumotlar bazasida aniqlanmadi</p>
+                                        <h1 className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ma’lumot topilmadi</h1>
+                                        <p className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ushbu shaxs ma’lumotlar bazasida aniqlanmadi</p>
 
                                         <div className="doors_buttons">
                                             <button style={{marginRight: 15}} className="recognation_btn_cancel" onClick={reject}>Bekor qilish</button>
@@ -121,9 +121,9 @@ const OnlineDoors = () => {
                                 <div className="doors_right">
                                     <div className="box_right_top">
                                         <div className="right_top_info">
-                                            <div className="doors_right_label">Ism</div>
+                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ism</div>
                                             <div className="doors_right_box"></div>
-                                            <div className="doors_right_label">Toifasi</div>
+                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Toifasi</div>
                                             <div className="doors_right_box"></div>
                                         </div>
                                         <div className="img_box">
@@ -131,9 +131,9 @@ const OnlineDoors = () => {
                                         </div>
                                     </div>
 
-                                    <div className="doors_right_label">Lavozimi</div>
+                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Lavozimi</div>
                                     <div className="doors_right_box"></div>
-                                    <div className="doors_right_label">Ruxsat turi</div>
+                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ruxsat turi</div>
                                     <div className="doors_right_box"></div>
                                 </div>
                     }
@@ -166,9 +166,9 @@ const OnlineDoors = () => {
                                     <div className="doors_right">
                                         <div className="box_right_top">
                                             <div className="right_top_info">
-                                                <div className="doors_right_label">Ism</div>
+                                                <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ism111</div>
                                                 <div className="doors_right_box">{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.fullname}</div>
-                                                <div className="doors_right_label">Toifasi</div>
+                                                <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Toifasi</div>
                                                 <div className="doors_right_box">{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.rank}</div>
                                             </div>
                                             <div className="img_box">
@@ -176,17 +176,17 @@ const OnlineDoors = () => {
                                             </div>
                                         </div>
 
-                                        <div className="doors_right_label">Lavozimi</div>
+                                        <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Lavozimi</div>
                                         <div className="doors_right_box">{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.user_type}</div>
-                                        <div className="doors_right_label">Ruxsat turi</div>
+                                        <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ruxsat turi</div>
                                         <div className="doors_right_box">{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.access_type}</div>
                                     </div>
                                     :
                                     <div className="doords_right_no" >
                                         <img className="doors_right_icon" src={recIcon} alt=""/>
 
-                                        <h1 className="doots_right_title">Ma’lumot topilmadi</h1>
-                                        <p className="doors_right_p">Ushbu shaxs ma’lumotlar bazasida aniqlanmadi</p>
+                                        <h1 className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ma’lumot topilmadi</h1>
+                                        <p className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ushbu shaxs ma’lumotlar bazasida aniqlanmadi</p>
 
                                         <div className="doors_buttons">
                                             <button style={{marginRight: 15}} className="recognation_btn_cancel" onClick={reject}>Bekor qilish</button>
@@ -198,9 +198,9 @@ const OnlineDoors = () => {
                             <div className="doors_right">
                                 <div className="box_right_top">
                                     <div className="right_top_info">
-                                        <div className="doors_right_label">Ism</div>
+                                        <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ism</div>
                                         <div className="doors_right_box"></div>
-                                        <div className="doors_right_label">Toifasi</div>
+                                        <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Toifasi</div>
                                         <div className="doors_right_box"></div>
                                     </div>
                                     <div className="img_box">
@@ -208,9 +208,9 @@ const OnlineDoors = () => {
                                     </div>
                                 </div>
 
-                                <div className="doors_right_label">Lavozimi</div>
+                                <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Lavozimi</div>
                                 <div className="doors_right_box"></div>
-                                <div className="doors_right_label">Ruxsat turi</div>
+                                <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ruxsat turi</div>
                                 <div className="doors_right_box"></div>
                             </div>
                     }
@@ -240,9 +240,9 @@ const OnlineDoors = () => {
                                     <div className="doors_right">
                                         <div className="box_right_top">
                                             <div className="right_top_info">
-                                                <div className="doors_right_label">Ism</div>
+                                                <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ism111</div>
                                                 <div className="doors_right_box">{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.fullname}</div>
-                                                <div className="doors_right_label">Toifasi</div>
+                                                <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Toifasi</div>
                                                 <div className="doors_right_box">{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.rank}</div>
                                             </div>
                                             <div className="img_box">
@@ -250,17 +250,17 @@ const OnlineDoors = () => {
                                             </div>
                                         </div>
 
-                                        <div className="doors_right_label">Lavozimi</div>
+                                        <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Lavozimi</div>
                                         <div className="doors_right_box">{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.user_type}</div>
-                                        <div className="doors_right_label">Ruxsat turi</div>
+                                        <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ruxsat turi</div>
                                         <div className="doors_right_box">{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.access_type}</div>
                                     </div>
                                     :
                                     <div className="doords_right_no" >
                                         <img className="doors_right_icon" src={recIcon} alt=""/>
 
-                                        <h1 className="doots_right_title">Ma’lumot topilmadi</h1>
-                                        <p className="doors_right_p">Ushbu shaxs ma’lumotlar bazasida aniqlanmadi</p>
+                                        <h1 className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ma’lumot topilmadi</h1>
+                                        <p className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ushbu shaxs ma’lumotlar bazasida aniqlanmadi</p>
 
                                         <div className="doors_buttons">
                                             <button style={{marginRight: 15}} className="recognation_btn_cancel" onClick={reject}>Bekor qilish</button>
@@ -272,9 +272,9 @@ const OnlineDoors = () => {
                             <div className="doors_right">
                                 <div className="box_right_top">
                                     <div className="right_top_info">
-                                        <div className="doors_right_label">Ism</div>
+                                        <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ism</div>
                                         <div className="doors_right_box"></div>
-                                        <div className="doors_right_label">Toifasi</div>
+                                        <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Toifasi</div>
                                         <div className="doors_right_box"></div>
                                     </div>
                                     <div className="img_box">
@@ -282,9 +282,9 @@ const OnlineDoors = () => {
                                     </div>
                                 </div>
 
-                                <div className="doors_right_label">Lavozimi</div>
+                                <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Lavozimi</div>
                                 <div className="doors_right_box"></div>
-                                <div className="doors_right_label">Ruxsat turi</div>
+                                <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ruxsat turi</div>
                                 <div className="doors_right_box"></div>
                             </div>
                     }
@@ -314,9 +314,9 @@ const OnlineDoors = () => {
                                     <div className="doors_right">
                                         <div className="box_right_top">
                                             <div className="right_top_info">
-                                                <div className="doors_right_label">Ism</div>
+                                                <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ism111</div>
                                                 <div className="doors_right_box">{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.fullname}</div>
-                                                <div className="doors_right_label">Toifasi</div>
+                                                <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Toifasi</div>
                                                 <div className="doors_right_box">{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.rank}</div>
                                             </div>
                                             <div className="img_box">
@@ -324,17 +324,17 @@ const OnlineDoors = () => {
                                             </div>
                                         </div>
 
-                                        <div className="doors_right_label">Lavozimi</div>
+                                        <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Lavozimi</div>
                                         <div className="doors_right_box">{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.user_type}</div>
-                                        <div className="doors_right_label">Ruxsat turi</div>
+                                        <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ruxsat turi</div>
                                         <div className="doors_right_box">{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.access_type}</div>
                                     </div>
                                     :
                                     <div className="doords_right_no" >
                                         <img className="doors_right_icon" src={recIcon} alt=""/>
 
-                                        <h1 className="doots_right_title">Ma’lumot topilmadi</h1>
-                                        <p className="doors_right_p">Ushbu shaxs ma’lumotlar bazasida aniqlanmadi</p>
+                                        <h1 className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ma’lumot topilmadi</h1>
+                                        <p className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ushbu shaxs ma’lumotlar bazasida aniqlanmadi</p>
 
                                         <div className="doors_buttons">
                                             <button style={{marginRight: 15}} className="recognation_btn_cancel" onClick={reject}>Bekor qilish</button>
@@ -346,9 +346,9 @@ const OnlineDoors = () => {
                             <div className="doors_right">
                                 <div className="box_right_top">
                                     <div className="right_top_info">
-                                        <div className="doors_right_label">Ism</div>
+                                        <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ism</div>
                                         <div className="doors_right_box"></div>
-                                        <div className="doors_right_label">Toifasi</div>
+                                        <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Toifasi</div>
                                         <div className="doors_right_box"></div>
                                     </div>
                                     <div className="img_box">
@@ -356,9 +356,9 @@ const OnlineDoors = () => {
                                     </div>
                                 </div>
 
-                                <div className="doors_right_label">Lavozimi</div>
+                                <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Lavozimi</div>
                                 <div className="doors_right_box"></div>
-                                <div className="doors_right_label">Ruxsat turi</div>
+                                <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ruxsat turi</div>
                                 <div className="doors_right_box"></div>
                             </div>
                     }

@@ -29,7 +29,7 @@ export default function FaceControlSearch() {
     const [faceCameraData, setFaceCameraData] = useState(null)
     const [selectedGroupCameras, setSelectedGroupCameras] = useState(null)
     const [faceControlData, setFaceControlData] = useState(null)
-    const [faceControlPaginationLimit, setFaceControlPaginationLimit] = useState(12)
+    const [faceControlPaginationLimit, setFaceControlPaginationLimit] = useState(24)
     const [faceControlPaginationCurrent, setFaceControlPaginationCurrent] = useState(1)
     const [faceControlTotal, setFaceControlTotal] = useState(null)
 
@@ -172,7 +172,7 @@ export default function FaceControlSearch() {
                         />
                     </div>
                 </div>
-                <div className="content">
+                <div className={`content ${isDarkMode && 'darkModeCard'}`}>
                     <div className={`content_inputs ${isDarkMode && 'darkModeCard darkModeBorder'}`}>
                         <div>
                             <div className="form_input_wrapper">
@@ -234,23 +234,33 @@ export default function FaceControlSearch() {
                           </div>
 
                             <div className="face_control_search_inline_inputs">
+
                                 <div className="form_input_wrapper">
-                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Soqol:</p>
+                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Kayfiyat:</p>
                                     <div className="input_wrapper face_search_inputs">
                                         <Select
                                             className={`left_select ${isDarkMode && 'darkModeColor'}`}
-                                            onChange={onChangeBeard}
+                                            onChange={onChangeMood}
                                             style={{width: "100%"}}
                                             size="large"
                                             defaultValue="all"
                                         >
                                             <Select.Option value="all">Hammasi</Select.Option>
-                                            <Select.Option value="1">Bor</Select.Option>
-                                            <Select.Option value="0">Yo'q</Select.Option>
-                                            <Select.Option value="2">Aniqlanmadi</Select.Option>
+                                            <Select.Option value="2">Jilmaygan</Select.Option>
+                                            <Select.Option value="3">Jahldor</Select.Option>
+                                            <Select.Option value="4">Xafa</Select.Option>
+                                            <Select.Option value="5">Jirkangan</Select.Option>
+                                            <Select.Option value="6">Qo'rqqan</Select.Option>
+                                            <Select.Option value="7">Hayratda</Select.Option>
+                                            <Select.Option value="8">E'tiborsiz</Select.Option>
+                                            <Select.Option value="9">Kulgan</Select.Option>
+                                            <Select.Option value="11">Xursand</Select.Option>
+                                            <Select.Option value="12">Ikkilangan</Select.Option>
+                                            <Select.Option value="13">Baqirgan</Select.Option>
                                         </Select>
                                     </div>
                                 </div>
+
 
                                 <div className="form_input_wrapper">
                                     <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Ko'zoynak:</p>
@@ -274,6 +284,24 @@ export default function FaceControlSearch() {
                             <div className="face_control_search_inline_inputs">
 
                                 <div className="form_input_wrapper">
+                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Soqol:</p>
+                                    <div className="input_wrapper face_search_inputs">
+                                        <Select
+                                            className={`left_select ${isDarkMode && 'darkModeColor'}`}
+                                            onChange={onChangeBeard}
+                                            style={{width: "100%"}}
+                                            size="large"
+                                            defaultValue="all"
+                                        >
+                                            <Select.Option value="all">Hammasi</Select.Option>
+                                            <Select.Option value="1">Bor</Select.Option>
+                                            <Select.Option value="0">Yo'q</Select.Option>
+                                            <Select.Option value="2">Aniqlanmadi</Select.Option>
+                                        </Select>
+                                    </div>
+                                </div>
+
+                                <div className="form_input_wrapper">
                                     <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Guruh:</p>
                                     <div className="input_wrapper face_search_inputs">
                                         <Select
@@ -293,52 +321,29 @@ export default function FaceControlSearch() {
                                     </div>
                                 </div>
 
-                                <div className="form_input_wrapper">
-                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Kamera:</p>
-                                    <div className="input_wrapper face_search_inputs">
-                                        <Select
-                                            className={`left_select ${isDarkMode && 'darkModeColor'}`}
-                                            onChange={onChangeCameraOptions}
-                                            style={{width: "100%"}}
-                                            size="large"
-                                            defaultValue="all"
-                                        >
-                                            <Select.Option value="all">Hammasi</Select.Option>
-                                            {
-                                               selectedGroupCameras && selectedGroupCameras.map(item => (
-                                                   <Select.Option key = {item} value={item}>{item}</Select.Option>
-                                               ))
-                                            }
-                                        </Select>
-                                    </div>
-                                </div>
                             </div>
 
                             <div className="form_input_wrapper">
-                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Kayfiyat:</p>
+                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Kamera:</p>
                                 <div className="input_wrapper face_search_inputs">
                                     <Select
                                         className={`left_select ${isDarkMode && 'darkModeColor'}`}
-                                        onChange={onChangeMood}
+                                        onChange={onChangeCameraOptions}
                                         style={{width: "100%"}}
                                         size="large"
                                         defaultValue="all"
                                     >
                                         <Select.Option value="all">Hammasi</Select.Option>
-                                        <Select.Option value="2">Jilmaygan</Select.Option>
-                                        <Select.Option value="3">Jahldor</Select.Option>
-                                        <Select.Option value="4">Xafa</Select.Option>
-                                        <Select.Option value="5">Jirkangan</Select.Option>
-                                        <Select.Option value="6">Qo'rqqan</Select.Option>
-                                        <Select.Option value="7">Hayratda</Select.Option>
-                                        <Select.Option value="8">E'tiborsiz</Select.Option>
-                                        <Select.Option value="9">Kulgan</Select.Option>
-                                        <Select.Option value="11">Xursand</Select.Option>
-                                        <Select.Option value="12">Ikkilangan</Select.Option>
-                                        <Select.Option value="13">Baqirgan</Select.Option>
+                                        {
+                                            selectedGroupCameras && selectedGroupCameras.map(item => (
+                                                <Select.Option key = {item} value={item}>{item}</Select.Option>
+                                            ))
+                                        }
                                     </Select>
                                 </div>
                             </div>
+
+
 
                             <div className="form_input_wrapper">
                                 <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Muddat:</p>

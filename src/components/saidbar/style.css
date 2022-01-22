@@ -8,7 +8,9 @@
 .siderBackColor{
     overflow-y: auto;
     overflow-x: hidden;
-
+}
+.siderBackColor_menu{
+    border-top: 1px solid #c1c8d2;
 }
 .trigger:hover {
     color: #29B85D;
@@ -43,13 +45,14 @@
 }
 
 .logo {
-    height: 32px;
-    margin: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 65px;
 }
-
+.logo img{
+    width: 70%;
+}
 .logoText {
     font-family: quantum;
     font-size: 32px;
@@ -79,59 +82,41 @@
     font-weight: 900;
 }
 
-hr {
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.11);
-}
+
 
 .ant-layout-header .ant-menu {
     border-bottom: 1px solid #A5BAC4;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.11);
 }
-
-.search {
-    position: relative;
-}
-
-.search_input {
-    position: relative;
-    width: 450px;
-    height: 48px;
-    background: rgba(158, 174, 197, 0.1);
-    border: 1px solid rgba(158, 174, 197, 0.13);
-    box-sizing: border-box;
-    border-radius: 10px;
-    outline: none;
-    padding-left: 50px;
-}
-
-.searchIcon {
-    position: absolute;
-    top: 20px;
-    left: 10px;
+.dashboard{
+    margin-bottom: 10px;
 }
 
 .close_saidbar_title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
     font-family: Open Sans;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 12px;
     line-height: 19px;
-    color: #A5BAC4;
+    color: rgba(000,000,000, 0.5);
     margin-top: 15px;
     text-transform: uppercase;
+    margin-left: 25px;
+
 }
 
 .saidbar_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 15px;
     font-family: Open Sans;
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 19px;
-    color: #A5BAC4;
+    color: rgba(000,000,000, 0.4);
     text-transform: uppercase;
 }
 .saidbar_link a{
@@ -139,8 +124,14 @@ hr {
     font-style: normal;
     font-size: 16px;
     line-height: 22px;
-    /*color: #29b85d;*/
 }
+
+.ant-menu-submenu-title{
+
+    height: 65px!important;
+}
+
+
 
 
  /*------dashboard icons----------*/
@@ -184,15 +175,17 @@ hr {
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
-    /*color: #9EAEC5;*/
 }
 
+.saidbar_link{
+    height: 65px!important;
+}
 
 
 .header_navbar {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .header_right {
@@ -284,3 +277,30 @@ hr {
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
     background-color: #e6f7ff;
 }
+
+
+@media only screen and (max-width: 1800px) {
+    .saidbar_link a{
+        font-size: 12px;
+    }
+    .ant-menu-title-content{
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

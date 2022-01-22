@@ -5,12 +5,11 @@ import axios from 'axios'
 
 import { ip } from '../../ip'
 
-import loginImg from '../../images/loginLeft.png';
-import google from '../../images/googleIcon.png';
+import loginImg from '../../images/loginImg.svg';
 import loginIcon from '../../images/userIcon.png';
-import lickIcon from '../../images/lockIcon.png'
+import lickIcon from '../../images/lockIcon.png';
 
-import softlogo from '../../images/softdatalogo.png'
+import softlogo from '../../images/softdatalogo.png';
 import './login.css'
 
 
@@ -59,13 +58,12 @@ const Login = ({ setUser }) => {
             <div className="page_left">
                 <img  className="left_img" src={loginImg} alt=""/>
 
-                <img className="left_img_logo" src={softlogo} alt=""/>
+                {/*<img className="left_img_logo" src={softlogo} alt=""/>*/}
             </div>
 
             <div className="page_right">
                 <div className="rihgt_inner">
                     <div className="titles">
-                        {/*<div className="title_top"  >Xush kelibsiz,</div>*/}
                         <div className="title">Tizimga kirish</div>
                     </div>
                     <div className="login_forms">
@@ -79,9 +77,6 @@ const Login = ({ setUser }) => {
                                     return <Form >
                                         <div className="login_page_inputs">
                                             <div className="login_inputs_wrapper">
-                                                {/*{*/}
-                                                {/*    error && <Alert severity="error">логин ёки парол хато</Alert>*/}
-                                                {/*}*/}
                                                 <div className="login_control">
                                                     <label className="login_label" >Логин</label>
                                                     <div className="login_input">
@@ -114,7 +109,7 @@ const Login = ({ setUser }) => {
                                             </div>
                                         </div>
 
-                                        <div className = "login_buttons" >
+
                                                 <button
                                                     type = 'submit'
                                                     className = "in_button"
@@ -122,16 +117,8 @@ const Login = ({ setUser }) => {
                                                     Kirish
                                                 </button>
 
-                                                <button type='button' className="google_button">
-                                                    <img src={google} alt=""/>
-                                                    Google akkount orqali
-                                                </button>
-                                        </div>
 
-                                        <div className="sign_text">
-                                            <p className="sign">Siz ro’yxatdan o’tmaganmisiz?  </p>
-                                            <a href="/#12" className="sign_up" style={{color: '#29B85D'}} > Ro’yxatdan o’tish</a>
-                                        </div>
+
                                     </Form>
                                 }
                             }

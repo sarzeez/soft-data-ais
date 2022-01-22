@@ -25,7 +25,7 @@
     cursor: pointer;
     background-color: #fff;
     color: #9EAEC5;
-    transition: all .3 ;
+    transition: all 0.3s ;
 }
 
 .analysis-active-button {
@@ -201,11 +201,54 @@
     border-radius: 5px;
     padding: 10px;
 }
+.gender_top{
+    display: flex;
+    justify-content: space-between;
+}
+.man_woman{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.manWoman{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+}
+.man_square{
+    width: 15px;
+    height: 15px;
+    background-color: rgb(62, 130, 247);;
+    margin-right: 5px;
+}
+.woman_square{
+    width: 15px;
+    height: 15px;
+    background-color: rgb(204, 116, 185);
+    margin-right: 5px;
+    margin-left: 10px;
+}
+.gender_count{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 33px;
+    color: #000000;
+    margin-left: 3px;
+}
+
+
 
 .apx-legend-position-right{
     width: 2px!important;
     display: none !important;
     background-color: #29b85d!important;
+}
+
+.apx-legend-position-bottom{
+    display: none!important;
 }
 
 

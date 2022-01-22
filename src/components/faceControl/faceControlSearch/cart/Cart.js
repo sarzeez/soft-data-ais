@@ -9,11 +9,10 @@ import { BsPlayBtn } from 'react-icons/bs'
 import VideoModal from '../videoModal/VidoeModal';
 
 const mood = ["", "Tabassum", "Jahldor", "Xafa", "Jirkangan", "Qo'rqqan", "Hayratda", "E'tiborsiz", "Kulgan", "", "Xursand", "Ikkilangan", "Baqirgan"]
-
 const Cart = ({ item, isDarkMode }) => {
 
     const [visible, setVisible] = useState(false)
-
+    // console.log(item);
     return (
         <div className={`j_card ${isDarkMode && 'darkModeCard darkModeBorder'}`}>
             <div className="j_cardInfo">
@@ -29,7 +28,11 @@ const Cart = ({ item, isDarkMode }) => {
                             <p className="hhmmss">{moment(item.the_date).format("HH:mm:ss")}</p>
                         </div>
                     </div>
+
                     <div className="j_cardInfoTopRight">
+                        <div className="line"></div>
+                        <div className="line_2"></div>
+                        <div className="y_line"></div>
                         <div>
                             {
                                 item.gender === 2
@@ -56,6 +59,8 @@ const Cart = ({ item, isDarkMode }) => {
                                 }
                             </p>
                         </div>
+
+
                         <div>
                             {
                                 <img src = {emojes.mask[item.args.MASKA]} alt = 'mask'/>

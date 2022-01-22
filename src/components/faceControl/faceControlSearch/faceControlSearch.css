@@ -1,5 +1,5 @@
 .face_control_search{
-    padding: 10px;  
+    padding: 10px;
 }
 
 .face_control_search_header {
@@ -102,7 +102,7 @@
     box-sizing: border-box;
     border-radius: 10px;
     overflow: auto;
-    padding: 0 10px;
+    padding: 0 5px;
 }
 
 .content_total {

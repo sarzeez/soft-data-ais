@@ -46,7 +46,7 @@ function AddUser(props) {
 
     return (
         <div className="real_time_content">
-            <div className="face_control_search_header">
+            <div className="add_user_title">
                 <div className="content_top">
                     <p className={`Content_title ${isDarkMode && 'darkModeColor'}`}>Odam qo'shish</p>
                 </div>
@@ -54,7 +54,7 @@ function AddUser(props) {
 
             <div className={`real_time_body ${isDarkMode && 'darkModeCard darkModeBorder'}`}>
                 <div className="realtime_left">
-                    <div className="realtime_left_title">
+                    <div className={`realtime_left_title ${isDarkMode && 'darkModeCard'}`}>
                         <p className={`${isDarkMode && 'darkModeColor'}`}>Foydalanuvchi ma’lumotlari</p>
                     </div>
 
@@ -142,7 +142,7 @@ function AddUser(props) {
                                 />
                             </div>
                         </div>
-                        <Checkbox className="checkbox" >Cheklov</Checkbox>
+                        <Checkbox className={`checkbox ${isDarkMode && 'darkModeColor'}`} >Cheklov</Checkbox>
                     </div>
 
 
@@ -196,7 +196,7 @@ function AddUser(props) {
                 </div>
 
                     <div className="realtime_middle">
-                        <div className="realtime_middle_title">
+                        <div className={`realtime_middle_title ${isDarkMode && 'darkModeCard'}`}>
                             <p className={` ${isDarkMode && 'darkModeColor'}`}>Yuzni aniqlash</p>
                         </div>
 
@@ -224,7 +224,7 @@ function AddUser(props) {
 
 
                 <div className="realtime_right">
-                    <div className="realtime_right_title">
+                    <div className={`realtime_right_title ${isDarkMode && 'darkModeCard'}`}>
                         <p className={` ${isDarkMode && 'darkModeColor'}`}>ID karta</p>
                     </div>
                   <div className="realtime_right_content">

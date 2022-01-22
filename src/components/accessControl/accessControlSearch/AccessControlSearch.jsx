@@ -12,7 +12,7 @@ import { ip } from '../../../ip';
 import AcsessTable from "./AcsessTable";
 import AccessControlSearchPagination from './Pagination';
 
-const AcsessControlSearch = (props) => {
+const AcsessControlSearch = () => {
 
     const isDarkMode = useSelector(state => state.theme.theme_data)
     const is_refresh_value = useSelector(state => state.theme.is_refresh_value)
@@ -66,7 +66,7 @@ const AcsessControlSearch = (props) => {
         })
         const { data } = response;
         const count = data.count;
-        console.log(data)
+        // console.log(data)
         setAccessTableTotal(count)
         const newData = data.data.map((item, index) => (
             {
@@ -215,7 +215,7 @@ const AcsessControlSearch = (props) => {
                                         onChange={onChangeDateFrom}
                                         size="large"
                                         style={{width: "100%"}}
-                                        showTime
+                                        // showTime
                                     />
                                 </div>
                                 <div className="input_wrapper" style={{marginTop: "15px"}}>
@@ -227,7 +227,7 @@ const AcsessControlSearch = (props) => {
                                         onChange={onChangeDateTo}
                                         size="large"
                                         style={{width: "100%"}}
-                                        showTime
+                                        // showTime
                                     />
                                 </div>
                             </div>

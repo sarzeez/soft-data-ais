@@ -6,7 +6,7 @@ import { ip } from "./ip";
 import Saidbar from "./components/saidbar/Saidbar";
 import './App.css';
 
-function App({ setUser }) {
+function App({ setUser, user }) {
 
 
   useEffect(() => {
@@ -21,10 +21,10 @@ function App({ setUser }) {
     }
   }, [])
 
-  console.log('a')
+  // console.log('a')
 
   return (
-    <Saidbar />
+    <Saidbar setUser={setUser} user={user} />
   );
 }
 

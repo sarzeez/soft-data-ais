@@ -1,13 +1,14 @@
 .real_time_content{
     padding: 10px;
 }
-
-
+.add_user_title{
+    margin-bottom: 10px;
+}
 .real_time_body{
     display: grid;
     grid-template-columns: 1fr 300px 1fr;
     grid-gap: 10px;
-    height: calc(100vh - 115px);
+    height: calc(100vh - 125px);
     background-color: #FFFFFF;
     border-radius: 5px;
     padding: 10px;

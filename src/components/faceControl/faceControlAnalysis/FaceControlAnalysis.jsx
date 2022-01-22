@@ -124,10 +124,10 @@ const FaceControlAnalysis = () => {
                 </div>
                 <div className='anaylsis-button-group'>
                     <DatePicker placeholder={DayMY} onChange = {value => setDate(value)} style = {{borderTopLeftRadius: '10px', borderBottomLeftRadius: '10px'}} />
-                    <button onClick={() => setActive('daily')} className={`${active === 'daily' ? 'analysis-active-button' : null}`}>Day</button>
-                    <button onClick={() => setActive('week')} className={`${active === 'week' ? 'analysis-active-button' : null}`}>Week</button>
-                    <button onClick={() => setActive('month')} className={`${active === 'month' ? 'analysis-active-button' : null}`}>Month</button>
-                    <button onClick={() => setActive('year')} className={`${active === 'year' ? 'analysis-active-button' : null}`}>Year</button>
+                    <button onClick={() => setActive('daily')} className={`${active === 'daily' ? 'analysis-active-button' : null}`}>Kun</button>
+                    <button onClick={() => setActive('week')} className={`${active === 'week' ? 'analysis-active-button' : null}`}>Hafta</button>
+                    <button onClick={() => setActive('month')} className={`${active === 'month' ? 'analysis-active-button' : null}`}>Oy</button>
+                    <button onClick={() => setActive('year')} className={`${active === 'year' ? 'analysis-active-button' : null}`}>Yil</button>
                 </div>
             </div>
 
@@ -173,10 +173,23 @@ const FaceControlAnalysis = () => {
                 <div className='analysis-footer-right'>
                     <div className="gender_top">
                         <h2>Jins bo'yicha ko'rsatkichlar</h2>
-                        {/*<div className="man_woman">*/}
-                        {/*    <p>Erkaklar</p>*/}
-                        {/*    <p>Ayollar</p>*/}
-                        {/*</div>*/}
+                        <div className="man_woman">
+                            <div className="manWoman">
+                                <div className="man_square"></div>
+                                <p>Erkaklar -</p>
+                                <div className="gender_count">
+                                    {data && data.male_count}
+                                </div>
+                            </div>
+
+                            <div className="manWoman">
+                                <div className="woman_square"></div>
+                                <p>Ayollar -</p>
+                                <div className="gender_count">
+                                    {data && data.female_count}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                      <LineChart data = {data} />
                 </div>
