@@ -80,6 +80,17 @@ const Saidbar = ({ user}) => {
         localStorage.setItem('i18nextLng', lang)
     }
 
+    const LogoComponent = () => {
+        return (
+                <div className="dashboard">
+                    {
+                        collapsed ? <p className="saidbar_title" style={{textAlign: "center"}}>{t('dashboard')}</p> :
+                            <p className="close_saidbar_title " >{t('dashboard')}</p>
+                    }
+                </div>
+        )
+    }
+
     return (
         <BrowserRouter>
                 <Layout  style={{height: '100vh'}}>
@@ -89,7 +100,6 @@ const Saidbar = ({ user}) => {
                                 collapsed ? <img src={shortlogo} alt=""/> :  <img src={logo} alt=""/>
                             }
                         </div>
-
                         <Menu 
                             theme={isDarkMode ? 'dark' : 'light'} 
                             className={`siderBackColor_menu ${isDarkMode && 'darkModeBackground'}`}
@@ -99,21 +109,7 @@ const Saidbar = ({ user}) => {
                             defaultSelectedKeys={['2']}
                             defaultOpenKeys={['sub1']}
                         >
-                            <div className="dashboard">
-                                {
-                                    collapsed ? <p className="saidbar_title" style={{textAlign: "center"}}>{t('dashboard')}</p> :
-                                        <p className="close_saidbar_title " >{t('dashboard')}</p>
-                                }
-                            </div>
-                            {/*<SubMenu key="sub1" icon={<img src={dashboard} alt=""/>} title="Ko'rsatkichlar paneli">*/}
-                            {/*    <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Dashboard', 1)}*/}
-                            {/*               icon={<img src={dashboard} alt=""/>} key="1" >*/}
-                            {/*        <Link to="/">*/}
-                            {/*            Ko'rsatkichlar paneli*/}
-                            {/*        </Link>*/}
-                            {/*    </Menu.Item>*/}
-                            {/*</SubMenu>*/}
-
+                            <LogoComponent />
                             <SubMenu key="sub1" icon={<img src={face} alt=""/>} title=" Yuzni aniqlash" >
                                 <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Face Control Qidiruv', 2)}
                                            key="2" icon={<img src={search} alt=""/>}>
@@ -141,18 +137,6 @@ const Saidbar = ({ user}) => {
                                         Jadval
                                     </Link>
                                 </Menu.Item>
-                                {/*<Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 6)} key="6"*/}
-                                {/*           icon={<img src={setting} alt=""/>} >*/}
-                                {/*    <Link to="/access-control-addUser">*/}
-                                {/*        Odam qo'shish*/}
-                                {/*    </Link>*/}
-                                {/*</Menu.Item>*/}
-                                {/*<Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 7)} key="7"*/}
-                                {/*           icon={<img src={doorKey}/>}  >*/}
-                                {/*    <Link to="/access-control-online">*/}
-                                {/*        Online*/}
-                                {/*    </Link>*/}
-                                {/*</Menu.Item>*/}
                                 <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control Online Doors', 8)}  key="8"  icon={<img src={doorKey} alt=""/>}   >
                                     <Link to="/access-control-online-doors">
                                         Onlayn boshqaruv

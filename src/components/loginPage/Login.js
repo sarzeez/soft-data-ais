@@ -45,7 +45,6 @@ const Login = ({ setUser }) => {
             axios.get(`${ip}/api/me`, {headers: { 'x-access-token': localStorage.getItem('soft-ais-token')}})
                 .then(res => {
                     setUser(res.data.data)
-                    console.log(res.data)
                 })
                 .catch(err => {
                     // console.log(err)
