@@ -3,8 +3,10 @@ import { Modal } from "antd";
 import { Player } from "video-react";
 
 import "video-react/dist/video-react.css";
+import './video.css'
+import { ip } from "../../../../ip";
 
-const VideoModal = ({ visible, setVisible }) => {
+const VideoModal = ({ visible, setVisible, loading, id }) => {
 
     const videoRef = useRef(null)
     const hideModal = () => {
@@ -12,7 +14,7 @@ const VideoModal = ({ visible, setVisible }) => {
     };
 
     const pause = () => {
-        videoRef.current.actions.pause();
+        videoRef && videoRef.current && videoRef.current.actions && videoRef.current.actions.pause();
     };
 
     return (
@@ -26,15 +28,21 @@ const VideoModal = ({ visible, setVisible }) => {
                 bodyStyle={{ padding: 0 }}
                 closeIcon = {<h1>asdf</h1>}
                 >
-                <Player
-                    autoPlay
-                    ref={videoRef}
-                >
-                    <source
-                    src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-                    type="video/mp4"
-                    />
-                </Player>
+                    {
+                        loading
+                        ? <h1 className="loading_title">Loading...</h1>
+                        :
+                            <Player
+                                autoPlay
+                                ref={videoRef}
+                            >
+                                <source
+                                // src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+                                src={`${ip}/anhor_camera_video/${id}.mp4`}
+                                type="video/mp4"
+                                />
+                            </Player>
+                    }
             </Modal>
     )
 }

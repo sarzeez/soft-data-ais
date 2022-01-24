@@ -1,25 +1,60 @@
 import React, { useState } from 'react';
-import ImageDemo from "./image";
 import moment from "moment";
+import axios from 'axios';
+
+import ImageDemo from "./image";
 import { emojes } from '../../../../assets/face-icons/icons'
 import "./cart.css"
 
 import { BsPlayBtn } from 'react-icons/bs'
-
 import VideoModal from '../videoModal/VidoeModal';
+
+import { ip } from '../../../../ip';
 
 const mood = ["", "Tabassum", "Jahldor", "Xafa", "Jirkangan", "Qo'rqqan", "Hayratda", "E'tiborsiz", "Kulgan", "", "Xursand", "Ikkilangan", "Baqirgan"]
 const Cart = ({ item, isDarkMode }) => {
 
     const [visible, setVisible] = useState(false)
+    const [videoByID, setVideoByID] = useState(null)
+    const [loading, setLoading] = useState(false)
     // console.log(item);
+
+    const handleClickVideoPlay = (id) => {
+        setVisible(true)
+        setLoading(true)
+        const interval = setInterval(() => {
+            axios(`${ip}/api/face/video/${id}`)
+            .then(res => {
+                const { data } = res;
+                if(data !== 'wait') {
+                    setVideoByID(data)
+                    setLoading(false)
+                    clearInterval(interval)
+                }
+                else {
+                    setLoading(true)
+                }
+            })
+            .catch(err => {
+                setLoading(false)
+                clearInterval(interval)
+            })
+
+        }, 2000)
+
+        setTimeout(() => {
+                clearInterval(interval)
+            }, 1000*60)
+        
+    }
+
     return (
         <div className={`j_card ${isDarkMode && 'darkModeCard darkModeBorder'}`}>
             <div className="j_cardInfo">
-                <VideoModal visible={visible} setVisible={setVisible}/>
+                <VideoModal visible={visible} setVisible={setVisible} loading = {loading} videoByID = {videoByID} id = {item.id}/>
                 <div className="j_cardInfoTop">
                     <div className="j_cardInfoTopLeft">
-                        <div onClick={() => setVisible(true)} className='face-control-video-block'>
+                        <div onClick={() => handleClickVideoPlay(item.id)} className='face-control-video-block'>
                             <BsPlayBtn color='#fff' size={20}/>
                         </div>
                         <ImageDemo id = {item.id} />
