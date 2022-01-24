@@ -195,6 +195,15 @@
     margin-right: 20px;
 }
 
+.lang_dropdown{
+    width: 100px;
+    height: 30px;
+    outline: none;
+    border-radius: 20px;
+    padding: 0 5px;
+}
+
+
 .ant-switch-checked {
     background-color: #29B85D;
 }

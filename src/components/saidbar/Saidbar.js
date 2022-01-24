@@ -19,21 +19,20 @@ import { useSelector, useDispatch} from "react-redux";
 import { getTheme, isRefresh } from "../../redux";
 
 import useWindowDimensions from '../../hooks/hooks';
-
-
-import searchIcon from "../../images/headerimg/searchIcon.png";
-
 import NewStaff from '../newStaff/newStaff';
 import RootPage from '../../pages/root';
 
 import './style.css';
 import {ip} from "../../ip";
+import {useTranslation} from "react-i18next";
 
 
 const {Header, Sider, Content} = Layout;
 const { SubMenu } = Menu;
 
 const Saidbar = ({ user}) => {
+
+    const {t} = useTranslation()
 
     const [openKeys, setOpenKeys] = React.useState(['sub1']);
     const rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
@@ -173,6 +172,16 @@ const Saidbar = ({ user}) => {
                             </div>
                             <div className="header_navbar">
                                 <div className="header_right">
+                                    <div className="language" style={{marginRight: '15px'}}>
+                                        <form >
+                                            <select className='lang_dropdown' >
+                                                <option value="volvo">Uzbek</option>
+                                                <option value="saab">Rus</option>
+                                                <option value="opel">Engliz</option>
+                                            </select>
+                                        </form>
+                                    </div>
+
                                     <Switch onChange={handleChangeTheme} />
                                     <div onClick={addNewStaff} className="rount_img">
                                         {
