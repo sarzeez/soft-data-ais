@@ -3,6 +3,9 @@ import 'antd/dist/antd.css';
 import {Layout, Menu, Switch} from 'antd';
 import { BrowserRouter } from 'react-router-dom'
 import {MenuUnfoldOutlined, MenuFoldOutlined,} from '@ant-design/icons';
+import { useTranslation } from "react-i18next";
+
+
 import {Link} from "react-router-dom";
 import logo from '../../images/Logo.svg';
 import shortlogo from '../../images/shortLogo.svg';
@@ -24,7 +27,6 @@ import RootPage from '../../pages/root';
 
 import './style.css';
 import {ip} from "../../ip";
-import {useTranslation} from "react-i18next";
 
 
 const {Header, Sider, Content} = Layout;
@@ -32,7 +34,7 @@ const { SubMenu } = Menu;
 
 const Saidbar = ({ user}) => {
 
-    const {t} = useTranslation()
+    const {t, i18n} = useTranslation()
 
     const [openKeys, setOpenKeys] = React.useState(['sub1']);
     const rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
@@ -72,6 +74,13 @@ const Saidbar = ({ user}) => {
         }
     };
 
+    const onChangeLanguage = (event) => {
+        const lang = event.target.value
+        console.log(lang)
+        i18n.changeLanguage(lang)
+        localStorage.setItem('i18nextLng', lang)
+    }
+
     return (
         <BrowserRouter>
                 <Layout  style={{height: '100vh'}}>
@@ -93,8 +102,8 @@ const Saidbar = ({ user}) => {
                         >
                             <div className="dashboard">
                                 {
-                                    collapsed ? <p className="saidbar_title" style={{textAlign: "center"}}>Boshqaruv paneli</p> :
-                                        <p className="close_saidbar_title " >Boshqaruv paneli</p>
+                                    collapsed ? <p className="saidbar_title" style={{textAlign: "center"}}>{t('dashboard')}</p> :
+                                        <p className="close_saidbar_title " >{t('dashboard')}</p>
                                 }
                             </div>
                             {/*<SubMenu key="sub1" icon={<img src={dashboard} alt=""/>} title="Ko'rsatkichlar paneli">*/}
@@ -174,10 +183,10 @@ const Saidbar = ({ user}) => {
                                 <div className="header_right">
                                     <div className="language" style={{marginRight: '15px'}}>
                                         <form >
-                                            <select className='lang_dropdown' >
-                                                <option value="volvo">Uzbek</option>
-                                                <option value="saab">Rus</option>
-                                                <option value="opel">Engliz</option>
+                                            <select className='lang_dropdown' onChange={onChangeLanguage}>
+                                                <option defaultValue="uz" value="uz">Uzbek</option>
+                                                <option value="ru">Rus</option>
+                                                <option value="en">Engliz</option>
                                             </select>
                                         </form>
                                     </div>
