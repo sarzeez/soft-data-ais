@@ -20,7 +20,7 @@ function AddUser(props) {
     const isDarkMode = useSelector(state => state.theme.theme_data)
 
     const [viewImage, setViewImage] = useState(false);
-    const [image, setImage] = useState(null);
+    // const [image, setImage] = useState(null);
     const [realimageFailed, setRealImageFailed] = useState(false);
 
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -29,7 +29,7 @@ function AddUser(props) {
     const handleUpdoadFileImage = e => {
         if(e.target.files && e.target.files[0]) {
             setViewImage(URL.createObjectURL(e.target.files[0]))
-            setImage(e.target.files[0])
+            // setImage(e.target.files[0])
             setRealImageFailed(false)
         }
         else {

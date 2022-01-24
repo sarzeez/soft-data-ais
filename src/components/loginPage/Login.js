@@ -9,13 +9,13 @@ import loginImg from '../../images/loginImg.svg';
 import loginIcon from '../../images/userIcon.png';
 import lickIcon from '../../images/lockIcon.png';
 
-import softlogo from '../../images/softdatalogo.png';
+// import softlogo from '../../images/softdatalogo.png';
 import './login.css'
 
 
 const Login = ({ setUser }) => {
     const [token, setToken] = useState(null)
-    const [error, setError] = useState(false)
+    // const [error, setError] = useState(false)
 
     const initialValues = {
         login: '',
@@ -36,7 +36,7 @@ const Login = ({ setUser }) => {
                  localStorage.setItem('soft-ais-token', res.data.accessToken)
              })
             .catch(err => {
-                setError(true)
+                // setError(true)
             })
      }
 
@@ -51,7 +51,7 @@ const Login = ({ setUser }) => {
                     // console.log(err)
                 })
         }
-    }, [token])
+    }, [token, setUser])
 
     return (
         <div className="login_page">

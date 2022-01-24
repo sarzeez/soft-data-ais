@@ -19,9 +19,7 @@ function App({ setUser, user }) {
                 // console.log(err)
             })
     }
-  }, [])
-
-  // console.log('a')
+  }, [setUser])
 
   return (
     <Saidbar setUser={setUser} user={user} />

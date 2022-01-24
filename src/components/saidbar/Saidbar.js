@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import 'antd/dist/antd.css';
 import {Layout, Menu, Switch} from 'antd';
 import { BrowserRouter } from 'react-router-dom'
@@ -35,7 +35,7 @@ const { SubMenu } = Menu;
 const Saidbar = ({ user}) => {
 
     const {t, i18n} = useTranslation()
-
+    const [lang, setLang] = useState(localStorage.getItem('i18nextLng') || 'uz')
     const [openKeys, setOpenKeys] = React.useState(['sub1']);
     const rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
 
@@ -46,7 +46,6 @@ const Saidbar = ({ user}) => {
     const [newStaffModal, setNewStaffModal] = useState(false);
     const dispatch = useDispatch();
     const [collapsed, setCollapsed] = useState(false);
-
 
     const toggle = () => {
         setCollapsed(!collapsed);
@@ -76,7 +75,7 @@ const Saidbar = ({ user}) => {
 
     const onChangeLanguage = (event) => {
         const lang = event.target.value
-        console.log(lang)
+        setLang(lang)
         i18n.changeLanguage(lang)
         localStorage.setItem('i18nextLng', lang)
     }
@@ -183,7 +182,7 @@ const Saidbar = ({ user}) => {
                                 <div className="header_right">
                                     <div className="language" style={{marginRight: '15px'}}>
                                         <form >
-                                            <select className='lang_dropdown' onChange={onChangeLanguage}>
+                                            <select className='lang_dropdown' onChange={onChangeLanguage} defaultValue={lang}>
                                                 <option defaultValue="uz" value="uz">Uzbek</option>
                                                 <option value="ru">Rus</option>
                                                 <option value="en">Engliz</option>
