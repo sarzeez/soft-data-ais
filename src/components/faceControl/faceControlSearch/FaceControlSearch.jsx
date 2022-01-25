@@ -166,7 +166,7 @@ export default function FaceControlSearch() {
                         <p className={`Content_title ${isDarkMode && 'darkModeColor'}`}>{t('tasvirlar')}</p>
                     </div>
                     <div className = "content_pagination" >
-                        <p className = {`content_total ${isDarkMode && 'darkModeColor'}`}>Jami: {faceControlTotal}</p>
+                        <p className = {`content_total ${isDarkMode && 'darkModeColor'}`}>{t('Jami')}: {faceControlTotal}</p>
                         <AccessControlSearchPagination
                             accessTablePaginationLimit = {faceControlPaginationLimit}
                             accessTablePaginationCurrent = {faceControlPaginationCurrent}
@@ -229,7 +229,7 @@ export default function FaceControlSearch() {
                                       >
                                           <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                           <Select.Option value="1">{t('Bor')}</Select.Option>
-                                          <Select.Option value="0">{t("Yo'q")}</Select.Option>
+                                          <Select.Option value="0">{t("Yo’q")}</Select.Option>
                                       </Select>
                                   </div>
                               </div>
@@ -297,7 +297,7 @@ export default function FaceControlSearch() {
                                         >
                                             <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                             <Select.Option value="1">{t('Bor')}</Select.Option>
-                                            <Select.Option value="0">{t("Yo'q")}</Select.Option>
+                                            <Select.Option value="0">{t("Yo’q")}</Select.Option>
                                         </Select>
                                     </div>
                                 </div>
@@ -325,7 +325,7 @@ export default function FaceControlSearch() {
                             </div>
 
                             <div className="form_input_wrapper">
-                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Kamera:</p>
+                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Kamera')}:</p>
                                 <div className="input_wrapper face_search_inputs">
                                     <Select
                                         className={`left_select ${isDarkMode && 'darkModeColor'}`}
@@ -334,7 +334,7 @@ export default function FaceControlSearch() {
                                         size="large"
                                         defaultValue="all"
                                     >
-                                        <Select.Option value="all">Hammasi</Select.Option>
+                                        <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                         {
                                             selectedGroupCameras && selectedGroupCameras.map(item => (
                                                 <Select.Option key = {item} value={item}>{item}</Select.Option>
@@ -347,7 +347,7 @@ export default function FaceControlSearch() {
 
 
                             <div className="form_input_wrapper">
-                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Muddat:</p>
+                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Muddat')}:</p>
                                 <div className="input_wrapper">
                                     <DatePicker
                                         className={`left_input ${isDarkMode && 'darkModeColor'}`}

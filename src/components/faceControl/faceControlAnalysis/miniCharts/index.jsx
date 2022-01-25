@@ -58,7 +58,7 @@ const ApexChart = (props) => {
       <div id="chart" className='mini-charts'>
         {
           data && data.data && 
-            <ReactApexChart options={state.options} series={state.series} type="area" height={120} />
+            <ReactApexChart options={state.options} series={state.series} type="area" width={340} height={120} />
         }
       </div>
     )
