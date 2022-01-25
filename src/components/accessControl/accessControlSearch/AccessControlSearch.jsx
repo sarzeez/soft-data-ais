@@ -11,6 +11,7 @@ import { ip } from '../../../ip';
 
 import AcsessTable from "./AcsessTable";
 import AccessControlSearchPagination from './Pagination';
+import {useTranslation} from "react-i18next";
 
 const AcsessControlSearch = () => {
 
@@ -21,7 +22,7 @@ const AcsessControlSearch = () => {
     const [accessTableData, setAccessTableData] = useState([])
     const [accessTableTotal, setAccessTableTotal] = useState(null)
     const navigate = useNavigate()
-
+    const {t} = useTranslation()
 
     const [name, setName] = useState('');
     const [deviceName, setDeviceName] = useState('all');
@@ -104,7 +105,7 @@ const AcsessControlSearch = () => {
         <>
             <div className={`accsessControl ${isDarkMode && 'darkModeBackground'}`}>
                 <div className="acsess_content_top">
-                    <p className= {`Content_title ${isDarkMode && 'darkModeColor'}`} >Jadval</p>
+                    <p className= {`Content_title ${isDarkMode && 'darkModeColor'}`} >{t('Jadval')}</p>
                     <div className='access-control-pagination'>
                         <AccessControlSearchPagination
                             accessTablePaginationLimit = {accessTablePaginationLimit}
@@ -118,7 +119,7 @@ const AcsessControlSearch = () => {
                     <div className="acsess_left">
                         <div>
                             <div className="form_input_wrapper">
-                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Ism</p>
+                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Ism')}</p>
                                 <div className="input_wrappe">
                                     <Input
                                         className={`left_input ${isDarkMode && 'darkModeColor'}`}
@@ -126,13 +127,13 @@ const AcsessControlSearch = () => {
                                         type="text"
                                         size="large"
                                         style={{marginRight: "10px"}}
-                                        placeholder="Kiriting"
+                                        placeholder={t('Kiriting')}
                                     />
                                 </div>
                             </div>
 
                             <div className="form_input_wrapper">
-                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Eshik</p>
+                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Eshik')}</p>
                                 <div className="input_wrapper">
                                     <Select
                                         className={`left_select ${isDarkMode && 'darkModeColor'}`}
@@ -141,7 +142,7 @@ const AcsessControlSearch = () => {
                                         size="large"
                                         defaultValue="all"
                                     >
-                                        <Select.Option value="all">Hammasi</Select.Option>
+                                        <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                         <Select.Option value="1">1</Select.Option>
                                         <Select.Option value="2">2</Select.Option>
                                         <Select.Option value="3">3</Select.Option>
@@ -150,7 +151,7 @@ const AcsessControlSearch = () => {
                             </div>
 
                             <div className="form_input_wrapper">
-                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Toifasi</p>
+                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Toifasi')}</p>
                                 <div className="input_wrapper">
                                     <Select
                                         className={`left_select ${isDarkMode && 'darkModeColor'}`}
@@ -159,9 +160,9 @@ const AcsessControlSearch = () => {
                                         size="large"
                                         defaultValue="all"
                                     >
-                                        <Select.Option value="all">Hammasi</Select.Option>
-                                        <Select.Option value="3">Mehmon</Select.Option>
-                                        <Select.Option value="2">Begona</Select.Option>
+                                        <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                        <Select.Option value="3">{t('Mehmon')}</Select.Option>
+                                        <Select.Option value="2">{t('Begona')}</Select.Option>
                                         <Select.Option value="1">Xodim</Select.Option>
                                     </Select>
                                 </div>

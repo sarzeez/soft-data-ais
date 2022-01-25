@@ -134,7 +134,7 @@ const Saidbar = ({ user}) => {
                                 <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 5)} key="5"
                                            icon={<img src={tableimg} alt=""/>}>
                                     <Link to="/access-control-search">
-                                        {t('jadval')}
+                                        {t('Jadval')}
                                     </Link>
                                 </Menu.Item>
                                 <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control Online Doors', 8)}  key="8"  icon={<img src={doorKey} alt=""/>}   >

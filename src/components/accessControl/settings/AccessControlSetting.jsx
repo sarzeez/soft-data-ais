@@ -71,7 +71,7 @@ const AccessControlSetting = () => {
         <div className='access_control_setting'>
             <div className='access_control_setting_header'>
                 <div className="acsess_content_top">
-                    <p className= {`Content_title ${isDarkMode && 'darkModeColor'}`} >Access control setting</p>
+                    <p className= {`Content_title ${isDarkMode && 'darkModeColor'}`} >Kirishni boshqarish sozlamalar</p>
                     <div className='access_control_setting_header_wrapper'>
                         <button className='add_staff_button'>
                             <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
