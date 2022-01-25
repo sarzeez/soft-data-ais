@@ -1,0 +1,37 @@
+.access_control_setting {
+    width: 100%;
+    height: calc(100vh - 64px);
+    padding: 10px;
+}
+
+.access_control_setting_body {
+    width: 100%;
+    margin-top: 10px;
+    height: calc(100% - 42px);
+    border-radius: 3px;
+}
+
+.access_control_setting_header_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.add_staff_button {
+    border: none;
+    padding: 0px 18px;
+    height: 32px;
+    border-radius: 5px;
+    background-color: #29B85D;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.add_staff_button:hover {
+    opacity: 0.9;
+}
+

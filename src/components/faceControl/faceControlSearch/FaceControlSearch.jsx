@@ -5,7 +5,6 @@ import moment from "moment";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-
 import axios from "axios";
 
 import "./faceControlSearch.css";
@@ -17,7 +16,7 @@ import AccessControlSearchPagination from "../../accessControl/accessControlSear
 export default function FaceControlSearch() {
 
     const navigate = useNavigate()
-    const {t, i18n} = useTranslation()
+    const {t} = useTranslation()
 
     const [ageFrom, setAgeFrom] = useState('');
     const [ageTo, setAgeTo] = useState('');

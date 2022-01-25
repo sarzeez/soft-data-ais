@@ -144,7 +144,7 @@ const Saidbar = ({ user}) => {
                                 </Menu.Item>
                                 <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 9)} key="9"
                                            icon={<img src={setting} alt=""/>}>
-                                    <Link to="/acsess-setting">
+                                    <Link to="/access-control-setting">
                                     {t('Sozlamalar')}
                                     </Link>
                                 </Menu.Item>
