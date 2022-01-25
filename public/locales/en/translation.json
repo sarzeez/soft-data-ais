@@ -1,4 +1,12 @@
 {
-  "welcome_to_React": "Welcome to React and react-i18next",
-  "dashboard": "Dashboard"
+  "dashboard": "Dashboard",
+  "yuzni_aniqlash": "Face Detection",
+  "tasvirlar": "images",
+  "Statistika": "Statistics",
+  "Sozlamalar": "Settings",
+  "kirishni_boshqarish": "Access Conttrol",
+  "jadval": "Logs",
+  "online_boshqaruv": "User Management",
+
+  "Yoshi": "Age"
 }

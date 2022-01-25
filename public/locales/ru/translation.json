@@ -1,4 +1,47 @@
 {
-  "welcome_to_react": " Bienvenue React and react-i18next",
-  "dashboard": "Панель управления"
+  "dashboard": "ПАНЕЛЬ ПРИБОРОВ",
+  "yuzni_aniqlash": "Распознавание лиц",
+  "tasvirlar": "Снимки",
+  "Statistika": "Статистика",
+  "Sozlamalar": "Настройки",
+  "kirishni_boshqarish": "Управление доступом",
+  "jadval": "Журнал",
+  "online_boshqaruv": "Онлайн контроль",
+
+
+  "Yoshi": "Возраст",
+  "dan": "от",
+  "gacha": "до",
+  "Jinsi": "Пол",
+  "Hammasi": "Все",
+  "Erkak": "Мужчина",
+  "Ayol": "Женщина",
+  "Niqob": "Маска",
+  "Bor": "Есть",
+  "Yo’q": "Нет",
+  "Soqol": "Борода",
+  "Ko’zoynak": "Очки",
+  "Ko’rishni_tuzatish": " Оптические очки",
+  "Kozoynaksiz": "Без очков",
+  "Quyoshdan_himoya":  "Солнцезащитные очки",
+  "Guruh":  "Группа",
+  "Kamera":  "Камера",
+  "Muddat": "Диапазон времени",
+  "Kayfiyat":  "Настроение",
+  "Jilmaygan": "улыбка",
+  "Jahldor": "гнев",
+  "Xafa": "печаль",
+  "Jirkangan": "отвращение",
+ "Qo’rqqan": "страх",
+  "Hayratda": "удивление",
+  "E’tiborsiz": "ейтральное",
+  "Kulgan": "смех",
+  "Xursand": "счастье",
+  "Ikkilnagna": "смущение",
+  "Baqirgan": "крик"
+
+
+
+
+
 }

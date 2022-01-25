@@ -110,42 +110,42 @@ const Saidbar = ({ user}) => {
                             defaultOpenKeys={['sub1']}
                         >
                             <LogoComponent />
-                            <SubMenu key="sub1" icon={<img src={face} alt=""/>} title=" Yuzni aniqlash" >
+                            <SubMenu key="sub1" icon={<img src={face} alt=""/>} title={t('yuzni_aniqlash')} >
                                 <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Face Control Qidiruv', 2)}
                                            key="2" icon={<img src={search} alt=""/>}>
                                     <Link to="/face-control-search">
-                                        Qidiruv
+                                        {t('tasvirlar')}
                                     </Link>
                                 </Menu.Item>
                                 <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Face Control Statistika', 3)}
                                            key="3" icon={<img src={analisy} alt=""/>}>
                                     <Link to="/face-control-analysis">
-                                      Statistika
+                                      {t('Statistika')}
                                     </Link>
                                 </Menu.Item>
                                 <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Face Control Sozlamalar', 4)}
                                            key="4"  icon={<img src={setting} alt=""/>}>
                                     <Link to="/face-control-setting">
-                                        Sozlamalar
+                                       {t('Sozlamalar')}
                                     </Link>
                                 </Menu.Item>
                             </SubMenu>
-                            <SubMenu key="sub2" icon={<img src={access} alt=""/>} title="Kirishni boshqarish">
+                            <SubMenu key="sub2" icon={<img src={access} alt=""/>} title={t('kirishni_boshqarish')}>
                                 <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 5)} key="5"
                                            icon={<img src={tableimg} alt=""/>}>
                                     <Link to="/access-control-search">
-                                        Jadval
+                                        {t('jadval')}
                                     </Link>
                                 </Menu.Item>
                                 <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control Online Doors', 8)}  key="8"  icon={<img src={doorKey} alt=""/>}   >
                                     <Link to="/access-control-online-doors">
-                                        Onlayn boshqaruv
+                                        {t('online_boshqaruv')}
                                     </Link>
                                 </Menu.Item>
                                 <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 9)} key="9"
                                            icon={<img src={setting} alt=""/>}>
                                     <Link to="/acsess-setting">
-                                        Sozlamalar
+                                    {t('Sozlamalar')}
                                     </Link>
                                 </Menu.Item>
                             </SubMenu>
@@ -167,9 +167,9 @@ const Saidbar = ({ user}) => {
                                     <div className="language" style={{marginRight: '15px'}}>
                                         <form >
                                             <select className='lang_dropdown' onChange={onChangeLanguage} defaultValue={lang}>
-                                                <option defaultValue="uz" value="uz">Uzbek</option>
-                                                <option value="ru">Rus</option>
-                                                <option value="en">Engliz</option>
+                                                <option defaultValue="uz" value="uz">O'zbekcha</option>
+                                                <option value="ru">Русский</option>
+                                                <option value="en">English</option>
                                             </select>
                                         </form>
                                     </div>

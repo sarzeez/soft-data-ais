@@ -3,8 +3,10 @@ import {Input, Select, DatePicker,} from "antd";
 import {SearchOutlined, } from "@ant-design/icons";
 import moment from "moment";
 import { useSelector } from "react-redux";
-import axios from "axios";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+
+import axios from "axios";
 
 import "./faceControlSearch.css";
 import { ip } from "../../../ip";
@@ -15,6 +17,7 @@ import AccessControlSearchPagination from "../../accessControl/accessControlSear
 export default function FaceControlSearch() {
 
     const navigate = useNavigate()
+    const {t, i18n} = useTranslation()
 
     const [ageFrom, setAgeFrom] = useState('');
     const [ageTo, setAgeTo] = useState('');
@@ -160,7 +163,7 @@ export default function FaceControlSearch() {
             <div className="face_control_search">
                 <div className="face_control_search_header">
                     <div className="content_top">
-                        <p className={`Content_title ${isDarkMode && 'darkModeColor'}`}>Qidiruv</p>
+                        <p className={`Content_title ${isDarkMode && 'darkModeColor'}`}>{t('tasvirlar')}</p>
                     </div>
                     <div className = "content_pagination" >
                         <p className = {`content_total ${isDarkMode && 'darkModeColor'}`}>Jami: {faceControlTotal}</p>
@@ -176,7 +179,7 @@ export default function FaceControlSearch() {
                     <div className={`content_inputs ${isDarkMode && 'darkModeCard darkModeBorder'}`}>
                         <div>
                             <div className="form_input_wrapper">
-                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Yoshi:</p>
+                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Yoshi')}:</p>
                                 <div className="input_wrapper">
                                     <Input
                                         className={`left_input ${isDarkMode && 'darkModeColor'}`}
@@ -184,21 +187,21 @@ export default function FaceControlSearch() {
                                         type="number"
                                         size="large"
                                         style={{marginRight: "10px"}}
-                                        placeholder="dan"
+                                        placeholder={t('dan')}
                                     />
                                     <Input
                                         className={`left_input ${isDarkMode && 'darkModeColor'}`}
                                         onChange={onChangeAgeTo}
                                         type="number"
                                         size="large"
-                                        placeholder="gacha"
+                                        placeholder={t('gacha')}
                                     />
                                 </div>
                             </div>
 
                           <div className="face_control_search_inline_inputs">
                               <div className="form_input_wrapper">
-                                  <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Jinsi:</p>
+                                  <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Jinsi')}:</p>
                                   <div className="input_wrapper face_search_inputs">
                                       <Select
                                           className={`left_select ${isDarkMode && 'darkModeColor'}`}
@@ -207,15 +210,15 @@ export default function FaceControlSearch() {
                                           size="large"
                                           defaultValue="all"
                                       >
-                                          <Select.Option value="all">Hammasi</Select.Option>
-                                          <Select.Option value="1">Erkak</Select.Option>
-                                          <Select.Option value="2">Ayol</Select.Option>
+                                          <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                          <Select.Option value="1">{t('Erkak')}</Select.Option>
+                                          <Select.Option value="2">{t('Ayol')}</Select.Option>
                                       </Select>
                                   </div>
                               </div>
 
                               <div className="form_input_wrapper">
-                                  <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Niqob:</p>
+                                  <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Niqob')}:</p>
                                   <div className="input_wrapper face_search_inputs">
                                       <Select
                                           className={`left_select ${isDarkMode && 'darkModeColor'}`}
@@ -224,10 +227,9 @@ export default function FaceControlSearch() {
                                           size="large"
                                           defaultValue="all"
                                       >
-                                          <Select.Option value="all">Hammasi</Select.Option>
-                                          <Select.Option value="1">Bor</Select.Option>
-                                          <Select.Option value="0">Yo'q</Select.Option>
-                                          <Select.Option value="2">Aniqlanmadi</Select.Option>
+                                          <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                          <Select.Option value="1">{t('Bor')}</Select.Option>
+                                          <Select.Option value="0">{t("Yo'q")}</Select.Option>
                                       </Select>
                                   </div>
                               </div>
@@ -236,7 +238,7 @@ export default function FaceControlSearch() {
                             <div className="face_control_search_inline_inputs">
 
                                 <div className="form_input_wrapper">
-                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Kayfiyat:</p>
+                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Kayfiyat')}:</p>
                                     <div className="input_wrapper face_search_inputs">
                                         <Select
                                             className={`left_select ${isDarkMode && 'darkModeColor'}`}
@@ -245,25 +247,25 @@ export default function FaceControlSearch() {
                                             size="large"
                                             defaultValue="all"
                                         >
-                                            <Select.Option value="all">Hammasi</Select.Option>
-                                            <Select.Option value="2">Jilmaygan</Select.Option>
-                                            <Select.Option value="3">Jahldor</Select.Option>
-                                            <Select.Option value="4">Xafa</Select.Option>
-                                            <Select.Option value="5">Jirkangan</Select.Option>
-                                            <Select.Option value="6">Qo'rqqan</Select.Option>
-                                            <Select.Option value="7">Hayratda</Select.Option>
-                                            <Select.Option value="8">E'tiborsiz</Select.Option>
-                                            <Select.Option value="9">Kulgan</Select.Option>
-                                            <Select.Option value="11">Xursand</Select.Option>
-                                            <Select.Option value="12">Ikkilangan</Select.Option>
-                                            <Select.Option value="13">Baqirgan</Select.Option>
+                                            <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                            <Select.Option value="2">{t('Jilmaygan')}</Select.Option>
+                                            <Select.Option value="3">{t('Jahldor')}</Select.Option>
+                                            <Select.Option value="4">{t('Xafa')}</Select.Option>
+                                            <Select.Option value="5">{t('Jirkangan')}</Select.Option>
+                                            <Select.Option value="6">{t("Qo’rqqan")}</Select.Option>
+                                            <Select.Option value="7">{t('Hayratda')}</Select.Option>
+                                            <Select.Option value="8">{t("E’tiborsiz")}</Select.Option>
+                                            <Select.Option value="9">{t("Kulgan")}</Select.Option>
+                                            <Select.Option value="11">{t('Xursand')}</Select.Option>
+                                            <Select.Option value="12">{t('Ikkilangan')}</Select.Option>
+                                            <Select.Option value="13">{t('Baqirgan')}</Select.Option>
                                         </Select>
                                     </div>
                                 </div>
 
 
                                 <div className="form_input_wrapper">
-                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Ko'zoynak:</p>
+                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t("Ko’zoynak")}:</p>
                                     <div className="input_wrapper face_search_inputs">
                                         <Select
                                             className={`left_select ${isDarkMode && 'darkModeColor'}`}
@@ -272,10 +274,10 @@ export default function FaceControlSearch() {
                                             size="large"
                                             defaultValue="all"
                                         >
-                                            <Select.Option value="all">Hammasi</Select.Option>
-                                            <Select.Option value="1">Ko'rishni tuzatish</Select.Option>
-                                            <Select.Option value="10">Ko'zoynaksiz</Select.Option>
-                                            <Select.Option value="14">Quyoshdan himoya</Select.Option>
+                                            <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                            <Select.Option value="1">{t("Ko’rishni_tuzatish")}</Select.Option>
+                                            <Select.Option value="10">{t('Kozoynaksiz')}</Select.Option>
+                                            <Select.Option value="14">{t('Quyoshdan_himoya')}</Select.Option>
                                         </Select>
                                     </div>
                                 </div>
@@ -284,7 +286,7 @@ export default function FaceControlSearch() {
                             <div className="face_control_search_inline_inputs">
 
                                 <div className="form_input_wrapper">
-                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Soqol:</p>
+                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Soqol')}:</p>
                                     <div className="input_wrapper face_search_inputs">
                                         <Select
                                             className={`left_select ${isDarkMode && 'darkModeColor'}`}
@@ -293,16 +295,15 @@ export default function FaceControlSearch() {
                                             size="large"
                                             defaultValue="all"
                                         >
-                                            <Select.Option value="all">Hammasi</Select.Option>
-                                            <Select.Option value="1">Bor</Select.Option>
-                                            <Select.Option value="0">Yo'q</Select.Option>
-                                            <Select.Option value="2">Aniqlanmadi</Select.Option>
+                                            <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                            <Select.Option value="1">{t('Bor')}</Select.Option>
+                                            <Select.Option value="0">{t("Yo'q")}</Select.Option>
                                         </Select>
                                     </div>
                                 </div>
 
                                 <div className="form_input_wrapper">
-                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Guruh:</p>
+                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Guruh')}:</p>
                                     <div className="input_wrapper face_search_inputs">
                                         <Select
                                             className={`left_select ${isDarkMode && 'darkModeColor'}`}
@@ -311,7 +312,7 @@ export default function FaceControlSearch() {
                                             size="large"
                                             defaultValue="all"
                                         >
-                                            <Select.Option value="all">Hammasi</Select.Option>
+                                            <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                             <Select.Option value="door_navruz">Navruz bog'i</Select.Option>
                                             <Select.Option value="door_makro">Makro</Select.Option>
                                             <Select.Option value="door_parking">Avtoturargoh</Select.Option>
