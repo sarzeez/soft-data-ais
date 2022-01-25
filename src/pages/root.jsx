@@ -7,6 +7,7 @@ import AcsessControlSearch from '../components/accessControl/accessControlSearch
 import AddUser from "../components/accessControl/RealTime/RealTime/AddUser";
 import OnlineRecognation from "../components/accessControl/OnlineRecognation/OnlineRecognation";
 import OnlineDoors from "../components/accessControl/Online-doors/OnlineDoors";
+import AccessControlSetting from '../components/accessControl/settings/AccessControlSetting'
 
 
 
@@ -22,6 +23,7 @@ const RootPage = () => {
             <Route path = '/access-control-addUser' element = {<AddUser />}/>
             <Route path = '/access-control-online' element = {<OnlineRecognation />}/>
             <Route path = '/access-control-online-doors' element = {<OnlineDoors />}/>
+            <Route path = '/access-control-setting' element = {<AccessControlSetting />}/>
             <Route path = '*' element = {<NotFound />}/>
         </Routes>
     )
