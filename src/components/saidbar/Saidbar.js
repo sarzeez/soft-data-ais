@@ -22,7 +22,6 @@ import { useSelector, useDispatch} from "react-redux";
 import { getTheme, isRefresh } from "../../redux";
 
 import useWindowDimensions from '../../hooks/hooks';
-import NewStaff from '../newStaff/newStaff';
 import RootPage from '../../pages/root';
 
 import './style.css';
@@ -43,7 +42,6 @@ const Saidbar = ({ user}) => {
     const sidebarWidth = width < 1370 ? 200 : 300;
     const isDarkMode = useSelector(state => state.theme.theme_data);
 
-    const [newStaffModal, setNewStaffModal] = useState(false);
     const dispatch = useDispatch();
     const [collapsed, setCollapsed] = useState(false);
 
@@ -55,9 +53,7 @@ const Saidbar = ({ user}) => {
         dispatch(getTheme(state))
     }
 
-    const addNewStaff = () => {
-        setNewStaffModal(true)
-    }
+    
 
     const handleClickListItem = (title, id) => {
         // setCheckedItemTitle(title)
@@ -154,7 +150,7 @@ const Saidbar = ({ user}) => {
 
 
                     <Layout   className={`site-layout ${isDarkMode && 'darkModeLayautBg'} `}>
-                        <NewStaff newStaffModal = {newStaffModal} setNewStaffModal = {setNewStaffModal} />
+                        
                         <Header theme={isDarkMode ? 'dark' : 'light'}  className={`site-layout-background headerr ${isDarkMode && 'darkModeBackground'} `} style={{ padding: 0 }}>
                             <div className={`${isDarkMode && 'darkModeColor'}`}>
                                 {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
@@ -175,7 +171,7 @@ const Saidbar = ({ user}) => {
                                     </div>
 
                                     <Switch onChange={handleChangeTheme} />
-                                    <div onClick={addNewStaff} className="rount_img">
+                                    <div className="rount_img">
                                         {
                                             user && <img src={`${ip}/api/admins/${user.id}/img`} alt=""/>
                                         }

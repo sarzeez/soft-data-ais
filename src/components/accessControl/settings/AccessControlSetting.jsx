@@ -3,15 +3,20 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import moment from 'moment';
+import { Tabs } from 'antd';
 
 import { ip } from '../../../ip';
 
 import AcsessTable from './table'
 import AccessControlSearchPagination from '../accessControlSearch/Pagination';
+import NewStaff from '../../newStaff/newStaff'
 
 import { MdOutlineAddCircleOutline } from 'react-icons/md'
 
 import './setting.css'
+
+const { TabPane } = Tabs;
+
 
 const AccessControlSetting = () => {
 
@@ -21,7 +26,17 @@ const AccessControlSetting = () => {
     const [accessTablePaginationCurrent, setAccessTablePaginationCurrent] = useState(1)
     const [accessTableData, setAccessTableData] = useState([])
     const [accessTableTotal, setAccessTableTotal] = useState(null)
+    const [newStaffModal, setNewStaffModal] = useState(false);
+
     const navigate = useNavigate()
+
+    const addNewStaff = () => {
+        setNewStaffModal(true)
+    }
+
+    const onChangeTabs = (key) => {
+        console.log(key);
+    }
 
     const fetchAccessTable = async (id) => {
         const response = await axios.post(`${ip}/api/history/${accessTablePaginationLimit}/${id}`, {
@@ -73,10 +88,11 @@ const AccessControlSetting = () => {
                 <div className="acsess_content_top">
                     <p className= {`Content_title ${isDarkMode && 'darkModeColor'}`} >Kirishni boshqarish sozlamalar</p>
                     <div className='access_control_setting_header_wrapper'>
-                        <button className='add_staff_button'>
+                        <button onClick={addNewStaff} className='add_staff_button'>
                             <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
                             Xodim qo'shish
                             </button>
+                            <NewStaff newStaffModal = {newStaffModal} setNewStaffModal = {setNewStaffModal} />
                         <div className='access-control-pagination'>
                             <AccessControlSearchPagination
                                 accessTablePaginationLimit = {accessTablePaginationLimit}
@@ -89,19 +105,32 @@ const AccessControlSetting = () => {
                 </div>
             </div>
             <div className={`access_control_setting_body ${isDarkMode && 'darkModeBackground'}`}>
-                {/* <div className={`acsess_content ${isDarkMode && 'darkModeBackground'}`}>
-                    <div className={`acsess_right ${isDarkMode && 'darkModeBackground darkModeBorder'} `}>
-                        <AcsessTable
-                            isDarkMode={isDarkMode}
-                            accessTableData = {accessTableData}
-
-                        />
-                    </div>
-                </div> */}
-                <AcsessTable
-                    isDarkMode={isDarkMode}
-                    accessTableData = {accessTableData}
-                />
+                
+                <Tabs onChange={onChangeTabs} type="card" defaultActiveKey="1">
+                    <TabPane tab="Autentifikatsiya sozlamalari" key="1">
+                        <div className='access_control_setting_tab_item'>
+                            Content of Tab Pane 1
+                        </div>
+                    </TabPane>
+                    <TabPane tab="Terminal parametrlari" key="2">
+                        <div className='access_control_setting_tab_item'>
+                            Content of Tab Pane 2
+                        </div>
+                    </TabPane>
+                    <TabPane tab="Onlayn boshqaruv" key="3">
+                        <div className='access_control_setting_tab_item'>
+                            Content of Tab Pane 3
+                        </div>
+                    </TabPane>
+                    <TabPane tab="Xodimlar" key="4">
+                        <div className='access_control_setting_tab_item'>
+                            <AcsessTable
+                                isDarkMode={isDarkMode}
+                                accessTableData = {accessTableData}
+                            />
+                        </div>
+                    </TabPane>
+                </Tabs>
             </div>
 
         </div>

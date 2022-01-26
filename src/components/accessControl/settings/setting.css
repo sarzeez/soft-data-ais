@@ -8,7 +8,10 @@
     width: 100%;
     margin-top: 10px;
     height: calc(100% - 42px);
-    border-radius: 3px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #EAEAEA;
+    background-color: #fff;
 }
 
 .access_control_setting_header_wrapper {
@@ -35,3 +38,17 @@
     opacity: 0.9;
 }
 
+/* tabs */
+
+.access_control_setting_tab_item {
+    width: 100%;
+    height: calc(100vh - 205px);
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #29B85D !important;
+}
+
+.ant-tabs-tab:hover .ant-tabs-tab-btn {
+    color: #28ad59 !important;
+}
