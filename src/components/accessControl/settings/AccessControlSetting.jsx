@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import moment from 'moment';
+import { Tabs } from 'antd';
 
 import { ip } from '../../../ip';
 
@@ -13,6 +14,9 @@ import NewStaff from '../../newStaff/newStaff'
 import { MdOutlineAddCircleOutline } from 'react-icons/md'
 
 import './setting.css'
+
+const { TabPane } = Tabs;
+
 
 const AccessControlSetting = () => {
 
@@ -28,6 +32,10 @@ const AccessControlSetting = () => {
 
     const addNewStaff = () => {
         setNewStaffModal(true)
+    }
+
+    const onChangeTabs = (key) => {
+        console.log(key);
     }
 
     const fetchAccessTable = async (id) => {
@@ -97,19 +105,32 @@ const AccessControlSetting = () => {
                 </div>
             </div>
             <div className={`access_control_setting_body ${isDarkMode && 'darkModeBackground'}`}>
-                {/* <div className={`acsess_content ${isDarkMode && 'darkModeBackground'}`}>
-                    <div className={`acsess_right ${isDarkMode && 'darkModeBackground darkModeBorder'} `}>
-                        <AcsessTable
-                            isDarkMode={isDarkMode}
-                            accessTableData = {accessTableData}
-
-                        />
-                    </div>
-                </div> */}
-                <AcsessTable
-                    isDarkMode={isDarkMode}
-                    accessTableData = {accessTableData}
-                />
+                
+                <Tabs onChange={onChangeTabs} type="card" defaultActiveKey="1">
+                    <TabPane tab="Autentifikatsiya sozlamalari" key="1">
+                        <div className='access_control_setting_tab_item'>
+                            Content of Tab Pane 1
+                        </div>
+                    </TabPane>
+                    <TabPane tab="Terminal parametrlari" key="2">
+                        <div className='access_control_setting_tab_item'>
+                            Content of Tab Pane 2
+                        </div>
+                    </TabPane>
+                    <TabPane tab="Onlayn boshqaruv" key="3">
+                        <div className='access_control_setting_tab_item'>
+                            Content of Tab Pane 3
+                        </div>
+                    </TabPane>
+                    <TabPane tab="Xodimlar" key="4">
+                        <div className='access_control_setting_tab_item'>
+                            <AcsessTable
+                                isDarkMode={isDarkMode}
+                                accessTableData = {accessTableData}
+                            />
+                        </div>
+                    </TabPane>
+                </Tabs>
             </div>
 
         </div>
