@@ -43,6 +43,15 @@
 .access_control_setting_tab_item {
     width: 100%;
     height: calc(100vh - 205px);
+    background-color: lightblue;
+    display: grid;
+    grid-template-rows: 1fr 60px;
+    overflow: auto;
+    border-radius: 3px;
+}
+
+.access_control_setting_tab_item_single {
+    grid-template-rows: 1fr 0px;
 }
 
 .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
@@ -52,3 +61,9 @@
 .ant-tabs-tab:hover .ant-tabs-tab-btn {
     color: #28ad59 !important;
 }
+
+.access_control_setting_tab_item_body {
+    background-color: lightcoral;
+}
+
+

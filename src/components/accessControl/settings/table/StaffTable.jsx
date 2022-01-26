@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Table, Space  } from 'antd';
 import { useSelector } from "react-redux";
 
-import {ip} from '../../../ip';
+import {ip} from '../../../../ip';
 
 // import './acsessControl.css';
 // import 'antd/dist/antd.css';

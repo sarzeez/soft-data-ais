@@ -135,6 +135,14 @@ export default function FaceControlSearch() {
         setFaceControlPaginationLimit(option)
     }
 
+    const clear = () => {
+        // 
+        setAgeFrom('')
+        setAgeTo('')
+        // console.log(ageFrom)
+        // console.log(ageTo)
+    }
+
     useEffect(() => {
         fetchFaceControlData(faceControlPaginationCurrent)
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -184,6 +192,7 @@ export default function FaceControlSearch() {
                                     <Input
                                         className={`left_input ${isDarkMode && 'darkModeColor'}`}
                                         onChange={onChangeAgeFrom}
+                                        value={ageFrom}
                                         type="number"
                                         size="large"
                                         style={{marginRight: "10px"}}
@@ -192,6 +201,7 @@ export default function FaceControlSearch() {
                                     <Input
                                         className={`left_input ${isDarkMode && 'darkModeColor'}`}
                                         onChange={onChangeAgeTo}
+                                        value={ageTo}
                                         type="number"
                                         size="large"
                                         placeholder={t('gacha')}
@@ -383,6 +393,7 @@ export default function FaceControlSearch() {
                                     onClick={() => fetchFaceControlData(1)}
                                     size="large"
                                 >
+                                    <SearchOutlined size={40} style = {{marginRight: '5px'}} />
                                     Qidirish
                                 </button>
                             </div>
@@ -391,7 +402,7 @@ export default function FaceControlSearch() {
                                 <button
                                     type="button"
                                     className="clear_button"
-                                    onClick={() => fetchFaceControlData(1)}
+                                    onClick={clear}
                                     size="large"
                                 >
                                     Filterni tozalash

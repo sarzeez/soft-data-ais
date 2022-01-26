@@ -7,7 +7,8 @@ import { Tabs } from 'antd';
 
 import { ip } from '../../../ip';
 
-import AcsessTable from './table'
+import TerminalTable from './table/TerminalTable'
+import StaffTable from './table/StaffTable'
 import AccessControlSearchPagination from '../accessControlSearch/Pagination';
 import NewStaff from '../../newStaff/newStaff'
 
@@ -108,26 +109,43 @@ const AccessControlSetting = () => {
                 
                 <Tabs onChange={onChangeTabs} type="card" defaultActiveKey="1">
                     <TabPane tab="Autentifikatsiya sozlamalari" key="1">
-                        <div className='access_control_setting_tab_item'>
-                            Content of Tab Pane 1
+                        <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>
+                            <div className='access_control_setting_tab_item_body'>
+                                Content of Tab Pane 1
+                            </div>
                         </div>
                     </TabPane>
                     <TabPane tab="Terminal parametrlari" key="2">
-                        <div className='access_control_setting_tab_item'>
-                            Content of Tab Pane 2
+                        <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>
+                            <div className='access_control_setting_tab_item_body'>
+                                <TerminalTable
+                                    isDarkMode={isDarkMode}
+                                    accessTableData = {accessTableData}
+                                />
+                            </div>
                         </div>
                     </TabPane>
                     <TabPane tab="Onlayn boshqaruv" key="3">
                         <div className='access_control_setting_tab_item'>
-                            Content of Tab Pane 3
+                            <div className='access_control_setting_tab_item_body'>
+                                Content of Tab Pane 3
+                            </div>
+                            <div className='access_control_setting_tab_item_footer'>
+                                Footer
+                            </div>
                         </div>
                     </TabPane>
                     <TabPane tab="Xodimlar" key="4">
                         <div className='access_control_setting_tab_item'>
-                            <AcsessTable
-                                isDarkMode={isDarkMode}
-                                accessTableData = {accessTableData}
-                            />
+                            <div className='access_control_setting_tab_item_body'>
+                                <StaffTable
+                                    isDarkMode={isDarkMode}
+                                    accessTableData = {accessTableData}
+                                />
+                            </div>
+                            <div className='access_control_setting_tab_item_footer'>
+                                Footer
+                            </div>
                         </div>
                     </TabPane>
                 </Tabs>
