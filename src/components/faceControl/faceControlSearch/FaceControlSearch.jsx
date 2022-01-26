@@ -139,6 +139,7 @@ export default function FaceControlSearch() {
         // 
         setAgeFrom('')
         setAgeTo('')
+        setGender('all')
         // console.log(ageFrom)
         // console.log(ageTo)
     }
@@ -218,7 +219,8 @@ export default function FaceControlSearch() {
                                           onChange={onChangeGender}
                                           style={{width: "100%"}}
                                           size="large"
-                                          defaultValue="all"
+                                          defaultValue={gender}
+                                          value={gender}
                                       >
                                           <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                           <Select.Option value="1">{t('Erkak')}</Select.Option>
