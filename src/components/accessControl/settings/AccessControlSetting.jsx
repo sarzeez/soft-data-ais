@@ -9,7 +9,8 @@ import { ip } from '../../../ip';
 
 import TerminalTable from './table/TerminalTable'
 import StaffTable from './table/StaffTable'
-import AccessControlSearchPagination from '../accessControlSearch/Pagination';
+import TerminalPagination from './paginations/TerminalPagination';
+import StaffPagination from './paginations/StaffPagination';
 import NewStaff from '../../newStaff/newStaff'
 
 import { MdOutlineAddCircleOutline } from 'react-icons/md'
@@ -88,21 +89,7 @@ const AccessControlSetting = () => {
             <div className='access_control_setting_header'>
                 <div className="acsess_content_top">
                     <p className= {`Content_title ${isDarkMode && 'darkModeColor'}`} >Kirishni boshqarish sozlamalar</p>
-                    <div className='access_control_setting_header_wrapper'>
-                        <button onClick={addNewStaff} className='add_staff_button'>
-                            <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
-                            Xodim qo'shish
-                            </button>
-                            <NewStaff newStaffModal = {newStaffModal} setNewStaffModal = {setNewStaffModal} />
-                        <div className='access-control-pagination'>
-                            <AccessControlSearchPagination
-                                accessTablePaginationLimit = {accessTablePaginationLimit}
-                                accessTablePaginationCurrent = {accessTablePaginationCurrent}
-                                accessTablePaginationOnChange = {accessTablePaginationOnChange}
-                                accessTableTotal = {accessTableTotal}
-                            />
-                        </div>
-                    </div>
+                    <NewStaff newStaffModal = {newStaffModal} setNewStaffModal = {setNewStaffModal} />
                 </div>
             </div>
             <div className={`access_control_setting_body ${isDarkMode && 'darkModeBackground'}`}>
@@ -116,22 +103,31 @@ const AccessControlSetting = () => {
                         </div>
                     </TabPane>
                     <TabPane tab="Terminal parametrlari" key="2">
-                        <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>
+                        <div className='access_control_setting_tab_item'>
                             <div className='access_control_setting_tab_item_body'>
                                 <TerminalTable
                                     isDarkMode={isDarkMode}
                                     accessTableData = {accessTableData}
                                 />
                             </div>
+                            <div className='access_control_setting_tab_item_footer'>
+                                <button className='add_button'>
+                                    <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
+                                    Terminal qo'shish
+                                </button>
+                                <TerminalPagination
+                                    accessTablePaginationLimit = {accessTablePaginationLimit}
+                                    accessTablePaginationCurrent = {accessTablePaginationCurrent}
+                                    accessTablePaginationOnChange = {accessTablePaginationOnChange}
+                                    accessTableTotal = {accessTableTotal}
+                                />
+                            </div>
                         </div>
                     </TabPane>
                     <TabPane tab="Onlayn boshqaruv" key="3">
-                        <div className='access_control_setting_tab_item'>
+                        <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>
                             <div className='access_control_setting_tab_item_body'>
                                 Content of Tab Pane 3
-                            </div>
-                            <div className='access_control_setting_tab_item_footer'>
-                                Footer
                             </div>
                         </div>
                     </TabPane>
@@ -144,7 +140,16 @@ const AccessControlSetting = () => {
                                 />
                             </div>
                             <div className='access_control_setting_tab_item_footer'>
-                                Footer
+                                <button onClick={addNewStaff} className='add_button'>
+                                    <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
+                                    Xodim qo'shish
+                                </button>
+                                <StaffPagination
+                                    accessTablePaginationLimit = {accessTablePaginationLimit}
+                                    accessTablePaginationCurrent = {accessTablePaginationCurrent}
+                                    accessTablePaginationOnChange = {accessTablePaginationOnChange}
+                                    accessTableTotal = {accessTableTotal}
+                                />
                             </div>
                         </div>
                     </TabPane>

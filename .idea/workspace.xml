@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="630af48d-1ca7-4883-8e3d-17f8fed27d11" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/accessControl/settings/paginations/StaffPagination.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/accessControl/settings/paginations/TerminalPagination.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/setting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/setting.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/TerminalTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/TerminalTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/FaceControlSearch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/FaceControlSearch.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/faceControlSearch.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/faceControlSearch.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +48,7 @@
       <workItem from="1643102663596" duration="9304000" />
       <workItem from="1643170439490" duration="1507000" />
       <workItem from="1643172301197" duration="288000" />
-      <workItem from="1643173004919" duration="16011000" />
+      <workItem from="1643173004919" duration="20095000" />
     </task>
     <servers />
   </component>

@@ -140,6 +140,7 @@ export default function FaceControlSearch() {
         setAgeFrom('')
         setAgeTo('')
         setGender('all')
+
         setMask('all')
         setBeard('all')
         setMood('all')
@@ -190,6 +191,7 @@ export default function FaceControlSearch() {
                         />
                     </div>
                 </div>
+
                 <div className={`content ${isDarkMode && 'darkModeCard'}`}>
                     <div className={`content_inputs ${isDarkMode && 'darkModeCard darkModeBorder'}`}>
                         <div>
@@ -225,7 +227,8 @@ export default function FaceControlSearch() {
                                           onChange={onChangeGender}
                                           style={{width: "100%"}}
                                           size="large"
-                                          defaultValue="all"
+                                          defaultValue={gender}
+                                          value={gender}
                                       >
                                           <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                           <Select.Option value="1">{t('Erkak')}</Select.Option>
@@ -242,7 +245,8 @@ export default function FaceControlSearch() {
                                           onChange={onChangeMask}
                                           style={{width: "100%"}}
                                           size="large"
-                                          defaultValue="all"
+                                          defaultValue={mask}
+                                          value={mask}
                                       >
                                           <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                           <Select.Option value="1">{t('Bor')}</Select.Option>
@@ -262,7 +266,8 @@ export default function FaceControlSearch() {
                                             onChange={onChangeMood}
                                             style={{width: "100%"}}
                                             size="large"
-                                            defaultValue="all"
+                                            defaultValue={mood}
+                                            value={mood}
                                         >
                                             <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                             <Select.Option value="2">{t('Jilmaygan')}</Select.Option>
@@ -289,7 +294,8 @@ export default function FaceControlSearch() {
                                             onChange={onChangeGlasses}
                                             style={{width: "100%"}}
                                             size="large"
-                                            defaultValue="all"
+                                            defaultValue={glasses}
+                                            value={glasses}
                                         >
                                             <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                             <Select.Option value="1">{t("Ko’rishni_tuzatish")}</Select.Option>
@@ -310,7 +316,8 @@ export default function FaceControlSearch() {
                                             onChange={onChangeBeard}
                                             style={{width: "100%"}}
                                             size="large"
-                                            defaultValue="all"
+                                            defaultValue={beard}
+                                            value={beard}
                                         >
                                             <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                             <Select.Option value="1">{t('Bor')}</Select.Option>
@@ -350,7 +357,6 @@ export default function FaceControlSearch() {
                                         style={{width: "100%"}}
                                         size="large"
                                         defaultValue="all"
-
                                     >
                                         <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                         {
