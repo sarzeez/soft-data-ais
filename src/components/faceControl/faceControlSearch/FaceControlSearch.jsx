@@ -139,8 +139,15 @@ export default function FaceControlSearch() {
         // 
         setAgeFrom('')
         setAgeTo('')
-        // console.log(ageFrom)
-        // console.log(ageTo)
+        setGender('all')
+        setMask('all')
+        setBeard('all')
+        setMood('all')
+        setGlasses('all')
+        setCameraIP('all')
+        setDateFrom('')
+        setDateTo('')
+
     }
 
     useEffect(() => {
@@ -343,6 +350,7 @@ export default function FaceControlSearch() {
                                         style={{width: "100%"}}
                                         size="large"
                                         defaultValue="all"
+
                                     >
                                         <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                         {
