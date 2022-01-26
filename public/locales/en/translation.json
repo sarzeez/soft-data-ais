@@ -5,8 +5,12 @@
   "Statistika": "Statistics",
   "Sozlamalar": "Settings",
   "kirishni_boshqarish": "Access Conttrol",
-  "jadval": "Logs",
+  "Jadval": "Logs",
   "online_boshqaruv": "User Management",
 
-  "Yoshi": "Age"
+  "Ism": "Name",
+  "Jami": "total",
+  "Yoshi": "Age",
+
+
 }

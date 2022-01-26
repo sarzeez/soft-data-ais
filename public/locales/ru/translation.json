@@ -5,10 +5,11 @@
   "Statistika": "Статистика",
   "Sozlamalar": "Настройки",
   "kirishni_boshqarish": "Управление доступом",
-  "jadval": "Журнал",
+  "Jadval": "Журнал",
   "online_boshqaruv": "Онлайн контроль",
 
-
+  "Ism": "Имя",
+  "Jami": "Всего",
   "Yoshi": "Возраст",
   "dan": "от",
   "gacha": "до",
@@ -38,7 +39,13 @@
   "Kulgan": "смех",
   "Xursand": "счастье",
   "Ikkilnagna": "смущение",
-  "Baqirgan": "крик"
+  "Baqirgan": "крик",
+
+  "Kiriting": "Входить",
+  "Eshik": "Дверь",
+  "Toifasi": "Категория",
+  "Mehmon": "Гость",
+
 
 
 

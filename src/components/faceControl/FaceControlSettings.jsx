@@ -16,7 +16,7 @@ const FaceControlSettings = () => {
 
     return (
         <div>
-            jhhhhh
+
         </div>
     )
 }
