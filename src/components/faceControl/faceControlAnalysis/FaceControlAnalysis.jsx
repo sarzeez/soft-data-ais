@@ -16,6 +16,7 @@ import MiniChart from './miniCharts/index'
 import BodyChart from './bodyChart/BodyChart'
 import PieChart from './pieChart/PieChart'
 import LineChart from './lineChart/LineChart'
+import {useTranslation} from "react-i18next";
 
 
 const FaceControlAnalysis = () => {
@@ -29,6 +30,7 @@ const FaceControlAnalysis = () => {
         )
     }
 
+    const {t} = useTranslation()
     const navigate = useNavigate()
     const is_refresh_value = useSelector(state => state.theme.is_refresh_value)
     const [active, setActive] = useState('daily')
@@ -120,12 +122,12 @@ const FaceControlAnalysis = () => {
         <div className='analysis-container'>
             <div className="analysis_header">
                 <div style={{marginRight: '20px'}} className="content_top">
-                    <p  className="Content_title">Statistika</p>
+                    <p  className="Content_title">{t('Statistika')}</p>
                 </div>
                 <div className='anaylsis-button-group'>
                     <DatePicker placeholder={DayMY} onChange = {value => setDate(value)} style = {{borderTopLeftRadius: '10px', borderBottomLeftRadius: '10px'}} />
-                    <button onClick={() => setActive('daily')} className={`${active === 'daily' ? 'analysis-active-button' : null}`}>Kun</button>
-                    <button onClick={() => setActive('week')} className={`${active === 'week' ? 'analysis-active-button' : null}`}>Hafta</button>
+                    <button onClick={() => setActive('daily')} className={`${active === 'daily' ? 'analysis-active-button' : null}`}>{t('Kun')}</button>
+                    <button onClick={() => setActive('week')} className={`${active === 'week' ? 'analysis-active-button' : null}`}>{t('Hafta')}</button>
                     <button onClick={() => setActive('month')} className={`${active === 'month' ? 'analysis-active-button' : null}`}>Oy</button>
                     <button onClick={() => setActive('year')} className={`${active === 'year' ? 'analysis-active-button' : null}`}>Yil</button>
                 </div>

@@ -13,11 +13,11 @@ import AcsessTable from "./AcsessTable";
 import AccessControlSearchPagination from './Pagination';
 import {useTranslation} from "react-i18next";
 
-const AcsessControlSearch = () => {
+const AcsessControlTable = () => {
 
     const isDarkMode = useSelector(state => state.theme.theme_data)
     const is_refresh_value = useSelector(state => state.theme.is_refresh_value)
-    const [accessTablePaginationLimit, setAccessTablePaginationLimit] = useState(10)
+    const [accessTablePaginationLimit, setAccessTablePaginationLimit] = useState(15)
     const [accessTablePaginationCurrent, setAccessTablePaginationCurrent] = useState(1)
     const [accessTableData, setAccessTableData] = useState([])
     const [accessTableTotal, setAccessTableTotal] = useState(null)
@@ -115,6 +115,7 @@ const AcsessControlSearch = () => {
                         />
                     </div>
                 </div>
+
                 <div className={`acsess_content ${isDarkMode && 'darkModeBackground'}`}>
                     <div className="acsess_left">
                         <div>
@@ -211,7 +212,7 @@ const AcsessControlSearch = () => {
                                     <DatePicker
                                         className={`left_input ${isDarkMode && 'darkModeColor'}`}
                                         placeholder={`${moment(new Date()).format(
-                                            "DD.MM.YYYY, 00:00:00"
+                                            "DD.MM.YYYY"
                                         )}`}
                                         onChange={onChangeDateFrom}
                                         size="large"
@@ -223,7 +224,7 @@ const AcsessControlSearch = () => {
                                     <DatePicker
                                         className={`left_input ${isDarkMode && 'darkModeColor'}`}
                                         placeholder={`${moment(new Date()).format(
-                                            "DD.MM.YYYY, 23:59:59"
+                                            "DD.MM.YYYY"
                                         )}`}
                                         onChange={onChangeDateTo}
                                         size="large"
@@ -256,7 +257,6 @@ const AcsessControlSearch = () => {
                         <AcsessTable
                             isDarkMode={isDarkMode}
                             accessTableData = {accessTableData}
-
                         />
                     </div>
                 </div>
@@ -266,4 +266,4 @@ const AcsessControlSearch = () => {
     );
 };
 
-export default AcsessControlSearch;
+export default AcsessControlTable;

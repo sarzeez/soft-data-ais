@@ -1,23 +1,19 @@
 import {Pagination} from 'antd';
-import {useState} from 'react';
 
-const Pag = ({handleGetFilter, total, limit}) => {
-    const [current, setCurrent] = useState(1)
-    const tt = Math.ceil(total)
+const FaceControlPagination = (props) => {
 
-    const onChange = page => {
-        setCurrent(page)
-        handleGetFilter(page)
-    };
+    const {accessTablePaginationLimit, accessTablePaginationCurrent, accessTablePaginationOnChange, accessTableTotal} = props;
 
     return <Pagination
-        current={current}
-        defaultPageSize = {limit}
-        onChange={onChange}
-        total={tt}
-        showSizeChanger={true}
         dropdownRender = {false}
+        defaultPageSize = {accessTablePaginationLimit}
+        current={accessTablePaginationCurrent}
+        onChange={accessTablePaginationOnChange}
+        total = {accessTableTotal}
+        showSizeChanger={true}
+        pageSize={accessTablePaginationLimit}
+        pageSizeOptions={[24, 36, 48, 60]}
     />;
 }
 
-export default Pag
+export default FaceControlPagination

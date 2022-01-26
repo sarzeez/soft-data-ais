@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import {Input, Select, DatePicker,} from "antd";
 import {SearchOutlined, } from "@ant-design/icons";
-import moment from "moment";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
-
-import "./faceControlSearch.css";
 import { ip } from "../../../ip";
 
+import axios from "axios";
+import moment from "moment";
 import Cart from './cart/Cart'
-import AccessControlSearchPagination from "../../accessControl/accessControlSearch/Pagination";
+import FaceControlPagination from "./pagination/Pagination";
+import "./faceControlSearch.css";
+
+
 
 export default function FaceControlSearch() {
 
@@ -166,7 +167,7 @@ export default function FaceControlSearch() {
                     </div>
                     <div className = "content_pagination" >
                         <p className = {`content_total ${isDarkMode && 'darkModeColor'}`}>{t('Jami')}: {faceControlTotal}</p>
-                        <AccessControlSearchPagination
+                        <FaceControlPagination
                             accessTablePaginationLimit = {faceControlPaginationLimit}
                             accessTablePaginationCurrent = {faceControlPaginationCurrent}
                             accessTablePaginationOnChange = {faceControlPaginationOnChange}
@@ -374,17 +375,26 @@ export default function FaceControlSearch() {
                             </div>
                         </div>
 
-                        <div className="form_input_wrapper" style={{marginTop: "20px"}}>
+                        <div className="form_input_wrapper add_clear_button" style={{marginTop: "15px"}}>
                             <div className="input_wrapper">
                                 <button
                                     type="button"
                                     className="soft_btn"
                                     onClick={() => fetchFaceControlData(1)}
-                                    icon={<SearchOutlined/>}
                                     size="large"
-                                    style={{width: "100%"}}
                                 >
                                     Qidirish
+                                </button>
+                            </div>
+
+                            <div className="input_wrapper">
+                                <button
+                                    type="button"
+                                    className="clear_button"
+                                    onClick={() => fetchFaceControlData(1)}
+                                    size="large"
+                                >
+                                    Filterni tozalash
                                 </button>
                             </div>
                         </div>

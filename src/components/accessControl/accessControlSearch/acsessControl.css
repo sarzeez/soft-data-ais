@@ -33,8 +33,6 @@
     min-height: calc(100vh - 146px);
     max-height: calc(100vh - 146px);
     border-radius: 10px;
-    padding: 5px;
-    padding: 5px;
     overflow: auto;
     margin-left: 10px;
 }
@@ -67,9 +65,12 @@
     top: 0;
     z-index: 10;
 }
+.ant-table-tbody > tr > td {
+    padding: 4px !important;
+}
 @media only screen and (max-width: 1800px) {
     .ant-table-tbody > tr > td {
-        padding: 12px !important;
+        padding: 4px !important;
     }
     .ant-table-thead > tr > th{
         padding: 8px !important;
