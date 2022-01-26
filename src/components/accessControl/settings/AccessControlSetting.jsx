@@ -8,6 +8,7 @@ import { ip } from '../../../ip';
 
 import AcsessTable from './table'
 import AccessControlSearchPagination from '../accessControlSearch/Pagination';
+import NewStaff from '../../newStaff/newStaff'
 
 import { MdOutlineAddCircleOutline } from 'react-icons/md'
 
@@ -21,7 +22,13 @@ const AccessControlSetting = () => {
     const [accessTablePaginationCurrent, setAccessTablePaginationCurrent] = useState(1)
     const [accessTableData, setAccessTableData] = useState([])
     const [accessTableTotal, setAccessTableTotal] = useState(null)
+    const [newStaffModal, setNewStaffModal] = useState(false);
+
     const navigate = useNavigate()
+
+    const addNewStaff = () => {
+        setNewStaffModal(true)
+    }
 
     const fetchAccessTable = async (id) => {
         const response = await axios.post(`${ip}/api/history/${accessTablePaginationLimit}/${id}`, {
@@ -73,10 +80,11 @@ const AccessControlSetting = () => {
                 <div className="acsess_content_top">
                     <p className= {`Content_title ${isDarkMode && 'darkModeColor'}`} >Access control setting</p>
                     <div className='access_control_setting_header_wrapper'>
-                        <button className='add_staff_button'>
+                        <button onClick={addNewStaff} className='add_staff_button'>
                             <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
                             Xodim qo'shish
                             </button>
+                            <NewStaff newStaffModal = {newStaffModal} setNewStaffModal = {setNewStaffModal} />
                         <div className='access-control-pagination'>
                             <AccessControlSearchPagination
                                 accessTablePaginationLimit = {accessTablePaginationLimit}
