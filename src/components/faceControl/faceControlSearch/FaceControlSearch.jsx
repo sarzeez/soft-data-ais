@@ -19,6 +19,9 @@ export default function FaceControlSearch() {
     const navigate = useNavigate()
     const {t} = useTranslation()
 
+    const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY'];
+
+
     const [ageFrom, setAgeFrom] = useState('');
     const [ageTo, setAgeTo] = useState('');
     const [gender, setGender] = useState('all');
@@ -148,7 +151,6 @@ export default function FaceControlSearch() {
         setCameraIP('all')
         setDateFrom('')
         setDateTo('')
-
     }
 
     useEffect(() => {
@@ -172,6 +174,9 @@ export default function FaceControlSearch() {
            })
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
+
+    console.log(cameraIP)
 
 
     return (
@@ -357,8 +362,9 @@ export default function FaceControlSearch() {
                                         style={{width: "100%"}}
                                         size="large"
                                         defaultValue="all"
+                                        // value={cameraIP}
                                     >
-                                        <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                        <Select.Option  value="all">{t('Hammasi')}</Select.Option>
                                         {
                                             selectedGroupCameras && selectedGroupCameras.map(item => (
                                                 <Select.Option key = {item} value={item}>{item}</Select.Option>
@@ -382,6 +388,8 @@ export default function FaceControlSearch() {
                                         size="large"
                                         style={{width: "100%"}}
                                         showTime
+                                        value={dateFrom !== "" ? moment(dateFrom) : ""}
+                                        // format="DD-MM-YYYY, HH:mm:ss"
                                     />
                                 </div>
                                 <div className="input_wrapper" style={{marginTop: "15px"}}>
@@ -394,6 +402,8 @@ export default function FaceControlSearch() {
                                         size="large"
                                         style={{width: "100%"}}
                                         showTime
+                                        value={dateTo !== "" ? moment(dateTo) : ""}
+                                        // format="DD-MM-YYYY, HH:mm:ss"
                                     />
                                 </div>
                             </div>
