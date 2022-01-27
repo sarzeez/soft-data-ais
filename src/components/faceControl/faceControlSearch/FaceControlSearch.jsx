@@ -1,34 +1,33 @@
 import React, { useState, useEffect } from "react";
 import {Input, Select, DatePicker,} from "antd";
-import {SearchOutlined, } from "@ant-design/icons";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { ip } from "../../../ip";
-
 import axios from "axios";
 import moment from "moment";
+
+import { AiOutlineClear, AiOutlineSearch } from 'react-icons/ai'
+
 import Cart from './cart/Cart'
 import FaceControlPagination from "./pagination/Pagination";
 import "./faceControlSearch.css";
 
-
+import { ip } from "../../../ip";
 
 export default function FaceControlSearch() {
 
     const navigate = useNavigate()
     const {t} = useTranslation()
 
-    const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY'];
-
-
     const [ageFrom, setAgeFrom] = useState('');
     const [ageTo, setAgeTo] = useState('');
     const [gender, setGender] = useState('all');
     const [mask, setMask] = useState('all');
-    const [beard, setBeard] = useState('all');
     const [mood, setMood] = useState('all')
     const [glasses, setGlasses] = useState('all');
+    const [beard, setBeard] = useState('all');
+    const [group, setGroup] = useState('all')
+    const [camera, setCamera] = useState('all')
     const [cameraIP, setCameraIP] = useState('all');
     const [dateFrom, setDateFrom] = useState();
     const [dateTo, setDateTo] = useState();
@@ -81,9 +80,11 @@ export default function FaceControlSearch() {
     const onChangeGroup = (e) =>{
         setSelectedGroupCameras(faceCameraData[e])
         setCameraIP(faceCameraData[e])
+        setGroup(e)
     }
 
     const onChangeCameraOptions = (e) => {
+        setCamera(e)
         if(e === 'all') {
             setCameraIP([...selectedGroupCameras])
         }
@@ -145,12 +146,20 @@ export default function FaceControlSearch() {
         setGender('all')
 
         setMask('all')
-        setBeard('all')
         setMood('all')
         setGlasses('all')
+        setBeard('all')
+
         setCameraIP('all')
+
+        onChangeGroup('all')
+        onChangeCameraOptions('all')
+
         setDateFrom('')
         setDateTo('')
+
+        setFaceControlTotal(null)
+        setFaceControlData(null)
     }
 
     useEffect(() => {
@@ -174,10 +183,6 @@ export default function FaceControlSearch() {
            })
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-
-
-    console.log(cameraIP)
-
 
     return (
         <>
@@ -339,7 +344,8 @@ export default function FaceControlSearch() {
                                             onChange={onChangeGroup}
                                             style={{width: "100%"}}
                                             size="large"
-                                            defaultValue="all"
+                                            defaultValue={group}
+                                            value={group}
                                         >
                                             <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                             <Select.Option value="door_navruz">Navruz bog'i</Select.Option>
@@ -361,10 +367,10 @@ export default function FaceControlSearch() {
                                         onChange={onChangeCameraOptions}
                                         style={{width: "100%"}}
                                         size="large"
-                                        defaultValue="all"
-                                        // value={cameraIP}
+                                        defaultValue={camera}
+                                        value={camera}
                                     >
-                                        <Select.Option  value="all">{t('Hammasi')}</Select.Option>
+                                        <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                         {
                                             selectedGroupCameras && selectedGroupCameras.map(item => (
                                                 <Select.Option key = {item} value={item}>{item}</Select.Option>
@@ -389,7 +395,6 @@ export default function FaceControlSearch() {
                                         style={{width: "100%"}}
                                         showTime
                                         value={dateFrom !== "" ? moment(dateFrom) : ""}
-                                        // format="DD-MM-YYYY, HH:mm:ss"
                                     />
                                 </div>
                                 <div className="input_wrapper" style={{marginTop: "15px"}}>
@@ -415,9 +420,8 @@ export default function FaceControlSearch() {
                                     type="button"
                                     className="soft_btn"
                                     onClick={() => fetchFaceControlData(1)}
-                                    size="large"
                                 >
-                                    <SearchOutlined size={40} style = {{marginRight: '5px'}} />
+                                    <AiOutlineSearch size={24} style = {{marginRight: '5px'}} />
                                     Qidirish
                                 </button>
                             </div>
@@ -427,8 +431,8 @@ export default function FaceControlSearch() {
                                     type="button"
                                     className="clear_button"
                                     onClick={clear}
-                                    size="large"
                                 >
+                                    <AiOutlineClear size={24} style = {{marginRight: '5px'}} />
                                     Filterni tozalash
                                 </button>
                             </div>
