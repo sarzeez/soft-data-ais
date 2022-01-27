@@ -12,6 +12,7 @@ import { ip } from '../../../ip';
 import AcsessTable from "./AcsessTable";
 import AccessControlSearchPagination from './Pagination';
 import {useTranslation} from "react-i18next";
+import {AiOutlineClear, AiOutlineSearch} from "react-icons/ai";
 
 const AcsessControlTable = () => {
 
@@ -88,6 +89,20 @@ const AcsessControlTable = () => {
         setAccessTablePaginationLimit(option)
     }
 
+    const clear = () => {
+        //
+        setName('')
+        setDeviceName('all')
+        setPosition('all')
+        setUserType('all')
+
+        setDateFrom('')
+        setDateTo('')
+
+        setAccessTableTotal(null)
+        setAccessTableData(null)
+    }
+
     useEffect(() => {
         fetchAccessTable(accessTablePaginationCurrent)
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -107,6 +122,7 @@ const AcsessControlTable = () => {
                 <div className="acsess_content_top">
                     <p className= {`Content_title ${isDarkMode && 'darkModeColor'}`} >{t('Jadval')}</p>
                     <div className='access-control-pagination'>
+                        <p className = {`content_total ${isDarkMode && 'darkModeColor'}`}>{t('Jami')}: {accessTableTotal} </p>
                         <AccessControlSearchPagination
                             accessTablePaginationLimit = {accessTablePaginationLimit}
                             accessTablePaginationCurrent = {accessTablePaginationCurrent}
@@ -125,6 +141,7 @@ const AcsessControlTable = () => {
                                     <Input
                                         className={`left_input ${isDarkMode && 'darkModeColor'}`}
                                         onChange={onChangeName}
+                                        value={name}
                                         type="text"
                                         size="large"
                                         style={{marginRight: "10px"}}
@@ -141,7 +158,8 @@ const AcsessControlTable = () => {
                                         onChange={onChangeDeviceName}
                                         style={{width: "100%"}}
                                         size="large"
-                                        defaultValue="all"
+                                        defaultValue={deviceName}
+                                        value={deviceName}
                                     >
                                         <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                         <Select.Option value="1">1</Select.Option>
@@ -159,12 +177,13 @@ const AcsessControlTable = () => {
                                         onChange={onChangeUserType}
                                         style={{width: "100%"}}
                                         size="large"
-                                        defaultValue="all"
+                                        defaultValue={userType}
+                                        value={userType}
                                     >
                                         <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                         <Select.Option value="3">{t('Mehmon')}</Select.Option>
                                         <Select.Option value="2">{t('Begona')}</Select.Option>
-                                        <Select.Option value="1">Xodim</Select.Option>
+                                        <Select.Option value="1">{t('Xodim')}</Select.Option>
                                     </Select>
                                 </div>
                             </div>
@@ -177,7 +196,8 @@ const AcsessControlTable = () => {
                                         onChange={onChangePosition}
                                         style={{width: "100%"}}
                                         size="large"
-                                        defaultValue="all"
+                                        defaultValue={position}
+                                        value={position}
                                     >
                                         <Select.Option value="all">Hammasi</Select.Option>
                                         <Select.Option value="Oddiy xodim">Oddiy xodim</Select.Option>
@@ -207,7 +227,7 @@ const AcsessControlTable = () => {
 
 
                             <div className="form_input_wrapper">
-                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Muddat:</p>
+                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Muddat')}:</p>
                                 <div className="input_wrapper">
                                     <DatePicker
                                         className={`left_input ${isDarkMode && 'darkModeColor'}`}
@@ -217,7 +237,7 @@ const AcsessControlTable = () => {
                                         onChange={onChangeDateFrom}
                                         size="large"
                                         style={{width: "100%"}}
-                                        // showTime
+                                        value={dateFrom !== "" ? moment(dateFrom) : ""}
                                     />
                                 </div>
                                 <div className="input_wrapper" style={{marginTop: "15px"}}>
@@ -229,13 +249,13 @@ const AcsessControlTable = () => {
                                         onChange={onChangeDateTo}
                                         size="large"
                                         style={{width: "100%"}}
-                                        // showTime
+                                        value={dateTo !== "" ? moment(dateTo) : ""}
                                     />
                                 </div>
                             </div>
                         </div>
 
-                        <div className="form_input_wrapper" style={{marginTop: "20px"}}>
+                        <div className="form_input_wrapper add_clear_button" style={{marginTop: "20px"}}>
                             <div className="input_wrapper">
                                 <button
                                     type="button"
@@ -245,7 +265,19 @@ const AcsessControlTable = () => {
                                     size="large"
                                     style={{width: "100%"}}
                                 >
+                                    <AiOutlineSearch size={22} style = {{marginRight: '5px'}} />
                                     Qidirish
+                                </button>
+                            </div>
+
+                            <div className="input_wrapper">
+                                <button
+                                    type="button"
+                                    className="clear_button"
+                                    onClick={clear}
+                                >
+                                    <AiOutlineClear size={24} style = {{marginRight: '5px'}} />
+                                    Filterni tozalash
                                 </button>
                             </div>
                         </div>
@@ -253,7 +285,6 @@ const AcsessControlTable = () => {
                     </div>
 
                     <div className={`acsess_right ${isDarkMode && 'darkModeBackground darkModeBorder'} `}>
-                        
                         <AcsessTable
                             isDarkMode={isDarkMode}
                             accessTableData = {accessTableData}
