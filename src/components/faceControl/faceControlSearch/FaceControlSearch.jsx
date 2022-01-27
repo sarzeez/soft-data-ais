@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 import {Input, Select, DatePicker,} from "antd";
-import {SearchOutlined, } from "@ant-design/icons";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { ip } from "../../../ip";
-
 import axios from "axios";
 import moment from "moment";
+
+import { AiOutlineClear, AiOutlineSearch } from 'react-icons/ai'
+
 import Cart from './cart/Cart'
 import FaceControlPagination from "./pagination/Pagination";
 import "./faceControlSearch.css";
 
-
+import { ip } from "../../../ip";
 
 export default function FaceControlSearch() {
 
@@ -158,6 +158,8 @@ export default function FaceControlSearch() {
         setDateFrom('')
         setDateTo('')
 
+        setFaceControlTotal(null)
+        setFaceControlData(null)
     }
 
     useEffect(() => {
@@ -419,7 +421,7 @@ export default function FaceControlSearch() {
                                     className="soft_btn"
                                     onClick={() => fetchFaceControlData(1)}
                                 >
-                                    <SearchOutlined size={40} style = {{marginRight: '5px'}} />
+                                    <AiOutlineSearch size={24} style = {{marginRight: '5px'}} />
                                     Qidirish
                                 </button>
                             </div>
@@ -430,6 +432,7 @@ export default function FaceControlSearch() {
                                     className="clear_button"
                                     onClick={clear}
                                 >
+                                    <AiOutlineClear size={24} style = {{marginRight: '5px'}} />
                                     Filterni tozalash
                                 </button>
                             </div>
