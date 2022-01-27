@@ -31,7 +31,7 @@ import {ip} from "../../ip";
 const {Header, Sider, Content} = Layout;
 const { SubMenu } = Menu;
 
-const Saidbar = ({ user}) => {
+const Saidbar = ({ user, setUser }) => {
 
     const {t, i18n} = useTranslation()
     const [lang, setLang] = useState(localStorage.getItem('i18nextLng') || 'uz')
@@ -85,6 +85,11 @@ const Saidbar = ({ user}) => {
                     }
                 </div>
         )
+    }
+
+    const logout = () => {
+        setUser(null)
+        localStorage.removeItem('soft-ais-token')
     }
 
     return (
@@ -171,7 +176,7 @@ const Saidbar = ({ user}) => {
                                     </div>
 
                                     <Switch onChange={handleChangeTheme} />
-                                    <div className="rount_img">
+                                    <div title='Chiqish' onClick={logout} className="rount_img">
                                         {
                                             user && <img src={`${ip}/api/admins/${user.id}/img`} alt=""/>
                                         }

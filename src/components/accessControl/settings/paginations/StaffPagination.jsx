@@ -12,7 +12,7 @@ const StaffPagination = (props) => {
         total = {accessTableTotal}
         showSizeChanger={true}
         pageSize={accessTablePaginationLimit}
-        pageSizeOptions={[15, 30, 60, 90]}
+        pageSizeOptions={[1, 5, 10]}
     />;
 }
 

@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { Table, Space  } from 'antd';
+import moment from 'moment';
 import { useSelector } from "react-redux";
 
 import {ip} from '../../../../ip';
-
-// import './acsessControl.css';
-// import 'antd/dist/antd.css';
 
 const columns = [
     {
         title: 'T/r',
         dataIndex: 'key',
+        align: 'center'
     },
     {
         title: 'Ism',
@@ -20,51 +19,65 @@ const columns = [
                 {
 
                 }
-                <img className="table_round_img" src={`${ip}/${record.user_id}.jpg`} alt = 'user'/>
-                <td>{record.fullname}</td>
+                <div className='table_item_image_wrapper'>
+                    <img className="table_round_img" src={`${ip}/${record.image}`} alt = 'user'/>
+                </div>
+                <p>{record.fullname}</p>
             </Space>
-          ),
+        ),
     },
     {
         title: 'Toifasi',
         dataIndex: 'user_type',
+        align: 'center'
     },
     {
         title: 'Lavozimi',
         dataIndex: 'rank',
+        align: 'center'
     },
     {
         title: 'Kirish eshiklari',
-        dataIndex: 'created_time',
+        dataIndex: 'door_ip',
+        align: 'center'
     },
     {
         title: 'Ruxsat turi',
-        dataIndex: 'direction',
+        dataIndex: 'access_type',
+        align: 'center'
     },
     {
         title: 'Cheklov',
-        dataIndex: 'door_name',
+        dataIndex: 'limit',
+        align: 'center'
     },
     {
         title: 'ID karta turi',
-        dataIndex: 'door_name',
+        dataIndex: 'card_type',
+        align: 'center'
     },
     {
         title: 'Karta raqami',
-        dataIndex: 'direction',
+        dataIndex: 'card_id',
+        align: 'center'
     },
     {
         title: 'Ruxsat etilgan muddat',
-        dataIndex: 'created_time',
+        dataIndex: 'valid_from_time',
+        render: (text, record) => {
+            return moment(record.valid_from_time).format('DD.MM.YYYY, HH:mm:ss')
+        },
+        align: 'center'
     },
     {
         title: 'Tahrir',
-        dataIndex: 'rank',
+        dataIndex: '',
+        align: 'center'
     },
 ];
 
-const AcsessTable = (props) => {
-    const { accessTableData } = props;
+const StaffTable = (props) => {
+    const { staffData } = props;
     const isDarkMode = useSelector(state => state.theme.theme_data)
     const [state, setState] = useState({
         selectedRowKeys: []
@@ -85,9 +98,9 @@ const AcsessTable = (props) => {
                className={` ${isDarkMode && 'darkModeBackground'}`}
                 rowSelection={rowSelection}
                 columns={columns}
-                dataSource={accessTableData}
+                dataSource={staffData}
                 pagination={false}
             />
         );
 }
-export default AcsessTable
+export default StaffTable

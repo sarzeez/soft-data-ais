@@ -8,7 +8,6 @@ import './App.css';
 
 function App({ setUser, user }) {
 
-
   useEffect(() => {
     if(localStorage.getItem('soft-ais-token')) {
         axios.get(`${ip}/api/me`, {headers: { 'x-access-token': localStorage.getItem('soft-ais-token')}})

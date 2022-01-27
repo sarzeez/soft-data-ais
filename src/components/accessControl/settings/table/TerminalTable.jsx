@@ -8,7 +8,7 @@ import 'antd/dist/antd.css';
 const columns = [
     {
         title: 'T/r',
-        dataIndex: 'id',
+        dataIndex: 'key',
         align: 'center'
     },
     {
@@ -23,22 +23,22 @@ const columns = [
     },
     {
         title: 'Autentifikatsiya turi',
-        dataIndex: 'authentication_type',
+        dataIndex: 'auth_type',
         align: 'center'
     },
     {
         title: 'Terminal IP manzili',
-        dataIndex: 'termina_ip',
+        dataIndex: 'ip_address',
         align: 'center'
     },
     {
         title: 'Terminal turi',
-        dataIndex: 'terminal_type',
+        dataIndex: 'type',
         align: 'center'
     },
     {
         title: 'Login',
-        dataIndex: 'login',
+        dataIndex: 'username',
         align: 'center'
     },
     {
@@ -48,7 +48,10 @@ const columns = [
     },
     {
         title: "O'rnatilgan vaqti",
-        dataIndex: 'setted_time',
+        dataIndex: 'created_time',
+        // render: (text, record) => {
+        //     return moment(record.created_time).format('DD.MM.YYYY, HH:mm:ss')
+        // },
         align: 'center'
     },
     {
@@ -63,37 +66,8 @@ const columns = [
     },
 ];
 
-const mockData = [
-    {
-        id: 1,
-        key: 1,
-        door_name: 'Door 1',
-        direction: 'Anhor',
-        authentication_type: 'Yuz, barmoq izi, ID karta',
-        termina_ip: '192.168.1.1',
-        terminal_type: 'type',
-        login: 'admin',
-        password: 1234,
-        setted_time: '20.01.2022 13:47'
-    },
-    {
-        id: 2,
-        key: 2,
-        door_name: 'Door 2',
-        direction: 'Makro',
-        authentication_type: 'Yuz, barmoq izi, ID karta',
-        termina_ip: '192.168.1.1',
-        terminal_type: 'type',
-        login: 'admin',
-        password: 1234,
-        setted_time: '20.01.2022 13:47'
-    }
-]
-
-
-
 const TerminalTable = (props) => {
-    // const { accessTableData } = props;
+    const { terminalData } = props;
     const isDarkMode = useSelector(state => state.theme.theme_data)
     // const [state, setState] = useState({
     //     selectedRowKeys: []
@@ -114,7 +88,7 @@ const TerminalTable = (props) => {
                className={` ${isDarkMode && 'darkModeBackground'}`}
                 rowSelection={false}
                 columns={columns}
-                dataSource={mockData}
+                dataSource={terminalData}
                 pagination={false}
             />
         );

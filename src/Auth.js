@@ -5,14 +5,14 @@ import App from './App'
 
 function Auth() {
 
-    const [auth, setAuth] = useState(null)
+    const [user, setUser] = useState(null)
     
-    if(auth && (auth.role === 'king')) {
-        return <App setUser={setAuth} user = {auth} />
+    if(user && (user.role === 'king')) {
+        return <App setUser={setUser} user = {user} />
     }
 
     return (
-        <LoginPage user = {auth} setUser={setAuth}/> 
+        <LoginPage user = {user} setUser={setUser}/> 
     )
 }
 

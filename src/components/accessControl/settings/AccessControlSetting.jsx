@@ -24,10 +24,19 @@ const AccessControlSetting = () => {
 
     const isDarkMode = useSelector(state => state.theme.theme_data)
     const is_refresh_value = useSelector(state => state.theme.is_refresh_value)
-    const [accessTablePaginationLimit, setAccessTablePaginationLimit] = useState(10)
-    const [accessTablePaginationCurrent, setAccessTablePaginationCurrent] = useState(1)
-    const [accessTableData, setAccessTableData] = useState([])
-    const [accessTableTotal, setAccessTableTotal] = useState(null)
+
+    // terminal
+    const [terminalPaginationLimit, setTerminalPaginationLimit] = useState(10)
+    const [terminalPaginationCurrent, setTerminalPaginationCurrent] = useState(1)
+    const [terminalData, setTerminalData] = useState([])
+    const [terminalTotal, setTerminalTotal] = useState(null)
+
+    // staff
+    const [staffPaginationLimit, setStaffPaginationLimit] = useState(10)
+    const [staffPaginationCurrent, setStaffPaginationCurrent] = useState(1)
+    const [staffData, setStaffData] = useState([])
+    const [staffTotal, setStaffTotal] = useState(null)
+
     const [newStaffModal, setNewStaffModal] = useState(false);
 
     const navigate = useNavigate()
@@ -40,43 +49,71 @@ const AccessControlSetting = () => {
         // console.log(key);
     }
 
-    const fetchAccessTable = async (id) => {
-        const response = await axios.post(`${ip}/api/history/${accessTablePaginationLimit}/${id}`, {
-            // fullname: name,
-            // device_name: deviceName,
-            // rank: position,
-            // user_type: userType,
-            // fromDate: dateFrom,
-            // toDate: dateTo,
-        })
+    const getTerminalData = async (id) => {
+        const response = await axios.get(`${ip}/api/terminals/${terminalPaginationLimit}/${id}`)
         const { data } = response;
         const count = data.count;
-        // console.log(data)
-        setAccessTableTotal(count)
+        setTerminalTotal(count)
         const newData = data.data.map((item, index) => (
             {
                 ...item,
-                key: index + 1 + (data.current_page - 1) * accessTablePaginationLimit,
+                key: index + 1 + (data.current_page - 1) * terminalPaginationLimit,
+                created_time: moment(item.created_time).format('DD.MM.YYYY, HH:mm:ss'),
+                door_name: item.door_name,
+                direction: item.direction,
+                auth_type: item.auth_type,
+                ip_address: item.ip_address,
+                type: item.type,
+                username: item.username,
+                password: item.password,
+            }
+        ))
+        setTerminalData(newData)
+    }
+
+    const terminalPaginationOnChange = (e = 1, option) => {
+        getTerminalData(e)
+        setTerminalPaginationCurrent(e)
+        setTerminalPaginationLimit(option)
+    }
+
+    useEffect(() => {
+        getTerminalData(terminalPaginationCurrent)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [terminalPaginationLimit, terminalPaginationCurrent])
+
+
+    // get staff data
+    const getStaffData = async (id) => {
+        const response = await axios.get(`${ip}/api/terminal/getusers/${staffPaginationLimit}/${id}`)
+        const { data } = response;
+        const count = data.count;
+        setStaffTotal(count)
+        const newData = data.data.map((item, index) => (
+            {
+                ...item,
+                key: index + 1 + (data.current_page - 1) * staffPaginationLimit,
                 created_time: moment(item.created_time).format('DD.MM.YYYY, HH:mm:ss'),
                 direction: item.direction,
                 door_name: item.door_name,
                 user_type: item.user_type ? item.user_type : "Begona"
             }
         ))
-        setAccessTableData(newData)
+        setStaffData(newData)
     }
 
-    const accessTablePaginationOnChange = (e = 1, option) => {
-        fetchAccessTable(e)
-        setAccessTablePaginationCurrent(e)
-        setAccessTablePaginationLimit(option)
+    const staffPaginationOnChange = (e = 1, option) => {
+        getStaffData(e)
+        setStaffPaginationCurrent(e)
+        setStaffPaginationLimit(option)
     }
 
     useEffect(() => {
-        fetchAccessTable(accessTablePaginationCurrent)
+        getStaffData(staffPaginationCurrent)
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [accessTablePaginationLimit, accessTablePaginationCurrent])
+    }, [staffPaginationLimit, staffPaginationCurrent])
 
+    // redirect
     useEffect(() => {
         if(!is_refresh_value) {
             navigate('/face-control-search')
@@ -107,7 +144,7 @@ const AccessControlSetting = () => {
                             <div className='access_control_setting_tab_item_body'>
                                 <TerminalTable
                                     isDarkMode={isDarkMode}
-                                    accessTableData = {accessTableData}
+                                    terminalData = {terminalData}
                                 />
                             </div>
                             <div className='access_control_setting_tab_item_footer'>
@@ -116,10 +153,10 @@ const AccessControlSetting = () => {
                                     Terminal qo'shish
                                 </button>
                                 <TerminalPagination
-                                    accessTablePaginationLimit = {accessTablePaginationLimit}
-                                    accessTablePaginationCurrent = {accessTablePaginationCurrent}
-                                    accessTablePaginationOnChange = {accessTablePaginationOnChange}
-                                    accessTableTotal = {accessTableTotal}
+                                    accessTablePaginationLimit = {terminalPaginationLimit}
+                                    accessTablePaginationCurrent = {terminalPaginationCurrent}
+                                    accessTablePaginationOnChange = {terminalPaginationOnChange}
+                                    accessTableTotal = {terminalTotal}
                                 />
                             </div>
                         </div>
@@ -136,7 +173,7 @@ const AccessControlSetting = () => {
                             <div className='access_control_setting_tab_item_body'>
                                 <StaffTable
                                     isDarkMode={isDarkMode}
-                                    accessTableData = {accessTableData}
+                                    staffData = {staffData}
                                 />
                             </div>
                             <div className='access_control_setting_tab_item_footer'>
@@ -145,10 +182,10 @@ const AccessControlSetting = () => {
                                     Xodim qo'shish
                                 </button>
                                 <StaffPagination
-                                    accessTablePaginationLimit = {accessTablePaginationLimit}
-                                    accessTablePaginationCurrent = {accessTablePaginationCurrent}
-                                    accessTablePaginationOnChange = {accessTablePaginationOnChange}
-                                    accessTableTotal = {accessTableTotal}
+                                    accessTablePaginationLimit = {staffPaginationLimit}
+                                    accessTablePaginationCurrent = {staffPaginationCurrent}
+                                    accessTablePaginationOnChange = {staffPaginationOnChange}
+                                    accessTableTotal = {staffTotal}
                                 />
                             </div>
                         </div>
