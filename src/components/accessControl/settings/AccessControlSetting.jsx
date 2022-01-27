@@ -37,7 +37,7 @@ const AccessControlSetting = () => {
     }
 
     const onChangeTabs = (key) => {
-        console.log(key);
+        // console.log(key);
     }
 
     const fetchAccessTable = async (id) => {
@@ -74,7 +74,7 @@ const AccessControlSetting = () => {
 
     useEffect(() => {
         fetchAccessTable(accessTablePaginationCurrent)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [accessTablePaginationLimit, accessTablePaginationCurrent])
 
     useEffect(() => {

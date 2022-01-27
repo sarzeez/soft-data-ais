@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
-import { Table, Space  } from 'antd';
+import React from 'react';
+import { Table  } from 'antd';
 import { useSelector } from "react-redux";
 import { RiEditLine } from 'react-icons/ri'
 
-import {ip} from '../../../../ip';
-
-// import './acsessControl.css';
-// import 'antd/dist/antd.css';
+import 'antd/dist/antd.css';
 
 const columns = [
     {
@@ -69,9 +66,10 @@ const columns = [
 const mockData = [
     {
         id: 1,
+        key: 1,
         door_name: 'Door 1',
         direction: 'Anhor',
-        authentication_type: 'Yuz, barmoq iz, ID karta',
+        authentication_type: 'Yuz, barmoq izi, ID karta',
         termina_ip: '192.168.1.1',
         terminal_type: 'type',
         login: 'admin',
@@ -80,9 +78,10 @@ const mockData = [
     },
     {
         id: 2,
-        door_name: 'Door 3',
+        key: 2,
+        door_name: 'Door 2',
         direction: 'Makro',
-        authentication_type: 'Yuz, barmoq iz, ID karta',
+        authentication_type: 'Yuz, barmoq izi, ID karta',
         termina_ip: '192.168.1.1',
         terminal_type: 'type',
         login: 'admin',
@@ -94,21 +93,21 @@ const mockData = [
 
 
 const TerminalTable = (props) => {
-    const { accessTableData } = props;
+    // const { accessTableData } = props;
     const isDarkMode = useSelector(state => state.theme.theme_data)
-    const [state, setState] = useState({
-        selectedRowKeys: []
-    })
+    // const [state, setState] = useState({
+    //     selectedRowKeys: []
+    // })
 
-    const onSelectChange = (selectedRowKeys, a) => {
-        setState({ selectedRowKeys })
-    };
+    // const onSelectChange = (selectedRowKeys, a) => {
+    //     setState({ selectedRowKeys })
+    // };
 
-    const { selectedRowKeys } = state;
-    const rowSelection = {
-        selectedRowKeys,
-        onChange: onSelectChange,
-    }
+    // const { selectedRowKeys } = state;
+    // const rowSelection = {
+    //     selectedRowKeys,
+    //     onChange: onSelectChange,
+    // }
 
         return (
             <Table
