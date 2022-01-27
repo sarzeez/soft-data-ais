@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="630af48d-1ca7-4883-8e3d-17f8fed27d11" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/FaceControlSearch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/FaceControlSearch.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/Pagination.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/Pagination.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/cart/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/cart/Cart.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +52,8 @@
       <workItem from="1643102663596" duration="9304000" />
       <workItem from="1643170439490" duration="1507000" />
       <workItem from="1643172301197" duration="288000" />
-      <workItem from="1643173004919" duration="24005000" />
+      <workItem from="1643173004919" duration="24098000" />
+      <workItem from="1643257260485" duration="4280000" />
     </task>
     <servers />
   </component>
