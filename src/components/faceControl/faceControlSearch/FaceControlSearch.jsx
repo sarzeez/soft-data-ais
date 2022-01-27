@@ -19,6 +19,9 @@ export default function FaceControlSearch() {
     const navigate = useNavigate()
     const {t} = useTranslation()
 
+    const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY'];
+
+
     const [ageFrom, setAgeFrom] = useState('');
     const [ageTo, setAgeTo] = useState('');
     const [gender, setGender] = useState('all');
@@ -140,8 +143,14 @@ export default function FaceControlSearch() {
         setAgeFrom('')
         setAgeTo('')
         setGender('all')
-        // console.log(ageFrom)
-        // console.log(ageTo)
+
+        setMask('all')
+        setBeard('all')
+        setMood('all')
+        setGlasses('all')
+        setCameraIP('all')
+        setDateFrom('')
+        setDateTo('')
     }
 
     useEffect(() => {
@@ -167,6 +176,9 @@ export default function FaceControlSearch() {
     }, [])
 
 
+    console.log(cameraIP)
+
+
     return (
         <>
             <div className="face_control_search">
@@ -184,6 +196,7 @@ export default function FaceControlSearch() {
                         />
                     </div>
                 </div>
+
                 <div className={`content ${isDarkMode && 'darkModeCard'}`}>
                     <div className={`content_inputs ${isDarkMode && 'darkModeCard darkModeBorder'}`}>
                         <div>
@@ -237,7 +250,8 @@ export default function FaceControlSearch() {
                                           onChange={onChangeMask}
                                           style={{width: "100%"}}
                                           size="large"
-                                          defaultValue="all"
+                                          defaultValue={mask}
+                                          value={mask}
                                       >
                                           <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                           <Select.Option value="1">{t('Bor')}</Select.Option>
@@ -257,7 +271,8 @@ export default function FaceControlSearch() {
                                             onChange={onChangeMood}
                                             style={{width: "100%"}}
                                             size="large"
-                                            defaultValue="all"
+                                            defaultValue={mood}
+                                            value={mood}
                                         >
                                             <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                             <Select.Option value="2">{t('Jilmaygan')}</Select.Option>
@@ -284,7 +299,8 @@ export default function FaceControlSearch() {
                                             onChange={onChangeGlasses}
                                             style={{width: "100%"}}
                                             size="large"
-                                            defaultValue="all"
+                                            defaultValue={glasses}
+                                            value={glasses}
                                         >
                                             <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                             <Select.Option value="1">{t("Ko’rishni_tuzatish")}</Select.Option>
@@ -305,7 +321,8 @@ export default function FaceControlSearch() {
                                             onChange={onChangeBeard}
                                             style={{width: "100%"}}
                                             size="large"
-                                            defaultValue="all"
+                                            defaultValue={beard}
+                                            value={beard}
                                         >
                                             <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                             <Select.Option value="1">{t('Bor')}</Select.Option>
@@ -345,8 +362,9 @@ export default function FaceControlSearch() {
                                         style={{width: "100%"}}
                                         size="large"
                                         defaultValue="all"
+                                        // value={cameraIP}
                                     >
-                                        <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                        <Select.Option  value="all">{t('Hammasi')}</Select.Option>
                                         {
                                             selectedGroupCameras && selectedGroupCameras.map(item => (
                                                 <Select.Option key = {item} value={item}>{item}</Select.Option>
@@ -370,6 +388,8 @@ export default function FaceControlSearch() {
                                         size="large"
                                         style={{width: "100%"}}
                                         showTime
+                                        value={dateFrom !== "" ? moment(dateFrom) : ""}
+                                        // format="DD-MM-YYYY, HH:mm:ss"
                                     />
                                 </div>
                                 <div className="input_wrapper" style={{marginTop: "15px"}}>
@@ -382,6 +402,8 @@ export default function FaceControlSearch() {
                                         size="large"
                                         style={{width: "100%"}}
                                         showTime
+                                        value={dateTo !== "" ? moment(dateTo) : ""}
+                                        // format="DD-MM-YYYY, HH:mm:ss"
                                     />
                                 </div>
                             </div>
