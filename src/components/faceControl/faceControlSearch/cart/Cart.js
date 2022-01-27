@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import moment from "moment";
 import axios from 'axios';
+import {Tooltip} from "antd";
 
 import ImageDemo from "./image";
-import { emojes } from '../../../../assets/face-icons/icons'
-import "./cart.css"
+import { emojes } from '../../../../assets/face-icons/icons';
+import "./cart.css";
 
 import { BsPlayBtn } from 'react-icons/bs'
 import VideoModal from '../videoModal/VidoeModal';
@@ -12,7 +13,9 @@ import VideoModal from '../videoModal/VidoeModal';
 import { ip } from '../../../../ip';
 
 const mood = ["", "Tabassum", "Jahldor", "Xafa", "Jirkangan", "Qo'rqqan", "Hayratda", "E'tiborsiz", "Kulgan", "", "Xursand", "Ikkilangan", "Baqirgan"]
+
 const Cart = ({ item, isDarkMode }) => {
+
 
     const [visible, setVisible] = useState(false)
     const [videoByID, setVideoByID] = useState(null)
@@ -112,7 +115,11 @@ const Cart = ({ item, isDarkMode }) => {
                             {
                                 <img src = {emojes.glass[item.args.KOZOYNAK]} alt = 'glass' />
                             }
-                            <p className="card_longTitle" >{item.args.KOZOYNAK === 1 ? "Ko'rishni tuzatish" : item.args.KOZOYNAK === 14 ? "Quyoshdan himoya" : "Ko'zoynaksiz"}</p>
+                            <p className="card_longTitle" >{item.args.KOZOYNAK === 1 ?
+                                <Tooltip title="Ko'rishni tuzatish" color={'cyan'}>Ko'rishni tuzatish</Tooltip>  :
+                                item.args.KOZOYNAK === 14 ? <Tooltip title="Quyoshdan himoya" color={'cyan'}>Quyoshdan himoya</Tooltip> :
+                                    <Tooltip title="Ko'zoynaksiz" color={'cyan'}>Ko'zoynaksiz</Tooltip> }
+                            </p>
                         </div>
                         
                         <div>

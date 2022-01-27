@@ -9,6 +9,11 @@
     flex-direction: row;
 }
 
+.access-control-pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .content {
     position: relative;
     display: flex;
@@ -86,7 +91,7 @@
     font-family: Open Sans;
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 19px;
     color: #ffffff;
     margin-bottom: 5px;
@@ -135,7 +140,6 @@
     font-weight: 500;
     font-size: 16px;
     margin-right: 10px;
-    /* margin: 4px 25px 0 0; */
 }
 
 .content_pagination {
@@ -150,9 +154,6 @@
     justify-content: space-around;
 }
 
-.ant-layout-content {
-    /*padding: 10px !important;*/
-}
 
 .ant-layout-footer {
     padding: 0 !important;
