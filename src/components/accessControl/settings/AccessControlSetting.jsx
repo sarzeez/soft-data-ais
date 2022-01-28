@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import moment from 'moment';
 import { Tabs } from 'antd';
+import { MdOutlineAddCircleOutline } from 'react-icons/md'
+
 
 import { ip } from '../../../ip';
 
@@ -11,9 +13,8 @@ import TerminalTable from './table/TerminalTable'
 import StaffTable from './table/StaffTable'
 import TerminalPagination from './paginations/TerminalPagination';
 import StaffPagination from './paginations/StaffPagination';
-import NewStaff from '../../newStaff/newStaff'
+import AddStaff from '../modals/AddStaff';
 
-import { MdOutlineAddCircleOutline } from 'react-icons/md'
 
 import './setting.css'
 
@@ -24,6 +25,9 @@ const AccessControlSetting = () => {
 
     const isDarkMode = useSelector(state => state.theme.theme_data)
     const is_refresh_value = useSelector(state => state.theme.is_refresh_value)
+
+    // add new staff modal state
+    const [isOpenAddStaff, setIsOpenAddStaff] = useState(false)
 
     // terminal
     const [terminalPaginationLimit, setTerminalPaginationLimit] = useState(10)
@@ -42,7 +46,7 @@ const AccessControlSetting = () => {
     const navigate = useNavigate()
 
     const addNewStaff = () => {
-        setNewStaffModal(true)
+        setIsOpenAddStaff(true)
     }
 
     const onChangeTabs = (key) => {
@@ -123,10 +127,13 @@ const AccessControlSetting = () => {
 
     return (
         <div className='access_control_setting'>
+            <AddStaff
+                isOpenAddStaff = {isOpenAddStaff}
+                setIsOpenAddStaff = {setIsOpenAddStaff}
+            />
             <div className='access_control_setting_header'>
                 <div className="acsess_content_top">
                     <p className= {`Content_title ${isDarkMode && 'darkModeColor'}`} >Kirishni boshqarish sozlamalar</p>
-                    <NewStaff newStaffModal = {newStaffModal} setNewStaffModal = {setNewStaffModal} />
                 </div>
             </div>
             <div className={`access_control_setting_body ${isDarkMode && 'darkModeBackground'}`}>

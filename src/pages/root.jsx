@@ -3,10 +3,11 @@ import { Routes, Route } from 'react-router-dom'
 import DashboarFirstRoute from '../components/dashboard/dashboarFirstRoute'
 import FaceControlSearch from '../components/faceControl/faceControlSearch/FaceControlSearch'
 import FaceControlAnalysis from '../components/faceControl/faceControlAnalysis/FaceControlAnalysis'
-import AddUser from "../components/accessControl/RealTime/RealTime/AddUser";
 import OnlineRecognation from "../components/accessControl/OnlineRecognation/OnlineRecognation";
 import OnlineDoors from "../components/accessControl/Online-doors/OnlineDoors";
 import AccessControlSetting from '../components/accessControl/settings/AccessControlSetting'
+
+import AddUser from '../components/accessControl/RealTime/RealTime/AddUser'
 
 
 
@@ -24,6 +25,7 @@ const RootPage = () => {
             <Route path = '/access-control-online' element = {<OnlineRecognation />}/>
             <Route path = '/access-control-online-doors' element = {<OnlineDoors />}/>
             <Route path = '/access-control-setting' element = {<AccessControlSetting />}/>
+            <Route path = '/access-control-user' element = {<AddUser />}/>
             <Route path = '*' element = {<NotFound />}/>
         </Routes>
     )
