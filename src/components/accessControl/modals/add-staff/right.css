@@ -1,0 +1,28 @@
+.access_control_add_staff_modal_body_item_right {
+    padding-top: 10px;
+}
+
+.access_control_add_staff_modal_body_item_right_buttons{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+}
+
+.access_control_add_staff_modal_body_item_right_buttons button {
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    background-color: #29B85D;
+    color: #fff;
+    cursor: pointer;
+}
+
+.access_control_add_staff_modal_body_item_right_buttons button:last-child {
+    background-color: #FFEEEE;
+    color: #920000;
+}
+
+.access_control_add_staff_modal_body_item_right_buttons button:hover {
+    opacity: 0.9;
+}

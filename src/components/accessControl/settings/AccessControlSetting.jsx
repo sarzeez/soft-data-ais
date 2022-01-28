@@ -13,7 +13,7 @@ import TerminalTable from './table/TerminalTable'
 import StaffTable from './table/StaffTable'
 import TerminalPagination from './paginations/TerminalPagination';
 import StaffPagination from './paginations/StaffPagination';
-import AddStaff from '../modals/AddStaff';
+import AddStaff from '../modals/add-staff/AddStaff';
 
 
 import './setting.css'
@@ -40,8 +40,6 @@ const AccessControlSetting = () => {
     const [staffPaginationCurrent, setStaffPaginationCurrent] = useState(1)
     const [staffData, setStaffData] = useState([])
     const [staffTotal, setStaffTotal] = useState(null)
-
-    const [newStaffModal, setNewStaffModal] = useState(false);
 
     const navigate = useNavigate()
 
