@@ -12,12 +12,8 @@ const Left = ({ data, setData }) => {
     const [state, setState] = useState([])
 
     const onChange = value => {
-        console.log('onChange ', value);
+        // console.log('onChange ', value);
         setState(value);
-        setData({
-            ...data,
-            door_ip: value
-        })
     };
 
     const tProps = {

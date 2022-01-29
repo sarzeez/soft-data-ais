@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
-import { Form } from 'antd';
+import { Form, Switch } from 'antd';
 import axios from "axios";
 
 import './addStaff.css'
@@ -8,6 +8,7 @@ import './addStaff.css'
 import Left from "./Left";
 import Middle from "./Middle";
 import Right from "./Right";
+import AddTerminal from '../add-terminal/AddTerminal'
 
 Modal.setAppElement("#root");
 
@@ -15,14 +16,31 @@ function AddStaff(props) {
 
     const { isOpenAddStaff, setIsOpenAddStaff  } = props;
 
+    const [ isOpenAddTerminal, setIsOpenAddTerminal] = useState(false)
+    const [initialValues, setInitialValues] = useState({
+        fullname: 'Abdulaziz',
+        gender: 'male',
+        rank: '12',
+        user_type: '12',
+        door_ip: [],
+        access_type: '12',
+        limit: '12',
+        valid_from_time: '',
+        valid_to_time: '',
+        image: '',
+        card_id: '22a22a2',
+        card_type: 'as',
+        notify: '12'
+    })
+
     const [data, setData] = useState({
         fullname: 'Abdulaziz',
         gender: 'male',
-        rank: '1',
-        user_type: '1',
+        rank: '12',
+        user_type: '12',
         door_ip: [],
-        access_type: '1',
-        limit: '1',
+        access_type: '12',
+        limit: '12',
         valid_from_time: '',
         valid_to_time: '',
         image: '',
@@ -32,12 +50,12 @@ function AddStaff(props) {
 
     })
 
-    const onFinish = () => {
-
+    const onFinish = (value) => {
+        console.log(value)
     }
 
-    const onFinishFailed = () => {
-
+    const onFinishFailed = (error) => {
+        console.log(error)
     }
 
     useEffect(() => {
@@ -68,24 +86,11 @@ function AddStaff(props) {
             overlayClassName="myoverlay"
             closeTimeoutMS={300}
         >
+            <AddTerminal isOpenAddTerminal={isOpenAddTerminal} setIsOpenAddTerminal={setIsOpenAddTerminal} />
             <Form
                 name="basic"
                 layout="vertical"
-                initialValues={{
-                    fullname: data.fullname,
-                    gender: data.gender,
-                    rank: data.rank,
-                    user_type: data.user_type,
-                    // door_ip: data.door_ip,
-                    access_type: data.access_type,
-                    limit: data.limit,
-                    valid_from_time: data.valid_from_time,
-                    valid_to_time: data.valid_from_time,
-                    image: data.valid_to_time,
-                    card_id: data.card_id,
-                    card_type: data.card_type,
-                    notify: data.notify
-                }}
+                initialValues={initialValues}
                 requiredMark = 'optional'
                 onFinish={onFinish}
                 onFinishFailed={onFinishFailed}
@@ -106,12 +111,18 @@ function AddStaff(props) {
                         <div className="access_control_add_staff_modal_body_item_3">
                             <div className="access_control_add_staff_modal_body_item">
                                 <p className="access_control_add_staff_modal_body_item_title">ID karta</p>
-                                <Right data = {data} setData = {setData} />
+                                <Right data = {data} setData = {setData} setIsOpenAddTerminal = {setIsOpenAddTerminal} />
                             </div>
+                            <div className='access_control_add_staff_modal_body_item_3_notif'>
+                                <p>Xodimning kirib/chiqish ma’lumotlari haqida bildirishnoma olishni istaysizmi?</p>
+                                <Switch checkedChildren="Ha" unCheckedChildren="Yo'q" />
+                            </div>
+                            <div /> {/* single div */}
                             <button className="access_control_add_staff_modal_body_item_3_submit_button"
                             type="submit"
                             >Saqlash</button>
                         </div>
+                        
                     </div>
                 </div>
 

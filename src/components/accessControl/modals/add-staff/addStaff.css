@@ -43,8 +43,19 @@
 
 .access_control_add_staff_modal_body_item_3 {
     display: grid;
-    grid-template-rows: 1fr 45px;
-    grid-row-gap: 120px;
+    grid-template-rows: 1fr 110px 30px 45px;
+    grid-row-gap: 15px;
+}
+
+.access_control_add_staff_modal_body_item_3_notif {
+    background-color: #E5F6FF;
+    border-radius: 5px;
+    color: #5A5D62;
+    padding: 10px;
+}
+
+.access_control_add_staff_modal_body_item_3_notif p {
+    margin-bottom: 13px !important;
 }
 
 .access_control_add_staff_modal_body_item_3_submit_button {
