@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
-import 'antd/dist/antd.css';
 import {Layout, Menu, Switch} from 'antd';
 import { BrowserRouter } from 'react-router-dom'
 import {MenuUnfoldOutlined, MenuFoldOutlined,} from '@ant-design/icons';
 import { useTranslation } from "react-i18next";
-
-
+import { useSelector, useDispatch} from "react-redux";
+import { getTheme, isRefresh } from "../../redux";
 import {Link} from "react-router-dom";
+import {ip} from "../../ip";
+
+import RootPage from '../../pages/root';
+import useWindowDimensions from '../../hooks/hooks';
+import 'antd/dist/antd.css';
+
 import logo from '../../images/Logo.svg';
 import shortlogo from '../../images/shortLogo.svg';
-// import dashboard from '../../images/dashIMG/dashboard.svg';
 import face from '../../images/dashIMG/face.svg';
 import search from '../../images/dashIMG/search.svg';
 import setting from '../../images/dashIMG/settings.svg';
@@ -18,14 +22,7 @@ import access from '../../images/dashIMG/access.svg';
 import tableimg from '../../images/dashIMG/table.svg';
 import doorKey from '../../images/dashIMG/doorKey.svg';
 
-import { useSelector, useDispatch} from "react-redux";
-import { getTheme, isRefresh } from "../../redux";
-
-import useWindowDimensions from '../../hooks/hooks';
-import RootPage from '../../pages/root';
-
 import './style.css';
-import {ip} from "../../ip";
 
 
 const {Header, Sider, Content} = Layout;

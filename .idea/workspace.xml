@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="630af48d-1ca7-4883-8e3d-17f8fed27d11" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineDoors.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineDoors.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/myImg.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/myImg.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/noIMG.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/noIMG.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/OnlineRecognation/OnlineRecognation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/OnlineRecognation/OnlineRecognation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/saidbar/Saidbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/saidbar/Saidbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/saidbar/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/saidbar/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +57,8 @@
       <workItem from="1643172301197" duration="288000" />
       <workItem from="1643173004919" duration="24098000" />
       <workItem from="1643257260485" duration="22340000" />
-      <workItem from="1643343312522" duration="19977000" />
+      <workItem from="1643343312522" duration="20784000" />
+      <workItem from="1643429139760" duration="5560000" />
     </task>
     <servers />
   </component>
