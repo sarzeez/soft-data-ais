@@ -5,10 +5,10 @@
     margin-bottom: 10px;
 }
 .online_doors_body{
+    height: calc(100vh - 125px);
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
-    height: calc(100vh - 130px);
     background-color: #FFFFFF;
     border-radius: 5px;
     padding: 15px;
@@ -17,19 +17,19 @@
 .online_doors_info_content{
     position: relative;
     display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 5px;
-    height: 400px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    height: 397px;
     border: 1px solid #eaeaea;
     border-radius: 10px;
-    padding: 10px;
+    padding: 12px;
 }
 
 .online_doors_info_title{
     position: absolute;
-    width: 10%;
-    height: 20px;
-    top: -12px;
+    height: 18px;
+    padding: 0 5px;
+    top: -10px;
     left: 15px;
     background-color: #FFFFFF;
 }
@@ -40,26 +40,26 @@
     font-size: 16px;
     line-height: 22px;
     color: #000000;
-    margin-left: 5px;
 }
 
-.doors_left{
+/*----right img content---*/
+
+.door_img_box{
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100%;
+
+    border: 1px solid  #EAEAEA;
+    border-radius: 10px;
 }
 .doors_left_default{
-    width: 80%;
+    width: 70%;
 }
 .overflov_img{
-    width: 100%;
     overflow: hidden;
 }
 .doors_left_img{
-    position: relative;
-    max-width: 640px;
-    max-height: 380px;
+    width: 100%;
+    height: 100%;
     border-radius: 5px;
     background-color: #1B2531;
     overflow: hidden;
@@ -68,94 +68,123 @@
 
 /*---time info---*/
 
-.doors_time_info{
-    position: absolute;
-    text-align: center;
-    width: 18%;
-    height: 65px;
-    background-color: #29b85d;
-    border-radius: 5px;
-    bottom: 15px;
-    margin-left: 5px;
-}
+
 
 .doors_time {
     font-family: Open Sans;
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 33px;
-    color: #FFFFFF;
-    margin: 0!important;
-    padding: 0!important;
+    color: #29B85D;
+    margin-bottom: 10px!important;
 }
-
-
 
 
 /*----doors-right-content---*/
 
-/*.doors_right{*/
-/*    height: 100%;*/
-/*}*/
-
-.doors_right_label{
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 22px;
-    color: #1D1C1C;
-    margin-left: 5px;
-    margin-top: 5px;
+.label_box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-bottom: 10px;
 }
 
-.doors_right_box{
-    width: 100%;
-    height: 45px;
+.not_allowed_title{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+    color: #000000;
+    margin-top: 2px;
+}
+.not_allowed_text{
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #717171;
+    margin-bottom: 15px !important;
+}
+.not_allowed_buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin-bottom: 15px!important;
+}
+.not_allowed_buttons_cancel{
+    width: 170px;
+    height: 45px;
+    background: #F7F7F7;
+    border-radius: 5px;
+    border: none;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #717171;
+}
+.not_allowed_allow{
+    width: 100%;
+    height: 45px;
+    background: #29B85D;
+    border-radius: 5px;
+    border: none;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+
+.doors_right_box{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
     font-size: 14px;
     line-height: 19px;
     color: #000000;
-    border: 1px solid #eaeaea;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    padding-left: 15px;
 }
 
 .box_right_top{
     display: grid;
-    grid-template-columns: 3fr 1.5fr;
-    grid-gap: 10px;
-    align-items: center;
+    grid-template-columns: 1.5fr 1fr;
+    grid-gap: 5px;
 }
 
 .img_box{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 120px;
+    height: 170px;
     border: 1px solid #eaeaea;
     border-radius: 5px;
-    margin-top: 25%;
 }
 .door_user_img{
     width: 100%;
     height: 100%;
     border-radius: 5px;
 }
-.doords_right_no{
+
+.doords_right_not_allowed{
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
 
 }
 .doors_right_icon{
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     margin-bottom: 30px;
 }
 .doors_right_title{
@@ -175,62 +204,176 @@
     color: #717171;
 }
 
-
-
-
+.limit_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 90px;
+    background: rgba(255, 0, 0, 0.05);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.limit_info_top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.limit_info_top_img{
+    margin-right: 5px;
+}
+.limit_top_title{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+}
+.limit_middle_title{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #818589;
+    margin-left: 35px!important;
+    margin-top: 3px !important;
+    margin-bottom: 5px !important;
+}
+.limit_info_bottom{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 35px!important;
+}
+.limit_bottom_title{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    color: #A50000;
+}
+.limit_bottom_title_img{
+    margin-left: 10px;
+}
 
 
 
 @media only screen and (max-width: 1800px) {
-    .online_doors_info_title{
-        width: 13%;
-    }
-    .online_doors_info_content{
-        height: 250px;
-    }
-    .doors_left_img{
-        position: relative;
-        width: 100%;
-        height: 230px;
-    }
-    .doors_time_info{
-        width: 18%;
-        height: 60px;
-    }
-    .doors_time{
-        font-size: 14px;
-
-    }
-    .doors_left_default{
-        width: 80%;
-        height: 50%;
-    }
-    .doors_right_label{
-        font-size: 14px;
-        margin-left: 5px;
-        margin-top: 5px;
-    }
-    .img_box{
-        height: 90px;
-    }
-    .doors_right_box{
-        width: 100%;
-        height: 30px;
-        font-size: 14px;
-        padding-left: 5px;
-    }
-    .doors_right_icon{
-        width: 80px;
-        height: 80px;
+    .online_doors_title{
         margin-bottom: 0px;
     }
-    .doors_right_p{
-        text-align: center;
+    .online_doors_body{
+        grid-gap: 10px;
     }
-    .doors_buttons .recognation_btn_cancel{
-       width: 100px;
+    .online_doors_body{
+        height: calc(100vh - 115px);
     }
-    .doors_buttons .recognation_btn{
-        width: 100px;
+    .online_doors_info_content{
+        height: 252px;
     }
+    .online_doors_info_title h3{
+        font-size: 14px;
+        line-height: 22px;
+    }
+    .doors_time {
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 2px!important;
+    }
+    .label_box{
+        height: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 5px;
+        margin-bottom: 5px;
+    }
+    .doors_right_label{
+        font-size: 12px;
+        line-height: 14px;
+        margin-right: 5px;
+    }
+    .doors_right_box{
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .img_box{
+        height: 100px;
+    }
+    .limit_info{
+        height: 70px;
+        padding: 0 5px;
+    }
+    .limit_info_top_img{
+        width: 20px;
+        height: 22px;
+    }
+    .limit_top_title{
+        font-size: 12px;
+    }
+    .limit_middle_title{
+        font-size: 10px;
+        margin-left: 25px!important;
+    }
+    .limit_info_bottom{
+        margin-left: 25px!important;
+    }
+
+
+    .doors_right_icon{
+        width: 70px;
+        height: 70px;
+        margin-bottom: 5px;
+    }
+    .not_allowed_title{
+        font-size: 16px;
+        line-height: 13px;
+    }
+    .not_allowed_text{
+        margin-top: 5px !important;
+        margin-bottom: 10px !important;
+    }
+    .not_allowed_buttons{
+        margin-bottom: 5px!important;
+    }
+    .not_allowed_buttons_cancel{
+        width: 125px;
+        height: 40px;
+    }
+    .not_allowed_allow{
+        height: 40px;
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

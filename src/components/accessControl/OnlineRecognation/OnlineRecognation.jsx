@@ -1,16 +1,17 @@
 import React, {useEffect, useState} from 'react';
-
-import './onlineRecognation.css';
 import {useSelector} from "react-redux";
-import socketIOClient from 'socket.io-client';
+import {useNavigate} from "react-router-dom";
 import {ip} from "../../../ip";
+
+import moment from "moment";
+import axios from "axios";
+import socketIOClient from 'socket.io-client';
+import './onlineRecognation.css';
 
 import recIcon from "../../../images/recognationIcon.svg";
 import myImg from '../../../images/myImg.svg';
 import noIMG from '../../../images/noIMG.svg';
-import moment from "moment";
-import axios from "axios";
-import {useNavigate} from "react-router-dom";
+
 
 const OnlineRecognation = () => {
 
