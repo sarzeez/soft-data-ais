@@ -17,7 +17,8 @@ function AddStaff(props) {
     const { isOpenAddStaff, setIsOpenAddStaff  } = props;
 
     const [ isOpenAddTerminal, setIsOpenAddTerminal] = useState(false)
-    const [initialValues, setInitialValues] = useState({
+
+    const initialValues = {
         fullname: 'Abdulaziz',
         gender: 'male',
         rank: '12',
@@ -31,7 +32,7 @@ function AddStaff(props) {
         card_id: '22a22a2',
         card_type: 'as',
         notify: '12'
-    })
+    }
 
     const [data, setData] = useState({
         fullname: 'Abdulaziz',

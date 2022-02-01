@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Table, Space  } from 'antd';
 import moment from 'moment';
 import { useSelector } from "react-redux";
@@ -77,11 +77,8 @@ const columns = [
 ];
 
 const StaffTable = (props) => {
-    const { staffData } = props;
+    const { staffData, state, setState } = props;
     const isDarkMode = useSelector(state => state.theme.theme_data)
-    const [state, setState] = useState({
-        selectedRowKeys: []
-    })
 
     const onSelectChange = (selectedRowKeys, a) => {
         setState({ selectedRowKeys })

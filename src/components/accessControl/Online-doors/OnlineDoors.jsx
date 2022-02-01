@@ -4,7 +4,6 @@ import socketIOClient from "socket.io-client";
 import {ip} from "../../../ip";
 import axios from "axios";
 import myImg from "../../../images/myImg.svg";
-import moment from "moment";
 import noIMG from "../../../images/noIMG.svg";
 import recIcon from "../../../images/recognationIcon.svg";
 import warning from "../../../images/warning.svg";
