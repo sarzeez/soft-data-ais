@@ -48,23 +48,34 @@
     padding-top: 10px;
 }
 
-.add_button {
-    border: none;
-    padding: 0px 18px;
-    height: 40px;
-    border-radius: 5px;
-    background-color: #29B85D;
-    font-size: 14px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin-right: 20px;
+.access_control_setting_tab_item_footer_buttons {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-.add_button:hover {
+.access_control_setting_tab_item_footer_buttons button {
+    cursor: pointer;
+    border: none;
+    padding: 0px 18px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    height: 40px;
+    color: #8B0606;
+    display: flex;
+    align-items: center;
+    background-color: #FFDEDE;
+}
+
+.access_control_setting_tab_item_footer_buttons button:hover {
     opacity: 0.9;
+}
+
+.add_button {
+    margin-right: 8px;
+    background-color: #29B85D !important;
+    color: #fff !important;
 }
 
 .edit_button {

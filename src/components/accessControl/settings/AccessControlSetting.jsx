@@ -5,6 +5,7 @@ import axios from "axios";
 import moment from 'moment';
 import { Tabs } from 'antd';
 import { MdOutlineAddCircleOutline } from 'react-icons/md'
+import { AiOutlineDelete } from 'react-icons/ai'
 
 
 import { ip } from '../../../ip';
@@ -41,6 +42,9 @@ const AccessControlSetting = () => {
     const [staffData, setStaffData] = useState([])
     const [staffTotal, setStaffTotal] = useState(null)
 
+    // delete button
+    const [deleteStaff, setDeleteStaff] = useState({selectedRowKeys: []})
+
     const navigate = useNavigate()
 
     const addNewStaff = () => {
@@ -73,18 +77,6 @@ const AccessControlSetting = () => {
         setTerminalData(newData)
     }
 
-    const terminalPaginationOnChange = (e = 1, option) => {
-        getTerminalData(e)
-        setTerminalPaginationCurrent(e)
-        setTerminalPaginationLimit(option)
-    }
-
-    useEffect(() => {
-        getTerminalData(terminalPaginationCurrent)
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [terminalPaginationLimit, terminalPaginationCurrent])
-
-
     // get staff data
     const getStaffData = async (id) => {
         const response = await axios.get(`${ip}/api/terminal/getusers/${staffPaginationLimit}/${id}`)
@@ -104,11 +96,22 @@ const AccessControlSetting = () => {
         setStaffData(newData)
     }
 
+    const terminalPaginationOnChange = (e = 1, option) => {
+        getTerminalData(e)
+        setTerminalPaginationCurrent(e)
+        setTerminalPaginationLimit(option)
+    }
+
     const staffPaginationOnChange = (e = 1, option) => {
         getStaffData(e)
         setStaffPaginationCurrent(e)
         setStaffPaginationLimit(option)
     }
+
+    useEffect(() => {
+        getTerminalData(terminalPaginationCurrent)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [terminalPaginationLimit, terminalPaginationCurrent])
 
     useEffect(() => {
         getStaffData(staffPaginationCurrent)
@@ -154,10 +157,12 @@ const AccessControlSetting = () => {
                                 />
                             </div>
                             <div className='access_control_setting_tab_item_footer'>
-                                <button className='add_button'>
-                                    <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
-                                    Terminal qo'shish
-                                </button>
+                                <div className='access_control_setting_tab_item_footer_buttons'>
+                                    <button className='add_button'>
+                                        <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
+                                        Terminal qo'shish
+                                    </button>
+                                </div>
                                 <TerminalPagination
                                     accessTablePaginationLimit = {terminalPaginationLimit}
                                     accessTablePaginationCurrent = {terminalPaginationCurrent}
@@ -180,13 +185,18 @@ const AccessControlSetting = () => {
                                 <StaffTable
                                     isDarkMode={isDarkMode}
                                     staffData = {staffData}
+                                    state = {deleteStaff}
+                                    setState = {setDeleteStaff}
                                 />
                             </div>
                             <div className='access_control_setting_tab_item_footer'>
-                                <button onClick={addNewStaff} className='add_button'>
-                                    <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
-                                    Xodim qo'shish
-                                </button>
+                                <div className='access_control_setting_tab_item_footer_buttons'>
+                                    <button onClick={addNewStaff} className='add_button'>
+                                        <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
+                                        Xodim qo'shish
+                                    </button>
+                                    <button><AiOutlineDelete size={22} style = {{marginRight: '5px'}}/>O’chirish</button>
+                                </div>
                                 <StaffPagination
                                     accessTablePaginationLimit = {staffPaginationLimit}
                                     accessTablePaginationCurrent = {staffPaginationCurrent}
