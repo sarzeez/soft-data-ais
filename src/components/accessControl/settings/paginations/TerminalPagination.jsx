@@ -1,6 +1,6 @@
 import {Pagination} from 'antd';
 
-const TerminalPagination = (props) => {
+const CameraPagenation = (props) => {
 
     const {accessTablePaginationLimit, accessTablePaginationCurrent, accessTablePaginationOnChange, accessTableTotal} = props;
 
@@ -16,4 +16,4 @@ const TerminalPagination = (props) => {
     />;
 }
 
-export default TerminalPagination
+export default CameraPagenation;

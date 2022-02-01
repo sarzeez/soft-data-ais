@@ -289,7 +289,7 @@ export default function FaceControlSearch() {
                                             <Select.Option value="8">{t("E’tiborsiz")}</Select.Option>
                                             <Select.Option value="9">{t("Kulgan")}</Select.Option>
                                             <Select.Option value="11">{t('Xursand')}</Select.Option>
-                                            <Select.Option value="12">{t('Ikkilangan')}</Select.Option>
+                                            <Select.Option value="12">{t('ikkilnagna')}</Select.Option>
                                             <Select.Option value="13">{t('Baqirgan')}</Select.Option>
                                         </Select>
                                     </div>
@@ -309,8 +309,8 @@ export default function FaceControlSearch() {
                                         >
                                             <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                             <Select.Option value="1">{t("Ko’rishni_tuzatish")}</Select.Option>
-                                            <Select.Option value="10">{t('Kozoynaksiz')}</Select.Option>
                                             <Select.Option value="14">{t('Quyoshdan_himoya')}</Select.Option>
+                                            <Select.Option value="10">{t('Kozoynaksiz')}</Select.Option>
                                         </Select>
                                     </div>
                                 </div>
@@ -422,7 +422,7 @@ export default function FaceControlSearch() {
                                     onClick={() => fetchFaceControlData(1)}
                                 >
                                     <AiOutlineSearch size={24} style = {{marginRight: '5px'}} />
-                                    Qidirish
+                                    {t('Qidirish')}
                                 </button>
                             </div>
 
@@ -433,7 +433,7 @@ export default function FaceControlSearch() {
                                     onClick={clear}
                                 >
                                     <AiOutlineClear size={24} style = {{marginRight: '5px'}} />
-                                    Filterni tozalash
+                                    {t('Filterni tozalash')}
                                 </button>
                             </div>
                         </div>

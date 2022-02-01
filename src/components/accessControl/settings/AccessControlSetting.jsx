@@ -134,6 +134,7 @@ const AccessControlSetting = () => {
                     <p className= {`Content_title ${isDarkMode && 'darkModeColor'}`} >Kirishni boshqarish sozlamalar</p>
                 </div>
             </div>
+
             <div className={`access_control_setting_body ${isDarkMode && 'darkModeBackground'}`}>
                 
                 <Tabs onChange={onChangeTabs} type="card" defaultActiveKey="1">

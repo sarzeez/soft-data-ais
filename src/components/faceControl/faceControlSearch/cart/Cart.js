@@ -1,22 +1,24 @@
 import React, { useState } from 'react';
+import { ip } from '../../../../ip';
+import {useTranslation} from "react-i18next";
+import {Tooltip} from "antd";
+import { emojes } from '../../../../assets/face-icons/icons';
+import { BsPlayBtn } from 'react-icons/bs'
+
 import moment from "moment";
 import axios from 'axios';
-import {Tooltip} from "antd";
-
 import ImageDemo from "./image";
-import { emojes } from '../../../../assets/face-icons/icons';
 import "./cart.css";
-
-import { BsPlayBtn } from 'react-icons/bs'
 import VideoModal from '../videoModal/VidoeModal';
 
-import { ip } from '../../../../ip';
 
-const mood = ["", "Tabassum", "Jahldor", "Xafa", "Jirkangan", "Qo'rqqan", "Hayratda", "E'tiborsiz", "Kulgan", "", "Xursand", "Ikkilangan", "Baqirgan"]
+
+
 
 const Cart = ({ item, isDarkMode }) => {
 
-
+    const {t} = useTranslation()
+    const mood = ["", "Tabassum", <div>{t('Jahldor')}</div> , <div>{t('Xafa')}</div>, <div>{t('Jirkangan')}</div> , <div>{t('Qo’rqqan')}</div>, <div>{t('Hayratda')}</div> ,<div>{t('E’tiborsiz')}</div>, <div>{t('Kulgan')}</div>, "",<div>{t('Xursand')}</div>, <div>{t('ikkilnagna')}</div>,<div>{t('Baqirgan')}</div>]
     const [visible, setVisible] = useState(false)
     const [videoByID, setVideoByID] = useState(null)
     const [loading, setLoading] = useState(false)
@@ -77,7 +79,7 @@ const Cart = ({ item, isDarkMode }) => {
                                 ? <img src = {emojes.female['female']} alt = ''/>
                                 : <img src = {emojes.male['male']} alt = '' />
                             }
-                            <p>{item.gender === 1 ? 'Erkak' : item.gender === 2 ? 'Ayol' : ''}</p>
+                            <p>{item.gender === 1 ? <div>{t('Erkak')}</div>  : item.gender === 2 ? <div>{t('Ayol')}</div>  : ''}</p>
                         </div>
                         <div>
                             {
@@ -88,12 +90,12 @@ const Cart = ({ item, isDarkMode }) => {
                             <p>
                                 {
                                    item && item.old === 'age_0_10'
-                                        ? "Yosh bola"
-                                        : item.old === 'age_11_17' ? "O'smir"
-                                            : item.old === 'age_18_25' ? "O'spirin"
-                                                : item.old === 'age_26_40' ? "O'rta yoshli"
-                                                    : item.old === 'age_41_60' ? "Katta yoshli"
-                                                        : "Keksa"
+                                        ? <div>{t('Yosh bola')}</div>
+                                        : item.old === 'age_11_17' ? <div>{t('O\'smir')}</div>
+                                            : item.old === 'age_18_25' ? <div>{t('O\'spirin')}</div>
+                                                : item.old === 'age_26_40' ? <div>{t('O\'rta yoshli')}</div>
+                                                    : item.old === 'age_41_60' ? <div>{t('Katta yoshli')}</div>
+                                                        : <div>{t('Keksa')}</div>
                                 }
                             </p>
                         </div>
@@ -103,7 +105,7 @@ const Cart = ({ item, isDarkMode }) => {
                             {
                                 <img src = {emojes.mask[item.args.MASKA]} alt = 'mask'/>
                             }
-                            <p>{item.args.MASKA === 1 ? 'Niqobli' : item.args.MASKA === 0 ? 'Niqobsiz' : ''}</p>
+                            <p>{item.args.MASKA === 1 ? <div>{t('Niqobli')}</div> : item.args.MASKA === 0 ? <div>{t('Niqobsiz')}</div> : ''}</p>
                         </div>
                         <div>
                             {
@@ -116,9 +118,9 @@ const Cart = ({ item, isDarkMode }) => {
                                 <img src = {emojes.glass[item.args.KOZOYNAK]} alt = 'glass' />
                             }
                             <p className="card_longTitle" >{item.args.KOZOYNAK === 1 ?
-                                <Tooltip title="Ko'rishni tuzatish" color={'cyan'}>Ko'rishni tuzatish</Tooltip>  :
-                                item.args.KOZOYNAK === 14 ? <Tooltip title="Quyoshdan himoya" color={'cyan'}>Quyoshdan himoya</Tooltip> :
-                                    <Tooltip title="Ko'zoynaksiz" color={'cyan'}>Ko'zoynaksiz</Tooltip> }
+                                <Tooltip title={t('Ko’rishni_tuzatish')} color={'cyan'}>{t('Ko’rishni_tuzatish')}</Tooltip>  :
+                                item.args.KOZOYNAK === 14 ? <Tooltip title={t('Quyoshdan_himoya')} color={'cyan'}>{t('Quyoshdan_himoya')}</Tooltip> :
+                                    <Tooltip title={t('Kozoynaksiz')} color={'cyan'}>{t('Kozoynaksiz')}</Tooltip> }
                             </p>
                         </div>
                         
@@ -133,7 +135,7 @@ const Cart = ({ item, isDarkMode }) => {
                                 {
                                     item.gender === 2
                                     ? ''
-                                    : (item.old !== 'age_0_10' && item.old !== 'age_11_17' && (item.args.SOQOL === 1 ? 'Soqolli' : item.args.SOQOL === 0 ? 'Soqolsiz' : ''))
+                                    : (item.old !== 'age_0_10' && item.old !== 'age_11_17' && (item.args.SOQOL === 1 ? <div>{t('Soqolli')}</div> : item.args.SOQOL === 0 ? <div>{t('Soqolsiz')}</div> : ''))
                                 }
                             </p>
                         </div>

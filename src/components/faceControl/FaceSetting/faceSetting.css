@@ -1,0 +1,138 @@
+.face_control_setting {
+    width: 100%;
+    height: calc(100vh - 64px);
+    padding: 10px;
+}
+.face_control_setting_body {
+    width: 100%;
+    margin-top: 10px;
+    height: calc(100% - 42px);
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #EAEAEA;
+    background-color: #fff;
+}
+
+/* tabs */
+
+.face_control_setting_tab_item {
+    width: 100%;
+    height: calc(100vh - 205px);
+    display: grid;
+    grid-template-rows: 1fr 50px;
+    overflow: auto;
+    border-radius: 3px;
+}
+
+.face_control_setting_tab{
+    display: grid;
+    grid-template-columns: 6fr 1.7fr;
+    grid-gap: 10px;
+}
+
+.face_control_setting_tab_item_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+/*---Camera setting right--*/
+
+.camera_groups{
+    padding: 10px;
+    height: calc(100vh - 205px);
+    border: 1px solid #E5EAFA;
+    border-radius: 5px;
+    overflow: auto;
+}
+.camera_groups_item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 10px 5px;
+    border-bottom: 1px solid  #E5EAFA;
+}
+.camera_groups_item h4{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #0A194E;
+}
+.camera_groups_item_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: #FFDEDE;
+    border-radius: 5px;
+    border: none;
+    color: #8B0606;
+    cursor: pointer;
+}
+/*tablr*/
+.camera_delite_button{
+    width: 50px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.camera_groups_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    width: 100%;
+    height: 40px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+    background: #29B85D;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+.camera_groups_language{
+    padding: 10px;
+    border: 1px solid #9EAEC5;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+.camera_language_input{
+    margin-bottom: 10px;
+    border: none;
+    background-color: #F9F9F9;
+}
+.camera_groups_language .ant-input{
+    background-color: #F9F9F9;
+    margin: 3px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
