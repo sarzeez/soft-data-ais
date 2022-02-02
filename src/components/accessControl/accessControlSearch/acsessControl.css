@@ -48,6 +48,16 @@
 
 /*AcsessTable*/
 
+.table_user_cell {
+    display: flex;
+    align-items: center;
+    grid-column-gap: 5px;
+}
+
+.table_user_cell .ant-image-mask {
+    border-radius: 20px;
+}
+
 .table_item_image_wrapper {
     width: 40px;
     height: 40px;
@@ -62,7 +72,6 @@
 .table_round_img{
     max-width: 100%;
     max-height: 100%;
-    background-color: blanchedalmond;
 }
 
 .ant-table-pagination.ant-pagination {
@@ -99,9 +108,9 @@
     .ant-table-tbody > tr > td {
         padding: 7px !important;
     }
-    .table_round_img{
+    /* .table_round_img{
         width: 31px;
         height: 31px;
         border-radius: 50%;
-    }
+    } */
 }

@@ -7,17 +7,18 @@ const { SHOW_PARENT } = TreeSelect;
 
 
 
-const Left = ({ data, setData }) => {
+const Left = ({ data, setData, terminalIPList }) => {
 
     const [state, setState] = useState([])
 
     const onChange = value => {
         // console.log('onChange ', value);
         setState(value);
+        setData({...data, value})
     };
 
     const tProps = {
-        treeData: data.door_ip,
+        treeData: terminalIPList,
         value: state,
         onChange: onChange,
         treeCheckable: true,
@@ -33,7 +34,7 @@ const Left = ({ data, setData }) => {
         <div className="access_control_add_staff_modal_body_item_left">
             <div className="access_control_add_staff_modal_body_item_left_inputs">
                 <Form.Item
-                    label="Ism"
+                    label="F.I.Sh"
                     name="fullname"
                     rules={[
                     {
@@ -61,10 +62,8 @@ const Left = ({ data, setData }) => {
                     <Select
                         size="large"
                     >
-                        <Select.Option value="all">Erkak</Select.Option>
-                        <Select.Option value="1">1</Select.Option>
-                        <Select.Option value="2">2</Select.Option>
-                        <Select.Option value="3">3</Select.Option>
+                        <Select.Option value="male">Erkak</Select.Option>
+                        <Select.Option value="female">Ayol</Select.Option>
                     </Select>
                 </Form.Item>
             </div>
@@ -82,10 +81,9 @@ const Left = ({ data, setData }) => {
                     <Select
                         size="large"
                     >
-                        <Select.Option value="all">Mijoz</Select.Option>
-                        <Select.Option value="1">1</Select.Option>
-                        <Select.Option value="2">2</Select.Option>
-                        <Select.Option value="3">3</Select.Option>
+                        <Select.Option value="1">Oddiy hodim</Select.Option>
+                        <Select.Option value="2">VIP</Select.Option>
+                        <Select.Option value="3">Direktor</Select.Option>
                     </Select>
                 </Form.Item>
                 <Form.Item
@@ -101,10 +99,9 @@ const Left = ({ data, setData }) => {
                     <Select
                         size="large"
                     >
-                        <Select.Option value="all">Ishchi</Select.Option>
-                        <Select.Option value="1">1</Select.Option>
-                        <Select.Option value="2">2</Select.Option>
-                        <Select.Option value="3">3</Select.Option>
+                        <Select.Option value="1">Normal</Select.Option>
+                        <Select.Option value="2">VIP</Select.Option>
+                        <Select.Option value="3">Blacklist</Select.Option>
                     </Select>
                 </Form.Item>
             </div>
@@ -136,10 +133,9 @@ const Left = ({ data, setData }) => {
                     <Select
                         size="large"
                     >
-                        <Select.Option value="all" hidden>Tanlash</Select.Option>
+                        <Select.Option value="0">0</Select.Option>
                         <Select.Option value="1">1</Select.Option>
                         <Select.Option value="2">2</Select.Option>
-                        <Select.Option value="3">3</Select.Option>
                     </Select>
                 </Form.Item>
             </div>

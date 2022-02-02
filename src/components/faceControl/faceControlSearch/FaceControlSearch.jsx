@@ -214,7 +214,7 @@ export default function FaceControlSearch() {
                                         value={ageFrom}
                                         type="number"
                                         size="large"
-                                        style={{marginRight: "10px"}}
+                                        style={{marginRight: "5px", borderRadius: '5px'}}
                                         placeholder={t('dan')}
                                     />
                                     <Input
@@ -223,6 +223,7 @@ export default function FaceControlSearch() {
                                         value={ageTo}
                                         type="number"
                                         size="large"
+                                        style={{borderRadius: '5px'}}
                                         placeholder={t('gacha')}
                                     />
                                 </div>
@@ -388,26 +389,26 @@ export default function FaceControlSearch() {
                                     <DatePicker
                                         className={`left_input ${isDarkMode && 'darkModeColor'}`}
                                         placeholder={`${moment(new Date()).format(
-                                            "DD.MM.YYYY, 00:00:00"
+                                            "YYYY.DD.MM, 00:00:00"
                                         )}`}
                                         onChange={onChangeDateFrom}
                                         size="large"
-                                        style={{width: "100%"}}
+                                        style={{width: "100%", borderRadius: '5px'}}
                                         showTime
-                                        value={dateFrom !== "" ? moment(dateFrom) : ""}
+                                        // value={dateFrom !== "" ? moment(dateFrom) : ""}
                                     />
                                 </div>
                                 <div className="input_wrapper" style={{marginTop: "15px"}}>
                                     <DatePicker
                                         className={`left_input ${isDarkMode && 'darkModeColor'}`}
                                         placeholder={`${moment(new Date()).format(
-                                            "DD.MM.YYYY, 23:59:59"
+                                            "YYYY.DD.MM, 23:59:59"
                                         )}`}
                                         onChange={onChangeDateTo}
                                         size="large"
-                                        style={{width: "100%"}}
+                                        style={{width: "100%", borderRadius: '5px'}}
                                         showTime
-                                        value={dateTo !== "" ? moment(dateTo) : ""}
+                                        // value={dateTo !== "" ? moment(dateTo) : ""}
                                         // format="DD-MM-YYYY, HH:mm:ss"
                                     />
                                 </div>

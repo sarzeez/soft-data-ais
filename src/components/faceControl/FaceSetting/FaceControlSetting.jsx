@@ -60,14 +60,14 @@ const FaceControlSetting = () => {
 
     const handleClickSaveGroup = () => {
          axios.post(`${ip}/api/camera_group`, {
-             "name_uz": "Olimpiyada muzeyi",
-             "name_ru": "Olimpiyada muzeyi",
-             "name_en": "Olimpiyada muzeyi"
+             name_uz: "Olimpiyada muzeyi",
+             name_ru: "Olimpiyada muzeyi",
+             name_en: "Olimpiyada muzeyi"
          })
             .then(res => {
-                console.log(res.data)
+                console.log(res)
                 setLanguageGroup()
-                setShow(false)
+                setShow(true)
             })
              .catch(err=>{
                  //
