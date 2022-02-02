@@ -9,6 +9,7 @@ import Left from "./Left";
 import Middle from "./Middle";
 import Right from "./Right";
 import AddTerminal from '../add-terminal/AddTerminal'
+import { ip } from "../../../../ip";
 
 Modal.setAppElement("#root");
 
@@ -17,42 +18,59 @@ function AddStaff(props) {
     const { isOpenAddStaff, setIsOpenAddStaff  } = props;
 
     const [ isOpenAddTerminal, setIsOpenAddTerminal] = useState(false)
+    const [terminalIPList, setTerminalIPList] = useState([])
 
     const initialValues = {
-        fullname: 'Abdulaziz',
+        fullname: '',
         gender: 'male',
-        rank: '12',
-        user_type: '12',
+        rank: '1',
+        user_type: '1',
         door_ip: [],
-        access_type: '12',
-        limit: '12',
+        access_type: '1',
+        limit: '',
         valid_from_time: '',
         valid_to_time: '',
         image: '',
-        card_id: '22a22a2',
-        card_type: 'as',
-        notify: '12'
+        card_id: '',
+        card_type: '',
+        notify: ''
     }
 
     const [data, setData] = useState({
-        fullname: 'Abdulaziz',
-        gender: 'male',
-        rank: '12',
-        user_type: '12',
+        fullname: '',
+        gender: '',
+        rank: '',
+        user_type: '',
         door_ip: [],
-        access_type: '12',
-        limit: '12',
+        access_type: '',
+        limit: '',
         valid_from_time: '',
         valid_to_time: '',
         image: '',
-        card_id: '22a22a2',
-        card_type: 'as',
-        notify: '12'
+        card_id: '',
+        card_type: '',
+        notify: false
 
     })
 
     const onFinish = (value) => {
-        console.log(value)
+
+        const formData = {
+            ...value,
+            image: data.image,
+            notify: data.notify
+        }
+
+        const fd = new FormData()
+        Object.keys(formData).forEach(i => fd.append(i, formData[i]))
+
+        axios.post(`${ip}/api/terminal/adduser`, fd)
+            .then(res => {
+                setIsOpenAddStaff(false)
+            })
+            .catch(err => {
+
+            })
     }
 
     const onFinishFailed = (error) => {
@@ -61,7 +79,7 @@ function AddStaff(props) {
 
     useEffect(() => {
         const getData = () => {
-            axios.get(`http://10.100.1.246:5005/api/adduser/terminal`)
+            axios.get(`${ip}/api/adduser/terminal`)
                 .then(res => {
                     const { data } = res;
                     const newData = data.map(item => ({
@@ -69,10 +87,9 @@ function AddStaff(props) {
                         value: item.ip_address,
                         key: item.ip_address
                     }))
-                    setData({...data, door_ip: newData})
+                    setTerminalIPList(newData)
                 })
                 .catch(err => {
-                    //
                 })
         }
         getData()
@@ -103,11 +120,11 @@ function AddStaff(props) {
                     <div className="access_control_add_staff_modal_body">
                         <div className="access_control_add_staff_modal_body_item">
                             <p className="access_control_add_staff_modal_body_item_title">Ma'lumotlar</p>
-                            <Left data = {data} setData = {setData} />
+                            <Left data = {data} setData = {setData} terminalIPList = {terminalIPList} />
                         </div>
                         <div className="access_control_add_staff_modal_body_item">
                             <p className="access_control_add_staff_modal_body_item_title">Yuzni aniqlash</p>
-                            <Middle data = {data} setData = {setData} />
+                            <Middle data = {data} setData = {setData} terminalIPList = {terminalIPList} />
                         </div>
                         <div className="access_control_add_staff_modal_body_item_3">
                             <div className="access_control_add_staff_modal_body_item">
@@ -116,7 +133,12 @@ function AddStaff(props) {
                             </div>
                             <div className='access_control_add_staff_modal_body_item_3_notif'>
                                 <p>Xodimning kirib/chiqish ma’lumotlari haqida bildirishnoma olishni istaysizmi?</p>
-                                <Switch checkedChildren="Ha" unCheckedChildren="Yo'q" />
+                                <Switch
+                                    checkedChildren="Ha"
+                                    unCheckedChildren="Yo'q"
+                                    checked={data.notify}
+                                    onChange={(value) => setData({...data, notify: value})}
+                                />
                             </div>
                             <div /> {/* single div */}
                             <button className="access_control_add_staff_modal_body_item_3_submit_button"

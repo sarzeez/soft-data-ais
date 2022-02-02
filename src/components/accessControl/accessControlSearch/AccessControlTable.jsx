@@ -144,7 +144,7 @@ const AcsessControlTable = () => {
                                         value={name}
                                         type="text"
                                         size="large"
-                                        style={{marginRight: "10px"}}
+                                        style={{marginRight: "10px", borderRadius: '5px'}}
                                         placeholder={t('Kiriting')}
                                     />
                                 </div>
@@ -232,24 +232,26 @@ const AcsessControlTable = () => {
                                     <DatePicker
                                         className={`left_input ${isDarkMode && 'darkModeColor'}`}
                                         placeholder={`${moment(new Date()).format(
-                                            "DD.MM.YYYY"
+                                            "YYYY.DD.MM, 00:00:00"
                                         )}`}
                                         onChange={onChangeDateFrom}
                                         size="large"
-                                        style={{width: "100%"}}
-                                        value={dateFrom !== "" ? moment(dateFrom) : ""}
+                                        style={{width: "100%", borderRadius: '5px'}}
+                                        showTime
+                                        // value={dateFrom !== "" ? moment(dateFrom) : ""}
                                     />
                                 </div>
                                 <div className="input_wrapper" style={{marginTop: "15px"}}>
                                     <DatePicker
                                         className={`left_input ${isDarkMode && 'darkModeColor'}`}
                                         placeholder={`${moment(new Date()).format(
-                                            "DD.MM.YYYY"
+                                            "YYYY.DD.MM, 26:59:59"
                                         )}`}
                                         onChange={onChangeDateTo}
                                         size="large"
-                                        style={{width: "100%"}}
-                                        value={dateTo !== "" ? moment(dateTo) : ""}
+                                        style={{width: "100%", borderRadius: '5px'}}
+                                        showTime
+                                        // value={dateTo !== "" ? moment(dateTo) : ""}
                                     />
                                 </div>
                             </div>

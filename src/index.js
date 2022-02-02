@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './assets/custom-css/custom-antd.css'
 import {Provider} from "react-redux";
 import store from "./redux/store";
 import './i18n'

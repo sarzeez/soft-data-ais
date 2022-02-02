@@ -1,7 +1,9 @@
-import React from 'react';
-import { Table, Space  } from 'antd';
+import React, { useState } from 'react';
+import { Table, Space, Image  } from 'antd';
 import moment from 'moment';
 import { useSelector } from "react-redux";
+
+import { AiOutlineUser } from 'react-icons/ai'
 
 import {ip} from '../../../../ip';
 
@@ -15,15 +17,20 @@ const columns = [
         title: 'Ism',
         dataIndex: 'fullname',
         render: (text, record) => (
-            <Space size="small">
-                {
-
-                }
-                <div className='table_item_image_wrapper'>
-                    <img className="table_round_img" src={`${ip}/${record.image}`} alt = 'user'/>
-                </div>
+            <div className='table_user_cell'>
+                <Image
+                    width={40}
+                    style={{borderRadius: '20px', marginRight: '5px', maxWidth: '40px', maxHeight: '40px'}}
+                    src={`${ip}/${record.image}`}
+                    preview = {{
+                        mask: (
+                            <AiOutlineUser size={20} />
+                        ),
+                        maskClassName: 'customize-mask',
+                    }}
+                />
                 <p>{record.fullname}</p>
-            </Space>
+            </div>
         ),
     },
     {
@@ -38,8 +45,21 @@ const columns = [
     },
     {
         title: 'Kirish eshiklari',
-        dataIndex: 'door_ip',
-        align: 'center'
+        // dataIndex: 'door_ip',
+        align: 'center',
+        render: (text, record) => (
+            <div className='door_ip_length'>
+                <p>
+                    {record.door_ip.length}
+                </p>
+                <div className='door_ip_length_hover'>
+                    {record.door_ip.join(', ')}
+                    <div className='door_ip_length_hover_rectangel'>
+
+                    </div>
+                </div>
+            </div>
+        )
     },
     {
         title: 'Ruxsat turi',
@@ -77,11 +97,14 @@ const columns = [
 ];
 
 const StaffTable = (props) => {
-    const { staffData, state, setState } = props;
+    const { staffData, setDeleteStaff } = props;
+
+    const [state, setState] = useState({selectedRowKeys: []})
     const isDarkMode = useSelector(state => state.theme.theme_data)
 
     const onSelectChange = (selectedRowKeys, a) => {
         setState({ selectedRowKeys })
+        setDeleteStaff(a)
     };
 
     const { selectedRowKeys } = state;

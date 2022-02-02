@@ -5,7 +5,7 @@ import { RiEditLine } from 'react-icons/ri'
 
 import 'antd/dist/antd.css';
 
-const columns = [
+const columnsUz = [
     {
         title: 'T/r',
         dataIndex: 'key',
@@ -24,7 +24,8 @@ const columns = [
     {
         title: 'Autentifikatsiya turi',
         dataIndex: 'auth_type',
-        align: 'center'
+        align: 'center',
+        render: (text, record) => record.auth_type.map(item => auth_type.uz[item]).join(', ')
     },
     {
         title: 'Terminal IP manzili',
@@ -49,9 +50,6 @@ const columns = [
     {
         title: "O'rnatilgan vaqti",
         dataIndex: 'created_time',
-        // render: (text, record) => {
-        //     return moment(record.created_time).format('DD.MM.YYYY, HH:mm:ss')
-        // },
         align: 'center'
     },
     {
@@ -65,6 +63,12 @@ const columns = [
         align: 'center'
     },
 ];
+
+const auth_type = {
+    uz: ['Yuz', 'Barmoq izi', 'ID karta'],
+    ru: ['Лицо', 'Отпечаток пальца', 'ID карта'],
+    en: ['Face', 'Fingerprint', 'ID card']
+}
 
 const TerminalTable = (props) => {
     const { terminalData } = props;
@@ -87,7 +91,7 @@ const TerminalTable = (props) => {
             <Table
                className={` ${isDarkMode && 'darkModeBackground'}`}
                 rowSelection={false}
-                columns={columns}
+                columns={columnsUz}
                 dataSource={terminalData}
                 pagination={false}
             />

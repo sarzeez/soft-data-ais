@@ -1,6 +1,8 @@
 import React from 'react';
-import { Table, Space  } from 'antd';
+import { Table, Image  } from 'antd';
 import { useSelector } from "react-redux";
+
+import { AiOutlineUser } from 'react-icons/ai'
 
 import {ip} from '../../../ip';
 
@@ -17,15 +19,21 @@ const columns = [
         title: 'Ism',
         dataIndex: 'fullname',
         render: (text, record) => (
-            <Space size="small">
-                {
-
-                }
-                <div className='table_item_image_wrapper'>
-                    <img className="table_round_img" src={`${ip}/${record.user_id}.jpg`} alt = 'user'/>
-                </div>
-                <td>{record.fullname}</td>
-            </Space>
+            <div className='table_user_cell'>
+                <Image
+                    width={40}
+                    style={{borderRadius: '20px', marginRight: '5px', maxWidth: '40px', maxHeight: '40px'}}
+                    src={`${ip}/${record.user_id}.jpg`}
+                    preview = {{
+                        src: `${ip}/api/get_history/${record.id}/img`,
+                        mask: (
+                            <AiOutlineUser size={20} />
+                        ),
+                        maskClassName: 'customize-mask',
+                    }}
+                />
+                <p>{record.fullname}</p>
+            </div>
           ),
     },
     {
