@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector} from "react-redux";
+import {useNavigate} from "react-router-dom";
 import socketIOClient from "socket.io-client";
 import {ip} from "../../../ip";
 import axios from "axios";
@@ -10,7 +11,6 @@ import warning from "../../../images/warning.svg";
 import doorNext from "../../../images/doorNext.svg";
 
 import './onlineDoors.css';
-import {useNavigate} from "react-router-dom";
 
 
 const OnlineDoors = () => {
