@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Table, Space  } from 'antd';
 import moment from 'moment';
 import { useSelector } from "react-redux";
@@ -38,8 +38,21 @@ const columns = [
     },
     {
         title: 'Kirish eshiklari',
-        dataIndex: 'door_ip',
-        align: 'center'
+        // dataIndex: 'door_ip',
+        align: 'center',
+        render: (text, record) => (
+            <div className='door_ip_length'>
+                <p>
+                    {record.door_ip.length}
+                </p>
+                <div className='door_ip_length_hover'>
+                    {record.door_ip.join(', ')}
+                    <div className='door_ip_length_hover_rectangel'>
+
+                    </div>
+                </div>
+            </div>
+        )
     },
     {
         title: 'Ruxsat turi',
@@ -77,11 +90,14 @@ const columns = [
 ];
 
 const StaffTable = (props) => {
-    const { staffData, state, setState } = props;
+    const { staffData, setDeleteStaff } = props;
+
+    const [state, setState] = useState({selectedRowKeys: []})
     const isDarkMode = useSelector(state => state.theme.theme_data)
 
     const onSelectChange = (selectedRowKeys, a) => {
         setState({ selectedRowKeys })
+        setDeleteStaff(a)
     };
 
     const { selectedRowKeys } = state;

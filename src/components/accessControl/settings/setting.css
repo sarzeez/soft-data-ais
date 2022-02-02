@@ -94,3 +94,45 @@
     opacity: 0.9;
 }
 
+.door_ip_length {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    padding: 2px 15px;
+    border-radius: 5px;
+}
+
+.door_ip_length:hover {
+    background-color: #efefef;
+}
+
+
+.door_ip_length_hover {
+    position: absolute;
+    white-space: nowrap;
+    top: -40px;
+    left: 50%;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transform: translate(-50%, 0);
+    background-color: #29B85D;
+    color: #fff;
+    opacity: 0;
+    z-index: 100;
+    transition: all ease-in-out 0.3s;
+}
+
+.door_ip_length_hover_rectangel {
+    width: 20px;
+    height: 20px;
+    background-color: #29B85D;
+    position: absolute;
+    bottom: -40%;
+    left: 50%;
+    z-index: -1;
+    transform: rotate(45deg) translate(-50%, 10%);
+}
+
+.door_ip_length:hover> .door_ip_length_hover{
+    opacity: 1;
+}

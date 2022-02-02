@@ -45,6 +45,7 @@ const Left = ({ data, setData }) => {
                     <Input
                         size="large"
                         placeholder="Kiriting"
+                        style={{borderRadius: '5px'}}
                     />
                 </Form.Item>
                 <Form.Item
@@ -156,6 +157,7 @@ const Left = ({ data, setData }) => {
                     <Input
                         size="large"
                         placeholder="Kiriting"
+                        style={{borderRadius: '5px'}}
                     />
                 </Form.Item>
                 <Checkbox
@@ -179,6 +181,7 @@ const Left = ({ data, setData }) => {
                     <DatePicker
                         size="large"
                         showTime
+                        style={{borderRadius: '5px'}}
                     />
                 </Form.Item>
                 <Form.Item
@@ -194,6 +197,7 @@ const Left = ({ data, setData }) => {
                     <DatePicker
                         size="large"
                         showTime
+                        style={{borderRadius: '5px'}}
                     />
                 </Form.Item>
             </div>

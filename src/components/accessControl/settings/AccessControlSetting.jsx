@@ -43,7 +43,7 @@ const AccessControlSetting = () => {
     const [staffTotal, setStaffTotal] = useState(null)
 
     // delete button
-    const [deleteStaff, setDeleteStaff] = useState({selectedRowKeys: []})
+    const [deleteStaff, setDeleteStaff] = useState([])
 
     const navigate = useNavigate()
 
@@ -185,8 +185,7 @@ const AccessControlSetting = () => {
                                 <StaffTable
                                     isDarkMode={isDarkMode}
                                     staffData = {staffData}
-                                    state = {deleteStaff}
-                                    setState = {setDeleteStaff}
+                                    setDeleteStaff = {setDeleteStaff}
                                 />
                             </div>
                             <div className='access_control_setting_tab_item_footer'>
@@ -195,7 +194,10 @@ const AccessControlSetting = () => {
                                         <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
                                         Xodim qo'shish
                                     </button>
-                                    <button><AiOutlineDelete size={22} style = {{marginRight: '5px'}}/>O’chirish</button>
+                                    {
+                                        deleteStaff.length > 0 && 
+                                        <button><AiOutlineDelete size={22} style = {{marginRight: '5px'}}/>O’chirish</button>
+                                    }
                                 </div>
                                 <StaffPagination
                                     accessTablePaginationLimit = {staffPaginationLimit}
