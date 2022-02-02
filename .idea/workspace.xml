@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="630af48d-1ca7-4883-8e3d-17f8fed27d11" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/FaceControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/FaceControlSetting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/faceSetting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/faceSetting.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/table/CameraTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/table/CameraTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/saidbar/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/saidbar/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +56,7 @@
       <workItem from="1643429139760" duration="13673000" />
       <workItem from="1643602183229" duration="19404000" />
       <workItem from="1643688428392" duration="13073000" />
-      <workItem from="1643774653279" duration="4419000" />
+      <workItem from="1643774653279" duration="5750000" />
     </task>
     <servers />
   </component>
