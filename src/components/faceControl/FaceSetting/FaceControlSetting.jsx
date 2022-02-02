@@ -29,6 +29,8 @@ const FaceControlSetting = () => {
     const [cameraPaginationCurrent, setCameraPaginationCurrent] = useState(1)
     const [cameraData, setCameraData] = useState([])
     const [cameraTotal, setCameraTotal] = useState(null)
+    const [show, setShow] = useState(true);
+    const [languageGroup, setLanguageGroup] = useState()
 
 
     const onChangeTabs = (key) => {
@@ -37,7 +39,7 @@ const FaceControlSetting = () => {
 
     const getCameraData = async (id) => {
         const response = await axios.get(`${ip}/api/cameras/${cameraPaginationLimit}/${id}/${localStorage.getItem('i18nextLng')}`)
-        console.log(response)
+        // console.log(response)
         const { data } = response;
         const count = data.count;
         setCameraTotal(count)
@@ -54,6 +56,23 @@ const FaceControlSetting = () => {
             }
         ))
         setCameraData(newData)
+    }
+
+    const handleClickSaveGroup = () => {
+         axios.post(`${ip}/api/camera_group`, {
+             "name_uz": "Olimpiyada muzeyi",
+             "name_ru": "Olimpiyada muzeyi",
+             "name_en": "Olimpiyada muzeyi"
+         })
+            .then(res => {
+                console.log(res.data)
+                setLanguageGroup()
+                setShow(false)
+            })
+             .catch(err=>{
+                 //
+             })
+
     }
 
     const cameraPaginationOnChange = (e = 1, option) => {
@@ -107,7 +126,7 @@ const FaceControlSetting = () => {
                                 </div>
 
                                 <div className='face_control_setting_tab_item_footer'>
-                                    <button className='add_button'>
+                                    <button className='face_control_setting_button'>
                                         <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
                                         Kamera qo‘shish
                                     </button>
@@ -121,29 +140,37 @@ const FaceControlSetting = () => {
                             </div>
 
                             <div className="camera_groups">
-                                <div className="camera_groups_item">
-                                    <h4>Guruhlar</h4>
-                                </div>
-                                <div className="camera_groups_item">
-                                    <h4>Navruz</h4>
-                                    <button className="camera_groups_item_button"><AiOutlineDelete style={{fontSize: '20px'}} /></button>
-                                </div>
-                                <div className="camera_groups_item">
-                                    <h4>Avtoturargoh</h4>
-                                    <button className="camera_groups_item_button"><AiOutlineDelete style={{fontSize: '20px'}} /></button>
-                                </div>
+                                        <div>
+                                            <div className="camera_groups_item">
+                                                <h4>Guruhlar</h4>
+                                            </div>
+                                            <div className="camera_groups_item">
+                                                <h4>Navruz</h4>
+                                                <button className="camera_groups_item_button"><AiOutlineDelete style={{fontSize: '20px'}} /></button>
+                                            </div>
+                                            <div className="camera_groups_item">
+                                                <h4>Avtoturargoh</h4>
+                                                <button className="camera_groups_item_button"><AiOutlineDelete style={{fontSize: '20px'}} /></button>
+                                            </div>
+                                        </div>
+                                {
+                                    show ?
+                                        <div className="add_new_group">
+                                            <button onClick={() =>setShow(false)} className="camera_groups_button">
+                                                <MdAdd />
+                                                Yangi guruh qo’shish
+                                            </button>
+                                        </div>
+                                        :
+                                        <div className="camera_groups_language">
+                                            <Input className="camera_language_input" placeholder="Kiriting" prefix={<img src={uzbek} alt="uz"/>} />
+                                            <Input className="camera_language_input" placeholder="Kiriting" prefix={<img src={russia} alt="ru"/>} />
+                                            <Input className="camera_language_input" placeholder="Kiriting" prefix={<img src={engliz} alt="eng"/>} />
+                                            <button onClick={handleClickSaveGroup} className="camera_groups_button">Saqlash</button>
+                                        </div>
+                                }
 
-                                <button className="camera_groups_button">
-                                    <MdAdd />
-                                    Yangi guruh qo’shish
-                                </button>
 
-                                <div className="camera_groups_language">
-                                    <Input className="camera_language_input" placeholder="Kiriting" prefix={<img src={uzbek} alt="uz"/>} />
-                                    <Input className="camera_language_input" placeholder="Kiriting" prefix={<img src={russia} alt="ru"/>} />
-                                    <Input className="camera_language_input" placeholder="Kiriting" prefix={<img src={engliz} alt="eng"/>} />
-                                    <button className="camera_groups_button">Saqlash</button>
-                                </div>
                             </div>
 
                         </div>

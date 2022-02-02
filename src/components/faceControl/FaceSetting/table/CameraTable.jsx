@@ -1,7 +1,6 @@
 import React from 'react';
 import { Table  } from 'antd';
 import { useSelector } from "react-redux";
-import {RiEditLine} from "react-icons/ri";
 
 import 'antd/dist/antd.css';
 import {AiOutlineDelete} from "react-icons/all";
