@@ -13,7 +13,6 @@ import FaceControlPagination from "./pagination/Pagination";
 import "./faceControlSearch.css";
 
 import { ip } from "../../../ip";
-import { useCallback } from "react";
 
 export default function FaceControlSearch() {
 
@@ -80,15 +79,20 @@ export default function FaceControlSearch() {
 
     const onChangeGroup = (e) =>{
         setGroup(e)
+        const cameraIP = cameraWithGroup[e].cameras.map(item => item.ip_address)
+        setCameraIP(cameraIP)
     }
 
     const onChangeCameraOptions = (e) => {
         setCamera(e)
         if(e === 'all') {
-            setCameraIP(cameraWithGroup[group].cameras)
+            
+            const cameraIP = cameraWithGroup[group].cameras.map(item => item.ip_address)
+            setCameraIP(cameraIP)
         }
         else {
-            setCameraIP([cameraWithGroup[group].cameras[e]])
+            const cameraIP = cameraWithGroup[group].cameras[e].ip_address
+            setCameraIP([cameraIP])
         }
     }
 
@@ -123,7 +127,6 @@ export default function FaceControlSearch() {
                 glasses,
                 mood,
                 ip: cameraIP
-
             }
         })
         const { data } = response;
@@ -161,16 +164,27 @@ export default function FaceControlSearch() {
         setFaceControlData(null)
     }
 
-    const getCameraWithGroup = useCallback(async() => {
-            const result = await axios.get(`${ip}/api/camerawithgroup/${lang}`)
-            const { data } = result;
-            setCameraWithGroup(data)
+    const getCameraWithGroup = async () => {
+        const result = await axios.get(`${ip}/api/camerawithgroup/${lang}`)
+        const { data } = result;
+        setCameraWithGroup(data)
+        const cameraIP = data[0].cameras.map(item => item.ip_address)
+        setCameraIP(cameraIP)
+        // if(result) {
+        //     fetchFaceControlData(faceControlPaginationCurrent)
+        // }
+    }
+
+    useEffect(() => {
+        getCameraWithGroup()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [lang])
 
     useEffect(() => {
+        getCameraWithGroup()
         fetchFaceControlData(faceControlPaginationCurrent)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [faceControlPaginationLimit, faceControlPaginationCurrent])
+    }, [faceControlPaginationLimit, faceControlPaginationCurrent, lang])
 
     useEffect(() => {
         if(!is_refresh_value) {
@@ -178,10 +192,6 @@ export default function FaceControlSearch() {
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-
-    useEffect(() => {
-        getCameraWithGroup()
-    }, [lang, getCameraWithGroup])
 
     return (
         <>
