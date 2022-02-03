@@ -25,7 +25,7 @@
 }
 
 .content_inputs {
-    width: 18%;
+    width: 320px !important;
     background: #ffffff;
     border: 1px solid #eaeaea;
     box-sizing: border-box;
@@ -46,30 +46,6 @@
     border: 1px solid #29b85d;
 }
 
-/* .ant-input:focus {
-    border-color: #29b85d;
-    border: 1px solid #29b85d;
-}
-
-.ant-select-single.ant-select-lg:not(.ant-select-customize-input)
-.ant-select-selector {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid #eaeaea;
-    box-sizing: border-box;
-    border-radius: 5px;
-}
-
-.ant-select-single.ant-select-lg:not(.ant-select-customize-input)
-.ant-select-selector:hover {
-    border: 1px solid #29b85d;
-    border-color: #29b85d;
-}
-
-.ant-select-single.ant-select-lg:not(.ant-select-customize-input)
-.ant-select-selector:focus {
-    border: 1px solid #29b85d;
-} */
-
 .input_label {
     font-family: Open Sans;
     font-style: normal;
@@ -88,7 +64,6 @@
     border-radius: 5px;
     border: none;
     outline: none;
-    font-family: Open Sans;
     font-style: normal;
     font-weight: 500;
     font-size: 15px;
@@ -119,7 +94,7 @@
 }
 
 .content_right {
-    width: 82%;
+    width: calc(100% - 320px);
     max-height: calc(100vh - 146px);
     min-height: calc(100vh - 146px);
     right: 0 !important;
@@ -131,7 +106,6 @@
 }
 
 .content_total {
-    font-family: Open Sans;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -155,48 +129,21 @@
     padding: 0 !important;
 }
 
-@media only screen and (max-width: 1870px) {
+@media only screen and (max-width: 1370px) {
     .content_inputs {
         width: 280px;
     }
-    .input_label {
-        font-size: 13px;
-        /*line-height: 22px;*/
-        margin-bottom: 3px !important;
-        margin-top: 3px !important;
+    .content_right {
+        width: calc(100% - 280px);
     }
     .face_control_search_inline_inputs{
         display: flex;
         justify-content: space-between;
         flex-direction: row;
+        grid-column-gap: 5px;
     }
-    .face_search_inputs{
-        width: 118px;
-        height: 35px;
-    }
-    .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector {
-        height: 35px;
-    }
-
-    .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-item, .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-placeholder {
-        line-height: 30px;
-    }
-    .ant-input:placeholder-shown {
-        height: 35px;
-    }
-    .ant-input-lg {
-        padding: 4px 8px;
-        font-size: 15px;
-    }
-    .add_clear_button{
-        display: flex;
-        justify-content: space-between;
-    }
-    .soft_btn {
-        width: 115px;
-    }
-    .clear_button{
-        width: 115px;
+    .form_input_wrapper {
+        width: 100%;
     }
 }
 

@@ -20,14 +20,14 @@
 .acsess_left{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 18%;
+    /* justify-content: space-between; */
+    width: 320px;
     border-radius: 10px;
     padding: 5px;
     border: 1px solid #EBEEF4;
 }
 .acsess_right{
-    width: 82%;
+    width: calc(100% - 320px);
     min-height: calc(100vh - 146px);
     max-height: calc(100vh - 146px);
     border-radius: 10px;
@@ -36,7 +36,8 @@
 }
 .input_wrapper{
     display: flex;
-    align-content: flex-end;
+    /* align-content: flex-end; */
+    width: 100%;
 }
 
 .ant-table-pagination.ant-pagination {
@@ -89,18 +90,12 @@
 
 
 
-@media only screen and (max-width: 1800px) {
+/* @media only screen and (max-width: 1800px) {
     .ant-table-tbody > tr > td {
         padding: 4px !important;
     }
     .ant-table-thead > tr > th{
         padding: 8px !important;
-    }
-    .soft_btn {
-        width: 115px;
-    }
-    .clear_button{
-        width: 115px;
     }
 
 }
@@ -108,9 +103,4 @@
     .ant-table-tbody > tr > td {
         padding: 7px !important;
     }
-    /* .table_round_img{
-        width: 31px;
-        height: 31px;
-        border-radius: 50%;
-    } */
-}
+} */
