@@ -2,24 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="630af48d-1ca7-4883-8e3d-17f8fed27d11" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/custom-css/custom-antd.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/gif/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddCameraModal/AddCameraModal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddCameraModal/addCameraModal.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AccessControlTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AccessControlTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AcsessTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AcsessTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/acsessControl.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/acsessControl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Middle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Middle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/middle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/middle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/setting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/setting.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/TerminalTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/TerminalTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/FaceControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/FaceControlSetting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/FaceControlSearch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/FaceControlSearch.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/faceControlSearch.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/faceControlSearch.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/table/CameraTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/table/CameraTable.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +60,8 @@
       <workItem from="1643429139760" duration="13673000" />
       <workItem from="1643602183229" duration="19404000" />
       <workItem from="1643688428392" duration="13073000" />
-      <workItem from="1643774653279" duration="13723000" />
+      <workItem from="1643774653279" duration="16170000" />
+      <workItem from="1643860565599" duration="16629000" />
     </task>
     <servers />
   </component>
