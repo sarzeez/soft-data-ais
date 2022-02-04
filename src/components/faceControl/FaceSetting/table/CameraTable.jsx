@@ -54,7 +54,7 @@ const columns = [
 ];
 
 const CameraTable = (props) => {
-    const { cameraData } = props;
+    const { cameraData, handleDeleteGroupItem } = props;
     const isDarkMode = useSelector(state => state.theme.theme_data)
 
 

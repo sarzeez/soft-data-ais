@@ -1,0 +1,89 @@
+.camera_settings_modal_content{
+    width: 500px;
+    padding: 20px;
+}
+.camera_settings_modal_title{
+    display: flex;
+    justify-content: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.settings_modal_input_label{
+    display: block;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+}
+.settings_modal_input{
+    padding: 10px;
+}
+
+.settings_modal_input .ant-input-prefix{
+    margin-right: 10px;
+}
+
+.settings_modal_select .ant-select-selector{
+    height: 45px!important;
+}
+
+.setting_input_lebel_groups{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+}
+.add_camera_buttons{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    justify-content: center;
+    grid-gap: 15px;
+}
+.add_camera_buttons_cancle{
+    height: 45px;
+    background: #FFDEDE;
+    color: #AC0000;
+    border: 1px solid #EAEAEA;
+    box-sizing: border-box;
+    border-radius: 5px;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+}
+.add_camera_buttons_save{
+    height: 45px;
+    background: #29B85D;
+    color: #FFFFFF;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

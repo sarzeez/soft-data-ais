@@ -9,6 +9,8 @@ import {ip} from "../../../ip";
 
 import CameraTable from "./table/CameraTable";
 import CameraPagenation from "./pagenation/CameraPagenation";
+import AddCameraModal from "./AddCameraModal/AddCameraModal";
+
 import axios from "axios";
 
 import uzbek from '../../../images/uzbek.svg';
@@ -25,18 +27,25 @@ const FaceControlSetting = () => {
     const isDarkMode = useSelector(state => state.theme.theme_data)
     const is_refresh_value = useSelector(state => state.theme.is_refresh_value)
 
-    const [cameraPaginationLimit, setCameraPaginationLimit] = useState(10)
-    const [cameraPaginationCurrent, setCameraPaginationCurrent] = useState(1)
-    const [cameraData, setCameraData] = useState([])
-    const [cameraTotal, setCameraTotal] = useState(null)
+    // add camera modal state
+    const [isOpenAddCamera, setIsOpenAddCamera] = useState(false)
+
+    const [cameraPaginationLimit, setCameraPaginationLimit] = useState(10);
+    const [cameraPaginationCurrent, setCameraPaginationCurrent] = useState(1);
+    const [cameraData, setCameraData] = useState([]);
+    const [cameraTotal, setCameraTotal] = useState(null);
     const [show, setShow] = useState(false);
-    const [languageGroup, setLanguageGroup] = useState([])
-    const lang = localStorage.getItem('i18nextLng')
+    const [languageGroup, setLanguageGroup] = useState([]);
+    const lang = localStorage.getItem('i18nextLng');
     const [multipelLanguageGroup, setMultipleLanguageGroup] = useState({
         name_uz: '',
         name_ru: '',
         name_en: ''
     })
+
+    const addCamera = () => {
+        setIsOpenAddCamera(true)
+    }
 
     const onChangeTabs = (key) => {
         // console.log(key);
@@ -44,11 +53,11 @@ const FaceControlSetting = () => {
 
     const getCameraData = async (id) => {
         const response = await axios.get(`${ip}/api/cameras/${cameraPaginationLimit}/${id}/${lang}`)
-        // console.log(response)
+
         const { data } = response;
-        const count = data.count;
+        const count = data && data.count;
         setCameraTotal(count)
-        const newData = data.data.map((item, index) => (
+        const newData = data && data.data && data.data.map((item, index) => (
             {
                 ...item,
                 key: index + 1 + (data.current_page - 1) * cameraPaginationLimit,
@@ -132,18 +141,22 @@ const FaceControlSetting = () => {
                     <TabPane tab="Kamera parametrlari" key="2">
                         <div className="face_control_setting_tab">
                             <div className='face_control_setting_tab_item'>
-
+                                <AddCameraModal
+                                    isOpenAddCamera={isOpenAddCamera}
+                                    setIsOpenAddCamera={setIsOpenAddCamera}
+                                />
                                 <div className='face_control_setting_tab_item_body'>
                                     <div className="camera_table_group">
                                         <CameraTable
                                             isDarkMode={isDarkMode}
                                             cameraData = {cameraData}
+                                            handleDeleteGroupItem={handleDeleteGroupItem}
                                         />
                                     </div>
                                 </div>
 
                                 <div className='face_control_setting_tab_item_footer'>
-                                    <button className='face_control_setting_button'>
+                                    <button onClick={addCamera} className='face_control_setting_button'>
                                         <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
                                         Kamera qo‘shish
                                     </button>
