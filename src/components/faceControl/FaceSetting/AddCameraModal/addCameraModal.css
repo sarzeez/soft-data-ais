@@ -1,5 +1,5 @@
 .camera_settings_modal_content{
-    width: 500px;
+    width: 600px;
     padding: 20px;
 }
 .camera_settings_modal_title{
@@ -70,7 +70,9 @@
     line-height: 19px;
 }
 
-
+.ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before{
+    display: none!important;
+}
 
 
 

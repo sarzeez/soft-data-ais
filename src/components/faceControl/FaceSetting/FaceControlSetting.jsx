@@ -52,18 +52,20 @@ const FaceControlSetting = () => {
     }
 
     const getCameraData = async (id) => {
-        const response = await axios.get(`${ip}/api/cameras/${cameraPaginationLimit}/${id}/${lang}`)
+        // const response = await axios.get(`${ip}/api/cameras/${cameraPaginationLimit}/${id}/${lang}`)
+        const response = await axios.get(`${ip}/api/cameras/${cameraPaginationLimit}/${id}`)
 
         const { data } = response;
+        // console.log(data);
         const count = data && data.count;
         setCameraTotal(count)
         const newData = data && data.data && data.data.map((item, index) => (
             {
                 ...item,
                 key: index + 1 + (data.current_page - 1) * cameraPaginationLimit,
-                name: item.name,
+                name: item[`name_${lang}`],
                 type: item.type,
-                group_name: item.group_name,
+                group_name: item[`group_name_${lang}`],
                 ip_address: item.ip_address,
                 username: item.username,
                 password: item.password,
@@ -73,7 +75,8 @@ const FaceControlSetting = () => {
     }
 
     const getCameraGroup = async () =>{
-        const response = await axios.get(`${ip}/api/camera_group/${lang}`)
+        const response = await axios.get(`${ip}/api/camera_group`)
+        // const response = await axios.get(`${ip}/api/camera_group/${lang}`)
         const { data } = response;
         setLanguageGroup(data)
     }
@@ -144,6 +147,7 @@ const FaceControlSetting = () => {
                                 <AddCameraModal
                                     isOpenAddCamera={isOpenAddCamera}
                                     setIsOpenAddCamera={setIsOpenAddCamera}
+                                    cameraPaginationLimit={cameraPaginationLimit}
                                 />
                                 <div className='face_control_setting_tab_item_body'>
                                     <div className="camera_table_group">
@@ -203,8 +207,6 @@ const FaceControlSetting = () => {
                                             <button onClick={handleClickSaveGroup} className="camera_groups_button">Saqlash</button>
                                         </div>
                                 }
-
-
                             </div>
 
                         </div>

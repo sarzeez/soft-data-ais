@@ -28,3 +28,18 @@ input[type=number] {
   background-color: #29b85d;
   border-radius: 30px;
 }
+
+
+.ant-input:hover{
+  border-color: #29b85d;
+}
+.ant-input:focus {
+  border-color: #29b85d;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 2px rgba(40, 229, 56, 0.2);
+  box-shadow: 0 0 0 2px rgba(46, 229, 40, 0.2);
+}
+
+.ant-select:hover{
+  border-color: #29b85d;
+}

@@ -133,6 +133,7 @@ export default function FaceControlSearch() {
         const count = data.count;
         setFaceControlTotal(count)
         setFaceControlData(data.data)
+        // console.log(data)
     }
 
     const faceControlPaginationOnChange = (e = 1, option) => {

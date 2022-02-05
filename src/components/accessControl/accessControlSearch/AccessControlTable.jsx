@@ -68,7 +68,7 @@ const AcsessControlTable = () => {
         })
         const { data } = response;
         const count = data.count;
-        // console.log(data)
+        console.log(response)
         setAccessTableTotal(count)
         const newData = data.data.map((item, index) => (
             {
