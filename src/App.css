@@ -43,3 +43,26 @@ input[type=number] {
 .ant-select:hover{
   border-color: #29b85d;
 }
+.ant-select-selector:hover, .ant-select-selector:focus-within {
+  border: 1px solid #29b85d !important;
+}
+
+
+/*---datePiker--*/
+.ant-picker:hover{
+  border: 1px solid #29b85d !important;
+}
+.ant-picker-focused{
+  border: 1px solid #29b85d !important;
+}
+
+/*---checkbox---*/
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #29b85d !important;
+  border-color: #29b85d !important;
+}
+.ant-checkbox-indeterminate .ant-checkbox-inner::after{
+  background-color: #29b85d!important;
+}
+
+

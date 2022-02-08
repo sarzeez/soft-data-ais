@@ -16,11 +16,9 @@ import TerminalPagination from './paginations/TerminalPagination';
 import StaffPagination from './paginations/StaffPagination';
 import AddStaff from '../modals/add-staff/AddStaff';
 
-
 import './setting.css'
 
 const { TabPane } = Tabs;
-
 
 const AccessControlSetting = () => {
 
@@ -199,6 +197,7 @@ const AccessControlSetting = () => {
                                         <button><AiOutlineDelete size={22} style = {{marginRight: '5px'}}/>O’chirish</button>
                                     }
                                 </div>
+
                                 <StaffPagination
                                     accessTablePaginationLimit = {staffPaginationLimit}
                                     accessTablePaginationCurrent = {staffPaginationCurrent}

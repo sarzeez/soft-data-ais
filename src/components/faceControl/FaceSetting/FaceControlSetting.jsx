@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import './faceSetting.css';
 import {useSelector} from "react-redux";
 import {MdAdd, MdOutlineAddCircleOutline} from "react-icons/md";
 import {Input, Tabs} from "antd";
@@ -12,10 +11,12 @@ import CameraPagenation from "./pagenation/CameraPagenation";
 import AddCameraModal from "./AddCameraModal/AddCameraModal";
 
 import axios from "axios";
+import './faceSetting.css';
 
 import uzbek from '../../../images/uzbek.svg';
 import russia from '../../../images/russia.svg';
 import engliz from '../../../images/engliz.svg';
+import EditCameraModal from "./EditModal/EditCameraModal";
 
 
 
@@ -28,9 +29,15 @@ const FaceControlSetting = () => {
     const is_refresh_value = useSelector(state => state.theme.is_refresh_value)
 
     // add camera modal state
-    const [isOpenAddCamera, setIsOpenAddCamera] = useState(false)
+    const [isOpenAddCamera, setIsOpenAddCamera] = useState(false);
 
-    const [cameraPaginationLimit, setCameraPaginationLimit] = useState(10);
+    // edit camera setting modal state
+    const [isOpenEditCamera, setIsOpenEditCamera] = useState(false);
+
+    // delete button
+    const [deleteCamera, setDeleteCamera] = useState([])
+
+    const [cameraPaginationLimit, setCameraPaginationLimit] = useState(14);
     const [cameraPaginationCurrent, setCameraPaginationCurrent] = useState(1);
     const [cameraData, setCameraData] = useState([]);
     const [cameraTotal, setCameraTotal] = useState(null);
@@ -47,6 +54,10 @@ const FaceControlSetting = () => {
         setIsOpenAddCamera(true)
     }
 
+    const editCamera = () => {
+        setIsOpenEditCamera(true)
+    }
+
     const onChangeTabs = (key) => {
         // console.log(key);
     }
@@ -56,16 +67,19 @@ const FaceControlSetting = () => {
         const response = await axios.get(`${ip}/api/cameras/${cameraPaginationLimit}/${id}`)
 
         const { data } = response;
-        // console.log(data);
         const count = data && data.count;
         setCameraTotal(count)
         const newData = data && data.data && data.data.map((item, index) => (
             {
                 ...item,
                 key: index + 1 + (data.current_page - 1) * cameraPaginationLimit,
-                name: item[`name_${lang}`],
+                name_uz: item.name_uz,
+                name_ru: item.name_ru,
+                name_en: item.name_en,
                 type: item.type,
-                group_name: item[`group_name_${lang}`],
+                group_name_uz: item.group_name_uz,
+                group_name_ru: item.group_name_ru,
+                group_name_en: item.group_name_en,
                 ip_address: item.ip_address,
                 username: item.username,
                 password: item.password,
@@ -149,21 +163,33 @@ const FaceControlSetting = () => {
                                     setIsOpenAddCamera={setIsOpenAddCamera}
                                     cameraPaginationLimit={cameraPaginationLimit}
                                 />
+                                <EditCameraModal
+                                    isOpenEditCamera={isOpenEditCamera}
+                                    setIsOpenEditCamera={setIsOpenEditCamera}
+                                />
                                 <div className='face_control_setting_tab_item_body'>
                                     <div className="camera_table_group">
                                         <CameraTable
+                                            editCamera={editCamera}
                                             isDarkMode={isDarkMode}
                                             cameraData = {cameraData}
-                                            handleDeleteGroupItem={handleDeleteGroupItem}
+                                            setDeleteCamera={setDeleteCamera}
                                         />
                                     </div>
                                 </div>
 
                                 <div className='face_control_setting_tab_item_footer'>
-                                    <button onClick={addCamera} className='face_control_setting_button'>
-                                        <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
-                                        Kamera qo‘shish
-                                    </button>
+                                    <div className="face_control_setting_tab_item_footer_buttons">
+                                        <button onClick={addCamera} className='face_control_setting_button'>
+                                            <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
+                                            Kamera qo‘shish
+                                        </button>
+                                        {
+                                            deleteCamera.length > 0 &&
+                                            <button className="face_control_setting_footer_delite_button"><AiOutlineDelete size={22}/>O’chirish</button>
+                                        }
+                                    </div>
+
                                     <CameraPagenation
                                         faceTablePaginationLimit = {cameraPaginationLimit}
                                         faceTablePaginationCurrent = {cameraPaginationCurrent}
@@ -183,7 +209,8 @@ const FaceControlSetting = () => {
                                                     <div key={index} className="camera_groups_item">
                                                         <h4>
                                                             {
-                                                                lang === 'uz' ? item.name_uz : (lang === 'ru' ? item.name_ru : item.name_en)
+                                                                item[`name_${lang}`]
+                                                                // lang === 'uz' ? item.name_uz : (lang === 'ru' ? item.name_ru : item.name_en)
                                                             }
                                                         </h4>
                                                         <button onClick={() => handleDeleteGroupItem(item.id)} style={{marginRight: '10px'}} className="camera_groups_item_button"><AiOutlineDelete style={{fontSize: '20px'}} /></button>
@@ -205,6 +232,7 @@ const FaceControlSetting = () => {
                                             <Input className="camera_language_input" value={multipelLanguageGroup.name_ru} onChange={e => setMultipleLanguageGroup({...multipelLanguageGroup, name_ru: e.target.value})} placeholder="Входить" prefix={<img src={russia} alt="ru"/>} />
                                             <Input className="camera_language_input" value={multipelLanguageGroup.name_en} onChange={e => setMultipleLanguageGroup({...multipelLanguageGroup, name_en: e.target.value})} placeholder="Enter" prefix={<img src={engliz} alt="eng"/>} />
                                             <button onClick={handleClickSaveGroup} className="camera_groups_button">Saqlash</button>
+                                            <button  onClick={() =>setShow(false)} className="camera_groups_button_cancle">Bekor qilish</button>
                                         </div>
                                 }
                             </div>

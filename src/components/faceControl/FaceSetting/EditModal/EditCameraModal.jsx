@@ -4,20 +4,19 @@ import {ip} from "../../../../ip";
 
 import Modal from "react-modal";
 import axios from "axios";
-import './addCameraModal.css';
+import '../AddCameraModal/addCameraModal.css';
 
 import russia from "../../../../images/russia.svg";
 import uzbek from "../../../../images/uzbek.svg";
 import engliz from "../../../../images/engliz.svg";
 
 
-const AddCameraModal = (props) => {
+const EditCameraModal = (props) => {
+    const { isOpenEditCamera, setIsOpenEditCamera} = props;
 
-    const { isOpenAddCamera, setIsOpenAddCamera} = props;
+
     const [languageGroup, setLanguageGroup] = useState([]);
-
     const lang = localStorage.getItem('i18nextLng');
-    // console.log(lang)
     const [cameraSetting, setCameraSetting] = useState([]);
 
     const [langNameUz, setLangNameUz] = useState('');
@@ -59,27 +58,27 @@ const AddCameraModal = (props) => {
     }
 
     const cancel = () =>{
-        setIsOpenAddCamera(!isOpenAddCamera)
+        setIsOpenEditCamera(!isOpenEditCamera)
     }
 
     const getCameraAddData = async (id) => {
         await axios.post(`${ip}/api/cameras`, {
-                name_uz: langNameUz,
-                name_ru: langNameRu,
-                name_en: langNameEn,
-                type: cameraType,
-                group_id: groupName,
-                ip_address: ipAdress,
-                username: login,
-                password: password
-       }, )
-        .then(response => {
-            setLanguageGroup(response && response.data);
-        })
-        .catch(err => {
-            console.log("Error occured");
-            // console.log(err)
-        })
+            name_uz: langNameUz,
+            name_ru: langNameRu,
+            name_en: langNameEn,
+            type: cameraType,
+            group_id: groupName,
+            ip_address: ipAdress,
+            username: login,
+            password: password
+        }, )
+            .then(response => {
+                setLanguageGroup(response && response.data);
+            })
+            .catch(err => {
+                console.log("Error occured");
+                // console.log(err)
+            })
     }
 
     const getCameraGroup = async () =>{
@@ -88,9 +87,6 @@ const AddCameraModal = (props) => {
         setCameraSetting(data)
     }
 
-    // useEffect(()=>{
-    //     getCameraAddData();
-    // }, [])
 
     useEffect(()=>{
         getCameraGroup();
@@ -99,8 +95,8 @@ const AddCameraModal = (props) => {
     return (
         <>
             <Modal
-                isOpen={isOpenAddCamera}
-                onRequestClose={() => setIsOpenAddCamera(false)}
+                isOpen={isOpenEditCamera}
+                onRequestClose={() => setIsOpenEditCamera(false)}
                 contentLabel="My dialog"
                 className="mymodal"
                 overlayClassName="myoverlay"
@@ -219,7 +215,7 @@ const AddCameraModal = (props) => {
                                             required: true,
                                             message: 'Please input your password!'
                                         },
-                                        ]}
+                                    ]}
                                 >
                                     <Input
                                         onChange={onChangePassword}
@@ -248,4 +244,4 @@ const AddCameraModal = (props) => {
     );
 };
 
-export default AddCameraModal;
+export default EditCameraModal;
