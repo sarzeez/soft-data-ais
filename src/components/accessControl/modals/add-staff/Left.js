@@ -157,7 +157,6 @@ const Left = ({ data, setData, terminalIPList }) => {
                     />
                 </Form.Item>
                 <Checkbox
-                        // onChange={onChange}
                         className="access_control_add_staff_modal_body_item_left_checkbox"
                     >
                         Cheklov

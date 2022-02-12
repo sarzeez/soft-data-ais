@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
 
-import DashboarFirstRoute from '../components/dashboard/dashboarFirstRoute'
 import FaceControlSearch from '../components/faceControl/faceControlSearch/FaceControlSearch'
 import FaceControlAnalysis from '../components/faceControl/faceControlAnalysis/FaceControlAnalysis'
 import OnlineRecognation from "../components/accessControl/OnlineRecognation/OnlineRecognation";
@@ -17,7 +16,6 @@ import FaceControlSetting from "../components/faceControl/FaceSetting/FaceContro
 const RootPage = () => {
     return (
         <Routes>
-            <Route index path = '/' element = {<DashboarFirstRoute />}/>
             <Route path = '/face-control-search' element = {<FaceControlSearch />}/>
             <Route path = '/face-control-analysis' element = {<FaceControlAnalysis />}/>
             <Route path='/face-control-setting' element={<FaceControlSetting />} />
