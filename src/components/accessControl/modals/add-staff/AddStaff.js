@@ -19,9 +19,8 @@ function AddStaff(props) {
 
     const [ isOpenAddTerminal, setIsOpenAddTerminal] = useState(false)
     const [terminalIPList, setTerminalIPList] = useState([])
-
-    const initialValues = {
-        fullname: '',
+    const [initialValues, ] = useState({
+        fullname: 'Abdulaziz',
         gender: 'male',
         rank: '1',
         user_type: '1',
@@ -34,7 +33,9 @@ function AddStaff(props) {
         card_id: '',
         card_type: '',
         notify: ''
-    }
+    })
+
+  
 
     const [data, setData] = useState({
         fullname: '',

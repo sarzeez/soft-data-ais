@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="630af48d-1ca7-4883-8e3d-17f8fed27d11" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/EditModal/EditCameraModal.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/left.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/left.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceControlSettings.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/RealTime/RealTime/AddIDcardModal/addIDcard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/RealTime/RealTime/AddIDcardModal/addIDcard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddCameraModal/AddCameraModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddCameraModal/AddCameraModal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/EditModal/EditCameraModal.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/FaceControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/FaceControlSetting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/faceSetting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/faceSetting.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/table/CameraTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/table/CameraTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/root.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/root.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +68,12 @@
       <workItem from="1643947673734" duration="17174000" />
       <workItem from="1644035834758" duration="6934000" />
       <workItem from="1644207095213" duration="22561000" />
-      <workItem from="1644293789896" duration="17567000" />
+      <workItem from="1644293789896" duration="17705000" />
+      <workItem from="1644379869362" duration="25052000" />
+      <workItem from="1644466436621" duration="1228000" />
+      <workItem from="1644577328301" duration="444000" />
+      <workItem from="1644579020830" duration="5064000" />
+      <workItem from="1644638639976" duration="662000" />
     </task>
     <servers />
   </component>

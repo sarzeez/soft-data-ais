@@ -13,72 +13,33 @@ import engliz from "../../../../images/engliz.svg";
 
 const AddCameraModal = (props) => {
 
-    const { isOpenAddCamera, setIsOpenAddCamera} = props;
-    const [languageGroup, setLanguageGroup] = useState([]);
+    const { isOpenAddCamera, setIsOpenAddCamera, cameraIntialValues, setCameraInitialValues, getCameraData, cameraPaginationCurrent } = props;
 
     const lang = localStorage.getItem('i18nextLng');
-    // console.log(lang)
     const [cameraSetting, setCameraSetting] = useState([]);
 
-    const [langNameUz, setLangNameUz] = useState('');
-    const [langNameRu, setLangNameRu] = useState('');
-    const [langNameEn, setLangNameEn] = useState('');
-    const [cameraType, setCameraType] = useState();
-    const [groupName, setGroupName] = useState();
-    const [ipAdress, setIpAdress] = useState();
-    const [login, setLogin] = useState();
-    const [password, setPassword] = useState();
-
-
-    const onChangeLangUz = (e) =>{
-        setLangNameUz(e.target.value);
-    }
-
-    const onChangeLangRu = (e) =>{
-        setLangNameRu(e.target.value);
-    }
-
-    const onChangeLangEn = (e) =>{
-        setLangNameEn(e.target.value);
-    }
-
-    const onChangeCameraType = (e)=>{
-        setCameraType(e);
-    }
-    const onChangeGroup = (e)=>{
-        setGroupName(e);
-    }
-    const onChangeIpAdress = (e)=>{
-        setIpAdress(e.target.value);
-    }
-    const onChangeLogin = (e)=>{
-        setLogin(e.target.value);
-    }
-    const onChangePassword = (e)=>{
-        setPassword(e.target.value);
-    }
+    // const initialValues = {
+    //     name_uz: 'langNameUz',
+    //     name_ru: 'langNameRu',
+    //     name_en: 'langNameEn',
+    //     type: 'cameraType',
+    //     group_id: 'groupName',
+    //     ip_address: 'ipAdress',
+    //     username: 'login',
+    //     password: 'password'
+    // }
 
     const cancel = () =>{
         setIsOpenAddCamera(!isOpenAddCamera)
-    }
-
-    const getCameraAddData = async (id) => {
-        await axios.post(`${ip}/api/cameras`, {
-                name_uz: langNameUz,
-                name_ru: langNameRu,
-                name_en: langNameEn,
-                type: cameraType,
-                group_id: groupName,
-                ip_address: ipAdress,
-                username: login,
-                password: password
-       }, )
-        .then(response => {
-            setLanguageGroup(response && response.data);
-        })
-        .catch(err => {
-            console.log("Error occured");
-            // console.log(err)
+        setCameraInitialValues({
+            name_uz: '',
+            name_ru: '',
+            name_en: '',
+            type: '',
+            group_id: '',
+            ip_address: '',
+            username: '',
+            password: ''
         })
     }
 
@@ -88,9 +49,35 @@ const AddCameraModal = (props) => {
         setCameraSetting(data)
     }
 
-    // useEffect(()=>{
-    //     getCameraAddData();
-    // }, [])
+    const onFinish = (values) => {
+        if(cameraIntialValues.edit) {
+            axios.put(`${ip}/api/cameras/${cameraIntialValues.id}`, {
+                ...values,
+            })
+                .then(response => {
+                    // item edited
+                    cancel()
+                })
+                .catch(err => {
+                    console.log(err?.response?.data)
+                })
+        }
+        else {
+            axios.post(`${ip}/api/cameras`, values)
+                .then(response => {
+                    cancel()
+                    getCameraData(cameraPaginationCurrent)
+                })
+                .catch(err => {
+                    console.log(err?.response?.data)
+                })
+        }
+    }
+
+
+    const onFinishFailed = (e) => {
+        // console.log(e)
+    }
 
     useEffect(()=>{
         getCameraGroup();
@@ -100,29 +87,94 @@ const AddCameraModal = (props) => {
         <>
             <Modal
                 isOpen={isOpenAddCamera}
-                onRequestClose={() => setIsOpenAddCamera(false)}
+                onRequestClose={() => setIsOpenAddCamera(true)}
                 contentLabel="My dialog"
                 className="mymodal"
                 overlayClassName="myoverlay"
+                shouldCloseOnOverlayClick={false}   
                 closeTimeoutMS={0}
             >
+
+                <Form
+                    name="basic"
+                    layout="vertical"
+                    initialValues={cameraIntialValues}
+                    requiredMark = 'optional'
+                    onFinish={onFinish}
+                    onFinishFailed={onFinishFailed}
+                    autoComplete="off"
+                >
                 <div className="camera_settings_modal_content">
                     <div className="camera_settings_modal_title">
                         Kamera parametrlari
                     </div>
-                    <Form>
-                        <div className="camera_settings_modal_inputs">
-                            <h4 className="settings_modal_input_label" >Kamera nomi</h4>
-                            <div className="camera_groups_language">
-                                <Input className="camera_language_input" onChange={onChangeLangUz}  placeholder="Kiriting" prefix={<img src={uzbek} alt="uz"/>} />
-                                <Input className="camera_language_input" onChange={onChangeLangRu} placeholder="Входить" prefix={<img src={russia} alt="ru"/>} />
-                                <Input className="camera_language_input" onChange={onChangeLangEn} placeholder="Enter" prefix={<img src={engliz} alt="eng"/>} />
-                            </div>
+                    <div className="camera_settings_modal_inputs">
+                        <h4 className="settings_modal_input_label" >Kamera nomi</h4>
+                        <div className="camera_groups_language">
+                            <Form.Item
+                                label={false}
+                                name="name_uz"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Please input your gender!',
+                                    },
+                                ]}
+                            >
+                                <Input className="camera_language_input" placeholder="Kiriting" prefix={<img src={uzbek} alt="uz"/>} />
+                            </Form.Item>
+                            <Form.Item
+                                label={false}
+                                name="name_ru"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Please input your gender!',
+                                    },
+                                ]}
+                            >
+                                <Input className="camera_language_input" placeholder="Kiriting" prefix={<img src={russia} alt="uz"/>} />
+                            </Form.Item>
+                            <Form.Item
+                                label={false}
+                                name="name_en"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Please input your gender!',
+                                    },
+                                ]}
+                            >
+                                <Input className="camera_language_input" placeholder="Kiriting" prefix={<img src={engliz} alt="uz"/>} />
+                            </Form.Item>
+                        </div>
 
+                        <Form.Item
+                            className="settings_modal_input_label"
+                            label="Kamera turi"
+                            name="type"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Please input your gender!',
+                                },
+                            ]}
+                        >
+                            <Select
+                                className="settings_modal_select"
+                                size="large"
+                                placeholder="Tanlash"
+                            >
+                                <Select.Option value="dahua">Dahua</Select.Option>
+                                <Select.Option value="hikvision">Hikvision</Select.Option>
+                            </Select>
+                        </Form.Item>
+
+                        <div className="setting_input_lebel_groups">
                             <Form.Item
                                 className="settings_modal_input_label"
-                                label="Kamera turi"
-                                name="camera type"
+                                label="Guruh"
+                                name="group_id"
                                 rules={[
                                     {
                                         required: true,
@@ -131,118 +183,86 @@ const AddCameraModal = (props) => {
                                 ]}
                             >
                                 <Select
-                                    onChange={onChangeCameraType}
                                     className="settings_modal_select"
                                     size="large"
                                     placeholder="Tanlash"
                                 >
-                                    <Select.Option value="dahua">Dahua</Select.Option>
-                                    <Select.Option value="hikvision">Hikvision</Select.Option>
+                                    {
+                                        cameraSetting && cameraSetting.map((item, index) => (
+                                            <Select.Option key={index} value={item.id}>{item[`name_${lang}`]}</Select.Option>
+                                        ))
+                                    }
                                 </Select>
                             </Form.Item>
 
-                            <div className="setting_input_lebel_groups">
-                                <Form.Item
-                                    className="settings_modal_input_label"
-                                    label="Guruh"
-                                    name="camera_type"
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Please input your gender!',
-                                        },
+                            <Form.Item
+                                className="settings_modal_input_label"
+                                label="IP manzili"
+                                name="ip_address"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Please input camera name!',
+                                    },
+                                ]}
+                            >
+                                <Input
+                                    className="settings_modal_input"
+                                    size="large"
+                                    placeholder="Kiritish"
+                                    style={{borderRadius: '5px'}}
+                                />
+                            </Form.Item>
+                        </div>
+
+                        <div className="setting_input_lebel_groups">
+                            <Form.Item
+                                className="settings_modal_input_label"
+                                label="Login"
+                                name="username"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Please input camera name!',
+                                    },
+                                ]}
+                            >
+                                <Input
+                                    className="settings_modal_input"
+                                    size="large"
+                                    placeholder="Kiritish"
+                                    style={{borderRadius: '5px'}}
+                                />
+                            </Form.Item>
+                            <Form.Item
+                                className="settings_modal_input_label"
+                                label="Parol"
+                                name="password"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Please input your password!'
+                                    },
                                     ]}
-                                >
-                                    <Select
-                                        onChange={onChangeGroup}
-                                        className="settings_modal_select"
-                                        size="large"
-                                        placeholder="Tanlash"
-                                    >
-                                        {
-                                            cameraSetting && cameraSetting.map((item, index) => (
-                                                <Select.Option key={index} value={item.id}>{item[`name_${lang}`]}</Select.Option>
-                                            ))
-                                        }
-                                    </Select>
-                                </Form.Item>
-
-                                <Form.Item
-                                    className="settings_modal_input_label"
-                                    label="IP manzili"
-                                    name="camera_ip"
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Please input camera name!',
-                                        },
-                                    ]}
-                                >
-                                    <Input
-                                        onChange={onChangeIpAdress}
-                                        className="settings_modal_input"
-                                        size="large"
-                                        placeholder="Kiritish"
-                                        style={{borderRadius: '5px'}}
-                                    />
-                                </Form.Item>
-                            </div>
-
-                            <div className="setting_input_lebel_groups">
-                                <Form.Item
-                                    className="settings_modal_input_label"
-                                    label="Login"
-                                    name="camera_login"
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Please input camera name!',
-                                        },
-                                    ]}
-                                >
-                                    <Input
-                                        onChange={onChangeLogin}
-                                        className="settings_modal_input"
-                                        name="camera_login"
-                                        size="large"
-                                        placeholder="Kiritish"
-                                        style={{borderRadius: '5px'}}
-                                        autoComplete="off"
-                                    />
-                                </Form.Item>
-                                <Form.Item
-                                    className="settings_modal_input_label"
-                                    label="Parol"
-                                    name="camera_password"
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Please input your password!'
-                                        },
-                                        ]}
-                                >
-                                    <Input
-                                        onChange={onChangePassword}
-                                        className="settings_modal_input"
-                                        size="large"
-                                        name="camera_password"
-                                        placeholder="Kiritish"
-                                        style={{borderRadius: '5px'}}
-                                        autoComplete="off"
-                                    />
-                                </Form.Item>
-
-                            </div>
-
-                            <div className="add_camera_buttons">
-                                <button onClick={cancel} className="add_camera_buttons_cancle">Bekor qilish</button>
-                                <button onClick={getCameraAddData} className="add_camera_buttons_save">Saqlash</button>
-                            </div>
+                            >
+                                <Input
+                                    className="settings_modal_input"
+                                    size="large"
+                                    placeholder="Kiritish"
+                                    style={{borderRadius: '5px'}}
+                                />
+                            </Form.Item>
 
                         </div>
-                    </Form>
-                </div>
 
+                        <div className="add_camera_buttons">
+                            <button type="button" onClick={cancel} className="add_camera_buttons_cancle">Bekor qilish</button>
+                            <button type="submit"  className="add_camera_buttons_save">Saqlash</button>
+                        </div>
+
+                    </div>
+                </div>
+                </Form>
             </Modal>
         </>
     );

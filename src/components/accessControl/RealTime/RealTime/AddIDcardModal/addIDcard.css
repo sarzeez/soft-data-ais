@@ -65,12 +65,12 @@
 }
 
 
-.ant-modal-footer{
-    display: none;
-}
-.ant-modal-close-x{
-    display: none;
-}
+/*.ant-modal-footer{*/
+/*    display: none;*/
+/*}*/
+/*.ant-modal-close-x{*/
+/*    display: none;*/
+/*}*/
 .ant-input{
     font-size: 16px!important;
 }

@@ -4,28 +4,26 @@ import { useSelector } from "react-redux";
 import {RiEditLine} from "react-icons/ri";
 import 'antd/dist/antd.css';
 
-
-const CameraTable = (props) => {
+const AddNewGroupTable = (props) => {
     const {
-        cameraData,
-        setIsOpenAddCamera,
-        setDeleteCamera,
-        setCameraInitialValues
+        languageGroup,
+        setDeleteGroup,
+        setGroupInitialValues,
+        setShow
     } = props;
 
-    
+    console.log(languageGroup)
     const lang = localStorage.getItem('i18nextLng');
     const isDarkMode = useSelector(state => state.theme.theme_data)
-    cameraData.forEach(e => {
+    languageGroup.forEach(e => {
         e.name = e[`name_${lang}`];
-        e.group_name = e[`group_name_${lang}`];
     })
 
     const [state, setState] = useState({selectedRowKeys: []})
 
     const onSelectChange = (selectedRowKeys, a) => {
         setState({ selectedRowKeys })
-        setDeleteCamera(a.map(item => item.id));
+        setDeleteGroup(a.map(item => item.id));
     };
 
     const { selectedRowKeys } = state;
@@ -34,57 +32,28 @@ const CameraTable = (props) => {
         onChange: onSelectChange,
     }
 
-    const editCamera = (value, record) => {
-        setCameraInitialValues({
+    const editGroup = (value, record) => {
+        setGroupInitialValues({
             ...value,
             edit: true
         })
-        setIsOpenAddCamera(true)
+        setShow(true)
     }
-    
+
 
 
     const columns = [
         {
-            title: 'T/r',
-            dataIndex: 'key',
-            align: 'center'
-        },
-        {
-            title: 'Kamera nomi',
-            dataIndex: 'name',
-            align: 'center'
-        },
-        {
-            title: "Kamera turi",
-            dataIndex: 'type',
-            align: 'center'
-        },
-        {
             title: 'Guruh',
-            dataIndex: `group_name`,
-            align: 'center'
+            dataIndex: `name`,
+            align: 'start'
         },
-        {
-            title: 'IP manzili',
-            dataIndex: 'ip_address',
-            align: 'center'
-        },
-        {
-            title: 'Login',
-            dataIndex: 'username',
-            align: 'center'
-        },
-        {
-            title: 'Parol',
-            dataIndex: 'password',
-            align: 'center'
-        },
+
         {
             title: 'Amal',
             dataIndex: '',
             render: (text, record) => (
-                <div onClick={() => editCamera(text, record)} className='edit_button'>
+                <div onClick={() => editGroup(text, record)} className='edit_button'>
                     <RiEditLine size = {22} color='#fff'/>
                 </div>
             ),
@@ -100,7 +69,7 @@ const CameraTable = (props) => {
                 className={` ${isDarkMode && 'darkModeBackground'}`}
                 rowSelection={rowSelection}
                 columns={columns}
-                dataSource={cameraData}
+                dataSource={languageGroup}
                 pagination={false}
             />
 
@@ -108,4 +77,6 @@ const CameraTable = (props) => {
 
     );
 }
-export default CameraTable
+
+
+export default AddNewGroupTable;
