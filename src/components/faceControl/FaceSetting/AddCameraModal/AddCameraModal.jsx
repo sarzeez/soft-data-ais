@@ -13,21 +13,17 @@ import engliz from "../../../../images/engliz.svg";
 
 const AddCameraModal = (props) => {
 
-    const { isOpenAddCamera, setIsOpenAddCamera, cameraIntialValues, setCameraInitialValues, getCameraData, cameraPaginationCurrent } = props;
+    const {
+        isOpenAddCamera,
+        setIsOpenAddCamera,
+        cameraIntialValues,
+        setCameraInitialValues,
+        getCameraData,
+        cameraPaginationCurrent
+    } = props;
 
     const lang = localStorage.getItem('i18nextLng');
     const [cameraSetting, setCameraSetting] = useState([]);
-
-    // const initialValues = {
-    //     name_uz: 'langNameUz',
-    //     name_ru: 'langNameRu',
-    //     name_en: 'langNameEn',
-    //     type: 'cameraType',
-    //     group_id: 'groupName',
-    //     ip_address: 'ipAdress',
-    //     username: 'login',
-    //     password: 'password'
-    // }
 
     const cancel = () =>{
         setIsOpenAddCamera(!isOpenAddCamera)
@@ -66,7 +62,7 @@ const AddCameraModal = (props) => {
             axios.post(`${ip}/api/cameras`, values)
                 .then(response => {
                     cancel()
-                    getCameraData(cameraPaginationCurrent)
+                    getCameraData()
                 })
                 .catch(err => {
                     console.log(err?.response?.data)
@@ -87,11 +83,10 @@ const AddCameraModal = (props) => {
         <>
             <Modal
                 isOpen={isOpenAddCamera}
-                onRequestClose={() => setIsOpenAddCamera(true)}
+                onRequestClose={() => setIsOpenAddCamera(!isOpenAddCamera)}
                 contentLabel="My dialog"
                 className="mymodal"
                 overlayClassName="myoverlay"
-                shouldCloseOnOverlayClick={false}   
                 closeTimeoutMS={0}
             >
 
@@ -259,7 +254,6 @@ const AddCameraModal = (props) => {
                             <button type="button" onClick={cancel} className="add_camera_buttons_cancle">Bekor qilish</button>
                             <button type="submit"  className="add_camera_buttons_save">Saqlash</button>
                         </div>
-
                     </div>
                 </div>
                 </Form>

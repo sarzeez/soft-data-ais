@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector} from "react-redux";
 import {MdAdd, MdOutlineAddCircleOutline} from "react-icons/md";
-import {Input, Tabs} from "antd";
+import { Tabs} from "antd";
 import {AiOutlineDelete} from "react-icons/all";
 import {useNavigate} from "react-router-dom";
 import {ip} from "../../../ip";
@@ -9,14 +9,11 @@ import {ip} from "../../../ip";
 import CameraTable from "./table/CameraTable";
 import CameraPagenation from "./pagenation/CameraPagenation";
 import AddCameraModal from "./AddCameraModal/AddCameraModal";
+import AddNewGroupTable from "./AddNewGroup/AddNewGroupTable";
+import AddNewGroup from "./AddNewGroup/AddNewGroup";
 
 import axios from "axios";
 import './faceSetting.css';
-
-import uzbek from '../../../images/uzbek.svg';
-import russia from '../../../images/russia.svg';
-import engliz from '../../../images/engliz.svg';
-import AddNewGroupTable from "./AddNewGroup/AddNewGroupTable";
 
 const { TabPane } = Tabs;
 
@@ -60,12 +57,6 @@ const FaceControlSetting = () => {
     const [cameraTotal, setCameraTotal] = useState(null);
     const [show, setShow] = useState(false);
     const [languageGroup, setLanguageGroup] = useState([]);
-    const lang = localStorage.getItem('i18nextLng');
-    const [multipelLanguageGroup, setMultipleLanguageGroup] = useState({
-        name_uz: '',
-        name_ru: '',
-        name_en: ''
-    })
 
     const [cameraData, setCameraData] = useState([]);
     // console.log(cameraData)
@@ -114,34 +105,35 @@ const FaceControlSetting = () => {
         // console.log(key);
     }
 
-
-    const getCameraGroup = async (id) =>{
+    const getCameraGroup = async () =>{
         const response = await axios.get(`${ip}/api/camera_group`)
         const { data } = response;
-        setLanguageGroup(data);
+        const newData = data && data.map((item, index) => (
+            {
+                ...item,
+                key: 1000 * index + 1,
+                name_uz: item.name_uz,
+                name_ru: item.name_ru,
+                name_en: item.name_en,
+            }
+        ))
+        setLanguageGroup(newData);
+    }
+
+    // console.log(languageGroup)
+
+    const handleDeleteGroup = () => {
+        axios.delete(`${ip}/api/camera_group/delete`,{data: deleteGroup})
+            .then(res =>{
+                getCameraGroup();
+            })
+            .catch(err => {
+                // console.log(err?.response?.data)
+            })
     }
 
 
-    const handleClickSaveGroup = () => {
-         axios.post(`${ip}/api/camera_group`, multipelLanguageGroup)
-            .then(res => {
-                setShow(false)
-                getCameraGroup()
-            })
-             .catch(err=>{
-                 //
-             })
-    }
-
-    const handleDeleteGroupItem = async (id) => {
-        axios.delete(`${ip}/api/camera_group/${id}`)
-            .then(res => {
-                getCameraGroup()
-            })
-            .catch(err=>{
-                //
-            })
-    }
+    // console.log(deleteGroup);
 
     const cameraPaginationOnChange = (e = 1, option) => {
         getCameraData(e)
@@ -215,7 +207,8 @@ const FaceControlSetting = () => {
                                         </button>
                                         {
                                             deleteCamera.length > 0 &&
-                                            <button onClick={handleDeleteCamera}   className="face_control_setting_footer_delite_button">
+                                            <button onClick={handleDeleteCamera}
+                                                    className="face_control_setting_footer_delite_button">
                                                 <AiOutlineDelete size={22}/>
                                                 O’chirish
                                             </button>
@@ -238,24 +231,31 @@ const FaceControlSetting = () => {
                                     setGroupInitialValues = {setGroupInitialValues}
                                     setShow={setShow}
                                 />
-
-
                                 {
                                     !show ?
                                         <div className="add_new_group">
-                                            <button onClick={() =>setShow(true)} className="camera_groups_button">
-                                                <MdAdd />
-                                                Yangi guruh qo’shish
+                                            <button onClick={() => setShow(true)} className="camera_groups_button">
+                                                <MdAdd/>
+                                                Guruh qo’shish
                                             </button>
+                                            {
+                                                deleteGroup.length > 0 &&
+                                                <button onClick={handleDeleteGroup}   className="group_delite_button">
+                                                    <AiOutlineDelete size={22}/>
+                                                    O’chirish
+                                                </button>
+                                            }
                                         </div>
                                         :
-                                        <div className="camera_groups_language">
-                                            <Input className="camera_language_input" value={multipelLanguageGroup.name_uz} onChange={e => setMultipleLanguageGroup({...multipelLanguageGroup, name_uz: e.target.value})} placeholder="Kiriting" prefix={<img src={uzbek} alt="uz"/>} />
-                                            <Input className="camera_language_input" value={multipelLanguageGroup.name_ru} onChange={e => setMultipleLanguageGroup({...multipelLanguageGroup, name_ru: e.target.value})} placeholder="Входить" prefix={<img src={russia} alt="ru"/>} />
-                                            <Input className="camera_language_input" value={multipelLanguageGroup.name_en} onChange={e => setMultipleLanguageGroup({...multipelLanguageGroup, name_en: e.target.value})} placeholder="Enter" prefix={<img src={engliz} alt="eng"/>} />
-                                            <button onClick={handleClickSaveGroup} className="camera_groups_button">Saqlash</button>
-                                            <button  onClick={() =>setShow(false)} className="camera_groups_button_cancle">Bekor qilish</button>
-                                        </div>
+                                        <AddNewGroup
+                                            groupIntialValues={groupIntialValues}
+                                            setGroupInitialValues={setGroupInitialValues}
+                                            show={show}
+                                            setShow={setShow}
+                                            cameraPaginationCurrent={cameraPaginationCurrent}
+                                            getCameraGroup={getCameraGroup}
+                                            languageGroup={languageGroup}
+                                        />
                                 }
 
                             </div>
