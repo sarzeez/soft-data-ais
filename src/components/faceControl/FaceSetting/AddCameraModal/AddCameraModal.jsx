@@ -19,8 +19,9 @@ const AddCameraModal = (props) => {
         cameraIntialValues,
         setCameraInitialValues,
         getCameraData,
-        cameraPaginationCurrent
+        cameraPaginationCurrent,
     } = props;
+
 
     const lang = localStorage.getItem('i18nextLng');
     const [cameraSetting, setCameraSetting] = useState([]);
@@ -53,6 +54,7 @@ const AddCameraModal = (props) => {
                 .then(response => {
                     // item edited
                     cancel()
+                    getCameraData(cameraPaginationCurrent)
                 })
                 .catch(err => {
                     console.log(err?.response?.data)
@@ -70,10 +72,10 @@ const AddCameraModal = (props) => {
         }
     }
 
-
     const onFinishFailed = (e) => {
         // console.log(e)
     }
+
 
     useEffect(()=>{
         getCameraGroup();
@@ -182,6 +184,7 @@ const AddCameraModal = (props) => {
                                     size="large"
                                     placeholder="Tanlash"
                                 >
+
                                     {
                                         cameraSetting && cameraSetting.map((item, index) => (
                                             <Select.Option key={index} value={item.id}>{item[`name_${lang}`]}</Select.Option>

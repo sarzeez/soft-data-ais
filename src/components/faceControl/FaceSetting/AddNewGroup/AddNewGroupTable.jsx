@@ -12,8 +12,10 @@ const AddNewGroupTable = (props) => {
         setShow,
     } = props;
 
+    console.log(languageGroup)
     const lang = localStorage.getItem('i18nextLng');
-    const isDarkMode = useSelector(state => state.theme.theme_data)
+    const isDarkMode = useSelector(state => state.theme.theme_data);
+
     languageGroup.forEach(e => {
         e.name = e[`name_${lang}`];
     })
@@ -45,7 +47,7 @@ const AddNewGroupTable = (props) => {
     const columns = [
         {
             title: 'Guruh',
-            dataIndex: `name_uz`,
+            dataIndex: [`name_${lang}`],
             align: 'start'
         },
 

@@ -16,8 +16,6 @@ const AddNewGroup = (props) => {
         getCameraGroup
     } = props;
 
-    const lang = localStorage.getItem('i18nextLng');
-
     const cancel = () =>{
         setShow(!show)
         setGroupInitialValues({
@@ -26,7 +24,6 @@ const AddNewGroup = (props) => {
             name_en: '',
         })
     }
-
 
 
     const onFinish = (values) => {

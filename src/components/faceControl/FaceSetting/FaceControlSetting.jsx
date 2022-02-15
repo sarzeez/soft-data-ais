@@ -68,7 +68,6 @@ const FaceControlSetting = () => {
       const getCameraData = async (id) => {
         // const response = await axios.get(`${ip}/api/cameras/${cameraPaginationLimit}/${id}/${lang}`)
         const response = await axios.get(`${ip}/api/cameras/${cameraPaginationLimit}/${id}`)
-
         const { data } = response;
         const count = data && data.count;
         setCameraTotal(count)
@@ -120,8 +119,6 @@ const FaceControlSetting = () => {
         setLanguageGroup(newData);
     }
 
-    // console.log(languageGroup)
-
     const handleDeleteGroup = () => {
         axios.delete(`${ip}/api/camera_group/delete`,{data: deleteGroup})
             .then(res =>{
@@ -131,7 +128,6 @@ const FaceControlSetting = () => {
                 // console.log(err?.response?.data)
             })
     }
-
 
     // console.log(deleteGroup);
 
@@ -145,7 +141,7 @@ const FaceControlSetting = () => {
     useEffect(() =>{
         getCameraData(cameraPaginationCurrent)
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [cameraPaginationLimit, cameraPaginationCurrent])
+    }, [cameraPaginationLimit, cameraPaginationCurrent, ])
 
     useEffect(() => {
         getCameraGroup()
@@ -179,7 +175,6 @@ const FaceControlSetting = () => {
                                 <AddCameraModal
                                     isOpenAddCamera={isOpenAddCamera}
                                     setIsOpenAddCamera={setIsOpenAddCamera}
-                                    cameraPaginationLimit={cameraPaginationLimit}
                                     cameraIntialValues = {cameraIntialValues}
                                     setCameraInitialValues = {setCameraInitialValues}
                                     getCameraData={getCameraData}
@@ -192,7 +187,6 @@ const FaceControlSetting = () => {
                                             isDarkMode={isDarkMode}
                                             cameraData = {cameraData}
                                             setDeleteCamera={setDeleteCamera}
-                                            isOpenAddCamera={isOpenAddCamera}
                                             setIsOpenAddCamera={setIsOpenAddCamera}
                                             setCameraInitialValues = {setCameraInitialValues}
                                         />
@@ -257,11 +251,8 @@ const FaceControlSetting = () => {
                                             languageGroup={languageGroup}
                                         />
                                 }
-
                             </div>
-
                         </div>
-
                     </TabPane>
 
                     <TabPane tab="Statistika sozlamalari" key="3">
