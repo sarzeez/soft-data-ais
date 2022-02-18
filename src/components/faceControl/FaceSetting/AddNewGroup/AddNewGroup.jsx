@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React  from 'react';
+import {ip} from "../../../../ip";
 import {Form, Input} from "antd";
 import uzbek from "../../../../images/uzbek.svg";
 import russia from "../../../../images/russia.svg";
 import engliz from "../../../../images/engliz.svg";
 import axios from "axios";
-import {ip} from "../../../../ip";
+import {useTranslation} from "react-i18next";
 
 const AddNewGroup = (props) => {
 
@@ -15,7 +16,7 @@ const AddNewGroup = (props) => {
         show,
         getCameraGroup
     } = props;
-
+    const {t} = useTranslation()
     const cancel = () =>{
         setShow(!show)
         setGroupInitialValues({
@@ -75,11 +76,15 @@ const AddNewGroup = (props) => {
                                 rules={[
                                     {
                                         required: true,
-                                        message: 'Please input your gender!',
+                                        message: t("Iltimos_guruh_nomini_kiriting!"),
                                     },
                                 ]}
                             >
-                                <Input className="camera_language_input" placeholder="Kiriting" prefix={<img src={uzbek} alt="uz"/>} />
+                                <Input
+                                    className="camera_language_input"
+                                    placeholder={t('Kiriting')}
+                                    prefix={<img src={uzbek} alt="uz"/>}
+                                />
                             </Form.Item>
                             <Form.Item
                                 label={false}
@@ -87,11 +92,15 @@ const AddNewGroup = (props) => {
                                 rules={[
                                     {
                                         required: true,
-                                        message: 'Please input your gender!',
+                                        message: t("Iltimos_guruh_nomini_kiriting!"),
                                     },
                                 ]}
                             >
-                                <Input className="camera_language_input" placeholder="Kiriting" prefix={<img src={russia} alt="uz"/>} />
+                                <Input
+                                    className="camera_language_input"
+                                    placeholder={t('Kiriting')}
+                                    prefix={<img src={russia} alt="uz"/>}
+                                />
                             </Form.Item>
                             <Form.Item
                                 label={false}
@@ -99,14 +108,18 @@ const AddNewGroup = (props) => {
                                 rules={[
                                     {
                                         required: true,
-                                        message: 'Please input your gender!',
+                                        message: t("Iltimos_guruh_nomini_kiriting!"),
                                     },
                                 ]}
                             >
-                                <Input className="camera_language_input" placeholder="Kiriting" prefix={<img src={engliz} alt="uz"/>} />
+                                <Input
+                                    className="camera_language_input"
+                                    placeholder={t('Kiriting')}
+                                    prefix={<img src={engliz} alt="uz"/>}
+                                />
                             </Form.Item>
-                            <button type="submit" className="camera_groups_button">Saqlash</button>
-                            <button type="button" onClick={cancel} className="camera_groups_button_cancle">Bekor qilish</button>
+                            <button type="submit" className="camera_groups_button">{t("Saqlash")}</button>
+                            <button type="button" onClick={cancel} className="camera_groups_button_cancle">{t("Bekor qilish")}</button>
                         </div>
             </Form>
         </div>

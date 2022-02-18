@@ -48,6 +48,11 @@
   "Qidirish": "Qidirish",
   "Filterni tozalash": "Filterni tozalash",
 
+  "T/r": "T/r",
+  "Lavozimi": "Lavozimi",
+  "Yo'nalishi": "Yo'nalishi",
+  "Vaqt": "Vaqt",
+
   "Yosh bola": "Yosh bola",
   "O'smir": "O'smir",
   "O'spirin": "O'spirin",
@@ -59,10 +64,51 @@
   "Soqolli": "Soqolli",
   "Soqolsiz": "Soqolsiz",
 
-
   "Kun": "Kun",
   "Hafta": "Hafta",
   "Oy": "Oy",
-  "Yil": "Yil"
+  "Yil": "Yil",
+  "Umumiy ma'lumot beruvchi diagramma": "Umumiy ma'lumot beruvchi diagramma",
+  "Jami odamlar soni": "Jami odamlar soni",
+  "Yosh bo'yicha ko'rsatkichlar": "Yosh bo'yicha ko'rsatkichlar",
+  "Jins bo'yicha ko'rsatkichlar": "Jins bo'yicha ko'rsatkichlar",
+  "Erkaklar": "Erkaklar",
+  "Ayollar": "Ayollar",
+  "Yosh bolalar": "Yosh bolalar",
+  "O'smirlar": "O'smirlar",
+  "O'spirinlar": "O'spirinlar",
+  "O'rta yoshdagilar": "O'rta yoshdagilar",
+  "Katta yoshdagilar": "Katta yoshdagilar",
+  "Keksalar": "Keksalar",
+
+  "Yuzni aniqlash sozlamalar": "Yuzni aniqlash sozlamalar",
+  "Autentifikatsiya sozlamalari": "Autentifikatsiya sozlamalari",
+  "Kamera parametrlari": "Kamera parametrlari",
+  "Kamera nomi": "Kamera nomi",
+  "Kamera turi": "Kamera turi",
+  "IP manzili": "IP manzili",
+  "Login": "Login",
+  "Parol": "Parol",
+  "Amal": "Amal",
+  "Iltimos_guruh_nomini_kiriting!": "Iltimos guruh nomini kiriting!",
+  "Kamera turini tanlang!": "Kamera turini tanlang!",
+  "Tanlash": "Tanlash",
+  "Dahua": "Dahua",
+  "Hikvision": "Hikvision",
+  "Guruh turini tanlang!": "Guruh turini tanlang!",
+  "IP manzil kiriting!":  "IP manzil kiriting!",
+  "Kiritish": "Kiritish",
+  "Login kiriting!": "Login kiriting!",
+  "Parol kiriting!": "Parol kiriting!",
+  "Bekor qilish": "Bekor qilish",
+  "Saqlash": "Saqlash",
+  "Kamera qo‘shish": "Kamera qo‘shish",
+  "O’chirish": "O’chirish",
+
+
+
+
+  "Statistika sozlamalari": "Statistika sozlamalari"
+
 
 }

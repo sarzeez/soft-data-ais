@@ -8,64 +8,68 @@ import {ip} from '../../../ip';
 
 import './acsessControl.css';
 import 'antd/dist/antd.css';
+import {useTranslation} from "react-i18next";
 
-const columns = [
-    {
-        title: 'T/r',
-        dataIndex: 'key',
-        align: 'center'
-    },
-    {
-        title: 'Ism',
-        dataIndex: 'fullname',
-        render: (text, record) => (
-            <div className='table_user_cell'>
-                <Image
-                    width={40}
-                    style={{borderRadius: '20px', marginRight: '5px', maxWidth: '40px', maxHeight: '40px'}}
-                    src={`${ip}/${record.user_id}.jpg`}
-                    preview = {{
-                        src: `${ip}/api/get_history/${record.id}/img`,
-                        mask: (
-                            <AiOutlineUser size={20} />
-                        ),
-                        maskClassName: 'customize-mask',
-                    }}
-                />
-                <p>{record.fullname}</p>
-            </div>
-          ),
-    },
-    {
-        title: 'Toifasi',
-        dataIndex: 'user_type',
-        align: 'center'
-    },
-    {
-        title: 'Lavozimi',
-        dataIndex: 'rank',
-        align: 'center'
-    },
-    {
-        title: 'Vaqt',
-        dataIndex: 'created_time',
-        align: 'center'
-    },
-    {
-        title: 'Amaliyot',
-        dataIndex: 'direction',
-        align: 'center'
-    },
-    {
-        title: 'Eshik',
-        dataIndex: 'door_name',
-        align: 'center'
-    },
-];
+
 
 const AcsessTable = (props) => {
     const { accessTableData } = props;
+    const {t} = useTranslation()
     const isDarkMode = useSelector(state => state.theme.theme_data)
+
+    const columns = [
+        {
+            title: t('T/r'),
+            dataIndex: 'key',
+            align: 'center'
+        },
+        {
+            title: t('Ism'),
+            dataIndex: 'fullname',
+            render: (text, record) => (
+                <div className='table_user_cell'>
+                    <Image
+                        width={40}
+                        style={{borderRadius: '20px', marginRight: '5px', maxWidth: '40px', maxHeight: '40px'}}
+                        src={`${ip}/${record.user_id}.jpg`}
+                        preview = {{
+                            src: `${ip}/api/get_history/${record.id}/img`,
+                            mask: (
+                                <AiOutlineUser size={20} />
+                            ),
+                            maskClassName: 'customize-mask',
+                        }}
+                    />
+                    <p>{record.fullname}</p>
+                </div>
+            ),
+        },
+        {
+            title: t('Toifasi'),
+            dataIndex: 'user_type',
+            align: 'center'
+        },
+        {
+            title: t('Lavozimi'),
+            dataIndex: 'rank',
+            align: 'center'
+        },
+        {
+            title: t('Vaqt'),
+            dataIndex: 'created_time',
+            align: 'center'
+        },
+        {
+            title: t('Yo\'nalishi'),
+            dataIndex: 'direction',
+            align: 'center'
+        },
+        {
+            title: t('Eshik'),
+            dataIndex: 'door_name',
+            align: 'center'
+        },
+    ];
 
     // const [state, setState] = useState({
     //     selectedRowKeys: []

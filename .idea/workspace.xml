@@ -3,11 +3,31 @@
   <component name="ChangeListManager">
     <list default="true" id="630af48d-1ca7-4883-8e3d-17f8fed27d11" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/locales/ru/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/ru/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/locales/uz/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/uz/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineDoors.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineDoors.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AccessControlTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AccessControlTable.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AcsessTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AcsessTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddCameraModal/AddCameraModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddCameraModal/AddCameraModal.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddNewGroup/AddNewGroup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddNewGroup/AddNewGroup.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddNewGroup/AddNewGroupTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddNewGroup/AddNewGroupTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/FaceControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/FaceControlSetting.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/faceSetting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/faceSetting.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/table/CameraTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/table/CameraTable.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/FaceControlAnalysis.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/FaceControlAnalysis.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/bodyChart/BodyChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/bodyChart/BodyChart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/lineChart/LineChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/lineChart/LineChart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/miniCharts/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/miniCharts/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/pieChart/PieChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/pieChart/PieChart.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/FaceControlSearch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/FaceControlSearch.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/cart/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/cart/Cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/cart/cart.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/cart/cart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/faceControlSearch.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/faceControlSearch.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/videoModal/VidoeModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/videoModal/VidoeModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +94,11 @@
       <workItem from="1644579020830" duration="5064000" />
       <workItem from="1644638639976" duration="14534000" />
       <workItem from="1644812435213" duration="14122000" />
-      <workItem from="1644897856374" duration="12268000" />
+      <workItem from="1644897856374" duration="13051000" />
+      <workItem from="1644984526561" duration="12507000" />
+      <workItem from="1645070649962" duration="3828000" />
+      <workItem from="1645079278649" duration="13608000" />
+      <workItem from="1645156915326" duration="14836000" />
     </task>
     <servers />
   </component>

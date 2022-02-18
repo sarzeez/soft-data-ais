@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import socketIOClient from "socket.io-client";
 import {ip} from "../../../ip";
+import socketIOClient from "socket.io-client";
 import axios from "axios";
+
 import myImg from "../../../images/myImg.svg";
 import noIMG from "../../../images/noIMG.svg";
 import recIcon from "../../../images/recognationIcon.svg";
@@ -19,7 +20,6 @@ const OnlineDoors = () => {
     const isDarkMode = useSelector(state => state.theme.theme_data)
     const is_refresh_value = useSelector(state => state.theme.is_refresh_value)
     const [onlineImg, setOnlineImg] = useState(null);
-
 
     useEffect(() => {
         const socket = socketIOClient(ip);
@@ -63,9 +63,15 @@ const OnlineDoors = () => {
                 </div>
             </div>
 
+            {/*<DraggableList width={300} height={300} rowSize={2}>*/}
+            {/*    <div style={{ width: 300, height: 300, background: "green" }}>*/}
+            {/*        17*/}
+            {/*    </div>*/}
+            {/*    <div style={{ width: 300, height: 300, background: "blue" }}>2</div>*/}
+            {/*    <div style={{ width: 300, height: 300, background: "red" }}>3</div>*/}
+            {/*</DraggableList>*/}
+
             <div className= {`online_doors_body ${isDarkMode && 'darkModeBackground'}`} >
-
-
                 <div className="online_doors_info_content">
 
                     <div className={`online_doors_info_title ${isDarkMode && 'darkModeBackground'}`}>
@@ -81,6 +87,7 @@ const OnlineDoors = () => {
                                 : <img className="doors_left_default" src={myImg} alt="img"/>
                         }
                     </div>
+
                     {
                         onlineImg
                             ? (onlineImg.hasOwnProperty('user_in_db')
@@ -519,8 +526,6 @@ const OnlineDoors = () => {
                             </div>
                     }
                 </div>
-
-
             </div>
         </div>
     );

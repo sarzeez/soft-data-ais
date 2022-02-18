@@ -1,16 +1,16 @@
 import React from 'react'
-
+import {useTranslation} from "react-i18next";
 import ReactApexChart from 'react-apexcharts'
 
 const ApexChart = (props) => {
-
+    const {t} = useTranslation()
     const { data }=props;
     // const chartWidth = width < 1370 ? 680 : 1200
     // const chartHeight = width < 1370 ? 320 : 420
 
     const state = {
         series: [{
-            name: 'Jami',
+            name: t('Jami'),
             data: data ? data.data && data.data.map(item => item.human_count) : []
         }],
         options: {

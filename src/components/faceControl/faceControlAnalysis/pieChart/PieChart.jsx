@@ -1,8 +1,11 @@
 import React from 'react'
 import '../analysis.css';
 import ReactApexChart from 'react-apexcharts'
+import {useTranslation} from "react-i18next";
 
 const ApexChart = (props) => {
+
+    const {t} = useTranslation()
     const {data} = props;
     const state = {
         series: data,
@@ -16,7 +19,7 @@ const ApexChart = (props) => {
                         labels: {
                             show: true,
                             total: {
-                                label: 'Jami',
+                                label: t('Jami'),
                                 showAlways: true,
                                 show: true
                             }
@@ -50,24 +53,24 @@ const ApexChart = (props) => {
             <div className="pieChart_title">
                 <div className="chart_title">
                     <div className="title_round" style={{background: '#A461D8'}}></div>
-                    <p> Yosh bolalar (0-10) - </p> <b> {data && data[0]}</b></div>
+                    <p> {t("Yosh bolalar")} (0-10) - </p> <b> {data && data[0]}</b></div>
                 <div className="chart_title">
                     <div className="title_round" style={{background: '#FFC107'}}></div>
-                    <p>O'smirlar (11-17) - </p>  <b> {data && data[1]}</b></div>
+                    <p>{t("O'smirlar")} (11-17) - </p>  <b> {data && data[1]}</b></div>
                 <div className="chart_title">
                     <div className="title_round"  style={{background: '#FF6B72'}}></div>
-                    <p>O'spirinlar (18-25) - </p>  <b> {data && data[2]}</b></div>
+                    <p>{t("O'spirinlar")} (18-25) - </p>  <b> {data && data[2]}</b></div>
                 <div className="chart_title" >
                     <div className="title_round" style={{background: '#04D182'}}></div>
-                    <p>O'rta yoshdagilar (26-40) - </p><b> {data && data[3]}</b>
+                    <p>{t("O'rta yoshdagilar")} (26-40) - </p><b> {data && data[3]}</b>
                 </div>
                 <div className="chart_title" >
                     <div className="title_round" style={{background: '#3E82F7'}}></div>
-                    <p>Katta yoshdagilar (41-60) - </p> <b> {data && data[4]}</b>
+                    <p>{t("Katta yoshdagilar")} (41-60) - </p> <b> {data && data[4]}</b>
                 </div>
                 <div className="chart_title" >
                     <div className="title_round" style={{background: '#F07427'}}></div>
-                    <p>Keksalar (61 dan...) - </p> <b> {data && data[5]}</b>
+                    <p>{t("Keksalar")} (61 dan...) - </p> <b> {data && data[5]}</b>
                 </div>
 
             </div>

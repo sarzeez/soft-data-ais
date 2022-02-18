@@ -2,7 +2,9 @@ import React, {useState} from 'react';
 import { Table  } from 'antd';
 import { useSelector } from "react-redux";
 import {RiEditLine} from "react-icons/ri";
+import {useTranslation} from "react-i18next";
 import 'antd/dist/antd.css';
+
 
 const AddNewGroupTable = (props) => {
     const {
@@ -12,7 +14,7 @@ const AddNewGroupTable = (props) => {
         setShow,
     } = props;
 
-    console.log(languageGroup)
+    const {t} = useTranslation()
     const lang = localStorage.getItem('i18nextLng');
     const isDarkMode = useSelector(state => state.theme.theme_data);
 
@@ -46,13 +48,13 @@ const AddNewGroupTable = (props) => {
 
     const columns = [
         {
-            title: 'Guruh',
+            title: t('Guruh'),
             dataIndex: [`name_${lang}`],
             align: 'start'
         },
 
         {
-            title: 'Amal',
+            title: t('Amal'),
             dataIndex: '',
             render: (text, record) => (
                 <div onClick={() => editGroup(text, record)} className='edit_button'>

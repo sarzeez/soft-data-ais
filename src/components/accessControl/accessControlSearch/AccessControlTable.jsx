@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import {Input, Select, DatePicker} from "antd";
-import moment from "moment";
-import {SearchOutlined} from "@ant-design/icons";
+import { ip } from '../../../ip';
 import { useSelector } from "react-redux";
-import axios from 'axios';
+import {useTranslation} from "react-i18next";
+import {Input, Select, DatePicker} from "antd";
+import {SearchOutlined} from "@ant-design/icons";
+import {AiOutlineClear, AiOutlineSearch} from "react-icons/ai";
 import { useNavigate } from 'react-router-dom';
 
+import axios from 'axios';
+import moment from "moment";
 import './acsessControl.css';
-import { ip } from '../../../ip';
 
 import AcsessTable from "./AcsessTable";
 import AccessControlSearchPagination from './Pagination';
-import {useTranslation} from "react-i18next";
-import {AiOutlineClear, AiOutlineSearch} from "react-icons/ai";
+
 
 const AcsessControlTable = () => {
 
@@ -188,7 +189,7 @@ const AcsessControlTable = () => {
                         </div>
 
                         <div className="form_input_wrapper">
-                            <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Lavozimi</p>
+                            <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Lavozimi')}</p>
                             <div className="input_wrapper">
                                 <Select
                                     className={`left_select ${isDarkMode && 'darkModeColor'}`}
@@ -198,7 +199,7 @@ const AcsessControlTable = () => {
                                     defaultValue={position}
                                     value={position}
                                 >
-                                    <Select.Option value="all">Hammasi</Select.Option>
+                                    <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                     <Select.Option value="Oddiy xodim">Oddiy xodim</Select.Option>
                                     <Select.Option value="Direktor">Direktor</Select.Option>
                                     <Select.Option value="VIP">VIP</Select.Option>
@@ -207,7 +208,7 @@ const AcsessControlTable = () => {
                         </div>
 
                         <div className="form_input_wrapper">
-                            <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>Amaliyot turi</p>
+                            <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t("Yo'nalishi")}</p>
                             <div className="input_wrapper">
                                 <Select
                                     className={`left_select ${isDarkMode && 'darkModeColor'}`}
@@ -216,7 +217,7 @@ const AcsessControlTable = () => {
                                     size="large"
                                     defaultValue="all"
                                 >
-                                    <Select.Option value="all">Hammasi</Select.Option>
+                                    <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                     <Select.Option value="0">Kirdi</Select.Option>
                                     <Select.Option value="1">Chiqdi</Select.Option>
                                 </Select>

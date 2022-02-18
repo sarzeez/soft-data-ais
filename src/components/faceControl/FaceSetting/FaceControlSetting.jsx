@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector} from "react-redux";
+import {useTranslation} from "react-i18next";
 import {MdAdd, MdOutlineAddCircleOutline} from "react-icons/md";
 import { Tabs} from "antd";
 import {AiOutlineDelete} from "react-icons/all";
@@ -18,7 +19,7 @@ import './faceSetting.css';
 const { TabPane } = Tabs;
 
 const FaceControlSetting = () => {
-
+    const {t} = useTranslation()
     const navigate = useNavigate()
     const isDarkMode = useSelector(state => state.theme.theme_data)
     const is_refresh_value = useSelector(state => state.theme.is_refresh_value)
@@ -66,7 +67,6 @@ const FaceControlSetting = () => {
     }
 
       const getCameraData = async (id) => {
-        // const response = await axios.get(`${ip}/api/cameras/${cameraPaginationLimit}/${id}/${lang}`)
         const response = await axios.get(`${ip}/api/cameras/${cameraPaginationLimit}/${id}`)
         const { data } = response;
         const count = data && data.count;
@@ -155,13 +155,13 @@ const FaceControlSetting = () => {
         <div className="face_control_setting">
             <div className='face_control_setting_header'>
                 <div className="face_content_top">
-                    <p className= {`Content_title ${isDarkMode && 'darkModeColor'}`} >Yuzni aniqlash sozlamalar</p>
+                    <p className= {`Content_title ${isDarkMode && 'darkModeColor'}`} >{t("Yuzni aniqlash sozlamalar")}</p>
                 </div>
             </div>
 
             <div className="face_control_setting_body">
                 <Tabs onChange={onChangeTabs} type="card" defaultActiveKey="1">
-                    <TabPane tab="Autentifikatsiya sozlamalari" key="1">
+                    <TabPane tab={t("Autentifikatsiya sozlamalari")} key="1">
                         <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>
                             <div className='access_control_setting_tab_item_body'>
                                 Autentifikatsiya sozlamalari
@@ -169,7 +169,7 @@ const FaceControlSetting = () => {
                         </div>
                     </TabPane>
 
-                    <TabPane tab="Kamera parametrlari" key="2">
+                    <TabPane tab={t("Kamera parametrlari")} key="2">
                         <div className="face_control_setting_tab">
                             <div className='face_control_setting_tab_item'>
                                 <AddCameraModal
@@ -197,14 +197,14 @@ const FaceControlSetting = () => {
                                     <div className="face_control_setting_tab_item_footer_buttons">
                                         <button onClick={addCamera} className='face_control_setting_button'>
                                             <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
-                                            Kamera qo‘shish
+                                            {t("Kamera qo‘shish")}
                                         </button>
                                         {
                                             deleteCamera.length > 0 &&
                                             <button onClick={handleDeleteCamera}
                                                     className="face_control_setting_footer_delite_button">
                                                 <AiOutlineDelete size={22}/>
-                                                O’chirish
+                                                {t("O’chirish")}
                                             </button>
                                         }
                                     </div>
@@ -255,7 +255,7 @@ const FaceControlSetting = () => {
                         </div>
                     </TabPane>
 
-                    <TabPane tab="Statistika sozlamalari" key="3">
+                    <TabPane tab={t("Statistika sozlamalari")} key="3">
                         <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>
                             <div className='access_control_setting_tab_item_body'>
                                 Content of Tab Pane 3

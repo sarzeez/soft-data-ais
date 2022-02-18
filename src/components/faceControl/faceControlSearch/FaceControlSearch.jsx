@@ -368,7 +368,7 @@ export default function FaceControlSearch() {
                                         value={camera}
                                         onChange={onChangeCameraOptions}
                                     >
-                                        <Select.Option value='all'>Hammasi</Select.Option>
+                                        <Select.Option value='all'>{t('Hammasi')}</Select.Option>
                                         {
                                             cameraWithGroup[group] && cameraWithGroup[group].cameras.map((item, index) => (
                                                 <Select.Option key={index}>{item.name}</Select.Option>

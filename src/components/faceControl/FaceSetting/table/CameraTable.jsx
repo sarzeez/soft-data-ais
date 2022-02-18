@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Table  } from 'antd';
 import { useSelector } from "react-redux";
 import {RiEditLine} from "react-icons/ri";
+import {useTranslation} from "react-i18next";
 import 'antd/dist/antd.css';
 
 
@@ -13,7 +14,7 @@ const CameraTable = (props) => {
         setCameraInitialValues
     } = props;
 
-    
+    const {t} = useTranslation()
     const lang = localStorage.getItem('i18nextLng');
     const isDarkMode = useSelector(state => state.theme.theme_data)
     cameraData.forEach(e => {
@@ -46,42 +47,42 @@ const CameraTable = (props) => {
 
     const columns = [
         {
-            title: 'T/r',
+            title: t('T/r'),
             dataIndex: 'key',
             align: 'center'
         },
         {
-            title: 'Kamera nomi',
+            title: t('Kamera nomi'),
             dataIndex: 'name',
             align: 'center'
         },
         {
-            title: "Kamera turi",
+            title: t("Kamera turi"),
             dataIndex: 'type',
             align: 'center'
         },
         {
-            title: 'Guruh',
+            title: t('Guruh'),
             dataIndex: `group_name`,
             align: 'center'
         },
         {
-            title: 'IP manzili',
+            title: t('IP manzili'),
             dataIndex: 'ip_address',
             align: 'center'
         },
         {
-            title: 'Login',
+            title: t('Login'),
             dataIndex: 'username',
             align: 'center'
         },
         {
-            title: 'Parol',
+            title: t('Parol'),
             dataIndex: 'password',
             align: 'center'
         },
         {
-            title: 'Amal',
+            title: t('Amal'),
             dataIndex: '',
             render: (text, record) => (
                 <div onClick={() => editCamera(text, record)} className='edit_button'>
@@ -94,7 +95,6 @@ const CameraTable = (props) => {
 
 
     return (
-
         <>
             <Table
                 className={` ${isDarkMode && 'darkModeBackground'}`}
@@ -105,7 +105,6 @@ const CameraTable = (props) => {
             />
 
         </>
-
     );
 }
 export default CameraTable

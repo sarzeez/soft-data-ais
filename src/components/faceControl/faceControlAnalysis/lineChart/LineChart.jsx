@@ -1,19 +1,20 @@
 import React from 'react'
 
 import ReactApexChart from 'react-apexcharts'
+import {useTranslation} from "react-i18next";
 
 const LineChart = (props) => {
-
+    const {t} = useTranslation()
     const { data }=props;
 
     const state = {
         series: [
             {
-                name: 'Erkaklar',
+                name: t('Erkaklar'),
                 data: data ? data.data && data.data.map(item => item.male_count) : []
             },
             {
-                name: 'Ayollar',
+                name: t('Ayollar'),
                 data: data ? data.data && data.data.map(item => item.female_count) : []
             }
         ],

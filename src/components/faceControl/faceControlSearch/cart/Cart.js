@@ -79,7 +79,7 @@ const Cart = ({ item, isDarkMode }) => {
                                 ? <img src = {emojes.female['female']} alt = ''/>
                                 : <img src = {emojes.male['male']} alt = '' />
                             }
-                            <p>{item.gender === 1 ? <div>{t('Erkak')}</div>  : item.gender === 2 ? <div>{t('Ayol')}</div>  : ''}</p>
+                            <p className="card_longTitle">{item.gender === 1 ? <div>{t('Erkak')}</div>  : item.gender === 2 ? <div>{t('Ayol')}</div>  : ''}</p>
                         </div>
                         <div>
                             {
@@ -87,15 +87,15 @@ const Cart = ({ item, isDarkMode }) => {
                                 ? <img src = {emojes.female[item.old]} alt = ''/>
                                 : <img src = {emojes.male[item.old]} alt = '' />
                             }
-                            <p>
+                            <p className="card_longTitle" >
                                 {
                                    item && item.old === 'age_0_10'
-                                        ? <div>{t('Yosh bola')}</div>
-                                        : item.old === 'age_11_17' ? <div>{t('O\'smir')}</div>
-                                            : item.old === 'age_18_25' ? <div>{t('O\'spirin')}</div>
-                                                : item.old === 'age_26_40' ? <div>{t('O\'rta yoshli')}</div>
-                                                    : item.old === 'age_41_60' ? <div>{t('Katta yoshli')}</div>
-                                                        : <div>{t('Keksa')}</div>
+                                        ? <Tooltip title={t('Yosh bola')} color={'cyan'}>{t('Yosh bola')}</Tooltip>
+                                        : item.old === 'age_11_17' ?  <Tooltip title={t('O\'smir')} color={'cyan'}>{t('O\'smir')}</Tooltip>
+                                            : item.old === 'age_18_25' ? <Tooltip title={t('O\'spirin')} color={'cyan'}>{t('O\'spirin')}</Tooltip>
+                                                : item.old === 'age_26_40' ? <Tooltip title={t('O\'rta yoshli')} color={'cyan'}>{t('O\'rta yoshli')}</Tooltip>
+                                                    : item.old === 'age_41_60' ? <Tooltip title={t('Katta yoshli')} color={'cyan'}>{t('Katta yoshli')}</Tooltip>
+                                                        : <Tooltip title={t('Keksa')} color={'cyan'}>{t('Keksa')}</Tooltip>
                                 }
                             </p>
                         </div>
@@ -105,7 +105,8 @@ const Cart = ({ item, isDarkMode }) => {
                             {
                                 <img src = {emojes.mask[item.args.MASKA]} alt = 'mask'/>
                             }
-                            <p>{item.args.MASKA === 1 ? <div>{t('Niqobli')}</div> : item.args.MASKA === 0 ? <div>{t('Niqobsiz')}</div> : ''}</p>
+                            <p className="card_longTitle" >{item.args.MASKA === 1 ? <Tooltip title={t('Niqobli')} color={'cyan'}>{t('Niqobli')}</Tooltip>  : item.args.MASKA === 0
+                                ? <Tooltip title={t('Niqobsiz')} color={'cyan'}>{t('Niqobsiz')}</Tooltip> : ''}</p>
                         </div>
                         <div>
                             {
@@ -131,11 +132,13 @@ const Cart = ({ item, isDarkMode }) => {
                                 (item.old !== 'age_0_10' && item.old !== 'age_11_17' && <img src = {emojes.beard[item.args.SOQOL]} alt = 'glass' />)
                                 : ''
                             }
-                            <p>
+                            <p className="card_longTitle">
                                 {
                                     item.gender === 2
                                     ? ''
-                                    : (item.old !== 'age_0_10' && item.old !== 'age_11_17' && (item.args.SOQOL === 1 ? <div>{t('Soqolli')}</div> : item.args.SOQOL === 0 ? <div>{t('Soqolsiz')}</div> : ''))
+                                    : (item.old !== 'age_0_10' && item.old !== 'age_11_17' && (item.args.SOQOL === 1 ?
+                                            <Tooltip title={t('Soqolli')} color={'cyan'}>{t('Soqolli')}</Tooltip> :
+                                            item.args.SOQOL === 0 ? <Tooltip title={t('Soqolsiz')} color={'cyan'}>{t('Soqolsiz')}</Tooltip> : ''))
                                 }
                             </p>
                         </div>

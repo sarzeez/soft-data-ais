@@ -19,14 +19,14 @@ const VideoModal = ({ visible, setVisible, loading, id }) => {
 
     return (
             <Modal
-                title="Product name"
+                // title="Product name"
                 visible={visible}
                 centered
                 footer={null}
                 onCancel={hideModal}
                 afterClose={pause}
                 bodyStyle={{ padding: 0 }}
-                closeIcon = {<h1>asdf</h1>}
+
                 >
                     {
                         loading

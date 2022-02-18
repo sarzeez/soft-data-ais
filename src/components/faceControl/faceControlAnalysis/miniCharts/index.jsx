@@ -2,10 +2,11 @@ import React from 'react'
 import ReactApexChart from 'react-apexcharts'
 
 const ApexChart = (props) => {
+  const lang = localStorage.getItem('i18nextLng');
   const { data } = props;
   const state = {
     series: [{
-      name: data && data.title,
+      name: lang === 'uz'? data?.title_uz : lang === 'ru' ? data?.title_ru : data?.title_en,
       data: data && data.data
     }],
     options: {

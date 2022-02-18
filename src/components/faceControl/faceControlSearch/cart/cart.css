@@ -1,7 +1,7 @@
 .j_card{
     border: 1px solid #DDDDDD;
     border-radius: 10px;
-    margin-bottom: 17px;
+    margin-bottom: 5px;
 }
 .j_card p {
     margin-bottom: 0 !important;
@@ -153,9 +153,10 @@
 }
 
 .card_longTitle{
+    text-align: center;
     text-overflow: ellipsis;
     overflow: hidden; 
-    width: 85px;
+    width: 80px;
     white-space: nowrap;
 }
 

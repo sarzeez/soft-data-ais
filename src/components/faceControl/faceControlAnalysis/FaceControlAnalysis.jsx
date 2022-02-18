@@ -67,48 +67,60 @@ const FaceControlAnalysis = () => {
     }, [])
 
     const topData = [
-        {
-            title: `KIRISH "NAVRUZ BOG'I"`,
-            mainPercent: data && data.door_1,
-            littlePercent: '0.21%',
-            data: data ? data.data && data.data.map(item => item.door_1) : [],
-            category: data ? data.data && data.data.map(item => item.part): [],
-            color: "#11d2c2"
-        },
-        {
-            title: `KIRISH "MAKRO"`,
-            mainPercent: data && data.door_2,
-            littlePercent: '0.21%',
-            data: data ? data.data && data.data.map(item => item.door_2): [],
-            category: data ? data.data && data.data.map(item => item.part): [],
-            color: "#29B85D"
-        },
-        {
-            title: `KIRISH "AVTOTURARGOH"`,
-            mainPercent: data && data.door_3,
-            littlePercent: '0.21%',
-            data: data ? data.data && data.data.map(item => item.door_3) : [],
-            category: data ? data.data && data.data.map(item => item.part) : [],
-            color: "#000"
-        },
-        {
-            title: `KIRISH "EFENDI"`,
-            mainPercent: data && data.door_4,
-            littlePercent: '0.21%',
-            data: data ? data.data && data.data.map(item => item.door_4) : [],
-            category: data ? data.data && data.data.map(item => item.part) : [],
-            color: "#B12929"
-        },
-        {
-            title: `KIRISH "OLIMPIYA MUZEYI"`,
-            mainPercent: data && data.door_5,
-            littlePercent: '0.21%',
-            data: data ? data.data && data.data.map(item => item.door_5) : [],
-            category: data ? data.data && data.data.map(item => item.part) : [],
-            color: "#0a38c1"
-        }
+        // {
+        //     title: `KIRISH "NAVRUZ BOG'I"`,
+        //     mainPercent: data && data.door_1,
+        //     littlePercent: '0.21%',
+        //     data: data ? data.data && data.data.map(item => item.door_1) : [],
+        //     category: data ? data.data && data.data.map(item => item.part): [],
+        //     color: "#11d2c2"
+        // },
+        // {
+        //     title: `KIRISH "MAKRO"`,
+        //     mainPercent: data && data.door_2,
+        //     littlePercent: '0.21%',
+        //     data: data ? data.data && data.data.map(item => item.door_2): [],
+        //     category: data ? data.data && data.data.map(item => item.part): [],
+        //     color: "#29B85D"
+        // },
+        // {
+        //     title: `KIRISH "AVTOTURARGOH"`,
+        //     mainPercent: data && data.door_3,
+        //     littlePercent: '0.21%',
+        //     data: data ? data.data && data.data.map(item => item.door_3) : [],
+        //     category: data ? data.data && data.data.map(item => item.part) : [],
+        //     color: "#000"
+        // },
+        // {
+        //     title: `KIRISH "EFENDI"`,
+        //     mainPercent: data && data.door_4,
+        //     littlePercent: '0.21%',
+        //     data: data ? data.data && data.data.map(item => item.door_4) : [],
+        //     category: data ? data.data && data.data.map(item => item.part) : [],
+        //     color: "#B12929"
+        // },
+        // {
+        //     title: `KIRISH "OLIMPIYA MUZEYI"`,
+        //     mainPercent: data && data.door_5,
+        //     littlePercent: '0.21%',
+        //     data: data ? data.data && data.data.map(item => item.door_5) : [],
+        //     category: data ? data.data && data.data.map(item => item.part) : [],
+        //     color: "#0a38c1"
+        // }
     ]
+    const colorArray = ["#11d2c2", "#000", "#29B85D", "#B12929", "#0a38c1"]
+    const lang = localStorage.getItem('i18nextLng');
 
+    data?.door.map((item, index) => topData.push({
+        title_uz: `${item?.name_uz}`,
+        title_ru: `${item?.name_ru}`,
+        title_en: `${item?.name_en}`,
+        mainPercent: item?.count,
+        littlePercent: '0.21%',
+        data: data ? data.data && data.data.map(item => item.door[index]) : [],
+        category: data ? data.data && data.data.map(item => item.part): [],
+        color: colorArray[(index) % colorArray.length]
+    }))
 
     const breakPoints = [
         {width:1, itemsToShow: 1},
@@ -128,8 +140,8 @@ const FaceControlAnalysis = () => {
                     <DatePicker placeholder={DayMY} onChange = {value => setDate(value)} style = {{borderTopLeftRadius: '10px', borderBottomLeftRadius: '10px'}} />
                     <button onClick={() => setActive('daily')} className={`${active === 'daily' ? 'analysis-active-button' : null}`}>{t('Kun')}</button>
                     <button onClick={() => setActive('week')} className={`${active === 'week' ? 'analysis-active-button' : null}`}>{t('Hafta')}</button>
-                    <button onClick={() => setActive('month')} className={`${active === 'month' ? 'analysis-active-button' : null}`}>Oy</button>
-                    <button onClick={() => setActive('year')} className={`${active === 'year' ? 'analysis-active-button' : null}`}>Yil</button>
+                    <button onClick={() => setActive('month')} className={`${active === 'month' ? 'analysis-active-button' : null}`}>{t("Oy")}</button>
+                    <button onClick={() => setActive('year')} className={`${active === 'year' ? 'analysis-active-button' : null}`}>{t("Yil")}</button>
                 </div>
             </div>
 
@@ -140,8 +152,7 @@ const FaceControlAnalysis = () => {
                                 <div key = {index} className='analysis-top-item'>
 
                                     <div className="doors_title">
-                                        <h3>{item.title.slice(0, 6)}</h3>
-                                        <h2>{item.title.slice(7, 30)}</h2>
+                                        <h2>{lang === 'uz' ? item.title_uz : lang === 'ru' ? item.title_ru : item.title_en}</h2>
                                     </div>
 
                                     <div className='analysis-top-item-text'>
@@ -157,11 +168,10 @@ const FaceControlAnalysis = () => {
                     </Carousel>
                 </div>
 
-
             <div className='analysis-body'>
                 <div className='analysis-body-text-block'>
-                    <h2 className='analysis-body-title'>Umumiy ma'lumot beruvchi diagramma</h2>
-                    <p>Jami odamlar soni: <i>{ data ? data.human_count : 0}</i></p>
+                    <h2 className='analysis-body-title'>{t("Umumiy ma'lumot beruvchi diagramma")}</h2>
+                    <p>{t("Jami odamlar soni")}: <i>{ data ? data.human_count : 0}</i></p>
                 </div>
                 <div className='analysis-body-chart-block'>
                     <BodyChart data = {data} />
@@ -169,16 +179,16 @@ const FaceControlAnalysis = () => {
             </div>
             <div className='analysis-footer'>
                 <div className='analysis-footer-left'>
-                    <h2 className='analysis-footer-title' style={{marginBottom: '20px'}}>Yosh bo'yicha ko'rsatkichlar</h2>
+                    <h2 className='analysis-footer-title' style={{marginBottom: '20px'}}>{t("Yosh bo'yicha ko'rsatkichlar")}</h2>
                     <PieChart data = {population} />
                 </div>
                 <div className='analysis-footer-right'>
                     <div className="gender_top">
-                        <h2>Jins bo'yicha ko'rsatkichlar</h2>
+                        <h2>{t("Jins bo'yicha ko'rsatkichlar")}</h2>
                         <div className="man_woman">
                             <div className="manWoman">
                                 <div className="man_square"></div>
-                                <p>Erkaklar -</p>
+                                <p>{t("Erkaklar")} -</p>
                                 <div className="gender_count">
                                     {data && data.male_count}
                                 </div>
@@ -186,7 +196,7 @@ const FaceControlAnalysis = () => {
 
                             <div className="manWoman">
                                 <div className="woman_square"></div>
-                                <p>Ayollar -</p>
+                                <p>{t("Ayollar")} -</p>
                                 <div className="gender_count">
                                     {data && data.female_count}
                                 </div>

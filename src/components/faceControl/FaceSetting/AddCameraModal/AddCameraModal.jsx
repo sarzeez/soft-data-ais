@@ -1,6 +1,7 @@
 import {Form, Input, Select} from "antd";
 import React, {useEffect, useState} from "react";
 import {ip} from "../../../../ip";
+import {useTranslation} from "react-i18next";
 
 import Modal from "react-modal";
 import axios from "axios";
@@ -9,7 +10,6 @@ import './addCameraModal.css';
 import russia from "../../../../images/russia.svg";
 import uzbek from "../../../../images/uzbek.svg";
 import engliz from "../../../../images/engliz.svg";
-
 
 const AddCameraModal = (props) => {
 
@@ -22,7 +22,7 @@ const AddCameraModal = (props) => {
         cameraPaginationCurrent,
     } = props;
 
-
+    const {t} = useTranslation()
     const lang = localStorage.getItem('i18nextLng');
     const [cameraSetting, setCameraSetting] = useState([]);
 
@@ -64,7 +64,7 @@ const AddCameraModal = (props) => {
             axios.post(`${ip}/api/cameras`, values)
                 .then(response => {
                     cancel()
-                    getCameraData()
+                    getCameraData(cameraPaginationCurrent)
                 })
                 .catch(err => {
                     console.log(err?.response?.data)
@@ -103,10 +103,10 @@ const AddCameraModal = (props) => {
                 >
                 <div className="camera_settings_modal_content">
                     <div className="camera_settings_modal_title">
-                        Kamera parametrlari
+                        {t("Kamera parametrlari")}
                     </div>
                     <div className="camera_settings_modal_inputs">
-                        <h4 className="settings_modal_input_label" >Kamera nomi</h4>
+                        <h4 className="settings_modal_input_label" >{t("Kamera nomi")}</h4>
                         <div className="camera_groups_language">
                             <Form.Item
                                 label={false}
@@ -114,77 +114,91 @@ const AddCameraModal = (props) => {
                                 rules={[
                                     {
                                         required: true,
-                                        message: 'Please input your gender!',
+                                        message: t("Iltimos_guruh_nomini_kiriting!"),
                                     },
                                 ]}
                             >
-                                <Input className="camera_language_input" placeholder="Kiriting" prefix={<img src={uzbek} alt="uz"/>} />
+                                <Input
+                                    className="settings_modal_select"
+                                    placeholder={t('Kiriting')}
+                                    prefix={<img src={uzbek} alt="uz"/>}
+
+                                />
                             </Form.Item>
+
                             <Form.Item
                                 label={false}
                                 name="name_ru"
                                 rules={[
                                     {
                                         required: true,
-                                        message: 'Please input your gender!',
+                                        message: t("Iltimos_guruh_nomini_kiriting!"),
                                     },
                                 ]}
                             >
-                                <Input className="camera_language_input" placeholder="Kiriting" prefix={<img src={russia} alt="uz"/>} />
+                                <Input
+                                    className="settings_modal_select"
+                                    placeholder={t('Kiriting')}
+                                    prefix={<img src={russia} alt="uz"/>}
+                                />
                             </Form.Item>
+
                             <Form.Item
                                 label={false}
                                 name="name_en"
                                 rules={[
                                     {
                                         required: true,
-                                        message: 'Please input your gender!',
+                                        message: t("Iltimos_guruh_nomini_kiriting!"),
                                     },
                                 ]}
                             >
-                                <Input className="camera_language_input" placeholder="Kiriting" prefix={<img src={engliz} alt="uz"/>} />
+                                <Input
+                                    className="settings_modal_select"
+                                    placeholder={t('Kiriting')}
+                                    prefix={<img src={engliz} alt="uz"/>}
+                                />
                             </Form.Item>
                         </div>
 
                         <Form.Item
                             className="settings_modal_input_label"
-                            label="Kamera turi"
+                            label={t("Kamera turi")}
                             name="type"
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Please input your gender!',
+                                    message: t('Kamera turini tanlang!'),
                                 },
                             ]}
                         >
                             <Select
+                                placeholder={t("Tanlash")}
                                 className="settings_modal_select"
                                 size="large"
-                                placeholder="Tanlash"
                             >
-                                <Select.Option value="dahua">Dahua</Select.Option>
-                                <Select.Option value="hikvision">Hikvision</Select.Option>
+                                <Select.Option value="dahua">{t("Dahua")}</Select.Option>
+                                <Select.Option value="hikvision">{t("Hikvision")}</Select.Option>
                             </Select>
                         </Form.Item>
 
                         <div className="setting_input_lebel_groups">
                             <Form.Item
                                 className="settings_modal_input_label"
-                                label="Guruh"
+                                label={t("Guruh")}
                                 name="group_id"
                                 rules={[
                                     {
                                         required: true,
-                                        message: 'Please input your gender!',
+                                        message: t("Guruh turini tanlang!"),
                                     },
                                 ]}
                             >
                                 <Select
                                     className="settings_modal_select"
                                     size="large"
-                                    placeholder="Tanlash"
+                                    placeholder={t("Tanlash")}
                                 >
-
                                     {
                                         cameraSetting && cameraSetting.map((item, index) => (
                                             <Select.Option key={index} value={item.id}>{item[`name_${lang}`]}</Select.Option>
@@ -195,19 +209,19 @@ const AddCameraModal = (props) => {
 
                             <Form.Item
                                 className="settings_modal_input_label"
-                                label="IP manzili"
+                                label={t("IP manzili")}
                                 name="ip_address"
                                 rules={[
                                     {
                                         required: true,
-                                        message: 'Please input camera name!',
+                                        message: t("IP manzil kiriting!"),
                                     },
                                 ]}
                             >
                                 <Input
                                     className="settings_modal_input"
                                     size="large"
-                                    placeholder="Kiritish"
+                                    placeholder={t("Kiritish")}
                                     style={{borderRadius: '5px'}}
                                 />
                             </Form.Item>
@@ -216,46 +230,45 @@ const AddCameraModal = (props) => {
                         <div className="setting_input_lebel_groups">
                             <Form.Item
                                 className="settings_modal_input_label"
-                                label="Login"
+                                label={t("Login")}
                                 name="username"
                                 rules={[
                                     {
                                         required: true,
-                                        message: 'Please input camera name!',
+                                        message: t("Login kiriting!"),
                                     },
                                 ]}
                             >
                                 <Input
                                     className="settings_modal_input"
                                     size="large"
-                                    placeholder="Kiritish"
+                                    placeholder={t("Kiritish")}
                                     style={{borderRadius: '5px'}}
                                 />
                             </Form.Item>
                             <Form.Item
                                 className="settings_modal_input_label"
-                                label="Parol"
+                                label={t("Parol")}
                                 name="password"
                                 rules={[
                                     {
                                         required: true,
-                                        message: 'Please input your password!'
+                                        message: t("Parol kiriting!"),
                                     },
                                     ]}
                             >
                                 <Input
                                     className="settings_modal_input"
                                     size="large"
-                                    placeholder="Kiritish"
+                                    placeholder={t("Kiritish")}
                                     style={{borderRadius: '5px'}}
                                 />
                             </Form.Item>
-
                         </div>
 
                         <div className="add_camera_buttons">
-                            <button type="button" onClick={cancel} className="add_camera_buttons_cancle">Bekor qilish</button>
-                            <button type="submit"  className="add_camera_buttons_save">Saqlash</button>
+                            <button type="button" onClick={cancel} className="add_camera_buttons_cancle">{t("Bekor qilish")}</button>
+                            <button type="submit"  className="add_camera_buttons_save">{t("Saqlash")}</button>
                         </div>
                     </div>
                 </div>

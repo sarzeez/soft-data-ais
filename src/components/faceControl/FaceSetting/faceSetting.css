@@ -159,6 +159,7 @@
 .camera_groups_language .ant-input{
     background-color: #F9F9F9;
     margin: 3px 5px;
+    height: 30px;
 }
 
 .face_control_setting_tab_item_footer_buttons {
