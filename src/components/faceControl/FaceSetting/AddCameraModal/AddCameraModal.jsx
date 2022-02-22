@@ -2,6 +2,7 @@ import {Form, Input, Select} from "antd";
 import React, {useEffect, useState} from "react";
 import {ip} from "../../../../ip";
 import {useTranslation} from "react-i18next";
+import { useAlert } from 'react-alert';
 
 import Modal from "react-modal";
 import axios from "axios";
@@ -22,7 +23,8 @@ const AddCameraModal = (props) => {
         cameraPaginationCurrent,
     } = props;
 
-    const {t} = useTranslation()
+    const alert = useAlert()
+    const {t} = useTranslation();
     const lang = localStorage.getItem('i18nextLng');
     const [cameraSetting, setCameraSetting] = useState([]);
 
@@ -67,7 +69,9 @@ const AddCameraModal = (props) => {
                     getCameraData(cameraPaginationCurrent)
                 })
                 .catch(err => {
+                    alert.error('Ip manzil xato kiritildi !')
                     console.log(err?.response?.data)
+                    // console.log(err?.response?.data?.msg.includes("ip_address"))
                 })
         }
     }
@@ -75,7 +79,6 @@ const AddCameraModal = (props) => {
     const onFinishFailed = (e) => {
         // console.log(e)
     }
-
 
     useEffect(()=>{
         getCameraGroup();
@@ -179,6 +182,7 @@ const AddCameraModal = (props) => {
                             >
                                 <Select.Option value="dahua">{t("Dahua")}</Select.Option>
                                 <Select.Option value="hikvision">{t("Hikvision")}</Select.Option>
+                                <Select.Option value="boshqalar">{t("Boshqalar")}</Select.Option>
                             </Select>
                         </Form.Item>
 

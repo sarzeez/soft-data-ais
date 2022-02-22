@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {Layout, Menu, Switch} from 'antd';
 import { BrowserRouter } from 'react-router-dom'
-import {MenuUnfoldOutlined, MenuFoldOutlined,} from '@ant-design/icons';
+import {MenuUnfoldOutlined, MenuFoldOutlined, } from '@ant-design/icons';
 import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch} from "react-redux";
 import { getTheme, isRefresh } from "../../redux";
@@ -137,7 +137,7 @@ const Saidbar = ({ user, setUser }) => {
                                 </Menu.Item>
                                 <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control Online Doors', 8)}  key="8"  icon={<img src={doorKey} alt=""/>}   >
                                     <Link to="/access-control-online-doors">
-                                        {t('online_boshqaruv')}
+                                        {t('Online boshqaruv')}
                                     </Link>
                                 </Menu.Item>
                                 <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 9)} key="9"
@@ -172,7 +172,8 @@ const Saidbar = ({ user, setUser }) => {
                                         </form>
                                     </div>
 
-                                    <Switch onChange={handleChangeTheme} />
+                                    <Switch onChange={handleChangeTheme} checkedChildren="Kun" unCheckedChildren="Tun" defaultChecked />
+
                                     <div title='Chiqish' onClick={logout} className="rount_img">
                                         {
                                             user && <img src={`${ip}/api/admins/${user.id}/img`} alt=""/>

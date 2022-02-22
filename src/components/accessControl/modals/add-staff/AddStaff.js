@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
-import Modal from "react-modal";
+import { ip } from "../../../../ip";
+import {useTranslation} from "react-i18next";
 import { Form, Switch } from 'antd';
-import axios from "axios";
 
-import './addStaff.css'
+import Modal from "react-modal";
+import axios from "axios";
+import './addStaff.css';
 
 import Left from "./Left";
 import Middle from "./Middle";
 import Right from "./Right";
 import AddTerminal from '../add-terminal/AddTerminal'
-import { ip } from "../../../../ip";
+
 
 Modal.setAppElement("#root");
 
@@ -17,6 +19,7 @@ function AddStaff(props) {
 
     const { isOpenAddStaff, setIsOpenAddStaff  } = props;
 
+    const {t} = useTranslation()
     const [ isOpenAddTerminal, setIsOpenAddTerminal] = useState(false)
     const [terminalIPList, setTerminalIPList] = useState([])
     const [initialValues, ] = useState({
@@ -35,8 +38,6 @@ function AddStaff(props) {
         notify: ''
     })
 
-  
-
     const [data, setData] = useState({
         fullname: '',
         gender: '',
@@ -51,7 +52,6 @@ function AddStaff(props) {
         card_id: '',
         card_type: '',
         notify: false
-
     })
 
     const onFinish = (value) => {
@@ -116,11 +116,11 @@ function AddStaff(props) {
                 autoComplete="off"
             >
                 <div className="access_control_add_staff_modal">
-                    <h1 className="access_control_add_staff_modal_title">Foydalanuvchi ma’lumotlarini tahrirlash</h1>
+                    <h1 className="access_control_add_staff_modal_title">{t("Foydalanuvchi ma’lumotlarini tahrirlash")}</h1>
                     <hr className="access_control_add_staff_modal_subline" />
                     <div className="access_control_add_staff_modal_body">
                         <div className="access_control_add_staff_modal_body_item">
-                            <p className="access_control_add_staff_modal_body_item_title">Ma'lumotlar</p>
+                            <p className="access_control_add_staff_modal_body_item_title">{t("Ma'lumotlar")}</p>
                             <Left data = {data} setData = {setData} terminalIPList = {terminalIPList} />
                         </div>
                         <div className="access_control_add_staff_modal_body_item">

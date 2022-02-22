@@ -230,13 +230,13 @@ const FaceControlSetting = () => {
                                         <div className="add_new_group">
                                             <button onClick={() => setShow(true)} className="camera_groups_button">
                                                 <MdAdd/>
-                                                Guruh qo’shish
+                                                {t("Guruh qo’shish")}
                                             </button>
                                             {
                                                 deleteGroup.length > 0 &&
                                                 <button onClick={handleDeleteGroup}   className="group_delite_button">
                                                     <AiOutlineDelete size={22}/>
-                                                    O’chirish
+                                                    {t("O’chirish")}
                                                 </button>
                                             }
                                         </div>

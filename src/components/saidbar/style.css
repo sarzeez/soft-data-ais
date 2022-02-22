@@ -20,16 +20,6 @@
     margin: 0 !important;
 }
 
-
-
-
-
-
-
-
-/*.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {*/
-/*    background-color: transparent !important;*/
-/*}*/
 .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
     background-color: #3c4042!important;
 }
@@ -200,7 +190,7 @@
 
 
 .ant-switch-checked {
-    background-color: #29B85D;
+    background: #1B2531;
 }
 
 .rount_img {
@@ -218,6 +208,14 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
+}
+
+.ant-switch-handle::before{
+    background: #29b85d;
+    background-image: url(/src/images/sun.svg);
+}
+.ant-switch-handle::after{
+    background: red;
 }
 
 
@@ -255,7 +253,6 @@
 .ant-layout-content {
     height: 100% !important;
 }
-
 
 
 /*----dashboard img icon----*/

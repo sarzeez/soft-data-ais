@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {ip} from "../../../ip";
+import {useTranslation} from "react-i18next";
 import socketIOClient from "socket.io-client";
 import axios from "axios";
 
@@ -16,6 +17,7 @@ import './onlineDoors.css';
 
 const OnlineDoors = () => {
 
+    const {t} = useTranslation()
     const navigate = useNavigate()
     const isDarkMode = useSelector(state => state.theme.theme_data)
     const is_refresh_value = useSelector(state => state.theme.is_refresh_value)
@@ -59,7 +61,7 @@ const OnlineDoors = () => {
         <div className="online_doors_content">
             <div className="online_doors_title">
                 <div className="content_top">
-                    <p className={`Content_title ${isDarkMode && 'darkModeColor'}`}>Online boshqaruv</p>
+                    <p className={`Content_title ${isDarkMode && 'darkModeColor'}`}>{t("Online boshqaruv")}</p>
                 </div>
             </div>
 
@@ -100,15 +102,15 @@ const OnlineDoors = () => {
                                         <div className="box_right_top">
                                             <div className="right_top_info">
                                                 <div className="label_box">
-                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ism:</div>
+                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:</div>
                                                     <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.fullname}</div>
                                                 </div>
                                                 <div className="label_box">
-                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Toifasi:</div>
+                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:</div>
                                                     <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.rank}</div>
                                                 </div>
                                                 <div className="label_box">
-                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Lavozimi:</div>
+                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:</div>
                                                     <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.user_type}</div>
                                                 </div>
                                             </div>
@@ -117,17 +119,17 @@ const OnlineDoors = () => {
                                             </div>
                                         </div>
                                         <div className="label_box">
-                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ruxsat turi:</div>
+                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:</div>
                                             <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.access_type}</div>
                                         </div>
                                         <div className="limit_info">
                                             <div className="limit_info_top">
                                                 <img className="limit_info_top_img" src={warning} alt=""/>
-                                                <h1 className="limit_top_title" >Xodimning kirish muddati tugagan!</h1>
+                                                <h1 className="limit_top_title" >{t("Xodimning kirish muddati tugagan!")}</h1>
                                             </div>
-                                            <p className="limit_middle_title">Ruxsat etilgan muddatni uzaytirish uchun</p>
+                                            <p className="limit_middle_title">{t("Ruxsat etilgan muddatni uzaytirish uchun")}</p>
                                             <div className="limit_info_bottom">
-                                                <h3 className="limit_bottom_title">Sozlamalarga o’ting</h3>
+                                                <h3 className="limit_bottom_title">{t("Sozlamalarga o’ting")}</h3>
                                                 <img className="limit_bottom_title_img" src={doorNext} alt=""/>
                                             </div>
                                         </div>
@@ -141,14 +143,14 @@ const OnlineDoors = () => {
                                         <div className="doords_right_not_allowed">
                                             <img className="doors_right_icon" src={recIcon} alt=""/>
 
-                                            <h1 className={`not_allowed_title ${isDarkMode && 'darkModeColor'}`}>Ma’lumot topilmadi</h1>
-                                            <p className={`not_allowed_text ${isDarkMode && 'darkModeColor'}`}>Ushbu shaxs ma’lumotlar bazasida aniqlanmadi</p>
+                                            <h1 className={`not_allowed_title ${isDarkMode && 'darkModeColor'}`}>{t("Ma’lumot topilmadi")}</h1>
+                                            <p className={`not_allowed_text ${isDarkMode && 'darkModeColor'}`}>{t("Ushbu shaxs ma’lumotlar bazasida aniqlanmadi")}</p>
 
                                             <div className="not_allowed_buttons">
-                                                <button className="not_allowed_buttons_cancel" onClick={reject}>Bekor qilish</button>
-                                                <button className="not_allowed_buttons_cancel" >Ro’yxatga olish</button>
+                                                <button className="not_allowed_buttons_cancel" onClick={reject}>{t("Bekor qilish")}</button>
+                                                <button className="not_allowed_buttons_cancel" >{t("Ro’yxatga olish")}</button>
                                             </div>
-                                            <button onClick={openDoor} className="not_allowed_allow">Ruxsat berish</button>
+                                            <button onClick={openDoor} className="not_allowed_allow">{t("Ruxsat berish")}</button>
                                         </div>
                                     </div>
                             )
@@ -161,15 +163,15 @@ const OnlineDoors = () => {
                                 <div className="box_right_top">
                                     <div className="right_top_info">
                                         <div className="label_box">
-                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ism:</div>
+                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:</div>
                                             <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
                                         </div>
                                         <div className="label_box">
-                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Toifasi:</div>
+                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:</div>
                                             <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
                                         </div>
                                         <div className="label_box">
-                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Lavozimi:</div>
+                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:</div>
                                             <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
                                         </div>
 
@@ -180,7 +182,7 @@ const OnlineDoors = () => {
                                     </div>
                                 </div>
                                 <div className="label_box">
-                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ruxsat turi:</div>
+                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:</div>
                                     <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
                                 </div>
                             </div>
@@ -213,15 +215,15 @@ const OnlineDoors = () => {
                                         <div className="box_right_top">
                                             <div className="right_top_info">
                                                 <div className="label_box">
-                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ism:</div>
+                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:</div>
                                                     <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.fullname}</div>
                                                 </div>
                                                 <div className="label_box">
-                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Toifasi:</div>
+                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:</div>
                                                     <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.rank}</div>
                                                 </div>
                                                 <div className="label_box">
-                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Lavozimi:</div>
+                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:</div>
                                                     <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.user_type}</div>
                                                 </div>
                                             </div>
@@ -230,17 +232,17 @@ const OnlineDoors = () => {
                                             </div>
                                         </div>
                                         <div className="label_box">
-                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ruxsat turi:</div>
+                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:</div>
                                             <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.access_type}</div>
                                         </div>
                                         <div className="limit_info">
                                             <div className="limit_info_top">
                                                 <img className="limit_info_top_img" src={warning} alt=""/>
-                                                <h1 className="limit_top_title" >Xodimning kirish muddati tugagan!</h1>
+                                                <h1 className="limit_top_title" >{t("Xodimning kirish muddati tugagan")}!</h1>
                                             </div>
-                                            <p className="limit_middle_title">Ruxsat etilgan muddatni uzaytirish uchun</p>
+                                            <p className="limit_middle_title">{t("Ruxsat etilgan muddatni uzaytirish uchun")}</p>
                                             <div className="limit_info_bottom">
-                                                <h3 className="limit_bottom_title">Sozlamalarga o’ting</h3>
+                                                <h3 className="limit_bottom_title">{t("Sozlamalarga o’ting")}</h3>
                                                 <img className="limit_bottom_title_img" src={doorNext} alt=""/>
                                             </div>
                                         </div>
@@ -254,14 +256,14 @@ const OnlineDoors = () => {
                                         <div className="doords_right_not_allowed">
                                             <img className="doors_right_icon" src={recIcon} alt=""/>
 
-                                            <h1 className={`not_allowed_title ${isDarkMode && 'darkModeColor'}`}>Ma’lumot topilmadi</h1>
-                                            <p className={`not_allowed_text ${isDarkMode && 'darkModeColor'}`}>Ushbu shaxs ma’lumotlar bazasida aniqlanmadi</p>
+                                            <h1 className={`not_allowed_title ${isDarkMode && 'darkModeColor'}`}>{t("Ma’lumot topilmadi")}</h1>
+                                            <p className={`not_allowed_text ${isDarkMode && 'darkModeColor'}`}>{t("Ushbu shaxs ma’lumotlar bazasida aniqlanmadi")}</p>
 
                                             <div className="not_allowed_buttons">
-                                                <button className="not_allowed_buttons_cancel" onClick={reject}>Bekor qilish</button>
-                                                <button className="not_allowed_buttons_cancel" >Ro’yxatga olish</button>
+                                                <button className="not_allowed_buttons_cancel" onClick={reject}>{t("Bekor qilish")}</button>
+                                                <button className="not_allowed_buttons_cancel" >{t("Ro’yxatga olish")}</button>
                                             </div>
-                                            <button onClick={openDoor} className="not_allowed_allow">Ruxsat berish</button>
+                                            <button onClick={openDoor} className="not_allowed_allow">{t("Ruxsat berish")}</button>
                                         </div>
                                     </div>
                             )
@@ -274,15 +276,15 @@ const OnlineDoors = () => {
                                 <div className="box_right_top">
                                     <div className="right_top_info">
                                         <div className="label_box">
-                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ism:</div>
+                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:</div>
                                             <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
                                         </div>
                                         <div className="label_box">
-                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Toifasi:</div>
+                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:</div>
                                             <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
                                         </div>
                                         <div className="label_box">
-                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Lavozimi:</div>
+                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:</div>
                                             <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
                                         </div>
 
@@ -293,7 +295,7 @@ const OnlineDoors = () => {
                                     </div>
                                 </div>
                                 <div className="label_box">
-                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ruxsat turi:</div>
+                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:</div>
                                     <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
                                 </div>
                             </div>
@@ -327,15 +329,15 @@ const OnlineDoors = () => {
                                         <div className="box_right_top">
                                             <div className="right_top_info">
                                                 <div className="label_box">
-                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ism:</div>
+                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:</div>
                                                     <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.fullname}</div>
                                                 </div>
                                                 <div className="label_box">
-                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Toifasi:</div>
+                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:</div>
                                                     <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.rank}</div>
                                                 </div>
                                                 <div className="label_box">
-                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Lavozimi:</div>
+                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:</div>
                                                     <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.user_type}</div>
                                                 </div>
                                             </div>
@@ -344,17 +346,17 @@ const OnlineDoors = () => {
                                             </div>
                                         </div>
                                         <div className="label_box">
-                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ruxsat turi:</div>
+                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:</div>
                                             <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.access_type}</div>
                                         </div>
                                         <div className="limit_info">
                                             <div className="limit_info_top">
                                                 <img className="limit_info_top_img" src={warning} alt=""/>
-                                                <h1 className="limit_top_title" >Xodimning kirish muddati tugagan!</h1>
+                                                <h1 className="limit_top_title" >{t("Xodimning kirish muddati tugagan")}!</h1>
                                             </div>
-                                            <p className="limit_middle_title">Ruxsat etilgan muddatni uzaytirish uchun</p>
+                                            <p className="limit_middle_title">{t("Ruxsat etilgan muddatni uzaytirish uchun")}</p>
                                             <div className="limit_info_bottom">
-                                                <h3 className="limit_bottom_title">Sozlamalarga o’ting</h3>
+                                                <h3 className="limit_bottom_title">{t("Sozlamalarga o’ting")}</h3>
                                                 <img className="limit_bottom_title_img" src={doorNext} alt=""/>
                                             </div>
                                         </div>
@@ -368,14 +370,14 @@ const OnlineDoors = () => {
                                         <div className="doords_right_not_allowed">
                                             <img className="doors_right_icon" src={recIcon} alt=""/>
 
-                                            <h1 className={`not_allowed_title ${isDarkMode && 'darkModeColor'}`}>Ma’lumot topilmadi</h1>
-                                            <p className={`not_allowed_text ${isDarkMode && 'darkModeColor'}`}>Ushbu shaxs ma’lumotlar bazasida aniqlanmadi</p>
+                                            <h1 className={`not_allowed_title ${isDarkMode && 'darkModeColor'}`}>{t("Ma’lumot topilmadi")}</h1>
+                                            <p className={`not_allowed_text ${isDarkMode && 'darkModeColor'}`}>{t("Ushbu shaxs ma’lumotlar bazasida aniqlanmadi")}</p>
 
                                             <div className="not_allowed_buttons">
-                                                <button className="not_allowed_buttons_cancel" onClick={reject}>Bekor qilish</button>
-                                                <button className="not_allowed_buttons_cancel" >Ro’yxatga olish</button>
+                                                <button className="not_allowed_buttons_cancel" onClick={reject}>{t("Bekor qilish")}</button>
+                                                <button className="not_allowed_buttons_cancel" >{t("Ro’yxatga olish")}</button>
                                             </div>
-                                            <button onClick={openDoor} className="not_allowed_allow">Ruxsat berish</button>
+                                            <button onClick={openDoor} className="not_allowed_allow">{t("Ruxsat berish")}</button>
                                         </div>
                                     </div>
                             )
@@ -388,15 +390,15 @@ const OnlineDoors = () => {
                                 <div className="box_right_top">
                                     <div className="right_top_info">
                                         <div className="label_box">
-                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ism:</div>
+                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:</div>
                                             <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
                                         </div>
                                         <div className="label_box">
-                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Toifasi:</div>
+                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:</div>
                                             <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
                                         </div>
                                         <div className="label_box">
-                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Lavozimi:</div>
+                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:</div>
                                             <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
                                         </div>
 
@@ -407,7 +409,7 @@ const OnlineDoors = () => {
                                     </div>
                                 </div>
                                 <div className="label_box">
-                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ruxsat turi:</div>
+                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:</div>
                                     <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
                                 </div>
                             </div>
@@ -440,15 +442,15 @@ const OnlineDoors = () => {
                                         <div className="box_right_top">
                                             <div className="right_top_info">
                                                 <div className="label_box">
-                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ism:</div>
+                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:</div>
                                                     <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.fullname}</div>
                                                 </div>
                                                 <div className="label_box">
-                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Toifasi:</div>
+                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:</div>
                                                     <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.rank}</div>
                                                 </div>
                                                 <div className="label_box">
-                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Lavozimi:</div>
+                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:</div>
                                                     <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.user_type}</div>
                                                 </div>
                                             </div>
@@ -457,17 +459,17 @@ const OnlineDoors = () => {
                                             </div>
                                         </div>
                                         <div className="label_box">
-                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ruxsat turi:</div>
+                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:</div>
                                             <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.access_type}</div>
                                         </div>
                                         <div className="limit_info">
                                             <div className="limit_info_top">
                                                 <img className="limit_info_top_img" src={warning} alt=""/>
-                                                <h1 className="limit_top_title" >Xodimning kirish muddati tugagan!</h1>
+                                                <h1 className="limit_top_title" >{t("Xodimning kirish muddati tugagan")}!</h1>
                                             </div>
-                                            <p className="limit_middle_title">Ruxsat etilgan muddatni uzaytirish uchun</p>
+                                            <p className="limit_middle_title">{t("Ruxsat etilgan muddatni uzaytirish uchun")}</p>
                                             <div className="limit_info_bottom">
-                                                <h3 className="limit_bottom_title">Sozlamalarga o’ting</h3>
+                                                <h3 className="limit_bottom_title">{t("Sozlamalarga o’ting")}</h3>
                                                 <img className="limit_bottom_title_img" src={doorNext} alt=""/>
                                             </div>
                                         </div>
@@ -481,14 +483,14 @@ const OnlineDoors = () => {
                                         <div className="doords_right_not_allowed">
                                             <img className="doors_right_icon" src={recIcon} alt=""/>
 
-                                            <h1 className={`not_allowed_title ${isDarkMode && 'darkModeColor'}`}>Ma’lumot topilmadi</h1>
-                                            <p className={`not_allowed_text ${isDarkMode && 'darkModeColor'}`}>Ushbu shaxs ma’lumotlar bazasida aniqlanmadi</p>
+                                            <h1 className={`not_allowed_title ${isDarkMode && 'darkModeColor'}`}>{t("Ma’lumot topilmadi")}</h1>
+                                            <p className={`not_allowed_text ${isDarkMode && 'darkModeColor'}`}>{t("Ushbu shaxs ma’lumotlar bazasida aniqlanmadi")}</p>
 
                                             <div className="not_allowed_buttons">
-                                                <button className="not_allowed_buttons_cancel" onClick={reject}>Bekor qilish</button>
-                                                <button className="not_allowed_buttons_cancel" >Ro’yxatga olish</button>
+                                                <button className="not_allowed_buttons_cancel" onClick={reject}>{t("Bekor qilish")}</button>
+                                                <button className="not_allowed_buttons_cancel" >{t("Ro’yxatga olish")}</button>
                                             </div>
-                                            <button onClick={openDoor} className="not_allowed_allow">Ruxsat berish</button>
+                                            <button onClick={openDoor} className="not_allowed_allow">{t("Ruxsat berish")}</button>
                                         </div>
                                     </div>
                             )
@@ -501,15 +503,15 @@ const OnlineDoors = () => {
                                 <div className="box_right_top">
                                     <div className="right_top_info">
                                         <div className="label_box">
-                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ism:</div>
+                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:</div>
                                             <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
                                         </div>
                                         <div className="label_box">
-                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Toifasi:</div>
+                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:</div>
                                             <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
                                         </div>
                                         <div className="label_box">
-                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Lavozimi:</div>
+                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:</div>
                                             <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
                                         </div>
 
@@ -520,12 +522,14 @@ const OnlineDoors = () => {
                                     </div>
                                 </div>
                                 <div className="label_box">
-                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>Ruxsat turi:</div>
+                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:</div>
                                     <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
                                 </div>
                             </div>
                     }
                 </div>
+
+
             </div>
         </div>
     );

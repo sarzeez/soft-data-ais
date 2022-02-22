@@ -68,3 +68,100 @@ input[type=number] {
 .ant-input-affix-wrapper-focused{
   box-shadow: 0 0 0 2px rgb(41, 184, 93) !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*@font-face {*/
+/*  font-family: Open Sans;*/
+/*  src: url(./fonts/OpenSans/OpenSans-Regular.ttf);*/
+/*}*/
+/**{*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  box-sizing: border-box;*/
+/*}*/
+
+
+/*input::-webkit-outer-spin-button,*/
+/*input::-webkit-inner-spin-button {*/
+/*  -webkit-appearance: none;*/
+/*  margin: 0;*/
+/*}*/
+
+/*!* Firefox *!*/
+/*input[type=number] {*/
+/*  -moz-appearance: textfield;*/
+/*}*/
+
+
+/*::-webkit-scrollbar{*/
+/*  width: 5px;*/
+/*}*/
+/*::-webkit-scrollbar-thumb{*/
+/*  background-color: #29b85d;*/
+/*  border-radius: 30px;*/
+/*}*/
+
+
+/*.ant-input:hover{*/
+/*  border-color: #29b85d;*/
+/*}*/
+/*.ant-input:focus {*/
+/*  border-color: #29b85d;*/
+/*  outline: 0;*/
+/*  -webkit-box-shadow: 0 0 0 2px rgba(40, 229, 56, 0.2);*/
+/*  box-shadow: 0 0 0 2px rgba(46, 229, 40, 0.2);*/
+/*}*/
+
+/*.ant-select:hover{*/
+/*  border-color: #29b85d;*/
+/*}*/
+/*.ant-select-selector:hover, .ant-select-selector:focus-within {*/
+/*  border: 1px solid #29b85d !important;*/
+/*}*/
+
+
+/*!*---datePiker--*!*/
+/*.ant-picker:hover{*/
+/*  border: 1px solid #29b85d !important;*/
+/*}*/
+/*.ant-picker-focused{*/
+/*  border: 1px solid #29b85d !important;*/
+/*}*/
+
+/*!*---checkbox---*!*/
+
+/*.ant-checkbox:hover{*/
+/*  border-color: #29b85d !important;*/
+/*  background-color: #29b85d !important;*/
+/*}*/
+/*.ant-checkbox-indeterminate .ant-checkbox-inner::after{*/
+/*  background-color: #29b85d!important;*/
+/*}*/
+
+/*.ant-input-affix-wrapper-focused{*/
+/*  box-shadow: 0 0 0 2px rgb(41, 184, 93) !important;*/
+/*}*/
+

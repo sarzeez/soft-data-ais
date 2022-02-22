@@ -4,11 +4,10 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import moment from 'moment';
 import { Tabs } from 'antd';
-import { MdOutlineAddCircleOutline } from 'react-icons/md'
-import { AiOutlineDelete } from 'react-icons/ai'
-
-
+import { MdOutlineAddCircleOutline } from 'react-icons/md';
+import { AiOutlineDelete } from 'react-icons/ai';
 import { ip } from '../../../ip';
+import {useTranslation} from "react-i18next";
 
 import TerminalTable from './table/TerminalTable'
 import StaffTable from './table/StaffTable'
@@ -24,7 +23,7 @@ const AccessControlSetting = () => {
 
     const isDarkMode = useSelector(state => state.theme.theme_data)
     const is_refresh_value = useSelector(state => state.theme.is_refresh_value)
-
+    const {t} = useTranslation()
     // add new staff modal state
     const [isOpenAddStaff, setIsOpenAddStaff] = useState(false)
 
@@ -132,21 +131,21 @@ const AccessControlSetting = () => {
             />
             <div className='access_control_setting_header'>
                 <div className="acsess_content_top">
-                    <p className= {`Content_title ${isDarkMode && 'darkModeColor'}`} >Kirishni boshqarish sozlamalar</p>
+                    <p className= {`Content_title ${isDarkMode && 'darkModeColor'}`} >{t("Kirishni boshqarish sozlamalar")}</p>
                 </div>
             </div>
 
             <div className={`access_control_setting_body ${isDarkMode && 'darkModeBackground'}`}>
                 
                 <Tabs onChange={onChangeTabs} type="card" defaultActiveKey="1">
-                    <TabPane tab="Autentifikatsiya sozlamalari" key="1">
+                    <TabPane tab={t("Autentifikatsiya sozlamalari")} key="1">
                         <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>
                             <div className='access_control_setting_tab_item_body'>
                                 Content of Tab Pane 1
                             </div>
                         </div>
                     </TabPane>
-                    <TabPane tab="Terminal parametrlari" key="2">
+                    <TabPane tab={t("Terminal parametrlari")} key="2">
                         <div className='access_control_setting_tab_item'>
                             <div className='access_control_setting_tab_item_body'>
                                 <TerminalTable
@@ -158,7 +157,7 @@ const AccessControlSetting = () => {
                                 <div className='access_control_setting_tab_item_footer_buttons'>
                                     <button className='add_button'>
                                         <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
-                                        Terminal qo'shish
+                                        {t("Terminal qo'shish")}
                                     </button>
                                 </div>
                                 <TerminalPagination
@@ -170,14 +169,14 @@ const AccessControlSetting = () => {
                             </div>
                         </div>
                     </TabPane>
-                    <TabPane tab="Onlayn boshqaruv" key="3">
+                    <TabPane tab={t("Online boshqaruv")} key="3">
                         <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>
                             <div className='access_control_setting_tab_item_body'>
                                 Content of Tab Pane 3
                             </div>
                         </div>
                     </TabPane>
-                    <TabPane tab="Xodimlar" key="4">
+                    <TabPane tab={t("Xodimlar")} key="4">
                         <div className='access_control_setting_tab_item'>
                             <div className='access_control_setting_tab_item_body'>
                                 <StaffTable
@@ -190,11 +189,11 @@ const AccessControlSetting = () => {
                                 <div className='access_control_setting_tab_item_footer_buttons'>
                                     <button onClick={addNewStaff} className='add_button'>
                                         <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
-                                        Xodim qo'shish
+                                        {t("Xodim qo'shish")}
                                     </button>
                                     {
                                         deleteStaff.length > 0 && 
-                                        <button><AiOutlineDelete size={22} style = {{marginRight: '5px'}}/>O’chirish</button>
+                                        <button><AiOutlineDelete size={22} style = {{marginRight: '5px'}}/>{t("O’chirish")}</button>
                                     }
                                 </div>
 

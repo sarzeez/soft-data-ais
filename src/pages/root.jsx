@@ -8,7 +8,6 @@ import AccessControlSetting from '../components/accessControl/settings/AccessCon
 
 import AddUser from '../components/accessControl/RealTime/RealTime/AddUser'
 
-
 import NotFound from '../components/notFound/NotFound'
 import AcsessControlTable from "../components/accessControl/accessControlSearch/AccessControlTable";
 import FaceControlSetting from "../components/faceControl/FaceSetting/FaceControlSetting";

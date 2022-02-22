@@ -15,6 +15,7 @@ import {useTranslation} from "react-i18next";
 const AcsessTable = (props) => {
     const { accessTableData } = props;
     const {t} = useTranslation()
+
     const isDarkMode = useSelector(state => state.theme.theme_data)
 
     const columns = [

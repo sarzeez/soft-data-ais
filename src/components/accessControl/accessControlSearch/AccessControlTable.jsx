@@ -14,7 +14,6 @@ import './acsessControl.css';
 import AcsessTable from "./AcsessTable";
 import AccessControlSearchPagination from './Pagination';
 
-
 const AcsessControlTable = () => {
 
     const isDarkMode = useSelector(state => state.theme.theme_data)
@@ -28,27 +27,37 @@ const AcsessControlTable = () => {
 
     const [name, setName] = useState('');
     const [deviceName, setDeviceName] = useState('all');
-    const [position, setPosition] = useState('all');
     const [userType, setUserType] = useState('all');
+    const [position, setPosition] = useState('all');
+    const [direction, setDirection] = useState('all');
     const [dateFrom, setDateFrom] = useState();
     const [dateTo, setDateTo] = useState();
+    const [allowedDoor, setAllowedDoor] = useState([]);
 
     const onChangeName = (e) =>{
         setName(e.target.value);
     };
-
     const onChangeDeviceName = (e) =>{
         setDeviceName(e)
+        if(e === 'all') {
+            setDeviceName('all');
+        }
+        else {
+            const DoorIP = allowedDoor[e].ip_address
+            setDeviceName([DoorIP])
+        }
+    };
+     const onChangeUserType = (e) =>{
+        setUserType(e)
     };
 
     const onChangePosition = (e) =>{
         setPosition(e)
     };
 
-    const onChangeUserType = (e) =>{
-        setUserType(e)
-    };
-
+    const onChangeDirection=(e) =>{
+        setDirection(e)
+    }
 
     const onChangeDateFrom = (e, a) => {
         setDateFrom(a);
@@ -59,11 +68,21 @@ const AcsessControlTable = () => {
     };
 
     const fetchAccessTable = async (id) => {
+        console.log({
+            fullname: name,
+            device_name: deviceName,
+            rank: position,
+            user_type: userType,
+            direction: direction,
+            fromDate: dateFrom,
+            toDate: dateTo,
+        })
         const response = await axios.post(`${ip}/api/history/${accessTablePaginationLimit}/${id}`, {
             fullname: name,
             device_name: deviceName,
             rank: position,
             user_type: userType,
+            direction: direction,
             fromDate: dateFrom,
             toDate: dateTo,
         })
@@ -78,7 +97,8 @@ const AcsessControlTable = () => {
                 created_time: moment(item.created_time).format('DD.MM.YYYY, HH:mm:ss'),
                 direction: item.direction,
                 door_name: item.door_name,
-                user_type: item.user_type ? item.user_type : "Begona"
+                user_type: item.user_type === 1 ? t('Xodim') : item.user_type === 2 ? t('Mehmon') : t('Begona'),
+                rank: item.rank === 1 ? t('Oddiy xodim') : item.rank === 2 ? t('Direktor') : t('VIP')
             }
         ))
         setAccessTableData(newData)
@@ -96,6 +116,7 @@ const AcsessControlTable = () => {
         setDeviceName('all')
         setPosition('all')
         setUserType('all')
+        setDirection('all')
 
         setDateFrom('')
         setDateTo('')
@@ -116,6 +137,19 @@ const AcsessControlTable = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+    useEffect(() => {
+        const getData = () => {
+            axios.get(`${ip}/api/adduser/terminal`)
+                .then(res => {
+                    const { data } = res;
+                    setAllowedDoor(data)
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        }
+        getData()
+    }, [])
 
     return (
         <>
@@ -155,16 +189,17 @@ const AcsessControlTable = () => {
                             <div className="input_wrapper">
                                 <Select
                                     className={`left_select ${isDarkMode && 'darkModeColor'}`}
-                                    onChange={onChangeDeviceName}
                                     style={{width: "100%"}}
                                     size="large"
-                                    defaultValue={deviceName}
-                                    value={deviceName}
+                                    defaultValue={'all'}
+                                    onChange={onChangeDeviceName}
                                 >
                                     <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                    <Select.Option value="1">1</Select.Option>
-                                    <Select.Option value="2">2</Select.Option>
-                                    <Select.Option value="3">3</Select.Option>
+                                    {
+                                        allowedDoor.map((item, index) => (
+                                            <Select.Option key={index} >{item.door_name}</Select.Option>
+                                        ))
+                                    }
                                 </Select>
                             </div>
                         </div>
@@ -200,9 +235,9 @@ const AcsessControlTable = () => {
                                     value={position}
                                 >
                                     <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                    <Select.Option value="Oddiy xodim">Oddiy xodim</Select.Option>
-                                    <Select.Option value="Direktor">Direktor</Select.Option>
-                                    <Select.Option value="VIP">VIP</Select.Option>
+                                    <Select.Option value="1">{t("Oddiy xodim")}</Select.Option>
+                                    <Select.Option value="2">{t("Direktor")}</Select.Option>
+                                    <Select.Option value="3">{t("VIP")}</Select.Option>
                                 </Select>
                             </div>
                         </div>
@@ -212,14 +247,15 @@ const AcsessControlTable = () => {
                             <div className="input_wrapper">
                                 <Select
                                     className={`left_select ${isDarkMode && 'darkModeColor'}`}
-                                    // onChange={onChangePosition}
+                                    onChange={onChangeDirection}
                                     style={{width: "100%"}}
                                     size="large"
-                                    defaultValue="all"
+                                    defaultValue={direction}
+                                    value={direction}
                                 >
                                     <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                    <Select.Option value="0">Kirdi</Select.Option>
-                                    <Select.Option value="1">Chiqdi</Select.Option>
+                                    <Select.Option value="Entry">{t("Kirish")}</Select.Option>
+                                    <Select.Option value="Exit">{t("Chiqish")}</Select.Option>
                                 </Select>
                             </div>
                         </div>
@@ -267,7 +303,7 @@ const AcsessControlTable = () => {
                                     style={{width: "100%"}}
                                 >
                                     <AiOutlineSearch size={22} style = {{marginRight: '5px'}} />
-                                    Qidirish
+                                    {t("Qidirish")}
                                 </button>
                             </div>
 
@@ -278,7 +314,7 @@ const AcsessControlTable = () => {
                                     onClick={clear}
                                 >
                                     <AiOutlineClear size={24} style = {{marginRight: '5px'}} />
-                                    Filterni tozalash
+                                    {t("Filterni tozalash")}
                                 </button>
                             </div>
                         </div>

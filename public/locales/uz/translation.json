@@ -38,13 +38,8 @@
   "E’tiborsiz": "E’tiborsiz",
   "Kulgan": "Kulgan",
   "Xursand": "Xursand",
-  "ikkilnagna": "Ikkilnagna",
+  "ikkilangan": "ikkilangan",
   "Baqirgan": "Baqirgan",
-  "Kiriting": "Kiriting",
-  "Eshik": "Eshik",
-  "Toifasi": "Toifasi",
-  "Mehmon": "Mehmon",
-  "Begona": "Begona",
   "Qidirish": "Qidirish",
   "Filterni tozalash": "Filterni tozalash",
 
@@ -77,11 +72,11 @@
   "Yosh bolalar": "Yosh bolalar",
   "O'smirlar": "O'smirlar",
   "O'spirinlar": "O'spirinlar",
-  "O'rta yoshdagilar": "O'rta yoshdagilar",
-  "Katta yoshdagilar": "Katta yoshdagilar",
+  "O'rta yoshdagilar": "O'rta yoshlilar",
+  "Katta yoshdagilar": "Katta yoshlilar",
   "Keksalar": "Keksalar",
 
-  "Yuzni aniqlash sozlamalar": "Yuzni aniqlash sozlamalar",
+  "Yuzni aniqlash sozlamalar": "Yuzni aniqlash sozlamalari",
   "Autentifikatsiya sozlamalari": "Autentifikatsiya sozlamalari",
   "Kamera parametrlari": "Kamera parametrlari",
   "Kamera nomi": "Kamera nomi",
@@ -89,26 +84,94 @@
   "IP manzili": "IP manzili",
   "Login": "Login",
   "Parol": "Parol",
-  "Amal": "Amal",
+  "Amal": "Tahrirlash",
   "Iltimos_guruh_nomini_kiriting!": "Iltimos guruh nomini kiriting!",
   "Kamera turini tanlang!": "Kamera turini tanlang!",
-  "Tanlash": "Tanlash",
+  "Tanlash": "Tanlang",
   "Dahua": "Dahua",
   "Hikvision": "Hikvision",
-  "Guruh turini tanlang!": "Guruh turini tanlang!",
+  "Guruh turini tanlang!": "Guruhni tanlang!",
   "IP manzil kiriting!":  "IP manzil kiriting!",
   "Kiritish": "Kiritish",
-  "Login kiriting!": "Login kiriting!",
-  "Parol kiriting!": "Parol kiriting!",
+  "Login kiriting!": "Loginni kiriting!",
+  "Parol kiriting!": "Parolni kiriting!",
   "Bekor qilish": "Bekor qilish",
   "Saqlash": "Saqlash",
   "Kamera qo‘shish": "Kamera qo‘shish",
   "O’chirish": "O’chirish",
+  "Guruh qo’shish": "Guruh qo’shish",
+  "Statistika sozlamalari": "Statistika sozlamalari",
 
+  "Kiriting": "Kiriting",
+  "Eshik": "Eshik",
+  "Toifasi": "Toifasi",
+  "Mehmon": "Mehmon",
+  "Begona": "Begona",
+  "Xodim": "Xodim",
 
+  "Oddiy xodim": "Oddiy xodim",
+  "Direktor": "Direktor",
+  "VIP": "VIP",
+  "Kirish": "Kirish",
+  "Chiqish": "Chiqish",
+  "Ruxsat turi": "Ruxsat turi",
 
+  "Online boshqaruv": "Online boshqaruv",
+  "Ruxsat etilgan muddatni uzaytirish uchun": "Ruxsat etilgan muddatni uzaytirish uchun",
+  "Sozlamalarga o’ting": "Sozlamalarga o’ting",
+  "Ma’lumot topilmadi": "Ma’lumot topilmadi",
+  "Ushbu shaxs ma’lumotlar bazasida aniqlanmadi": "Ushbu shaxs ma’lumotlar bazasida aniqlanmadi",
+  "Ro’yxatga olish": "Ro’yxatga olish",
+  "Ruxsat berish": "Ruxsat berish",
+  "Xodimning kirish muddati tugagan": "Xodimning kirish muddati tugagan",
+  "Kirishni boshqarish sozlamalar": "Kirishni boshqarish sozlamalari",
+  "Terminal parametrlari": "Terminal parametrlari",
+  "Terminal qo'shish": "Terminal qo'shish",
+  "Xodimlar": "Xodimlar",
+  "Xodim qo'shish": "Xodim qo'shish",
+  "Foydalanuvchi ma’lumotlarini tahrirlash":"Foydalanuvchi ma’lumotlarini tahrirlash",
+  "Ma'lumotlar":"Ma'lumotlar",
+  "Yuzni aniqlash":"Yuzni aniqlash",
+  "ID karta":"ID karta",
+  "Xodimning kirib/chiqish ma’lumotlari haqida bildirishnoma olishni istaysizmi?":"Xodimning kirib/chiqish ma’lumotlari haqida bildirishnoma olishni istaysizmi?",
 
-  "Statistika sozlamalari": "Statistika sozlamalari"
+  "Kirish eshiklari": "Eshiklar",
+  "Cheklov": "Cheklov",
+  "ID karta turi": "ID karta turi",
+  "Karta raqami": "Karta raqami",
+  "Ruxsat etilgan muddat": "Ruxsat etilgan muddat",
+  "Eshik nomi": "Eshik nomi",
+  "Autentifikatsiya turi": "Autentifikatsiya turi",
+  "Terminal IP manzili": "Terminal IP manzili",
+  "Terminal turi": "Terminal turi",
+  "O'rnatilgan vaqti": "O'rnatilgan vaqti",
+  "Tahrir": "Tahrir",
+  "Ism kiriting!": "Ism kiriting!",
+  "Jinsni tanlang": "Jinsni tanlang",
+  "Toifasini tanlang": "Toifasini tanlang",
+  "Lavozimini tanlang": "Lavozimini tanlang",
+  "Ruxsat etilgan eshiklar": "Ruxsat etilgan eshiklar",
+  "Ruxsat etilgan eshikni tanlang": "Ruxsat etilgan eshikni tanlang",
+  "Yuz": "Yuz",
+  "Barmoq izi": "Barmoq izi",
+  "Yuz yoki Barmoq izi": "Yuz yoki Barmoq izi",
+  "Yuz va Barmoq izi": "Yuz va Barmoq izi",
+  "Kirishlar soni": "Kirishlar soni",
+  "Kirishlar sonini kiriting": "Kirishlar sonini kiriting",
+  "Muddatni tanlang": "Muddatni tanlang"
+
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

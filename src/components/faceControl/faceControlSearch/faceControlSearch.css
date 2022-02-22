@@ -25,7 +25,7 @@
 }
 
 .content_inputs {
-    width: 320px !important;
+    width: 300px !important;
     background: #ffffff;
     border: 1px solid #eaeaea;
     box-sizing: border-box;
@@ -94,10 +94,9 @@
 }
 
 .content_right {
-    width: calc(100% - 320px);
+    width: calc(100% - 310px);
     max-height: calc(100vh - 146px);
-    min-height: calc(100vh - 146px);
-    right: 0 !important;
+    right: 0px !important;
     background: #ffffff;
     box-sizing: border-box;
     border-radius: 10px;
@@ -121,13 +120,9 @@
 .my_cart_wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
+    grid-gap: 8px;
 }
 
-
-.ant-layout-footer {
-    padding: 0 !important;
-}
 
 @media only screen and (max-width: 1370px) {
     .content_inputs {
@@ -144,6 +139,9 @@
     }
     .form_input_wrapper {
         width: 100%;
+    }
+    .my_cart_wrapper {
+        grid-template-columns: 1fr 1fr 1fr ;
     }
 }
 

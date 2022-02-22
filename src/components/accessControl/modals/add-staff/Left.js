@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Form, Input, Select, Checkbox, DatePicker, TreeSelect  } from 'antd';
-
+import {useTranslation} from "react-i18next";
 import './left.css'
+
 
 const { SHOW_PARENT } = TreeSelect;
 
@@ -9,6 +10,8 @@ const { SHOW_PARENT } = TreeSelect;
 
 const Left = ({ data, setData, terminalIPList }) => {
 
+
+    const {t} = useTranslation()
     const [state, setState] = useState([])
 
     const onChange = value => {
@@ -34,85 +37,85 @@ const Left = ({ data, setData, terminalIPList }) => {
         <div className="access_control_add_staff_modal_body_item_left">
             <div className="access_control_add_staff_modal_body_item_left_inputs">
                 <Form.Item
-                    label="F.I.Sh"
+                    label={t("Ism")}
                     name="fullname"
                     rules={[
                     {
                         required: true,
-                        message: 'Please input your username!',
+                        message: t("Ism kiriting!"),
                     },
                     ]}
                 >
                     <Input
                         size="large"
-                        placeholder="Kiriting"
+                        placeholder={t("Kiriting")}
                         style={{borderRadius: '5px'}}
                     />
                 </Form.Item>
                 <Form.Item
-                    label="Jins"
+                    label={t("Jinsi")}
                     name="gender"
                     rules={[
                     {
                         required: true,
-                        message: 'Please input your gender!',
+                        message: t("Jinsni tanlang"),
                     },
                     ]}
                 >
                     <Select
                         size="large"
                     >
-                        <Select.Option value="male">Erkak</Select.Option>
-                        <Select.Option value="female">Ayol</Select.Option>
+                        <Select.Option value="male">{t("Erkak")}</Select.Option>
+                        <Select.Option value="female">{t("Ayol")}</Select.Option>
                     </Select>
                 </Form.Item>
             </div>
             <div className="access_control_add_staff_modal_body_item_left_inputs">
                 <Form.Item
-                    label="Toifa"
+                    label={t("Toifasi")}
                     name="rank"
                     rules={[
                     {
                         required: true,
-                        message: 'Please input your username!',
+                        message: t("Toifasini tanlang"),
                     },
                     ]}
                 >
                     <Select
                         size="large"
                     >
-                        <Select.Option value="1">Oddiy hodim</Select.Option>
-                        <Select.Option value="2">VIP</Select.Option>
-                        <Select.Option value="3">Direktor</Select.Option>
+                        <Select.Option value="1">{t("Xodim")}</Select.Option>
+                        <Select.Option value="2">{t("Mehmon")}</Select.Option>
+                        <Select.Option value="3">{t("Begona")}</Select.Option>
                     </Select>
                 </Form.Item>
                 <Form.Item
-                    label="Lavozim"
+                    label={t("Lavozimi")}
                     name="user_type"
                     rules={[
                     {
                         required: true,
-                        message: 'Please input your username!',
+                        message: t("Lavozimini tanlang"),
                     },
                     ]}
                 >
                     <Select
                         size="large"
                     >
-                        <Select.Option value="1">Normal</Select.Option>
-                        <Select.Option value="2">VIP</Select.Option>
-                        <Select.Option value="3">Blacklist</Select.Option>
+                        <Select.Option value="1">{t("Oddiy xodim")}</Select.Option>
+                        <Select.Option value="2">{t("Direktor")}</Select.Option>
+                        <Select.Option value="3">{t("VIP")}</Select.Option>
                     </Select>
                 </Form.Item>
             </div>
             <div className="access_control_add_staff_modal_body_item_left_input">
                 <Form.Item
-                    label="Ruxsat etilgan eshiklar"
+                    label={t("Ruxsat etilgan eshiklar")}
                     name="door_ip"
                     rules={[
                     {
                         required: true,
-                        message: 'Please input your username!',
+                        message: t("Ruxsat etilgan eshikni tanlang"),
                     },
                     ]}
                 >
@@ -121,55 +124,56 @@ const Left = ({ data, setData, terminalIPList }) => {
             </div>
             <div className="access_control_add_staff_modal_body_item_left_input">
                 <Form.Item
-                    label="Ruxsat turi"
+                    label={t("Ruxsat turi")}
                     name="access_type"
                     rules={[
                     {
                         required: true,
-                        message: 'Please input your username!',
+                        message: t("Ruxsat turini tanlang"),
                     },
                     ]}
                 >
                     <Select
                         size="large"
                     >
-                        <Select.Option value="0">0</Select.Option>
-                        <Select.Option value="1">1</Select.Option>
-                        <Select.Option value="2">2</Select.Option>
+                        <Select.Option value="0">{t("Yuz")}</Select.Option>
+                        <Select.Option value="1">{t("Barmoq izi")}</Select.Option>
+                        <Select.Option value="2">{t("Yuz yoki Barmoq izi")}</Select.Option>
+                        <Select.Option value="3">{t("Yuz va Barmoq izi")}</Select.Option>
                     </Select>
                 </Form.Item>
             </div>
             <div className="access_control_add_staff_modal_body_item_left_inputs">
                 <Form.Item
-                    label="Kirishlar soni"
+                    label={t("Kirishlar soni")}
                     name="limit"
                     rules={[
                     {
                         required: true,
-                        message: 'Please input your username!',
+                        message: t("Kirishlar sonini kiriting"),
                     },
                     ]}
                 >
                     <Input
                         size="large"
-                        placeholder="Kiriting"
+                        placeholder={t("Kiriting")}
                         style={{borderRadius: '5px'}}
                     />
                 </Form.Item>
                 <Checkbox
                         className="access_control_add_staff_modal_body_item_left_checkbox"
                     >
-                        Cheklov
+                    {t("Cheklov")}
                 </Checkbox>
             </div>
             <div className="access_control_add_staff_modal_body_item_left_inputs">
                 <Form.Item
-                    label="Muddat"
+                    label={t("Muddat")}
                     name="valid_from_time"
                     rules={[
                     {
                         required: true,
-                        message: 'Please input your username!',
+                        message: t("Muddatni tanlang"),
                     },
                     ]}
                 >
@@ -180,12 +184,12 @@ const Left = ({ data, setData, terminalIPList }) => {
                     />
                 </Form.Item>
                 <Form.Item
-                    label="Muddat"
+                    label={t("Muddat")}
                     name="valid_to_time"
                     rules={[
                     {
                         required: true,
-                        message: 'Please input your username!',
+                        message: t("Muddatni tanlang"),
                     },
                     ]}
                 >

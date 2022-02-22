@@ -13,12 +13,25 @@ import VideoModal from '../videoModal/VidoeModal';
 
 
 
-
-
 const Cart = ({ item, isDarkMode }) => {
 
     const {t} = useTranslation()
-    const mood = ["", "Tabassum", <div>{t('Jahldor')}</div> , <div>{t('Xafa')}</div>, <div>{t('Jirkangan')}</div> , <div>{t('Qo’rqqan')}</div>, <div>{t('Hayratda')}</div> ,<div>{t('E’tiborsiz')}</div>, <div>{t('Kulgan')}</div>, "",<div>{t('Xursand')}</div>, <div>{t('ikkilnagna')}</div>,<div>{t('Baqirgan')}</div>]
+
+    const mood = ["",
+        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Tabassum')}</div>,
+        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Jahldor')}</div> ,
+        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Xafa')}</div>,
+        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Jirkangan')}</div> ,
+        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Qo’rqqan')}</div>,
+        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Hayratda')}</div>,
+        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('E’tiborsiz')}</div>,
+        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Kulgan')}</div>,
+        "",
+        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Xursand')}</div>,
+        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('ikkilangan')}</div>,
+        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Baqirgan')}</div>
+    ]
+
     const [visible, setVisible] = useState(false)
     const [videoByID, setVideoByID] = useState(null)
     const [loading, setLoading] = useState(false)
@@ -50,7 +63,6 @@ const Cart = ({ item, isDarkMode }) => {
         setTimeout(() => {
                 clearInterval(interval)
             }, 1000*60)
-        
     }
 
     return (
@@ -79,7 +91,7 @@ const Cart = ({ item, isDarkMode }) => {
                                 ? <img src = {emojes.female['female']} alt = ''/>
                                 : <img src = {emojes.male['male']} alt = '' />
                             }
-                            <p className="card_longTitle">{item.gender === 1 ? <div>{t('Erkak')}</div>  : item.gender === 2 ? <div>{t('Ayol')}</div>  : ''}</p>
+                            <p className="card_longTitle">{item.gender === 1 ? <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Erkak')}</div>  : item.gender === 2 ? <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Ayol')}</div>  : ''}</p>
                         </div>
                         <div>
                             {
@@ -90,12 +102,12 @@ const Cart = ({ item, isDarkMode }) => {
                             <p className="card_longTitle" >
                                 {
                                    item && item.old === 'age_0_10'
-                                        ? <Tooltip title={t('Yosh bola')} color={'cyan'}>{t('Yosh bola')}</Tooltip>
-                                        : item.old === 'age_11_17' ?  <Tooltip title={t('O\'smir')} color={'cyan'}>{t('O\'smir')}</Tooltip>
-                                            : item.old === 'age_18_25' ? <Tooltip title={t('O\'spirin')} color={'cyan'}>{t('O\'spirin')}</Tooltip>
-                                                : item.old === 'age_26_40' ? <Tooltip title={t('O\'rta yoshli')} color={'cyan'}>{t('O\'rta yoshli')}</Tooltip>
-                                                    : item.old === 'age_41_60' ? <Tooltip title={t('Katta yoshli')} color={'cyan'}>{t('Katta yoshli')}</Tooltip>
-                                                        : <Tooltip title={t('Keksa')} color={'cyan'}>{t('Keksa')}</Tooltip>
+                                        ? <Tooltip title={t('Yosh bola')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Yosh bola')}</Tooltip>
+                                        : item.old === 'age_11_17' ?  <Tooltip title={t('O\'smir')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('O\'smir')}</Tooltip>
+                                            : item.old === 'age_18_25' ? <Tooltip title={t('O\'spirin')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('O\'spirin')}</Tooltip>
+                                                : item.old === 'age_26_40' ? <Tooltip title={t('O\'rta yoshli')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('O\'rta yoshli')}</Tooltip>
+                                                    : item.old === 'age_41_60' ? <Tooltip title={t('Katta yoshli')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Katta yoshli')}</Tooltip>
+                                                        : <Tooltip title={t('Keksa')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Keksa')}</Tooltip>
                                 }
                             </p>
                         </div>
@@ -105,8 +117,9 @@ const Cart = ({ item, isDarkMode }) => {
                             {
                                 <img src = {emojes.mask[item.args.MASKA]} alt = 'mask'/>
                             }
-                            <p className="card_longTitle" >{item.args.MASKA === 1 ? <Tooltip title={t('Niqobli')} color={'cyan'}>{t('Niqobli')}</Tooltip>  : item.args.MASKA === 0
-                                ? <Tooltip title={t('Niqobsiz')} color={'cyan'}>{t('Niqobsiz')}</Tooltip> : ''}</p>
+                            <p className="card_longTitle" >{item.args.MASKA === 1 ?
+                                <Tooltip title={t('Niqobli')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Niqobli')}</Tooltip>  : item.args.MASKA === 0
+                                ? <Tooltip title={t('Niqobsiz')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Niqobsiz')}</Tooltip> : ''}</p>
                         </div>
                         <div>
                             {
@@ -119,9 +132,9 @@ const Cart = ({ item, isDarkMode }) => {
                                 <img src = {emojes.glass[item.args.KOZOYNAK]} alt = 'glass' />
                             }
                             <p className="card_longTitle" >{item.args.KOZOYNAK === 1 ?
-                                <Tooltip title={t('Ko’rishni_tuzatish')} color={'cyan'}>{t('Ko’rishni_tuzatish')}</Tooltip>  :
-                                item.args.KOZOYNAK === 14 ? <Tooltip title={t('Quyoshdan_himoya')} color={'cyan'}>{t('Quyoshdan_himoya')}</Tooltip> :
-                                    <Tooltip title={t('Kozoynaksiz')} color={'cyan'}>{t('Kozoynaksiz')}</Tooltip> }
+                                <Tooltip title={t('Ko’rishni_tuzatish')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Ko’rishni_tuzatish')}</Tooltip>  :
+                                item.args.KOZOYNAK === 14 ? <Tooltip title={t('Quyoshdan_himoya')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Quyoshdan_himoya')}</Tooltip> :
+                                    <Tooltip title={t('Kozoynaksiz')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Kozoynaksiz')}</Tooltip> }
                             </p>
                         </div>
                         
@@ -137,8 +150,8 @@ const Cart = ({ item, isDarkMode }) => {
                                     item.gender === 2
                                     ? ''
                                     : (item.old !== 'age_0_10' && item.old !== 'age_11_17' && (item.args.SOQOL === 1 ?
-                                            <Tooltip title={t('Soqolli')} color={'cyan'}>{t('Soqolli')}</Tooltip> :
-                                            item.args.SOQOL === 0 ? <Tooltip title={t('Soqolsiz')} color={'cyan'}>{t('Soqolsiz')}</Tooltip> : ''))
+                                            <Tooltip title={t('Soqolli')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Soqolli')}</Tooltip> :
+                                            item.args.SOQOL === 0 ? <Tooltip title={t('Soqolsiz')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Soqolsiz')}</Tooltip> : ''))
                                 }
                             </p>
                         </div>
