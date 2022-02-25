@@ -1,6 +1,8 @@
 import React from 'react';
 import Modal from "react-modal";
 import { Form, Input, Select } from 'antd';
+import {useTranslation} from "react-i18next";
+
 
 
 import './terminal.css'
@@ -10,6 +12,7 @@ Modal.setAppElement("#root");
 
 const AddTerminal = ({ isOpenAddTerminal, setIsOpenAddTerminal }) => {
 
+    const {t} = useTranslation()
     const onFinish = (value) => {
         console.log(value)
     }
@@ -43,22 +46,21 @@ const AddTerminal = ({ isOpenAddTerminal, setIsOpenAddTerminal }) => {
                     <h1 className='access_control_add_staff_terminal_modal_title'>ID karta qo’shish</h1>
                     <div className='access_control_add_staff_terminal_modal_body'>
                         <Form.Item
-                            label="Karta turi"
+                            label="Karta turi:"
                             name="card_type"
                             rules={[
                             {
                                 required: true,
-                                message: 'Please input card type!',
+                                message: t('Karta turuni tanlang'),
                             },
                             ]}
                         >
                             <Select
                                 size="large"
                             >
-                                <Select.Option value="all">Erkak</Select.Option>
-                                <Select.Option value="1">1</Select.Option>
-                                <Select.Option value="2">2</Select.Option>
-                                <Select.Option value="3">3</Select.Option>
+                                <Select.Option value="1">Mifare</Select.Option>
+                                <Select.Option value="2">EM-Marin</Select.Option>
+                                <Select.Option value="3">RFID</Select.Option>
                             </Select>
                         </Form.Item>
                         <Form.Item
@@ -67,7 +69,7 @@ const AddTerminal = ({ isOpenAddTerminal, setIsOpenAddTerminal }) => {
                             rules={[
                             {
                                 required: true,
-                                message: 'Please input card ID!',
+                                message: t('Karta raqamini kiriting'),
                             },
                             ]}
                         >

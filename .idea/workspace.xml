@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="630af48d-1ca7-4883-8e3d-17f8fed27d11" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/accessControl/settings/Terminal-modal/AddTerminalModal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/accessControl/settings/Terminal-modal/addTerminal.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/locales/en/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/en/translation.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/locales/ru/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/ru/translation.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/locales/uz/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/uz/translation.json" afterDir="false" />
@@ -13,22 +13,19 @@
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AccessControlTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AccessControlTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AcsessTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AcsessTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Right.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Right.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-terminal/AddTerminal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-terminal/AddTerminal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-terminal/terminal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-terminal/terminal.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/TerminalTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/TerminalTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddCameraModal/AddCameraModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddCameraModal/AddCameraModal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddNewGroup/AddNewGroup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddNewGroup/AddNewGroup.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/FaceControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/FaceControlSetting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/FaceControlSearch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/FaceControlSearch.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/cart/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/cart/Cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/cart/cart.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/cart/cart.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/faceControlSearch.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/faceControlSearch.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/faceSetting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/faceSetting.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/table/CameraTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/table/CameraTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/saidbar/Saidbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/saidbar/Saidbar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/saidbar/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/saidbar/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/root.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/root.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +46,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="248wfgyl1ACPDpNjWcZFYKTXoeN" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -66,6 +66,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Frontend-JS\Softdata-AIS\soft-data-ais\src\components\accessControl\settings\Terminal-modal" />
       <recent name="D:\Frontend-JS\Softdata-AIS\soft-data-ais\src\components\accessControl\settings" />
     </key>
   </component>
@@ -108,7 +109,10 @@
       <workItem from="1645243135674" duration="8205000" />
       <workItem from="1645253214165" duration="12363000" />
       <workItem from="1645417489923" duration="22674000" />
-      <workItem from="1645503553732" duration="22779000" />
+      <workItem from="1645503553732" duration="22921000" />
+      <workItem from="1645589706887" duration="23295000" />
+      <workItem from="1645675936740" duration="24377000" />
+      <workItem from="1645761860908" duration="14249000" />
     </task>
     <servers />
   </component>

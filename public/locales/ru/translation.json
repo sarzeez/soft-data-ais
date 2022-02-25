@@ -6,7 +6,8 @@
   "Sozlamalar": "Настройки",
   "kirishni_boshqarish": "Управление доступом",
   "Jadval": "Журнал",
-  "online_boshqaruv": "Онлайн контроль",
+  "online_boshqaruv": "Управление дверью",
+  "Eshiklar boshqaruvi": "Управление дверью",
 
   "Ism": "Имя",
   "Jami": "Всего",
@@ -129,7 +130,7 @@
   "Terminal qo'shish": "Добавить терминал",
   "Xodimlar": "Персонал",
   "Xodim qo'shish": "Добавить персонал",
-  "Foydalanuvchi ma’lumotlarini tahrirlash":"Изменить информацию о пользователе",
+  "Yangi foydalanuvchi qo'shish":"Добавить нового пользователя",
   "Ma'lumotlar":"Информация",
   "Yuzni aniqlash":"Распознавание лиц",
   "ID karta":"ID карта",
@@ -158,7 +159,9 @@
   "Yuz va Barmoq izi": "Лицо и Отпечаток пальца",
   "Kirishlar soni": "Число входов",
   "Kirishlar sonini kiriting": "Введите количество записей",
-  "Muddatni tanlang": "Выберите диапазона"
-
+  "Muddatni tanlang": "Выберите диапазона",
+  "Boshqalar": "Другие",
+  "Karta turuni tanlang": "Выберите тип карты",
+  "Karta raqamini kiriting": "Введите номер карты"
 
 }

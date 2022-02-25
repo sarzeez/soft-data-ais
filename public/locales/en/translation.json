@@ -6,7 +6,8 @@
   "Sozlamalar": "Settings",
   "kirishni_boshqarish": "Access Conttrol",
   "Jadval": "Logs",
-  "online_boshqaruv": "User Management",
+  "online_boshqaruv": "Door management",
+  "Eshiklar boshqaruvi": "Door management",
 
   "Ism": "Name",
   "Jami": "Total",
@@ -129,7 +130,7 @@
   "Terminal qo'shish": "Add a terminal",
   "Xodimlar": "Staff",
   "Xodim qo'shish": "Add staff",
-  "Foydalanuvchi ma’lumotlarini tahrirlash":"Edit user information",
+  "Yangi foydalanuvchi qo'shish":"Add a new user",
   "Ma'lumotlar":"Information",
   "Yuzni aniqlash":"Face detection",
   "ID karta":"ID card",
@@ -158,6 +159,8 @@
   "Yuz va Barmoq izi": "Face and Fingerprint",
   "Kirishlar soni": "Number of entries",
   "Kirishlar sonini kiriting": "Enter the number of entries",
-  "Muddatni tanlang": "Muddatni tanlang"
-
+  "Muddatni tanlang": "Muddatni tanlang",
+  "Boshqalar": "Others",
+  "Karta turuni tanlang": "Select the card type",
+  "Karta raqamini kiriting": "Enter the card number"
 }

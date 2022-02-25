@@ -61,7 +61,7 @@ const OnlineDoors = () => {
         <div className="online_doors_content">
             <div className="online_doors_title">
                 <div className="content_top">
-                    <p className={`Content_title ${isDarkMode && 'darkModeColor'}`}>{t("Online boshqaruv")}</p>
+                    <p className={`Content_title ${isDarkMode && 'darkModeColor'}`}>{t("Eshiklar boshqaruvi")}</p>
                 </div>
             </div>
 

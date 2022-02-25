@@ -68,15 +68,6 @@ const AcsessControlTable = () => {
     };
 
     const fetchAccessTable = async (id) => {
-        console.log({
-            fullname: name,
-            device_name: deviceName,
-            rank: position,
-            user_type: userType,
-            direction: direction,
-            fromDate: dateFrom,
-            toDate: dateTo,
-        })
         const response = await axios.post(`${ip}/api/history/${accessTablePaginationLimit}/${id}`, {
             fullname: name,
             device_name: deviceName,
@@ -88,7 +79,7 @@ const AcsessControlTable = () => {
         })
         const { data } = response;
         const count = data.count;
-        console.log(response)
+        // console.log(response)
         setAccessTableTotal(count)
         const newData = data.data.map((item, index) => (
             {
@@ -98,7 +89,7 @@ const AcsessControlTable = () => {
                 direction: item.direction,
                 door_name: item.door_name,
                 user_type: item.user_type === 1 ? t('Xodim') : item.user_type === 2 ? t('Mehmon') : t('Begona'),
-                rank: item.rank === 1 ? t('Oddiy xodim') : item.rank === 2 ? t('Direktor') : t('VIP')
+                rank: item.rank == 1 ? t('Oddiy xodim') : item.rank == 2 ? t('Direktor') : item.rank == 3 ? t('VIP') : '',
             }
         ))
         setAccessTableData(newData)
@@ -216,9 +207,9 @@ const AcsessControlTable = () => {
                                     value={userType}
                                 >
                                     <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                    <Select.Option value="3">{t('Mehmon')}</Select.Option>
-                                    <Select.Option value="2">{t('Begona')}</Select.Option>
                                     <Select.Option value="1">{t('Xodim')}</Select.Option>
+                                    <Select.Option value="2">{t('Mehmon ')}</Select.Option>
+                                    <Select.Option value="3">{t('Begona')}</Select.Option>
                                 </Select>
                             </div>
                         </div>

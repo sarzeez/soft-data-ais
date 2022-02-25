@@ -66,8 +66,18 @@ input[type=number] {
 }
 
 .ant-input-affix-wrapper-focused{
-  box-shadow: 0 0 0 2px rgb(41, 184, 93) !important;
+  border-color: #29b85d;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 2px rgba(40, 229, 56, 0.2);
+  box-shadow: 0 0 0 2px rgba(46, 229, 40, 0.2);
 }
+.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
+  border-color: #29b85d!important;
+  border-right-width: 1px !important;
+  z-index: 1;
+}
+
+
 
 
 

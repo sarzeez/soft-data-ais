@@ -1,39 +1,26 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Table  } from 'antd';
 import { useSelector } from "react-redux";
 import {RiEditLine} from "react-icons/ri";
 import {useTranslation} from "react-i18next";
 import 'antd/dist/antd.css';
-
+import '../faceSetting.css';
 
 const CameraTable = (props) => {
     const {
         cameraData,
         setIsOpenAddCamera,
-        setDeleteCamera,
-        setCameraInitialValues
+        setCameraInitialValues,
+        rowSelection,
     } = props;
 
     const {t} = useTranslation()
     const lang = localStorage.getItem('i18nextLng');
-    const isDarkMode = useSelector(state => state.theme.theme_data)
+    const isDarkMode = useSelector(state => state.theme.theme_data);
     cameraData.forEach(e => {
         e.name = e[`name_${lang}`];
         e.group_name = e[`group_name_${lang}`];
     })
-
-    const [state, setState] = useState({selectedRowKeys: []})
-
-    const onSelectChange = (selectedRowKeys, a) => {
-        setState({ selectedRowKeys })
-        setDeleteCamera(a.map(item => item.id));
-    };
-
-    const { selectedRowKeys } = state;
-    const rowSelection = {
-        selectedRowKeys,
-        onChange: onSelectChange,
-    }
 
     const editCamera = (value, record) => {
         setCameraInitialValues({
@@ -42,8 +29,6 @@ const CameraTable = (props) => {
         })
         setIsOpenAddCamera(true)
     }
-    
-
 
     const columns = [
         {
@@ -93,7 +78,6 @@ const CameraTable = (props) => {
         },
     ];
 
-
     return (
         <>
             <Table
@@ -103,7 +87,6 @@ const CameraTable = (props) => {
                 dataSource={cameraData}
                 pagination={false}
             />
-
         </>
     );
 }

@@ -54,7 +54,6 @@ const AddCameraModal = (props) => {
                 ...values,
             })
                 .then(response => {
-                    // item edited
                     cancel()
                     getCameraData(cameraPaginationCurrent)
                 })

@@ -182,10 +182,13 @@
 
 .lang_dropdown{
     width: 100px;
-    height: 30px;
+    height: 25px;
     outline: none;
     border-radius: 20px;
     padding: 0 5px;
+}
+.lang_dropdown option{
+    /*background-color: #29b85d!important;*/
 }
 
 
@@ -210,13 +213,11 @@
     border-radius: 50%;
 }
 
-.ant-switch-handle::before{
+.header_right .ant-switch-handle::before{
     background: #29b85d;
     background-image: url(/src/images/sun.svg);
 }
-.ant-switch-handle::after{
-    background: red;
-}
+
 
 
 /*content*/
@@ -248,11 +249,10 @@
     position: relative;
     overflow: auto;
 }
-
-
 .ant-layout-content {
     height: 100% !important;
 }
+
 
 
 /*----dashboard img icon----*/

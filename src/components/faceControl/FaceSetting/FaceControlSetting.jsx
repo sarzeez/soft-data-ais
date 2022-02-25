@@ -1,20 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector} from "react-redux";
+import { useNavigate} from "react-router-dom";
 import {useTranslation} from "react-i18next";
-import {MdAdd, MdOutlineAddCircleOutline} from "react-icons/md";
+import {MdAdd, MdOutlineAddCircleOutline,} from "react-icons/md";
 import { Tabs} from "antd";
 import {AiOutlineDelete} from "react-icons/all";
-import {useNavigate} from "react-router-dom";
 import {ip} from "../../../ip";
 
 import CameraTable from "./table/CameraTable";
-import CameraPagenation from "./pagenation/CameraPagenation";
 import AddCameraModal from "./AddCameraModal/AddCameraModal";
 import AddNewGroupTable from "./AddNewGroup/AddNewGroupTable";
 import AddNewGroup from "./AddNewGroup/AddNewGroup";
 
 import axios from "axios";
 import './faceSetting.css';
+import CameraPagenation from "./pagenation/CameraPagenation";
 
 const { TabPane } = Tabs;
 
@@ -46,6 +46,7 @@ const FaceControlSetting = () => {
         name_en: '',
     })
 
+
     // delete button
     const [deleteCamera, setDeleteCamera] = useState([])
 
@@ -60,10 +61,19 @@ const FaceControlSetting = () => {
     const [languageGroup, setLanguageGroup] = useState([]);
 
     const [cameraData, setCameraData] = useState([]);
-    // console.log(cameraData)
 
-    const addCamera = () => {
-        setIsOpenAddCamera(true)
+    const [state, setState] = useState({selectedRowKeys: []})
+
+    const onSelectChange = (selectedRowKeys, a) => {
+        setState({ selectedRowKeys })
+        setDeleteCamera(a.map(item => item.id));
+    };
+
+    const { selectedRowKeys } = state;
+
+    const rowSelection = {
+        selectedRowKeys,
+        onChange: onSelectChange,
     }
 
       const getCameraData = async (id) => {
@@ -90,10 +100,16 @@ const FaceControlSetting = () => {
         setCameraData(newData)
     }
 
+    const addCamera = () => {
+        setIsOpenAddCamera(true)
+    }
+
     const handleDeleteCamera = () => {
         axios.delete(`${ip}/api/camera/delete`,{data: deleteCamera})
             .then(res =>{
                 getCameraData(cameraPaginationCurrent);
+                setState({selectedRowsKeys:[]})
+                setDeleteCamera([])
             })
             .catch(err => {
                 // console.log(err?.response?.data)
@@ -138,10 +154,11 @@ const FaceControlSetting = () => {
     }
 
 
+
     useEffect(() =>{
         getCameraData(cameraPaginationCurrent)
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [cameraPaginationLimit, cameraPaginationCurrent, ])
+    }, [cameraPaginationLimit, cameraPaginationCurrent,  ])
 
     useEffect(() => {
         getCameraGroup()
@@ -161,6 +178,7 @@ const FaceControlSetting = () => {
 
             <div className="face_control_setting_body">
                 <Tabs onChange={onChangeTabs} type="card" defaultActiveKey="1">
+
                     <TabPane tab={t("Autentifikatsiya sozlamalari")} key="1">
                         <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>
                             <div className='access_control_setting_tab_item_body'>
@@ -171,6 +189,7 @@ const FaceControlSetting = () => {
 
                     <TabPane tab={t("Kamera parametrlari")} key="2">
                         <div className="face_control_setting_tab">
+
                             <div className='face_control_setting_tab_item'>
                                 <AddCameraModal
                                     isOpenAddCamera={isOpenAddCamera}
@@ -186,13 +205,14 @@ const FaceControlSetting = () => {
                                         <CameraTable
                                             isDarkMode={isDarkMode}
                                             cameraData = {cameraData}
-                                            setDeleteCamera={setDeleteCamera}
                                             setIsOpenAddCamera={setIsOpenAddCamera}
+                                            setDeleteCamera={setDeleteCamera}
                                             setCameraInitialValues = {setCameraInitialValues}
+                                            rowSelection={rowSelection}
+
                                         />
                                     </div>
                                 </div>
-
                                 <div className='face_control_setting_tab_item_footer'>
                                     <div className="face_control_setting_tab_item_footer_buttons">
                                         <button onClick={addCamera} className='face_control_setting_button'>
@@ -215,6 +235,7 @@ const FaceControlSetting = () => {
                                         faceTableTotal = {cameraTotal}
                                     />
                                 </div>
+
                             </div>
 
                             <div className="camera_groups">

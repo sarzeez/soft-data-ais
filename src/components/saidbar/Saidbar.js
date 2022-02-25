@@ -137,7 +137,7 @@ const Saidbar = ({ user, setUser }) => {
                                 </Menu.Item>
                                 <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control Online Doors', 8)}  key="8"  icon={<img src={doorKey} alt=""/>}   >
                                     <Link to="/access-control-online-doors">
-                                        {t('Online boshqaruv')}
+                                        {t('Eshiklar boshqaruvi')}
                                     </Link>
                                 </Menu.Item>
                                 <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 9)} key="9"
@@ -163,13 +163,11 @@ const Saidbar = ({ user, setUser }) => {
                             <div className="header_navbar">
                                 <div className="header_right">
                                     <div className="language" style={{marginRight: '15px'}}>
-                                        <form >
                                             <select className='lang_dropdown' onChange={onChangeLanguage} defaultValue={lang}>
                                                 <option defaultValue="uz" value="uz">O'zbekcha</option>
                                                 <option value="ru">Русский</option>
                                                 <option value="en">English</option>
                                             </select>
-                                        </form>
                                     </div>
 
                                     <Switch onChange={handleChangeTheme} checkedChildren="Kun" unCheckedChildren="Tun" defaultChecked />

@@ -8,7 +8,6 @@ import axios from "axios";
 import {useTranslation} from "react-i18next";
 
 const AddNewGroup = (props) => {
-
     const {
         groupIntialValues,
         setGroupInitialValues,
@@ -16,6 +15,7 @@ const AddNewGroup = (props) => {
         show,
         getCameraGroup
     } = props;
+
     const {t} = useTranslation()
     const cancel = () =>{
         setShow(!show)

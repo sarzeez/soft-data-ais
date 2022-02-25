@@ -6,33 +6,7 @@ import './right.css'
 const Right = ({ setIsOpenAddTerminal }) => {
 
     const [selectedItems, setSelectedItems] = React.useState([])
-    const [data, setData] = React.useState([
-        {
-            key: 1,
-            type: `Mifare1`,
-            card_number: `card1`
-        },
-        {
-            key: 2,
-            type: `Mifare1`,
-            card_number: `card1`
-        },
-        {
-            key: 3,
-            type: `Mifare1`,
-            card_number: `card1`
-        },
-        {
-            key: 4,
-            type: `Mifare1`,
-            card_number: `card1`
-        },
-        {
-            key: 5,
-            type: `Mifare1`,
-            card_number: `card1`
-        }
-    ])
+    const [data, setData] = React.useState([])
 
     const handleDeleteTerminal = () => {
         const selectedItemsKey = selectedItems.map(item => item.key)

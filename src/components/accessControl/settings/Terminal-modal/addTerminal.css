@@ -1,0 +1,18 @@
+.access_control_add_terminal_modal{
+    padding: 20px;
+}
+
+.access_control_add_terminal_modal_item{
+    display: grid;
+    grid-template-columns: 250px 250px;
+    grid-gap: 10px;
+}
+
+.access_control_add_terminal_modal_item input{
+    border-radius: 5px;
+}
+
+.ant-input-password{
+    border-radius: 5px;
+}
+

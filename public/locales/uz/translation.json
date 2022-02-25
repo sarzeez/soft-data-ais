@@ -6,7 +6,8 @@
   "Sozlamalar": "Sozlamalar",
   "kirishni_boshqarish": "Kirishni boshqarish",
   "Jadval": "Jadval",
-  "online_boshqaruv": "Onlayn boshqaruv",
+  "online_boshqaruv": "Eshiklar boshqaruvi",
+  "Eshiklar boshqaruvi": "Eshiklar boshqaruvi",
 
   "Ism": "Ism",
   "Jami": "Jami",
@@ -129,7 +130,7 @@
   "Terminal qo'shish": "Terminal qo'shish",
   "Xodimlar": "Xodimlar",
   "Xodim qo'shish": "Xodim qo'shish",
-  "Foydalanuvchi ma’lumotlarini tahrirlash":"Foydalanuvchi ma’lumotlarini tahrirlash",
+  "Yangi foydalanuvchi qo'shish":"Yangi foydalanuvchi qo'shish",
   "Ma'lumotlar":"Ma'lumotlar",
   "Yuzni aniqlash":"Yuzni aniqlash",
   "ID karta":"ID karta",
@@ -158,8 +159,10 @@
   "Yuz va Barmoq izi": "Yuz va Barmoq izi",
   "Kirishlar soni": "Kirishlar soni",
   "Kirishlar sonini kiriting": "Kirishlar sonini kiriting",
-  "Muddatni tanlang": "Muddatni tanlang"
-
+  "Muddatni tanlang": "Muddatni tanlang",
+   "Boshqalar": "Boshqalar",
+  "Karta turuni tanlang": "Karta turuni tanlang",
+  "Karta raqamini kiriting": "Karta raqamini kiriting"
 
 
 }

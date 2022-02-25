@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Table  } from 'antd';
 import { useSelector } from "react-redux";
 import { RiEditLine } from 'react-icons/ri'
@@ -13,23 +13,26 @@ const auth_type = {
 }
 
 const TerminalTable = (props) => {
-    const { terminalData } = props;
+    const {
+        terminalData,
+        setDeleteTerminal ,
+        addNewTerminal,
+    } = props;
 
     const {t} = useTranslation()
     const isDarkMode = useSelector(state => state.theme.theme_data)
-    // const [state, setState] = useState({
-    //     selectedRowKeys: []
-    // })
 
-    // const onSelectChange = (selectedRowKeys, a) => {
-    //     setState({ selectedRowKeys })
-    // };
+    const [state, setState] = useState({selectedRowKeys: []})
+    const onSelectChange = (selectedRowKeys, a) => {
+        setState({ selectedRowKeys })
+        setDeleteTerminal(a)
+    };
 
-    // const { selectedRowKeys } = state;
-    // const rowSelection = {
-    //     selectedRowKeys,
-    //     onChange: onSelectChange,
-    // }
+    const { selectedRowKeys } = state;
+    const rowSelection = {
+        selectedRowKeys,
+        onChange: onSelectChange,
+    }
 
     const columnsUz = [
         {
@@ -82,7 +85,7 @@ const TerminalTable = (props) => {
             title: t('Tahrir'),
             dataIndex: '',
             render: (text, record) => (
-                <div className='edit_button'>
+                <div onClick={()=> addNewTerminal(text, record)} className='edit_button'>
                     <RiEditLine size = {22} color='#fff'/>
                 </div>
             ),
@@ -93,7 +96,7 @@ const TerminalTable = (props) => {
         return (
             <Table
                className={` ${isDarkMode && 'darkModeBackground'}`}
-                rowSelection={false}
+               rowSelection={rowSelection}
                 columns={columnsUz}
                 dataSource={terminalData}
                 pagination={false}

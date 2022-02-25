@@ -7,16 +7,23 @@ import { AiOutlineUser } from 'react-icons/ai'
 
 import {ip} from '../../../../ip';
 import {useTranslation} from "react-i18next";
+import {RiEditLine} from "react-icons/ri";
 
 
 
 const StaffTable = (props) => {
 
-    const { staffData, setDeleteStaff } = props;
+    const {
+        staffData,
+        setDeleteStaff,
+        setIsOpenAddStaff,
+        setStaffTableIntialValues
+    } = props;
+
     const {t} = useTranslation()
-    const [state, setState] = useState({selectedRowKeys: []})
     const isDarkMode = useSelector(state => state.theme.theme_data)
 
+    const [state, setState] = useState({selectedRowKeys: []})
     const onSelectChange = (selectedRowKeys, a) => {
         setState({ selectedRowKeys })
         setDeleteStaff(a)
@@ -27,6 +34,15 @@ const StaffTable = (props) => {
         selectedRowKeys,
         onChange: onSelectChange,
     }
+
+    const editAddStaff = (value, record) => {
+        setStaffTableIntialValues({
+            ...value,
+            edit: true
+        })
+        setIsOpenAddStaff(true)
+    }
+
     const columns = [
         {
             title: t('T/r'),
@@ -73,7 +89,7 @@ const StaffTable = (props) => {
                         {record.door_ip.length}
                     </p>
                     <div className='door_ip_length_hover'>
-                        {record.door_ip.join(', ')}
+                        {record.door_ip.join(' ')}
                         <div className='door_ip_length_hover_rectangel'>
 
                         </div>
@@ -112,6 +128,11 @@ const StaffTable = (props) => {
         {
             title: t('Tahrir'),
             dataIndex: '',
+            render: (text, record) => (
+                <div onClick={() => editAddStaff(text, record)} className='edit_button'>
+                    <RiEditLine size = {22} color='#fff'/>
+                </div>
+            ),
             align: 'center'
         },
     ];

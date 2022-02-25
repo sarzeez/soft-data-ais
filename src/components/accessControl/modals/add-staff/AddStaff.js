@@ -23,12 +23,12 @@ function AddStaff(props) {
     const [ isOpenAddTerminal, setIsOpenAddTerminal] = useState(false)
     const [terminalIPList, setTerminalIPList] = useState([])
     const [initialValues, ] = useState({
-        fullname: 'Abdulaziz',
-        gender: 'male',
-        rank: '1',
-        user_type: '1',
+        fullname: '',
+        gender: '',
+        rank: '',
+        user_type: '',
         door_ip: [],
-        access_type: '1',
+        access_type: '',
         limit: '',
         valid_from_time: '',
         valid_to_time: '',
@@ -116,7 +116,7 @@ function AddStaff(props) {
                 autoComplete="off"
             >
                 <div className="access_control_add_staff_modal">
-                    <h1 className="access_control_add_staff_modal_title">{t("Foydalanuvchi ma’lumotlarini tahrirlash")}</h1>
+                    <h1 className="access_control_add_staff_modal_title">{t("Yangi foydalanuvchi qo'shish")}</h1>
                     <hr className="access_control_add_staff_modal_subline" />
                     <div className="access_control_add_staff_modal_body">
                         <div className="access_control_add_staff_modal_body_item">
