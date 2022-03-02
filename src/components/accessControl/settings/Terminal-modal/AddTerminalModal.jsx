@@ -1,23 +1,64 @@
 import React from 'react';
 import {Form, Input, Select} from "antd";
 import {useTranslation} from "react-i18next";
+import {ip} from "../../../../ip";
 import Modal from "react-modal";
+import axios from "axios";
 
 import './addTerminal.css';
 
 
 
 const AddTerminalModal = ( props ) => {
-
     const {
         isOpenAddTerminal,
         setIsOpenAddTerminal,
+        terminalTableIntialValues,
+        setTerminalTableIntialValues,
+        getTerminalData,
+        terminalPaginationCurrent,
     } = props
 
-    const {t} = useTranslation()
-    const onFinish = (value) => {
-        console.log(value)
+    const {t} = useTranslation();
+
+    const cancel = () =>{
+        setIsOpenAddTerminal(!isOpenAddTerminal)
+        setTerminalTableIntialValues({
+            door_name: '',
+            direction: '',
+            auth_type: '',
+            ip_address: '',
+            type: '',
+            username: '',
+            password: '',
+        })
     }
+
+    const onFinish = (values) => {
+        if(terminalTableIntialValues.edit){
+            axios.put(`${ip}/api/terminals/${terminalTableIntialValues.id}`, {
+                ...values
+            })
+                .then(response =>{
+                    cancel()
+                    getTerminalData(terminalPaginationCurrent)
+                })
+                .catch(err => {
+                    console.log(err?.response?.data)
+                })
+        }
+        else {
+            axios.post(`${ip}/api/terminals`, values)
+                .then(response =>{
+                    cancel()
+                    getTerminalData(terminalPaginationCurrent)
+                })
+                .catch(err =>{
+                    console.log(err?.response?.data)
+                })
+        }
+    }
+
 
     const onFinishFailed = (error) => {
         console.log(error)
@@ -26,7 +67,7 @@ const AddTerminalModal = ( props ) => {
     return (
         <Modal
             isOpen={isOpenAddTerminal}
-            onRequestClose={() => setIsOpenAddTerminal(false)}
+            onRequestClose={() => setIsOpenAddTerminal(!isOpenAddTerminal)}
             contentLabel="My dialog"
             className="mymodal"
             overlayClassName="myoverlay"
@@ -35,9 +76,7 @@ const AddTerminalModal = ( props ) => {
             <Form
                 name="basic"
                 layout="vertical"
-                initialValues={{
-                    remember: true
-                }}
+                initialValues={terminalTableIntialValues}
                 requiredMark = 'optional'
                 onFinish={onFinish}
                 onFinishFailed={onFinishFailed}
@@ -50,7 +89,7 @@ const AddTerminalModal = ( props ) => {
                         <div className="access_control_add_terminal_modal_item">
                             <Form.Item
                                 label="Eshik nomi"
-                                name="card_id"
+                                name="door_name"
                                 rules={[
                                     {
                                         required: true,
@@ -65,7 +104,7 @@ const AddTerminalModal = ( props ) => {
                             </Form.Item>
                             <Form.Item
                                 label="Yo’nalishi"
-                                name="card_type"
+                                name="direction"
                                 rules={[
                                     {
                                         required: true,
@@ -77,17 +116,16 @@ const AddTerminalModal = ( props ) => {
                                     size="large"
                                     placeholder="Tanlang"
                                 >
-                                    <Select.Option value="1">Kirish</Select.Option>
-                                    <Select.Option value="2">Chiqish</Select.Option>
+                                    <Select.Option value="Entry">Kirish</Select.Option>
+                                    <Select.Option value="Exit">Chiqish</Select.Option>
                                 </Select>
                             </Form.Item>
-
                         </div>
 
                         <div className="access_control_add_terminal_modal_item">
                             <Form.Item
                                 label="Terminal IP manzili"
-                                name="card_id"
+                                name="ip_address"
                                 rules={[
                                     {
                                         required: true,
@@ -102,7 +140,7 @@ const AddTerminalModal = ( props ) => {
                             </Form.Item>
                             <Form.Item
                                 label="Terminal turi"
-                                name="card_type"
+                                name="type"
                                 rules={[
                                     {
                                         required: true,
@@ -123,7 +161,7 @@ const AddTerminalModal = ( props ) => {
 
                         <Form.Item
                             label="Autentifikatsiya turi"
-                            name="card_type"
+                            name="auth_type"
                             rules={[
                                 {
                                     required: true,
@@ -135,15 +173,24 @@ const AddTerminalModal = ( props ) => {
                                 size="large"
                                 placeholder="Tanlang"
                             >
-                                <Select.Option value="1">Yuz, Barmoq izi</Select.Option>
-                                <Select.Option value="2">Yuz, Barmoq izi, ID karta</Select.Option>
+                                <Select.Option value="0">Yuz</Select.Option>
+                                <Select.Option value="1">Barmoq izi</Select.Option>
+                                <Select.Option value="2">ID karta</Select.Option>
+                                <Select.Option value="3">Yuz va Barmoq izi</Select.Option>
+                                <Select.Option value="4">Yuz yoki Barmoq izi</Select.Option>
+                                <Select.Option value="5">Yuz va ID karta</Select.Option>
+                                <Select.Option value="6">Yuz yoki ID karta</Select.Option>
+                                <Select.Option value="7">Barmoq izi va ID karta</Select.Option>
+                                <Select.Option value="8">Barmoq izi yoki ID karta</Select.Option>
+                                {/*<Select.Option value="9">Yuz va Barmoq izi va ID karta</Select.Option>*/}
+                                <Select.Option value="10">Yuz yoki Barmoq izi yoki ID karta</Select.Option>
                             </Select>
                         </Form.Item>
 
                         <div className="access_control_add_terminal_modal_item">
                             <Form.Item
                                 label="Login"
-                                name="card_id"
+                                name="username"
                                 rules={[
                                     {
                                         required: true,
@@ -174,7 +221,7 @@ const AddTerminalModal = ( props ) => {
                     </div>
 
                         <div className='access_control_add_staff_terminal_modal_body_buttons'>
-                            <button onClick={() => {setIsOpenAddTerminal(false)}} type='button'>Bekor qilish</button>
+                            <button onClick={cancel} type='button'>Bekor qilish</button>
                             <button type='submit'>Saqlash</button>
                         </div>
                 </div>

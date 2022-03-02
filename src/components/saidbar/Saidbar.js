@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import {Layout, Menu, Switch} from 'antd';
+import {Layout, Menu } from 'antd';
+import Switch from "react-switch"
 import { BrowserRouter } from 'react-router-dom'
 import {MenuUnfoldOutlined, MenuFoldOutlined, } from '@ant-design/icons';
 import { useTranslation } from "react-i18next";
@@ -7,7 +8,7 @@ import { useSelector, useDispatch} from "react-redux";
 import { getTheme, isRefresh } from "../../redux";
 import {Link} from "react-router-dom";
 import {ip} from "../../ip";
-
+import {BsFillCloudMoonFill, BsFillSunFill, WiSunrise} from "react-icons/all";
 import RootPage from '../../pages/root';
 import useWindowDimensions from '../../hooks/hooks';
 import 'antd/dist/antd.css';
@@ -170,13 +171,51 @@ const Saidbar = ({ user, setUser }) => {
                                             </select>
                                     </div>
 
-                                    <Switch onChange={handleChangeTheme} checkedChildren="Kun" unCheckedChildren="Tun" defaultChecked />
+                                    {/*<Switch onChange={handleChangeTheme} checkedChildren="Kun" unCheckedChildren="Tun" defaultChecked />*/}
+
+                                    <Switch
+                                        onChange={handleChangeTheme}
+                                        checked={isDarkMode}
+                                        checkedIcon={false}
+                                        uncheckedIcon={false}
+                                        offColor="#F7F7F7"
+                                        onColor="#343D50"
+                                        checkedHandleIcon={
+                                            <div
+                                                style={{
+                                                    display: "flex",
+                                                    justifyContent: "center",
+                                                    alignItems: "center",
+                                                    height: "100%",
+                                                    fontSize: 15,
+                                                    paddingRight: 2
+                                                }}
+                                            >
+                                                <BsFillCloudMoonFill />
+                                            </div>
+                                        }
+                                        uncheckedHandleIcon={
+                                            <div
+                                                style={{
+                                                    display: "flex",
+                                                    justifyContent: "center",
+                                                    alignItems: "center",
+                                                    height: "100%",
+                                                    fontSize: 20,
+                                                    color: "orange",
+                                                }}
+                                            >
+                                                <WiSunrise />
+                                            </div>
+                                        }
+                                    />
 
                                     <div title='Chiqish' onClick={logout} className="rount_img">
                                         {
                                             user && <img src={`${ip}/api/admins/${user.id}/img`} alt=""/>
                                         }
                                     </div>
+
                                 </div>
                             </div>
                         </Header>

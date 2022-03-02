@@ -46,8 +46,7 @@ const AccessControlSetting = () => {
     const [staffTotal, setStaffTotal] = useState(null)
 
     const [staffTableIntialValues, setStaffTableIntialValues] = useState({
-        created_time: '222',
-        name: '44444'
+
 
     })
 
@@ -55,7 +54,15 @@ const AccessControlSetting = () => {
     const [deleteStaff, setDeleteStaff] = useState([])
     const [deleteTerminal, setDeleteTerminal] = useState([])
 
-
+    const [terminalTableIntialValues, setTerminalTableIntialValues] = useState({
+        door_name: '',
+        direction: '',
+        auth_type: '',
+        ip_address: '',
+        type: '',
+        username: '',
+        password: '',
+    })
 
     const addNewStaff = () => {
         setIsOpenAddStaff(true)
@@ -67,6 +74,19 @@ const AccessControlSetting = () => {
 
     const onChangeTabs = (key) => {
         // console.log(key);
+    }
+
+    const [state, setState] = useState({selectedRowKeys: []})
+    const onSelectChange = (selectedRowKeys, a) => {
+        setState({ selectedRowKeys })
+        setDeleteTerminal(a.map(item => item.id));
+    };
+
+    const { selectedRowKeys } = state;
+
+    const rowSelection = {
+        selectedRowKeys,
+        onChange: onSelectChange,
     }
 
     const getTerminalData = async (id) => {
@@ -111,7 +131,18 @@ const AccessControlSetting = () => {
         ))
         setStaffData(newData)
         // console.log(staffData)
+    }
 
+    const handleDeleteterminal =() =>{
+        axios.delete(`${ip}/api/terminal/delete`,{data: deleteTerminal})
+            .then(res =>{
+                getTerminalData(terminalPaginationCurrent);
+                setState({selectedRowsKeys:[]})
+                setDeleteTerminal([])
+            })
+            .catch(err => {
+                // console.log(err?.response?.data)
+            })
     }
 
     const terminalPaginationOnChange = (e = 1, option) => {
@@ -135,6 +166,7 @@ const AccessControlSetting = () => {
         getStaffData(staffPaginationCurrent)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [staffPaginationLimit, staffPaginationCurrent])
+
 
     // redirect
     useEffect(() => {
@@ -165,13 +197,18 @@ const AccessControlSetting = () => {
                             <AddTerminalModal
                                 isOpenAddTerminal={isOpenAddTerminal}
                                 setIsOpenAddTerminal={setIsOpenAddTerminal}
+                                terminalTableIntialValues={terminalTableIntialValues}
+                                setTerminalTableIntialValues={setTerminalTableIntialValues}
+                                getTerminalData={getTerminalData}
+                                terminalPaginationCurrent={terminalPaginationCurrent}
                             />
                             <div className='access_control_setting_tab_item_body'>
                                 <TerminalTable
                                     isDarkMode={isDarkMode}
                                     terminalData = {terminalData}
-                                    setDeleteTerminal = {setDeleteTerminal}
-                                    addNewTerminal={addNewTerminal}
+                                    setIsOpenAddTerminal={setIsOpenAddTerminal}
+                                    setTerminalTableIntialValues={setTerminalTableIntialValues}
+                                    rowSelection={rowSelection}
                                 />
                             </div>
                             <div className='access_control_setting_tab_item_footer'>
@@ -182,7 +219,10 @@ const AccessControlSetting = () => {
                                     </button>
                                     {
                                         deleteTerminal.length > 0 &&
-                                        <button><AiOutlineDelete size={22} style = {{marginRight: '5px'}}/>{t("O’chirish")}</button>
+                                        <button onClick={handleDeleteterminal}>
+                                            <AiOutlineDelete size={22} style = {{marginRight: '5px'}}/>
+                                            {t("O’chirish")}
+                                        </button>
                                     }
                                 </div>
                                 <TerminalPagination

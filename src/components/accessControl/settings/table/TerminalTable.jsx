@@ -7,31 +7,36 @@ import 'antd/dist/antd.css';
 import {useTranslation} from "react-i18next";
 
 const auth_type = {
-    uz: ['Yuz', 'Barmoq izi', 'ID karta'],
+    uz: ['Yuz', 'Barmoq izi', 'ID karta', 'Yuz va Barmoq izi', 'Yuz yoki Barmoq izi', 'Yuz va ID karta', 'Yuz yoki ID karta', 'Barmoq izi va ID karta', 'Barmoq izi yoki ID karta', 'Yuz yoki Barmoq izi yoki ID karta'],
     ru: ['Лицо', 'Отпечаток пальца', 'ID карта'],
     en: ['Face', 'Fingerprint', 'ID card']
+}
+
+const type = {
+    uz: ['', 'Dahua', 'Hikvision'],
+    ru: ['', 'Dahua', 'Hikvision'],
+    en: ['', 'Dahua', 'Hikvision']
 }
 
 const TerminalTable = (props) => {
     const {
         terminalData,
-        setDeleteTerminal ,
-        addNewTerminal,
+        setIsOpenAddTerminal,
+        setTerminalTableIntialValues,
+        rowSelection
     } = props;
 
-    const {t} = useTranslation()
-    const isDarkMode = useSelector(state => state.theme.theme_data)
+    const {t} = useTranslation();
+    const isDarkMode = useSelector(state => state.theme.theme_data);
+    const lang = localStorage.getItem('i18nextLng');
 
-    const [state, setState] = useState({selectedRowKeys: []})
-    const onSelectChange = (selectedRowKeys, a) => {
-        setState({ selectedRowKeys })
-        setDeleteTerminal(a)
-    };
 
-    const { selectedRowKeys } = state;
-    const rowSelection = {
-        selectedRowKeys,
-        onChange: onSelectChange,
+    const editTerminal= ( value, record) =>{
+        setTerminalTableIntialValues({
+            ...value,
+            edit: true
+        })
+        setIsOpenAddTerminal(true)
     }
 
     const columnsUz = [
@@ -48,13 +53,22 @@ const TerminalTable = (props) => {
         {
             title: t("Yo'nalishi"),
             dataIndex: 'direction',
-            align: 'center'
+            align: 'center',
+            render: (text, record) => (
+                <div>
+                    {record?.direction == 'Exit' ? t("Chiqish") : t("Kirish")}
+                </div>
+            )
         },
         {
             title: t('Autentifikatsiya turi'),
             dataIndex: 'auth_type',
             align: 'center',
-            render: (text, record) => record.auth_type.map(item => auth_type.uz[item]).join(', ')
+            render: (text, record) => (
+                <div>
+                    {auth_type[lang][record.auth_type]}
+                </div>
+            )
         },
         {
             title: t('Terminal IP manzili'),
@@ -64,7 +78,12 @@ const TerminalTable = (props) => {
         {
             title: t('Terminal turi'),
             dataIndex: 'type',
-            align: 'center'
+            align: 'center',
+            render: (text, record) => (
+                <div>
+                    {type[lang][record.type]}
+                </div>
+            )
         },
         {
             title: t('Login'),
@@ -85,7 +104,7 @@ const TerminalTable = (props) => {
             title: t('Tahrir'),
             dataIndex: '',
             render: (text, record) => (
-                <div onClick={()=> addNewTerminal(text, record)} className='edit_button'>
+                <div onClick={()=> editTerminal(text, record)} className='edit_button'>
                     <RiEditLine size = {22} color='#fff'/>
                 </div>
             ),

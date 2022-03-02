@@ -64,7 +64,12 @@ const AcsessTable = (props) => {
         {
             title: t('Yo\'nalishi'),
             dataIndex: 'direction',
-            align: 'center'
+            align: 'center',
+            render: (text, record) => (
+                <div>
+                    {record?.direction == 'Exit' ? t("Chiqish") : t("Kirish")}
+                </div>
+            )
         },
         {
             title: t('Eshik'),

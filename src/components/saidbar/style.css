@@ -213,11 +213,6 @@
     border-radius: 50%;
 }
 
-.header_right .ant-switch-handle::before{
-    background: #29b85d;
-    background-image: url(/src/images/sun.svg);
-}
-
 
 
 /*content*/

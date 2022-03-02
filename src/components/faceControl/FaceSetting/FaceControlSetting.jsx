@@ -63,7 +63,6 @@ const FaceControlSetting = () => {
     const [cameraData, setCameraData] = useState([]);
 
     const [state, setState] = useState({selectedRowKeys: []})
-
     const onSelectChange = (selectedRowKeys, a) => {
         setState({ selectedRowKeys })
         setDeleteCamera(a.map(item => item.id));
@@ -154,7 +153,6 @@ const FaceControlSetting = () => {
     }
 
 
-
     useEffect(() =>{
         getCameraData(cameraPaginationCurrent)
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -178,14 +176,6 @@ const FaceControlSetting = () => {
 
             <div className="face_control_setting_body">
                 <Tabs onChange={onChangeTabs} type="card" defaultActiveKey="1">
-
-                    <TabPane tab={t("Autentifikatsiya sozlamalari")} key="1">
-                        <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>
-                            <div className='access_control_setting_tab_item_body'>
-                                Autentifikatsiya sozlamalari
-                            </div>
-                        </div>
-                    </TabPane>
 
                     <TabPane tab={t("Kamera parametrlari")} key="2">
                         <div className="face_control_setting_tab">
@@ -276,13 +266,21 @@ const FaceControlSetting = () => {
                         </div>
                     </TabPane>
 
-                    <TabPane tab={t("Statistika sozlamalari")} key="3">
+                    <TabPane tab={t("Autentifikatsiya sozlamalari")} key="1">
                         <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>
                             <div className='access_control_setting_tab_item_body'>
-                                Content of Tab Pane 3
+                                Autentifikatsiya sozlamalari
                             </div>
                         </div>
                     </TabPane>
+
+                    {/*<TabPane tab={t("Statistika sozlamalari")} key="3">*/}
+                    {/*    <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>*/}
+                    {/*        <div className='access_control_setting_tab_item_body'>*/}
+                    {/*            Content of Tab Pane 3*/}
+                    {/*        </div>*/}
+                    {/*    </div>*/}
+                    {/*</TabPane>*/}
 
                 </Tabs>
             </div>

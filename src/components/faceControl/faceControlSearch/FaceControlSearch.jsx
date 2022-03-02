@@ -298,7 +298,7 @@ export default function FaceControlSearch() {
                                         <Select.Option value="8">{t("E’tiborsiz")}</Select.Option>
                                         <Select.Option value="9">{t("Kulgan")}</Select.Option>
                                         <Select.Option value="11">{t('Xursand')}</Select.Option>
-                                        <Select.Option value="12">{t('ikkilnagna')}</Select.Option>
+                                        <Select.Option value="12">{t('Ikkilangan')}</Select.Option>
                                         <Select.Option value="13">{t('Baqirgan')}</Select.Option>
                                     </Select>
                                 </div>
