@@ -1,5 +1,5 @@
 .access_control_add_staff_modal_body_item_right {
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .access_control_add_staff_modal_body_item_right_buttons{
@@ -10,7 +10,7 @@
 }
 
 .access_control_add_staff_modal_body_item_right_buttons button {
-    height: 45px;
+    height: 40px;
     border: none;
     border-radius: 5px;
     background-color: #29B85D;

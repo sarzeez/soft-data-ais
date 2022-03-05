@@ -11,7 +11,7 @@
     width: 100%;
     height: 1px;
     border: none;
-    margin-top: 35px;
+    margin-top: 10px;
     background-color: #E5EAFA;
 }
 
@@ -43,7 +43,7 @@
 
 .access_control_add_staff_modal_body_item_3 {
     display: grid;
-    grid-template-rows: 1fr 110px 30px 45px;
+    grid-template-rows: 260px 260px 40px ;
     grid-row-gap: 15px;
 }
 
@@ -52,6 +52,7 @@
     border-radius: 5px;
     color: #5A5D62;
     padding: 10px;
+    margin-top: 10px;
 }
 
 .access_control_add_staff_modal_body_item_3_notif p {

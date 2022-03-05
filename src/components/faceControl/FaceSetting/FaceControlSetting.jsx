@@ -177,7 +177,7 @@ const FaceControlSetting = () => {
             <div className="face_control_setting_body">
                 <Tabs onChange={onChangeTabs} type="card" defaultActiveKey="1">
 
-                    <TabPane tab={t("Kamera parametrlari")} key="2">
+                    <TabPane tab={t("Kamera parametrlari")} key="1">
                         <div className="face_control_setting_tab">
 
                             <div className='face_control_setting_tab_item'>
@@ -266,7 +266,7 @@ const FaceControlSetting = () => {
                         </div>
                     </TabPane>
 
-                    <TabPane tab={t("Autentifikatsiya sozlamalari")} key="1">
+                    <TabPane tab={t("Autentifikatsiya sozlamalari")} key="2">
                         <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>
                             <div className='access_control_setting_tab_item_body'>
                                 Autentifikatsiya sozlamalari

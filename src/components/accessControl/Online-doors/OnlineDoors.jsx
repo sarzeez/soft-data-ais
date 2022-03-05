@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector} from "react-redux";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {ip} from "../../../ip";
 import {useTranslation} from "react-i18next";
 import socketIOClient from "socket.io-client";
@@ -13,6 +13,7 @@ import warning from "../../../images/warning.svg";
 import doorNext from "../../../images/doorNext.svg";
 
 import './onlineDoors.css';
+import AddStaff from "../modals/add-staff/AddStaff";
 
 
 const OnlineDoors = () => {
@@ -25,6 +26,11 @@ const OnlineDoors = () => {
     const [onlineImg2, setOnlineImg2] = useState(null);
     const [onlineImg3, setOnlineImg3] = useState(null);
     const [onlineImg4, setOnlineImg4] = useState(null);
+
+    const [isOpenAddStaff, setIsOpenAddStaff] = useState(false)
+    const addNewStaff = () => {
+        setIsOpenAddStaff(true)
+    }
 
     const listenDoorByIp = () => {
         const socket = socketIOClient(ip);
@@ -178,9 +184,13 @@ const OnlineDoors = () => {
                                             <h1 className={`not_allowed_title ${isDarkMode && 'darkModeColor'}`}>{t("Ma’lumot topilmadi")}</h1>
                                             <p className={`not_allowed_text ${isDarkMode && 'darkModeColor'}`}>{t("Ushbu shaxs ma’lumotlar bazasida aniqlanmadi")}</p>
 
+                                            <AddStaff
+                                                isOpenAddStaff = {isOpenAddStaff}
+                                                setIsOpenAddStaff = {setIsOpenAddStaff}
+                                            />
                                             <div className="not_allowed_buttons">
                                                 <button className="not_allowed_buttons_cancel" onClick={reject}>{t("Bekor qilish")}</button>
-                                                <button className="not_allowed_buttons_registration" >{t("Ro’yxatga olish")}</button>
+                                                <button onClick={addNewStaff} className="not_allowed_buttons_registration" >{t("Ro’yxatga olish")}</button>
                                             </div>
                                             <button onClick={openDoor} className="not_allowed_allow">{t("Ruxsat berish")}</button>
                                         </div>

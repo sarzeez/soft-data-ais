@@ -80,6 +80,7 @@ const AccessControlSetting = () => {
     const onSelectChange = (selectedRowKeys, a) => {
         setState({ selectedRowKeys })
         setDeleteTerminal(a.map(item => item.id));
+        setDeleteStaff(a.map(item => item.id));
     };
 
     const { selectedRowKeys } = state;
@@ -131,6 +132,18 @@ const AccessControlSetting = () => {
         ))
         setStaffData(newData)
         // console.log(staffData)
+    }
+
+    const handleDeliteStaff = () =>{
+        axios.delete(`${ip}/api/terminal/deleteusers`, {data: deleteStaff})
+            .then(res =>{
+                getStaffData(staffPaginationCurrent);
+                setState({selectedRowKeys: []})
+                setDeleteStaff([])
+            })
+            .catch(err=>{
+                console.log(err?.response?.data)
+            })
     }
 
     const handleDeleteterminal =() =>{
@@ -230,7 +243,6 @@ const AccessControlSetting = () => {
                                     accessTablePaginationCurrent = {terminalPaginationCurrent}
                                     accessTablePaginationOnChange = {terminalPaginationOnChange}
                                     accessTableTotal = {terminalTotal}
-                                    setDeleteTerminal={setDeleteTerminal}
                                 />
                             </div>
                         </div>
@@ -242,7 +254,7 @@ const AccessControlSetting = () => {
                                 <StaffTable
                                     isDarkMode={isDarkMode}
                                     staffData = {staffData}
-                                    setDeleteStaff = {setDeleteStaff}
+                                    rowSelection={rowSelection}
                                     setIsOpenAddStaff={setIsOpenAddStaff}
                                     setStaffTableIntialValues={setStaffTableIntialValues}
                                 />
@@ -255,7 +267,10 @@ const AccessControlSetting = () => {
                                     </button>
                                     {
                                         deleteStaff.length > 0 &&
-                                        <button><AiOutlineDelete size={22} style = {{marginRight: '5px'}}/>{t("O’chirish")}</button>
+                                        <button onClick={handleDeliteStaff}>
+                                            <AiOutlineDelete size={22} style = {{marginRight: '5px'}}/>
+                                            {t("O’chirish")}
+                                        </button>
                                     }
                                 </div>
 

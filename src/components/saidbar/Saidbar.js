@@ -171,8 +171,6 @@ const Saidbar = ({ user, setUser }) => {
                                             </select>
                                     </div>
 
-                                    {/*<Switch onChange={handleChangeTheme} checkedChildren="Kun" unCheckedChildren="Tun" defaultChecked />*/}
-
                                     <Switch
                                         onChange={handleChangeTheme}
                                         checked={isDarkMode}

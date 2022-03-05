@@ -11,6 +11,8 @@ import Left from "./Left";
 import Middle from "./Middle";
 import Right from "./Right";
 import AddTerminal from '../add-terminal/AddTerminal'
+import RightBottom from "./RightBottom";
+import AddFingerprint from "../fingerprint/AddFingerprint";
 
 
 Modal.setAppElement("#root");
@@ -21,6 +23,7 @@ function AddStaff(props) {
 
     const {t} = useTranslation()
     const [ isOpenAddTerminal, setIsOpenAddTerminal] = useState(false)
+    const [ isOpenAddFingerprint,setIsOpenAddFingerprint] = useState(false)
     const [terminalIPList, setTerminalIPList] = useState([])
     const [initialValues, ] = useState({
         fullname: '',
@@ -70,7 +73,6 @@ function AddStaff(props) {
                 setIsOpenAddStaff(false)
             })
             .catch(err => {
-
             })
     }
 
@@ -106,6 +108,8 @@ function AddStaff(props) {
             closeTimeoutMS={300}
         >
             <AddTerminal isOpenAddTerminal={isOpenAddTerminal} setIsOpenAddTerminal={setIsOpenAddTerminal} />
+            <AddFingerprint isOpenAddFingerprint={isOpenAddFingerprint} setIsOpenAddFingerprint={setIsOpenAddFingerprint}/>
+
             <Form
                 name="basic"
                 layout="vertical"
@@ -119,19 +123,15 @@ function AddStaff(props) {
                     <h1 className="access_control_add_staff_modal_title">{t("Yangi foydalanuvchi qo'shish")}</h1>
                     <hr className="access_control_add_staff_modal_subline" />
                     <div className="access_control_add_staff_modal_body">
+
                         <div className="access_control_add_staff_modal_body_item">
                             <p className="access_control_add_staff_modal_body_item_title">{t("Ma'lumotlar")}</p>
                             <Left data = {data} setData = {setData} terminalIPList = {terminalIPList} />
                         </div>
+
                         <div className="access_control_add_staff_modal_body_item">
                             <p className="access_control_add_staff_modal_body_item_title">Yuzni aniqlash</p>
                             <Middle data = {data} setData = {setData} terminalIPList = {terminalIPList} />
-                        </div>
-                        <div className="access_control_add_staff_modal_body_item_3">
-                            <div className="access_control_add_staff_modal_body_item">
-                                <p className="access_control_add_staff_modal_body_item_title">ID karta</p>
-                                <Right data = {data} setData = {setData} setIsOpenAddTerminal = {setIsOpenAddTerminal} />
-                            </div>
                             <div className='access_control_add_staff_modal_body_item_3_notif'>
                                 <p>Xodimning kirib/chiqish ma’lumotlari haqida bildirishnoma olishni istaysizmi?</p>
                                 <Switch
@@ -141,10 +141,22 @@ function AddStaff(props) {
                                     onChange={(value) => setData({...data, notify: value})}
                                 />
                             </div>
-                            <div /> {/* single div */}
-                            <button className="access_control_add_staff_modal_body_item_3_submit_button"
-                            type="submit"
-                            >Saqlash</button>
+                        </div>
+
+                        <div className="access_control_add_staff_modal_body_item_3">
+                            <div className="access_control_add_staff_modal_body_item">
+                                <p className="access_control_add_staff_modal_body_item_title">ID karta</p>
+                                <Right data = {data} setData = {setData} setIsOpenAddTerminal = {setIsOpenAddTerminal} />
+                            </div>
+
+                            <div className="access_control_add_staff_modal_body_item">
+                                <p className="access_control_add_staff_modal_body_item_title">Barmoq izi</p>
+                                <RightBottom data = {data} setData = {setData} setIsOpenAddFingerprint={setIsOpenAddFingerprint} />
+                            </div>
+
+                            <button className="access_control_add_staff_modal_body_item_3_submit_button" type="submit">
+                                Saqlash
+                            </button>
                         </div>
                         
                     </div>

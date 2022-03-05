@@ -169,7 +169,7 @@ export default function FaceControlSearch() {
         const result = await axios.get(`${ip}/api/camerawithgroup/${lang}`)
         const { data } = result;
         setCameraWithGroup(data)
-        const cameraIP = data[0].cameras.map(item => item.ip_address)
+        const cameraIP = data[0]?.cameras?.map(item => item.ip_address)
         setCameraIP(cameraIP)
         // if(result) {
         //     fetchFaceControlData(faceControlPaginationCurrent)
@@ -371,7 +371,7 @@ export default function FaceControlSearch() {
                                     >
                                         <Select.Option value='all'>{t('Hammasi')}</Select.Option>
                                         {
-                                            cameraWithGroup[group] && cameraWithGroup[group].cameras.map((item, index) => (
+                                            cameraWithGroup[group] && cameraWithGroup[group].cameras?.map((item, index) => (
                                                 <Select.Option key={index}>{item.name}</Select.Option>
                                             ))
                                         }

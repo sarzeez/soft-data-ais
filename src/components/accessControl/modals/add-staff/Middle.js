@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Select } from 'antd';
 import axios from 'axios';
 
-import { FiUpload } from 'react-icons/fi'
-import { IoImageOutline } from 'react-icons/io5'
-import loadingGif from '../../../../assets/gif/loading.gif'
+import { FiUpload } from 'react-icons/fi';
+import { IoImageOutline } from 'react-icons/io5';
+import loadingGif from '../../../../assets/gif/loading.gif';
 
-import { ip } from '../../../../ip'
+import { ip } from '../../../../ip';
 
-import './middle.css'
+import './middle.css';
 
 const Middle = ({ data, setData, terminalIPList }) => {
 

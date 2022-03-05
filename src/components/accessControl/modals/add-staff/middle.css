@@ -1,9 +1,7 @@
 .access_control_add_staff_modal_body_item_middle {
     width: 100%;
-    height: 100%;
     display: grid;
-    grid-template-rows: 1fr 45px 38px;
-    /* padding: 10px; */
+    grid-template-rows: 300px 40px 38px;
     padding-top: 10px;
     grid-row-gap: 6px;
 }

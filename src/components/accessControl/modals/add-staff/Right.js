@@ -15,17 +15,19 @@ const Right = ({ setIsOpenAddTerminal }) => {
     }
     
     return (
-        <div className='access_control_add_staff_modal_body_item_right'>
-            <CardTable
-                data = {data}
-                setSelectedItems = {setSelectedItems}
-            />
-            <div className='access_control_add_staff_modal_body_item_right_buttons'>
-                <button onClick={() => setIsOpenAddTerminal(true)} type='button'>ID karta qo’shish</button>
-                <button onClick={handleDeleteTerminal} type='button'>O’chirish</button>
-            </div>
-            
-        </div>
+       <>
+           <div className='access_control_add_staff_modal_body_item_right'>
+               <CardTable
+                   data = {data}
+                   setSelectedItems = {setSelectedItems}
+               />
+               <div className='access_control_add_staff_modal_body_item_right_buttons'>
+                   <button onClick={() => setIsOpenAddTerminal(true)} type='button'>ID karta qo’shish</button>
+                   <button onClick={handleDeleteTerminal} type='button'>O’chirish</button>
+               </div>
+
+           </div>
+       </>
     )
 };
 

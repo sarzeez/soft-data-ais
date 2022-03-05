@@ -1,5 +1,6 @@
 import React from 'react'
 import { Table } from 'antd';
+import './right.css';
 
 const columns = [
   {
@@ -19,9 +20,6 @@ const columns = [
     align: 'center'
   },
 ];
-
-
-
 
 
 const CardTable = ({data, setSelectedItems}) => {
@@ -45,7 +43,7 @@ const CardTable = ({data, setSelectedItems}) => {
           dataSource={data}
           pagination={false}
           style={{minHeight: '190px'}}
-          scroll={{ y: 135 }}
+          scroll={{ y: 90 }}
         />
     )
 }

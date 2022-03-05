@@ -9,31 +9,17 @@ import {ip} from '../../../../ip';
 import {useTranslation} from "react-i18next";
 import {RiEditLine} from "react-icons/ri";
 
-
-
 const StaffTable = (props) => {
 
     const {
         staffData,
-        setDeleteStaff,
+        rowSelection,
         setIsOpenAddStaff,
-        setStaffTableIntialValues
+        setStaffTableIntialValues,
     } = props;
 
     const {t} = useTranslation()
     const isDarkMode = useSelector(state => state.theme.theme_data)
-
-    const [state, setState] = useState({selectedRowKeys: []})
-    const onSelectChange = (selectedRowKeys, a) => {
-        setState({ selectedRowKeys })
-        setDeleteStaff(a)
-    };
-
-    const { selectedRowKeys } = state;
-    const rowSelection = {
-        selectedRowKeys,
-        onChange: onSelectChange,
-    }
 
     const editAddStaff = (value, record) => {
         setStaffTableIntialValues({
