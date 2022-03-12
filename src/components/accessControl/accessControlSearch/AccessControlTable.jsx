@@ -30,8 +30,8 @@ const AcsessControlTable = () => {
     const [userType, setUserType] = useState('all');
     const [position, setPosition] = useState('all');
     const [direction, setDirection] = useState('all');
-    const [dateFrom, setDateFrom] = useState();
-    const [dateTo, setDateTo] = useState();
+    const [dateFrom, setDateFrom] = useState('');
+    const [dateTo, setDateTo] = useState('');
     const [allowedDoor, setAllowedDoor] = useState([]);
 
     const onChangeName = (e) =>{
@@ -265,7 +265,7 @@ const AcsessControlTable = () => {
                                     size="large"
                                     style={{width: "100%", borderRadius: '5px'}}
                                     showTime
-                                    // value={dateFrom !== "" ? moment(dateFrom) : ""}
+                                    value={dateFrom !== "" ? moment(dateFrom) : ""}
                                 />
                             </div>
                             <div className="input_wrapper" style={{marginTop: "15px"}}>
@@ -278,7 +278,7 @@ const AcsessControlTable = () => {
                                     size="large"
                                     style={{width: "100%", borderRadius: '5px'}}
                                     showTime
-                                    // value={dateTo !== "" ? moment(dateTo) : ""}
+                                    value={dateTo !== "" ? moment(dateTo) : ""}
                                 />
                             </div>
                         </div>

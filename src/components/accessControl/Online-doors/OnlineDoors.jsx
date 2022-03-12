@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector} from "react-redux";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {ip} from "../../../ip";
 import {useTranslation} from "react-i18next";
 import socketIOClient from "socket.io-client";

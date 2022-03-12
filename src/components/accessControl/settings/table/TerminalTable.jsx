@@ -12,11 +12,11 @@ const auth_type = {
     en: ['Face', 'Fingerprint', 'ID card']
 }
 
-const type = {
-    uz: ['', 'Dahua', 'Hikvision'],
-    ru: ['', 'Dahua', 'Hikvision'],
-    en: ['', 'Dahua', 'Hikvision']
-}
+// const type = {
+//     uz: ['', 'Dahua', 'Hikvision'],
+//     ru: ['', 'Dahua', 'Hikvision'],
+//     en: ['', 'Dahua', 'Hikvision']
+// }
 
 const TerminalTable = (props) => {
     const {
@@ -79,11 +79,6 @@ const TerminalTable = (props) => {
             title: t('Terminal turi'),
             dataIndex: 'type',
             align: 'center',
-            render: (text, record) => (
-                <div>
-                    {type[lang][record.type]}
-                </div>
-            )
         },
         {
             title: t('Login'),

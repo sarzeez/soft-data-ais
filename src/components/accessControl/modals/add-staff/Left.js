@@ -13,7 +13,12 @@ const Left = ({ data, setData, terminalIPList }) => {
 
     const {t} = useTranslation()
     const [state, setState] = useState([])
+    const [isChecked, setIsChecked] = useState(false);
 
+
+    const handleOnChange = () => {
+        setIsChecked(!isChecked);
+    };
     const onChange = value => {
         // console.log('onChange ', value);
         setState(value);
@@ -150,7 +155,7 @@ const Left = ({ data, setData, terminalIPList }) => {
                     rules={[
                     {
                         required: true,
-                        message: t("Kirishlar sonini kiriting"),
+                        message: t(""),
                     },
                     ]}
                 >
@@ -158,10 +163,12 @@ const Left = ({ data, setData, terminalIPList }) => {
                         size="large"
                         placeholder={t("Kiriting")}
                         style={{borderRadius: '5px'}}
+                        checked={isChecked}
+                        onChange={handleOnChange}
                     />
                 </Form.Item>
                 <Checkbox
-                        className="access_control_add_staff_modal_body_item_left_checkbox"
+                    className="access_control_add_staff_modal_body_item_left_checkbox"
                     >
                     {t("Cheklov")}
                 </Checkbox>
@@ -179,7 +186,6 @@ const Left = ({ data, setData, terminalIPList }) => {
                 >
                     <DatePicker
                         size="large"
-                        showTime
                         style={{borderRadius: '5px'}}
                     />
                 </Form.Item>
@@ -195,7 +201,6 @@ const Left = ({ data, setData, terminalIPList }) => {
                 >
                     <DatePicker
                         size="large"
-                        showTime
                         style={{borderRadius: '5px'}}
                     />
                 </Form.Item>

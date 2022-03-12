@@ -12,7 +12,10 @@ import Auth from './Auth';
 
 const options = {
     timeout: 5*1000,
-    position: positions.TOP_CENTER
+    position: positions.TOP_CENTER,
+    containerStyle: {
+        zIndex: 1009999
+    }
 };
 
 ReactDOM.render(

@@ -46,10 +46,8 @@ const FaceControlSetting = () => {
         name_en: '',
     })
 
-
     // delete button
     const [deleteCamera, setDeleteCamera] = useState([])
-
     const [deleteGroup, setDeleteGroup] = useState([])
 
 

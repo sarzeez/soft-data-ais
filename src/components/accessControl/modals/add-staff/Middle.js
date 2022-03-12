@@ -71,7 +71,6 @@ const Middle = ({ data, setData, terminalIPList }) => {
                         placeholder="Tanlash"
                     >
                         <Select.Option value="">Tanlash</Select.Option>
-
                         {
                             terminalIPList.map((item, index) => (
                                 <Select.Option key = {index} value={item.value}>{item.title}</Select.Option>

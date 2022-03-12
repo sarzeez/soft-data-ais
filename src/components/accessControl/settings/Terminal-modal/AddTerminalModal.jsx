@@ -59,10 +59,11 @@ const AddTerminalModal = ( props ) => {
         }
     }
 
-
     const onFinishFailed = (error) => {
         console.log(error)
     }
+
+
 
     return (
         <Modal
@@ -152,8 +153,8 @@ const AddTerminalModal = ( props ) => {
                                     size="large"
                                     placeholder="Tanlang"
                                 >
-                                    <Select.Option value="1">Dahua</Select.Option>
-                                    <Select.Option value="2">Hikvision</Select.Option>
+                                    <Select.Option value="dahua">Dahua</Select.Option>
+                                    <Select.Option value="hikvision">Hikvision</Select.Option>
                                 </Select>
                             </Form.Item>
 

@@ -58,6 +58,7 @@ const AddCameraModal = (props) => {
                     getCameraData(cameraPaginationCurrent)
                 })
                 .catch(err => {
+                    alert.error('Ip manzil xato kiritildi !')
                     console.log(err?.response?.data)
                 })
         }

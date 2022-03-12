@@ -47,7 +47,6 @@ const AccessControlSetting = () => {
 
     const [staffTableIntialValues, setStaffTableIntialValues] = useState({
 
-
     })
 
     // delete button

@@ -58,7 +58,6 @@ function AddStaff(props) {
     })
 
     const onFinish = (value) => {
-
         const formData = {
             ...value,
             image: data.image,
@@ -101,14 +100,18 @@ function AddStaff(props) {
     return (
         <Modal
             isOpen={isOpenAddStaff}
-            onRequestClose={() => setIsOpenAddStaff(false)}
+            onRequestClose={() => setIsOpenAddStaff(!isOpenAddStaff)}
             contentLabel="My dialog"
             className="mymodal"
             overlayClassName="myoverlay"
             closeTimeoutMS={300}
         >
             <AddTerminal isOpenAddTerminal={isOpenAddTerminal} setIsOpenAddTerminal={setIsOpenAddTerminal} />
-            <AddFingerprint isOpenAddFingerprint={isOpenAddFingerprint} setIsOpenAddFingerprint={setIsOpenAddFingerprint}/>
+            <AddFingerprint
+                isOpenAddFingerprint={isOpenAddFingerprint}
+                setIsOpenAddFingerprint={setIsOpenAddFingerprint}
+                data = {data} setData = {setData}
+            />
 
             <Form
                 name="basic"

@@ -30,13 +30,13 @@ export default function FaceControlSearch() {
     const [group, setGroup] = useState(0)
     const [camera, setCamera] = useState('all')
     const [cameraIP, setCameraIP] = useState('all');
-    const [dateFrom, setDateFrom] = useState();
-    const [dateTo, setDateTo] = useState();
-    const [cameraWithGroup, setCameraWithGroup] = useState([])
-    const [faceControlData, setFaceControlData] = useState(null)
-    const [faceControlPaginationLimit, setFaceControlPaginationLimit] = useState(24)
-    const [faceControlPaginationCurrent, setFaceControlPaginationCurrent] = useState(1)
-    const [faceControlTotal, setFaceControlTotal] = useState(null)
+    const [dateFrom, setDateFrom] = useState('');
+    const [dateTo, setDateTo] = useState('');
+    const [cameraWithGroup, setCameraWithGroup] = useState([]);
+    const [faceControlData, setFaceControlData] = useState(null);
+    const [faceControlPaginationLimit, setFaceControlPaginationLimit] = useState(24);
+    const [faceControlPaginationCurrent, setFaceControlPaginationCurrent] = useState(1);
+    const [faceControlTotal, setFaceControlTotal] = useState(null);
 
 
     const is_refresh_value = useSelector(state => state.theme.is_refresh_value)
@@ -390,7 +390,7 @@ export default function FaceControlSearch() {
                                     size="large"
                                     style={{width: "100%", borderRadius: '5px'}}
                                     showTime
-                                    // value={dateFrom !== "" ? moment(dateFrom) : ""}
+                                    value={dateFrom !== "" ? moment(dateFrom) : ""}
                                 />
                             </div>
                             <div className="input_wrapper" style={{marginTop: "15px"}}>
@@ -403,8 +403,7 @@ export default function FaceControlSearch() {
                                     size="large"
                                     style={{width: "100%", borderRadius: '5px'}}
                                     showTime
-                                    // value={dateTo !== "" ? moment(dateTo) : ""}
-                                    // format="DD-MM-YYYY, HH:mm:ss"
+                                    value={dateTo !== "" ? moment(dateTo) : ""}
                                 />
                             </div>
                         </div>
