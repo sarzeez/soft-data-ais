@@ -2,9 +2,9 @@ import React from 'react';
 import FingerTable from "./FingerTable";
 import finger from '../../../../images/finger.svg';
 
-import './right.css'
+import './middleBottom.css';
 
-const RightBottom = ({ setIsOpenAddFingerprint }) => {
+const MiddleBottom = ({ setIsOpenAddFingerprint }) => {
 
     const [selectedItems, setSelectedItems] = React.useState([])
     const [data, setData] = React.useState([])
@@ -16,12 +16,12 @@ const RightBottom = ({ setIsOpenAddFingerprint }) => {
     }
 
     return (
-        <div className='access_control_add_staff_modal_body_item_right'>
+        <div className='access_control_add_staff_modal_body_item_fingerprint'>
             <FingerTable
                 data = {data}
                 setSelectedItems = {setSelectedItems}
             />
-            <div className='access_control_add_staff_modal_body_item_right_buttons'>
+            <div className='access_control_add_staff_modal_body_item_fingerprint_buttons'>
                 <button onClick={() => setIsOpenAddFingerprint(true)} type='button'>
                     <img style={{marginRight:8}} src={finger} alt=""/>
                     Qo’shish
@@ -33,4 +33,4 @@ const RightBottom = ({ setIsOpenAddFingerprint }) => {
     )
 };
 
-export default RightBottom;
+export default MiddleBottom;

@@ -10,7 +10,13 @@ import './terminal.css'
 Modal.setAppElement("#root");
 
 
-const AddTerminal = ({ isOpenAddTerminal, setIsOpenAddTerminal }) => {
+const AddTerminal = (props) => {
+
+    const {
+        isOpenAddTerminal,
+        setIsOpenAddTerminal,
+
+    }=props
 
     const {t} = useTranslation()
     const onFinish = (value) => {
@@ -19,6 +25,11 @@ const AddTerminal = ({ isOpenAddTerminal, setIsOpenAddTerminal }) => {
 
     const onFinishFailed = (error) => {
         console.log(error)
+    }
+
+    const cancel = () =>{
+        setIsOpenAddTerminal(!isOpenAddTerminal)
+
     }
 
     return (

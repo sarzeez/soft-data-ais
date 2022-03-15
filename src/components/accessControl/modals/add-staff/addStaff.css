@@ -1,5 +1,5 @@
 .access_control_add_staff_modal {
-    padding: 20px;
+    padding: 15px;
 }
 
 .access_control_add_staff_modal_title {
@@ -17,17 +17,22 @@
 
 .access_control_add_staff_modal_body {
     display: grid;
-    grid-template-columns: 380px 320px 380px;
+    grid-template-columns: 380px 380px 320px ;
     grid-column-gap: 10px;
     margin-top: 18px;
 }
 
 .access_control_add_staff_modal_body_item {
-    /* height: 500px; */
     border: 1px solid #EAEAEA;
     padding: 10px;
     border-radius: 10px;
     position: relative;
+}
+
+.access_control_add_staff_modal_body_item_1{
+    display: grid;
+    grid-template-rows: auto;
+    grid-row-gap: 15px;
 }
 
 .access_control_add_staff_modal_body_item_title {
@@ -38,15 +43,13 @@
     background-color: #fff;
     font-size: 16px;
     font-weight: 600;
-
 }
 
-.access_control_add_staff_modal_body_item_3 {
+.access_control_add_staff_modal_body_item_2 {
     display: grid;
-    grid-template-rows: 260px 260px 40px ;
+    grid-template-rows: auto auto;
     grid-row-gap: 15px;
 }
-
 .access_control_add_staff_modal_body_item_3_notif {
     background-color: #E5F6FF;
     border-radius: 5px;
@@ -56,16 +59,19 @@
 }
 
 .access_control_add_staff_modal_body_item_3_notif p {
-    margin-bottom: 13px !important;
+    /*margin-bottom: 13px !important;*/
 }
 
 .access_control_add_staff_modal_body_item_3_submit_button {
+    width: 100%;
+    height: 40px;
     border: none;
     background-color: #29B85D;
     border-radius: 5px;
     color: #fff;
     font-size: 14px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 .access_control_add_staff_modal_body_item_3_submit_button:hover {

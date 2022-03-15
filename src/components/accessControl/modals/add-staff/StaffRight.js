@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { Select } from 'antd';
+import { ip } from '../../../../ip';
+
 import axios from 'axios';
 
 import { FiUpload } from 'react-icons/fi';
 import { IoImageOutline } from 'react-icons/io5';
 import loadingGif from '../../../../assets/gif/loading.gif';
 
-import { ip } from '../../../../ip';
+import './staffRight.css';
 
-import './middle.css';
-
-const Middle = ({ data, setData, terminalIPList }) => {
+const StaffRight = ({ data, setData, terminalIPList }) => {
 
     const [view, setView] = useState(null)
     const [requestedImage, setRequestedImage] = useState(null)
@@ -80,7 +80,10 @@ const Middle = ({ data, setData, terminalIPList }) => {
                     <button
                         type='button'
                         className='access_control_add_staff_modal_body_item_middle_download'
-                        style={{cursor: `${accessDoors === '' ? 'not-allowed' : 'pointer'}`}}
+                        style={{cursor: `${accessDoors === '' ? 'not-allowed' : 'pointer'}`,
+                            color: `${accessDoors === '' ? '#000':'#fff'}`,
+                            backgroundColor: `${accessDoors === '' ? '#bebebe':'#29B85D'}`
+                    } }
                         onClick={handleClickImageDownload}
                         disabled={accessDoors === '' ? true : false}
                     >
@@ -91,4 +94,4 @@ const Middle = ({ data, setData, terminalIPList }) => {
     )
 };
 
-export default Middle;
+export default StaffRight;

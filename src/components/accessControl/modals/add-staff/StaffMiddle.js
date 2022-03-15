@@ -1,9 +1,9 @@
 import React from 'react';
 import CardTable from './CardTable';
 
-import './right.css'
+import './staffMiddle.css'
 
-const Right = ({ setIsOpenAddTerminal }) => {
+const StaffMiddle = ({ setIsOpenAddTerminal }) => {
 
     const [selectedItems, setSelectedItems] = React.useState([])
     const [data, setData] = React.useState([])
@@ -25,10 +25,9 @@ const Right = ({ setIsOpenAddTerminal }) => {
                    <button onClick={() => setIsOpenAddTerminal(true)} type='button'>ID karta qo’shish</button>
                    <button onClick={handleDeleteTerminal} type='button'>O’chirish</button>
                </div>
-
            </div>
        </>
     )
 };
 
-export default Right;
+export default StaffMiddle;

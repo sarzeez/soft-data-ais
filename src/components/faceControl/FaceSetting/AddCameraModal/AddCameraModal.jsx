@@ -23,7 +23,7 @@ const AddCameraModal = (props) => {
         cameraPaginationCurrent,
     } = props;
 
-    const alert = useAlert()
+    const alert = useAlert();
     const {t} = useTranslation();
     const lang = localStorage.getItem('i18nextLng');
     const [cameraSetting, setCameraSetting] = useState([]);
@@ -88,7 +88,7 @@ const AddCameraModal = (props) => {
         <>
             <Modal
                 isOpen={isOpenAddCamera}
-                onRequestClose={() => setIsOpenAddCamera(!isOpenAddCamera)}
+                onRequestClose={() => setIsOpenAddCamera(cancel)}
                 contentLabel="My dialog"
                 className="mymodal"
                 overlayClassName="myoverlay"

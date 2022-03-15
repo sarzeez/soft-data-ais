@@ -2,11 +2,11 @@ import React from 'react';
 import {Form, Input, Select} from "antd";
 import {useTranslation} from "react-i18next";
 import {ip} from "../../../../ip";
+import { useAlert } from 'react-alert';
 import Modal from "react-modal";
 import axios from "axios";
 
 import './addTerminal.css';
-
 
 
 const AddTerminalModal = ( props ) => {
@@ -20,6 +20,8 @@ const AddTerminalModal = ( props ) => {
     } = props
 
     const {t} = useTranslation();
+    const alert = useAlert();
+
 
     const cancel = () =>{
         setIsOpenAddTerminal(!isOpenAddTerminal)
@@ -44,6 +46,7 @@ const AddTerminalModal = ( props ) => {
                     getTerminalData(terminalPaginationCurrent)
                 })
                 .catch(err => {
+                    alert.error('Ip manzil mavjud!')
                     console.log(err?.response?.data)
                 })
         }
@@ -54,6 +57,7 @@ const AddTerminalModal = ( props ) => {
                     getTerminalData(terminalPaginationCurrent)
                 })
                 .catch(err =>{
+                    alert.error('Ip manzil xato kiritildi !')
                     console.log(err?.response?.data)
                 })
         }
@@ -63,12 +67,10 @@ const AddTerminalModal = ( props ) => {
         console.log(error)
     }
 
-
-
     return (
         <Modal
             isOpen={isOpenAddTerminal}
-            onRequestClose={() => setIsOpenAddTerminal(!isOpenAddTerminal)}
+            onRequestClose={() => setIsOpenAddTerminal(cancel)}
             contentLabel="My dialog"
             className="mymodal"
             overlayClassName="myoverlay"

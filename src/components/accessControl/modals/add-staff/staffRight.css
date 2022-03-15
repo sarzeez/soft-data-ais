@@ -1,8 +1,8 @@
 .access_control_add_staff_modal_body_item_middle {
     width: 100%;
     display: grid;
-    grid-template-rows: 300px 40px 38px;
-    padding-top: 10px;
+    grid-template-rows: 350px 40px 38px;
+    /*padding-top: 10px;*/
     grid-row-gap: 6px;
 }
 
@@ -15,8 +15,9 @@
 }
 
 .access_control_add_staff_modal_body_item_middle_image img{
-    max-width: 300px;
-    max-height: 400px;
+    max-width: 360px;
+    max-height: 340px;
+    border-radius: 8px;
 }
 
 .access_control_add_staff_modal_body_item_middle_upload {
@@ -48,6 +49,11 @@
     border: 1px solid #d9d9d9;
     color: #bebebe;
     cursor: pointer;
+
+}
+
+button:disabled{
+
 }
 
 .access_control_add_staff_modal_body_item_middle_download:hover {

@@ -8,10 +8,10 @@ import axios from "axios";
 import './addStaff.css';
 
 import Left from "./Left";
-import Middle from "./Middle";
-import Right from "./Right";
+import StaffRight from "./StaffRight";
+import StaffMiddle from "./StaffMiddle";
 import AddTerminal from '../add-terminal/AddTerminal'
-import RightBottom from "./RightBottom";
+import MiddleBottom from "./MiddleBottom";
 import AddFingerprint from "../fingerprint/AddFingerprint";
 
 
@@ -127,14 +127,11 @@ function AddStaff(props) {
                     <hr className="access_control_add_staff_modal_subline" />
                     <div className="access_control_add_staff_modal_body">
 
-                        <div className="access_control_add_staff_modal_body_item">
-                            <p className="access_control_add_staff_modal_body_item_title">{t("Ma'lumotlar")}</p>
-                            <Left data = {data} setData = {setData} terminalIPList = {terminalIPList} />
-                        </div>
-
-                        <div className="access_control_add_staff_modal_body_item">
-                            <p className="access_control_add_staff_modal_body_item_title">Yuzni aniqlash</p>
-                            <Middle data = {data} setData = {setData} terminalIPList = {terminalIPList} />
+                        <div className="access_control_add_staff_modal_body_item_1">
+                            <div className="access_control_add_staff_modal_body_item">
+                                <p className="access_control_add_staff_modal_body_item_title">{t("Ma'lumotlar")}</p>
+                                <Left data = {data} setData = {setData} terminalIPList = {terminalIPList} />
+                            </div>
                             <div className='access_control_add_staff_modal_body_item_3_notif'>
                                 <p>Xodimning kirib/chiqish ma’lumotlari haqida bildirishnoma olishni istaysizmi?</p>
                                 <Switch
@@ -146,22 +143,25 @@ function AddStaff(props) {
                             </div>
                         </div>
 
-                        <div className="access_control_add_staff_modal_body_item_3">
+                        <div className="access_control_add_staff_modal_body_item_2">
                             <div className="access_control_add_staff_modal_body_item">
                                 <p className="access_control_add_staff_modal_body_item_title">ID karta</p>
-                                <Right data = {data} setData = {setData} setIsOpenAddTerminal = {setIsOpenAddTerminal} />
+                                <StaffMiddle data = {data} setData = {setData} setIsOpenAddTerminal = {setIsOpenAddTerminal} />
                             </div>
-
                             <div className="access_control_add_staff_modal_body_item">
                                 <p className="access_control_add_staff_modal_body_item_title">Barmoq izi</p>
-                                <RightBottom data = {data} setData = {setData} setIsOpenAddFingerprint={setIsOpenAddFingerprint} />
+                                <MiddleBottom data = {data} setData = {setData} setIsOpenAddFingerprint={setIsOpenAddFingerprint} />
                             </div>
 
+                        </div>
+
+                        <div className="access_control_add_staff_modal_body_item">
+                            <p className="access_control_add_staff_modal_body_item_title">Yuzni aniqlash</p>
+                            <StaffRight data = {data} setData = {setData} terminalIPList = {terminalIPList} />
                             <button className="access_control_add_staff_modal_body_item_3_submit_button" type="submit">
                                 Saqlash
                             </button>
                         </div>
-                        
                     </div>
                 </div>
 
