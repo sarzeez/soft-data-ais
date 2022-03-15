@@ -17,7 +17,7 @@
 
 .access_control_add_staff_modal_body {
     display: grid;
-    grid-template-columns: 380px 380px 320px ;
+    grid-template-columns: 380px 380px 305px ;
     grid-column-gap: 10px;
     margin-top: 18px;
 }
@@ -59,7 +59,7 @@
 }
 
 .access_control_add_staff_modal_body_item_3_notif p {
-    /*margin-bottom: 13px !important;*/
+    margin-bottom: 13px !important;
 }
 
 .access_control_add_staff_modal_body_item_3_submit_button {
@@ -71,7 +71,7 @@
     color: #fff;
     font-size: 14px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .access_control_add_staff_modal_body_item_3_submit_button:hover {

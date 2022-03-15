@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Input, Select, Checkbox, DatePicker, TreeSelect  } from 'antd';
+import {Form, Input, Select, Checkbox, DatePicker, TreeSelect, Switch} from 'antd';
 import {useTranslation} from "react-i18next";
 import './left.css';
 
@@ -180,6 +180,16 @@ const Left = ({ data, setData, terminalIPList }) => {
                         style={{borderRadius: '5px'}}
                     />
                 </Form.Item>
+            </div>
+
+            <div className='access_control_add_staff_modal_body_item_3_notif'>
+                <p>Xodimning kirib/chiqish ma’lumotlari haqida bildirishnoma olishni istaysizmi?</p>
+                <Switch
+                    checkedChildren="Ha"
+                    unCheckedChildren="Yo'q"
+                    checked={data.notify}
+                    onChange={(value) => setData({...data, notify: value})}
+                />
             </div>
         </div>
     )

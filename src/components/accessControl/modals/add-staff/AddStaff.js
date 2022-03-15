@@ -32,7 +32,6 @@ function AddStaff(props) {
         user_type: '',
         door_ip: [],
         access_type: '',
-        limit: '',
         valid_from_time: '',
         valid_to_time: '',
         image: '',
@@ -48,7 +47,6 @@ function AddStaff(props) {
         user_type: '',
         door_ip: [],
         access_type: '',
-        limit: '',
         valid_from_time: '',
         valid_to_time: '',
         image: '',
@@ -131,15 +129,7 @@ function AddStaff(props) {
                             <div className="access_control_add_staff_modal_body_item">
                                 <p className="access_control_add_staff_modal_body_item_title">{t("Ma'lumotlar")}</p>
                                 <Left data = {data} setData = {setData} terminalIPList = {terminalIPList} />
-                            </div>
-                            <div className='access_control_add_staff_modal_body_item_3_notif'>
-                                <p>Xodimning kirib/chiqish ma’lumotlari haqida bildirishnoma olishni istaysizmi?</p>
-                                <Switch
-                                    checkedChildren="Ha"
-                                    unCheckedChildren="Yo'q"
-                                    checked={data.notify}
-                                    onChange={(value) => setData({...data, notify: value})}
-                                />
+
                             </div>
                         </div>
 
@@ -152,7 +142,6 @@ function AddStaff(props) {
                                 <p className="access_control_add_staff_modal_body_item_title">Barmoq izi</p>
                                 <MiddleBottom data = {data} setData = {setData} setIsOpenAddFingerprint={setIsOpenAddFingerprint} />
                             </div>
-
                         </div>
 
                         <div className="access_control_add_staff_modal_body_item">

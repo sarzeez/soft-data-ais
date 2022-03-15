@@ -2,6 +2,30 @@ import React from 'react'
 import { Table } from 'antd';
 import './staffMiddle.css';
 
+const dataSource = [
+    {
+        key: '1',
+        type : 'John Brown',
+        card_number: 32,
+    },
+    {
+        key: '1',
+        type : 'John Brown',
+        card_number: 32,
+    },
+    {
+        key: '1',
+        type : 'John Brown',
+        card_number: 32,
+    },
+    {
+        key: '1',
+        type : 'John Brown',
+        card_number: 32,
+    },
+
+];
+
 const columns = [
   {
     title: 'T/r',
@@ -40,10 +64,10 @@ const CardTable = ({data, setSelectedItems}) => {
         <Table
           columns={columns}
           rowSelection={rowSelection}
-          dataSource={data}
+          dataSource={dataSource}
           pagination={false}
-          style={{minHeight: '190px'}}
-          scroll={{ y: 90 }}
+          // style={{minHeight: '140px'}}
+          scroll={{ y: 105 }}
         />
     )
 }

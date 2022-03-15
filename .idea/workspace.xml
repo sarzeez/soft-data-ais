@@ -2,24 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="630af48d-1ca7-4883-8e3d-17f8fed27d11" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/middleBottom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/CardTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/CardTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/FingerTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/FingerTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Middle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffRight.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Right.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffMiddle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/RightBottom.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/MiddleBottom.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/addStaff.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/addStaff.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/left.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/left.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/middle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/staffRight.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/right.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/staffMiddle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-terminal/AddTerminal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-terminal/AddTerminal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/Terminal-modal/AddTerminalModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/Terminal-modal/AddTerminalModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddCameraModal/AddCameraModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddCameraModal/AddCameraModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/saidbar/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/saidbar/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/staffMiddle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/staffMiddle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/staffRight.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/staffRight.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +120,7 @@
       <workItem from="1646970984230" duration="16258000" />
       <workItem from="1647058012701" duration="9112000" />
       <workItem from="1647231159124" duration="21833000" />
-      <workItem from="1647317277414" duration="6087000" />
+      <workItem from="1647317277414" duration="21067000" />
     </task>
     <servers />
   </component>
