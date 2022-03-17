@@ -52,7 +52,8 @@ function AddStaff(props) {
         image: '',
         card_id: '',
         card_type: '',
-        notification: false
+        notification: false,
+        cards: [{}],
     })
 
     const onFinish = (value) => {
@@ -133,7 +134,7 @@ function AddStaff(props) {
                             </div>
                             <div className="access_control_add_staff_modal_body_item">
                                 <p className="access_control_add_staff_modal_body_item_title">Barmoq izi</p>
-                                <MiddleBottom data = {data} setData = {setData} isOpenAddFingerprint={isOpenAddFingerprint} setIsOpenAddFingerprint={setIsOpenAddFingerprint} />
+                                <MiddleBottom terminalIPList={terminalIPList} data = {data} setData = {setData} isOpenAddFingerprint={isOpenAddFingerprint} setIsOpenAddFingerprint={setIsOpenAddFingerprint} />
                             </div>
                         </div>
 

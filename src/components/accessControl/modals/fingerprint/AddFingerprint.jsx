@@ -4,39 +4,48 @@ import {ip} from "../../../../ip";
 
 import Modal from "react-modal";
 import finger2 from '../../../../images/finger2.svg';
-
+import axios from "axios";
+import {BiCheck, IoCloseSharp} from "react-icons/all";
 
 import './fingerprint.css';
-import {BiCheck, IoCloseSharp} from "react-icons/all";
-import axios from "axios";
 
-const AddFingerprint = ({isOpenAddFingerprint, setIsOpenAddFingerprint, data, setData}) => {
+const AddFingerprint = (props) => {
 
-    const [loading, setLoading] = useState(false)
-    const [requestedFinger, setRequestedFinger] = useState(null)
+    const {
+        isOpenAddFingerprint,
+        setIsOpenAddFingerprint,
+        data,
+        setData,
+        terminalIPList
+    } = props;
+
+
+    const [requestedFinger, setRequestedFinger] = useState(null);
     const [accessFinger, setAccsessFinger] = useState('');
 
-    const handleClickFingerprint = () =>{
-        setLoading(true)
-        axios.post(`${ip}/api/terminal/fingerprint/`)
-            .then(res=>{
-                setLoading(false)
-                setRequestedFinger(res.data)
-                setData({...data})
+
+    const onChangeFingerprint = (a) =>{
+        setAccsessFinger(a)
+    }
+
+    const handleClickFingerprint = () => {
+         axios.post(`${ip}/api/terminal/fingerprint/${accessFinger}`)
+            .then(res => {
+                console.log(res.data);
+                setRequestedFinger(res.data);
             })
             .catch(err=>{
-                setLoading(false)
+                // setLoading(false)
             })
     }
 
     const onFinish = (value) => {
-        const { type } = value;
-        const newData = [...data, {
-            key:data.length+1,
-            type: type
-        }]
-        setData(newData)
-        setIsOpenAddFingerprint(!isOpenAddFingerprint);
+                const { name } = value;
+                if(requestedFinger) {
+                    setData([...data, {key: data.length + 1, name: name, file: requestedFinger}])
+                    setIsOpenAddFingerprint(!isOpenAddFingerprint);
+                    setRequestedFinger(null);
+                }
     }
 
     const onFinishFailed = (error) => {
@@ -71,7 +80,7 @@ const AddFingerprint = ({isOpenAddFingerprint, setIsOpenAddFingerprint, data, se
                     <div className='access_control_add_staff_terminal_modal_body'>
                         <Form.Item
                             label="Barmoq izi nomi"
-                            name="fingrprint_name"
+                            name="name"
                             rules={[
                                 {
                                     required: true,
@@ -96,37 +105,49 @@ const AddFingerprint = ({isOpenAddFingerprint, setIsOpenAddFingerprint, data, se
                             >
                                 <Select
                                     size="large"
+                                    value={accessFinger}
+                                    onChange={onChangeFingerprint}
                                     placeholder = "Terminalni tanlang"
                                 >
-                                    <Select.Option value="1">HiTech</Select.Option>
-                                    <Select.Option value="2">SoftData</Select.Option>
+                                    <Select.Option value="">Tanlash</Select.Option>
+                                    {
+                                        terminalIPList?.map((item, index) => (
+                                            <Select.Option key = {index} value={item.value}>{item.title}</Select.Option>
+                                        ))
+                                    }
                                 </Select>
                             </Form.Item>
                             <button
                                 type='button'
                                 className="fingerprint_button"
-                                style={{cursor: `${accessFinger === '' ? 'not-allowed' : 'pointer'}`}}
+                                style={{cursor: `${requestedFinger === '' ? 'not-allowed' : 'pointer'}`,
+                                    color: `${requestedFinger === '' ? '#000':'#fff'}`,
+                                    backgroundColor: `${requestedFinger === '' ? '#fff':'#29B85D'}`
+                                }}
                                 onClick={handleClickFingerprint}
-                                disabled={accessFinger === '' ? true : false}
                             >
                                 <img style={{marginRight: 8}} src={finger2} alt=""/>
                                 Barmoq izi olish
                             </button>
                         </div>
 
-                        {/*<div className="finger_info">*/}
-                        {/*    <div className="round">*/}
-                        {/*        <BiCheck style={{color: 'white', fontSize: 20}} />*/}
-                        {/*    </div>*/}
-                        {/*    <h3>Barmoq izi qo’shildi</h3>*/}
-                        {/*</div>*/}
+                        {
+                            requestedFinger?
+                                <div className="finger_info">
+                                    <div className="round">
+                                        <BiCheck style={{color: 'white', fontSize: 20}} />
+                                    </div>
+                                    <h3>Barmoq izi qo’shildi</h3>
+                                </div>
+                                :
+                                <div className="finger_info_close">
+                                    <div className="round_close">
+                                        <IoCloseSharp style={{color: 'white', fontSize: 20}} />
+                                    </div>
+                                    <h3>Barmoq izi qo’shilmagan</h3>
+                                </div>
+                        }
 
-                        {/*<div className="finger_info_close">*/}
-                        {/*    <div className="round_close">*/}
-                        {/*        <IoCloseSharp style={{color: 'white', fontSize: 20}} />*/}
-                        {/*    </div>*/}
-                        {/*    <h3>Barmoq izi qo’shildi</h3>*/}
-                        {/*</div>*/}
 
                         <div className='addFinger_save_button'>
                             <button className="addFinger_button" type='submit'>Saqlash</button>

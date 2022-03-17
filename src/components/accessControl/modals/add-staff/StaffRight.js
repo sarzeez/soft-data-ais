@@ -83,7 +83,7 @@ const StaffRight = ({ data, setData, terminalIPList }) => {
                         style={{cursor: `${accessDoors === '' ? 'not-allowed' : 'pointer'}`,
                             color: `${accessDoors === '' ? '#000':'#fff'}`,
                             backgroundColor: `${accessDoors === '' ? '#bebebe':'#29B85D'}`
-                    } }
+                    }}
                         onClick={handleClickImageDownload}
                         disabled={accessDoors === '' ? true : false}
                     >

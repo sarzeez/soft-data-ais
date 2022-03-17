@@ -10,8 +10,8 @@ const columns = [
         align: 'center'
     },
     {
-        title: 'Turi',
-        dataIndex: 'type',
+        title: 'Nomi',
+        dataIndex: 'name',
         align: 'center'
     },
 ];

@@ -6,14 +6,8 @@ import AddTerminal from "../add-terminal/AddTerminal";
 
 const StaffMiddle = ({ setIsOpenAddTerminal, isOpenAddTerminal }) => {
 
-    const [selectedItems, setSelectedItems] = React.useState([])
-    const [data, setData] = React.useState([
-        {
-            key: 1,
-            type: `Mifare1`,
-            id: `card1`
-        }
-    ])
+    const [selectedItems, setSelectedItems] = React.useState([]);
+    const [data, setData] = React.useState([]);
 
     const handleDeleteTerminal = () => {
         const selectedItemsKey = selectedItems.map(item => item.key)
