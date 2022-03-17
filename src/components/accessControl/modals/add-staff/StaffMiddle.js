@@ -2,20 +2,34 @@ import React from 'react';
 import CardTable from './CardTable';
 
 import './staffMiddle.css'
+import AddTerminal from "../add-terminal/AddTerminal";
 
-const StaffMiddle = ({ setIsOpenAddTerminal }) => {
+const StaffMiddle = ({ setIsOpenAddTerminal, isOpenAddTerminal }) => {
 
     const [selectedItems, setSelectedItems] = React.useState([])
-    const [data, setData] = React.useState([])
+    const [data, setData] = React.useState([
+        {
+            key: 1,
+            type: `Mifare1`,
+            id: `card1`
+        }
+    ])
 
     const handleDeleteTerminal = () => {
         const selectedItemsKey = selectedItems.map(item => item.key)
         const new_data = data.filter((item) => !selectedItemsKey.includes(item.key))
         setData(new_data)
     }
-    
+
     return (
        <>
+           <AddTerminal
+               data={data}
+               setData={setData}
+               isOpenAddTerminal={isOpenAddTerminal}
+               setIsOpenAddTerminal={setIsOpenAddTerminal}
+           />
+
            <div className='access_control_add_staff_modal_body_item_right'>
                <CardTable
                    data = {data}

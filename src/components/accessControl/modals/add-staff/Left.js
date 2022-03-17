@@ -187,8 +187,8 @@ const Left = ({ data, setData, terminalIPList }) => {
                 <Switch
                     checkedChildren="Ha"
                     unCheckedChildren="Yo'q"
-                    checked={data.notify}
-                    onChange={(value) => setData({...data, notify: value})}
+                    checked={data.notification}
+                    onChange={(value) => setData({...data, notification: value})}
                 />
             </div>
         </div>

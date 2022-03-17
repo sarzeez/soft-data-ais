@@ -37,7 +37,7 @@ function AddStaff(props) {
         image: '',
         card_id: '',
         card_type: '',
-        notify: ''
+        notification: ''
     })
 
     const [data, setData] = useState({
@@ -52,14 +52,14 @@ function AddStaff(props) {
         image: '',
         card_id: '',
         card_type: '',
-        notify: false
+        notification: false
     })
 
     const onFinish = (value) => {
         const formData = {
             ...value,
             image: data.image,
-            notify: data.notify
+            notification: data.notification
         }
 
         const fd = new FormData()
@@ -104,13 +104,6 @@ function AddStaff(props) {
             overlayClassName="myoverlay"
             closeTimeoutMS={300}
         >
-            <AddTerminal isOpenAddTerminal={isOpenAddTerminal} setIsOpenAddTerminal={setIsOpenAddTerminal} />
-            <AddFingerprint
-                isOpenAddFingerprint={isOpenAddFingerprint}
-                setIsOpenAddFingerprint={setIsOpenAddFingerprint}
-                data = {data} setData = {setData}
-            />
-
             <Form
                 name="basic"
                 layout="vertical"
@@ -136,11 +129,11 @@ function AddStaff(props) {
                         <div className="access_control_add_staff_modal_body_item_2">
                             <div className="access_control_add_staff_modal_body_item">
                                 <p className="access_control_add_staff_modal_body_item_title">ID karta</p>
-                                <StaffMiddle data = {data} setData = {setData} setIsOpenAddTerminal = {setIsOpenAddTerminal} />
+                                <StaffMiddle data = {data} setData = {setData} isOpenAddTerminal={isOpenAddTerminal} setIsOpenAddTerminal = {setIsOpenAddTerminal} />
                             </div>
                             <div className="access_control_add_staff_modal_body_item">
                                 <p className="access_control_add_staff_modal_body_item_title">Barmoq izi</p>
-                                <MiddleBottom data = {data} setData = {setData} setIsOpenAddFingerprint={setIsOpenAddFingerprint} />
+                                <MiddleBottom data = {data} setData = {setData} isOpenAddFingerprint={isOpenAddFingerprint} setIsOpenAddFingerprint={setIsOpenAddFingerprint} />
                             </div>
                         </div>
 

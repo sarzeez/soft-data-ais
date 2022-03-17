@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import {Form, Input, Select,} from "antd";
+import {ip} from "../../../../ip";
+
 import Modal from "react-modal";
 import finger2 from '../../../../images/finger2.svg';
 
@@ -7,7 +9,6 @@ import finger2 from '../../../../images/finger2.svg';
 import './fingerprint.css';
 import {BiCheck, IoCloseSharp} from "react-icons/all";
 import axios from "axios";
-import {ip} from "../../../../ip";
 
 const AddFingerprint = ({isOpenAddFingerprint, setIsOpenAddFingerprint, data, setData}) => {
 
@@ -29,17 +30,26 @@ const AddFingerprint = ({isOpenAddFingerprint, setIsOpenAddFingerprint, data, se
     }
 
     const onFinish = (value) => {
-        console.log(value)
+        const { type } = value;
+        const newData = [...data, {
+            key:data.length+1,
+            type: type
+        }]
+        setData(newData)
+        setIsOpenAddFingerprint(!isOpenAddFingerprint);
     }
 
     const onFinishFailed = (error) => {
         console.log(error)
     }
+    const cancel = () =>{
+        setIsOpenAddFingerprint(!isOpenAddFingerprint);
+    }
 
     return (
         <Modal
             isOpen={isOpenAddFingerprint}
-            onRequestClose={() => setIsOpenAddFingerprint(false)}
+            onRequestClose={() => setIsOpenAddFingerprint(cancel)}
             contentLabel="My dialog"
             className="mymodal"
             overlayClassName="myoverlay"

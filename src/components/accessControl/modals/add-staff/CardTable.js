@@ -2,30 +2,6 @@ import React from 'react'
 import { Table } from 'antd';
 import './staffMiddle.css';
 
-const dataSource = [
-    {
-        key: '1',
-        type : 'John Brown',
-        card_number: 32,
-    },
-    {
-        key: '1',
-        type : 'John Brown',
-        card_number: 32,
-    },
-    {
-        key: '1',
-        type : 'John Brown',
-        card_number: 32,
-    },
-    {
-        key: '1',
-        type : 'John Brown',
-        card_number: 32,
-    },
-
-];
-
 const columns = [
   {
     title: 'T/r',
@@ -40,7 +16,7 @@ const columns = [
   },
   {
     title: 'Karta raqami',
-    dataIndex: 'card_number',
+    dataIndex: 'id',
     align: 'center'
   },
 ];
@@ -64,7 +40,7 @@ const CardTable = ({data, setSelectedItems}) => {
         <Table
           columns={columns}
           rowSelection={rowSelection}
-          dataSource={dataSource}
+          dataSource={data}
           pagination={false}
           // style={{minHeight: '140px'}}
           scroll={{ y: 105 }}

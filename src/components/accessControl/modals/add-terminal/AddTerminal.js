@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Modal from "react-modal";
 import { Form, Input, Select } from 'antd';
 import {useTranslation} from "react-i18next";
@@ -15,12 +15,21 @@ const AddTerminal = (props) => {
     const {
         isOpenAddTerminal,
         setIsOpenAddTerminal,
-
+        data,
+        setData
     }=props
 
     const {t} = useTranslation()
+
     const onFinish = (value) => {
-        console.log(value)
+        const { id, type } = value;
+        const newData = [...data, {
+            key: data.length + 1,
+            type: type,
+            id: id
+        }]
+        setData(newData)
+        setIsOpenAddTerminal(!isOpenAddTerminal);
     }
 
     const onFinishFailed = (error) => {
@@ -29,18 +38,16 @@ const AddTerminal = (props) => {
 
     const cancel = () =>{
         setIsOpenAddTerminal(!isOpenAddTerminal)
-
     }
 
     return (
         <Modal
             isOpen={isOpenAddTerminal}
-            onRequestClose={() => setIsOpenAddTerminal(false)}
+            onRequestClose={() => setIsOpenAddTerminal(cancel)}
             contentLabel="My dialog"
             className="mymodal"
             overlayClassName="myoverlay"
             closeTimeoutMS={300}
-            shouldCloseOnOverlayClick={false}
         >
             <Form
                 name="basic"
@@ -58,7 +65,7 @@ const AddTerminal = (props) => {
                     <div className='access_control_add_staff_terminal_modal_body'>
                         <Form.Item
                             label="Karta turi:"
-                            name="card_type"
+                            name="type"
                             rules={[
                             {
                                 required: true,
@@ -69,14 +76,14 @@ const AddTerminal = (props) => {
                             <Select
                                 size="large"
                             >
-                                <Select.Option value="1">Mifare</Select.Option>
-                                <Select.Option value="2">EM-Marin</Select.Option>
-                                <Select.Option value="3">RFID</Select.Option>
+                                <Select.Option value="Mifare">Mifare</Select.Option>
+                                <Select.Option value="EM-Marin">EM-Marin</Select.Option>
+                                <Select.Option value="RFID">RFID</Select.Option>
                             </Select>
                         </Form.Item>
                         <Form.Item
                             label="Karta raqami"
-                            name="card_id"
+                            name="id"
                             rules={[
                             {
                                 required: true,
