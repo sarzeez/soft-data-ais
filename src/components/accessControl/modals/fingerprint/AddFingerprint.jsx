@@ -19,13 +19,12 @@ const AddFingerprint = (props) => {
         terminalIPList
     } = props;
 
-
     const [requestedFinger, setRequestedFinger] = useState(null);
-    const [accessFinger, setAccsessFinger] = useState('');
+    const [accessFinger, setAccessFinger] = useState('');
 
 
     const onChangeFingerprint = (a) =>{
-        setAccsessFinger(a)
+        setAccessFinger(a)
     }
 
     const handleClickFingerprint = () => {
@@ -120,9 +119,9 @@ const AddFingerprint = (props) => {
                             <button
                                 type='button'
                                 className="fingerprint_button"
-                                style={{cursor: `${requestedFinger === '' ? 'not-allowed' : 'pointer'}`,
-                                    color: `${requestedFinger === '' ? '#000':'#fff'}`,
-                                    backgroundColor: `${requestedFinger === '' ? '#fff':'#29B85D'}`
+                                style={{
+                                    color: `${accessFinger === '' ? '#000':'#fff'}`,
+                                    backgroundColor: `${accessFinger === '' ? '#fff':'#29B85D'}`
                                 }}
                                 onClick={handleClickFingerprint}
                             >

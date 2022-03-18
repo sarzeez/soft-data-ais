@@ -89,18 +89,13 @@ const StaffTable = (props) => {
             align: 'center'
         },
         {
-            title: t('Cheklov'),
-            dataIndex: 'limit',
+            title: t('ID karta'),
+            dataIndex: 'type',
             align: 'center'
         },
         {
-            title: t('ID karta turi'),
-            dataIndex: 'card_type',
-            align: 'center'
-        },
-        {
-            title: t('Karta raqami'),
-            dataIndex: 'card_id',
+            title: t('Barmoq izi'),
+            dataIndex: 'id',
             align: 'center'
         },
         {

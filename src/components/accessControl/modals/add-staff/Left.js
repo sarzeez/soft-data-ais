@@ -3,13 +3,9 @@ import {Form, Input, Select, Checkbox, DatePicker, TreeSelect, Switch} from 'ant
 import {useTranslation} from "react-i18next";
 import './left.css';
 
-
 const { SHOW_PARENT } = TreeSelect;
 
-
-
 const Left = ({ data, setData, terminalIPList }) => {
-
 
     const {t} = useTranslation()
     const [state, setState] = useState([])

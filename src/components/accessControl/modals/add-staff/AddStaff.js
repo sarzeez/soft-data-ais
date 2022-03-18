@@ -10,10 +10,7 @@ import './addStaff.css';
 import Left from "./Left";
 import StaffRight from "./StaffRight";
 import StaffMiddle from "./StaffMiddle";
-import AddTerminal from '../add-terminal/AddTerminal'
 import MiddleBottom from "./MiddleBottom";
-import AddFingerprint from "../fingerprint/AddFingerprint";
-
 
 Modal.setAppElement("#root");
 
@@ -53,14 +50,15 @@ function AddStaff(props) {
         card_id: '',
         card_type: '',
         notification: false,
-        cards: [{}],
+        cards: [],
     })
 
     const onFinish = (value) => {
         const formData = {
             ...value,
             image: data.image,
-            notification: data.notification
+            notification: data.notification,
+
         }
 
         const fd = new FormData()
@@ -99,11 +97,12 @@ function AddStaff(props) {
     return (
         <Modal
             isOpen={isOpenAddStaff}
-            onRequestClose={() => setIsOpenAddStaff(!isOpenAddStaff)}
+            onRequestClose={() => setIsOpenAddStaff(false)}
             contentLabel="My dialog"
             className="mymodal"
             overlayClassName="myoverlay"
             closeTimeoutMS={300}
+            // shouldCloseOnOverlayClick={false}
         >
             <Form
                 name="basic"
@@ -123,7 +122,6 @@ function AddStaff(props) {
                             <div className="access_control_add_staff_modal_body_item">
                                 <p className="access_control_add_staff_modal_body_item_title">{t("Ma'lumotlar")}</p>
                                 <Left data = {data} setData = {setData} terminalIPList = {terminalIPList} />
-
                             </div>
                         </div>
 
