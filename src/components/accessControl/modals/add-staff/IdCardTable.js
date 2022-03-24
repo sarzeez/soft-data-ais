@@ -22,7 +22,7 @@ const columns = [
 ];
 
 
-const CardTable = ({data, setSelectedItems}) => {
+const IdCardTable = ({data, setSelectedItems}) => {
 
     const [state, setState] = React.useState({selectedRowKeys: []})
     const onSelectChange = (selectedRowKeys, a) => {
@@ -48,4 +48,4 @@ const CardTable = ({data, setSelectedItems}) => {
     )
 }
 
-export default CardTable
+export default IdCardTable

@@ -22,6 +22,7 @@ function AddStaff(props) {
     const [ isOpenAddTerminal, setIsOpenAddTerminal] = useState(false)
     const [ isOpenAddFingerprint,setIsOpenAddFingerprint] = useState(false)
     const [terminalIPList, setTerminalIPList] = useState([])
+    const [card, setCard] = useState([])
     const [initialValues, ] = useState({
         fullname: '',
         gender: '',
@@ -51,6 +52,7 @@ function AddStaff(props) {
         card_type: '',
         notification: false,
         cards: [],
+        fingerprint: [],
     })
 
     const onFinish = (value) => {
@@ -128,7 +130,7 @@ function AddStaff(props) {
                         <div className="access_control_add_staff_modal_body_item_2">
                             <div className="access_control_add_staff_modal_body_item">
                                 <p className="access_control_add_staff_modal_body_item_title">ID karta</p>
-                                <StaffMiddle data = {data} setData = {setData} isOpenAddTerminal={isOpenAddTerminal} setIsOpenAddTerminal = {setIsOpenAddTerminal} />
+                                <StaffMiddle isOpenAddTerminal={isOpenAddTerminal} setIsOpenAddTerminal = {setIsOpenAddTerminal} />
                             </div>
                             <div className="access_control_add_staff_modal_body_item">
                                 <p className="access_control_add_staff_modal_body_item_title">Barmoq izi</p>

@@ -3,7 +3,7 @@ import FingerTable from "./FingerTable";
 import finger from '../../../../images/finger.svg';
 
 import './middleBottom.css';
-import AddFingerprint from "../fingerprint/AddFingerprint";
+import FingerprintModal from "../fingerprint/FingerprintModal";
 
 const MiddleBottom = ({isOpenAddFingerprint, setIsOpenAddFingerprint, terminalIPList }) => {
 
@@ -18,7 +18,7 @@ const MiddleBottom = ({isOpenAddFingerprint, setIsOpenAddFingerprint, terminalIP
 
     return (
         <>
-            <AddFingerprint
+            <FingerprintModal
                 isOpenAddFingerprint={isOpenAddFingerprint}
                 setIsOpenAddFingerprint={setIsOpenAddFingerprint}
                 data = {data} setData = {setData}

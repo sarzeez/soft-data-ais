@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Table, Image  } from 'antd';
 import moment from 'moment';
 import { useSelector } from "react-redux";
@@ -95,7 +95,7 @@ const StaffTable = (props) => {
         },
         {
             title: t('Barmoq izi'),
-            dataIndex: 'id',
+            dataIndex: 'card_id',
             align: 'center'
         },
         {

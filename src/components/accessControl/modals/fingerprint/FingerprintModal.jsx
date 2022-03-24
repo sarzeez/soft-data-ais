@@ -9,7 +9,7 @@ import {BiCheck, IoCloseSharp} from "react-icons/all";
 
 import './fingerprint.css';
 
-const AddFingerprint = (props) => {
+const FingerprintModal = (props) => {
 
     const {
         isOpenAddFingerprint,
@@ -158,4 +158,4 @@ const AddFingerprint = (props) => {
     )
 };
 
-export default AddFingerprint;
+export default FingerprintModal;

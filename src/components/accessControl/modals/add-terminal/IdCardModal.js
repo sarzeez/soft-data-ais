@@ -1,8 +1,7 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Modal from "react-modal";
 import { Form, Input, Select } from 'antd';
 import {useTranslation} from "react-i18next";
-
 
 
 import './terminal.css'
@@ -10,7 +9,7 @@ import './terminal.css'
 Modal.setAppElement("#root");
 
 
-const AddTerminal = (props) => {
+const IdCardModal = (props) => {
 
     const {
         isOpenAddTerminal,
@@ -107,4 +106,4 @@ const AddTerminal = (props) => {
     )
 };
 
-export default AddTerminal;
+export default IdCardModal;

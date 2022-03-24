@@ -1,10 +1,15 @@
 import React from 'react';
-import CardTable from './CardTable';
+import IdCardTable from './IdCardTable';
 
 import './staffMiddle.css'
-import AddTerminal from "../add-terminal/AddTerminal";
+import IdCardModal from "../add-terminal/IdCardModal";
 
-const StaffMiddle = ({ setIsOpenAddTerminal, isOpenAddTerminal }) => {
+const StaffMiddle = (props) => {
+   const {
+       setIsOpenAddTerminal,
+       isOpenAddTerminal
+   }=props
+
 
     const [selectedItems, setSelectedItems] = React.useState([]);
     const [data, setData] = React.useState([]);
@@ -17,7 +22,7 @@ const StaffMiddle = ({ setIsOpenAddTerminal, isOpenAddTerminal }) => {
 
     return (
        <>
-           <AddTerminal
+           <IdCardModal
                data={data}
                setData={setData}
                isOpenAddTerminal={isOpenAddTerminal}
@@ -25,7 +30,7 @@ const StaffMiddle = ({ setIsOpenAddTerminal, isOpenAddTerminal }) => {
            />
 
            <div className='access_control_add_staff_modal_body_item_right'>
-               <CardTable
+               <IdCardTable
                    data = {data}
                    setSelectedItems = {setSelectedItems}
                />
