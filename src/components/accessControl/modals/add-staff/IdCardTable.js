@@ -42,8 +42,8 @@ const IdCardTable = ({card, setSelectedItems}) => {
           rowSelection={rowSelection}
           dataSource={card}
           pagination={false}
-          // style={{minHeight: '140px'}}
-          scroll={{ y: 105 }}
+          style={{minHeight: '170px'}}
+          scroll={{ y: 129 }}
         />
     )
 }

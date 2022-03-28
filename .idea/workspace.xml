@@ -3,15 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="630af48d-1ca7-4883-8e3d-17f8fed27d11" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/FingerTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/FingerTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/IdCardTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/IdCardTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/MiddleBottom.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/MiddleBottom.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffMiddle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffMiddle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-terminal/IdCardModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-terminal/IdCardModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/fingerprint/FingerprintModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/fingerprint/FingerprintModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/fingerprint/fingerprint.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/fingerprint/fingerprint.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/staffMiddle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/staffMiddle.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +128,7 @@
       <workItem from="1648094422166" duration="8488000" />
       <workItem from="1648180546593" duration="8685000" />
       <workItem from="1648267290203" duration="12708000" />
-      <workItem from="1648440652382" duration="1196000" />
+      <workItem from="1648440652382" duration="12036000" />
     </task>
     <servers />
   </component>

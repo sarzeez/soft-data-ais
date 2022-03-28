@@ -37,8 +37,8 @@ const FingerTable = ({fingerPrint, setSelectedItems}) => {
             rowSelection={rowSelection}
             dataSource={fingerPrint}
             pagination={false}
-            // style={{minHeight: '190px'}}
-            scroll={{ y: 105 }}
+            style={{minHeight: '170px'}}
+            scroll={{ y: 129 }}
         />
     )
 }

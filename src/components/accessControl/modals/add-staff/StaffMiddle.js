@@ -31,10 +31,12 @@ const StaffMiddle = (props) => {
            />
 
            <div className='access_control_add_staff_modal_body_item_right'>
-               <IdCardTable
-                   card = {card}
-                   setSelectedItems = {setSelectedItems}
-               />
+
+                  <IdCardTable
+                      card = {card}
+                      setSelectedItems = {setSelectedItems}
+                  />
+
                <div className='access_control_add_staff_modal_body_item_right_buttons'>
                    <button onClick={() => setIsOpenAddTerminal(true)} type='button'>ID karta qo’shish</button>
                    <button onClick={handleDeleteTerminal} type='button'>O’chirish</button>
