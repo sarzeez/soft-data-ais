@@ -1,37 +1,38 @@
 import React from 'react';
 import IdCardTable from './IdCardTable';
+import IdCardModal from "../add-terminal/IdCardModal";
 
 import './staffMiddle.css'
-import IdCardModal from "../add-terminal/IdCardModal";
 
 const StaffMiddle = (props) => {
    const {
        setIsOpenAddTerminal,
-       isOpenAddTerminal
+       isOpenAddTerminal,
+       card,
+       setCard,
    }=props
 
 
     const [selectedItems, setSelectedItems] = React.useState([]);
-    const [data, setData] = React.useState([]);
 
     const handleDeleteTerminal = () => {
         const selectedItemsKey = selectedItems.map(item => item.key)
-        const new_data = data.filter((item) => !selectedItemsKey.includes(item.key))
-        setData(new_data)
+        const new_data = card.filter((item) => !selectedItemsKey.includes(item.key))
+        setCard(new_data)
     }
 
     return (
        <>
            <IdCardModal
-               data={data}
-               setData={setData}
+               card={card}
+               setCard={setCard}
                isOpenAddTerminal={isOpenAddTerminal}
                setIsOpenAddTerminal={setIsOpenAddTerminal}
            />
 
            <div className='access_control_add_staff_modal_body_item_right'>
                <IdCardTable
-                   data = {data}
+                   card = {card}
                    setSelectedItems = {setSelectedItems}
                />
                <div className='access_control_add_staff_modal_body_item_right_buttons'>

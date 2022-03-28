@@ -90,13 +90,39 @@ const StaffTable = (props) => {
         },
         {
             title: t('ID karta'),
-            dataIndex: 'type',
-            align: 'center'
+            // dataIndex: 'cards',
+            align: 'center',
+            render: (text, record) => (
+                <div className='door_ip_length'>
+                    <p>
+                        {record.cards.length}
+                    </p>
+                    <div className='door_ip_length_hover'>
+                        {record.cards.map(e => e.id).join(' ')}
+                        <div className='door_ip_length_hover_rectangel'>
+
+                        </div>
+                    </div>
+                </div>
+            )
         },
         {
             title: t('Barmoq izi'),
-            dataIndex: 'card_id',
-            align: 'center'
+            // dataIndex: 'card_id',
+            align: 'center',
+            render: (text, record) => (
+                <div className='door_ip_length'>
+                    <p>
+                        {record.fingerprint.length}
+                    </p>
+                    <div className='door_ip_length_hover'>
+                        {record.fingerprint.map(e => e.name).join(' ')}
+                        <div className='door_ip_length_hover_rectangel'>
+
+                        </div>
+                    </div>
+                </div>
+            )
         },
         {
             title: t('Ruxsat etilgan muddat'),

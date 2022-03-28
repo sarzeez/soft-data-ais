@@ -19,10 +19,12 @@ function AddStaff(props) {
     const { isOpenAddStaff, setIsOpenAddStaff  } = props;
 
     const {t} = useTranslation()
-    const [ isOpenAddTerminal, setIsOpenAddTerminal] = useState(false)
-    const [ isOpenAddFingerprint,setIsOpenAddFingerprint] = useState(false)
-    const [terminalIPList, setTerminalIPList] = useState([])
-    const [card, setCard] = useState([])
+    const [ isOpenAddTerminal, setIsOpenAddTerminal] = useState(false);
+    const [ isOpenAddFingerprint,setIsOpenAddFingerprint] = useState(false);
+    const [terminalIPList, setTerminalIPList] = useState([]);
+    const [card, setCard] = useState([]);
+    const [fingerPrint, setFingerPrint] = useState([]);
+    console.log(fingerPrint)
     const [initialValues, ] = useState({
         fullname: '',
         gender: '',
@@ -35,7 +37,7 @@ function AddStaff(props) {
         image: '',
         card_id: '',
         card_type: '',
-        notification: ''
+        notification: false,
     })
 
     const [data, setData] = useState({
@@ -51,26 +53,26 @@ function AddStaff(props) {
         card_id: '',
         card_type: '',
         notification: false,
-        cards: [],
-        fingerprint: [],
     })
+
 
     const onFinish = (value) => {
         const formData = {
             ...value,
             image: data.image,
             notification: data.notification,
-
         }
-
-        const fd = new FormData()
-        Object.keys(formData).forEach(i => fd.append(i, formData[i]))
+        const fd = new FormData();
+        Object.keys(formData).forEach(i => fd.append(i, formData[i]));
+        fd.append("cards", JSON.stringify(card));
+        fd.append("fingerprint", JSON.stringify(fingerPrint));
 
         axios.post(`${ip}/api/terminal/adduser`, fd)
             .then(res => {
                 setIsOpenAddStaff(false)
             })
             .catch(err => {
+                console.log(err?.response?.data)
             })
     }
 
@@ -95,6 +97,7 @@ function AddStaff(props) {
         }
         getData()
     }, [])
+
 
     return (
         <Modal
@@ -130,11 +133,11 @@ function AddStaff(props) {
                         <div className="access_control_add_staff_modal_body_item_2">
                             <div className="access_control_add_staff_modal_body_item">
                                 <p className="access_control_add_staff_modal_body_item_title">ID karta</p>
-                                <StaffMiddle isOpenAddTerminal={isOpenAddTerminal} setIsOpenAddTerminal = {setIsOpenAddTerminal} />
+                                <StaffMiddle card={card} setCard={setCard} isOpenAddTerminal={isOpenAddTerminal} setIsOpenAddTerminal = {setIsOpenAddTerminal} />
                             </div>
                             <div className="access_control_add_staff_modal_body_item">
                                 <p className="access_control_add_staff_modal_body_item_title">Barmoq izi</p>
-                                <MiddleBottom terminalIPList={terminalIPList} data = {data} setData = {setData} isOpenAddFingerprint={isOpenAddFingerprint} setIsOpenAddFingerprint={setIsOpenAddFingerprint} />
+                                <MiddleBottom terminalIPList={terminalIPList} fingerPrint={fingerPrint} setFingerPrint={setFingerPrint} isOpenAddFingerprint={isOpenAddFingerprint} setIsOpenAddFingerprint={setIsOpenAddFingerprint} />
                             </div>
                         </div>
 

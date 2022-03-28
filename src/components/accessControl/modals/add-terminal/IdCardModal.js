@@ -14,20 +14,20 @@ const IdCardModal = (props) => {
     const {
         isOpenAddTerminal,
         setIsOpenAddTerminal,
-        data,
-        setData
+        card,
+        setCard
     }=props
 
     const {t} = useTranslation()
 
     const onFinish = (value) => {
         const { id, type } = value;
-        const newData = [...data, {
-            key: data.length + 1,
+        const newData = [...card, {
+            key: card.length + 1,
             type: type,
             id: id
         }]
-        setData(newData)
+        setCard(newData)
         setIsOpenAddTerminal(!isOpenAddTerminal);
     }
 

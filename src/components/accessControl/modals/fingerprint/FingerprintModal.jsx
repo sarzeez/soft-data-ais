@@ -14,9 +14,9 @@ const FingerprintModal = (props) => {
     const {
         isOpenAddFingerprint,
         setIsOpenAddFingerprint,
-        data,
-        setData,
-        terminalIPList
+        terminalIPList,
+        fingerPrint,
+        setFingerPrint
     } = props;
 
     const [requestedFinger, setRequestedFinger] = useState(null);
@@ -30,7 +30,7 @@ const FingerprintModal = (props) => {
     const handleClickFingerprint = () => {
          axios.post(`${ip}/api/terminal/fingerprint/${accessFinger}`)
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 setRequestedFinger(res.data);
             })
             .catch(err=>{
@@ -41,7 +41,7 @@ const FingerprintModal = (props) => {
     const onFinish = (value) => {
                 const { name } = value;
                 if(requestedFinger) {
-                    setData([...data, {key: data.length + 1, name: name, file: requestedFinger}])
+                    setFingerPrint([...fingerPrint, {key: fingerPrint.length + 1, name: name, file_name: requestedFinger}])
                     setIsOpenAddFingerprint(!isOpenAddFingerprint);
                     setRequestedFinger(null);
                 }
@@ -146,7 +146,6 @@ const FingerprintModal = (props) => {
                                     <h3>Barmoq izi qo’shilmagan</h3>
                                 </div>
                         }
-
 
                         <div className='addFinger_save_button'>
                             <button className="addFinger_button" type='submit'>Saqlash</button>

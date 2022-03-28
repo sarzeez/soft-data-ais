@@ -5,15 +5,22 @@ import finger from '../../../../images/finger.svg';
 import './middleBottom.css';
 import FingerprintModal from "../fingerprint/FingerprintModal";
 
-const MiddleBottom = ({isOpenAddFingerprint, setIsOpenAddFingerprint, terminalIPList }) => {
+const MiddleBottom = (props) => {
+
+    const {
+        isOpenAddFingerprint,
+        setIsOpenAddFingerprint,
+        terminalIPList,
+        fingerPrint,
+        setFingerPrint
+    }=props
 
     const [selectedItems, setSelectedItems] = React.useState([]);
-    const [data, setData] = React.useState([]);
 
     const handleDeleteTerminal = () => {
         const selectedItemsKey = selectedItems.map(item => item.key)
-        const new_data = data.filter((item) => !selectedItemsKey.includes(item.key))
-        setData(new_data)
+        const new_data = fingerPrint.filter((item) => !selectedItemsKey.includes(item.key))
+        setFingerPrint(new_data)
     }
 
     return (
@@ -21,12 +28,12 @@ const MiddleBottom = ({isOpenAddFingerprint, setIsOpenAddFingerprint, terminalIP
             <FingerprintModal
                 isOpenAddFingerprint={isOpenAddFingerprint}
                 setIsOpenAddFingerprint={setIsOpenAddFingerprint}
-                data = {data} setData = {setData}
+                fingerPrint = {fingerPrint} setFingerPrint = {setFingerPrint}
                 terminalIPList={terminalIPList}
             />
         <div className='access_control_add_staff_modal_body_item_fingerprint'>
             <FingerTable
-                data = {data}
+                fingerPrint = {fingerPrint}
                 setSelectedItems = {setSelectedItems}
             />
             <div className='access_control_add_staff_modal_body_item_fingerprint_buttons'>
