@@ -34,13 +34,13 @@ const AccessControlSetting = () => {
     const [isOpenAddTerminal, setIsOpenAddTerminal] = useState(false)
 
     // terminal
-    const [terminalPaginationLimit, setTerminalPaginationLimit] = useState(10)
+    const [terminalPaginationLimit, setTerminalPaginationLimit] = useState(14)
     const [terminalPaginationCurrent, setTerminalPaginationCurrent] = useState(1)
     const [terminalData, setTerminalData] = useState([])
     const [terminalTotal, setTerminalTotal] = useState(null)
 
     // staff
-    const [staffPaginationLimit, setStaffPaginationLimit] = useState(10)
+    const [staffPaginationLimit, setStaffPaginationLimit] = useState(14)
     const [staffPaginationCurrent, setStaffPaginationCurrent] = useState(1)
     const [staffData, setStaffData] = useState([])
     const [staffTotal, setStaffTotal] = useState(null)
@@ -110,7 +110,7 @@ const AccessControlSetting = () => {
     ))
         setTerminalData(newData)
     }
-
+    console.log(terminalData)
     // get staff data
     const getStaffData = async (id) => {
         const response = await axios.get(`${ip}/api/terminal/getusers/${staffPaginationLimit}/${id}`)

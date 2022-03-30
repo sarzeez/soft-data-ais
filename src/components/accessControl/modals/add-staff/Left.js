@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {Form, Input, Select, DatePicker, TreeSelect, Switch} from 'antd';
 import {useTranslation} from "react-i18next";
 import './left.css';
+import moment from "moment";
 
 const { SHOW_PARENT } = TreeSelect;
 
@@ -102,6 +103,7 @@ const Left = ({ data, setData, terminalIPList }) => {
                 >
                     <Select
                         size="large"
+
                     >
                         <Select.Option value="1">{t("Oddiy xodim")}</Select.Option>
                         <Select.Option value="2">{t("Direktor")}</Select.Option>
@@ -163,6 +165,9 @@ const Left = ({ data, setData, terminalIPList }) => {
                     ]}
                 >
                     <DatePicker
+                        placeholder={`${moment(new Date()).format(
+                            "DD.MM.YYYY"
+                        )}`}
                         size="large"
                         style={{borderRadius: '5px'}}
                     />
@@ -178,6 +183,9 @@ const Left = ({ data, setData, terminalIPList }) => {
                     ]}
                 >
                     <DatePicker
+                        placeholder={`${moment(new Date()).format(
+                            "DD.MM.YYYY"
+                        )}`}
                         size="large"
                         style={{borderRadius: '5px'}}
                     />

@@ -18,7 +18,7 @@ const CameraPagenation = (props) => {
         total = {accessTableTotal}
         showSizeChanger={true}
         pageSize={accessTablePaginationLimit}
-        pageSizeOptions={[1]}
+        pageSizeOptions={[14, 50]}
     />;
 }
 

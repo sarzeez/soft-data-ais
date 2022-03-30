@@ -176,17 +176,16 @@ const AddTerminalModal = ( props ) => {
                                 size="large"
                                 placeholder="Tanlang"
                             >
-                                <Select.Option value="0">Yuz</Select.Option>
-                                <Select.Option value="1">Barmoq izi</Select.Option>
-                                <Select.Option value="2">ID karta</Select.Option>
-                                <Select.Option value="3">Yuz va Barmoq izi</Select.Option>
-                                <Select.Option value="4">Yuz yoki Barmoq izi</Select.Option>
-                                <Select.Option value="5">Yuz va ID karta</Select.Option>
-                                <Select.Option value="6">Yuz yoki ID karta</Select.Option>
-                                <Select.Option value="7">Barmoq izi va ID karta</Select.Option>
-                                <Select.Option value="8">Barmoq izi yoki ID karta</Select.Option>
-                                {/*<Select.Option value="9">Yuz va Barmoq izi va ID karta</Select.Option>*/}
-                                <Select.Option value="10">Yuz yoki Barmoq izi yoki ID karta</Select.Option>
+                                <Select.Option value="1">{t("Yuz")}</Select.Option>
+                                <Select.Option value="2">{t("Barmoq izi")}</Select.Option>
+                                <Select.Option value="3">{t("ID karta")}</Select.Option>
+                                <Select.Option value="4">{t("Yuz va Barmoq izi")}</Select.Option>
+                                <Select.Option value="5">{t("Yuz yoki Barmoq izi")}</Select.Option>
+                                <Select.Option value="6">{t("Yuz va ID karta")}</Select.Option>
+                                <Select.Option value="7">{t("Yuz yoki ID karta")}</Select.Option>
+                                <Select.Option value="8">{t("Barmoq izi va ID karta")}</Select.Option>
+                                <Select.Option value="9">{t("Barmoq izi yoki ID karta")}</Select.Option>
+                                <Select.Option value="10">{t("Yuz yoki Barmoq izi yoki ID karta")}</Select.Option>
                             </Select>
                         </Form.Item>
 
