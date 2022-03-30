@@ -8,7 +8,7 @@ import { useSelector, useDispatch} from "react-redux";
 import { getTheme, isRefresh } from "../../redux";
 import {Link} from "react-router-dom";
 import {ip} from "../../ip";
-import {BsFillCloudMoonFill, BsFillSunFill, WiSunrise} from "react-icons/all";
+import {BsFillCloudMoonFill, WiSunrise} from "react-icons/all";
 import RootPage from '../../pages/root';
 import useWindowDimensions from '../../hooks/hooks';
 import 'antd/dist/antd.css';

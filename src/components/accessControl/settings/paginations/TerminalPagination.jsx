@@ -2,7 +2,13 @@ import {Pagination} from 'antd';
 
 const CameraPagenation = (props) => {
 
-    const {accessTablePaginationLimit, accessTablePaginationCurrent, accessTablePaginationOnChange, accessTableTotal} = props;
+    const {
+        accessTablePaginationLimit,
+        accessTablePaginationCurrent,
+        accessTablePaginationOnChange,
+        accessTableTotal,
+
+    } = props;
 
     return <Pagination
         dropdownRender = {false}

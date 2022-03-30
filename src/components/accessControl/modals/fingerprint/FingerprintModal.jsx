@@ -5,7 +5,7 @@ import {ip} from "../../../../ip";
 import Modal from "react-modal";
 import finger2 from '../../../../images/finger2.svg';
 import axios from "axios";
-import {BiCheck, IoCloseSharp} from "react-icons/all";
+import {BiCheck} from "react-icons/all";
 
 import './fingerprint.css';
 
@@ -120,8 +120,8 @@ const FingerprintModal = (props) => {
                                 type='button'
                                 className="fingerprint_button"
                                 style={{
-                                    color: `${accessFinger === '' ? '#000':'#fff'}`,
-                                    backgroundColor: `${accessFinger === '' ? '#fff':'#29B85D'}`
+                                    // color: `${accessFinger === '' ? '#000':'#fff'}`,
+                                    // backgroundColor: `${accessFinger === '' ? '#fff':'#29B85D'}`
                                 }}
                                 onClick={handleClickFingerprint}
                             >
@@ -139,12 +139,13 @@ const FingerprintModal = (props) => {
                                     <h3>Barmoq izi qo’shildi</h3>
                                 </div>
                                 :
-                                <div className="finger_info_close">
-                                    <div className="round_close">
-                                        <IoCloseSharp style={{color: 'white', fontSize: 20}} />
-                                    </div>
-                                    <h3>Barmoq izi qo’shilmagan</h3>
-                                </div>
+                                ' '
+                                // <div className="finger_info_close">
+                                //     <div className="round_close">
+                                //         <IoCloseSharp style={{color: 'white', fontSize: 20}} />
+                                //     </div>
+                                //     <h3>Barmoq izi qo’shilmagan</h3>
+                                // </div>
                         }
 
                         <div className='addFinger_save_button'>

@@ -89,7 +89,7 @@ const AcsessControlTable = () => {
                 direction: item.direction,
                 door_name: item.door_name,
                 user_type: item.user_type === 1 ? t('Xodim') : item.user_type === 2 ? t('Mehmon') : t('Begona'),
-                rank: item.rank == 1 ? t('Oddiy xodim') : item.rank == 2 ? t('Direktor') : item.rank == 3 ? t('VIP') : '',
+                rank: item.rank == 1 ? t('Oddiy xodim') : item.rank == 2 ? t('Direktor') : item.rank == 3 ? t('VIP') : '—',
             }
         ))
         setAccessTableData(newData)

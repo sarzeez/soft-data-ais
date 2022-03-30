@@ -78,6 +78,17 @@ input[type=number] {
 }
 
 
+/*---multi input checkbox kolor--- */
+
+.ant-select-tree-checkbox-checked .ant-select-tree-checkbox-inner {
+  background-color: #29b85d!important;
+  border-color: #29b85d!important;
+}
+.ant-select-tree-checkbox-inner:hover{
+  border-color: #29b85d!important;
+}
+
+
 
 
 

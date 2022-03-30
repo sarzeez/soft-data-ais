@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Form, Input, Select, Checkbox, DatePicker, TreeSelect, Switch} from 'antd';
+import {Form, Input, Select, DatePicker, TreeSelect, Switch} from 'antd';
 import {useTranslation} from "react-i18next";
 import './left.css';
 
@@ -8,13 +8,13 @@ const { SHOW_PARENT } = TreeSelect;
 const Left = ({ data, setData, terminalIPList }) => {
 
     const {t} = useTranslation()
-    const [state, setState] = useState([])
-    const [isChecked, setIsChecked] = useState(false);
+    const [state, setState] = useState([]);
 
+    // const [isChecked, setIsChecked] = useState(false);
+    // const handleOnChange = () => {
+    //     setIsChecked(!isChecked);
+    // };
 
-    const handleOnChange = () => {
-        setIsChecked(!isChecked);
-    };
     const onChange = value => {
         // console.log('onChange ', value);
         setState(value);
@@ -123,33 +123,33 @@ const Left = ({ data, setData, terminalIPList }) => {
                     <TreeSelect {...tProps} />
                 </Form.Item>
             </div>
-            <div className="access_control_add_staff_modal_body_item_left_input">
-                <Form.Item
-                    label={t("Ruxsat turi")}
-                    name="access_type"
-                    rules={[
-                    {
-                        required: true,
-                        message: t("Ruxsat turini tanlang"),
-                    },
-                    ]}
-                >
-                    <Select
-                        size="large"
-                    >
-                        <Select.Option value="1">{t("Yuz")}</Select.Option>
-                        <Select.Option value="2">{t("Barmoq izi")}</Select.Option>
-                        <Select.Option value="3">{t("ID karta")}</Select.Option>
-                        <Select.Option value="4">{t("Yuz va Barmoq izi")}</Select.Option>
-                        <Select.Option value="5">{t("Yuz yoki Barmoq izi")}</Select.Option>
-                        <Select.Option value="6">{t("Yuz va ID karta")}</Select.Option>
-                        <Select.Option value="7">{t("Yuz yoki ID karta")}</Select.Option>
-                        <Select.Option value="8">{t("Barmoq izi va ID karta")}</Select.Option>
-                        <Select.Option value="9">{t("Barmoq izi yoki ID karta")}</Select.Option>
-                        <Select.Option value="10">{t("Yuz yoki Barmoq izi yoki ID karta")}</Select.Option>
-                    </Select>
-                </Form.Item>
-            </div>
+            {/*<div className="access_control_add_staff_modal_body_item_left_input">*/}
+            {/*    <Form.Item*/}
+            {/*        label={t("Ruxsat turi")}*/}
+            {/*        name="access_type"*/}
+            {/*        rules={[*/}
+            {/*        {*/}
+            {/*            required: true,*/}
+            {/*            message: t("Ruxsat turini tanlang"),*/}
+            {/*        },*/}
+            {/*        ]}*/}
+            {/*    >*/}
+            {/*        <Select*/}
+            {/*            size="large"*/}
+            {/*        >*/}
+            {/*            <Select.Option value="1">{t("Yuz")}</Select.Option>*/}
+            {/*            <Select.Option value="2">{t("Barmoq izi")}</Select.Option>*/}
+            {/*            <Select.Option value="3">{t("ID karta")}</Select.Option>*/}
+            {/*            <Select.Option value="4">{t("Yuz va Barmoq izi")}</Select.Option>*/}
+            {/*            <Select.Option value="5">{t("Yuz yoki Barmoq izi")}</Select.Option>*/}
+            {/*            <Select.Option value="6">{t("Yuz va ID karta")}</Select.Option>*/}
+            {/*            <Select.Option value="7">{t("Yuz yoki ID karta")}</Select.Option>*/}
+            {/*            <Select.Option value="8">{t("Barmoq izi va ID karta")}</Select.Option>*/}
+            {/*            <Select.Option value="9">{t("Barmoq izi yoki ID karta")}</Select.Option>*/}
+            {/*            <Select.Option value="10">{t("Yuz yoki Barmoq izi yoki ID karta")}</Select.Option>*/}
+            {/*        </Select>*/}
+            {/*    </Form.Item>*/}
+            {/*</div>*/}
 
             <div className="access_control_add_staff_modal_body_item_left_inputs">
                 <Form.Item

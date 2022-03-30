@@ -2,17 +2,23 @@ import {Pagination} from 'antd';
 
 const StaffPagination = (props) => {
 
-    const {accessTablePaginationLimit, accessTablePaginationCurrent, accessTablePaginationOnChange, accessTableTotal} = props;
+    const {
+        staffPaginationLimit,
+        staffPaginationCurrent,
+        accessTablePaginationOnChange,
+        accessTableTotal,
+
+    } = props;
 
     return <Pagination
         dropdownRender = {false}
-        defaultPageSize = {accessTablePaginationLimit}
-        current={accessTablePaginationCurrent}
+        defaultPageSize = {staffPaginationLimit}
+        current={staffPaginationCurrent}
         onChange={accessTablePaginationOnChange}
         total = {accessTableTotal}
         showSizeChanger={true}
-        pageSize={accessTablePaginationLimit}
-        pageSizeOptions={[1, 5, 10]}
+        pageSize={staffPaginationLimit}
+        pageSizeOptions={[15, 50, 100]}
     />;
 }
 

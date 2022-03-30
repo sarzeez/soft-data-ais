@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ip } from "../../../../ip";
 import {useTranslation} from "react-i18next";
-import { Form, Switch } from 'antd';
+import { Form } from 'antd';
 
 import Modal from "react-modal";
 import axios from "axios";
@@ -16,7 +16,11 @@ Modal.setAppElement("#root");
 
 function AddStaff(props) {
 
-    const { isOpenAddStaff, setIsOpenAddStaff  } = props;
+    const {
+        isOpenAddStaff,
+        setIsOpenAddStaff,
+        terminalPaginationCurrent,
+    } = props;
 
     const {t} = useTranslation()
     const [ isOpenAddTerminal, setIsOpenAddTerminal] = useState(false);
@@ -24,7 +28,7 @@ function AddStaff(props) {
     const [terminalIPList, setTerminalIPList] = useState([]);
     const [card, setCard] = useState([]);
     const [fingerPrint, setFingerPrint] = useState([]);
-    console.log(fingerPrint)
+
     const [initialValues, ] = useState({
         fullname: '',
         gender: '',

@@ -83,26 +83,29 @@ const StaffTable = (props) => {
                 </div>
             )
         },
-        {
-            title: t('Ruxsat turi'),
-            dataIndex: 'access_type',
-            align: 'center'
-        },
+        // {
+        //     title: t('Ruxsat turi'),
+        //     dataIndex: 'access_type',
+        //     align: 'center'
+        // },
         {
             title: t('ID karta'),
             // dataIndex: 'cards',
             align: 'center',
             render: (text, record) => (
                 <div className='door_ip_length'>
-                    <p>
-                        {record.cards.length}
-                    </p>
-                    <div className='door_ip_length_hover'>
-                        {record.cards.map(e => e.id).join(' ')}
-                        <div className='door_ip_length_hover_rectangel'>
-
-                        </div>
-                    </div>
+                    {
+                        record.cards.length>0?
+                            <>
+                                <p>
+                                    {record.cards.length}
+                                </p>
+                                <div className='door_ip_length_hover'>
+                                    {record.cards.map(e => e.id).join(`, `)}
+                                    <div className='door_ip_length_hover_rectangel'></div>
+                                </div>
+                            </>: '—'
+                    }
                 </div>
             )
         },
@@ -112,15 +115,20 @@ const StaffTable = (props) => {
             align: 'center',
             render: (text, record) => (
                 <div className='door_ip_length'>
-                    <p>
-                        {record.fingerprint.length}
-                    </p>
-                    <div className='door_ip_length_hover'>
-                        {record.fingerprint.map(e => e.name).join(' ')}
-                        <div className='door_ip_length_hover_rectangel'>
+                    {record.fingerprint.length > 0 ?
+                        <>
+                            <p>
+                                {record.fingerprint.length}
+                            </p>
+                            <div className='door_ip_length_hover'>
+                                {record.fingerprint.map(e => e.name).join(`, `)}
+                                <div className='door_ip_length_hover_rectangel'>
 
-                        </div>
-                    </div>
+                                </div>
+                            </div>
+                        </>
+                        : "—"
+                    }
                 </div>
             )
         },
@@ -128,7 +136,7 @@ const StaffTable = (props) => {
             title: t('Ruxsat etilgan muddat'),
             dataIndex: 'valid_from_time',
             render: (text, record) => {
-                return moment(record.valid_from_time).format('DD.MM.YYYY, HH:mm:ss')
+                return `${moment(record.valid_from_time).format('DD.MM.YYYY')} - ${moment(record.valid_to_time).format('DD.MM.YYYY')}`
             },
             align: 'center'
         },

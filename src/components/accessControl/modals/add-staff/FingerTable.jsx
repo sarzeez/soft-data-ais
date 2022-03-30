@@ -16,7 +16,6 @@ const columns = [
     },
 ];
 
-
 const FingerTable = ({fingerPrint, setSelectedItems}) => {
 
     const [state, setState] = React.useState({selectedRowKeys: []})

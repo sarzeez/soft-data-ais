@@ -15,7 +15,7 @@ import TerminalPagination from './paginations/TerminalPagination';
 import StaffPagination from './paginations/StaffPagination';
 import AddStaff from '../modals/add-staff/AddStaff';
 
-import './setting.css'
+import './setting.css';
 import AddTerminalModal from "./Terminal-modal/AddTerminalModal";
 
 const { TabPane } = Tabs;
@@ -193,6 +193,7 @@ const AccessControlSetting = () => {
             <AddStaff
                 isOpenAddStaff = {isOpenAddStaff}
                 setIsOpenAddStaff = {setIsOpenAddStaff}
+                terminalPaginationCurrent={terminalPaginationCurrent}
             />
             <div className='access_control_setting_header'>
                 <div className="acsess_content_top">
@@ -274,8 +275,8 @@ const AccessControlSetting = () => {
                                 </div>
 
                                 <StaffPagination
-                                    accessTablePaginationLimit = {staffPaginationLimit}
-                                    accessTablePaginationCurrent = {staffPaginationCurrent}
+                                    staffPaginationLimit = {staffPaginationLimit}
+                                    staffPaginationCurrent = {staffPaginationCurrent}
                                     accessTablePaginationOnChange = {staffPaginationOnChange}
                                     accessTableTotal = {staffTotal}
                                 />

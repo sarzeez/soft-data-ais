@@ -57,20 +57,26 @@ const AcsessTable = (props) => {
             align: 'center'
         },
         {
-            title: t('Vaqt'),
-            dataIndex: 'created_time',
-            align: 'center'
-        },
-        {
             title: t('Yo\'nalishi'),
             dataIndex: 'direction',
             align: 'center',
             render: (text, record) => (
                 <div>
-                    {record?.direction == 'Exit' ? t("Chiqish") : t("Kirish")}
+                    {record?.direction == 'Exit' ? t("Chiqdi") : t("Kirdi")}
                 </div>
             )
         },
+        {
+            title: t('Tasdiq turi'),
+            dataIndex: 'rank',
+            align: 'center'
+        },
+        {
+            title: t('Vaqt'),
+            dataIndex: 'created_time',
+            align: 'center'
+        },
+
         {
             title: t('Eshik'),
             dataIndex: 'door_name',
