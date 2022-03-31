@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="630af48d-1ca7-4883-8e3d-17f8fed27d11" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/Terminal-modal/AddTerminalModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/Terminal-modal/AddTerminalModal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/acsessControl.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/acsessControl.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/paginations/TerminalPagination.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/paginations/TerminalPagination.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/setting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/setting.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/TerminalTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/TerminalTable.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +130,9 @@
       <workItem from="1648267290203" duration="12708000" />
       <workItem from="1648440652382" duration="18545000" />
       <workItem from="1648526270888" duration="17712000" />
-      <workItem from="1648612841909" duration="17487000" />
+      <workItem from="1648612841909" duration="17669000" />
+      <workItem from="1648699907996" duration="9778000" />
+      <workItem from="1648718080341" duration="1418000" />
     </task>
     <servers />
   </component>

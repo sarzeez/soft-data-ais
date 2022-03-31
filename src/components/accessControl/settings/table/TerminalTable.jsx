@@ -7,7 +7,7 @@ import 'antd/dist/antd.css';
 import {useTranslation} from "react-i18next";
 
 const auth_type = {
-    uz: ['Yuz', 'Barmoq izi', 'ID karta', 'Yuz va Barmoq izi', 'Yuz yoki Barmoq izi', 'Yuz va ID karta', 'Yuz yoki ID karta', 'Barmoq izi va ID karta', 'Barmoq izi yoki ID karta', 'Yuz yoki Barmoq izi yoki ID karta'],
+    uz: ['', 'Yuz', 'Barmoq izi', 'ID karta', 'Yuz va Barmoq izi', 'Yuz yoki Barmoq izi', 'Yuz va ID karta', 'Yuz yoki ID karta', 'Barmoq izi va ID karta', 'Barmoq izi yoki ID karta', 'Yuz yoki Barmoq izi yoki ID karta'],
     ru: ['Лицо', 'Отпечаток пальца', 'ID карта'],
     en: ['Face', 'Fingerprint', 'ID card']
 }

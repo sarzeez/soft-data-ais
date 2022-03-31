@@ -88,8 +88,14 @@ input[type=number] {
   border-color: #29b85d!important;
 }
 
+/*-----table header width height---*/
+.ant-table-thead > tr > th{
+  padding: 11px 10px !important;
+}
 
-
+.ant-tabs-top > .ant-tabs-nav{
+  margin: 0 0 5px 0;
+}
 
 
 
