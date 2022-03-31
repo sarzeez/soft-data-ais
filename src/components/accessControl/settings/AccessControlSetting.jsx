@@ -17,6 +17,7 @@ import AddStaff from '../modals/add-staff/AddStaff';
 
 import './setting.css';
 import AddTerminalModal from "./Terminal-modal/AddTerminalModal";
+import BlacklistTable from "./table/BlacklistTable";
 
 const { TabPane } = Tabs;
 
@@ -34,7 +35,7 @@ const AccessControlSetting = () => {
     const [isOpenAddTerminal, setIsOpenAddTerminal] = useState(false)
 
     // terminal
-    const [terminalPaginationLimit, setTerminalPaginationLimit] = useState(14)
+    const [terminalPaginationLimit, setTerminalPaginationLimit] = useState(15)
     const [terminalPaginationCurrent, setTerminalPaginationCurrent] = useState(1)
     const [terminalData, setTerminalData] = useState([])
     const [terminalTotal, setTerminalTotal] = useState(null)
@@ -249,39 +250,62 @@ const AccessControlSetting = () => {
                     </TabPane>
 
                     <TabPane tab={t("Xodimlar")} key="2">
-                        <div className='access_control_setting_tab_item'>
-                            <div className='access_control_setting_tab_item_body'>
-                                <StaffTable
-                                    isDarkMode={isDarkMode}
-                                    staffData = {staffData}
-                                    rowSelection={rowSelection}
-                                    setIsOpenAddStaff={setIsOpenAddStaff}
-                                    setStaffTableIntialValues={setStaffTableIntialValues}
-                                />
+                        <div className="access_control_setting_tab">
+                            <div className='access_control_setting_tab_item'>
+                                <div className='access_control_setting_tab_item_body'>
+                                    <StaffTable
+                                        isDarkMode={isDarkMode}
+                                        staffData = {staffData}
+                                        rowSelection={rowSelection}
+                                        setIsOpenAddStaff={setIsOpenAddStaff}
+                                        setStaffTableIntialValues={setStaffTableIntialValues}
+                                    />
+                                </div>
+                                <div className='access_control_setting_tab_item_footer'>
+                                    <div className='access_control_setting_tab_item_footer_buttons'>
+                                        <button onClick={addNewStaff} className='add_button'>
+                                            <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
+                                            {t("Xodim qo'shish")}
+                                        </button>
+                                        {
+                                            deleteStaff.length > 0 &&
+                                            <button onClick={handleDeliteStaff}>
+                                                <AiOutlineDelete size={22} style = {{marginRight: '5px'}}/>
+                                                {t("O’chirish")}
+                                            </button>
+                                        }
+                                    </div>
+
+                                    <StaffPagination
+                                        staffPaginationLimit = {staffPaginationLimit}
+                                        staffPaginationCurrent = {staffPaginationCurrent}
+                                        accessTablePaginationOnChange = {staffPaginationOnChange}
+                                        accessTableTotal = {staffTotal}
+                                    />
+                                </div>
                             </div>
-                            <div className='access_control_setting_tab_item_footer'>
-                                <div className='access_control_setting_tab_item_footer_buttons'>
-                                    <button onClick={addNewStaff} className='add_button'>
+
+                            <div className="black_list">
+                                <div className="black_list_table">
+                                    <div className="black_list_title">
+                                        Qora ro’yxatdagilar
+                                    </div>
+                                    <BlacklistTable />
+                                </div>
+
+                                <div className="black_list_buttons">
+                                    <button className="black_list_add_button">
                                         <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
                                         {t("Xodim qo'shish")}
                                     </button>
-                                    {
-                                        deleteStaff.length > 0 &&
-                                        <button onClick={handleDeliteStaff}>
-                                            <AiOutlineDelete size={22} style = {{marginRight: '5px'}}/>
-                                            {t("O’chirish")}
-                                        </button>
-                                    }
+                                    <button className="black_list_delete_button">
+                                        <AiOutlineDelete size={22} style = {{marginRight: '5px'}}/>
+                                        {t("O’chirish")}
+                                    </button>
                                 </div>
-
-                                <StaffPagination
-                                    staffPaginationLimit = {staffPaginationLimit}
-                                    staffPaginationCurrent = {staffPaginationCurrent}
-                                    accessTablePaginationOnChange = {staffPaginationOnChange}
-                                    accessTableTotal = {staffTotal}
-                                />
                             </div>
                         </div>
+
                     </TabPane>
 
                     <TabPane tab={t("Autentifikatsiya sozlamalari")} key="3">

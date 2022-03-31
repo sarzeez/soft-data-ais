@@ -1,32 +1,31 @@
 import React, {useState} from 'react';
-import { Table  } from 'antd';
-import { useSelector } from "react-redux";
+import {Table} from "antd";
 import {RiEditLine} from "react-icons/ri";
 import {useTranslation} from "react-i18next";
-import 'antd/dist/antd.css';
+import {useSelector} from "react-redux";
+
+const BlacklistTable = () => {
 
 
-const AddNewGroupTable = (props) => {
-    const {
-        languageGroup,
-        setDeleteGroup,
-        setGroupInitialValues,
-        setShow,
-    } = props;
-
-    const {t} = useTranslation()
-    const lang = localStorage.getItem('i18nextLng');
+    const {t} = useTranslation();
     const isDarkMode = useSelector(state => state.theme.theme_data);
 
-    languageGroup.forEach(e => {
-        e.name = e[`name_${lang}`];
-    })
+    const dataSource = [
+        {
+            key: '1',
+            name: 'Mike',
+        },
+        {
+            key: '2',
+            name: 'John',
+        },
+    ];
 
     const [state, setState] = useState({selectedRowKeys: []})
 
     const onSelectChange = (selectedRowKeys, a) => {
         setState({ selectedRowKeys })
-        setDeleteGroup(a.map(item => item.id));
+        // setDeleteGroup(a.map(item => item.id));
     };
 
     const { selectedRowKeys } = state;
@@ -36,27 +35,21 @@ const AddNewGroupTable = (props) => {
         onChange: onSelectChange,
     }
 
-    const editGroup = (value, record) => {
-        setGroupInitialValues({
-            ...value,
-            edit: true
-        })
-        setShow(true)
-    }
 
 
     const columns = [
+
         {
-            title: t('Guruh'),
-            dataIndex: [`name_${lang}`],
+            title: t('Ism'),
+            dataIndex: 'name',
             align: 'start'
         },
 
         {
-            title: t('Amal'),
+            title: t('Tahrir'),
             dataIndex: '',
             render: (text, record) => (
-                <div onClick={() => editGroup(text, record)} className='edit_button'>
+                <div  className='edit_button'>
                     <RiEditLine size = {22} color='#fff'/>
                 </div>
             ),
@@ -64,22 +57,17 @@ const AddNewGroupTable = (props) => {
         },
     ];
 
-
     return (
-
-        <>
+        <div>
             <Table
                 className={` ${isDarkMode && 'darkModeBackground'}`}
                 rowSelection={rowSelection}
                 columns={columns}
-                dataSource={languageGroup}
+                dataSource={dataSource}
                 pagination={false}
             />
-
-        </>
-
+        </div>
     );
-}
+};
 
-
-export default AddNewGroupTable;
+export default BlacklistTable;
