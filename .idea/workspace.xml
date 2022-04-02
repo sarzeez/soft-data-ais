@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="630af48d-1ca7-4883-8e3d-17f8fed27d11" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/BlacklistTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffMiddle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffMiddle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-terminal/IdCardModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-IDCard/IdCardModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-terminal/terminal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-IDCard/idCardModal.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/setting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/setting.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddNewGroup/AddNewGroupTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddNewGroup/AddNewGroupTable.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/BlacklistTable.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +136,10 @@
       <workItem from="1648526270888" duration="17712000" />
       <workItem from="1648612841909" duration="17669000" />
       <workItem from="1648699907996" duration="9778000" />
-      <workItem from="1648718080341" duration="8913000" />
+      <workItem from="1648718080341" duration="9668000" />
+      <workItem from="1648785983090" duration="7246000" />
+      <workItem from="1648809067846" duration="6932000" />
+      <workItem from="1648873578820" duration="18260000" />
     </task>
     <servers />
   </component>

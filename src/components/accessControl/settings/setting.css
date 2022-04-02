@@ -15,11 +15,7 @@
 }
 
 /* tabs */
-.access_control_setting_tab{
-    display: grid;
-    grid-template-columns: 6fr 1.7fr;
-    grid-gap: 10px;
-}
+
 .access_control_setting_tab_item {
     width: 100%;
     height: calc(100vh - 190px);
@@ -28,58 +24,7 @@
     overflow: auto;
     border-radius: 3px;
 }
-/*----black list conrent---*/
-.black_list{
-    width: 100%;
-    height: calc(100vh - 185px);
-    display: grid;
-    grid-template-rows: 1fr 50px;
-    overflow: auto;
-    padding: 10px ;
-    border-radius: 5px;
-    border: 1px solid #EAEAEA;
-}
-.black_list_title{
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    color: #0A194E;
-    margin-bottom: 15px;
-}
 
-.black_list_buttons{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-    margin-top: 10px;
-}
-.black_list_add_button{
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: 600;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #29B85D !important;
-    color: #fff !important;
-}
-.black_list_delete_button{
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: 600;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #FFDEDE !important;
-    color: #8B0606 !important;
-}
 
 .access_control_setting_tab_item_single {
     grid-template-rows: 1fr 0px;

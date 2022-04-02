@@ -19,7 +19,9 @@ function AddStaff(props) {
     const {
         isOpenAddStaff,
         setIsOpenAddStaff,
-        terminalPaginationCurrent,
+        staffTableIntialValues,
+        setStaffPaginationCurrent,
+        getStaffData,
     } = props;
 
     const {t} = useTranslation()
@@ -29,20 +31,6 @@ function AddStaff(props) {
     const [card, setCard] = useState([]);
     const [fingerPrint, setFingerPrint] = useState([]);
 
-    const [initialValues, ] = useState({
-        fullname: '',
-        gender: '',
-        rank: '',
-        user_type: '',
-        door_ip: [],
-        access_type: '',
-        valid_from_time: '',
-        valid_to_time: '',
-        image: '',
-        card_id: '',
-        card_type: '',
-        notification: false,
-    })
 
     const [data, setData] = useState({
         fullname: '',
@@ -54,11 +42,13 @@ function AddStaff(props) {
         valid_from_time: '',
         valid_to_time: '',
         image: '',
-        card_id: '',
-        card_type: '',
         notification: false,
     })
+    const cancel = () =>{
+        setIsOpenAddStaff(!setIsOpenAddStaff)
 
+    }
+    console.log("value = ", staffTableIntialValues)
 
     const onFinish = (value) => {
         const formData = {
@@ -71,13 +61,29 @@ function AddStaff(props) {
         fd.append("cards", JSON.stringify(card));
         fd.append("fingerprint", JSON.stringify(fingerPrint));
 
-        axios.post(`${ip}/api/terminal/adduser`, fd)
-            .then(res => {
-                setIsOpenAddStaff(false)
-            })
-            .catch(err => {
-                console.log(err?.response?.data)
-            })
+        if (staffTableIntialValues.edit){
+            console.log("Hello world");
+            // axios.put(`${ip}/api/terminal/updateuser`, {
+            //     ...value
+            // })
+            //     .then(response =>{
+            //         getStaffData(setStaffPaginationCurrent)
+            //     })
+            //     .catch(err=>{
+            //         console.log(err?.response?.data)
+            //     })
+        }
+        else {
+            axios.post(`${ip}/api/terminal/adduser`, fd)
+                .then(res => {
+                    setIsOpenAddStaff(false)
+                    getStaffData(setStaffPaginationCurrent)
+                })
+                .catch(err => {
+                    console.log(err?.response?.data)
+                })
+        }
+
     }
 
     const onFinishFailed = (error) => {
@@ -116,7 +122,7 @@ function AddStaff(props) {
             <Form
                 name="basic"
                 layout="vertical"
-                initialValues={initialValues}
+                initialValues={staffTableIntialValues}
                 requiredMark = 'optional'
                 onFinish={onFinish}
                 onFinishFailed={onFinishFailed}

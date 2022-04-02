@@ -66,6 +66,7 @@ const Left = ({ data, setData, terminalIPList }) => {
                 >
                     <Select
                         size="large"
+                        placeholder={t("Kiriting")}
                     >
                         <Select.Option value="male">{t("Erkak")}</Select.Option>
                         <Select.Option value="female">{t("Ayol")}</Select.Option>
@@ -105,7 +106,7 @@ const Left = ({ data, setData, terminalIPList }) => {
                         size="large"
 
                     >
-                        <Select.Option value="1">{t("Oddiy xodim")}</Select.Option>
+                        <Select.Option value="1">{t("Oddiy ishchi")}</Select.Option>
                         <Select.Option value="2">{t("Direktor")}</Select.Option>
                         <Select.Option value="3">{t("VIP")}</Select.Option>
                     </Select>

@@ -22,6 +22,8 @@ const StaffTable = (props) => {
     const isDarkMode = useSelector(state => state.theme.theme_data)
 
     const editAddStaff = (value, record) => {
+        console.log(value);
+
         setStaffTableIntialValues({
             ...value,
             edit: true

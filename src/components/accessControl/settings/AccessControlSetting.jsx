@@ -17,7 +17,6 @@ import AddStaff from '../modals/add-staff/AddStaff';
 
 import './setting.css';
 import AddTerminalModal from "./Terminal-modal/AddTerminalModal";
-import BlacklistTable from "./table/BlacklistTable";
 
 const { TabPane } = Tabs;
 
@@ -47,7 +46,16 @@ const AccessControlSetting = () => {
     const [staffTotal, setStaffTotal] = useState(null)
 
     const [staffTableIntialValues, setStaffTableIntialValues] = useState({
-
+        fullname: '',
+        gender: '',
+        rank: '',
+        user_type: '',
+        door_ip: [],
+        access_type: '',
+        valid_from_time: '',
+        valid_to_time: '',
+        image: '',
+        notification: false,
     })
 
     // delete button
@@ -111,7 +119,6 @@ const AccessControlSetting = () => {
     ))
         setTerminalData(newData)
     }
-    console.log(terminalData)
     // get staff data
     const getStaffData = async (id) => {
         const response = await axios.get(`${ip}/api/terminal/getusers/${staffPaginationLimit}/${id}`)
@@ -122,7 +129,8 @@ const AccessControlSetting = () => {
             {
                 ...item,
                 key: index + 1 + (data.current_page - 1) * staffPaginationLimit,
-                created_time: moment(item.created_time).format('DD.MM.YYYY, HH:mm:ss'),
+                valid_from_time: '',   //moment(item.valid_from_time).format('DD.MM.YYYY, HH:mm:ss'),
+                valid_to_time: '',   //moment(item.valid_to_time).format('DD.MM.YYYY, HH:mm:ss'),
                 direction: item.direction,
                 door_name: item.door_name,
                 user_type: item.user_type === 1 ? t('Xodim') : item.user_type === 2 ? t('Mehmon') : t('Begona'),
@@ -131,7 +139,6 @@ const AccessControlSetting = () => {
             }
         ))
         setStaffData(newData)
-        // console.log(staffData)
     }
 
     const handleDeliteStaff = () =>{
@@ -191,11 +198,7 @@ const AccessControlSetting = () => {
 
     return (
         <div className='access_control_setting'>
-            <AddStaff
-                isOpenAddStaff = {isOpenAddStaff}
-                setIsOpenAddStaff = {setIsOpenAddStaff}
-                terminalPaginationCurrent={terminalPaginationCurrent}
-            />
+
             <div className='access_control_setting_header'>
                 <div className="acsess_content_top">
                     <p className= {`Content_title ${isDarkMode && 'darkModeColor'}`} >{t("Kirishni boshqarish sozlamalar")}</p>
@@ -250,6 +253,14 @@ const AccessControlSetting = () => {
                     </TabPane>
 
                     <TabPane tab={t("Xodimlar")} key="2">
+                        <AddStaff
+                            isOpenAddStaff = {isOpenAddStaff}
+                            setIsOpenAddStaff = {setIsOpenAddStaff}
+                            staffTableIntialValues={staffTableIntialValues}
+                            setStaffTableIntialValues={setStaffTableIntialValues}
+                            getStaffData={getStaffData}
+                            setStaffPaginationCurrent ={setStaffPaginationCurrent}
+                        />
                         <div className="access_control_setting_tab">
                             <div className='access_control_setting_tab_item'>
                                 <div className='access_control_setting_tab_item_body'>
@@ -282,26 +293,6 @@ const AccessControlSetting = () => {
                                         accessTablePaginationOnChange = {staffPaginationOnChange}
                                         accessTableTotal = {staffTotal}
                                     />
-                                </div>
-                            </div>
-
-                            <div className="black_list">
-                                <div className="black_list_table">
-                                    <div className="black_list_title">
-                                        Qora ro’yxatdagilar
-                                    </div>
-                                    <BlacklistTable />
-                                </div>
-
-                                <div className="black_list_buttons">
-                                    <button className="black_list_add_button">
-                                        <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
-                                        {t("Xodim qo'shish")}
-                                    </button>
-                                    <button className="black_list_delete_button">
-                                        <AiOutlineDelete size={22} style = {{marginRight: '5px'}}/>
-                                        {t("O’chirish")}
-                                    </button>
                                 </div>
                             </div>
                         </div>

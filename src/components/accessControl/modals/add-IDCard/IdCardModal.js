@@ -4,7 +4,7 @@ import { Form, Input, Select } from 'antd';
 import {useTranslation} from "react-i18next";
 
 
-import './terminal.css'
+import './idCardModal.css'
 
 Modal.setAppElement("#root");
 

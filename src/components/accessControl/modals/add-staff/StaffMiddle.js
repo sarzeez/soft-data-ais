@@ -1,6 +1,6 @@
 import React from 'react';
 import IdCardTable from './IdCardTable';
-import IdCardModal from "../add-terminal/IdCardModal";
+import IdCardModal from "../add-IDCard/IdCardModal";
 
 import './staffMiddle.css'
 
