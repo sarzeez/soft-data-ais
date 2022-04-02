@@ -51,8 +51,6 @@ const Saidbar = ({ user, setUser }) => {
         dispatch(getTheme(state))
     }
 
-    
-
     const handleClickListItem = (title, id) => {
         // setCheckedItemTitle(title)
         dispatch(isRefresh(id))
@@ -99,8 +97,8 @@ const Saidbar = ({ user, setUser }) => {
                                 collapsed ? <img src={shortlogo} alt=""/> :  <img src={logo} alt=""/>
                             }
                         </div>
-                        <Menu 
-                            theme={isDarkMode ? 'dark' : 'light'} 
+                        <Menu
+                            theme={isDarkMode ? 'dark' : 'light'}
                             className={`siderBackColor_menu ${isDarkMode && 'darkModeBackground'}`}
                             onOpenChange={onOpenChange}
                             openKeys={openKeys}
@@ -153,7 +151,7 @@ const Saidbar = ({ user, setUser }) => {
 
 
                     <Layout   className={`site-layout ${isDarkMode && 'darkModeLayautBg'} `}>
-                        
+
                         <Header theme={isDarkMode ? 'dark' : 'light'}  className={`site-layout-background headerr ${isDarkMode && 'darkModeBackground'} `} style={{ padding: 0 }}>
                             <div className={`${isDarkMode && 'darkModeColor'}`}>
                                 {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {

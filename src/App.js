@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import axios from "axios";
 import { ip } from "./ip";
 
-
 import Saidbar from "./components/saidbar/Saidbar";
 import './App.css';
 
@@ -21,7 +20,7 @@ function App({ setUser, user }) {
   }, [setUser])
 
   return (
-    <Saidbar setUser={setUser} user={user} />
+    <Saidbar setUser={setUser} user={user}/>
   );
 }
 
