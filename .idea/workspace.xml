@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="630af48d-1ca7-4883-8e3d-17f8fed27d11" name="Changes" comment="onlayn managment page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ip.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ip.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +166,7 @@
       <workItem from="1648606643608" duration="27222000" />
       <workItem from="1648854486386" duration="1796000" />
       <workItem from="1648877600033" duration="503000" />
-      <workItem from="1648889837394" duration="9611000" />
+      <workItem from="1648889837394" duration="13346000" />
     </task>
     <task id="LOCAL-00001" summary="onlayn managment page">
       <created>1648901592429</created>
@@ -173,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648901592429</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="onlayn managment page">
+      <created>1648901797938</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1648901797938</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,10 +207,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="onlayn managment page" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="333" y="0" key="CommitChangelistDialog2" timestamp="1648901587330">
+    <state x="333" y="0" key="CommitChangelistDialog2" timestamp="1648901815594">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="333" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1648901587330" />
+    <state x="333" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1648901815594" />
+    <state x="128" y="61" key="DiffContextDialog" timestamp="1648901774721">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="128" y="61" key="DiffContextDialog/0.0.1360.728@0.0.1360.728" timestamp="1648901774721" />
     <state width="1339" height="103" key="GridCell.Tab.0.bottom" timestamp="1648544265533">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -218,13 +231,17 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="1339" height="103" key="GridCell.Tab.0.right/0.0.1360.728@0.0.1360.728" timestamp="1648544265533" />
+    <state x="272" y="98" key="Vcs.Push.Dialog.v2" timestamp="1649072441134">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="272" y="98" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1649072441134" />
     <state x="311" y="61" width="737" height="606" key="find.popup" timestamp="1648636744761">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="311" y="61" width="737" height="606" key="find.popup/0.0.1360.728@0.0.1360.728" timestamp="1648636744761" />
-    <state x="408" y="156" key="git4idea.merge.GitPullDialog" timestamp="1648901742640">
+    <state x="408" y="156" key="git4idea.merge.GitPullDialog" timestamp="1648902114910">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="408" y="156" key="git4idea.merge.GitPullDialog/0.0.1360.728@0.0.1360.728" timestamp="1648901742640" />
+    <state x="408" y="156" key="git4idea.merge.GitPullDialog/0.0.1360.728@0.0.1360.728" timestamp="1648902114910" />
   </component>
 </project>
