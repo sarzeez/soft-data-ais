@@ -104,7 +104,6 @@ const Left = ({ data, setData, terminalIPList }) => {
                 >
                     <Select
                         size="large"
-
                     >
                         <Select.Option value="1">{t("Oddiy ishchi")}</Select.Option>
                         <Select.Option value="2">{t("Direktor")}</Select.Option>
