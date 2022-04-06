@@ -63,6 +63,7 @@ function AddStaff(props) {
 
         if (staffTableIntialValues.edit){
             console.log("Hello world");
+
             // axios.put(`${ip}/api/terminal/updateuser`, {
             //     ...value
             // })

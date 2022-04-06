@@ -209,7 +209,8 @@ const AcsessControlTable = () => {
                                     <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                     <Select.Option value="1">{t('Xodim')}</Select.Option>
                                     <Select.Option value="2">{t('Mehmon ')}</Select.Option>
-                                    <Select.Option value="3">{t('Begona')}</Select.Option>
+                                    <Select.Option value="3">{t('Bloklangan')}</Select.Option>
+                                    <Select.Option value="-1">{t('Begona')}</Select.Option>
                                 </Select>
                             </div>
                         </div>

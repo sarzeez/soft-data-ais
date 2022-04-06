@@ -57,7 +57,7 @@ const AccessControlSetting = () => {
         image: '',
         notification: false,
     })
-
+    console.log(staffTableIntialValues)
     // delete button
     const [deleteStaff, setDeleteStaff] = useState([])
     const [deleteTerminal, setDeleteTerminal] = useState([])

@@ -11,6 +11,7 @@ import AddUser from '../components/accessControl/RealTime/RealTime/AddUser'
 import NotFound from '../components/notFound/NotFound'
 import AcsessControlTable from "../components/accessControl/accessControlSearch/AccessControlTable";
 import FaceControlSetting from "../components/faceControl/FaceSetting/FaceControlSetting";
+import OnlineManagement from "../components/accessControl/Online-doors/OnlineManagement";
 
 const RootPage = () => {
     return (
@@ -21,7 +22,8 @@ const RootPage = () => {
             <Route path = '/access-control-search' element = {<AcsessControlTable />}/>
             <Route path = '/access-control-addUser' element = {<AddUser />}/>
             <Route path = '/access-control-online' element = {<OnlineRecognation />}/>
-            <Route path = '/access-control-online-doors' element = {<OnlineDoors />}/>
+            {/*<Route path = '/access-control-online-doors' element = {<OnlineDoors />}/>*/}
+            <Route path = '/access-control-online-doors' element = {<OnlineManagement />}/>
             <Route path = '/access-control-setting' element = {<AccessControlSetting />}/>
             <Route path = '/access-control-user' element = {<AddUser />}/>
             <Route path = '*' element = {<NotFound />}/>

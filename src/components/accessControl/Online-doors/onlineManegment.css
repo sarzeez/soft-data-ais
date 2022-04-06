@@ -1,0 +1,158 @@
+.online_managment{
+    padding: 10px;
+}
+.online_managment_title{
+    margin-bottom: 10px;
+}
+.content_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content_title{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000000;
+}
+.content_button{
+    display: flex;justify-content: space-between;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #9EAEC5;
+    width: 200px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #E5E9EE;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.content_button:active{
+    box-shadow: none;
+}
+.content_button:focus{
+    box-shadow: none;
+}
+.content_button:hover{
+    color: #9EAEC5;
+}
+.online_doors_body{
+    /*height: calc(100vh - 125px);*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding: 15px;
+}
+.online_doors_managment{
+    background: #FFFFFF;
+    border: 1px solid #E5EAFA;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.online_doors_managment_body{
+    text-align: center;
+}
+.online_doors_managment_body img{
+    transform: scale(0.8);
+}
+.online_doors_managment_body h2{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000000;
+}
+.online_doors_managment_body button{
+    background: #29B85D;
+    border-radius: 5px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin-top: 10px;
+    width: 130px;
+    height: 40px;
+}
+.online_doors_managment_body button:focus{
+    box-shadow: none;
+}
+.online_doors_managment_body button:hover{
+    color: white;
+}
+.online_doors_managment_body button:active{
+    box-shadow: none;
+    background-color: white;
+    border: 1px solid #29B85D;
+    color: #29B85D;
+}
+.online_doors_modal{
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 400px;
+    padding: 10px;
+    height: 550px;
+}
+.online_doors_modal h4{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    color: #000000;
+    text-align: center;
+
+}
+.online_doors_modal_bodyOne{
+    height: 90%;
+    margin-top: 15px;
+    border-radius: 5px;
+    overflow: auto;
+    /*padding: 10px;*/
+}
+.online_doors_modal_body{
+    background: #F8F8F8;
+    border-radius: 5px;
+    padding: 5px 0px;
+    height: 100vh;
+}
+.online_doors_modal_body_inner{
+    padding: 5px 10px;
+    cursor: pointer;
+    background: #F8F8F8;
+}
+.online_doors_modal_body_inner:hover img{
+     /*fill: #29B85D;*/
+     /*filter: invert(42%);*/
+    filter: invert(53%) sepia(83%) saturate(425%) hue-rotate(89deg) brightness(94%) contrast(85%);
+ }
+.online_doors_modal_body_inner:hover h5{
+    color: #29B85D;
+}
+.online_doors_modal_body h5{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+}
+.online_doors_modal_body span{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    color: #828CA9;
+}
+.online_doors_modal_body .linee{
+    height: 1px;
+    background: #E7E7E7;
+    margin: 3px 0;
+}

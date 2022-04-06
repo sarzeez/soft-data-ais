@@ -11,10 +11,12 @@ import noIMG from "../../../images/noIMG.svg";
 import recIcon from "../../../images/recognationIcon.svg";
 import warning from "../../../images/warning.svg";
 import doorNext from "../../../images/doorNext.svg";
+import deleteImg from "../../../images/newimages/deleteImg.svg";
 
 import './onlineDoors.css';
 import AddStaff from "../modals/add-staff/AddStaff";
 
+import "bootstrap/dist/css/bootstrap.css";
 
 const OnlineDoors = () => {
 
@@ -107,6 +109,10 @@ const OnlineDoors = () => {
             <div className="online_doors_title">
                 <div className="content_top">
                     <p className={`Content_title ${isDarkMode && 'darkModeColor'}`}>{t("Eshiklar boshqaruvi")}</p>
+
+                    <button type="button" className="btn btn-danger mb-2 pt-2 pb-2 d-flex align-items-center">
+                        <img src={deleteImg} className="mr-2"/>O’chirish
+                    </button>
                 </div>
             </div>
 
@@ -230,6 +236,7 @@ const OnlineDoors = () => {
                             </div>
                     }
                 </div>
+
                 <div className="online_doors_info_content">
 
                     <div className={`online_doors_info_title ${isDarkMode && 'darkModeBackground'}`}>
@@ -570,8 +577,6 @@ const OnlineDoors = () => {
                         </div>
                 }
             </div>
-
-
 
         </div>
         </div>
