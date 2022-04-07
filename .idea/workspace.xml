@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="630af48d-1ca7-4883-8e3d-17f8fed27d11" name="Changes" comment="onlineManegment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ip.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ip.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,8 +155,16 @@
       <workItem from="1648785983090" duration="7246000" />
       <workItem from="1648809067846" duration="6932000" />
       <workItem from="1648873578820" duration="18916000" />
-      <workItem from="1649234876721" duration="2923000" />
+      <workItem from="1649234876721" duration="4349000" />
     </task>
+    <task id="LOCAL-00001" summary="onlineManegment">
+      <created>1649334837796</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1649334837796</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,20 +185,26 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="onlineManegment" />
+    <option name="LAST_COMMIT_MESSAGE" value="onlineManegment" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="333" y="0" key="CommitChangelistDialog2" timestamp="1649334833083">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="333" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1649334833083" />
     <state x="392" y="81" key="MultipleFileMergeDialog" timestamp="1649155659574">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="392" y="81" key="MultipleFileMergeDialog/0.0.1360.728@0.0.1360.728" timestamp="1649155659574" />
-    <state x="272" y="98" key="Vcs.Push.Dialog.v2" timestamp="1649155801091">
+    <state x="272" y="98" key="Vcs.Push.Dialog.v2" timestamp="1649335490803">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="272" y="98" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1649155801091" />
-    <state x="397" y="156" key="git4idea.merge.GitPullDialog" timestamp="1649163264233">
+    <state x="272" y="98" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1649335490803" />
+    <state x="397" y="156" key="git4idea.merge.GitPullDialog" timestamp="1649336044919">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="397" y="156" key="git4idea.merge.GitPullDialog/0.0.1360.728@0.0.1360.728" timestamp="1649163264233" />
+    <state x="397" y="156" key="git4idea.merge.GitPullDialog/0.0.1360.728@0.0.1360.728" timestamp="1649336044919" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
