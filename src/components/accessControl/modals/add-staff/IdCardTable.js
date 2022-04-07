@@ -22,7 +22,7 @@ const columns = [
 ];
 
 
-const IdCardTable = ({card, setSelectedItems}) => {
+const IdCardTable = ({card, setSelectedItems, staffTableIntialValues}) => {
 
     const [state, setState] = React.useState({selectedRowKeys: []})
     const onSelectChange = (selectedRowKeys, a) => {
@@ -40,7 +40,8 @@ const IdCardTable = ({card, setSelectedItems}) => {
         <Table
           columns={columns}
           rowSelection={rowSelection}
-          dataSource={card}
+          // dataSource={card}
+          dataSource={staffTableIntialValues.cards.length>0 ? staffTableIntialValues.cards : card}
           pagination={false}
           style={{minHeight: '170px'}}
           scroll={{ y: 129 }}

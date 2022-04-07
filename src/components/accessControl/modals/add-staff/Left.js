@@ -77,7 +77,7 @@ const Left = ({ data, setData, terminalIPList }) => {
             <div className="access_control_add_staff_modal_body_item_left_inputs">
                 <Form.Item
                     label={t("Toifasi")}
-                    name="rank"
+                    name="user_type"
                     rules={[
                     {
                         required: true,
@@ -95,7 +95,7 @@ const Left = ({ data, setData, terminalIPList }) => {
                 </Form.Item>
                 <Form.Item
                     label={t("Lavozimi")}
-                    name="user_type"
+                    name="rank"
                     rules={[
                     {
                         required: true,
@@ -138,21 +138,21 @@ const Left = ({ data, setData, terminalIPList }) => {
                     },
                     ]}
                 >
-                    {/*<DatePicker*/}
-                    {/*    placeholder={`${moment(new Date()).format(*/}
-                    {/*        "DD.MM.YYYY"*/}
-                    {/*    )}`}*/}
-                    {/*    size="large"*/}
-                    {/*    style={{borderRadius: '5px'}}*/}
-                    {/*/>*/}
-
                     <DatePicker
                         placeholder={`${moment(new Date()).format(
                             "DD.MM.YYYY"
                         )}`}
-                        selected={startDate}
-                        onChange={(date) => setStartDate(date)}
+                        size="large"
+                        style={{borderRadius: '5px'}}
                     />
+
+                    {/*<DatePicker*/}
+                    {/*    placeholder={`${moment(new Date()).format(*/}
+                    {/*        "DD.MM.YYYY"*/}
+                    {/*    )}`}*/}
+                    {/*    selected={startDate}*/}
+                    {/*    onChange={(date) => setStartDate(date)}*/}
+                    {/*/>*/}
 
                 </Form.Item>
                 <Form.Item

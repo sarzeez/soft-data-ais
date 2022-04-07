@@ -10,8 +10,8 @@ const StaffMiddle = (props) => {
        isOpenAddTerminal,
        card,
        setCard,
-   }=props
-
+       staffTableIntialValues
+   } = props
 
     const [selectedItems, setSelectedItems] = React.useState([]);
 
@@ -35,6 +35,7 @@ const StaffMiddle = (props) => {
                   <IdCardTable
                       card = {card}
                       setSelectedItems = {setSelectedItems}
+                      staffTableIntialValues={staffTableIntialValues}
                   />
 
                <div className='access_control_add_staff_modal_body_item_right_buttons'>

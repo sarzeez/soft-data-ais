@@ -1,36 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="336564c8-be62-4b56-98c9-fd11d6f5abdf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/cameraOff.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/cameraOn.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/deleteImg.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/downn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/managmentImg.svg" afterDir="false" />
+    <list default="true" id="336564c8-be62-4b56-98c9-fd11d6f5abdf" name="Changes" comment="edit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/locales/uz/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/uz/translation.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineDoors.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineDoors.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AccessControlTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AccessControlTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/IdCardTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/IdCardTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffMiddle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffMiddle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/addStaff.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/addStaff.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/TerminalTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/TerminalTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loginPage/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loginPage/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loginPage/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loginPage/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/saidbar/Saidbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/saidbar/Saidbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ip.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/root.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/root.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,11 +45,17 @@
       <option name="presentableId" value="Default" />
       <updated>1649163141134</updated>
       <workItem from="1649163142726" duration="557000" />
-      <workItem from="1649217918771" duration="16950000" />
+      <workItem from="1649217918771" duration="18119000" />
+      <workItem from="1649304521157" duration="1505000" />
+      <workItem from="1649307483725" duration="17574000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit" />
   </component>
 </project>

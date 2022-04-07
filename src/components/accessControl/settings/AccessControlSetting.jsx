@@ -48,14 +48,15 @@ const AccessControlSetting = () => {
     const [staffTableIntialValues, setStaffTableIntialValues] = useState({
         fullname: '',
         gender: '',
-        rank: '',
         user_type: '',
+        rank: '',
         door_ip: [],
         access_type: '',
         valid_from_time: '',
         valid_to_time: '',
         image: '',
         notification: false,
+        cards: [],
     })
     console.log(staffTableIntialValues)
     // delete button
@@ -260,6 +261,7 @@ const AccessControlSetting = () => {
                             setStaffTableIntialValues={setStaffTableIntialValues}
                             getStaffData={getStaffData}
                             setStaffPaginationCurrent ={setStaffPaginationCurrent}
+                            staffTableIntialValues={staffTableIntialValues}
                         />
                         <div className="access_control_setting_tab">
                             <div className='access_control_setting_tab_item'>

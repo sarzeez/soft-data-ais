@@ -31,12 +31,15 @@ function AddStaff(props) {
     const [card, setCard] = useState([]);
     const [fingerPrint, setFingerPrint] = useState([]);
 
+    const [selectedCards , setSelectedCards] = useState([]);
 
+    // staffTableIntialValues.cards ? setCard(staffTableIntialValues.cards) : setCard([]);
+    console.log(card)
     const [data, setData] = useState({
         fullname: '',
         gender: '',
-        rank: '',
         user_type: '',
+        rank: '',
         door_ip: [],
         access_type: '',
         valid_from_time: '',
@@ -62,17 +65,17 @@ function AddStaff(props) {
         fd.append("fingerprint", JSON.stringify(fingerPrint));
 
         if (staffTableIntialValues.edit){
-            console.log("Hello world");
-
-            // axios.put(`${ip}/api/terminal/updateuser`, {
-            //     ...value
-            // })
-            //     .then(response =>{
-            //         getStaffData(setStaffPaginationCurrent)
-            //     })
-            //     .catch(err=>{
-            //         console.log(err?.response?.data)
-            //     })
+            // console.log("Hello world");
+            axios.put(`${ip}/api/terminal/updateuser`, {
+                ...value
+            })
+                .then(response =>{
+                    getStaffData(setStaffPaginationCurrent)
+                    console.log(response);
+                })
+                .catch(err=>{
+                    console.log(err?.response?.data)
+                })
         }
         else {
             axios.post(`${ip}/api/terminal/adduser`, fd)
@@ -144,7 +147,7 @@ function AddStaff(props) {
                         <div className="access_control_add_staff_modal_body_item_2">
                             <div className="access_control_add_staff_modal_body_item">
                                 <p className="access_control_add_staff_modal_body_item_title">ID karta</p>
-                                <StaffMiddle card={card} setCard={setCard} isOpenAddTerminal={isOpenAddTerminal} setIsOpenAddTerminal = {setIsOpenAddTerminal} />
+                                <StaffMiddle staffTableIntialValues={staffTableIntialValues} card={card} setCard={setCard} isOpenAddTerminal={isOpenAddTerminal} setIsOpenAddTerminal = {setIsOpenAddTerminal} />
                             </div>
                             <div className="access_control_add_staff_modal_body_item">
                                 <p className="access_control_add_staff_modal_body_item_title">Barmoq izi</p>
@@ -155,9 +158,13 @@ function AddStaff(props) {
                         <div className="access_control_add_staff_modal_body_item">
                             <p className="access_control_add_staff_modal_body_item_title">Yuzni aniqlash</p>
                             <StaffRight data = {data} setData = {setData} terminalIPList = {terminalIPList} />
-                            <button className="access_control_add_staff_modal_body_item_3_submit_button" type="submit">
-                                Saqlash
-                            </button>
+                          <div className="staff_buttons">
+                              <button className="addStaff_cancel_button">Bekor qilish</button>
+
+                              <button className="access_control_add_staff_modal_body_item_3_submit_button" type="submit">
+                                  Saqlash
+                              </button>
+                          </div>
                         </div>
                     </div>
                 </div>

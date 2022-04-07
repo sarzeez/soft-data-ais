@@ -84,11 +84,6 @@ const StaffTable = (props) => {
                 </div>
             )
         },
-        // {
-        //     title: t('Ruxsat turi'),
-        //     dataIndex: 'access_type',
-        //     align: 'center'
-        // },
         {
             title: t('ID karta'),
             // dataIndex: 'cards',
