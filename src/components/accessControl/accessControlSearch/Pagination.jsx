@@ -2,7 +2,12 @@ import {Pagination} from 'antd';
 
 const AccessControlSearchPagination = (props) => {
 
-    const {accessTablePaginationLimit, accessTablePaginationCurrent, accessTablePaginationOnChange, accessTableTotal} = props;
+    const {
+        accessTablePaginationLimit,
+        accessTablePaginationCurrent,
+        accessTablePaginationOnChange,
+        accessTableTotal
+    } = props;
 
     return <Pagination
         dropdownRender = {false}

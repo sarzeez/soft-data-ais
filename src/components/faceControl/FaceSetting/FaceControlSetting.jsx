@@ -238,7 +238,7 @@ const FaceControlSetting = () => {
                                     !show ?
                                         <div className="add_new_group">
                                             <button onClick={() => setShow(true)} className="camera_groups_button">
-                                                <MdAdd/>
+                                                <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
                                                 {t("Guruh qo’shish")}
                                             </button>
                                             {

@@ -48,7 +48,7 @@ function AddStaff(props) {
         setIsOpenAddStaff(!setIsOpenAddStaff)
 
     }
-    console.log("value = ", staffTableIntialValues)
+    // console.log("value = ", staffTableIntialValues)
 
     const onFinish = (value) => {
         const formData = {

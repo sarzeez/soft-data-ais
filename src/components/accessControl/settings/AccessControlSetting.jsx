@@ -290,7 +290,7 @@ const AccessControlSetting = () => {
                                     <StaffPagination
                                         staffPaginationLimit = {staffPaginationLimit}
                                         staffPaginationCurrent = {staffPaginationCurrent}
-                                        accessTablePaginationOnChange = {staffPaginationOnChange}
+                                        staffPaginationOnChange = {staffPaginationOnChange}
                                         accessTableTotal = {staffTotal}
                                     />
                                 </div>

@@ -5,7 +5,7 @@ const StaffPagination = (props) => {
     const {
         staffPaginationLimit,
         staffPaginationCurrent,
-        accessTablePaginationOnChange,
+        staffPaginationOnChange,
         accessTableTotal,
 
     } = props;
@@ -14,7 +14,7 @@ const StaffPagination = (props) => {
         dropdownRender = {false}
         defaultPageSize = {staffPaginationLimit}
         current={staffPaginationCurrent}
-        onChange={accessTablePaginationOnChange}
+        onChange={staffPaginationOnChange}
         total = {accessTableTotal}
         showSizeChanger={true}
         pageSize={staffPaginationLimit}

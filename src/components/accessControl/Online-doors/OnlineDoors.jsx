@@ -17,11 +17,10 @@ import AddStaff from "../modals/add-staff/AddStaff";
 
 
 const OnlineDoors = () => {
-
     const {t} = useTranslation()
     const navigate = useNavigate()
-    const isDarkMode = useSelector(state => state.theme.theme_data)
-    const is_refresh_value = useSelector(state => state.theme.is_refresh_value)
+    const isDarkMode = useSelector(state => state.theme.theme_data);
+    const is_refresh_value = useSelector(state => state.theme.is_refresh_value);
     const [onlineImg, setOnlineImg] = useState(null);
     const [onlineImg2, setOnlineImg2] = useState(null);
     const [onlineImg3, setOnlineImg3] = useState(null);
