@@ -5,11 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/IdCardTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/IdCardTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffMiddle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffMiddle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/addStaff.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/addStaff.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffRight.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffRight.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +45,8 @@
       <workItem from="1649163142726" duration="557000" />
       <workItem from="1649217918771" duration="18119000" />
       <workItem from="1649304521157" duration="1505000" />
-      <workItem from="1649307483725" duration="17574000" />
+      <workItem from="1649307483725" duration="18371000" />
+      <workItem from="1649390758131" duration="13466000" />
     </task>
     <servers />
   </component>

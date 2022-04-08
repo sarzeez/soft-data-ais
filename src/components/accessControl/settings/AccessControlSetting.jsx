@@ -44,6 +44,7 @@ const AccessControlSetting = () => {
     const [staffPaginationCurrent, setStaffPaginationCurrent] = useState(1)
     const [staffData, setStaffData] = useState([])
     const [staffTotal, setStaffTotal] = useState(null)
+    const [card, setCard] = useState([]);
 
     const [staffTableIntialValues, setStaffTableIntialValues] = useState({
         fullname: '',
@@ -261,7 +262,8 @@ const AccessControlSetting = () => {
                             setStaffTableIntialValues={setStaffTableIntialValues}
                             getStaffData={getStaffData}
                             setStaffPaginationCurrent ={setStaffPaginationCurrent}
-                            staffTableIntialValues={staffTableIntialValues}
+                            card={card}
+                            setCard={setCard}
                         />
                         <div className="access_control_setting_tab">
                             <div className='access_control_setting_tab_item'>

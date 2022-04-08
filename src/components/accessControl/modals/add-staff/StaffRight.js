@@ -10,7 +10,7 @@ import loadingGif from '../../../../assets/gif/loading.gif';
 
 import './staffRight.css';
 
-const StaffRight = ({ data, setData, terminalIPList }) => {
+const StaffRight = ({ data, setData, terminalIPList, staffTableIntialValues }) => {
 
     const [view, setView] = useState(null)
     const [requestedImage, setRequestedImage] = useState(null)
@@ -19,6 +19,7 @@ const StaffRight = ({ data, setData, terminalIPList }) => {
 
     const upload = (e) => {
         setAccessDoors('')
+
         if(e.target.files && e.target.files[0]) {
             setView(URL.createObjectURL(e.target.files[0]))
             setData({...data, image: e.target.files[0]})
@@ -26,9 +27,12 @@ const StaffRight = ({ data, setData, terminalIPList }) => {
             setView(null)
         }
     }
-
     const onChangeImageSelect = (a) => {
         setAccessDoors(a)
+    }
+
+    if(staffTableIntialValues.edit) {
+
     }
 
     const handleClickImageDownload = () => {
@@ -44,12 +48,14 @@ const StaffRight = ({ data, setData, terminalIPList }) => {
                 setLoading(false)
             })
     }
-
+    console.log(staffTableIntialValues.edit);
     return (
         <div className="access_control_add_staff_modal_body_item_middle">
                 <div className="access_control_add_staff_modal_body_item_middle_image">
-                    {
-                        loading 
+                    {   staffTableIntialValues.edit ?
+                        <img src={`${ip}/${staffTableIntialValues.image}`} alt='edit'/>
+                        :
+                        loading
                             ? <img src={loadingGif} alt='loading'/>
                             : (
                                 (view || requestedImage)

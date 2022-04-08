@@ -34,6 +34,7 @@ const StaffMiddle = (props) => {
 
                   <IdCardTable
                       card = {card}
+                      setCard={setCard}
                       setSelectedItems = {setSelectedItems}
                       staffTableIntialValues={staffTableIntialValues}
                   />

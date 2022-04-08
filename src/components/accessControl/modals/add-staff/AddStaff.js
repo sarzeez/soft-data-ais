@@ -22,18 +22,18 @@ function AddStaff(props) {
         staffTableIntialValues,
         setStaffPaginationCurrent,
         getStaffData,
+        card,
+        setCard,
     } = props;
 
     const {t} = useTranslation()
     const [ isOpenAddTerminal, setIsOpenAddTerminal] = useState(false);
     const [ isOpenAddFingerprint,setIsOpenAddFingerprint] = useState(false);
     const [terminalIPList, setTerminalIPList] = useState([]);
-    const [card, setCard] = useState([]);
+
     const [fingerPrint, setFingerPrint] = useState([]);
 
-    const [selectedCards , setSelectedCards] = useState([]);
 
-    // staffTableIntialValues.cards ? setCard(staffTableIntialValues.cards) : setCard([]);
     console.log(card)
     const [data, setData] = useState({
         fullname: '',
@@ -109,7 +109,9 @@ function AddStaff(props) {
                 .catch(err => {
                 })
         }
-        getData()
+        getData();
+        setCard(staffTableIntialValues.cards);
+        setFingerPrint(staffTableIntialValues.fingerprint);
     }, [])
 
 
@@ -157,7 +159,7 @@ function AddStaff(props) {
 
                         <div className="access_control_add_staff_modal_body_item">
                             <p className="access_control_add_staff_modal_body_item_title">Yuzni aniqlash</p>
-                            <StaffRight data = {data} setData = {setData} terminalIPList = {terminalIPList} />
+                            <StaffRight staffTableIntialValues={staffTableIntialValues} data = {data} setData = {setData} terminalIPList = {terminalIPList} />
                           <div className="staff_buttons">
                               <button className="addStaff_cancel_button">Bekor qilish</button>
 
