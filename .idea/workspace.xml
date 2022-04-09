@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="336564c8-be62-4b56-98c9-fd11d6f5abdf" name="Changes" comment="edit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddCameraModal/AddCameraModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddCameraModal/AddCameraModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/FaceControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/FaceControlSetting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/table/CameraTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/table/CameraTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/cart/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/cart/Cart.js" afterDir="false" />
-    </list>
+    <list default="true" id="336564c8-be62-4b56-98c9-fd11d6f5abdf" name="Changes" comment="edit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,7 +42,7 @@
       <workItem from="1649307483725" duration="18371000" />
       <workItem from="1649390758131" duration="15230000" />
       <workItem from="1649477309178" duration="5743000" />
-      <workItem from="1649493571605" duration="9840000" />
+      <workItem from="1649493571605" duration="10730000" />
     </task>
     <servers />
   </component>
