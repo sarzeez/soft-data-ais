@@ -37,11 +37,11 @@ const Cart = ({ item, isDarkMode }) => {
     const [loading, setLoading] = useState(false)
     // console.log(item);
 
-    const handleClickVideoPlay = (id) => {
+    const handleClickVideoPlay = (id, ip_address) => {
         setVisible(true)
         setLoading(true)
         const interval = setInterval(() => {
-            axios(`${ip}/api/face/video/${id}`)
+            axios(`${ip}/api/face/video/${ip_address}/${id}`)
             .then(res => {
                 const { data } = res;
                 if(data !== 'wait') {
@@ -71,7 +71,7 @@ const Cart = ({ item, isDarkMode }) => {
                 <VideoModal visible={visible} setVisible={setVisible} loading = {loading} videoByID = {videoByID} id = {item.id}/>
                 <div className="j_cardInfoTop">
                     <div className="j_cardInfoTopLeft">
-                        <div onClick={() => handleClickVideoPlay(item.id)} className='face-control-video-block'>
+                        <div onClick={() => handleClickVideoPlay(item.id, item.ip_address)} className='face-control-video-block'>
                             <BsPlayBtn color='#fff' size={20}/>
                         </div>
                         <ImageDemo id = {item.id} />

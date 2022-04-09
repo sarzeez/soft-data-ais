@@ -36,7 +36,8 @@ const FaceControlSetting = () => {
         group_id: '',
         ip_address: '',
         username: '',
-        password: ''
+        password: '',
+        channel: '',
     })
 
     // group initial values
@@ -92,6 +93,7 @@ const FaceControlSetting = () => {
                 ip_address: item.ip_address,
                 username: item.username,
                 password: item.password,
+                channel: item.channel
             }
         ))
         setCameraData(newData)
