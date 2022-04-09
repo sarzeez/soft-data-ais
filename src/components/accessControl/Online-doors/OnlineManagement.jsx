@@ -1,8 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import downImg from "../../../images/newimages/downn.png";
 import managmentImg from "../../../images/newimages/managmentImg.svg";
-import cameraOff from "../../../images/newimages/cameraOff.svg";
+import cameraOnn from "../../../images/newimages/access-control 1.svg";
+import cameraOff from "../../../images/newimages/accesscontrolOff.svg";
 import cameraOn from "../../../images/newimages/cameraOn.svg";
+import terminalImg1 from "../../../images/newimages/terminalImg/terminalImgone.svg"
+import terminalImg2 from "../../../images/newimages/terminalImg/terminalimgtwo.svg"
+import terminalImg3 from "../../../images/newimages/terminalImg/terminalimgthree.svg"
+import terminalImg4 from "../../../images/newimages/terminalImg/terminalimgfour.svg"
 import Modal from "react-modal";
 import "./onlineManegment.css";
 import {Form, Input, Select} from "antd";
@@ -27,8 +32,7 @@ const OnlineManagement = () => {
             right: 'auto',
             bottom: 'auto',
             marginRight: '-50%',
-            transform: 'translate(-50%, -50%)',
-
+            transform: 'translate(-50%, -50%)'
         },
     };
     let subtitle;
@@ -41,49 +45,85 @@ const OnlineManagement = () => {
     useEffect(()=>{
         axios.get(ip + "/api/adduser/terminal")
             .then((res)=>{
+                console.log(res)
                 setTerminals(res.data);
             })
     },[])
 
+    const [doorOne , setDoorOne] = useState(true);
+    const [doorTwo , setDoorTwo] = useState(false);
+    const [doorThree , setDoorThree] = useState(false);
+    const [doorFour , setDoorFour] = useState(false);
+
+    const terminal1 = () =>{
+        setDoorOne(true);
+        setDoorTwo(false);
+        setDoorThree(false);
+        setDoorFour(false);
+    }
+    const terminal2 = () =>{
+        setDoorOne(true);
+        setDoorTwo(true);
+        setDoorThree(false);
+        setDoorFour(false);
+    }
+    const terminal3 = () =>{
+        setDoorOne(true);
+        setDoorTwo(true);
+        setDoorThree(true);
+        setDoorFour(false);
+    }
+    const terminal4 = () =>{
+        setDoorOne(true);
+        setDoorTwo(true);
+        setDoorThree(true);
+        setDoorFour(true);
+    }
     return (
         <div>
             <div className="online_managment">
                 <div className="online_managment_title">
                     <div className="content_top">
-                        <p className="p-0 m-0 content_title">Onlayn boshqaruv</p>
-                        <button type="button" className="content_button btn mb-2 d-flex align-items-center">
-                            Terminallar joylashuvi<img src={downImg} className=""/>
-                        </button>
+                        <p className="content_title">Eshiklar boshqaruvi</p>
+                        <div className="content_button d-flex align-items-center">
+                            <span>Terminallar joylashuvi :</span>
+                            <button type="button" className="btn" onClick={terminal1}><img src={terminalImg1}/></button>
+                            <button type="button" className="btn" onClick={terminal2}><img src={terminalImg2}/></button>
+                            <button type="button" className="btn" onClick={terminal3}><img src={terminalImg3}/></button>
+                            <button type="button" className="btn" onClick={terminal4}><img src={terminalImg4}/></button>
+                        </div>
                     </div>
                 </div>
 
                 <div className="online_doors_body">
-                    <div className="online_doors_managment">
+                    <div className={doorOne===true&&doorTwo===false&&doorThree===false&&doorFour===false ? "online_doors_managment_one" :
+                        ("online_doors_managment")
+                    }>
                         <div className="online_doors_managment_body">
                             <img src={managmentImg}/>
-                            <h2>Eshikni tanlang</h2>
-                            <button type="button" className="btn" onClick={modalOpen}>Eshik tanlang</button>
+                            <h2>Iltimos eshikni tanlang</h2>
+                            <button type="button" className="btn" onClick={modalOpen}>Tanlash</button>
                         </div>
                     </div>
-                    <div className="online_doors_managment">
+                    <div className={doorTwo===true ? "online_doors_managment" : "online_doors_managment d-none"}>
                         <div className="online_doors_managment_body">
                             <img src={managmentImg}/>
-                            <h2>Eshikni tanlang</h2>
-                            <button type="button" className="btn" onClick={modalOpen}>Eshik tanlang</button>
+                            <h2>Iltimos eshikni tanlang</h2>
+                            <button type="button" className="btn" onClick={modalOpen}>Tanlash</button>
                         </div>
                     </div>
-                    <div className="online_doors_managment">
+                    <div className={doorThree===true ? "online_doors_managment" : "online_doors_managment d-none"}>
                         <div className="online_doors_managment_body">
                             <img src={managmentImg}/>
-                            <h2>Eshikni tanlang</h2>
-                            <button type="button" className="btn" onClick={modalOpen}>Eshik tanlang</button>
+                            <h2>Iltimos eshikni tanlang</h2>
+                            <button type="button" className="btn" onClick={modalOpen}>Tanlash</button>
                         </div>
                     </div>
-                    <div className="online_doors_managment">
+                    <div className={doorFour===true ? "online_doors_managment" : "online_doors_managment d-none"}>
                         <div className="online_doors_managment_body">
                             <img src={managmentImg}/>
-                            <h2>Eshikni tanlang</h2>
-                            <button type="button" className="btn" onClick={modalOpen}>Eshik tanlang</button>
+                            <h2>Iltimos eshikni tanlang</h2>
+                            <button type="button" className="btn" onClick={modalOpen}>Tanlash</button>
                         </div>
                     </div>
                 </div>
@@ -107,12 +147,10 @@ const OnlineManagement = () => {
                                         return(
                                             <div className="online_doors_modal_body_inner" key={item.id}>
                                                 <div className="d-flex align-items-start">
-                                                    {/*<svg>*/}
                                                     <img src={cameraOff}/>
-                                                    {/*</svg>*/}
                                                     <div className="ml-2">
                                                         <h5>{item.door_name}</h5>
-                                                        <span>Chiqish eshigi</span>
+                                                        <span>{item.direction==="Entry" ? "Kirish eshigi" : "Chiqish eshigi" }</span>
                                                     </div>
                                                 </div>
                                                 <div className="linee">

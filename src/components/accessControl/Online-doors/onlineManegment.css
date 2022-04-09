@@ -1,5 +1,6 @@
 .online_managment{
     padding: 10px;
+    box-sizing: border-box;
 }
 .online_managment_title{
     margin-bottom: 10px;
@@ -17,33 +18,30 @@
     color: #000000;
 }
 
-.content_top .content_button{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.content_top .content_button span{
     font-family: 'Open Sans';
     font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    color: #9EAEC5;
-    width: 200px;
-    height: 40px;
-    background: #FFFFFF;
-    border: 1px solid #E5E9EE;
+    font-weight: 700;
+    font-size: 16px;
+    color: #000000;
+}
+.content_top .content_button button{
+    box-shadow: none;
+}
+.content_top .content_button button{
+    margin: 0 5px;
+    background: rgba(231, 255, 239, 0.17);
     box-sizing: border-box;
     border-radius: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 2px;
+    padding-bottom: 4.5px;
 }
-.content_top .content_button:active{
-    box-shadow: none;
+.content_top .content_button button:hover{
+    border: 1px solid #29B85D;
 }
 
-.content_top .content_button:focus{
-    box-shadow: none;
-}
-
-.content_top .content_button:hover{
-    color: #9EAEC5;
-}
 .online_doors_body{
     /*height: calc(100vh - 125px);*/
     display: grid;
@@ -54,6 +52,17 @@
     padding: 15px;
 }
 .online_doors_managment{
+     background: #FFFFFF;
+     border: 1px solid #E5EAFA;
+     box-sizing: border-box;
+     border-radius: 5px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+     height: 240px;
+ }
+.online_doors_managment_one{
     background: #FFFFFF;
     border: 1px solid #E5EAFA;
     box-sizing: border-box;
@@ -62,13 +71,17 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    width: 203%;
+    height: 100%;
 }
 .online_doors_managment_body{
     text-align: center;
 }
+
 .online_doors_managment_body img{
     transform: scale(0.8);
 }
+
 .online_doors_managment_body h2{
     font-family: 'Open Sans';
     font-style: normal;
@@ -136,13 +149,19 @@
     background: #F8F8F8;
 }
 .online_doors_modal_body_inner:hover img{
-    /*fill: #29B85D;*/
-    /*filter: invert(42%);*/
     filter: invert(53%) sepia(83%) saturate(425%) hue-rotate(89deg) brightness(94%) contrast(85%);
 }
+.online_doors_modal_body_inner:hover .imgChange{
+    display: inline-block;
+}
+.online_doors_modal_body_inner .imgChange{
+display: none;
+}
+
 .online_doors_modal_body_inner:hover h5{
     color: #29B85D;
 }
+
 .online_doors_modal_body h5{
     font-family: 'Open Sans';
     font-style: normal;

@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4da1f399-1a33-4294-b2f1-d056329cbf9f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/cameraOff.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/cameraOn.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/deleteImg.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/downn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/managmentImg.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/access-control 1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/accesscontrolOff.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/terminalImg/terminalImgone.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/terminalImg/terminalimgfour.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/terminalImg/terminalimgthree.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/terminalImg/terminalimgtwo.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/root.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/root.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,9 +58,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/images/newimages/terminalImg" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -73,6 +72,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Soft data\SoftData-AIS\src\images\newimages\terminalImg" />
+      <recent name="D:\Soft data\SoftData-AIS\src\images\newimages" />
       <recent name="D:\Soft data\SoftData-AIS\src\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -98,7 +99,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="630af48d-1ca7-4883-8e3d-17f8fed27d11" name="Changes" comment="" />
+      <changelist id="4da1f399-1a33-4294-b2f1-d056329cbf9f" name="Default Changelist" comment="" />
       <created>1643025626324</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -168,11 +169,12 @@
       <workItem from="1648873578820" duration="19802000" />
       <workItem from="1649064164191" duration="5446000" />
       <workItem from="1649131355331" duration="11305000" />
+      <workItem from="1649505658550" duration="306000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
