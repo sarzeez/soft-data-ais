@@ -20,6 +20,7 @@ function AddStaff(props) {
         isOpenAddStaff,
         setIsOpenAddStaff,
         staffTableIntialValues,
+        setStaffTableIntialValues,
         setStaffPaginationCurrent,
         getStaffData,
         card,
@@ -33,8 +34,8 @@ function AddStaff(props) {
 
     const [fingerPrint, setFingerPrint] = useState([]);
 
+    // console.log(card)
 
-    console.log(card)
     const [data, setData] = useState({
         fullname: '',
         gender: '',
@@ -49,9 +50,19 @@ function AddStaff(props) {
     })
     const cancel = () =>{
         setIsOpenAddStaff(!setIsOpenAddStaff)
-
+        setStaffTableIntialValues({
+            fullname: '',
+            gender: '',
+            user_type: '',
+            rank: '',
+            door_ip: [],
+            access_type: '',
+            valid_from_time: '',
+            valid_to_time: '',
+            image: '',
+            notification: false,
+        })
     }
-    // console.log("value = ", staffTableIntialValues)
 
     const onFinish = (value) => {
         const formData = {
@@ -65,13 +76,12 @@ function AddStaff(props) {
         fd.append("fingerprint", JSON.stringify(fingerPrint));
 
         if (staffTableIntialValues.edit){
-            // console.log("Hello world");
             axios.put(`${ip}/api/terminal/updateuser`, {
                 ...value
             })
                 .then(response =>{
+                    cancel()
                     getStaffData(setStaffPaginationCurrent)
-                    console.log(response);
                 })
                 .catch(err=>{
                     console.log(err?.response?.data)
@@ -80,7 +90,7 @@ function AddStaff(props) {
         else {
             axios.post(`${ip}/api/terminal/adduser`, fd)
                 .then(res => {
-                    setIsOpenAddStaff(false)
+                    cancel()
                     getStaffData(setStaffPaginationCurrent)
                 })
                 .catch(err => {
@@ -110,8 +120,9 @@ function AddStaff(props) {
                 })
         }
         getData();
-        setCard(staffTableIntialValues.cards);
-        setFingerPrint(staffTableIntialValues.fingerprint);
+
+        // setCard(staffTableIntialValues.cards);
+        // setFingerPrint(staffTableIntialValues.fingerprint);
     }, [])
 
 
@@ -123,7 +134,7 @@ function AddStaff(props) {
             className="mymodal"
             overlayClassName="myoverlay"
             closeTimeoutMS={300}
-            // shouldCloseOnOverlayClick={false}
+            shouldCloseOnOverlayClick={false}
         >
             <Form
                 name="basic"
@@ -161,7 +172,7 @@ function AddStaff(props) {
                             <p className="access_control_add_staff_modal_body_item_title">Yuzni aniqlash</p>
                             <StaffRight staffTableIntialValues={staffTableIntialValues} data = {data} setData = {setData} terminalIPList = {terminalIPList} />
                           <div className="staff_buttons">
-                              <button className="addStaff_cancel_button">Bekor qilish</button>
+                              <button onClick={cancel} className="addStaff_cancel_button">Bekor qilish</button>
 
                               <button className="access_control_add_staff_modal_body_item_3_submit_button" type="submit">
                                   Saqlash

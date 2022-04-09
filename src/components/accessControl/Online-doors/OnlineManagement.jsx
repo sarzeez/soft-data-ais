@@ -2,14 +2,10 @@ import React, {useState, useEffect} from 'react';
 import downImg from "../../../images/newimages/downn.png";
 import managmentImg from "../../../images/newimages/managmentImg.svg";
 import cameraOff from "../../../images/newimages/cameraOff.svg";
-import cameraOn from "../../../images/newimages/cameraOn.svg";
 import Modal from "react-modal";
 import "./onlineManegment.css";
-import {Form, Input, Select} from "antd";
-import uzbek from "../../../images/uzbek.svg";
-import russia from "../../../images/russia.svg";
-import engliz from "../../../images/engliz.svg";
 import axios from "axios";
+import {ip} from "../../../ip";
 
 
 const OnlineManagement = () => {
@@ -38,7 +34,7 @@ const OnlineManagement = () => {
 
     const [terminals , setTerminals] = useState([]);
     useEffect(()=>{
-        axios.get("http://10.100.1.246:5005/api/adduser/terminal")
+        axios.get(ip+"/api/adduser/terminal")
             .then((res)=>{
                 setTerminals(res.data);
             })

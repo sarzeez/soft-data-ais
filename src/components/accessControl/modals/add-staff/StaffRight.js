@@ -31,9 +31,6 @@ const StaffRight = ({ data, setData, terminalIPList, staffTableIntialValues }) =
         setAccessDoors(a)
     }
 
-    if(staffTableIntialValues.edit) {
-
-    }
 
     const handleClickImageDownload = () => {
         setLoading(true)
@@ -48,7 +45,7 @@ const StaffRight = ({ data, setData, terminalIPList, staffTableIntialValues }) =
                 setLoading(false)
             })
     }
-    console.log(staffTableIntialValues.edit);
+
     return (
         <div className="access_control_add_staff_modal_body_item_middle">
                 <div className="access_control_add_staff_modal_body_item_middle_image">

@@ -146,14 +146,6 @@ const Left = ({ data, setData, terminalIPList }) => {
                         style={{borderRadius: '5px'}}
                     />
 
-                    {/*<DatePicker*/}
-                    {/*    placeholder={`${moment(new Date()).format(*/}
-                    {/*        "DD.MM.YYYY"*/}
-                    {/*    )}`}*/}
-                    {/*    selected={startDate}*/}
-                    {/*    onChange={(date) => setStartDate(date)}*/}
-                    {/*/>*/}
-
                 </Form.Item>
                 <Form.Item
                     label={t("Muddat")}

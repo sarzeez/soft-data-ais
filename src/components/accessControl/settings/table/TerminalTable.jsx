@@ -42,7 +42,7 @@ const TerminalTable = (props) => {
         {
             title: t('Eshik nomi'),
             dataIndex: 'door_name',
-            align: 'center'
+            align: 'center',
         },
         {
             title: t("Yo'nalishi"),

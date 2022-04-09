@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="336564c8-be62-4b56-98c9-fd11d6f5abdf" name="Changes" comment="edit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/IdCardTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/IdCardTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffMiddle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffMiddle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffRight.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffRight.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/TerminalTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/TerminalTable.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +32,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="C:\Users\Jahongir\AppData\Local\JetBrains\WebStorm 2021.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -46,7 +47,9 @@
       <workItem from="1649217918771" duration="18119000" />
       <workItem from="1649304521157" duration="1505000" />
       <workItem from="1649307483725" duration="18371000" />
-      <workItem from="1649390758131" duration="13466000" />
+      <workItem from="1649390758131" duration="15230000" />
+      <workItem from="1649477309178" duration="5743000" />
+      <workItem from="1649493571605" duration="7440000" />
     </task>
     <servers />
   </component>
