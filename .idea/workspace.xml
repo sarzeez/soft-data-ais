@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4da1f399-1a33-4294-b2f1-d056329cbf9f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/access-control 1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/accesscontrolOff.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/terminalImg/terminalImgone.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/terminalImg/terminalimgfour.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/terminalImg/terminalimgthree.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/terminalImg/terminalimgtwo.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" afterDir="false" />
     </list>
@@ -169,7 +164,7 @@
       <workItem from="1648873578820" duration="19802000" />
       <workItem from="1649064164191" duration="5446000" />
       <workItem from="1649131355331" duration="11305000" />
-      <workItem from="1649505658550" duration="306000" />
+      <workItem from="1649505658550" duration="4652000" />
     </task>
     <servers />
   </component>
@@ -205,16 +200,5 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="489" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1360.728@0.0.1360.728" timestamp="1649336617526" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx</url>
-          <line>458</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

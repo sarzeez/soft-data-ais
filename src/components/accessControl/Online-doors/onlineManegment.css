@@ -55,12 +55,12 @@
      background: #FFFFFF;
      border: 1px solid #E5EAFA;
      box-sizing: border-box;
-     border-radius: 5px;
+     border-radius: 10px;
      display: flex;
      justify-content: center;
      align-items: center;
      cursor: pointer;
-     height: 240px;
+     height: 252px;
  }
 .online_doors_managment_one{
     background: #FFFFFF;

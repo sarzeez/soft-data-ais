@@ -570,8 +570,6 @@ const OnlineDoors = () => {
                 }
             </div>
 
-
-
         </div>
         </div>
     );
