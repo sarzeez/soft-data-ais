@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +61,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
-    <property name="ts.external.directory.path" value="C:\Users\Jahongir\AppData\Local\JetBrains\WebStorm 2021.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -164,7 +163,7 @@
       <workItem from="1648873578820" duration="19802000" />
       <workItem from="1649064164191" duration="5446000" />
       <workItem from="1649131355331" duration="11305000" />
-      <workItem from="1649505658550" duration="4652000" />
+      <workItem from="1649505658550" duration="14138000" />
     </task>
     <servers />
   </component>

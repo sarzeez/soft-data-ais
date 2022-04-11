@@ -15,7 +15,6 @@ import doorNext from "../../../images/doorNext.svg";
 import './onlineDoors.css';
 import AddStaff from "../modals/add-staff/AddStaff";
 
-
 const OnlineDoors = () => {
     const {t} = useTranslation()
     const navigate = useNavigate()
@@ -35,14 +34,12 @@ const OnlineDoors = () => {
         const socket = socketIOClient(ip);
         socket.on("terminal1", data => {
             setOnlineImg(data)
-            // console.log(data)
         });
     }
     const listenDoorByIp2 = () => {
         const socket = socketIOClient(ip);
         socket.on("terminal2", data => {
             setOnlineImg2(data)
-            // console.log(data)
         });
     }
 
@@ -50,7 +47,6 @@ const OnlineDoors = () => {
         const socket = socketIOClient(ip);
         socket.on("terminal3", data => {
             setOnlineImg3(data)
-            // console.log(data)
         });
     }
 

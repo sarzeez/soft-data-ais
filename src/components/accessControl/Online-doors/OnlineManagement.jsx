@@ -100,20 +100,22 @@ const OnlineManagement = () => {
 
     // to select the location of the terminals!
 
-    useEffect(() => {
-        axios.get(ip + "/api/terminal/updateviewer")
-            .then((res) => {
-                console.log(res)
-                setTerminals(res.data);
-            })
-    }, [])
+    // useEffect(() => {
+    //
+    // }, [])
 
+    // let viewer = "";
     const editingTerminals = (index) => {
-        axios.put(ip + "/api/terminal/updateviewer/" + index)
+        axios.put(ip + "/api/terminal/updateviewer/" + index, { viewer: index })
             .then((res) => {
                 console.log(res)
+                // axios.get(ip + "/api/terminal/updateviewer")
+                //     .then((res) => {
+                //         console.log(res)
+                //     })
             })
     }
+
 
 
     //////////////////////////////////
@@ -172,8 +174,6 @@ const OnlineManagement = () => {
         setOnlineImg(null)
     }
 
-    // const
-
     const openDoor = () => {
         axios.get(`${ip}/api/terminal/open/${onlineImg && onlineImg.guest_user && onlineImg.guest_user.ip}`)
             .then(res => {
@@ -204,7 +204,6 @@ const OnlineManagement = () => {
     const blob4 = new Blob([onlineImg4 && onlineImg4.guest_user && onlineImg4.guest_user.image]);
     const url4 = URL.createObjectURL(blob4);
 
-
     return (
         <div>
             <div className="online_managment">
@@ -213,6 +212,9 @@ const OnlineManagement = () => {
                         <p className="content_title">Eshiklar boshqaruvi</p>
                         <div className="content_button d-flex align-items-center">
                             <span>Terminallar joylashuvi :</span>
+                            <button type="button" className="btn btn-success text-dark"
+                                    onClick={() => editingTerminals(1)}>edit
+                            </button>
                             <button type="button" className="btn" onClick={terminal1}><img src={terminalImg1}/></button>
                             <button type="button" className="btn" onClick={terminal2}><img src={terminalImg2}/></button>
                             <button type="button" className="btn" onClick={terminal3}><img src={terminalImg3}/></button>
@@ -226,7 +228,7 @@ const OnlineManagement = () => {
                         selectedTerminal.id > 0 ? <div className="online_doors_info_content">
 
                                 <div className={`online_doors_info_title ${isDarkMode && 'darkModeBackground'}`}>
-                                    <h3 className={`${isDarkMode && 'darkModeColor'}`}>SoftData</h3>
+                                    <h3 className={`${isDarkMode && 'darkModeColor'}`}>{selectedTerminal.door_name}</h3>
                                 </div>
                                 <div className="door_img_box">
                                     {
@@ -384,11 +386,128 @@ const OnlineManagement = () => {
 
 
                     <div className={doorTwo === true ? "online_doors_managment" : "online_doors_managment d-none"}>
-                        <div className="online_doors_managment_body">
-                            <img src={managmentImg}/>
+                        {selectedTerminal.id > 0 ?
+                            <div className="online_doors_info_content">
+
+                                <div className={`online_doors_info_title ${isDarkMode && 'darkModeBackground'}`}>
+                                    <h3 className={`${isDarkMode && 'darkModeColor'}`}>HiTech</h3>
+                                </div>
+                                <div className="door_img_box">
+                                    {
+                                        onlineImg2
+                                            ?
+                                            <div className="overflov_img">
+                                                <img className="doors_left_img" src={url2} alt=""/>
+                                            </div>
+                                            : <img className="doors_left_default" src={myImg} alt="img"/>
+                                    }
+                                </div>
+                                {
+                                    onlineImg2
+                                        ? (onlineImg2.hasOwnProperty('user_in_db')
+                                            ?
+                                            <div className="doors_right">
+                                                <div className="doors_time_info">
+                                                    <p className="doors_time">08.01.2022 - 08:45:47</p>
+                                                    {/*<h1 className="doors_time">{moment( onlineImg2 && onlineImg2.guest_user && onlineImg2.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
+                                                </div>
+                                                <div className="box_right_top">
+                                                    <div className="right_top_info">
+                                                        <div className="label_box">
+                                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:</div>
+                                                            <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg2 && onlineImg2.user_in_db && onlineImg2.user_in_db.fullname}</div>
+                                                        </div>
+                                                        <div className="label_box">
+                                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:</div>
+                                                            <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg2 && onlineImg2.user_in_db && onlineImg2.user_in_db.rank}</div>
+                                                        </div>
+                                                        <div className="label_box">
+                                                            <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:</div>
+                                                            <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg2 && onlineImg2.user_in_db && onlineImg2.user_in_db.user_type}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="img_box">
+                                                        <img className="door_user_img" src={`${ip}/${onlineImg2 && onlineImg2.user_in_db && onlineImg2.user_in_db.id}.jpg`} alt="jj"/>
+                                                    </div>
+                                                </div>
+                                                <div className="label_box">
+                                                    <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:</div>
+                                                    <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg2 && onlineImg2.user_in_db && onlineImg2.user_in_db.access_type}</div>
+                                                </div>
+                                                <div className="limit_info">
+                                                    <div className="limit_info_top">
+                                                        <img className="limit_info_top_img" src={warning} alt=""/>
+                                                        <h1 className="limit_top_title" >{t("Xodimning kirish muddati tugagan")}!</h1>
+                                                    </div>
+                                                    <p className="limit_middle_title">{t("Ruxsat etilgan muddatni uzaytirish uchun")}</p>
+                                                    <div className="limit_info_bottom">
+                                                        <h3 className="limit_bottom_title">{t("Sozlamalarga o’ting")}</h3>
+                                                        <img className="limit_bottom_title_img" src={doorNext} alt=""/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            :
+                                            <div className="doords_right_no" >
+                                                <div className="doors_time_info">
+                                                    <p className="doors_time">08.01.2022 - 08:45:47</p>
+                                                    {/*<h1 className="doors_time">{moment( onlineImg2 && onlineImg2.guest_user && onlineImg2.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
+                                                </div>
+                                                <div className="doords_right_not_allowed">
+                                                    <img className="doors_right_icon" src={recIcon} alt=""/>
+
+                                                    <h1 className={`not_allowed_title ${isDarkMode && 'darkModeColor'}`}>{t("Ma’lumot topilmadi")}</h1>
+                                                    <p className={`not_allowed_text ${isDarkMode && 'darkModeColor'}`}>{t("Ushbu shaxs ma’lumotlar bazasida aniqlanmadi")}</p>
+
+                                                    <div className="not_allowed_buttons">
+                                                        <button className="not_allowed_buttons_cancel" onClick={reject}>{t("Bekor qilish")}</button>
+                                                        <button className="not_allowed_buttons_registration" >{t("Ro’yxatga olish")}</button>
+                                                    </div>
+                                                    <button onClick={openDoor} className="not_allowed_allow">{t("Ruxsat berish")}</button>
+                                                </div>
+                                            </div>
+                                        )
+                                        :
+                                        <div className="doors_right">
+                                            <div className="doors_time_info">
+                                                <p className="doors_time">08.01.2022 - 08:45:47</p>
+                                                {/*<h1 className="doors_time">{moment( onlineImg2 && onlineImg2.guest_user && onlineImg2.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
+                                            </div>
+                                            <div className="box_right_top">
+                                                <div className="right_top_info">
+                                                    <div className="label_box">
+                                                        <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:</div>
+                                                        <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
+                                                    </div>
+                                                    <div className="label_box">
+                                                        <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:</div>
+                                                        <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
+                                                    </div>
+                                                    <div className="label_box">
+                                                        <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:</div>
+                                                        <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div className="img_box">
+                                                    <img className="no_my_img" src={noIMG} alt=""/>
+                                                </div>
+                                            </div>
+                                            <div className="label_box">
+                                                <div className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:</div>
+                                                <div className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
+                                            </div>
+                                        </div>
+                                }
+                            </div> :
+                            <div className="online_doors_managment_body">
+                                <img src={managmentImg}/>
                             <h2>Iltimos eshikni tanlang</h2>
                             <button type="button" className="btn" onClick={modalOpen}>Tanlash</button>
-                        </div>
+                            </div>
+                        }
+
+
                     </div>
                     <div className={doorThree === true ? "online_doors_managment" : "online_doors_managment d-none"}>
                         <div className="online_doors_managment_body">
