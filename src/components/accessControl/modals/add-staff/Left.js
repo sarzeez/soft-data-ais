@@ -10,15 +10,17 @@ const Left = ({ data, setData, terminalIPList }) => {
 
     const {t} = useTranslation()
     const [state, setState] = useState([]);
-    const [startDate, setStartDate] = useState(new Date());
+
+    // const [startDate, setStartDate] = useState(new Date());
 
     // const [isChecked, setIsChecked] = useState(false);
     // const handleOnChange = () => {
     //     setIsChecked(!isChecked);
     // };
 
+//https://prettier.io/
+
     const onChange = value => {
-        // console.log('onChange ', value);
         setState(value);
         setData({...data, value})
     };

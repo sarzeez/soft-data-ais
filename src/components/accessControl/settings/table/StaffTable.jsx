@@ -1,9 +1,9 @@
-import React from 'react';
-import { Table, Image  } from 'antd';
+import React, {useState} from 'react';
+import {Table, Image} from 'antd';
 import moment from 'moment';
-import { useSelector } from "react-redux";
+import {useSelector} from "react-redux";
 
-import { AiOutlineUser } from 'react-icons/ai'
+import {AiOutlineUser} from 'react-icons/ai'
 
 import {ip} from '../../../../ip';
 import {useTranslation} from "react-i18next";
@@ -16,13 +16,20 @@ const StaffTable = (props) => {
         rowSelection,
         setIsOpenAddStaff,
         setStaffTableIntialValues,
+        selectedCard,
+        setSelectedCard,
+        card,
+        setCard
     } = props;
 
     const {t} = useTranslation()
     const isDarkMode = useSelector(state => state.theme.theme_data)
 
     const editAddStaff = (value, record) => {
-        // console.log(value);
+        setCard(value.cards)
+        // setSelectedCard(value.cards)
+        // console.log("value", value);
+        // debugger
         setStaffTableIntialValues({
             ...value,
             edit: true
@@ -45,9 +52,9 @@ const StaffTable = (props) => {
                         width={40}
                         style={{borderRadius: '20px', marginRight: '5px', maxWidth: '40px', maxHeight: '40px'}}
                         src={`${ip}/${record.image}`}
-                        preview = {{
+                        preview={{
                             mask: (
-                                <AiOutlineUser size={20} />
+                                <AiOutlineUser size={20}/>
                             ),
                             maskClassName: 'customize-mask',
                         }}
@@ -76,7 +83,7 @@ const StaffTable = (props) => {
                         {record.door_ip.length}
                     </p>
                     <div className='door_ip_length_hover'>
-                        {record.door_ip.join(' ')}
+                        {record.door_ip.join(', ')}
                         <div className='door_ip_length_hover_rectangel'>
 
                         </div>
@@ -91,7 +98,7 @@ const StaffTable = (props) => {
             render: (text, record) => (
                 <div className='door_ip_length'>
                     {
-                        record.cards.length>0?
+                        record.cards.length > 0 ?
                             <>
                                 <p>
                                     {record.cards.length}
@@ -100,7 +107,7 @@ const StaffTable = (props) => {
                                     {record.cards.map(e => e.id).join(`, `)}
                                     <div className='door_ip_length_hover_rectangel'></div>
                                 </div>
-                            </>: '—'
+                            </> : '—'
                     }
                 </div>
             )
@@ -141,21 +148,21 @@ const StaffTable = (props) => {
             dataIndex: '',
             render: (text, record) => (
                 <div onClick={() => editAddStaff(text, record)} className='edit_button'>
-                    <RiEditLine size = {22} color='#fff'/>
+                    <RiEditLine size={22} color='#fff'/>
                 </div>
             ),
             align: 'center'
         },
     ];
 
-        return (
-            <Table
-               className={` ${isDarkMode && 'darkModeBackground'}`}
-                rowSelection={rowSelection}
-                columns={columns}
-                dataSource={staffData}
-                pagination={false}
-            />
-        );
+    return (
+        <Table
+            className={` ${isDarkMode && 'darkModeBackground'}`}
+            rowSelection={rowSelection}
+            columns={columns}
+            dataSource={staffData}
+            pagination={false}
+        />
+    );
 }
 export default StaffTable

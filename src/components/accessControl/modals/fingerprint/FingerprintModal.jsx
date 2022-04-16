@@ -16,7 +16,7 @@ const FingerprintModal = (props) => {
         setIsOpenAddFingerprint,
         terminalIPList,
         fingerPrint,
-        setFingerPrint
+        setFingerPrint,
     } = props;
 
     const [requestedFinger, setRequestedFinger] = useState(null);
@@ -30,7 +30,6 @@ const FingerprintModal = (props) => {
     const handleClickFingerprint = () => {
          axios.post(`${ip}/api/terminal/fingerprint/${accessFinger}`)
             .then(res => {
-                // console.log(res.data);
                 setRequestedFinger(res.data);
             })
             .catch(err=>{

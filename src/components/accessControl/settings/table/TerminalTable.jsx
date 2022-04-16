@@ -26,6 +26,9 @@ const TerminalTable = (props) => {
 
 
     const editTerminal= ( value, record) =>{
+       // oka modal ocvotgan jo qayerda
+        //qayerda ste qildik momone orqla
+
         setTerminalTableIntialValues({
             ...value,
             edit: true

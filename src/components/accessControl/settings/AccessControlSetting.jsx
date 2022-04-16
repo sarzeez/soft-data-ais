@@ -44,6 +44,7 @@ const AccessControlSetting = () => {
     const [staffPaginationCurrent, setStaffPaginationCurrent] = useState(1)
     const [staffData, setStaffData] = useState([])
     const [staffTotal, setStaffTotal] = useState(null)
+    const [selectedCard , setSelectedCard] = useState([]);
     const [card, setCard] = useState([]);
 
     const [staffTableIntialValues, setStaffTableIntialValues] = useState({
@@ -58,6 +59,7 @@ const AccessControlSetting = () => {
         image: '',
         notification: false,
         cards: [],
+        fingerPrint: [],
     })
     console.log(staffTableIntialValues)
     // delete button
@@ -76,6 +78,8 @@ const AccessControlSetting = () => {
 
     const addNewStaff = () => {
         setIsOpenAddStaff(true)
+        setSelectedCard([])
+        setCard([])
     }
 
     const addNewTerminal = () =>{
@@ -121,6 +125,7 @@ const AccessControlSetting = () => {
     ))
         setTerminalData(newData)
     }
+
     // get staff data
     const getStaffData = async (id) => {
         const response = await axios.get(`${ip}/api/terminal/getusers/${staffPaginationLimit}/${id}`)
@@ -130,9 +135,9 @@ const AccessControlSetting = () => {
         const newData = data.data.map((item, index) => (
             {
                 ...item,
-                key: index + 1 + (data.current_page - 1) * staffPaginationLimit,
-                valid_from_time: '',   //moment(item.valid_from_time).format('DD.MM.YYYY, HH:mm:ss'),
-                valid_to_time: '',   //moment(item.valid_to_time).format('DD.MM.YYYY, HH:mm:ss'),
+                key: index + 1 ,
+                valid_from_time:  moment(item.valid_from_time),
+                valid_to_time: moment(item.valid_to_time),
                 direction: item.direction,
                 door_name: item.door_name,
                 user_type: item.user_type === 1 ? t('Xodim') : item.user_type === 2 ? t('Mehmon') : t('Begona'),
@@ -142,6 +147,7 @@ const AccessControlSetting = () => {
         ))
         setStaffData(newData)
     }
+
 
     const handleDeliteStaff = () =>{
         axios.delete(`${ip}/api/terminal/deleteusers`, {data: deleteStaff})
@@ -262,8 +268,11 @@ const AccessControlSetting = () => {
                             setStaffTableIntialValues={setStaffTableIntialValues}
                             getStaffData={getStaffData}
                             setStaffPaginationCurrent ={setStaffPaginationCurrent}
+                            selectedCard={selectedCard}
+                            setSelectedCard={setSelectedCard}
                             card={card}
                             setCard={setCard}
+
                         />
                         <div className="access_control_setting_tab">
                             <div className='access_control_setting_tab_item'>
@@ -274,6 +283,10 @@ const AccessControlSetting = () => {
                                         rowSelection={rowSelection}
                                         setIsOpenAddStaff={setIsOpenAddStaff}
                                         setStaffTableIntialValues={setStaffTableIntialValues}
+                                        selectedCard={selectedCard}
+                                        setSelectedCard={setSelectedCard}
+                                        card={card}
+                                        setCard={setCard}
                                     />
                                 </div>
                                 <div className='access_control_setting_tab_item_footer'>

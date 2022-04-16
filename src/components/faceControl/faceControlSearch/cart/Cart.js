@@ -87,11 +87,11 @@ const Cart = ({ item, isDarkMode }) => {
                         <div className="y_line"></div>
                         <div>
                             {
-                                item.gender === 2
+                                item.gender == 2
                                 ? <img src = {emojes.female['female']} alt = ''/>
                                 : <img src = {emojes.male['male']} alt = '' />
                             }
-                            <p className="card_longTitle">{item.gender === 1 ? <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Erkak')}</div>  : item.gender === 2 ? <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Ayol')}</div>  : ''}</p>
+                            <p className="card_longTitle">{item.gender == 1 ? <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Erkak')}</div>  : item.gender == 2 ? <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Ayol')}</div>  : ''}</p>
                         </div>
                         <div>
                             {
@@ -140,14 +140,14 @@ const Cart = ({ item, isDarkMode }) => {
                         
                         <div>
                             {
-                                item.gender !== 2 
+                                item.gender != 2
                                 ?
                                 (item.old !== 'age_0_10' && item.old !== 'age_11_17' && <img src = {emojes.beard[item.args.SOQOL]} alt = 'glass' />)
                                 : ''
                             }
                             <p className="card_longTitle">
                                 {
-                                    item.gender === 2
+                                    item.gender == 2
                                     ? ''
                                     : (item.old !== 'age_0_10' && item.old !== 'age_11_17' && (item.args.SOQOL === 1 ?
                                             <Tooltip title={t('Soqolli')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Soqolli')}</Tooltip> :

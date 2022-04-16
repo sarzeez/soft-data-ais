@@ -12,7 +12,8 @@ const MiddleBottom = (props) => {
         setIsOpenAddFingerprint,
         terminalIPList,
         fingerPrint,
-        setFingerPrint
+        setFingerPrint,
+        staffTableIntialValues
     }=props
 
     const [selectedItems, setSelectedItems] = React.useState([]);
@@ -21,6 +22,7 @@ const MiddleBottom = (props) => {
         const selectedItemsKey = selectedItems.map(item => item.key)
         const new_data = fingerPrint.filter((item) => !selectedItemsKey.includes(item.key))
         setFingerPrint(new_data)
+
     }
 
     return (
@@ -28,13 +30,15 @@ const MiddleBottom = (props) => {
             <FingerprintModal
                 isOpenAddFingerprint={isOpenAddFingerprint}
                 setIsOpenAddFingerprint={setIsOpenAddFingerprint}
-                fingerPrint = {fingerPrint} setFingerPrint = {setFingerPrint}
+                fingerPrint = {fingerPrint}
+                setFingerPrint = {setFingerPrint}
                 terminalIPList={terminalIPList}
             />
         <div className='access_control_add_staff_modal_body_item_fingerprint'>
             <FingerTable
                 fingerPrint = {fingerPrint}
                 setSelectedItems = {setSelectedItems}
+                staffTableIntialValues={staffTableIntialValues}
             />
             <div className='access_control_add_staff_modal_body_item_fingerprint_buttons'>
                 <button onClick={() => setIsOpenAddFingerprint(true)} type='button'>

@@ -11,6 +11,7 @@ import Left from "./Left";
 import StaffRight from "./StaffRight";
 import StaffMiddle from "./StaffMiddle";
 import MiddleBottom from "./MiddleBottom";
+import moment from "moment";
 
 Modal.setAppElement("#root");
 
@@ -23,18 +24,19 @@ function AddStaff(props) {
         setStaffTableIntialValues,
         setStaffPaginationCurrent,
         getStaffData,
+        selectedCard,
+        setSelectedCard,
         card,
-        setCard,
+        setCard
     } = props;
 
     const {t} = useTranslation()
     const [ isOpenAddTerminal, setIsOpenAddTerminal] = useState(false);
     const [ isOpenAddFingerprint,setIsOpenAddFingerprint] = useState(false);
     const [terminalIPList, setTerminalIPList] = useState([]);
-
+    // const [card, setCard] = useState([]);
     const [fingerPrint, setFingerPrint] = useState([]);
 
-    // console.log(card)
 
     const [data, setData] = useState({
         fullname: '',
@@ -48,7 +50,7 @@ function AddStaff(props) {
         image: '',
         notification: false,
     })
-    const cancel = () =>{
+    const cancel = () => {
         setIsOpenAddStaff(!setIsOpenAddStaff)
         setStaffTableIntialValues({
             fullname: '',
@@ -64,7 +66,9 @@ function AddStaff(props) {
         })
     }
 
+    console.log(card)
     const onFinish = (value) => {
+        console.log(value)
         const formData = {
             ...value,
             image: data.image,
@@ -76,12 +80,19 @@ function AddStaff(props) {
         fd.append("fingerprint", JSON.stringify(fingerPrint));
 
         if (staffTableIntialValues.edit){
-            axios.put(`${ip}/api/terminal/updateuser`, {
-                ...value
+            console.log("fingerPrint", fingerPrint)
+            axios.put(`${ip}/api/terminal/updateuser/${value.id}`, {
+                ...value,
+                card,
+                fingerPrint,
+                valid_to_time: moment(value?.valid_to_time).format("YYYY-MM-DD"),
+                valid_from_time: moment(value?.valid_from_time).format("YYYY-MM-DD"),
             })
                 .then(response =>{
                     cancel()
                     getStaffData(setStaffPaginationCurrent)
+                    setSelectedCard([]);
+                    setCard([]);
                 })
                 .catch(err=>{
                     console.log(err?.response?.data)
@@ -121,8 +132,6 @@ function AddStaff(props) {
         }
         getData();
 
-        // setCard(staffTableIntialValues.cards);
-        // setFingerPrint(staffTableIntialValues.fingerprint);
     }, [])
 
 
@@ -153,27 +162,50 @@ function AddStaff(props) {
                         <div className="access_control_add_staff_modal_body_item_1">
                             <div className="access_control_add_staff_modal_body_item">
                                 <p className="access_control_add_staff_modal_body_item_title">{t("Ma'lumotlar")}</p>
-                                <Left data = {data} setData = {setData} terminalIPList = {terminalIPList} />
+                                <Left
+                                    data = {data}
+                                    setData = {setData}
+                                    terminalIPList = {terminalIPList}
+                                />
                             </div>
                         </div>
 
                         <div className="access_control_add_staff_modal_body_item_2">
                             <div className="access_control_add_staff_modal_body_item">
                                 <p className="access_control_add_staff_modal_body_item_title">ID karta</p>
-                                <StaffMiddle staffTableIntialValues={staffTableIntialValues} card={card} setCard={setCard} isOpenAddTerminal={isOpenAddTerminal} setIsOpenAddTerminal = {setIsOpenAddTerminal} />
+                                <StaffMiddle
+                                    staffTableIntialValues={staffTableIntialValues}
+                                    card={card}
+                                    setCard={setCard}
+                                    isOpenAddTerminal={isOpenAddTerminal}
+                                    setIsOpenAddTerminal = {setIsOpenAddTerminal}
+                                    selectedCard={selectedCard}
+                                    setSelectedCard={setSelectedCard}
+                                />
                             </div>
                             <div className="access_control_add_staff_modal_body_item">
                                 <p className="access_control_add_staff_modal_body_item_title">Barmoq izi</p>
-                                <MiddleBottom terminalIPList={terminalIPList} fingerPrint={fingerPrint} setFingerPrint={setFingerPrint} isOpenAddFingerprint={isOpenAddFingerprint} setIsOpenAddFingerprint={setIsOpenAddFingerprint} />
+                                <MiddleBottom
+                                    terminalIPList={terminalIPList}
+                                    fingerPrint={fingerPrint}
+                                    setFingerPrint={setFingerPrint}
+                                    isOpenAddFingerprint={isOpenAddFingerprint}
+                                    setIsOpenAddFingerprint={setIsOpenAddFingerprint}
+                                    staffTableIntialValues={staffTableIntialValues}
+                                />
                             </div>
                         </div>
 
                         <div className="access_control_add_staff_modal_body_item">
                             <p className="access_control_add_staff_modal_body_item_title">Yuzni aniqlash</p>
-                            <StaffRight staffTableIntialValues={staffTableIntialValues} data = {data} setData = {setData} terminalIPList = {terminalIPList} />
+                            <StaffRight
+                                staffTableIntialValues={staffTableIntialValues}
+                                data = {data}
+                                setData = {setData}
+                                terminalIPList = {terminalIPList}
+                            />
                           <div className="staff_buttons">
-                              <button onClick={cancel} className="addStaff_cancel_button">Bekor qilish</button>
-
+                              <button type="button" onClick={cancel} className="addStaff_cancel_button">Bekor qilish</button>
                               <button className="access_control_add_staff_modal_body_item_3_submit_button" type="submit">
                                   Saqlash
                               </button>
@@ -181,7 +213,6 @@ function AddStaff(props) {
                         </div>
                     </div>
                 </div>
-
             </Form>
         </Modal>
     );

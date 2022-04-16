@@ -15,20 +15,33 @@ const IdCardModal = (props) => {
         isOpenAddTerminal,
         setIsOpenAddTerminal,
         card,
-        setCard
+        setCard,
+        selectedCard,
+        setSelectedCard
     }=props
 
     const {t} = useTranslation()
 
     const onFinish = (value) => {
-        const { id, type } = value;
-        const newData = [...card, {
-            key: card.length + 1,
-            type: type,
-            id: id
-        }]
-        setCard(newData)
-        setIsOpenAddTerminal(!isOpenAddTerminal);
+        if (selectedCard.length>0){
+            const { id, type } = value;
+            const newData = [...selectedCard, {
+                key: selectedCard.length + 1,
+                type: type,
+                id: id
+            }]
+            setSelectedCard(newData)
+            setIsOpenAddTerminal(!isOpenAddTerminal);
+        } else {
+            const { id, type } = value;
+            const newData = [...card, {
+                key: card.length + 1,
+                type: type,
+                id: id
+            }]
+            setCard(newData)
+            setIsOpenAddTerminal(!isOpenAddTerminal);
+        }
     }
 
     const onFinishFailed = (error) => {
@@ -91,6 +104,7 @@ const IdCardModal = (props) => {
                             ]}
                         >
                             <Input
+                                type="number"
                                 size="large"
                                 placeholder="Kiriting"
                             />
