@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4da1f399-1a33-4294-b2f1-d056329cbf9f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/cursor.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/deleteIconn.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/onlineManag/managmentAction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/onlineManag/managmentReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/onlineManag/managmentTypes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineDoors.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineDoors.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/theme/themeActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/theme/themeActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/theme/themeReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/theme/themeReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -52,7 +64,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/images/newimages/terminalImg" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/images/newimages" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -60,19 +72,19 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Soft data\SoftData-AIS\src\images\newimages\terminalImg" />
-      <recent name="D:\Soft data\SoftData-AIS\src\images\newimages" />
-      <recent name="D:\Soft data\SoftData-AIS\src\images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Frontend-JS\Softdata-AIS\soft-data-ais\src\components\accessControl\settings\Terminal-modal" />
       <recent name="D:\Frontend-JS\Softdata-AIS\soft-data-ais\src\components\accessControl\settings" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Soft data\SoftData-AIS\src\images\newimages" />
+      <recent name="D:\Soft data\SoftData-AIS\src\images\newimages\terminalImg" />
+      <recent name="D:\Soft data\SoftData-AIS\src\images" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -163,7 +175,9 @@
       <workItem from="1648873578820" duration="19802000" />
       <workItem from="1649064164191" duration="5446000" />
       <workItem from="1649131355331" duration="11305000" />
-      <workItem from="1649505658550" duration="14138000" />
+      <workItem from="1649505658550" duration="62657000" />
+      <workItem from="1650311026320" duration="584000" />
+      <workItem from="1650359901851" duration="29656000" />
     </task>
     <servers />
   </component>
@@ -187,6 +201,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="134" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1650279776105">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="134" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1360.728@0.0.1360.728" timestamp="1650279776105" />
     <state x="128" y="61" key="MergeDialog" timestamp="1649336601946">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -195,9 +213,17 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="392" y="81" key="MultipleFileMergeDialog/0.0.1360.728@0.0.1360.728" timestamp="1649336601958" />
+    <state x="181" y="7" key="SettingsEditor" timestamp="1650621071527">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="181" y="7" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1650621071527" />
     <state x="489" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1649336617526">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="489" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1360.728@0.0.1360.728" timestamp="1649336617526" />
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1650537094875">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1650537094875" />
   </component>
 </project>

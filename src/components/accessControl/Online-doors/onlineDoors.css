@@ -24,7 +24,14 @@
     border-radius: 10px;
     padding: 12px;
 }
-
+.online_doors_info_content .cursorTouch{
+    position: absolute;
+    left: -13px;
+    top: 10px;
+}
+.online_doors_info_content .cursorTouch:active{
+    transform: scale(1.2);
+}
 .online_doors_info_title{
     position: absolute;
     height: 18px;

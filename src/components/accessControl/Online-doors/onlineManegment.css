@@ -41,6 +41,50 @@
 .content_top .content_button button:hover{
     border: 1px solid #29B85D;
 }
+.content_top .content_button .active {
+    border : 1px solid #29B85D;
+}
+
+.content_top .content_button .deleteButton{
+    background: #FFDEDE;
+    border-radius: 5px;
+    padding:5px 10px;
+    box-sizing: border-box;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    border: 0;
+}
+.content_top .content_button .deleteButton:hover{
+    border: 0;
+    background: #EB4444;
+}
+
+.content_top .content_button .deleteButton .deleteButtonImg{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background-image: url("/src/images/newimages/deleteIconn.svg");
+    background-repeat: no-repeat;
+}
+.content_top .content_button .deleteButton:hover .deleteButtonImg{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background-image: url("/src/images/newimages/deleteImg.svg");
+    background-repeat: no-repeat;
+}
+
+.content_top .content_button .deleteButton span{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #8B0606;
+}
+.content_top .content_button .deleteButton:hover span{
+    color: white;
+}
 
 .online_doors_body{
     /*height: calc(100vh - 125px);*/
@@ -114,6 +158,7 @@
     border: 1px solid #29B85D;
     color: #29B85D;
 }
+
 .online_doors_modal{
     background: #FFFFFF;
     border-radius: 10px;
@@ -149,7 +194,19 @@
     background: #F8F8F8;
 }
 .online_doors_modal_body_inner:hover img{
-    filter: invert(53%) sepia(83%) saturate(425%) hue-rotate(89deg) brightness(94%) contrast(85%);
+    /*filter: invert(53%) sepia(83%) saturate(425%) hue-rotate(89deg) brightness(94%) contrast(85%);*/
+}
+.online_doors_modal_body_inner .imgbor{
+    width: 40px;
+    height: 40px;
+    background-image: url("/src/images/newimages/accesscontrolOff.svg");
+    background-repeat: no-repeat;
+}
+.online_doors_modal_body_inner:hover .imgbor{
+    width: 40px;
+    height: 40px;
+    background-image: url("/src/images/newimages/access-control 1.svg");
+    background-repeat: no-repeat;
 }
 .online_doors_modal_body_inner:hover .imgChange{
     display: inline-block;
@@ -157,7 +214,6 @@
 .online_doors_modal_body_inner .imgChange{
 display: none;
 }
-
 .online_doors_modal_body_inner:hover h5{
     color: #29B85D;
 }
