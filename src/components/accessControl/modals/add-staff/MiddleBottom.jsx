@@ -13,7 +13,6 @@ const MiddleBottom = (props) => {
         terminalIPList,
         fingerPrint,
         setFingerPrint,
-        staffTableIntialValues
     }=props
 
     const [selectedItems, setSelectedItems] = React.useState([]);
@@ -38,7 +37,6 @@ const MiddleBottom = (props) => {
             <FingerTable
                 fingerPrint = {fingerPrint}
                 setSelectedItems = {setSelectedItems}
-                staffTableIntialValues={staffTableIntialValues}
             />
             <div className='access_control_add_staff_modal_body_item_fingerprint_buttons'>
                 <button onClick={() => setIsOpenAddFingerprint(true)} type='button'>

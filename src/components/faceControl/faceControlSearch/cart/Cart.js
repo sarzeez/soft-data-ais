@@ -142,7 +142,7 @@ const Cart = ({ item, isDarkMode }) => {
                             {
                                 item.gender != 2
                                 ?
-                                (item.old !== 'age_0_10' && item.old !== 'age_11_17' && <img src = {emojes.beard[item.args.SOQOL]} alt = 'glass' />)
+                                (item.old !== 'age_0_10' && item.old !== 'age_11_17' && <img src = {emojes.beard[item.args.SOQOL]} alt = 'beard' />)
                                 : ''
                             }
                             <p className="card_longTitle">

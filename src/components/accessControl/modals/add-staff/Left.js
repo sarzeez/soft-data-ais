@@ -3,27 +3,27 @@ import {Form, Input, Select, DatePicker, TreeSelect, Switch} from 'antd';
 import {useTranslation} from "react-i18next";
 import './left.css';
 import moment from "moment";
-
 const { SHOW_PARENT } = TreeSelect;
+
 
 const Left = ({ data, setData, terminalIPList }) => {
 
     const {t} = useTranslation()
     const [state, setState] = useState([]);
 
-    // const [startDate, setStartDate] = useState(new Date());
+    console.log(terminalIPList)
+    function handleChange(value) {
+        console.log(`Selected: ${value}`);
+    }
 
-    // const [isChecked, setIsChecked] = useState(false);
-    // const handleOnChange = () => {
-    //     setIsChecked(!isChecked);
-    // };
-
-//https://prettier.io/
 
     const onChange = value => {
+        // console.log(value)
         setState(value);
         setData({...data, value})
     };
+
+// bu eskiniki
 
     const tProps = {
         treeData: terminalIPList,
@@ -115,6 +115,7 @@ const Left = ({ data, setData, terminalIPList }) => {
                 </Form.Item>
             </div>
             <div className="access_control_add_staff_modal_body_item_left_input">
+
                 <Form.Item
                     label={t("Ruxsat etilgan eshiklar")}
                     name="door_ip"
@@ -125,8 +126,17 @@ const Left = ({ data, setData, terminalIPList }) => {
                     },
                     ]}
                 >
-                    <TreeSelect {...tProps} />
+                    {/*<TreeSelect  {...tProps}/>*/}
+                    <Select
+                        options={ []}
+                        mode="multiple"
+                        size="large"
+                        placeholder="Please select"
+                        onChange={handleChange}
+                        style={{ width: '100%' }}
+                    />
                 </Form.Item>
+
             </div>
 
             <div className="access_control_add_staff_modal_body_item_left_inputs">

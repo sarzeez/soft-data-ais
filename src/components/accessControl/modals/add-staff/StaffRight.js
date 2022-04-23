@@ -21,6 +21,7 @@ const StaffRight = ({ data, setData, terminalIPList, staffTableIntialValues }) =
         setAccessDoors('')
 
         if(e.target.files && e.target.files[0]) {
+            console.log('uploaded')
             setView(URL.createObjectURL(e.target.files[0]))
             setData({...data, image: e.target.files[0]})
         } else {
@@ -28,12 +29,14 @@ const StaffRight = ({ data, setData, terminalIPList, staffTableIntialValues }) =
         }
     }
     const onChangeImageSelect = (a) => {
+        console.log(a)
         setAccessDoors(a)
     }
 
 
     const handleClickImageDownload = () => {
         setLoading(true)
+        console.log(accessDoors)
         axios.post(`${ip}/api/terminal/capture/${accessDoors}`)
             .then(res => {
                 setLoading(false)
@@ -42,6 +45,7 @@ const StaffRight = ({ data, setData, terminalIPList, staffTableIntialValues }) =
             })
             .catch(err => {
                 //
+                console.log(err.response)
                 setLoading(false)
             })
     }
@@ -49,7 +53,7 @@ const StaffRight = ({ data, setData, terminalIPList, staffTableIntialValues }) =
     return (
         <div className="access_control_add_staff_modal_body_item_middle">
                 <div className="access_control_add_staff_modal_body_item_middle_image">
-                    {   staffTableIntialValues.edit ?
+                    {/* {   staffTableIntialValues.edit ?
                         <img src={`${ip}/${staffTableIntialValues.image}`} alt='edit'/>
                         :
                         loading
@@ -59,7 +63,19 @@ const StaffRight = ({ data, setData, terminalIPList, staffTableIntialValues }) =
                                 ? <img src = {view || `${ip}/sign_up_request/${requestedImage}`} alt = 'view'/>
                                 : <IoImageOutline size={75} color='#8E8E8E'/>
                             )
-                    }
+                    } */}
+
+                       {loading
+                           ? <img src={loadingGif} alt='loading'/>
+                           : (
+                               (view || requestedImage)
+                                   ? <img src = {view || `${ip}/sign_up_request/${requestedImage}`} alt = 'view'/>
+                                   : (
+                                       data.image
+                                       ? <img src={`${ip}/${staffTableIntialValues.image}`} alt='edit'/>
+                                       : <IoImageOutline size={75} color='#8E8E8E'/>
+                                   )
+                           )}
                 </div>
                 <label htmlFor='access_control_staff_image' className='access_control_add_staff_modal_body_item_middle_upload'>
                     <FiUpload size={18} style={{marginRight: '7px'}}/>

@@ -27,7 +27,9 @@ function AddStaff(props) {
         selectedCard,
         setSelectedCard,
         card,
-        setCard
+        setCard,
+        fingerPrint,
+        setFingerPrint,
     } = props;
 
     const {t} = useTranslation()
@@ -35,7 +37,7 @@ function AddStaff(props) {
     const [ isOpenAddFingerprint,setIsOpenAddFingerprint] = useState(false);
     const [terminalIPList, setTerminalIPList] = useState([]);
     // const [card, setCard] = useState([]);
-    const [fingerPrint, setFingerPrint] = useState([]);
+    // const [fingerPrint, setFingerPrint] = useState([]);
 
 
     const [data, setData] = useState({
@@ -53,6 +55,7 @@ function AddStaff(props) {
     const cancel = () => {
         setIsOpenAddStaff(!setIsOpenAddStaff)
         setStaffTableIntialValues({
+            id: '',
             fullname: '',
             gender: '',
             user_type: '',
@@ -66,28 +69,23 @@ function AddStaff(props) {
         })
     }
 
-    console.log(card)
     const onFinish = (value) => {
-        console.log(value)
         const formData = {
             ...value,
             image: data.image,
             notification: data.notification,
+            id: data.id,
         }
         const fd = new FormData();
         Object.keys(formData).forEach(i => fd.append(i, formData[i]));
         fd.append("cards", JSON.stringify(card));
         fd.append("fingerprint", JSON.stringify(fingerPrint));
+        fd.append("valid_to_time", moment(value?.valid_to_time).format("YYYY-MM-DD"));
+        fd.append("valid_from_time", moment(value?.valid_from_time).format("YYYY-MM-DD"));
 
         if (staffTableIntialValues.edit){
-            console.log("fingerPrint", fingerPrint)
-            axios.put(`${ip}/api/terminal/updateuser/${value.id}`, {
-                ...value,
-                card,
-                fingerPrint,
-                valid_to_time: moment(value?.valid_to_time).format("YYYY-MM-DD"),
-                valid_from_time: moment(value?.valid_from_time).format("YYYY-MM-DD"),
-            })
+            console.log(staffTableIntialValues)
+            axios.put(`${ip}/api/terminal/updateuser/${staffTableIntialValues.id}`, fd)
                 .then(response =>{
                     cancel()
                     getStaffData(setStaffPaginationCurrent)
@@ -101,6 +99,7 @@ function AddStaff(props) {
         else {
             axios.post(`${ip}/api/terminal/adduser`, fd)
                 .then(res => {
+                    console.log(res)
                     cancel()
                     getStaffData(setStaffPaginationCurrent)
                 })
@@ -111,6 +110,9 @@ function AddStaff(props) {
 
     }
 
+
+    //https://prettier.io/
+
     const onFinishFailed = (error) => {
         console.log(error)
     }
@@ -120,14 +122,16 @@ function AddStaff(props) {
             axios.get(`${ip}/api/adduser/terminal`)
                 .then(res => {
                     const { data } = res;
+                    // console.log("tree",   data)
                     const newData = data.map(item => ({
-                        title: item.door_name,
+                        label: item.door_name,
                         value: item.ip_address,
-                        key: item.ip_address
+                        // key: item.ip_address,
                     }))
                     setTerminalIPList(newData)
                 })
                 .catch(err => {
+                    console.log(err?.response?.data)
                 })
         }
         getData();
@@ -135,6 +139,7 @@ function AddStaff(props) {
     }, [])
 
 
+    console.log("staffTableIntialValues", staffTableIntialValues)
     return (
         <Modal
             isOpen={isOpenAddStaff}
@@ -166,7 +171,15 @@ function AddStaff(props) {
                                     data = {data}
                                     setData = {setData}
                                     terminalIPList = {terminalIPList}
+                                    // setIsOpenAddStaff = {(data)=> setIsOpenAddStaff({
+                                    //     ...data,
+                                    //     door_ip: data?.door_ip?.length > 0 ? data?.door_ip.map(item => ({
+                                    //         label: item?.door_name,
+                                    //         value: item?.ip_address,
+                                    //     })): []
+                                    // })}
                                 />
+
                             </div>
                         </div>
 
@@ -178,7 +191,7 @@ function AddStaff(props) {
                                     card={card}
                                     setCard={setCard}
                                     isOpenAddTerminal={isOpenAddTerminal}
-                                    setIsOpenAddTerminal = {setIsOpenAddTerminal}
+                                    setIsOpenAddTerminal={setIsOpenAddTerminal}
                                     selectedCard={selectedCard}
                                     setSelectedCard={setSelectedCard}
                                 />

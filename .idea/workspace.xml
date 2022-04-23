@@ -3,23 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="336564c8-be62-4b56-98c9-fd11d6f5abdf" name="Changes" comment="edit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-IDCard/IdCardModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-IDCard/IdCardModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/FingerTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/FingerTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/IdCardTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/IdCardTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/MiddleBottom.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/MiddleBottom.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffMiddle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffMiddle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/fingerprint/FingerprintModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/fingerprint/FingerprintModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/fingerprint/fingerprint.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/fingerprint/fingerprint.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffRight.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffRight.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/Terminal-modal/AddTerminalModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/Terminal-modal/AddTerminalModal.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/TerminalTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/TerminalTable.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/FaceControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/FaceControlSetting.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/FaceControlSearch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/FaceControlSearch.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/cart/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/cart/Cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ip.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loginPage/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loginPage/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/saidbar/Saidbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/saidbar/Saidbar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +75,19 @@
       <workItem from="1649822836245" duration="17317000" />
       <workItem from="1649908102553" duration="14972000" />
       <workItem from="1649994643577" duration="21404000" />
+      <workItem from="1650081726017" duration="820000" />
+      <workItem from="1650086714230" duration="667000" />
+      <workItem from="1650088632091" duration="7512000" />
+      <workItem from="1650109057473" duration="76000" />
+      <workItem from="1650253722862" duration="16295000" />
+      <workItem from="1650277009136" duration="6872000" />
+      <workItem from="1650341153535" duration="14390000" />
+      <workItem from="1650362008997" duration="6148000" />
+      <workItem from="1650426864600" duration="5454000" />
+      <workItem from="1650438216390" duration="12862000" />
+      <workItem from="1650512981013" duration="13472000" />
+      <workItem from="1650598665019" duration="11810000" />
+      <workItem from="1650684606667" duration="3432000" />
     </task>
     <servers />
   </component>

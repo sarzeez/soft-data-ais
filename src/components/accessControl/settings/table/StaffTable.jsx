@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Table, Image} from 'antd';
 import moment from 'moment';
 import {useSelector} from "react-redux";
@@ -9,6 +9,8 @@ import {ip} from '../../../../ip';
 import {useTranslation} from "react-i18next";
 import {RiEditLine} from "react-icons/ri";
 
+
+
 const StaffTable = (props) => {
 
     const {
@@ -16,25 +18,21 @@ const StaffTable = (props) => {
         rowSelection,
         setIsOpenAddStaff,
         setStaffTableIntialValues,
-        selectedCard,
-        setSelectedCard,
         card,
         setCard
     } = props;
-
     const {t} = useTranslation()
     const isDarkMode = useSelector(state => state.theme.theme_data)
 
     const editAddStaff = (value, record) => {
+        console.log(value)
         setCard(value.cards)
-        // setSelectedCard(value.cards)
-        // console.log("value", value);
-        // debugger
         setStaffTableIntialValues({
             ...value,
-            edit: true
+            edit: true,
         })
         setIsOpenAddStaff(true)
+        // console.log(value)
     }
 
     const columns = [
@@ -66,12 +64,22 @@ const StaffTable = (props) => {
         {
             title: t('Toifasi'),
             dataIndex: 'user_type',
-            align: 'center'
+            align: 'center',
+            render:(text, record)=>(
+                <div>
+                    {record?.user_type === 1 ? t("Xodim") : record?.user_type === 2 ? t("Mehmon") : t("Bloklangan")}
+                </div>
+            )
         },
         {
             title: t('Lavozimi'),
             dataIndex: 'rank',
-            align: 'center'
+            align: 'center',
+            render:(text, record)=>(
+                <div>
+                    {record.rank ===1 ? t('Oddiy xodim') : record.rank ===2 ? t("Direktor") : t("VIP")}
+                </div>
+            )
         },
         {
             title: t('Kirish eshiklari'),
@@ -82,12 +90,20 @@ const StaffTable = (props) => {
                     <p>
                         {record.door_ip.length}
                     </p>
+
                     <div className='door_ip_length_hover'>
-                        {record.door_ip.join(', ')}
+                        {record.door_ip.map(door => door.door_name).join(', ')}
                         <div className='door_ip_length_hover_rectangel'>
 
                         </div>
                     </div>
+
+                    {/*<div className='door_ip_length_hover'>*/}
+                    {/*    {record.door_ip.join(', ')}*/}
+                    {/*    <div className='door_ip_length_hover_rectangel'>*/}
+
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </div>
             )
         },

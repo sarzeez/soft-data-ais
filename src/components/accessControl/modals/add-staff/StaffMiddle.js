@@ -10,7 +10,6 @@ const StaffMiddle = (props) => {
        isOpenAddTerminal,
        card,
        setCard,
-       staffTableIntialValues,
        selectedCard,
        setSelectedCard,
 

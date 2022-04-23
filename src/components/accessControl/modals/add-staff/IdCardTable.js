@@ -22,8 +22,7 @@ const columns = [
 ];
 
 
-const IdCardTable = ({card, setSelectedItems, selectedCard, setSelectedCard}) => {
-    console.log(selectedCard)
+const IdCardTable = ({card, setSelectedItems, selectedCard, }) => {
 
     const [state, setState] = React.useState({selectedRowKeys: []})
     const onSelectChange = (selectedRowKeys, a) => {

@@ -312,7 +312,7 @@ export default function FaceControlSearch() {
                                         style={{width: "100%"}}
                                         size="large"
                                         defaultValue={glasses}
-                                        value={glasses}
+                                        // value={glasses}
                                     >
                                         <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                         <Select.Option value="1">{t("Ko’rishni_tuzatish")}</Select.Option>

@@ -127,6 +127,7 @@ const Saidbar = ({ user, setUser }) => {
                                     </Link>
                                 </Menu.Item>
                             </SubMenu>
+
                             <SubMenu key="sub2" icon={<img src={access} alt=""/>} title={t('kirishni_boshqarish')}>
                                 <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 5)} key="5"
                                            icon={<img src={tableimg} alt=""/>}>

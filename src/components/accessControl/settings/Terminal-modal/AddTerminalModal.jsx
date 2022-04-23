@@ -196,7 +196,7 @@ const AddTerminalModal = ( props ) => {
                                 rules={[
                                     {
                                         required: true,
-                                        message: 'Eshik nomini kiriting',
+                                        message: 'Login kiriting',
                                     },
                                 ]}
                             >

@@ -16,8 +16,8 @@ const columns = [
     },
 ];
 
-const FingerTable = ({fingerPrint, setSelectedItems, staffTableIntialValues}) => {
-    console.log(staffTableIntialValues)
+const FingerTable = ({fingerPrint, setSelectedItems,}) => {
+    // console.log(staffTableIntialValues)
     const [state, setState] = React.useState({selectedRowKeys: []})
     const onSelectChange = (selectedRowKeys, a) => {
         setState({ selectedRowKeys })
@@ -34,7 +34,7 @@ const FingerTable = ({fingerPrint, setSelectedItems, staffTableIntialValues}) =>
         <Table
             columns={columns}
             rowSelection={rowSelection}
-            dataSource={staffTableIntialValues.edit ? staffTableIntialValues.fingerPrint : fingerPrint }
+            dataSource={fingerPrint }
             pagination={false}
             style={{minHeight: '170px'}}
             scroll={{ y: 129 }}
