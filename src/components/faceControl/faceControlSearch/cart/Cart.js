@@ -151,7 +151,9 @@ const Cart = ({ item, isDarkMode }) => {
                                     ? ''
                                     : (item.old !== 'age_0_10' && item.old !== 'age_11_17' && (item.args.SOQOL === 1 ?
                                             <Tooltip title={t('Soqolli')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Soqolli')}</Tooltip> :
-                                            item.args.SOQOL === 0 ? <Tooltip title={t('Soqolsiz')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Soqolsiz')}</Tooltip> : ''))
+                                            item.args.SOQOL === 0 ? <Tooltip title={t('Soqolsiz')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Soqolsiz')}</Tooltip> :
+                                                item.args.SOQOL === 2 ? <Tooltip title={t('Soqolsiz11')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Soqolsiz11')}</Tooltip> :
+                                                ''))
                                 }
                             </p>
                         </div>

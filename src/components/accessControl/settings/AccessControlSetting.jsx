@@ -1,22 +1,22 @@
 import React, { useState, useEffect} from 'react';
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import axios from "axios";
-import moment from 'moment';
 import { Tabs } from 'antd';
 import { MdOutlineAddCircleOutline } from 'react-icons/md';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { ip } from '../../../ip';
 import {useTranslation} from "react-i18next";
+import axios from "axios";
+import moment from 'moment';
 
 import TerminalTable from './table/TerminalTable'
 import StaffTable from './table/StaffTable'
 import TerminalPagination from './paginations/TerminalPagination';
 import StaffPagination from './paginations/StaffPagination';
 import AddStaff from '../modals/add-staff/AddStaff';
+import AddTerminalModal from "./Terminal-modal/AddTerminalModal";
 
 import './setting.css';
-import AddTerminalModal from "./Terminal-modal/AddTerminalModal";
 
 const { TabPane } = Tabs;
 
@@ -62,6 +62,7 @@ const AccessControlSetting = () => {
         notification: false,
         cards: [],
         fingerPrint: [],
+        edit: false,
     })
     // console.log(staffTableIntialValues)
 
@@ -248,7 +249,6 @@ const AccessControlSetting = () => {
                                         {t("Terminal qo'shish")}
                                     </button>
 
-                                    {/*qayerda set qildingiz*/}
                                     {
                                         deleteTerminal.length > 0 &&
                                         <button onClick={handleDeleteterminal}>
@@ -274,7 +274,7 @@ const AccessControlSetting = () => {
                             staffTableIntialValues={staffTableIntialValues}
                             setStaffTableIntialValues={setStaffTableIntialValues}
                             getStaffData={getStaffData}
-                            setStaffPaginationCurrent ={setStaffPaginationCurrent}
+                            staffPaginationCurrent={staffPaginationCurrent}
                             selectedCard={selectedCard}
                             setSelectedCard={setSelectedCard}
                             card={card}
@@ -294,6 +294,7 @@ const AccessControlSetting = () => {
                                         setStaffTableIntialValues={setStaffTableIntialValues}
                                         card={card}
                                         setCard={setCard}
+                                        setFingerPrint={setFingerPrint}
                                     />
                                 </div>
                                 <div className='access_control_setting_tab_item_footer'>

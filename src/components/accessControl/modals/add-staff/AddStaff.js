@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { ip } from "../../../../ip";
 import {useTranslation} from "react-i18next";
 import { Form } from 'antd';
-
 import Modal from "react-modal";
 import axios from "axios";
 import './addStaff.css';
@@ -22,7 +21,7 @@ function AddStaff(props) {
         setIsOpenAddStaff,
         staffTableIntialValues,
         setStaffTableIntialValues,
-        setStaffPaginationCurrent,
+        staffPaginationCurrent,
         getStaffData,
         selectedCard,
         setSelectedCard,
@@ -36,6 +35,11 @@ function AddStaff(props) {
     const [ isOpenAddTerminal, setIsOpenAddTerminal] = useState(false);
     const [ isOpenAddFingerprint,setIsOpenAddFingerprint] = useState(false);
     const [terminalIPList, setTerminalIPList] = useState([]);
+    const [imageState, setImageState] = useState({
+        initial: true,
+        uploaded: false,
+        requested: false,
+    })
     // const [card, setCard] = useState([]);
     // const [fingerPrint, setFingerPrint] = useState([]);
 
@@ -66,31 +70,38 @@ function AddStaff(props) {
             valid_to_time: '',
             image: '',
             notification: false,
+            edit: false,
         })
     }
 
     const onFinish = (value) => {
+        console.log(value)
         const formData = {
             ...value,
             image: data.image,
             notification: data.notification,
             id: data.id,
+            door_ip: JSON.stringify(value.door_ip.map(item => item.value || item)),
+            valid_to_time: moment(value?.valid_to_time).format("YYYY-MM-DD"),
+            valid_from_time: moment(value?.valid_from_time).format("YYYY-MM-DD"),
+            fingerprint:  JSON.stringify(fingerPrint),
+            cards: JSON.stringify(card)
         }
         const fd = new FormData();
         Object.keys(formData).forEach(i => fd.append(i, formData[i]));
-        fd.append("cards", JSON.stringify(card));
-        fd.append("fingerprint", JSON.stringify(fingerPrint));
-        fd.append("valid_to_time", moment(value?.valid_to_time).format("YYYY-MM-DD"));
-        fd.append("valid_from_time", moment(value?.valid_from_time).format("YYYY-MM-DD"));
 
         if (staffTableIntialValues.edit){
-            console.log(staffTableIntialValues)
             axios.put(`${ip}/api/terminal/updateuser/${staffTableIntialValues.id}`, fd)
                 .then(response =>{
                     cancel()
-                    getStaffData(setStaffPaginationCurrent)
+                    getStaffData(staffPaginationCurrent)
                     setSelectedCard([]);
                     setCard([]);
+                    setImageState({
+                        initial: true,
+                        uploaded: false,
+                        requested: false
+                    })
                 })
                 .catch(err=>{
                     console.log(err?.response?.data)
@@ -101,7 +112,7 @@ function AddStaff(props) {
                 .then(res => {
                     console.log(res)
                     cancel()
-                    getStaffData(setStaffPaginationCurrent)
+                    getStaffData(staffPaginationCurrent)
                 })
                 .catch(err => {
                     console.log(err?.response?.data)
@@ -109,7 +120,6 @@ function AddStaff(props) {
         }
 
     }
-
 
     //https://prettier.io/
 
@@ -126,7 +136,7 @@ function AddStaff(props) {
                     const newData = data.map(item => ({
                         label: item.door_name,
                         value: item.ip_address,
-                        // key: item.ip_address,
+                        key: item.ip_address,
                     }))
                     setTerminalIPList(newData)
                 })
@@ -138,8 +148,6 @@ function AddStaff(props) {
 
     }, [])
 
-
-    console.log("staffTableIntialValues", staffTableIntialValues)
     return (
         <Modal
             isOpen={isOpenAddStaff}
@@ -171,13 +179,6 @@ function AddStaff(props) {
                                     data = {data}
                                     setData = {setData}
                                     terminalIPList = {terminalIPList}
-                                    // setIsOpenAddStaff = {(data)=> setIsOpenAddStaff({
-                                    //     ...data,
-                                    //     door_ip: data?.door_ip?.length > 0 ? data?.door_ip.map(item => ({
-                                    //         label: item?.door_name,
-                                    //         value: item?.ip_address,
-                                    //     })): []
-                                    // })}
                                 />
 
                             </div>
@@ -216,6 +217,8 @@ function AddStaff(props) {
                                 data = {data}
                                 setData = {setData}
                                 terminalIPList = {terminalIPList}
+                                imageState={imageState}
+                                setImageState={setImageState}
                             />
                           <div className="staff_buttons">
                               <button type="button" onClick={cancel} className="addStaff_cancel_button">Bekor qilish</button>

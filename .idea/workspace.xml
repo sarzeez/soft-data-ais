@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="336564c8-be62-4b56-98c9-fd11d6f5abdf" name="Changes" comment="edit">
+    <list default="true" id="0a201435-4445-4d5e-89c8-ca008ebf4fdc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml~598dc118d34716bb7fa5f3e32f6794793a500609" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AcsessTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AcsessTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/FingerTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/FingerTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/IdCardTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/IdCardTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/MiddleBottom.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/MiddleBottom.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffMiddle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffMiddle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffRight.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffRight.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/Terminal-modal/AddTerminalModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/Terminal-modal/AddTerminalModal.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/TerminalTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/TerminalTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/FaceControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/FaceControlSetting.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/FaceControlSearch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/FaceControlSearch.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/cart/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/cart/Cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loginPage/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loginPage/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/saidbar/Saidbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/saidbar/Saidbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ip.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ip.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,18 +23,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="27NagnmVowex9WC38ay1u4HKsvt" />
+  <component name="ProjectId" id="29PyMNO6fss19qaaE7cmcxeNT2s" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -51,62 +38,22 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="ts.external.directory.path" value="C:\Users\Jahongir\AppData\Local\JetBrains\WebStorm 2021.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="336564c8-be62-4b56-98c9-fd11d6f5abdf" name="Changes" comment="" />
-      <created>1649163141134</created>
+      <changelist id="0a201435-4445-4d5e-89c8-ca008ebf4fdc" name="Changes" comment="" />
+      <created>1653028965480</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1649163141134</updated>
-      <workItem from="1649163142726" duration="557000" />
-      <workItem from="1649217918771" duration="18119000" />
-      <workItem from="1649304521157" duration="1505000" />
-      <workItem from="1649307483725" duration="18371000" />
-      <workItem from="1649390758131" duration="15230000" />
-      <workItem from="1649477309178" duration="5743000" />
-      <workItem from="1649493571605" duration="11495000" />
-      <workItem from="1649580006444" duration="634000" />
-      <workItem from="1649650675244" duration="21212000" />
-      <workItem from="1649736288982" duration="14678000" />
-      <workItem from="1649822836245" duration="17317000" />
-      <workItem from="1649908102553" duration="14972000" />
-      <workItem from="1649994643577" duration="21404000" />
-      <workItem from="1650081726017" duration="820000" />
-      <workItem from="1650086714230" duration="667000" />
-      <workItem from="1650088632091" duration="7512000" />
-      <workItem from="1650109057473" duration="76000" />
-      <workItem from="1650253722862" duration="16295000" />
-      <workItem from="1650277009136" duration="6872000" />
-      <workItem from="1650341153535" duration="14390000" />
-      <workItem from="1650362008997" duration="6148000" />
-      <workItem from="1650426864600" duration="5454000" />
-      <workItem from="1650438216390" duration="12862000" />
-      <workItem from="1650512981013" duration="13472000" />
-      <workItem from="1650598665019" duration="11810000" />
-      <workItem from="1650684606667" duration="3432000" />
+      <updated>1653028965480</updated>
+      <workItem from="1653028967450" duration="6971000" />
+      <workItem from="1653105593743" duration="9100000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="edit" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit" />
   </component>
 </project>

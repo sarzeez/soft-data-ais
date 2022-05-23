@@ -110,7 +110,7 @@ const FingerprintModal = (props) => {
                                     <Select.Option value="">Tanlash</Select.Option>
                                     {
                                         terminalIPList?.map((item, index) => (
-                                            <Select.Option key = {index} value={item.value}>{item.title}</Select.Option>
+                                            <Select.Option key = {index} value={item.value}>{item.label}</Select.Option>
                                         ))
                                     }
                                 </Select>

@@ -1,9 +1,7 @@
 import React from 'react';
 import { Table, Image  } from 'antd';
 import { useSelector } from "react-redux";
-
 import { AiOutlineUser } from 'react-icons/ai'
-
 import {ip} from '../../../ip';
 
 import './acsessControl.css';
@@ -14,7 +12,7 @@ import {useTranslation} from "react-i18next";
 
 const AcsessTable = (props) => {
     const { accessTableData } = props;
-
+    console.log(accessTableData)
     const {t} = useTranslation();
 
     const isDarkMode = useSelector(state => state.theme.theme_data)

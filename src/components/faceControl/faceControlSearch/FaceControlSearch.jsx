@@ -3,16 +3,14 @@ import {Input, Select, DatePicker,} from "antd";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { ip } from "../../../ip";
+import { AiOutlineClear, AiOutlineSearch } from 'react-icons/ai'
 import axios from "axios";
 import moment from "moment";
-
-import { AiOutlineClear, AiOutlineSearch } from 'react-icons/ai'
 
 import Cart from './cart/Cart'
 import FaceControlPagination from "./pagination/Pagination";
 import "./faceControlSearch.css";
-
-import { ip } from "../../../ip";
 
 export default function FaceControlSearch() {
 

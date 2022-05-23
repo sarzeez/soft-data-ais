@@ -19,20 +19,26 @@ const StaffTable = (props) => {
         setIsOpenAddStaff,
         setStaffTableIntialValues,
         card,
-        setCard
+        setCard,
+        setFingerPrint
     } = props;
     const {t} = useTranslation()
     const isDarkMode = useSelector(state => state.theme.theme_data)
 
     const editAddStaff = (value, record) => {
-        console.log(value)
         setCard(value.cards)
+        setFingerPrint(value.fingerprint)
+        const newDoorIP = value.door_ip.map(item => ({
+            label: item.door_name,
+            value: item.ip_address,
+            key: item.ip_address,
+        }))
         setStaffTableIntialValues({
             ...value,
+            door_ip: [...newDoorIP],
             edit: true,
         })
         setIsOpenAddStaff(true)
-        // console.log(value)
     }
 
     const columns = [
@@ -133,18 +139,18 @@ const StaffTable = (props) => {
             // dataIndex: 'card_id',
             align: 'center',
             render: (text, record) => (
-                <div className='door_ip_length'>
+                <div >
                     {record.fingerprint.length > 0 ?
                         <>
                             <p>
                                 {record.fingerprint.length}
                             </p>
-                            <div className='door_ip_length_hover'>
-                                {record.fingerprint.map(e => e.name).join(`, `)}
-                                <div className='door_ip_length_hover_rectangel'>
+                            {/*<div className='door_ip_length_hover'>*/}
+                            {/*    {record.fingerprint.map(e => e.name).join(`, `)}*/}
+                            {/*    <div className='door_ip_length_hover_rectangel'>*/}
 
-                                </div>
-                            </div>
+                            {/*    </div>*/}
+                            {/*</div>*/}
                         </>
                         : "—"
                     }

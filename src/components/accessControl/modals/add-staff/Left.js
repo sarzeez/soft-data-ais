@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Form, Input, Select, DatePicker, TreeSelect, Switch} from 'antd';
+import {Form, Input, Select, DatePicker, TreeSelect, Switch, Space} from 'antd';
 import {useTranslation} from "react-i18next";
 import './left.css';
 import moment from "moment";
@@ -10,20 +10,15 @@ const Left = ({ data, setData, terminalIPList }) => {
 
     const {t} = useTranslation()
     const [state, setState] = useState([]);
-
-    console.log(terminalIPList)
     function handleChange(value) {
         console.log(`Selected: ${value}`);
     }
-
-
-    const onChange = value => {
-        // console.log(value)
+    const onChange = (value) => {
+        console.log(value)
+        const list = 
         setState(value);
-        setData({...data, value})
+        setData({...data, door_ip: value})
     };
-
-// bu eskiniki
 
     const tProps = {
         treeData: terminalIPList,
@@ -33,10 +28,11 @@ const Left = ({ data, setData, terminalIPList }) => {
         showCheckedStrategy: SHOW_PARENT,
         placeholder: 'Tanlash',
         style: {
-          width: '100%',
+        width: '100%',
         },
         size: 'large'
     };
+      
 
     return (
         <div className="access_control_add_staff_modal_body_item_left">
@@ -126,16 +122,10 @@ const Left = ({ data, setData, terminalIPList }) => {
                     },
                     ]}
                 >
-                    {/*<TreeSelect  {...tProps}/>*/}
-                    <Select
-                        options={ []}
-                        mode="multiple"
-                        size="large"
-                        placeholder="Please select"
-                        onChange={handleChange}
-                        style={{ width: '100%' }}
-                    />
+                    <TreeSelect  {...tProps}/>
+                   
                 </Form.Item>
+                {/* <TreeSelect  {...tProps}/> */}
 
             </div>
 
@@ -178,6 +168,7 @@ const Left = ({ data, setData, terminalIPList }) => {
                     />
                 </Form.Item>
             </div>
+
 
             <div className='access_control_add_staff_modal_body_item_3_notif'>
                 <p>Xodimning kirib/chiqish ma’lumotlari haqida bildirishnoma olishni istaysizmi?</p>
