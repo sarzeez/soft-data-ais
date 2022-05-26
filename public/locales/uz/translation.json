@@ -153,16 +153,45 @@
   "Lavozimini tanlang": "Lavozimini tanlang",
   "Ruxsat etilgan eshiklar": "Ruxsat etilgan eshiklar",
   "Ruxsat etilgan eshikni tanlang": "Ruxsat etilgan eshikni tanlang",
+  "Tasdiq turi": "Tasdiq turi",
   "Yuz": "Yuz",
   "Barmoq izi": "Barmoq izi",
   "Yuz yoki Barmoq izi": "Yuz yoki Barmoq izi",
   "Yuz va Barmoq izi": "Yuz va Barmoq izi",
+  "Yuz va ID karta": "Yuz va ID karta",
+  "Barmoq izi va ID karta": "Barmoq izi va ID karta",
   "Kirishlar soni": "Kirishlar soni",
   "Kirishlar sonini kiriting": "Kirishlar sonini kiriting",
   "Muddatni tanlang": "Muddatni tanlang",
    "Boshqalar": "Boshqalar",
   "Karta turuni tanlang": "Karta turuni tanlang",
-  "Karta raqamini kiriting": "Karta raqamini kiriting"
+  "Karta raqamini kiriting": "Karta raqamini kiriting",
+  "Ruxsat etiladigan muddat": "Ruxsat etiladigan muddat",
+  "notiftext": "Xodimning kirib/chiqish ma’lumotlari haqida bildirishnoma olishni istaysizmi?",
+  "Ha": "Ha",
+  "Yo'q": "Yo'q",
+  "ID karta qo’shish": "ID karta qo’shish",
+  "Turi": "Turi",
+  "Karta turi:": "Karta turi:",
+  "Qo’shish": "Qo’shish",
+  "Barmoq izi qo’shish": "Barmoq izi qo’shish",
+  "Barmoq izi nomi": "Barmoq izi nomi",
+  "Barmoq izi nomini kiriting": "Barmoq izi nomini kiriting",
+  "Terminalni tanlang": "Terminalni tanlang",
+  "Barmoq izi olish": "Barmoq izi olish",
+  "Nomi": "Nomi",
+  "Rasm yuklash": "Rasm yuklash",
+  "Rasm olish": "Rasm olish",
+
+
+
+
+
+
+
+
+
+  "ll": "l"
 
 
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import {useTranslation} from "react-i18next";
 import IdCardTable from './IdCardTable';
 import IdCardModal from "../add-IDCard/IdCardModal";
 
@@ -15,6 +16,7 @@ const StaffMiddle = (props) => {
 
    } = props
 
+    const {t} = useTranslation()
     const [selectedItems, setSelectedItems] = React.useState([]);
 
     const handleDeleteTerminal = () => {
@@ -38,14 +40,12 @@ const StaffMiddle = (props) => {
 
                   <IdCardTable
                       card = {card}
-                      setCard={setCard}
-                      selectedCard={selectedCard}
-                      setSelectedCard={setSelectedCard}
+                      setSelectedItems={setSelectedItems}
                   />
 
                <div className='access_control_add_staff_modal_body_item_right_buttons'>
-                   <button onClick={() => setIsOpenAddTerminal(true)} type='button'>ID karta qo’shish</button>
-                   <button onClick={handleDeleteTerminal} type='button'>O’chirish</button>
+                   <button onClick={() => setIsOpenAddTerminal(true)} type='button'>{t("ID karta qo’shish")}</button>
+                   <button onClick={handleDeleteTerminal} type='button'>{t("O’chirish")}</button>
                </div>
            </div>
        </>

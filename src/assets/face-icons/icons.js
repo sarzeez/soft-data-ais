@@ -41,8 +41,8 @@ import noGlass from '../face-icons/emojes/noGlass.png'
 
 export const emojes = {
   mood: ['', mood_2, mood_3, mood_4, mood_5, mood_6, mood_7, mood_8, mood_9, '', mood_11, mood_12, mood_13],
-  mask: [noMaskIcon, withMaskIcon],
-  beard: [noBeard, withBeard],
+  mask: ['', '', noMaskIcon,  withMaskIcon, ],
+  beard: ['', '', noBeard, withBeard, ],
   glass: {
     "0": noGlass,
     "1": withGlass,

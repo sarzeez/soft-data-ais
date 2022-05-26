@@ -1,13 +1,11 @@
 import React from 'react';
 import {Table, Image} from 'antd';
-import moment from 'moment';
 import {useSelector} from "react-redux";
-
 import {AiOutlineUser} from 'react-icons/ai'
-
 import {ip} from '../../../../ip';
 import {useTranslation} from "react-i18next";
 import {RiEditLine} from "react-icons/ri";
+import moment from 'moment';
 
 
 
@@ -18,14 +16,15 @@ const StaffTable = (props) => {
         rowSelection,
         setIsOpenAddStaff,
         setStaffTableIntialValues,
-        card,
         setCard,
         setFingerPrint
     } = props;
     const {t} = useTranslation()
     const isDarkMode = useSelector(state => state.theme.theme_data)
+    const lang = localStorage.getItem('i18nextLng');
 
     const editAddStaff = (value, record) => {
+        console.log(value)
         setCard(value.cards)
         setFingerPrint(value.fingerprint)
         const newDoorIP = value.door_ip.map(item => ({

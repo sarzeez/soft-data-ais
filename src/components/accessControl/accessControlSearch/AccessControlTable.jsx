@@ -30,6 +30,7 @@ const AcsessControlTable = () => {
     const [userType, setUserType] = useState('all');
     const [position, setPosition] = useState('all');
     const [direction, setDirection] = useState('all');
+    const [authType, setAuthType] = useState('all');
     const [dateFrom, setDateFrom] = useState('');
     const [dateTo, setDateTo] = useState('');
     const [allowedDoor, setAllowedDoor] = useState([]);
@@ -55,6 +56,10 @@ const AcsessControlTable = () => {
         setPosition(e)
     };
 
+    const onChangeAuthType=(e) =>{
+        setAuthType(e)
+    }
+
     const onChangeDirection=(e) =>{
         setDirection(e)
     }
@@ -73,6 +78,7 @@ const AcsessControlTable = () => {
             device_name: deviceName,
             rank: position,
             user_type: userType,
+            auth_type: authType,
             direction: direction,
             fromDate: dateFrom,
             toDate: dateTo,
@@ -90,6 +96,7 @@ const AcsessControlTable = () => {
                 door_name: item.door_name,
                 user_type: item.user_type === 1 ? t('Xodim') : item.user_type === 2 ? t('Mehmon') : t('Begona'),
                 rank: item.rank == 1 ? t('Oddiy xodim') : item.rank == 2 ? t('Direktor') : item.rank == 3 ? t('VIP') : '—',
+                auth_type: item.auth_type
             }
         ))
         setAccessTableData(newData)
@@ -107,6 +114,7 @@ const AcsessControlTable = () => {
         setDeviceName('all')
         setPosition('all')
         setUserType('all')
+        setAuthType('all')
         setDirection('all')
 
         setDateFrom('')
@@ -230,6 +238,28 @@ const AcsessControlTable = () => {
                                     <Select.Option value="1">{t("Oddiy xodim")}</Select.Option>
                                     <Select.Option value="2">{t("Direktor")}</Select.Option>
                                     <Select.Option value="3">{t("VIP")}</Select.Option>
+                                </Select>
+                            </div>
+                        </div>
+
+                        <div className="form_input_wrapper">
+                            <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t("Tasdiq turi")}</p>
+                            <div className="input_wrapper">
+                                <Select
+                                    className={`left_select ${isDarkMode && 'darkModeColor'}`}
+                                    onChange={onChangeAuthType}
+                                    style={{width: "100%"}}
+                                    size="large"
+                                    defaultValue={authType}
+                                    value={authType}
+                                >
+                                    <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                    <Select.Option value="1">{t("Yuz")}</Select.Option>
+                                    <Select.Option value="2">{t("Barmoq izi")}</Select.Option>
+                                    <Select.Option value="3">{t("ID karta")}</Select.Option>
+                                    <Select.Option value="4">{t("Yuz va Barmoq izi")}</Select.Option>
+                                    <Select.Option value="6">{t("Yuz va ID karta")}</Select.Option>
+                                    <Select.Option value="8">{t("Barmoq izi va ID karta")}</Select.Option>
                                 </Select>
                             </div>
                         </div>

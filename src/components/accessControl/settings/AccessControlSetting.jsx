@@ -15,7 +15,6 @@ import TerminalPagination from './paginations/TerminalPagination';
 import StaffPagination from './paginations/StaffPagination';
 import AddStaff from '../modals/add-staff/AddStaff';
 import AddTerminalModal from "./Terminal-modal/AddTerminalModal";
-
 import './setting.css';
 
 const { TabPane } = Tabs;
@@ -46,7 +45,6 @@ const AccessControlSetting = () => {
     const [staffTotal, setStaffTotal] = useState(null)
     const [selectedCard , setSelectedCard] = useState([]);
     const [card, setCard] = useState([]);
-    const [selectedFinger , setSelectedFinger] = useState([]);
     const [fingerPrint, setFingerPrint] = useState([]);
 
     const [staffTableIntialValues, setStaffTableIntialValues] = useState({
@@ -64,6 +62,7 @@ const AccessControlSetting = () => {
         fingerPrint: [],
         edit: false,
     })
+
     // console.log(staffTableIntialValues)
 
     // delete button
@@ -135,7 +134,6 @@ const AccessControlSetting = () => {
     const getStaffData = async (id) => {
         const response = await axios.get(`${ip}/api/terminal/getusers/${staffPaginationLimit}/${id}`)
         const { data } = response;
-        // console.log(data)
         const count = data.count;
         setStaffTotal(count)
         const newData = data.data.map((item, index) => (
@@ -146,10 +144,8 @@ const AccessControlSetting = () => {
                 valid_to_time: moment(item.valid_to_time),
                 direction: item.direction,
                 door_name: item.door_name,
-                user_type: item.user_type,
-                // user_type: item.user_type === 1 ? t('Xodim') : item.user_type === 2 ? t('Mehmon') : t('Begona'),
+                user_type: item.user_type ,
                 rank: item.rank,
-                // rank: item.rank == 1 ? t('Oddiy xodim') : item.rank == 2 ? t('Direktor') : item.rank == 3 ? t('VIP') : '',
             }
         ))
         setStaffData(newData)
@@ -178,6 +174,7 @@ const AccessControlSetting = () => {
                 // console.log(err?.response?.data)
             })
     }
+
 
     const terminalPaginationOnChange = (e = 1, option) => {
         getTerminalData(e)
@@ -281,8 +278,8 @@ const AccessControlSetting = () => {
                             setCard={setCard}
                             fingerPrint={fingerPrint}
                             setFingerPrint={setFingerPrint}
-
                         />
+
                         <div className="access_control_setting_tab">
                             <div className='access_control_setting_tab_item'>
                                 <div className='access_control_setting_tab_item_body'>
@@ -292,7 +289,6 @@ const AccessControlSetting = () => {
                                         rowSelection={rowSelection}
                                         setIsOpenAddStaff={setIsOpenAddStaff}
                                         setStaffTableIntialValues={setStaffTableIntialValues}
-                                        card={card}
                                         setCard={setCard}
                                         setFingerPrint={setFingerPrint}
                                     />

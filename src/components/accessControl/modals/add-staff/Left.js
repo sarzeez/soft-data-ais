@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
-import {Form, Input, Select, DatePicker, TreeSelect, Switch, Space} from 'antd';
+import {Form, Input, Select, DatePicker, TreeSelect, Switch} from 'antd';
 import {useTranslation} from "react-i18next";
-import './left.css';
 import moment from "moment";
+import './left.css';
+
+
 const { SHOW_PARENT } = TreeSelect;
+const { Option } = Select;
 
 
 const Left = ({ data, setData, terminalIPList }) => {
 
     const {t} = useTranslation()
     const [state, setState] = useState([]);
-    function handleChange(value) {
-        console.log(`Selected: ${value}`);
-    }
+
+
     const onChange = (value) => {
-        console.log(value)
-        const list = 
-        setState(value);
+        // console.log(value)
+        const list = setState(value);
         setData({...data, door_ip: value})
     };
 
@@ -26,17 +27,18 @@ const Left = ({ data, setData, terminalIPList }) => {
         onChange: onChange,
         treeCheckable: true,
         showCheckedStrategy: SHOW_PARENT,
-        placeholder: 'Tanlash',
+        placeholder: t('Tanlash'),
         style: {
         width: '100%',
         },
         size: 'large'
     };
-      
+
 
     return (
         <div className="access_control_add_staff_modal_body_item_left">
             <div className="access_control_add_staff_modal_body_item_left_inputs">
+
                 <Form.Item
                     label={t("Ism")}
                     name="fullname"
@@ -53,6 +55,7 @@ const Left = ({ data, setData, terminalIPList }) => {
                         style={{borderRadius: '5px'}}
                     />
                 </Form.Item>
+
                 <Form.Item
                     label={t("Jinsi")}
                     name="gender"
@@ -67,6 +70,9 @@ const Left = ({ data, setData, terminalIPList }) => {
                         size="large"
                         placeholder={t("Kiriting")}
                     >
+                        <Select.Option disabled value="">
+                            <span style={{color:"#bfbfbf"}}>{t("Tanlash")}</span>
+                        </Select.Option>
                         <Select.Option value="male">{t("Erkak")}</Select.Option>
                         <Select.Option value="female">{t("Ayol")}</Select.Option>
                     </Select>
@@ -85,10 +91,14 @@ const Left = ({ data, setData, terminalIPList }) => {
                 >
                     <Select
                         size="large"
+                        placeholder={"Kiriting"}
                     >
-                        <Select.Option value="1">{t("Xodim")}</Select.Option>
-                        <Select.Option value="2">{t("Mehmon")}</Select.Option>
-                        <Select.Option value="3">{t("Bloklangan")}</Select.Option>
+                        <Select.Option disabled value="">
+                            <span style={{color:"#bfbfbf"}}>{t("Tanlash")}</span>
+                        </Select.Option>
+                        <Select.Option value={1}>{t("Xodim")}</Select.Option>
+                        <Select.Option value={2}>{t("Mehmon")}</Select.Option>
+                        <Select.Option value={3}>{t("Bloklangan")}</Select.Option>
                     </Select>
                 </Form.Item>
                 <Form.Item
@@ -104,14 +114,17 @@ const Left = ({ data, setData, terminalIPList }) => {
                     <Select
                         size="large"
                     >
-                        <Select.Option value="1">{t('Oddiy xodim')}</Select.Option>
-                        <Select.Option value="2">{t("Direktor")}</Select.Option>
-                        <Select.Option value="3">{t("VIP")}</Select.Option>
+                        <Select.Option disabled value="">
+                            <span style={{color:"#bfbfbf"}}>{t("Tanlash")}</span>
+                        </Select.Option>
+                        <Select.Option value={1}>{t('Oddiy xodim')}</Select.Option>
+                        <Select.Option value={2}>{t("Direktor")}</Select.Option>
+                        <Select.Option value={3}>{t("VIP")}</Select.Option>
                     </Select>
                 </Form.Item>
             </div>
-            <div className="access_control_add_staff_modal_body_item_left_input">
 
+            <div className="access_control_add_staff_modal_body_item_left_input">
                 <Form.Item
                     label={t("Ruxsat etilgan eshiklar")}
                     name="door_ip"
@@ -123,15 +136,13 @@ const Left = ({ data, setData, terminalIPList }) => {
                     ]}
                 >
                     <TreeSelect  {...tProps}/>
-                   
                 </Form.Item>
-                {/* <TreeSelect  {...tProps}/> */}
 
             </div>
 
             <div className="access_control_add_staff_modal_body_item_left_inputs">
                 <Form.Item
-                    label={t("Muddat")}
+                    label={t("Ruxsat etiladigan muddat")}
                     name="valid_from_time"
                     rules={[
                     {
@@ -150,7 +161,7 @@ const Left = ({ data, setData, terminalIPList }) => {
 
                 </Form.Item>
                 <Form.Item
-                    label={t("Muddat")}
+                    label=" "
                     name="valid_to_time"
                     rules={[
                     {
@@ -169,12 +180,11 @@ const Left = ({ data, setData, terminalIPList }) => {
                 </Form.Item>
             </div>
 
-
             <div className='access_control_add_staff_modal_body_item_3_notif'>
-                <p>Xodimning kirib/chiqish ma’lumotlari haqida bildirishnoma olishni istaysizmi?</p>
+                <p>{t("notiftext")}</p>
                 <Switch
-                    checkedChildren="Ha"
-                    unCheckedChildren="Yo'q"
+                    checkedChildren={t("Ha")}
+                    unCheckedChildren={t("Yo'q")}
                     checked={data.notification}
                     onChange={(value) => setData({...data, notification: value})}
                 />

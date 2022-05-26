@@ -53,7 +53,7 @@ const FaceControlSetting = () => {
 
 
 
-    const [cameraPaginationLimit, setCameraPaginationLimit] = useState(14);
+    const [cameraPaginationLimit, setCameraPaginationLimit] = useState(15);
     const [cameraPaginationCurrent, setCameraPaginationCurrent] = useState(1);
     const [cameraTotal, setCameraTotal] = useState(null);
     const [show, setShow] = useState(false);
@@ -229,13 +229,16 @@ const FaceControlSetting = () => {
                             </div>
 
                             <div className="camera_groups">
-                                <AddNewGroupTable
-                                    languageGroup={languageGroup}
-                                    isDarkMode={isDarkMode}
-                                    setDeleteGroup={setDeleteGroup}
-                                    setGroupInitialValues = {setGroupInitialValues}
-                                    setShow={setShow}
-                                />
+                                <div className="camera_groups_add_new_group_table">
+                                    <AddNewGroupTable
+                                        languageGroup={languageGroup}
+                                        isDarkMode={isDarkMode}
+                                        setDeleteGroup={setDeleteGroup}
+                                        setGroupInitialValues = {setGroupInitialValues}
+                                        setShow={setShow}
+                                    />
+                                </div>
+
                                 {
                                     !show ?
                                         <div className="add_new_group">

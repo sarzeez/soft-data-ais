@@ -9,9 +9,11 @@ import { IoImageOutline } from 'react-icons/io5';
 import loadingGif from '../../../../assets/gif/loading.gif';
 
 import './staffRight.css';
+import {useTranslation} from "react-i18next";
 
 const StaffRight = ({ data, setData, terminalIPList, staffTableIntialValues, imageState, setImageState }) => {
 
+    const {t} = useTranslation();
     const [view, setView] = useState(null)
     const [requestedImage, setRequestedImage] = useState(null)
     const [accessDoors, setAccessDoors] = useState('')
@@ -112,7 +114,7 @@ const StaffRight = ({ data, setData, terminalIPList, staffTableIntialValues, ima
                 </div>
                 <label htmlFor='access_control_staff_image' className='access_control_add_staff_modal_body_item_middle_upload'>
                     <FiUpload size={18} style={{marginRight: '7px'}}/>
-                    Rasm yuklash
+                    {t("Rasm yuklash")}
                     <input onChange={upload} name='image' type="file" id="access_control_staff_image" style={{display: 'none'}} />
                 </label>
                 <div className='access_control_add_staff_modal_body_item_middle_download_wrapper'>
@@ -120,9 +122,9 @@ const StaffRight = ({ data, setData, terminalIPList, staffTableIntialValues, ima
                         size="large"
                         value={accessDoors}
                         onChange={onChangeImageSelect}
-                        placeholder="Tanlash"
+                        placeholder={t("Tanlash")}
                     >
-                        <Select.Option value="">Tanlash</Select.Option>
+                        <Select.Option value="">{t("Tanlash")}</Select.Option>
                         {
                             terminalIPList.map((item, index) => (
                                 <Select.Option key = {index} value={item.value}>{item.label}</Select.Option>
@@ -139,7 +141,7 @@ const StaffRight = ({ data, setData, terminalIPList, staffTableIntialValues, ima
                         onClick={handleClickImageDownload}
                         disabled={accessDoors === '' ? true : false}
                     >
-                        Rasm olish
+                        {t("Rasm olish")}
                     </button>
                 </div>
         </div>

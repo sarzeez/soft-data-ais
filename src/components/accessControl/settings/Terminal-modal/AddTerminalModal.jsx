@@ -120,7 +120,7 @@ const AddTerminalModal = ( props ) => {
                                     placeholder="Tanlang"
                                 >
                                     <Select.Option value="Entry">{t("Kirish")}</Select.Option>
-                                    <Select.Option value="Exit">Chiqish</Select.Option>
+                                    <Select.Option value="Exit">{t("Chiqish")}</Select.Option>
                                 </Select>
                             </Form.Item>
                         </div>

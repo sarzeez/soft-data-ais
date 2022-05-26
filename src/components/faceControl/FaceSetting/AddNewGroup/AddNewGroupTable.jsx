@@ -73,6 +73,9 @@ const AddNewGroupTable = (props) => {
                 rowSelection={rowSelection}
                 columns={columns}
                 dataSource={languageGroup}
+                scroll={{
+                    y: 390,
+                }}
                 pagination={false}
             />
 

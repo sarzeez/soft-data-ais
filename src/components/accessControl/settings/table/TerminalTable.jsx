@@ -26,7 +26,7 @@ const TerminalTable = (props) => {
 
 
     const editTerminal= ( value, record) =>{
-
+        console.log(value)
         setTerminalTableIntialValues({
             ...value,
             edit: true

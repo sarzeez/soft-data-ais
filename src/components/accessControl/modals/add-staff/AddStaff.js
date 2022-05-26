@@ -40,8 +40,6 @@ function AddStaff(props) {
         uploaded: false,
         requested: false,
     })
-    // const [card, setCard] = useState([]);
-    // const [fingerPrint, setFingerPrint] = useState([]);
 
 
     const [data, setData] = useState({
@@ -145,8 +143,9 @@ function AddStaff(props) {
                 })
         }
         getData();
-
     }, [])
+
+    // console.log(staffTableIntialValues)
 
     return (
         <Modal
@@ -161,6 +160,9 @@ function AddStaff(props) {
             <Form
                 name="basic"
                 layout="vertical"
+                // initialValues={{
+                //     remember: true
+                // }}
                 initialValues={staffTableIntialValues}
                 requiredMark = 'optional'
                 onFinish={onFinish}
@@ -186,7 +188,7 @@ function AddStaff(props) {
 
                         <div className="access_control_add_staff_modal_body_item_2">
                             <div className="access_control_add_staff_modal_body_item">
-                                <p className="access_control_add_staff_modal_body_item_title">ID karta</p>
+                                <p className="access_control_add_staff_modal_body_item_title">{t("ID karta")}</p>
                                 <StaffMiddle
                                     staffTableIntialValues={staffTableIntialValues}
                                     card={card}
@@ -198,7 +200,7 @@ function AddStaff(props) {
                                 />
                             </div>
                             <div className="access_control_add_staff_modal_body_item">
-                                <p className="access_control_add_staff_modal_body_item_title">Barmoq izi</p>
+                                <p className="access_control_add_staff_modal_body_item_title">{t("Barmoq izi")}</p>
                                 <MiddleBottom
                                     terminalIPList={terminalIPList}
                                     fingerPrint={fingerPrint}
@@ -211,7 +213,7 @@ function AddStaff(props) {
                         </div>
 
                         <div className="access_control_add_staff_modal_body_item">
-                            <p className="access_control_add_staff_modal_body_item_title">Yuzni aniqlash</p>
+                            <p className="access_control_add_staff_modal_body_item_title">{t("Yuzni aniqlash")}</p>
                             <StaffRight
                                 staffTableIntialValues={staffTableIntialValues}
                                 data = {data}
@@ -221,9 +223,9 @@ function AddStaff(props) {
                                 setImageState={setImageState}
                             />
                           <div className="staff_buttons">
-                              <button type="button" onClick={cancel} className="addStaff_cancel_button">Bekor qilish</button>
+                              <button type="button" onClick={cancel} className="addStaff_cancel_button">{t("Bekor qilish")}</button>
                               <button className="access_control_add_staff_modal_body_item_3_submit_button" type="submit">
-                                  Saqlash
+                                  {t("Saqlash")}
                               </button>
                           </div>
                         </div>

@@ -128,25 +128,25 @@ const Saidbar = ({ user, setUser }) => {
                                 </Menu.Item>
                             </SubMenu>
 
-                            <SubMenu key="sub2" icon={<img src={access} alt=""/>} title={t('kirishni_boshqarish')}>
-                                <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 5)} key="5"
-                                           icon={<img src={tableimg} alt=""/>}>
-                                    <Link to="/access-control-search">
-                                        {t('Jadval')}
-                                    </Link>
-                                </Menu.Item>
-                                <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control Online Doors', 8)}  key="8"  icon={<img src={doorKey} alt=""/>}   >
-                                    <Link to="/access-control-online-doors">
-                                        {t('Eshiklar boshqaruvi')}
-                                    </Link>
-                                </Menu.Item>
-                                <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 9)} key="9"
-                                           icon={<img src={setting} alt=""/>}>
-                                    <Link to="/access-control-setting">
-                                    {t('Sozlamalar')}
-                                    </Link>
-                                </Menu.Item>
-                            </SubMenu>
+                            {/*<SubMenu key="sub2" icon={<img src={access} alt=""/>} title={t('kirishni_boshqarish')}>*/}
+                            {/*    <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 5)} key="5"*/}
+                            {/*               icon={<img src={tableimg} alt=""/>}>*/}
+                            {/*        <Link to="/access-control-search">*/}
+                            {/*            {t('Jadval')}*/}
+                            {/*        </Link>*/}
+                            {/*    </Menu.Item>*/}
+                            {/*    <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control Online Doors', 8)}  key="8"  icon={<img src={doorKey} alt=""/>}   >*/}
+                            {/*        <Link to="/access-control-online-doors">*/}
+                            {/*            {t('Eshiklar boshqaruvi')}*/}
+                            {/*        </Link>*/}
+                            {/*    </Menu.Item>*/}
+                            {/*    <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 9)} key="9"*/}
+                            {/*               icon={<img src={setting} alt=""/>}>*/}
+                            {/*        <Link to="/access-control-setting">*/}
+                            {/*        {t('Sozlamalar')}*/}
+                            {/*        </Link>*/}
+                            {/*    </Menu.Item>*/}
+                            {/*</SubMenu>*/}
                         </Menu>
                     </Sider>
 

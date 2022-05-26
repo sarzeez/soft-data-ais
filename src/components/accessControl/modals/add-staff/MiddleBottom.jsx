@@ -4,6 +4,7 @@ import finger from '../../../../images/finger.svg';
 
 import './middleBottom.css';
 import FingerprintModal from "../fingerprint/FingerprintModal";
+import {useTranslation} from "react-i18next";
 
 const MiddleBottom = (props) => {
 
@@ -14,7 +15,7 @@ const MiddleBottom = (props) => {
         fingerPrint,
         setFingerPrint,
     }=props
-
+    const {t} = useTranslation()
     const [selectedItems, setSelectedItems] = React.useState([]);
 
     const handleDeleteTerminal = () => {
@@ -41,9 +42,9 @@ const MiddleBottom = (props) => {
             <div className='access_control_add_staff_modal_body_item_fingerprint_buttons'>
                 <button onClick={() => setIsOpenAddFingerprint(true)} type='button'>
                     <img style={{marginRight:8}} src={finger} alt=""/>
-                    Qo’shish
+                    {t("Qo’shish")}
                 </button>
-                <button onClick={handleDeleteTerminal} type='button'>O’chirish</button>
+                <button onClick={handleDeleteTerminal} type='button'>{t("O’chirish")}</button>
             </div>
         </div>
         </>

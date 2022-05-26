@@ -17,7 +17,7 @@
 
 .face_control_setting_tab_item {
     width: 100%;
-    height: calc(100vh - 205px);
+    height: calc(100vh - 195px);
     display: grid;
     grid-template-rows: 1fr 50px;
     overflow: auto;
@@ -40,11 +40,16 @@
 
 .camera_groups{
     padding: 10px;
-    height: calc(100vh - 205px);
+    max-height: calc(100vh - 200px);
     border: 1px solid #E5EAFA;
     border-radius: 5px;
+
+}
+.camera_groups_add_new_group_table{
+    height: calc(100vh - 525px);
     overflow: auto;
 }
+
 .camera_groups_item{
     display: flex;
     justify-content: space-between;
@@ -149,13 +154,13 @@
     cursor: pointer;
 }
 .camera_groups_language{
-    padding: 10px;
+    padding: 8px;
     border: 1px solid #9EAEC5;
     border-radius: 5px;
     margin-top: 15px!important;
 }
 .camera_language_input{
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     border: none;
     background-color: #F9F9F9;
 }
