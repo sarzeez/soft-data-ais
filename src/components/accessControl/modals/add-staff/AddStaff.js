@@ -178,6 +178,7 @@ function AddStaff(props) {
                                     data = {data}
                                     setData = {setData}
                                     terminalIPList = {terminalIPList}
+                                    staffTableIntialValues={staffTableIntialValues}
                                 />
 
                             </div>

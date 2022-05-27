@@ -6,7 +6,6 @@ import {Input, Select, DatePicker} from "antd";
 import {SearchOutlined} from "@ant-design/icons";
 import {AiOutlineClear, AiOutlineSearch} from "react-icons/ai";
 import { useNavigate } from 'react-router-dom';
-
 import axios from 'axios';
 import moment from "moment";
 import './acsessControl.css';

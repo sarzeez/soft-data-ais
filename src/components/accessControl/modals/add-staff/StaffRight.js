@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Select } from 'antd';
 import { ip } from '../../../../ip';
-
 import axios from 'axios';
 
 import { FiUpload } from 'react-icons/fi';

@@ -72,7 +72,7 @@ const StaffTable = (props) => {
             align: 'center',
             render:(text, record)=>(
                 <div>
-                    {record?.user_type === 1 ? t("Xodim") : record?.user_type === 2 ? t("Mehmon") : t("Bloklangan")}
+                    {record?.user_type === 1 ? t("Xodim") :  t("Begona")}
                 </div>
             )
         },
@@ -82,7 +82,12 @@ const StaffTable = (props) => {
             align: 'center',
             render:(text, record)=>(
                 <div>
-                    {record.rank ===1 ? t('Oddiy xodim') : record.rank ===2 ? t("Direktor") : t("VIP")}
+                    {record.rank ===1 ? t('Oddiy xodim') :
+                        record.rank ===2 ? t("Direktor") :
+                        record.rank ===3 ?t("VIP"):
+                        record.rank ===4 ?t("Mehmon"): "Bloklangan"
+
+                    }
                 </div>
             )
         },

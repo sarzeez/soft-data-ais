@@ -6,14 +6,30 @@ import './left.css';
 
 
 const { SHOW_PARENT } = TreeSelect;
-const { Option } = Select;
 
 
-const Left = ({ data, setData, terminalIPList }) => {
+const Left = ({ data, setData, terminalIPList, staffTableIntialValues }) => {
 
     const {t} = useTranslation()
     const [state, setState] = useState([]);
+    const [userType, setUserType] = useState(staffTableIntialValues?.user_type || 0)
 
+    const categoryData = [
+       [
+           {value: 1, name: "Oddiy xodim"},
+           {value: 2, name: "Direktor"},
+           {value: 3, name: "VIP"},
+       ],
+       [
+           {value: 4, name: "Mehmon"},
+           {value: 5, name: "Bloklangan"},
+       ]
+    ]
+
+
+    const userTypeOnChange = (e) => {
+        setUserType(e);
+    }
 
     const onChange = (value) => {
         // console.log(value)
@@ -92,15 +108,17 @@ const Left = ({ data, setData, terminalIPList }) => {
                     <Select
                         size="large"
                         placeholder={"Kiriting"}
+                        onChange={userTypeOnChange}
+                        value={userType}
                     >
                         <Select.Option disabled value="">
                             <span style={{color:"#bfbfbf"}}>{t("Tanlash")}</span>
                         </Select.Option>
                         <Select.Option value={1}>{t("Xodim")}</Select.Option>
-                        <Select.Option value={2}>{t("Mehmon")}</Select.Option>
-                        <Select.Option value={3}>{t("Bloklangan")}</Select.Option>
+                        <Select.Option value={2}>{t("Begona")}</Select.Option>
                     </Select>
                 </Form.Item>
+
                 <Form.Item
                     label={t("Lavozimi")}
                     name="rank"
@@ -117,9 +135,12 @@ const Left = ({ data, setData, terminalIPList }) => {
                         <Select.Option disabled value="">
                             <span style={{color:"#bfbfbf"}}>{t("Tanlash")}</span>
                         </Select.Option>
-                        <Select.Option value={1}>{t('Oddiy xodim')}</Select.Option>
-                        <Select.Option value={2}>{t("Direktor")}</Select.Option>
-                        <Select.Option value={3}>{t("VIP")}</Select.Option>
+                        {
+
+                            categoryData[userType - 1]?.map((item, index) => (
+                                <Select.Option key={index} value={item.value}>{t(item.name)}</Select.Option>
+                            ))
+                        }
                     </Select>
                 </Form.Item>
             </div>
