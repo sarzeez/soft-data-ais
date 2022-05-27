@@ -160,9 +160,6 @@ function AddStaff(props) {
             <Form
                 name="basic"
                 layout="vertical"
-                // initialValues={{
-                //     remember: true
-                // }}
                 initialValues={staffTableIntialValues}
                 requiredMark = 'optional'
                 onFinish={onFinish}

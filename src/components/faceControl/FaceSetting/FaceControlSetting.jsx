@@ -140,7 +140,7 @@ const FaceControlSetting = () => {
                 getCameraGroup();
             })
             .catch(err => {
-                // console.log(err?.response?.data)
+                console.log(err?.response?.data)
             })
     }
 
@@ -239,32 +239,35 @@ const FaceControlSetting = () => {
                                     />
                                 </div>
 
-                                {
-                                    !show ?
-                                        <div className="add_new_group">
-                                            <button onClick={() => setShow(true)} className="camera_groups_button">
-                                                <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
-                                                {t("Guruh qo’shish")}
-                                            </button>
-                                            {
-                                                deleteGroup.length > 0 &&
-                                                <button onClick={handleDeleteGroup}   className="group_delite_button">
-                                                    <AiOutlineDelete size={22}/>
-                                                    {t("O’chirish")}
+                                <div className="add_new_group_content">
+                                    {
+                                        !show ?
+                                            <div className="add_new_group">
+                                                <button onClick={() => setShow(true)} className="camera_groups_button">
+                                                    <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
+                                                    {t("Guruh qo’shish")}
                                                 </button>
-                                            }
-                                        </div>
-                                        :
-                                        <AddNewGroup
-                                            groupIntialValues={groupIntialValues}
-                                            setGroupInitialValues={setGroupInitialValues}
-                                            show={show}
-                                            setShow={setShow}
-                                            cameraPaginationCurrent={cameraPaginationCurrent}
-                                            getCameraGroup={getCameraGroup}
-                                            languageGroup={languageGroup}
-                                        />
-                                }
+                                                {
+                                                    deleteGroup.length > 0 &&
+                                                    <button onClick={handleDeleteGroup}   className="group_delite_button">
+                                                        <AiOutlineDelete size={22}/>
+                                                        {t("O’chirish")}
+                                                    </button>
+                                                }
+                                            </div>
+                                            :
+                                            <AddNewGroup
+                                                groupIntialValues={groupIntialValues}
+                                                setGroupInitialValues={setGroupInitialValues}
+                                                show={show}
+                                                setShow={setShow}
+                                                cameraPaginationCurrent={cameraPaginationCurrent}
+                                                getCameraGroup={getCameraGroup}
+                                                languageGroup={languageGroup}
+                                            />
+                                    }
+                                </div>
+
                             </div>
                         </div>
                     </TabPane>

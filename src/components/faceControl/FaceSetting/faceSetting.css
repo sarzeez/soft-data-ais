@@ -39,14 +39,14 @@
 /*---Camera setting right--*/
 
 .camera_groups{
+    display: grid;
     padding: 10px;
     max-height: calc(100vh - 200px);
     border: 1px solid #E5EAFA;
     border-radius: 5px;
 
 }
-.camera_groups_add_new_group_table{
-    height: calc(100vh - 525px);
+.camera_groups_add_new_group_table {
     overflow: auto;
 }
 
@@ -57,6 +57,7 @@
     padding: 10px 0 10px 5px;
     border-bottom: 1px solid  #E5EAFA;
 }
+
 .camera_groups_item h4{
     font-style: normal;
     font-weight: 500;
@@ -100,7 +101,7 @@
 .add_new_group{
     display: flex;
     flex-direction: row;
-    margin-top: 15px;
+    margin-top: 5px;
 }
 .camera_groups_button{
     display: flex;
@@ -157,8 +158,9 @@
     padding: 8px;
     border: 1px solid #9EAEC5;
     border-radius: 5px;
-    margin-top: 15px!important;
+    margin-top: 10px!important;
 }
+
 .camera_language_input{
     margin-bottom: 5px;
     border: none;

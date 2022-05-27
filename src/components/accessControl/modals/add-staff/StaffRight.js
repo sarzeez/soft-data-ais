@@ -93,6 +93,7 @@ const StaffRight = ({ data, setData, terminalIPList, staffTableIntialValues, ima
                                         )
                                 )
                         } */}
+
                     {
                         loading
                         ? <img src={loadingGif} alt='loading'/>
