@@ -10,7 +10,6 @@ import moment from 'moment';
 
 
 const StaffTable = (props) => {
-
     const {
         staffData,
         rowSelection,

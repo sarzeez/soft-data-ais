@@ -204,7 +204,7 @@ const AccessControlSetting = () => {
         if(!is_refresh_value) {
             navigate('/face-control-search')
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
@@ -335,8 +335,6 @@ const AccessControlSetting = () => {
                             </div>
                         </div>
                     </TabPane>
-
-
                 </Tabs>
             </div>
 

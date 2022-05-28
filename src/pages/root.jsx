@@ -13,6 +13,9 @@ import AcsessControlTable from "../components/accessControl/accessControlSearch/
 import FaceControlSetting from "../components/faceControl/FaceSetting/FaceControlSetting";
 import OnlineManagement from "../components/accessControl/Online-doors/OnlineManagement";
 
+import WorkingHoursReport from "../components/accessControl/WorkingHoursReport/workingHoursReport";
+
+
 const RootPage = () => {
     return (
         <Routes>
@@ -26,6 +29,7 @@ const RootPage = () => {
             <Route path = '/access-control-online-doors' element = {<OnlineManagement />}/>
             <Route path = '/access-control-setting' element = {<AccessControlSetting />}/>
             <Route path = '/access-control-user' element = {<AddUser />}/>
+            <Route path = '/working-hour-report' element = {<WorkingHoursReport />}/>
             <Route path = '*' element = {<NotFound />}/>
         </Routes>
     )

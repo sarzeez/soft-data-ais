@@ -1,7 +1,10 @@
+import axios from "axios";
+import {ip} from "../../ip";
 import {
     GET_THEME,
     IS_REFRESH
 } from "./themeTypes";
+
 
 export const getTheme =(data) =>{
     return {
@@ -16,3 +19,15 @@ export const isRefresh =(data) =>{
         payload: data
     }
 }
+
+export const getManagment = () =>{
+    axios.get(ip + "/api/viewercount")
+        .then((res)=>{
+            console.log(res)
+        })
+}
+
+export const putManagment =(index)=>{
+    console.log("redux ga keldi :" + index)
+}
+

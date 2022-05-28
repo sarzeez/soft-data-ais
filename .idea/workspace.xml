@@ -1,7 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90a90083-1446-44ef-b59e-16ac1d51e049" name="Changes" comment="" />
+    <list default="true" id="90a90083-1446-44ef-b59e-16ac1d51e049" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/locales/en/translation.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/locales/ru/translation.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/locales/uz/translation.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/css/2.3d7f394b.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/css/2.3d7f394b.chunk.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/css/main.468b3b26.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/css/main.468b3b26.chunk.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/js/2.d0ca62be.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/js/2.d0ca62be.chunk.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/js/2.d0ca62be.chunk.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/js/main.ac32967b.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/js/main.ac32967b.chunk.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/js/runtime-main.57333c07.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/js/runtime-main.57333c07.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/11.9731aba6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/12.783e2041.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/13.0854cfdc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/2.ecb691c6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/3.20e70a48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/4.d70fdff0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/5.fb25ca5f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/6.7f76a691.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/7.e3890aac.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/8.1f796e6f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/9.ffd52f65.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/Logo.a6f09e52.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/OpenSans-Regular.d7d7b835.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/access-control 1.161deec7.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/access.9877afa3.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/accesscontrolOff.ae68c6aa.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/age_0_10.803a2d13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/age_0_10.ddecd020.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/age_11_17.3adb3759.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/age_11_17.fdf3afcd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/age_18_25.1e401a80.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/age_18_25.5db4103c.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/age_26_40.a175f0d8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/age_26_40.cc5ef39d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/age_41_60.a71a7c19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/age_41_60.b8b33362.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/age_61.933212e4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/age_61.e54e338a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/analisy.8afee162.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/cameraOn.e87b07e8.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/cursor.f8470924.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/deleteIconn.2e01b651.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/deleteImg.c6b829b8.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/doorKey.ffc4b087.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/doorNext.6fd5a71a.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/engliz.fdbf0fad.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/face.17d4f017.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/finger.bc36d4cb.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/finger2.c1bc80cd.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/getFetch.582d29c4.cjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/loading.ab46c033.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/loginImg.b4f26e86.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/managmentImg.4222ed7c.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/myImg.c52ce076.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/nexticon.478faf0d.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/noBeard.cc5ef39d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/noGlass.db755e11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/noIMG.6d4199f6.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/noMask.04a05dd5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/previcon.dde2cd99.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/recognationIcon.3b7f5e47.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/russia.09570bdd.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/search.38dd8a5b.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/settings.be7018d3.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/shortLogo.61063540.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/table.d7e23a7d.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/terminalImgone.f0a9fe9b.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/terminalimgfour.6b680f34.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/terminalimgthree.2a3aef07.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/terminalimgtwo.1b93f070.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/uploadIcon.92f0b411.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/uzbek.ab16ce9a.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/warning.95abdcb9.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/withBeard.87c4acf1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/withGlass.4f71edf5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/withMask.44fff86a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/static/media/withSunglass.5b15b9a1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/typeLocal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/accessControl/WorkingHoursReport/StaffTable2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/accessControl/WorkingHoursReport/working.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/accessControl/WorkingHoursReport/workingHoursReport.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/access-control 1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/accesscontrolOff.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/cursor.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/deleteIconn.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/ishvaqti/Frame.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/ishvaqti/Vector (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/ishvaqti/Vector (2).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/ishvaqti/Vector.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/ishvaqti/time-management 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/terminalImg/terminalImgone.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/terminalImg/terminalimgfour.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/terminalImg/terminalimgthree.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/newimages/terminalImg/terminalimgtwo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/onlineManag/managmentAction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/onlineManag/managmentReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/onlineManag/managmentTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineDoors.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineDoors.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/saidbar/Saidbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/saidbar/Saidbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ip.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ip.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/root.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/root.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/theme/themeActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/theme/themeActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/theme/themeReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/theme/themeReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,7 +182,7 @@
       <workItem from="1653451948634" duration="22429000" />
       <workItem from="1653537897640" duration="21909000" />
       <workItem from="1653624077480" duration="19309000" />
-      <workItem from="1653710159019" duration="4156000" />
+      <workItem from="1653710159019" duration="6647000" />
     </task>
     <servers />
   </component>

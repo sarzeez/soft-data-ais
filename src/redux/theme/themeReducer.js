@@ -5,7 +5,8 @@ import  {
 
 const initialState = {
     theme_data: false,
-    is_refresh_value: null
+    is_refresh_value: null,
+    count : 0
 }
 
 const themeReducer = (state = initialState, action) => {
