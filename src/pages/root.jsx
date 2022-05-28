@@ -12,7 +12,6 @@ import NotFound from '../components/notFound/NotFound'
 import AcsessControlTable from "../components/accessControl/accessControlSearch/AccessControlTable";
 import FaceControlSetting from "../components/faceControl/FaceSetting/FaceControlSetting";
 import OnlineManagement from "../components/accessControl/Online-doors/OnlineManagement";
-
 import WorkingHoursReport from "../components/accessControl/WorkingHoursReport/workingHoursReport";
 
 
