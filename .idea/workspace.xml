@@ -4,8 +4,6 @@
     <list default="true" id="90a90083-1446-44ef-b59e-16ac1d51e049" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AccessControlTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AccessControlTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/acsessControl.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/acsessControl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/faceSetting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/faceSetting.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +11,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -53,11 +56,22 @@
       <workItem from="1653451948634" duration="22429000" />
       <workItem from="1653537897640" duration="21909000" />
       <workItem from="1653624077480" duration="19309000" />
-      <workItem from="1653710159019" duration="2700000" />
+      <workItem from="1653710159019" duration="3792000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

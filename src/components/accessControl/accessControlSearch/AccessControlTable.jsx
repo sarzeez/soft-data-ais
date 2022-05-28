@@ -34,6 +34,19 @@ const AcsessControlTable = () => {
     const [dateTo, setDateTo] = useState('');
     const [allowedDoor, setAllowedDoor] = useState([]);
 
+
+    const categoryData = [
+        [
+            {value: 1, name: "Oddiy xodim"},
+            {value: 2, name: "Direktor"},
+            {value: 3, name: "VIP"},
+        ],
+        [
+            {value: 4, name: "Mehmon"},
+            {value: 5, name: "Bloklangan"},
+        ]
+    ]
+
     const onChangeName = (e) =>{
         setName(e.target.value);
     };
