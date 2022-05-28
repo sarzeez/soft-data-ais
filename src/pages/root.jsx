@@ -14,6 +14,7 @@ import FaceControlSetting from "../components/faceControl/FaceSetting/FaceContro
 import OnlineManagement from "../components/accessControl/Online-doors/OnlineManagement";
 import WorkingHoursReport from "../components/accessControl/WorkingHoursReport/workingHoursReport";
 
+
 const RootPage = () => {
     return (
         <Routes>

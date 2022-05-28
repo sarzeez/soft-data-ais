@@ -12,12 +12,6 @@ const auth_type = {
     en: ['Face', 'Fingerprint', 'ID card']
 }
 
-// const type = {
-//     uz: ['', 'Dahua', 'Hikvision'],
-//     ru: ['', 'Dahua', 'Hikvision'],
-//     en: ['', 'Dahua', 'Hikvision']
-// }
-
 const TerminalTable = (props) => {
     const {
         terminalData,
@@ -32,6 +26,7 @@ const TerminalTable = (props) => {
 
 
     const editTerminal= ( value, record) =>{
+        console.log(value)
         setTerminalTableIntialValues({
             ...value,
             edit: true
@@ -48,7 +43,7 @@ const TerminalTable = (props) => {
         {
             title: t('Eshik nomi'),
             dataIndex: 'door_name',
-            align: 'center'
+            align: 'center',
         },
         {
             title: t("Yo'nalishi"),

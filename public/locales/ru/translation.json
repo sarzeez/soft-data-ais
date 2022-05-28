@@ -132,7 +132,7 @@
   "Xodim qo'shish": "Добавить персонал",
   "Yangi foydalanuvchi qo'shish":"Добавить нового пользователя",
   "Ma'lumotlar":"Информация",
-  "Yuzni aniqlash":"Распознавание лиц",
+  "Yuzni aniqlash": "Распознавание лиц",
   "ID karta":"ID карта",
   "Xodimning kirib/chiqish ma’lumotlari haqida bildirishnoma olishni istaysizmi?":"Хотите получать уведомления о входе/выходе сотрудников?",
 
@@ -151,17 +151,43 @@
   "Jinsni tanlang": "Выберите пол",
   "Toifasini tanlang": "Выберите категорию",
   "Lavozimini tanlang": "Выберите позицию",
-  "Ruxsat etilgan eshiklar": "Ruxsat etilgan eshiklar",
+  "Ruxsat etilgan eshiklar": "Фиксированные двери",
   "Ruxsat etilgan eshikni tanlang": "Ruxsat etilgan eshikni tanlang",
+  "Tasdiq turi": "Тип подтверждения",
   "Yuz": "Лицо",
   "Barmoq izi": "Отпечаток пальца",
   "Yuz yoki Barmoq izi": "Лицо или Отпечаток пальца",
   "Yuz va Barmoq izi": "Лицо и Отпечаток пальца",
+  "Yuz va ID karta": "Лицо и ID karta",
+  "Barmoq izi va ID karta": "Отпечаток пальца и ID karta",
   "Kirishlar soni": "Число входов",
   "Kirishlar sonini kiriting": "Введите количество записей",
   "Muddatni tanlang": "Выберите диапазона",
   "Boshqalar": "Другие",
   "Karta turuni tanlang": "Выберите тип карты",
-  "Karta raqamini kiriting": "Введите номер карты"
+  "Karta raqamini kiriting": "Введите номер карты",
+  "Ruxsat etiladigan muddat": "Допустимый период",
+  "notiftext": "Хотите получать уведомления о входе/выходе сотрудников?",
+  "Ha": "Да",
+  "Yo'q": "Нет",
+  "ID karta qo’shish": "Добавить ID karta",
+  "Turi": "Тип",
+  "Karta turi:": "Тип карты",
+  "Qo’shish": "Добавлять",
+  "Barmoq izi qo’shish": "Добавить отпечаток пальца",
+  "Barmoq izi nomi": "Имя отпечатка пальца",
+  "Barmoq izi nomini kiriting": "Введите имя отпечатка пальца",
+  "Terminalni tanlang": "Выберите терминал",
+  "Barmoq izi olish": "Отпечатки пальцев",
+  "Nomi": "Название",
+  "Rasm yuklash": "Загрузка изображения",
+  "Rasm olish": "Сделать фото",
 
+
+
+
+
+
+
+  "l": "l"
 }

@@ -15,20 +15,33 @@ const IdCardModal = (props) => {
         isOpenAddTerminal,
         setIsOpenAddTerminal,
         card,
-        setCard
+        setCard,
+        selectedCard,
+        setSelectedCard
     }=props
 
     const {t} = useTranslation()
 
     const onFinish = (value) => {
-        const { id, type } = value;
-        const newData = [...card, {
-            key: card.length + 1,
-            type: type,
-            id: id
-        }]
-        setCard(newData)
-        setIsOpenAddTerminal(!isOpenAddTerminal);
+        if (selectedCard.length>0){
+            const { id, type } = value;
+            const newData = [...selectedCard, {
+                key: selectedCard.length + 1,
+                type: type,
+                id: id
+            }]
+            setSelectedCard(newData)
+            setIsOpenAddTerminal(!isOpenAddTerminal);
+        } else {
+            const { id, type } = value;
+            const newData = [...card, {
+                key: card.length + 1,
+                type: type,
+                id: id
+            }]
+            setCard(newData)
+            setIsOpenAddTerminal(!isOpenAddTerminal);
+        }
     }
 
     const onFinishFailed = (error) => {
@@ -60,10 +73,10 @@ const IdCardModal = (props) => {
                 autoComplete="off"
             >
                 <div className='access_control_add_staff_terminal_modal'>
-                    <h1 className='access_control_add_staff_terminal_modal_title'>ID karta qo’shish</h1>
+                    <h1 className='access_control_add_staff_terminal_modal_title'>{t("ID karta qo’shish")}</h1>
                     <div className='access_control_add_staff_terminal_modal_body'>
                         <Form.Item
-                            label="Karta turi:"
+                            label={t("Karta turi:")}
                             name="type"
                             rules={[
                             {
@@ -74,6 +87,7 @@ const IdCardModal = (props) => {
                         >
                             <Select
                                 size="large"
+                                placeholder ={t('Karta turuni tanlang')}
                             >
                                 <Select.Option value="Mifare">Mifare</Select.Option>
                                 <Select.Option value="EM-Marin">EM-Marin</Select.Option>
@@ -81,7 +95,7 @@ const IdCardModal = (props) => {
                             </Select>
                         </Form.Item>
                         <Form.Item
-                            label="Karta raqami"
+                            label={t("Karta raqami")}
                             name="id"
                             rules={[
                             {
@@ -91,13 +105,14 @@ const IdCardModal = (props) => {
                             ]}
                         >
                             <Input
+                                type="number"
                                 size="large"
-                                placeholder="Kiriting"
+                                placeholder={t("Kiriting")}
                             />
                         </Form.Item>
                         <div className='access_control_add_staff_terminal_modal_body_buttons'>
-                            <button onClick={() => {setIsOpenAddTerminal(false)}} type='button'>Bekor qilish</button>
-                            <button type='submit'>Saqlash</button>
+                            <button onClick={() => {setIsOpenAddTerminal(false)}} type='button'>{t("Bekor qilish")}</button>
+                            <button type='submit'>{t("Saqlash")}</button>
                         </div>
                     </div>
                 </div>

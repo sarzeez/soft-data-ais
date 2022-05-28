@@ -3,16 +3,14 @@ import {Input, Select, DatePicker,} from "antd";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { ip } from "../../../ip";
+import { AiOutlineClear, AiOutlineSearch } from 'react-icons/ai'
 import axios from "axios";
 import moment from "moment";
-
-import { AiOutlineClear, AiOutlineSearch } from 'react-icons/ai'
 
 import Cart from './cart/Cart'
 import FaceControlPagination from "./pagination/Pagination";
 import "./faceControlSearch.css";
-
-import { ip } from "../../../ip";
 
 export default function FaceControlSearch() {
 
@@ -270,8 +268,9 @@ export default function FaceControlSearch() {
                                         value={mask}
                                     >
                                         <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                        <Select.Option value="1">{t('Niqobli')}</Select.Option>
-                                        <Select.Option value="0">{t("Niqobsiz")}</Select.Option>
+                                        <Select.Option value="2">{t("Niqobsiz")}</Select.Option>
+                                        <Select.Option value="3">{t('Niqobli')}</Select.Option>
+
                                     </Select>
                                 </div>
                             </div>
@@ -312,7 +311,7 @@ export default function FaceControlSearch() {
                                         style={{width: "100%"}}
                                         size="large"
                                         defaultValue={glasses}
-                                        value={glasses}
+                                        // value={glasses}
                                     >
                                         <Select.Option value="all">{t('Hammasi')}</Select.Option>
                                         <Select.Option value="1">{t("Ko’rishni_tuzatish")}</Select.Option>
@@ -335,8 +334,8 @@ export default function FaceControlSearch() {
                                         value={beard}
                                     >
                                         <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                        <Select.Option value="1">{t('Soqolli')}</Select.Option>
-                                        <Select.Option value="0">{t("Soqolsiz")}</Select.Option>
+                                        <Select.Option value="2">{t("Soqolsiz")}</Select.Option>
+                                        <Select.Option value="3">{t('Soqolli')}</Select.Option>
                                     </Select>
                                 </div>
                             </div>

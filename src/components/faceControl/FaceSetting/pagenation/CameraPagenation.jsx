@@ -10,7 +10,7 @@ const TerminalPagination = (props) => {
         current={faceTablePaginationCurrent}
         onChange={faceTablePaginationOnChange}
         total = {faceTableTotal}
-        showSizeChanger={true}
+        // showSizeChanger={true}
         pageSize={faceTablePaginationLimit}
         pageSizeOptions={[10, 20, 50]}
     />;

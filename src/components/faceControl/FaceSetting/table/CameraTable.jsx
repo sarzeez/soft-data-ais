@@ -47,6 +47,11 @@ const CameraTable = (props) => {
             align: 'center'
         },
         {
+            title: t("Kanal"),
+            dataIndex: 'channel',
+            align: 'center'
+        },
+        {
             title: t('Guruh'),
             dataIndex: `group_name`,
             align: 'center'

@@ -1,25 +1,40 @@
 import React, { useState } from 'react';
 import {Form, Input, Select, DatePicker, TreeSelect, Switch} from 'antd';
 import {useTranslation} from "react-i18next";
-import './left.css';
 import moment from "moment";
+import './left.css';
+
 
 const { SHOW_PARENT } = TreeSelect;
 
-const Left = ({ data, setData, terminalIPList }) => {
+
+const Left = ({ data, setData, terminalIPList, staffTableIntialValues }) => {
 
     const {t} = useTranslation()
     const [state, setState] = useState([]);
+    const [userType, setUserType] = useState(staffTableIntialValues?.user_type || 0)
 
-    // const [isChecked, setIsChecked] = useState(false);
-    // const handleOnChange = () => {
-    //     setIsChecked(!isChecked);
-    // };
+    const categoryData = [
+       [
+           {value: 1, name: "Oddiy xodim"},
+           {value: 2, name: "Direktor"},
+           {value: 3, name: "VIP"},
+       ],
+       [
+           {value: 4, name: "Mehmon"},
+           {value: 5, name: "Bloklangan"},
+       ]
+    ]
 
-    const onChange = value => {
-        // console.log('onChange ', value);
-        setState(value);
-        setData({...data, value})
+
+    const userTypeOnChange = (e) => {
+        setUserType(e);
+    }
+
+    const onChange = (value) => {
+        // console.log(value)
+        const list = setState(value);
+        setData({...data, door_ip: value})
     };
 
     const tProps = {
@@ -28,16 +43,18 @@ const Left = ({ data, setData, terminalIPList }) => {
         onChange: onChange,
         treeCheckable: true,
         showCheckedStrategy: SHOW_PARENT,
-        placeholder: 'Tanlash',
+        placeholder: t('Tanlash'),
         style: {
-          width: '100%',
+        width: '100%',
         },
         size: 'large'
     };
 
+
     return (
         <div className="access_control_add_staff_modal_body_item_left">
             <div className="access_control_add_staff_modal_body_item_left_inputs">
+
                 <Form.Item
                     label={t("Ism")}
                     name="fullname"
@@ -54,6 +71,7 @@ const Left = ({ data, setData, terminalIPList }) => {
                         style={{borderRadius: '5px'}}
                     />
                 </Form.Item>
+
                 <Form.Item
                     label={t("Jinsi")}
                     name="gender"
@@ -68,6 +86,9 @@ const Left = ({ data, setData, terminalIPList }) => {
                         size="large"
                         placeholder={t("Kiriting")}
                     >
+                        <Select.Option disabled value="">
+                            <span style={{color:"#bfbfbf"}}>{t("Tanlash")}</span>
+                        </Select.Option>
                         <Select.Option value="male">{t("Erkak")}</Select.Option>
                         <Select.Option value="female">{t("Ayol")}</Select.Option>
                     </Select>
@@ -76,7 +97,7 @@ const Left = ({ data, setData, terminalIPList }) => {
             <div className="access_control_add_staff_modal_body_item_left_inputs">
                 <Form.Item
                     label={t("Toifasi")}
-                    name="rank"
+                    name="user_type"
                     rules={[
                     {
                         required: true,
@@ -86,15 +107,21 @@ const Left = ({ data, setData, terminalIPList }) => {
                 >
                     <Select
                         size="large"
+                        placeholder={"Kiriting"}
+                        onChange={userTypeOnChange}
+                        value={userType}
                     >
-                        <Select.Option value="1">{t("Xodim")}</Select.Option>
-                        <Select.Option value="2">{t("Mehmon")}</Select.Option>
-                        <Select.Option value="3">{t("Begona")}</Select.Option>
+                        <Select.Option disabled value="">
+                            <span style={{color:"#bfbfbf"}}>{t("Tanlash")}</span>
+                        </Select.Option>
+                        <Select.Option value={1}>{t("Xodim")}</Select.Option>
+                        <Select.Option value={2}>{t("Begona")}</Select.Option>
                     </Select>
                 </Form.Item>
+
                 <Form.Item
                     label={t("Lavozimi")}
-                    name="user_type"
+                    name="rank"
                     rules={[
                     {
                         required: true,
@@ -105,12 +132,19 @@ const Left = ({ data, setData, terminalIPList }) => {
                     <Select
                         size="large"
                     >
-                        <Select.Option value="1">{t("Oddiy ishchi")}</Select.Option>
-                        <Select.Option value="2">{t("Direktor")}</Select.Option>
-                        <Select.Option value="3">{t("VIP")}</Select.Option>
+                        <Select.Option disabled value="">
+                            <span style={{color:"#bfbfbf"}}>{t("Tanlash")}</span>
+                        </Select.Option>
+                        {
+
+                            categoryData[userType - 1]?.map((item, index) => (
+                                <Select.Option key={index} value={item.value}>{t(item.name)}</Select.Option>
+                            ))
+                        }
                     </Select>
                 </Form.Item>
             </div>
+
             <div className="access_control_add_staff_modal_body_item_left_input">
                 <Form.Item
                     label={t("Ruxsat etilgan eshiklar")}
@@ -122,40 +156,14 @@ const Left = ({ data, setData, terminalIPList }) => {
                     },
                     ]}
                 >
-                    <TreeSelect {...tProps} />
+                    <TreeSelect  {...tProps}/>
                 </Form.Item>
+
             </div>
-            {/*<div className="access_control_add_staff_modal_body_item_left_input">*/}
-            {/*    <Form.Item*/}
-            {/*        label={t("Ruxsat turi")}*/}
-            {/*        name="access_type"*/}
-            {/*        rules={[*/}
-            {/*        {*/}
-            {/*            required: true,*/}
-            {/*            message: t("Ruxsat turini tanlang"),*/}
-            {/*        },*/}
-            {/*        ]}*/}
-            {/*    >*/}
-            {/*        <Select*/}
-            {/*            size="large"*/}
-            {/*        >*/}
-            {/*            <Select.Option value="1">{t("Yuz")}</Select.Option>*/}
-            {/*            <Select.Option value="2">{t("Barmoq izi")}</Select.Option>*/}
-            {/*            <Select.Option value="3">{t("ID karta")}</Select.Option>*/}
-            {/*            <Select.Option value="4">{t("Yuz va Barmoq izi")}</Select.Option>*/}
-            {/*            <Select.Option value="5">{t("Yuz yoki Barmoq izi")}</Select.Option>*/}
-            {/*            <Select.Option value="6">{t("Yuz va ID karta")}</Select.Option>*/}
-            {/*            <Select.Option value="7">{t("Yuz yoki ID karta")}</Select.Option>*/}
-            {/*            <Select.Option value="8">{t("Barmoq izi va ID karta")}</Select.Option>*/}
-            {/*            <Select.Option value="9">{t("Barmoq izi yoki ID karta")}</Select.Option>*/}
-            {/*            <Select.Option value="10">{t("Yuz yoki Barmoq izi yoki ID karta")}</Select.Option>*/}
-            {/*        </Select>*/}
-            {/*    </Form.Item>*/}
-            {/*</div>*/}
 
             <div className="access_control_add_staff_modal_body_item_left_inputs">
                 <Form.Item
-                    label={t("Muddat")}
+                    label={t("Ruxsat etiladigan muddat")}
                     name="valid_from_time"
                     rules={[
                     {
@@ -171,9 +179,10 @@ const Left = ({ data, setData, terminalIPList }) => {
                         size="large"
                         style={{borderRadius: '5px'}}
                     />
+
                 </Form.Item>
                 <Form.Item
-                    label={t("Muddat")}
+                    label=" "
                     name="valid_to_time"
                     rules={[
                     {
@@ -193,10 +202,10 @@ const Left = ({ data, setData, terminalIPList }) => {
             </div>
 
             <div className='access_control_add_staff_modal_body_item_3_notif'>
-                <p>Xodimning kirib/chiqish ma’lumotlari haqida bildirishnoma olishni istaysizmi?</p>
+                <p>{t("notiftext")}</p>
                 <Switch
-                    checkedChildren="Ha"
-                    unCheckedChildren="Yo'q"
+                    checkedChildren={t("Ha")}
+                    unCheckedChildren={t("Yo'q")}
                     checked={data.notification}
                     onChange={(value) => setData({...data, notification: value})}
                 />

@@ -37,11 +37,11 @@ const Cart = ({ item, isDarkMode }) => {
     const [loading, setLoading] = useState(false)
     // console.log(item);
 
-    const handleClickVideoPlay = (id) => {
+    const handleClickVideoPlay = (id, ip_address) => {
         setVisible(true)
         setLoading(true)
         const interval = setInterval(() => {
-            axios(`${ip}/api/face/video/${id}`)
+            axios(`${ip}/api/face/video/${ip_address}/${id}`)
             .then(res => {
                 const { data } = res;
                 if(data !== 'wait') {
@@ -71,7 +71,7 @@ const Cart = ({ item, isDarkMode }) => {
                 <VideoModal visible={visible} setVisible={setVisible} loading = {loading} videoByID = {videoByID} id = {item.id}/>
                 <div className="j_cardInfoTop">
                     <div className="j_cardInfoTopLeft">
-                        <div onClick={() => handleClickVideoPlay(item.id)} className='face-control-video-block'>
+                        <div onClick={() => handleClickVideoPlay(item.id, item.ip_address)} className='face-control-video-block'>
                             <BsPlayBtn color='#fff' size={20}/>
                         </div>
                         <ImageDemo id = {item.id} />
@@ -87,11 +87,14 @@ const Cart = ({ item, isDarkMode }) => {
                         <div className="y_line"></div>
                         <div>
                             {
-                                item.gender === 2
+                                item.gender == 2
                                 ? <img src = {emojes.female['female']} alt = ''/>
                                 : <img src = {emojes.male['male']} alt = '' />
                             }
-                            <p className="card_longTitle">{item.gender === 1 ? <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Erkak')}</div>  : item.gender === 2 ? <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Ayol')}</div>  : ''}</p>
+                            <p className="card_longTitle">{item.gender == 1 ? <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Erkak')}</div>  :
+                                item.gender == 2 ? <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Ayol')}</div>  :
+                                    ''}
+                            </p>
                         </div>
                         <div>
                             {
@@ -117,9 +120,11 @@ const Cart = ({ item, isDarkMode }) => {
                             {
                                 <img src = {emojes.mask[item.args.MASKA]} alt = 'mask'/>
                             }
-                            <p className="card_longTitle" >{item.args.MASKA === 1 ?
-                                <Tooltip title={t('Niqobli')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Niqobli')}</Tooltip>  : item.args.MASKA === 0
-                                ? <Tooltip title={t('Niqobsiz')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Niqobsiz')}</Tooltip> : ''}</p>
+                            <p className="card_longTitle" >{item.args.MASKA === 2 ?
+                                <Tooltip title={t('Niqobsiz')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Niqobsiz')}</Tooltip>
+                                 :<Tooltip title={t('Niqobli')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Niqobli')}</Tooltip>
+                            }
+                            </p>
                         </div>
                         <div>
                             {
@@ -140,18 +145,20 @@ const Cart = ({ item, isDarkMode }) => {
                         
                         <div>
                             {
-                                item.gender !== 2 
+                                item.gender != 2
                                 ?
-                                (item.old !== 'age_0_10' && item.old !== 'age_11_17' && <img src = {emojes.beard[item.args.SOQOL]} alt = 'glass' />)
+                                (item.old !== 'age_0_10' && item.old !== 'age_11_17' && <img src = {emojes.beard[item.args.SOQOL]} alt = 'beard' />)
                                 : ''
                             }
                             <p className="card_longTitle">
                                 {
-                                    item.gender === 2
+                                    item.gender == 2
                                     ? ''
-                                    : (item.old !== 'age_0_10' && item.old !== 'age_11_17' && (item.args.SOQOL === 1 ?
-                                            <Tooltip title={t('Soqolli')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Soqolli')}</Tooltip> :
-                                            item.args.SOQOL === 0 ? <Tooltip title={t('Soqolsiz')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Soqolsiz')}</Tooltip> : ''))
+                                    : (item.old !== 'age_0_10' && item.old !== 'age_11_17' && (item.args.SOQOL === 2 ?
+                                                <Tooltip title={t('Soqolsiz')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Soqolsiz')}</Tooltip>
+                                            :
+                                                <Tooltip title={t('Soqoli')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Soqoli')}</Tooltip>
+                                              ))
                                 }
                             </p>
                         </div>

@@ -153,14 +153,44 @@
   "Lavozimini tanlang": "Select a position",
   "Ruxsat etilgan eshiklar": "Fixed doors",
   "Ruxsat etilgan eshikni tanlang": "Select a fixed door",
+  "Tasdiq turi": "Confirmation type",
   "Yuz": "Face",
   "Barmoq izi": "Fingerprint",
   "Yuz yoki Barmoq izi": "Face or Fingerprint",
   "Yuz va Barmoq izi": "Face and Fingerprint",
+  "Yuz va ID karta": "Face and ID card",
+  "Barmoq izi va ID karta": "Fingerprint and ID card",
   "Kirishlar soni": "Number of entries",
   "Kirishlar sonini kiriting": "Enter the number of entries",
   "Muddatni tanlang": "Muddatni tanlang",
   "Boshqalar": "Others",
   "Karta turuni tanlang": "Select the card type",
-  "Karta raqamini kiriting": "Enter the card number"
+  "Karta raqamini kiriting": "Enter the card number",
+  "Ruxsat etiladigan muddat": "Permissible period",
+  "notiftext": "Would you like to receive employee login / logout notifications?",
+  "Ha": "Yes",
+  "Yo'q": "No",
+  "ID karta qo’shish": "Add ID card",
+  "Turi": "Type",
+  "Karta turi:": "Card type",
+  "Qo’shish": "Add",
+  "Barmoq izi qo’shish": "Add a fingerprint",
+  "Barmoq izi nomi": "Fingerprint name",
+  "Barmoq izi nomini kiriting": "Enter a fingerprint name",
+  "Terminalni tanlang": "Select a terminal",
+  "Barmoq izi olish": "Fingerprinting",
+  "Nomi": "Name",
+  "Rasm yuklash": "Image upload",
+  "Rasm olish": "Take a picture",
+
+
+
+
+
+
+
+
+
+  "ll": "m"
+
 }

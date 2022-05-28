@@ -1,41 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4da1f399-1a33-4294-b2f1-d056329cbf9f" name="Default Changelist" comment="zxcxcx">
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/cursor.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/deleteIconn.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/onlineManag/managmentAction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/onlineManag/managmentReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/onlineManag/managmentTypes.js" afterDir="false" />
+    <list default="true" id="90a90083-1446-44ef-b59e-16ac1d51e049" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineDoors.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineDoors.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/theme/themeActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/theme/themeActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/theme/themeReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/theme/themeReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-        <option value="CSS File" />
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="softdata/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="jahon" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -48,63 +41,30 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="ProjectId" id="248wfgyl1ACPDpNjWcZFYKTXoeN" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="29YRv3oJ54RKYCY7ukqOOJzoFYd" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/images/newimages/ishvaqti" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/images" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
-    <property name="ts.external.directory.path" value="D:\Program Files\JetBrains\WebStorm 2019.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Frontend-JS\Softdata-AIS\soft-data-ais\src\components\accessControl\settings\Terminal-modal" />
-      <recent name="D:\Frontend-JS\Softdata-AIS\soft-data-ais\src\components\accessControl\settings" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Users\User\Documents\GitHub\SoftData-AIS\src\images\newimages\ishvaqti" />
-      <recent name="D:\Soft data\SoftData-AIS\src\images\newimages" />
-      <recent name="D:\Soft data\SoftData-AIS\src\images\newimages\terminalImg" />
-      <recent name="D:\Soft data\SoftData-AIS\src\images" />
+      <recent name="D:\projects\soft-data-ais\src\images" />
+      <recent name="D:\projects\soft-data-ais\src\components\accessControl" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="npm.build" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -124,10 +84,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4da1f399-1a33-4294-b2f1-d056329cbf9f" name="Default Changelist" comment="" />
-      <created>1643025626324</created>
+      <changelist id="90a90083-1446-44ef-b59e-16ac1d51e049" name="Changes" comment="" />
+      <created>1653288260116</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1643025626324</updated>
       <workItem from="1643025629813" duration="3164000" />
       <workItem from="1643083483131" duration="823000" />
@@ -216,6 +177,20 @@
       <workItem from="1653633403848" duration="16243000" />
       <workItem from="1653710940740" duration="7254000" />
       <workItem from="1653718534320" duration="3224000" />
+=======
+      <updated>1653288260116</updated>
+      <workItem from="1653288261893" duration="16249000" />
+      <workItem from="1653365447426" duration="19589000" />
+      <workItem from="1653451948634" duration="22429000" />
+      <workItem from="1653537897640" duration="21909000" />
+      <workItem from="1653624077480" duration="19309000" />
+<<<<<<< HEAD
+      <workItem from="1653710159019" duration="8743000" />
+=======
+      <workItem from="1653710159019" duration="2700000" />
+      <workItem from="1653717585392" duration="3190000" />
+>>>>>>> 5ffe60ab65f0aa7e2c39ef755904cba1a8fe15fa
+>>>>>>> 749546b1fdf9cde202084aec1e2b34a96f229572
     </task>
     <servers />
   </component>
@@ -227,66 +202,10 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="zxcxcx" />
-    <option name="LAST_COMMIT_MESSAGE" value="zxcxcx" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="679" y="224" key="#build" timestamp="1652788663078">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="679" y="224" key="#build/0.0.1920.1050@0.0.1920.1050" timestamp="1652788663078" />
-    <state x="134" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1650279776105">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state x="134" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1360.728@0.0.1360.728" timestamp="1650279776105" />
-    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1650710345713">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1650710345713" />
-    <state x="535" y="122" key="FileChooserDialogImpl" timestamp="1653115794970">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="535" y="122" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1653115794970" />
-    <state x="128" y="61" key="MergeDialog" timestamp="1649336601946">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state x="128" y="61" key="MergeDialog/0.0.1360.728@0.0.1360.728" timestamp="1649336601946" />
-    <state x="392" y="81" key="MultipleFileMergeDialog" timestamp="1649336601958">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state x="392" y="81" key="MultipleFileMergeDialog/0.0.1360.728@0.0.1360.728" timestamp="1649336601958" />
-    <state x="256" y="10" key="SettingsEditor" timestamp="1650710324255">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="181" y="7" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1650621071527" />
-    <state x="256" y="10" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1650710324255" />
-    <state x="519" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1652960032861">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="519" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1652960032861" />
-    <state x="690" y="407" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1650710332544">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="489" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1360.728@0.0.1360.728" timestamp="1649336617526" />
-    <state x="690" y="407" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050@0.0.1920.1050" timestamp="1650710332544" />
-    <state x="616" y="243" key="run.anything.popup" timestamp="1653549238639">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1653549238639" />
-    <state x="484" y="71" width="949" height="978" key="search.everywhere.popup" timestamp="1653563446800">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1650537094875" />
-    <state x="484" y="71" width="949" height="978" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1653563446800" />
   </component>
 </project>

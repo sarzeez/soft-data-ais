@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Form, Input, Select,} from "antd";
 import {ip} from "../../../../ip";
+import {useTranslation} from "react-i18next";
 
 import Modal from "react-modal";
 import finger2 from '../../../../images/finger2.svg';
@@ -16,9 +17,10 @@ const FingerprintModal = (props) => {
         setIsOpenAddFingerprint,
         terminalIPList,
         fingerPrint,
-        setFingerPrint
+        setFingerPrint,
     } = props;
 
+    const {t} = useTranslation()
     const [requestedFinger, setRequestedFinger] = useState(null);
     const [accessFinger, setAccessFinger] = useState('');
 
@@ -30,7 +32,6 @@ const FingerprintModal = (props) => {
     const handleClickFingerprint = () => {
          axios.post(`${ip}/api/terminal/fingerprint/${accessFinger}`)
             .then(res => {
-                // console.log(res.data);
                 setRequestedFinger(res.data);
             })
             .catch(err=>{
@@ -75,21 +76,21 @@ const FingerprintModal = (props) => {
                 autoComplete="off"
             >
                 <div className='access_control_add_staff_terminal_modal'>
-                    <h1 className='access_control_add_staff_terminal_modal_title'>Barmoq izi qo’shish</h1>
+                    <h1 className='access_control_add_staff_terminal_modal_title'>{t("Barmoq izi qo’shish")}</h1>
                     <div className='access_control_add_staff_terminal_modal_body'>
                         <Form.Item
-                            label="Barmoq izi nomi"
+                            label={t("Barmoq izi nomi")}
                             name="name"
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Barmoq izi nomini kiriting',
+                                    message: t('Barmoq izi nomini kiriting'),
                                 },
                             ]}
                         >
                             <Input
                                 size="large"
-                                placeholder="Kiriting"
+                                placeholder={t("Kiriting")}
                             />
                         </Form.Item>
                         <div className="fingerprint_buttonaccess_control_add_staff_fingerprint_bInput">
@@ -98,7 +99,7 @@ const FingerprintModal = (props) => {
                                 rules={[
                                     {
                                         required: true,
-                                        message: 'Terminalni tanlang',
+                                        message: t('Terminalni tanlang'),
                                     },
                                 ]}
                             >
@@ -106,12 +107,12 @@ const FingerprintModal = (props) => {
                                     size="large"
                                     value={accessFinger}
                                     onChange={onChangeFingerprint}
-                                    placeholder = "Terminalni tanlang"
+                                    placeholder ={t("Terminalni tanlang")}
                                 >
-                                    <Select.Option value="">Tanlash</Select.Option>
+                                    {/*<Select.Option value="">{t("Tanlash")}</Select.Option>*/}
                                     {
                                         terminalIPList?.map((item, index) => (
-                                            <Select.Option key = {index} value={item.value}>{item.title}</Select.Option>
+                                            <Select.Option key = {index} value={item.value}>{item.label}</Select.Option>
                                         ))
                                     }
                                 </Select>
@@ -126,7 +127,7 @@ const FingerprintModal = (props) => {
                                 onClick={handleClickFingerprint}
                             >
                                 <img style={{marginRight: 8}} src={finger2} alt=""/>
-                                Barmoq izi olish
+                                {t("Barmoq izi olish")}
                             </button>
                         </div>
 
@@ -140,16 +141,10 @@ const FingerprintModal = (props) => {
                                 </div>
                                 :
                                 ' '
-                                // <div className="finger_info_close">
-                                //     <div className="round_close">
-                                //         <IoCloseSharp style={{color: 'white', fontSize: 20}} />
-                                //     </div>
-                                //     <h3>Barmoq izi qo’shilmagan</h3>
-                                // </div>
                         }
 
                         <div className='addFinger_save_button'>
-                            <button className="addFinger_button" type='submit'>Saqlash</button>
+                            <button className="addFinger_button" type='submit'>{t("Saqlash")}</button>
                         </div>
                     </div>
                 </div>
