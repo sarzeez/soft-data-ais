@@ -18,9 +18,11 @@
 }
 
 .acsess_left{
-    display: flex;
-    flex-direction: column;
+    /*display: flex;*/
+    /*flex-direction: column;*/
     /* justify-content: space-between; */
+    display: grid;
+    align-content: space-between;
     width: 320px;
     border-radius: 10px;
     padding: 5px;

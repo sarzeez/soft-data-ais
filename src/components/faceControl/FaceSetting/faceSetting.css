@@ -40,6 +40,7 @@
 
 .camera_groups{
     display: grid;
+    align-content: space-between;
     padding: 10px;
     max-height: calc(100vh - 200px);
     border: 1px solid #E5EAFA;
