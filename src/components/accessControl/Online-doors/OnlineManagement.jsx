@@ -93,7 +93,6 @@ const OnlineManagement = () => {
                         overlayClassName="myoverlay"
                         closeTimeoutMS={0}
                     >
-
                    <div className="online_doors_modal">
                    <h4>Terminallar ro'yxati</h4>
                        <div className="online_doors_modal_bodyOne">
