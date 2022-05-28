@@ -35,11 +35,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/images" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\soft-data-ais\src\images" />
+      <recent name="D:\projects\soft-data-ais\src\components\accessControl" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -70,7 +80,7 @@
       <workItem from="1653537897640" duration="21909000" />
       <workItem from="1653624077480" duration="19309000" />
       <workItem from="1653710159019" duration="2700000" />
-      <workItem from="1653717585392" duration="493000" />
+      <workItem from="1653717585392" duration="3190000" />
     </task>
     <servers />
   </component>

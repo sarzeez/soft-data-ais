@@ -22,7 +22,7 @@ import analisy from '../../images/dashIMG/analisy.svg';
 import access from '../../images/dashIMG/access.svg';
 import tableimg from '../../images/dashIMG/table.svg';
 import doorKey from '../../images/dashIMG/doorKey.svg';
-
+import working from "../../images/newimages/ishvaqti/time-management 1.png";
 import './style.css';
 
 
@@ -140,6 +140,17 @@ const Saidbar = ({ user, setUser }) => {
                                         {t('Eshiklar boshqaruvi')}
                                     </Link>
                                 </Menu.Item>
+
+                                {/*ish vaqti hisoboti*/}
+
+                                <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Working Hour Report', 7)} key="7"
+                                           icon={<img src={working} alt=""/>}>
+                                    <Link to="/working-hour-report">
+                                        Ish vaqti hisoboti
+                                    </Link>
+                                </Menu.Item>
+
+
                                 <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 9)} key="9"
                                            icon={<img src={setting} alt=""/>}>
                                     <Link to="/access-control-setting">
