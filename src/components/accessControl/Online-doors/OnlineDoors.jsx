@@ -60,6 +60,7 @@ const OnlineDoors = () => {
             setOnlineImg(data)
         });
     }
+
     const listenDoorByIp2 = () => {
         const socket = socketIOClient(ip);
         socket.on("terminal2", data => {
@@ -139,7 +140,8 @@ const OnlineDoors = () => {
 
             <div className={`online_doors_body ${isDarkMode && 'darkModeBackground'}`}>
                 {
-                    doorIds.map((doorId) => <div className="online_doors_info_content">
+                    doorIds.map((doorId) =>
+                        <div className="online_doors_info_content">
 
                         <div className={`online_doors_info_title ${isDarkMode && 'darkModeBackground'}`}>
                             {/*<h3 className={`${isDarkMode && 'darkModeColor'}`}>SoftData</h3>*/}

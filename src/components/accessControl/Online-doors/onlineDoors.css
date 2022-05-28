@@ -1,5 +1,6 @@
 .online_doors_content{
     padding: 10px;
+    height: 878px;
 }
 .online_doors_title{
     margin-bottom: 10px;
@@ -12,9 +13,11 @@
     background-color: #FFFFFF;
     border-radius: 5px;
     padding: 15px;
+    /*background: red!important;*/
 }
 
 .online_doors_info_content{
+    background: #FFFFFF;
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -26,7 +29,7 @@
 }
 .online_doors_info_content .cursorTouch{
     position: absolute;
-    left: -13px;
+    left: -6px;
     top: 10px;
 }
 .online_doors_info_content .cursorTouch:active{

@@ -1,16 +1,19 @@
-.online_managment{
+.online_managment {
+    width: 100%;
+    height: calc(100vh - 64px);
     padding: 10px;
-    box-sizing: border-box;
 }
-.online_managment_title{
-    margin-bottom: 10px;
+.online_managment_title {
+
 }
+
 .content_top {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.content_title{
+
+.content_title {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
@@ -18,56 +21,79 @@
     color: #000000;
 }
 
-.content_top .content_button span{
+.content_top .content_button span {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     color: #000000;
 }
-.content_top .content_button button{
+
+.content_top .content_button button {
     box-shadow: none;
 }
-.content_top .content_button button{
-    margin: 0 5px;
-    background: rgba(231, 255, 239, 0.17);
-    box-sizing: border-box;
-    border-radius: 5px;
-    padding-left: 3px;
-    padding-right: 3px;
-    padding-top: 2px;
-    padding-bottom: 4.5px;
+.changeB{
+    /*!*display: flex;*!*/
+    /*!*justify-content: center;*!*/
+    /*!*align-items: center;*!*/
+    /*box-sizing: border-box;*/
+    width: 25px;
+    height: 25px;
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
 }
-.content_top .content_button button:hover{
-    border: 1px solid #29B85D;
-}
-.content_top .content_button .active {
-    border : 1px solid #29B85D;
+.changeB img{
+    /*width: 100%;*/
+    width: 17px;
+    height: 17px;
 }
 
-.content_top .content_button .deleteButton{
+.content_top .content_button button {
+    margin: 0 5px;
+    background: rgba(231, 255, 239, 0.17);
+    /*box-sizing: border-box;*/
+    /*border-radius: 5px;*/
+    /*padding-left: 3px;*/
+    /*padding-right: 3px;*/
+    /*padding-top: 2px;*/
+    /*padding-bottom: 4.5px;*/
+}
+
+.content_top .content_button button:hover {
+    border: 1px solid #29B85D;
+    box-sizing: border-box;
+}
+
+.content_top .content_button .active {
+    border: 1px solid #29B85D;
+}
+
+.content_top .content_button .deleteButton {
     background: #FFDEDE;
     border-radius: 5px;
-    padding:5px 10px;
+    padding: 5px 10px;
     box-sizing: border-box;
     margin-right: 20px;
     display: flex;
     align-items: center;
     border: 0;
 }
-.content_top .content_button .deleteButton:hover{
+
+.content_top .content_button .deleteButton:hover {
     border: 0;
     background: #EB4444;
 }
 
-.content_top .content_button .deleteButton .deleteButtonImg{
+.content_top .content_button .deleteButton .deleteButtonImg {
     width: 20px;
     height: 20px;
     margin-right: 5px;
     background-image: url("/src/images/newimages/deleteIconn.svg");
     background-repeat: no-repeat;
 }
-.content_top .content_button .deleteButton:hover .deleteButtonImg{
+
+.content_top .content_button .deleteButton:hover .deleteButtonImg {
     width: 20px;
     height: 20px;
     margin-right: 5px;
@@ -75,38 +101,73 @@
     background-repeat: no-repeat;
 }
 
-.content_top .content_button .deleteButton span{
+.content_top .content_button .deleteButton span {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     color: #8B0606;
 }
-.content_top .content_button .deleteButton:hover span{
+
+.content_top .content_button .deleteButton:hover span {
     color: white;
 }
 
-.online_doors_body{
-    /*height: calc(100vh - 125px);*/
+.online_doors_body {
+    width: 100%;
+    margin-top: 10px;
+    height: calc(100% - 42px);
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #EAEAEA;
+    background-color: #fff;
+    /*background: red;*/
+}
+.online_doors_info_content{
+    /*background: #FFFFFF;*/
+    /*border: 1px solid #eaeaea;*/
+    /*border-radius: 10px;*/
+    /*box-sizing: border-box;*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*cursor: pointer;*/
+    /*height: 387px;*/
+
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 15px;
-    background-color: #FFFFFF;
-    border-radius: 5px;
-    padding: 15px;
+    grid-gap: 10px;
+    height: 387px;
+    /*height: 100%;*/
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    padding: 12px;
+    width: 779px;
 }
-.online_doors_managment{
-     background: #FFFFFF;
-     border: 1px solid #E5EAFA;
-     box-sizing: border-box;
-     border-radius: 10px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     cursor: pointer;
-     height: 252px;
- }
-.online_doors_managment_one{
+
+.online_doors_managment {
+    /*background: #FFFFFF;*/
+    /*border: 1px solid #eaeaea;*/
+    /*border-radius: 10px;*/
+    /*box-sizing: border-box;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*cursor: pointer;*/
+    /*height: 387px;*/
+    /*width: 779px;*/
+    position: relative;
+    /*grid-template-columns: 1fr 1fr;*/
+    height: 387px;
+    /*height: 100%;*/
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    width: 779px;
+}
+
+.online_doors_managment_one {
     background: #FFFFFF;
     border: 1px solid #E5EAFA;
     box-sizing: border-box;
@@ -115,25 +176,26 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    width: 203%;
-    height: 100%;
+    width: 202%;
 }
-.online_doors_managment_body{
+
+.online_doors_managment_body {
     text-align: center;
 }
 
-.online_doors_managment_body img{
+.online_doors_managment_body img {
     transform: scale(0.8);
 }
 
-.online_doors_managment_body h2{
+.online_doors_managment_body h2 {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
     color: #000000;
 }
-.online_doors_managment_body button{
+
+.online_doors_managment_body button {
     background: #29B85D;
     border-radius: 5px;
     border: 0;
@@ -146,27 +208,31 @@
     width: 130px;
     height: 40px;
 }
-.online_doors_managment_body button:focus{
+
+.online_doors_managment_body button:focus {
     box-shadow: none;
 }
-.online_doors_managment_body button:hover{
+
+.online_doors_managment_body button:hover {
     color: white;
 }
-.online_doors_managment_body button:active{
+
+.online_doors_managment_body button:active {
     box-shadow: none;
     background-color: white;
     border: 1px solid #29B85D;
     color: #29B85D;
 }
 
-.online_doors_modal{
+.online_doors_modal {
     background: #FFFFFF;
     border-radius: 10px;
     width: 400px;
     padding: 10px;
     height: 550px;
 }
-.online_doors_modal h4{
+
+.online_doors_modal h4 {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
@@ -175,65 +241,79 @@
     text-align: center;
 
 }
-.online_doors_modal_bodyOne{
+
+.online_doors_modal_bodyOne {
     height: 90%;
     margin-top: 15px;
     border-radius: 5px;
     overflow: auto;
     /*padding: 10px;*/
 }
-.online_doors_modal_body{
+
+.online_doors_modal_body {
     background: #F8F8F8;
     border-radius: 5px;
     padding: 5px 0px;
     height: 100vh;
 }
-.online_doors_modal_body_inner{
+
+.online_doors_modal_body_inner {
     padding: 5px 10px;
     cursor: pointer;
     background: #F8F8F8;
 }
-.online_doors_modal_body_inner:hover img{
+
+.online_doors_modal_body_inner:hover img {
     /*filter: invert(53%) sepia(83%) saturate(425%) hue-rotate(89deg) brightness(94%) contrast(85%);*/
 }
-.online_doors_modal_body_inner .imgbor{
+
+.online_doors_modal_body_inner .imgbor {
     width: 40px;
     height: 40px;
     background-image: url("/src/images/newimages/accesscontrolOff.svg");
     background-repeat: no-repeat;
 }
-.online_doors_modal_body_inner:hover .imgbor{
+
+.online_doors_modal_body_inner:hover .imgbor {
     width: 40px;
     height: 40px;
     background-image: url("/src/images/newimages/access-control 1.svg");
     background-repeat: no-repeat;
 }
-.online_doors_modal_body_inner:hover .imgChange{
+
+.online_doors_modal_body_inner:hover .imgChange {
     display: inline-block;
 }
-.online_doors_modal_body_inner .imgChange{
-display: none;
+
+.online_doors_modal_body_inner .imgChange {
+    display: none;
 }
-.online_doors_modal_body_inner:hover h5{
+
+.online_doors_modal_body_inner:hover h5 {
     color: #29B85D;
 }
 
-.online_doors_modal_body h5{
+.online_doors_modal_body h5 {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
     color: #000000;
 }
-.online_doors_modal_body span{
+
+.online_doors_modal_body span {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
     font-size: 12px;
     color: #828CA9;
 }
-.online_doors_modal_body .linee{
+
+.online_doors_modal_body .linee {
     height: 1px;
     background: #E7E7E7;
     margin: 3px 0;
 }
+
+
+

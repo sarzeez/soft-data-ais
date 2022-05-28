@@ -10,14 +10,12 @@ import {useTranslation} from "react-i18next";
 import {RiEditLine} from "react-icons/ri";
 
 const StaffTable = (props) => {
-
     const {
         staffData,
         rowSelection,
         setIsOpenAddStaff,
         setStaffTableIntialValues,
     } = props;
-
     const {t} = useTranslation()
     const isDarkMode = useSelector(state => state.theme.theme_data)
 

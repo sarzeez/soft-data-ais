@@ -1,0 +1,99 @@
+
+.working_hour_report{
+    width: 100%;
+    height: calc(100vh - 64px);
+    padding: 10px;
+}
+.working_hour_report_body {
+    width: 100%;
+    margin-top: 10px;
+    height: calc(100% - 42px);
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #EAEAEA;
+    background-color: #fff;
+}
+
+
+.staf-table-navbar{
+    width: 100%;
+    height: 123px;
+    background: #F6F7FA;
+    border-radius: 5px;
+    /*margin-top: 5px;*/
+    margin-bottom: 12px;
+    padding: 15px 10px;
+}
+.darkModeBackground{
+    border: 1px solid black;
+}
+.radioCheck{
+}
+.ant-radio-checked .ant-radio-inner{
+    border-color: #29B85D !important ;
+}
+.ant-radio-checked .ant-radio-inner:after{
+    background-color: #29B85D;
+}
+.radio1{
+    padding: 0 15px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #A7A7A8;
+}
+.radio1:first-child{
+    padding: 0;
+}
+.active{
+    color: black;
+}
+.button{
+    height: 38px;
+    background: #29B85D;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+}
+.button:hover{
+    box-shadow: none;
+    background: #29B85D;
+    border: 0;
+}
+.button:active{
+    /*box-shadow: none;*/
+    background: #29B85D;
+    border: 0;
+}
+.input{
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #F3F3F3;
+    border-radius: 5px;
+}
+.input::placeholder{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #828CA9;
+}
+.selectedDate{
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #F3F3F3;
+    border-radius: 5px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #828CA9;
+}
+.tableAll{
+    background: #FFFFFF;
+    border: 1px solid #F3F3F3;
+    border-radius: 5px;
+}
