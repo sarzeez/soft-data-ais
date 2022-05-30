@@ -37,8 +37,6 @@ import {getManagment, putManagment, getTheme} from "../../../redux/theme/themeAc
 
 // drag and drop
 import {DragDropContext, Droppable, Draggable} from "react-beautiful-dnd";
-import {TERMINAL, TERMINAL2, TERMINAL3, TERMINAL4, TERMINAL_ID, VIEWER, VIEWER2, VIEWER3, VIEWER4} from "./typeLocal";
-import Login from "../../loginPage/Login";
 
 const getItems = (count) =>
     Array.from({length: count}, (v, k) => k).map((k) => ({
@@ -485,7 +483,7 @@ const OnlineManagement = (props) => {
             <div className="online_doors_content">
                 <div className="online_managment_title">
                     <div className="content_top">
-                        <p className="content_title">Eshiklar boshqaruvi</p>
+                        <p className="content_title">{t("Eshiklar boshqaruvi")}</p>
                         <div className="content_button d-flex align-items-center">
                             <button type="button" className="btn deleteButton"
                                     hidden={touch}
@@ -497,10 +495,10 @@ const OnlineManagement = (props) => {
                                 <div className="deleteButtonImg">
 
                                 </div>
-                                <span>O'chirish</span>
+                                <span>{t("O’chirish")}</span>
                             </button>
 
-                            <span>Terminallar joylashuvi :</span>
+                            <span>{t("Terminallar joylashuvi")} :</span>
 
                             <button type="button"
                                     className={doorOne === true && doorTwo === false && doorThree === false && doorFour === false ? "btn active changeB" : "btn changeB"}
@@ -678,7 +676,7 @@ const OnlineManagement = (props) => {
                                                                         :
                                                                         <div className="doors_right">
                                                                             <div className="doors_time_info">
-                                                                                <p className="doors_time">Aniqlash vaqti</p>
+                                                                                <p className="doors_time">{t("Aniqlash vaqti")}</p>
                                                                                 {/*<h1 className="doors_time">{moment( onlineImg && onlineImg.guest_user && onlineImg.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
                                                                             </div>
                                                                             <div className="box_right_top">
@@ -955,10 +953,11 @@ const OnlineManagement = (props) => {
                                 className={doorTwo === true ? "online_doors_managment" : "online_doors_managment d-none"}>
                                 <div className="online_doors_managment_body">
                                     <img src={managmentImg}/>
-                                    <h2>Iltimos eshikni tanlang</h2>
+                                    <h2>{t("Iltimos eshikni tanlang")}</h2>
                                     <button type="button" className="btn"
                                             onClick={() => upDateViewer(2)}
-                                    >Tanlash
+                                    >
+                                        {t("Tanlash")}
                                     </button>
                                 </div>
                             </div>

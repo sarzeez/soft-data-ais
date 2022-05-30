@@ -147,7 +147,7 @@ const Saidbar = ({ user, setUser }) => {
                             <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Working Hour Report', 7)} key="7"
                                        icon={<img src={working} alt=""/>}>
                                 <Link to="/working-hour-report">
-                                    Ish vaqti hisoboti
+                                    {t("Ish vaqti hisoboti")}
                                 </Link>
                             </Menu.Item>
 

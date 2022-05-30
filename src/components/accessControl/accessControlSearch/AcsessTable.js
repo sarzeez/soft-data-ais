@@ -21,7 +21,7 @@ const AcsessTable = (props) => {
         {
             title: t('T/r'),
             dataIndex: 'key',
-            align: 'center'
+            // align: 'center'
         },
         {
             title: t('Ism'),
@@ -48,7 +48,7 @@ const AcsessTable = (props) => {
         {
             title: t('Toifasi'),
             dataIndex: 'user_type',
-            align: 'center',
+            // align: 'center',
             render:(text, record)=>(
                 <div>
                     {record?.user_type == 1 ? t("Xodim") :  t("Begona")}
@@ -58,7 +58,7 @@ const AcsessTable = (props) => {
         {
             title: t('Lavozimi'),
             dataIndex: 'rank',
-            align: 'center',
+            // align: 'center',
             render:(text, record)=>(
                 <div>
                     {record.rank ==1 ? t('Oddiy xodim') :
@@ -72,20 +72,10 @@ const AcsessTable = (props) => {
             )
         },
 
-        // {
-        //     title: t('Toifasi'),
-        //     dataIndex: 'user_type',
-        //     align: 'center'
-        // },
-        // {
-        //     title: t('Lavozimi'),
-        //     dataIndex: 'rank',
-        //     align: 'center'
-        // },
         {
             title: t('Tasdiq turi'),
             dataIndex: 'auth_type',
-            align: 'center',
+            // align: 'center',
             render:(text, record) =>(
                 <div>
                     {record?.auth_type === 1 ? t("Yuz") :
@@ -101,7 +91,7 @@ const AcsessTable = (props) => {
         {
             title: t('Yo\'nalishi'),
             dataIndex: 'direction',
-            align: 'center',
+            // align: 'center',
             render: (text, record) => (
                 <div>
                     {record?.direction == 'Exit' ? t("Chiqdi") : t("Kirdi")}
@@ -111,13 +101,13 @@ const AcsessTable = (props) => {
         {
             title: t('Vaqt'),
             dataIndex: 'created_time',
-            align: 'center'
+            // align: 'center'
         },
 
         {
             title: t('Eshik'),
             dataIndex: 'door_name',
-            align: 'center'
+            // align: 'center'
         },
     ];
 

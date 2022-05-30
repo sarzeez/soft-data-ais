@@ -76,17 +76,17 @@ const StaffTable = (props) => {
         {
             title: t('Toifasi'),
             dataIndex: 'user_type',
-            align: 'center'
+            // align: 'center'
         },
         {
             title: t('Lavozimi'),
             dataIndex: 'rank',
-            align: 'center'
+            // align: 'center'
         },
         {
             title: t('Kechikkan vaqti'),
             // dataIndex: 'door_ip',
-            align: 'center',
+            // align: 'center',
             render: (text, record) => (
                 <div className='door_ip_length'>
                     <p>
@@ -109,7 +109,7 @@ const StaffTable = (props) => {
         {
             title: t('Erta ketish vaqti'),
             // dataIndex: 'cards',
-            align: 'center',
+            // align: 'center',
             render: (text, record) => (
                 <div className='door_ip_length'>
                     {
@@ -130,7 +130,7 @@ const StaffTable = (props) => {
         {
             title: t('Umumiy jarima vaqti'),
             // dataIndex: 'card_id',
-            align: 'center',
+            // align: 'center',
             render: (text, record) => (
                 <div className='door_ip_length'>
                     {record.fingerprint.length > 0 ?
@@ -156,7 +156,7 @@ const StaffTable = (props) => {
             render: (text, record) => {
                 return `${moment(record.valid_from_time).format('DD.MM.YYYY')} - ${moment(record.valid_to_time).format('DD.MM.YYYY')}`
             },
-            align: 'center'
+            // align: 'center'
         },
         // {
         //     title: t('Tahrir'),

@@ -320,10 +320,10 @@ const AccessControlSetting = () => {
 
                     </TabPane>
 
-                    <TabPane tab={t("Autentifikatsiya sozlamalari")} key="3">
+                    <TabPane tab={t("Qora ro’yxat")} key="3">
                         <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>
                             <div className='access_control_setting_tab_item_body'>
-                                Autentifikatsiya sozlamalari
+                                Qora ro’yxat
                             </div>
                         </div>
                     </TabPane>

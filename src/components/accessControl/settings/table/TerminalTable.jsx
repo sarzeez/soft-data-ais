@@ -38,17 +38,17 @@ const TerminalTable = (props) => {
         {
             title: t('T/r'),
             dataIndex: 'key',
-            align: 'center'
+            // align: 'center'
         },
         {
             title: t('Eshik nomi'),
             dataIndex: 'door_name',
-            align: 'center',
+            // align: 'center',
         },
         {
             title: t("Yo'nalishi"),
             dataIndex: 'direction',
-            align: 'center',
+            // align: 'center',
             render: (text, record) => (
                 <div>
                     {record?.direction == 'Exit' ? t("Chiqish") : t("Kirish")}
@@ -58,7 +58,7 @@ const TerminalTable = (props) => {
         {
             title: t('Autentifikatsiya turi'),
             dataIndex: 'auth_type',
-            align: 'center',
+            // align: 'center',
             render: (text, record) => (
                 <div>
                     {auth_type[lang][record.auth_type]}
@@ -68,27 +68,27 @@ const TerminalTable = (props) => {
         {
             title: t('Terminal IP manzili'),
             dataIndex: 'ip_address',
-            align: 'center'
+            // align: 'center'
         },
         {
             title: t('Terminal turi'),
             dataIndex: 'type',
-            align: 'center',
+            // align: 'center',
         },
         {
             title: t('Login'),
             dataIndex: 'username',
-            align: 'center'
+            // align: 'center'
         },
         {
             title: t('Parol'),
             dataIndex: 'password',
-            align: 'center'
+            // align: 'center'
         },
         {
             title: t("O'rnatilgan vaqti"),
             dataIndex: 'created_time',
-            align: 'center'
+            // align: 'center'
         },
         {
             title: t('Tahrir'),
