@@ -31,7 +31,7 @@ function AddStaff(props) {
         setFingerPrint,
     } = props;
 
-    const {t} = useTranslation()
+    const {t} = useTranslation();
     const [ isOpenAddTerminal, setIsOpenAddTerminal] = useState(false);
     const [ isOpenAddFingerprint,setIsOpenAddFingerprint] = useState(false);
     const [terminalIPList, setTerminalIPList] = useState([]);
@@ -40,7 +40,6 @@ function AddStaff(props) {
         uploaded: false,
         requested: false,
     })
-
 
     const [data, setData] = useState({
         fullname: '',
@@ -54,6 +53,7 @@ function AddStaff(props) {
         image: '',
         notification: false,
     })
+
     const cancel = () => {
         setIsOpenAddStaff(!setIsOpenAddStaff)
         setStaffTableIntialValues({
@@ -85,6 +85,7 @@ function AddStaff(props) {
             fingerprint:  JSON.stringify(fingerPrint),
             cards: JSON.stringify(card)
         }
+
         const fd = new FormData();
         Object.keys(formData).forEach(i => fd.append(i, formData[i]));
 

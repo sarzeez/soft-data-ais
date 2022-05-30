@@ -16,11 +16,13 @@ import StaffPagination from './paginations/StaffPagination';
 import AddStaff from '../modals/add-staff/AddStaff';
 import AddTerminalModal from "./Terminal-modal/AddTerminalModal";
 import './setting.css';
+import OnlineManagement from "../Online-doors/OnlineManagement";
+import {connect} from "react-redux";
+import {getTheme} from "../../../redux";
 
 const { TabPane } = Tabs;
 
-const AccessControlSetting = () => {
-
+const AccessControlSetting = (props) => {
     const isDarkMode = useSelector(state => state.theme.theme_data)
     const is_refresh_value = useSelector(state => state.theme.is_refresh_value)
     const {t} = useTranslation()
@@ -279,7 +281,6 @@ const AccessControlSetting = () => {
                             fingerPrint={fingerPrint}
                             setFingerPrint={setFingerPrint}
                         />
-
                         <div className="access_control_setting_tab">
                             <div className='access_control_setting_tab_item'>
                                 <div className='access_control_setting_tab_item_body'>
@@ -341,5 +342,10 @@ const AccessControlSetting = () => {
         </div>
     )
 };
+const mapStateToProps = (state) =>{
+    return{
+        onlineManag : state.theme.onlineManag
+    }
+}
 
-export default AccessControlSetting;
+export default connect(mapStateToProps , {getTheme})(AccessControlSetting);
