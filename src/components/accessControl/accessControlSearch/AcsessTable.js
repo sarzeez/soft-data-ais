@@ -44,16 +44,44 @@ const AcsessTable = (props) => {
                 </div>
             ),
         },
+
         {
             title: t('Toifasi'),
             dataIndex: 'user_type',
-            align: 'center'
+            align: 'center',
+            render:(text, record)=>(
+                <div>
+                    {record?.user_type == 1 ? t("Xodim") :  t("Begona")}
+                </div>
+            )
         },
         {
             title: t('Lavozimi'),
             dataIndex: 'rank',
-            align: 'center'
+            align: 'center',
+            render:(text, record)=>(
+                <div>
+                    {record.rank ==1 ? t('Oddiy xodim') :
+                        record.rank ==2 ? t("Direktor") :
+                            record.rank ==3 ? t("VIP"):
+                                record.rank ==4 ? t("Mehmon"):
+                                    record.rank == 5 ? "Bloklangan" : "-"
+
+                    }
+                </div>
+            )
         },
+
+        // {
+        //     title: t('Toifasi'),
+        //     dataIndex: 'user_type',
+        //     align: 'center'
+        // },
+        // {
+        //     title: t('Lavozimi'),
+        //     dataIndex: 'rank',
+        //     align: 'center'
+        // },
         {
             title: t('Tasdiq turi'),
             dataIndex: 'auth_type',

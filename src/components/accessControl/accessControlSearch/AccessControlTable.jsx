@@ -106,8 +106,8 @@ const AcsessControlTable = () => {
                 created_time: moment(item.created_time).format('DD.MM.YYYY, HH:mm:ss'),
                 direction: item.direction,
                 door_name: item.door_name,
-                user_type: item.user_type === 1 ? t('Xodim') : item.user_type === 2 ? t('Mehmon') : t('Begona'),
-                rank: item.rank == 1 ? t('Oddiy xodim') : item.rank == 2 ? t('Direktor') : item.rank == 3 ? t('VIP') : '—',
+                user_type: item.user_type,
+                rank: item.rank ,
                 auth_type: item.auth_type
             }
         ))
@@ -216,22 +216,60 @@ const AcsessControlTable = () => {
                                 </div>
                             </div>
 
+                            {/*<div className="form_input_wrapper">*/}
+                            {/*    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Toifasi')}</p>*/}
+                            {/*    <div className="input_wrapper">*/}
+                            {/*        <Select*/}
+                            {/*            className={`left_select ${isDarkMode && 'darkModeColor'}`}*/}
+                            {/*            onChange={onChangeUserType}*/}
+                            {/*            style={{width: "100%"}}*/}
+                            {/*            size="large"*/}
+                            {/*            defaultValue={userType}*/}
+                            {/*            value={userType}*/}
+                            {/*        >*/}
+                            {/*            <Select.Option value="all">{t('Hammasi')}</Select.Option>*/}
+                            {/*            <Select.Option value="1">{t('Xodim')}</Select.Option>*/}
+                            {/*            <Select.Option value="2">{t('Mehmon ')}</Select.Option>*/}
+                            {/*            <Select.Option value="3">{t('Bloklangan')}</Select.Option>*/}
+                            {/*            <Select.Option value="-1">{t('Begona')}</Select.Option>*/}
+                            {/*        </Select>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
+
+                            {/*<div className="form_input_wrapper">*/}
+                            {/*    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Lavozimi')}</p>*/}
+                            {/*    <div className="input_wrapper">*/}
+                            {/*        <Select*/}
+                            {/*            className={`left_select ${isDarkMode && 'darkModeColor'}`}*/}
+                            {/*            onChange={onChangePosition}*/}
+                            {/*            style={{width: "100%"}}*/}
+                            {/*            size="large"*/}
+                            {/*            defaultValue={position}*/}
+                            {/*            value={position}*/}
+                            {/*        >*/}
+                            {/*            <Select.Option value="all">{t('Hammasi')}</Select.Option>*/}
+                            {/*            <Select.Option value="1">{t("Oddiy xodim")}</Select.Option>*/}
+                            {/*            <Select.Option value="2">{t("Direktor")}</Select.Option>*/}
+                            {/*            <Select.Option value="3">{t("VIP")}</Select.Option>*/}
+                            {/*        </Select>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
+
                             <div className="form_input_wrapper">
                                 <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Toifasi')}</p>
                                 <div className="input_wrapper">
                                     <Select
                                         className={`left_select ${isDarkMode && 'darkModeColor'}`}
-                                        onChange={onChangeUserType}
-                                        style={{width: "100%"}}
                                         size="large"
-                                        defaultValue={userType}
+                                        style={{width: "100%"}}
+                                        placeholder={"Kiriting"}
+                                        onChange={onChangeUserType}
                                         value={userType}
+                                        defaultValue={userType}
                                     >
                                         <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                        <Select.Option value="1">{t('Xodim')}</Select.Option>
-                                        <Select.Option value="2">{t('Mehmon ')}</Select.Option>
-                                        <Select.Option value="3">{t('Bloklangan')}</Select.Option>
-                                        <Select.Option value="-1">{t('Begona')}</Select.Option>
+                                        <Select.Option value="1">{t("Xodim")}</Select.Option>
+                                        <Select.Option value="2">{t("Begona")}</Select.Option>
                                     </Select>
                                 </div>
                             </div>
@@ -241,16 +279,19 @@ const AcsessControlTable = () => {
                                 <div className="input_wrapper">
                                     <Select
                                         className={`left_select ${isDarkMode && 'darkModeColor'}`}
-                                        onChange={onChangePosition}
-                                        style={{width: "100%"}}
                                         size="large"
+                                        style={{width: "100%"}}
+                                        onChange={onChangePosition}
                                         defaultValue={position}
                                         value={position}
                                     >
                                         <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                        <Select.Option value="1">{t("Oddiy xodim")}</Select.Option>
-                                        <Select.Option value="2">{t("Direktor")}</Select.Option>
-                                        <Select.Option value="3">{t("VIP")}</Select.Option>
+                                        {
+
+                                            categoryData[userType -1 ]?.map((item, index) => (
+                                                <Select.Option key={index} value={item.value}>{t(item.name)}</Select.Option>
+                                            ))
+                                        }
                                     </Select>
                                 </div>
                             </div>
