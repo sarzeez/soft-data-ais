@@ -95,7 +95,7 @@ const TerminalTable = (props) => {
             dataIndex: '',
             render: (text, record) => (
                 <div onClick={()=> editTerminal(text, record)} className='edit_button'>
-                    <RiEditLine size = {22} color='#fff'/>
+                    <RiEditLine size = {22} />
                 </div>
             ),
             align: 'center'

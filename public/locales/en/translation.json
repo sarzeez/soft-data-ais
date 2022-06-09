@@ -22,6 +22,7 @@
   "Bor": "Bor",
   "Yo’q": "Yo’q",
   "Soqol": "Beard",
+  "Soqolli": "Bearded",
   "Ko’zoynak": "Glasses",
   "Ko’rishni_tuzatish": "Optical glasses",
   "Kozoynaksiz": "Without glasses",
@@ -57,7 +58,6 @@
   "Keksa": "Elder",
   "Niqobli": "Masked",
   "Niqobsiz": "No mask",
-  "Soqolli": "Bearded",
   "Soqolsiz": "No beard",
 
   "Kun": "Day",
@@ -80,8 +80,9 @@
   "Yuzni aniqlash sozlamalar": "Face detection settings",
   "Autentifikatsiya sozlamalari": "Authentication settings",
   "Kamera parametrlari": "Camera settings",
-  "Kamera nomi": "Camera name",
+  "Kamera nomi": "Name",
   "Kamera turi": "Camera type",
+  "Brend": "Brand",
   "IP manzili": "IP address",
   "Login": "Login",
   "Parol": "Password",
@@ -186,7 +187,7 @@
   "Terminallar joylashuvi": "Location of terminals",
   "Iltimos eshikni tanlang": "Please select a door",
   "Aniqlash vaqti": "Detection time",
-
+  "Kanal": "Channel",
 
 
 

@@ -1,7 +1,7 @@
 .j_card{
     border: 1px solid #DDDDDD;
     border-radius: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 .j_card p {
     margin-bottom: 0 !important;
@@ -153,6 +153,7 @@
 }
 
 .card_longTitle{
+    font-size: 15px;
     text-align: center;
     text-overflow: ellipsis;
     overflow: hidden; 
@@ -166,9 +167,7 @@
 
 
 @media only screen and (max-width: 1870px) {
-    .j_card{
-        margin-bottom: 12px;
-    }
+
     .j_cardInfo{
         width: 265px;
         height: 160px;
@@ -192,5 +191,11 @@
     }
     .j_cardInfoTopRight p{
         font-size: 13px;
+    }
+    .line{
+        width: 97%;
+    }
+    .line_2{
+        width: 97%;
     }
 }

@@ -42,7 +42,7 @@ const CameraTable = (props) => {
             // align: 'center'
         },
         {
-            title: t("Kamera turi"),
+            title: t("Brend"),
             dataIndex: 'type',
             // align: 'center'
         },
@@ -72,11 +72,11 @@ const CameraTable = (props) => {
             // align: 'center'
         },
         {
-            title: t('Amal'),
+            // title: t('Amal'),
             dataIndex: '',
             render: (text, record) => (
                 <div onClick={() => editCamera(text, record)} className='edit_button'>
-                    <RiEditLine size = {22} color='#fff'/>
+                    <RiEditLine size = {20}  />
                 </div>
             ),
             // align: 'center'
@@ -91,6 +91,9 @@ const CameraTable = (props) => {
                 columns={columns}
                 dataSource={cameraData}
                 pagination={false}
+                // scroll={{
+                //     y: 660
+                // }}
             />
         </>
     );

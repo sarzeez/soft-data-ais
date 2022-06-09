@@ -25,12 +25,12 @@
     padding: 10px;
 }
 
-.settings_modal_input .ant-input-prefix{
-    margin-right: 10px;
-}
+/*.settings_modal_input .ant-input-prefix{*/
+/*    margin-right: 45px!important;*/
+/*}*/
 
 .settings_modal_select .ant-select-selector{
-    height: 45px!important;
+    height: 42px!important;
 }
 
 .setting_input_lebel_groups{
@@ -75,6 +75,39 @@
 }
 
 
+
+
+
+
+@media only screen and (max-width: 1470px) {
+    .camera_settings_modal_content{
+        width: 550px;
+        padding: 10px;
+    }
+    .camera_settings_modal_title{
+        margin-bottom: 3px;
+    }
+    .settings_modal_select .ant-select-selector{
+        height: 35px!important;
+    }
+    .settings_modal_input{
+        height: 35px!important;
+    }
+    .add_camera_buttons_cancle{
+        height: 35px;
+    }
+    .add_camera_buttons_save{
+        height: 35px;
+    }
+     .ant-form-item {
+        margin-bottom: 3px !important;
+    }
+     .add_camera_buttons{
+         margin-top: 15px;
+         margin-bottom: 5px;
+     }
+
+}
 
 
 

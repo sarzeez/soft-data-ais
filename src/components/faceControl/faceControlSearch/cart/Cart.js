@@ -18,18 +18,63 @@ const Cart = ({ item, isDarkMode }) => {
     const {t} = useTranslation()
 
     const mood = ["",
-        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Tabassum')}</div>,
-        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Jahldor')}</div> ,
-        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Xafa')}</div>,
-        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Jirkangan')}</div> ,
-        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Qo’rqqan')}</div>,
-        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Hayratda')}</div>,
-        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('E’tiborsiz')}</div>,
-        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Kulgan')}</div>,
+        <div className={`${isDarkMode && 'darkModeColor'}`}>
+            <Tooltip title={t('Tabassum')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>
+                <p className="card_longTitle" ></p>
+            </Tooltip>
+        </div>,
+        <div className={`${isDarkMode && 'darkModeColor'}`}>
+            <Tooltip title={t('Jahldor')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>
+                <p className="card_longTitle" >{t('Jahldor')}</p>
+            </Tooltip>
+        </div> ,
+        <div className={`${isDarkMode && 'darkModeColor'}`}>
+            <Tooltip title={t('Xafa')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>
+                <p className="card_longTitle" >{t('Xafa')}</p>
+            </Tooltip>
+        </div>,
+        <div className={`${isDarkMode && 'darkModeColor'}`}>
+            <Tooltip title= {t('Jirkangan')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>
+                <p className="card_longTitle" >{t('Jirkangan')}</p>
+            </Tooltip>
+        </div> ,
+        <div className={`${isDarkMode && 'darkModeColor'}`}>
+            <Tooltip title={t('Qo’rqqan')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>
+                <p className="card_longTitle" >{t('Qo’rqqan')}</p>
+            </Tooltip>
+        </div>,
+        <div className={`${isDarkMode && 'darkModeColor'}`}>
+            <Tooltip title={t('Hayratda')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>
+                <p className="card_longTitle" >{t('Hayratda')}</p>
+            </Tooltip>
+        </div>,
+        <div className={`card_longTitle ${isDarkMode && 'darkModeColor'}`}>
+            <Tooltip title={t('E’tiborsiz')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>
+                <p className="card_longTitle"> {t('E’tiborsiz')}</p>
+            </Tooltip>
+        </div>,
+
+        <div className={`${isDarkMode && 'darkModeColor'}`}>
+            <Tooltip title={t('Kulgan')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>
+                <p className="card_longTitle" > {t('Kulgan')}</p>
+            </Tooltip>
+        </div>,
         "",
-        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Xursand')}</div>,
-        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('ikkilangan')}</div>,
-        <div className={`${isDarkMode && 'darkModeColor'}`}>{t('Baqirgan')}</div>
+        <div className={`${isDarkMode && 'darkModeColor'}`}>
+            <Tooltip title={t('Xursand')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>
+                <p className="card_longTitle" >{t('Xursand')}</p>
+            </Tooltip>
+        </div>,
+        <div className={`${isDarkMode && 'darkModeColor'}`}>
+            <Tooltip title={t('Ikkilangan')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>
+                <p className="card_longTitle" >{t('Ikkilangan')}</p>
+            </Tooltip>
+        </div>,
+        <div className={`${isDarkMode && 'darkModeColor'}`}>
+            <Tooltip title={t('Baqirgan')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>
+                <p className="card_longTitle" > {t('Baqirgan')}</p>
+            </Tooltip>
+        </div>
     ]
 
     const [visible, setVisible] = useState(false)
@@ -130,7 +175,9 @@ const Cart = ({ item, isDarkMode }) => {
                             {
                                 <img src = {emojes.mood[item.args.KAYFIYAT - 1]} alt = 'mood' />
                             }
-                            <p>{mood[item.args.KAYFIYAT - 1]}</p>
+                            <p className="card_longTitle" >
+                                {mood[item.args.KAYFIYAT - 1]}
+                            </p>
                         </div>
                         <div>
                             {
@@ -157,7 +204,7 @@ const Cart = ({ item, isDarkMode }) => {
                                     : (item.old !== 'age_0_10' && item.old !== 'age_11_17' && (item.args.SOQOL === 2 ?
                                                 <Tooltip title={t('Soqolsiz')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Soqolsiz')}</Tooltip>
                                             :
-                                                <Tooltip title={t('Soqoli')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Soqoli')}</Tooltip>
+                                                <Tooltip title={t('Soqolli')} color={'cyan'} className={`${isDarkMode && 'darkModeColor'}`}>{t('Soqolli')}</Tooltip>
                                               ))
                                 }
                             </p>

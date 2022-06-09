@@ -285,118 +285,92 @@
 
 
 
-@media only screen and (max-width: 1800px) {
-    .online_doors_title{
-        margin-bottom: 0px;
-    }
-    .online_doors_body{
-        grid-gap: 10px;
-    }
-    .online_doors_body{
-        height: calc(100vh - 115px);
-    }
-    .online_doors_info_content{
-        height: 252px;
-    }
-    .online_doors_info_title h3{
-        font-size: 14px;
-        line-height: 22px;
-    }
-    .doors_time {
-        font-size: 12px;
-        line-height: 20px;
-        margin-bottom: 2px!important;
-    }
-    .label_box{
-        height: 30px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding-left: 5px;
-        margin-bottom: 5px;
-    }
-    .doors_right_label{
-        font-size: 12px;
-        line-height: 14px;
-        margin-right: 5px;
-    }
-    .doors_right_box{
-        font-size: 12px;
-        line-height: 15px;
-    }
-    .img_box{
-        height: 100px;
-    }
-    .limit_info{
-        height: 70px;
-        padding: 0 5px;
-    }
-    .limit_info_top_img{
-        width: 20px;
-        height: 22px;
-    }
-    .limit_top_title{
-        font-size: 12px;
-    }
-    .limit_middle_title{
-        font-size: 10px;
-        margin-left: 25px!important;
-    }
-    .limit_info_bottom{
-        margin-left: 25px!important;
-    }
+/*@media only screen and (max-width: 1800px) {*/
+/*    .online_doors_title{*/
+/*        margin-bottom: 0px;*/
+/*    }*/
+/*    .online_doors_body{*/
+/*        grid-gap: 10px;*/
+/*    }*/
+/*    .online_doors_body{*/
+/*        height: calc(100vh - 115px);*/
+/*    }*/
+/*    .online_doors_info_content{*/
+/*        height: 252px;*/
+/*    }*/
+/*    .online_doors_info_title h3{*/
+/*        font-size: 14px;*/
+/*        line-height: 22px;*/
+/*    }*/
+/*    .doors_time {*/
+/*        font-size: 12px;*/
+/*        line-height: 20px;*/
+/*        margin-bottom: 2px!important;*/
+/*    }*/
+/*    .label_box{*/
+/*        height: 30px;*/
+/*        display: flex;*/
+/*        flex-direction: row;*/
+/*        align-items: center;*/
+/*        padding-left: 5px;*/
+/*        margin-bottom: 5px;*/
+/*    }*/
+/*    .doors_right_label{*/
+/*        font-size: 12px;*/
+/*        line-height: 14px;*/
+/*        margin-right: 5px;*/
+/*    }*/
+/*    .doors_right_box{*/
+/*        font-size: 12px;*/
+/*        line-height: 15px;*/
+/*    }*/
+/*    .img_box{*/
+/*        height: 100px;*/
+/*    }*/
+/*    .limit_info{*/
+/*        height: 70px;*/
+/*        padding: 0 5px;*/
+/*    }*/
+/*    .limit_info_top_img{*/
+/*        width: 20px;*/
+/*        height: 22px;*/
+/*    }*/
+/*    .limit_top_title{*/
+/*        font-size: 12px;*/
+/*    }*/
+/*    .limit_middle_title{*/
+/*        font-size: 10px;*/
+/*        margin-left: 25px!important;*/
+/*    }*/
+/*    .limit_info_bottom{*/
+/*        margin-left: 25px!important;*/
+/*    }*/
 
 
-    .doors_right_icon{
-        width: 70px;
-        height: 70px;
-        margin-bottom: 5px;
-    }
-    .not_allowed_title{
-        font-size: 16px;
-        line-height: 13px;
-    }
-    .not_allowed_text{
-        margin-top: 5px !important;
-        margin-bottom: 10px !important;
-    }
-    .not_allowed_buttons{
-        margin-bottom: 5px!important;
-    }
-    .not_allowed_buttons_cancel{
-        width: 125px;
-        height: 40px;
-    }
-    .not_allowed_allow{
-        height: 40px;
-    }
+/*    .doors_right_icon{*/
+/*        width: 70px;*/
+/*        height: 70px;*/
+/*        margin-bottom: 5px;*/
+/*    }*/
+/*    .not_allowed_title{*/
+/*        font-size: 16px;*/
+/*        line-height: 13px;*/
+/*    }*/
+/*    .not_allowed_text{*/
+/*        margin-top: 5px !important;*/
+/*        margin-bottom: 10px !important;*/
+/*    }*/
+/*    .not_allowed_buttons{*/
+/*        margin-bottom: 5px!important;*/
+/*    }*/
+/*    .not_allowed_buttons_cancel{*/
+/*        width: 125px;*/
+/*        height: 40px;*/
+/*    }*/
+/*    .not_allowed_allow{*/
+/*        height: 40px;*/
+/*    }*/
 
 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*}*/
 

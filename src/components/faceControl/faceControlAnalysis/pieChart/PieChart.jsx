@@ -42,6 +42,7 @@ const ApexChart = (props) => {
             colors: ["#A461D8", "#FFC107", "#FF6B72", "#04D182", "#3E82F7", "#F07427"]
         },
     };
+    // console.log(data)
 
     return (
         <div id="chart circle_chart" className="circle_chart">

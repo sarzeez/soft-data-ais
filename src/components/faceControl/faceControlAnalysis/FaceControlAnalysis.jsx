@@ -1,28 +1,25 @@
 import React, { useEffect, useState } from 'react';
+import {useTranslation} from "react-i18next";
 import { DatePicker} from 'antd';
 import Carousel, { consts } from 'react-elastic-carousel';
-import axios from 'axios';
+import { ip } from '../../../ip';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import moment from "moment";
+import axios from 'axios';
 
-import next from '../../../images/nexticon.svg';
-import prev from '../../../images/previcon.svg';
-
+import MiniChart from './miniCharts/index';
+import BodyChart from './bodyChart/BodyChart';
+import PieChart from './pieChart/PieChart';
+import LineChart from './lineChart/LineChart';
 import './analysis.css';
-import { ip } from '../../../ip';
 
-import MiniChart from './miniCharts/index'
-import BodyChart from './bodyChart/BodyChart'
-import PieChart from './pieChart/PieChart'
-import LineChart from './lineChart/LineChart'
-import {useTranslation} from "react-i18next";
 
 
 const FaceControlAnalysis = () => {
 
     function myArrow({ type, onClick, isEdge }) {
-        const pointer = type === consts.PREV ?  <img className="prev" src={prev} alt=""/> : <img className="next" src={next} alt=""/>
+        const pointer = type === consts.PREV ? '' : ''
         return (
             <button className="nexprev" onClick={onClick} disabled={isEdge}>
                 {pointer}
@@ -52,7 +49,7 @@ const FaceControlAnalysis = () => {
                     res.data.age_18_25,
                     res.data.age_26_40,
                     res.data.age_41_60,
-                    res.data.age_61,
+                    res.data.age_61,[]
                 ])
             })
             .catch(err => {
@@ -91,23 +88,8 @@ const FaceControlAnalysis = () => {
         //     category: data ? data.data && data.data.map(item => item.part) : [],
         //     color: "#000"
         // },
-        // {
-        //     title: `KIRISH "EFENDI"`,
-        //     mainPercent: data && data.door_4,
-        //     littlePercent: '0.21%',
-        //     data: data ? data.data && data.data.map(item => item.door_4) : [],
-        //     category: data ? data.data && data.data.map(item => item.part) : [],
-        //     color: "#B12929"
-        // },
-        // {
-        //     title: `KIRISH "OLIMPIYA MUZEYI"`,
-        //     mainPercent: data && data.door_5,
-        //     littlePercent: '0.21%',
-        //     data: data ? data.data && data.data.map(item => item.door_5) : [],
-        //     category: data ? data.data && data.data.map(item => item.part) : [],
-        //     color: "#0a38c1"
-        // }
     ]
+
     const colorArray = ["#11d2c2", "#000", "#29B85D", "#B12929", "#0a38c1"]
     const lang = localStorage.getItem('i18nextLng');
 
@@ -137,7 +119,7 @@ const FaceControlAnalysis = () => {
                     <p  className="Content_title">{t('Statistika')}</p>
                 </div>
                 <div className='anaylsis-button-group'>
-                    <DatePicker placeholder={DayMY} onChange = {value => setDate(value)} style = {{borderTopLeftRadius: '10px', borderBottomLeftRadius: '10px'}} />
+                    <DatePicker placeholder={DayMY} onChange = {value => setDate(value)} style = {{borderTopLeftRadius: '5px', borderBottomLeftRadius: '5px'}} />
                     <button onClick={() => setActive('daily')} className={`${active === 'daily' ? 'analysis-active-button' : null}`}>{t('Kun')}</button>
                     <button onClick={() => setActive('week')} className={`${active === 'week' ? 'analysis-active-button' : null}`}>{t('Hafta')}</button>
                     <button onClick={() => setActive('month')} className={`${active === 'month' ? 'analysis-active-button' : null}`}>{t("Oy")}</button>
@@ -146,7 +128,7 @@ const FaceControlAnalysis = () => {
             </div>
 
                 <div className='analysis-top'>
-                    <Carousel breakPoints={breakPoints} renderArrow={myArrow}>
+                    <Carousel breakPoints={breakPoints} renderArrow={myArrow} autoplay>
                     {
                         topData.map((item, index) => (
                                 <div key = {index} className='analysis-top-item'>

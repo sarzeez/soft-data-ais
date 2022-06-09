@@ -22,6 +22,7 @@
   "Bor": "Есть",
   "Yo’q": "Нет",
   "Soqol": "Борода",
+  "Soqolli": "Бородатый",
   "Ko’zoynak": "Очки",
   "Ko’rishni_tuzatish": "Оптические очки",
   "Kozoynaksiz": "Без очков",
@@ -57,7 +58,6 @@
   "Keksa": "Пожилые",
   "Niqobli": "В маске",
   "Niqobsiz": "Без маски",
-  "Soqolli": "С бородой",
   "Soqolsiz": "Без бороды",
 
   "Kun": "День",
@@ -80,8 +80,9 @@
   "Yuzni aniqlash sozlamalar": "Настройки распознавания лиц",
   "Autentifikatsiya sozlamalari": "Настройки аутентификации",
   "Kamera parametrlari": "Настройки камеры",
-  "Kamera nomi": "Название камеры",
+  "Kamera nomi": "Название",
   "Kamera turi": "Тип камеры",
+  "Brend": "Бренд",
   "IP manzili": "IP адрес",
   "Login": "Логин",
   "Parol": "Пароль",
@@ -100,7 +101,7 @@
   "Saqlash": "Сохранить",
   "Kamera qo‘shish": "Добавить камеру",
   "O’chirish": "Удалить",
-  "Guruh qo’shish": "Добавить группу",
+  "Guruh qo'shish": "Добавить группу",
   "Statistika sozlamalari": "Настройки Статистики",
 
   "Kiriting": "Вводить",
@@ -185,8 +186,8 @@
   "Ish vaqti hisoboti": "Учёт рабочего времени ",
   "Terminallar joylashuvi": "Расположение терминала",
   "Iltimos eshikni tanlang": "Пожалуйста, выберите дверь",
-  "Aniqlash vaqti": "Aniqlash vaqti",
-
+  "Aniqlash vaqti": "Время обнаружения",
+  "Kanal": " Канал",
 
 
 

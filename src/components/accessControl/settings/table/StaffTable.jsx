@@ -173,7 +173,7 @@ const StaffTable = (props) => {
             dataIndex: '',
             render: (text, record) => (
                 <div onClick={() => editAddStaff(text, record)} className='edit_button'>
-                    <RiEditLine size={22} color='#fff'/>
+                    <RiEditLine size={22} />
                 </div>
             ),
             align: 'center'

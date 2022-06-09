@@ -196,105 +196,50 @@ const AcsessControlTable = () => {
                                 </div>
                             </div>
 
-                            <div className="form_input_wrapper">
-                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Eshik')}</p>
-                                <div className="input_wrapper">
-                                    <Select
-                                        className={`left_select ${isDarkMode && 'darkModeColor'}`}
-                                        style={{width: "100%"}}
-                                        size="large"
-                                        defaultValue={'all'}
-                                        onChange={onChangeDeviceName}
-                                    >
-                                        <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                        {
-                                            allowedDoor.map((item, index) => (
-                                                <Select.Option key={index} >{item.door_name}</Select.Option>
-                                            ))
-                                        }
-                                    </Select>
+                            <div className="access_control_table_inline_inputs">
+                                <div className="form_input_wrapper">
+                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Toifasi')}</p>
+                                    <div className="input_wrapper">
+                                        <Select
+                                            className={`left_select ${isDarkMode && 'darkModeColor'}`}
+                                            size="large"
+                                            style={{width: "100%"}}
+                                            placeholder={"Kiriting"}
+                                            onChange={onChangeUserType}
+                                            value={userType}
+                                            defaultValue={userType}
+                                        >
+                                            <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                            <Select.Option value="1">{t("Xodim")}</Select.Option>
+                                            <Select.Option value="2">{t("Begona")}</Select.Option>
+                                        </Select>
+                                    </div>
+                                </div>
+
+                                <div className="form_input_wrapper">
+                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Lavozimi')}</p>
+                                    <div className="input_wrapper">
+                                        <Select
+                                            className={`left_select ${isDarkMode && 'darkModeColor'}`}
+                                            size="large"
+                                            style={{width: "100%"}}
+                                            onChange={onChangePosition}
+                                            defaultValue={position}
+                                            value={position}
+                                        >
+                                            <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                            {
+
+                                                categoryData[userType -1 ]?.map((item, index) => (
+                                                    <Select.Option key={index} value={item.value}>{t(item.name)}</Select.Option>
+                                                ))
+                                            }
+                                        </Select>
+                                    </div>
                                 </div>
                             </div>
 
-                            {/*<div className="form_input_wrapper">*/}
-                            {/*    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Toifasi')}</p>*/}
-                            {/*    <div className="input_wrapper">*/}
-                            {/*        <Select*/}
-                            {/*            className={`left_select ${isDarkMode && 'darkModeColor'}`}*/}
-                            {/*            onChange={onChangeUserType}*/}
-                            {/*            style={{width: "100%"}}*/}
-                            {/*            size="large"*/}
-                            {/*            defaultValue={userType}*/}
-                            {/*            value={userType}*/}
-                            {/*        >*/}
-                            {/*            <Select.Option value="all">{t('Hammasi')}</Select.Option>*/}
-                            {/*            <Select.Option value="1">{t('Xodim')}</Select.Option>*/}
-                            {/*            <Select.Option value="2">{t('Mehmon ')}</Select.Option>*/}
-                            {/*            <Select.Option value="3">{t('Bloklangan')}</Select.Option>*/}
-                            {/*            <Select.Option value="-1">{t('Begona')}</Select.Option>*/}
-                            {/*        </Select>*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
 
-                            {/*<div className="form_input_wrapper">*/}
-                            {/*    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Lavozimi')}</p>*/}
-                            {/*    <div className="input_wrapper">*/}
-                            {/*        <Select*/}
-                            {/*            className={`left_select ${isDarkMode && 'darkModeColor'}`}*/}
-                            {/*            onChange={onChangePosition}*/}
-                            {/*            style={{width: "100%"}}*/}
-                            {/*            size="large"*/}
-                            {/*            defaultValue={position}*/}
-                            {/*            value={position}*/}
-                            {/*        >*/}
-                            {/*            <Select.Option value="all">{t('Hammasi')}</Select.Option>*/}
-                            {/*            <Select.Option value="1">{t("Oddiy xodim")}</Select.Option>*/}
-                            {/*            <Select.Option value="2">{t("Direktor")}</Select.Option>*/}
-                            {/*            <Select.Option value="3">{t("VIP")}</Select.Option>*/}
-                            {/*        </Select>*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
-
-                            <div className="form_input_wrapper">
-                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Toifasi')}</p>
-                                <div className="input_wrapper">
-                                    <Select
-                                        className={`left_select ${isDarkMode && 'darkModeColor'}`}
-                                        size="large"
-                                        style={{width: "100%"}}
-                                        placeholder={"Kiriting"}
-                                        onChange={onChangeUserType}
-                                        value={userType}
-                                        defaultValue={userType}
-                                    >
-                                        <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                        <Select.Option value="1">{t("Xodim")}</Select.Option>
-                                        <Select.Option value="2">{t("Begona")}</Select.Option>
-                                    </Select>
-                                </div>
-                            </div>
-
-                            <div className="form_input_wrapper">
-                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Lavozimi')}</p>
-                                <div className="input_wrapper">
-                                    <Select
-                                        className={`left_select ${isDarkMode && 'darkModeColor'}`}
-                                        size="large"
-                                        style={{width: "100%"}}
-                                        onChange={onChangePosition}
-                                        defaultValue={position}
-                                        value={position}
-                                    >
-                                        <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                        {
-
-                                            categoryData[userType -1 ]?.map((item, index) => (
-                                                <Select.Option key={index} value={item.value}>{t(item.name)}</Select.Option>
-                                            ))
-                                        }
-                                    </Select>
-                                </div>
-                            </div>
 
                             <div className="form_input_wrapper">
                                 <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t("Tasdiq turi")}</p>
@@ -314,6 +259,26 @@ const AcsessControlTable = () => {
                                         <Select.Option value="4">{t("Yuz va Barmoq izi")}</Select.Option>
                                         <Select.Option value="6">{t("Yuz va ID karta")}</Select.Option>
                                         <Select.Option value="8">{t("Barmoq izi va ID karta")}</Select.Option>
+                                    </Select>
+                                </div>
+                            </div>
+
+                            <div className="form_input_wrapper">
+                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Eshik')}</p>
+                                <div className="input_wrapper">
+                                    <Select
+                                        className={`left_select ${isDarkMode && 'darkModeColor'}`}
+                                        style={{width: "100%"}}
+                                        size="large"
+                                        defaultValue={'all'}
+                                        onChange={onChangeDeviceName}
+                                    >
+                                        <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                        {
+                                            allowedDoor.map((item, index) => (
+                                                <Select.Option key={index} >{item.door_name}</Select.Option>
+                                            ))
+                                        }
                                     </Select>
                                 </div>
                             </div>
@@ -353,7 +318,7 @@ const AcsessControlTable = () => {
                                         value={dateFrom !== "" ? moment(dateFrom) : ""}
                                     />
                                 </div>
-                                <div className="input_wrapper" style={{marginTop: "15px"}}>
+                                <div className="input_wrapper" style={{marginTop: "5px"}}>
                                     <DatePicker
                                         className={`left_input ${isDarkMode && 'darkModeColor'}`}
                                         placeholder={`${moment(new Date()).format(
@@ -370,7 +335,7 @@ const AcsessControlTable = () => {
                         </div>
 
 
-                        <div className="form_input_wrapper add_clear_button" style={{marginTop: "20px"}}>
+                        <div className="form_input_wrapper add_clear_button" style={{marginTop: "5px"}}>
                             <div className="input_wrapper">
                                 <button
                                     type="button"

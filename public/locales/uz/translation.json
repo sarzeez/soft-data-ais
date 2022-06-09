@@ -22,6 +22,7 @@
   "Bor": "Bor",
   "Yo’q": "Yo’q",
   "Soqol": "Soqol",
+  "Soqolli": "Soqolli",
   "Ko’zoynak": "Ko’zoynak",
   "Ko’rishni_tuzatish": "Optik ko'zoynak",
   "Kozoynaksiz": "Ko'zoynaksiz",
@@ -57,7 +58,6 @@
   "Keksa": "Keksa",
   "Niqobli": "Niqobli",
   "Niqobsiz": "Niqobsiz",
-  "Soqolli": "Soqolli",
   "Soqolsiz": "Soqolsiz",
 
   "Kun": "Kun",
@@ -82,6 +82,7 @@
   "Kamera parametrlari": "Kamera parametrlari",
   "Kamera nomi": "Kamera nomi",
   "Kamera turi": "Kamera turi",
+  "Brend": "Brend",
   "IP manzili": "IP manzili",
   "Login": "Login",
   "Parol": "Parol",
@@ -100,7 +101,7 @@
   "Saqlash": "Saqlash",
   "Kamera qo‘shish": "Kamera qo‘shish",
   "O’chirish": "O’chirish",
-  "Guruh qo’shish": "Guruh qo’shish",
+  "Guruh qo'shish": "Guruh qo’shish",
   "Statistika sozlamalari": "Statistika sozlamalari",
 
   "Kiriting": "Kiriting",
@@ -186,7 +187,7 @@
   "Terminallar joylashuvi": "Terminallar joylashuvi",
   "Iltimos eshikni tanlang": "Iltimos eshikni tanlang",
   "Aniqlash vaqti": "Aniqlash vaqti",
-
+  "Kanal": "Kanal",
 
 
 

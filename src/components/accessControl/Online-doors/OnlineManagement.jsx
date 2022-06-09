@@ -1,21 +1,14 @@
 import React, {useState, useEffect} from 'react';
-import downImg from "../../../images/newimages/downn.png";
+import {useTranslation} from "react-i18next";
+import {useNavigate} from "react-router-dom";
+import {useSelector} from "react-redux";
 import managmentImg from "../../../images/newimages/managmentImg.svg";
-import cameraOnn from "../../../images/newimages/access-control 1.svg";
-import cameraOff from "../../../images/newimages/accesscontrolOff.svg";
-import cameraOn from "../../../images/newimages/cameraOn.svg";
-import deleteIcon from "../../../images/newimages/deleteImg.svg";
 import cursor from "../../../images/newimages/cursor.svg";
 import terminalImg1 from "../../../images/newimages/terminalImg/terminalImgone.svg";
 import terminalImg2 from "../../../images/newimages/terminalImg/terminalimgtwo.svg";
 import terminalImg3 from "../../../images/newimages/terminalImg/terminalimgthree.svg";
 import terminalImg4 from "../../../images/newimages/terminalImg/terminalimgfour.svg";
 import Modal from "react-modal";
-import "./onlineManegment.css";
-import {Form, Input, Select} from "antd";
-import uzbek from "../../../images/uzbek.svg";
-import russia from "../../../images/russia.svg";
-import engliz from "../../../images/engliz.svg";
 import axios from "axios";
 import {ip} from "../../../ip";
 import "bootstrap/dist/css/bootstrap.css";
@@ -25,12 +18,12 @@ import doorNext from "../../../images/doorNext.svg";
 import recIcon from "../../../images/recognationIcon.svg";
 import AddStaff from "../modals/add-staff/AddStaff";
 import noIMG from "../../../images/noIMG.svg";
-import {useTranslation} from "react-i18next";
-import {useNavigate} from "react-router-dom";
-import {useSelector} from "react-redux";
+
 import socketIOClient from "socket.io-client";
 import moment from "moment";
 import "./onlineDoors.css";
+import "./onlineManegment.css";
+
 
 import {connect} from "react-redux";
 import {getManagment, putManagment, getTheme} from "../../../redux/theme/themeActions";
@@ -161,18 +154,21 @@ const OnlineManagement = (props) => {
         setDoorThree(false);
         setDoorFour(false);
     }
+
     function terminal2() {
         setDoorOne(true);
         setDoorTwo(true);
         setDoorThree(false);
         setDoorFour(false);
     }
+
     function terminal3() {
         setDoorOne(true);
         setDoorTwo(true);
         setDoorThree(true);
         setDoorFour(false);
     }
+
     function terminal4() {
         setDoorOne(true);
         setDoorTwo(true);
@@ -180,48 +176,17 @@ const OnlineManagement = (props) => {
         setDoorFour(true);
     }
 
-    // new function
 
-
-    // const editingTerminalOrig = () =>{
-    //             axios.get(`${ip}/api/viewercount`)
-    //                 .then((res) => {
-    //                     if (res.data[0]?.count == 1) {
-    //                         terminal1()
-    //                     } else if (res.data[0]?.count == 2) {
-    //                         terminal2()
-    //                     } else if (res.data[0]?.count == 3) {
-    //                         terminal3()
-    //                     } else if (res.data[0]?.count == 4) {
-    //                         terminal4()
-    //                     }
-    //                 })
-    // }
-    //
-    // useEffect(()=>{
-    //     editingTerminalOrig();
-    //     editingTerminalOrig();
-    //     editingTerminalOrig();
-    //     editingTerminalOrig();
-    // },[]);
-    //
-    // const editingTerminals = (index) => {
-    //         axios.put(`${ip}/api/viewer/${index}` , {count: index})
-    //             .then((res) => {
-    //            editingTerminalOrig();
-    //             })
-    // }
-    // new function
     const [viewerId, setViewerId] = useState(0);
     const [terminalViwer1, setTerminalViewer1] = useState([]);
     const [terminalViwer2, setTerminalViewer2] = useState([]);
     const [terminalViwer3, setTerminalViewer3] = useState([]);
     const [terminalViwer4, setTerminalViewer4] = useState([]);
 
-    const [count_id , setCountId] = useState(0);
+    const [count_id, setCountId] = useState(0);
 
-    const editOrig = (ter1,ter2,ter3,ter4) => {
-        console.log("salom" , ter4)
+    const editOrig = (ter1, ter2, ter3, ter4) => {
+        console.log("salom", ter4)
         console.log(ter1?.length)
         axios.get(`${ip}/api/viewercount`)
             .then((res) => {
@@ -235,61 +200,61 @@ const OnlineManagement = (props) => {
                 } else if (res.data[0]?.count == 4) {
                     terminal4();
                 }
-            }).catch(error =>{})
+            }).catch(error => {
+        })
 
-        if (count_id==1){
-            if (ter4?.length > 0){
+        if (count_id == 1) {
+            if (ter4?.length > 0) {
                 axios.put(ip + `/api/terminal/updateviewer/${ter4[0]?.id}`, {viewer: 0})
                     .then((res) => {
                         getTerminalInViewer(4);
                     })
             }
-            if (ter3?.length>0){
+            if (ter3?.length > 0) {
                 axios.put(ip + `/api/terminal/updateviewer/${ter3[0]?.id}`, {viewer: 0})
                     .then((res) => {
                         getTerminalInViewer(3);
                     })
             }
-            if (ter2?.length>0){
+            if (ter2?.length > 0) {
                 axios.put(ip + `/api/terminal/updateviewer/${ter2[0]?.id}`, {viewer: 0})
                     .then((res) => {
                         getTerminalInViewer(2);
                     })
             }
-        } else
-        if (count_id==2){
-            if (ter4?.length > 0){
+        } else if (count_id == 2) {
+            if (ter4?.length > 0) {
                 axios.put(ip + `/api/terminal/updateviewer/${ter4[0]?.id}`, {viewer: 0})
                     .then((res) => {
                         getTerminalInViewer(4);
                     })
             }
-            if (ter3?.length > 0){
+            if (ter3?.length > 0) {
                 axios.put(ip + `/api/terminal/updateviewer/${ter3[0]?.id}`, {viewer: 0})
                     .then((res) => {
                         getTerminalInViewer(3);
                     })
             }
-        } else
-        if (count_id==3){
+        } else if (count_id == 3) {
             console.log("id count  3");
-            if (ter4?.length > 0){
+            if (ter4?.length > 0) {
                 axios.put(ip + `/api/terminal/updateviewer/${ter4[0]?.id}`, {viewer: 0})
                     .then((res) => {
                         getTerminalInViewer(4);
                     })
 
-            } else {}
+            } else {
+            }
         }
 
     }
 
-    useEffect(() => editOrig(),[]);
+    useEffect(() => editOrig(), []);
 
     const editingTerminals = (index) => {
-        axios.put(`${ip}/api/viewer/${index}` , {count: index})
+        axios.put(`${ip}/api/viewer/${index}`, {count: index})
             .then((res) => {
-                editOrig(terminalViwer1,terminalViwer2,terminalViwer3,terminalViwer4)
+                editOrig(terminalViwer1, terminalViwer2, terminalViwer3, terminalViwer4)
             })
     }
 
@@ -307,20 +272,18 @@ const OnlineManagement = (props) => {
             .then(res => {
                 // terminalViwer[viewer_index] = res?.data;
                 // setTerminalViewer(terminalViwer);
-                if (viewer_index == 1){
+                if (viewer_index == 1) {
                     setTerminalViewer1(res?.data);
-                }
-                else if (viewer_index == 2){
+                } else if (viewer_index == 2) {
                     setTerminalViewer2(res?.data);
-                }
-                else if (viewer_index == 3){
+                } else if (viewer_index == 3) {
                     setTerminalViewer3(res?.data);
-                }
-                else if (viewer_index == 4){
+                } else if (viewer_index == 4) {
                     setTerminalViewer4(res?.data);
                 }
             })
-            .catch(err => {})
+            .catch(err => {
+            })
     }
 
     useEffect(() => {
@@ -332,9 +295,9 @@ const OnlineManagement = (props) => {
 
     const selectedTer = (item_Id) => {
         // console.log(viewerId)
-        axios.put( `${ip}/api/terminal/updateviewer/${item_Id}`, {viewer: viewerId})
+        axios.put(`${ip}/api/terminal/updateviewer/${item_Id}`, {viewer: viewerId})
             .then((response) => {
-                getTerminalInViewer(viewerId) ;
+                getTerminalInViewer(viewerId);
             })
         modalOpen();
     }
@@ -372,9 +335,9 @@ const OnlineManagement = (props) => {
 
     const [touch, setTouch] = useState(true);
 
-    const [deleteViewer , setDeleteViewer] = useState(0);
-    const [deleteTerminalId , setDeleteTerminalId] = useState(0);
-    const changeTouch = (delete_id , terminal_id) => {
+    const [deleteViewer, setDeleteViewer] = useState(0);
+    const [deleteTerminalId, setDeleteTerminalId] = useState(0);
+    const changeTouch = (delete_id, terminal_id) => {
         setDeleteViewer(delete_id);
         setDeleteTerminalId(terminal_id);
         setTouch(!touch)
@@ -398,16 +361,19 @@ const OnlineManagement = (props) => {
     const [onlineImg3, setOnlineImg3] = useState(null);
     const [onlineImg4, setOnlineImg4] = useState(null);
 
-    const [isOpenAddStaff, setIsOpenAddStaff] = useState(false)
+    const [isOpenAddStaff, setIsOpenAddStaff] = useState(false);
+
     const addNewStaff = () => {
-        setIsOpenAddStaff(true);
+        // setIsOpenAddStaff(true);
+        // navigate("/access-control-setting");
     }
+
 
     const listenDoorByIp = () => {
         const socket = socketIOClient(ip);
         socket.on("terminal1", data => {
             setOnlineImg(data)
-            console.log("1 = ", data);
+            console.log("1 - ", data);
         });
     }
     const listenDoorByIp2 = () => {
@@ -431,7 +397,6 @@ const OnlineManagement = (props) => {
             console.log("4 - ", data)
         });
     }
-
 
     useEffect(() => listenDoorByIp(), []);
     useEffect(() => listenDoorByIp2(), []);
@@ -524,7 +489,7 @@ const OnlineManagement = (props) => {
                 <div className="online_doors_body">
                     {
                         // terminalViwer["1"]?.length > 0  ?
-                        terminalViwer1?.length > 0  ?
+                        terminalViwer1?.length > 0 ?
                             <DragDropContext onDragEnd={onDragEnd}>
                                 <Droppable droppableId={"droppable"}>
                                     {(provided, snapshot) => (
@@ -534,7 +499,7 @@ const OnlineManagement = (props) => {
                                             style={getListStyle(snapshot.isDraggingOver)}
                                         >
                                             {items.map((item, idx) => (
-                                                <Draggable key={item.id} draggableId={item.id} index={idx} >
+                                                <Draggable key={item.id} draggableId={item.id} index={idx}>
                                                     {(provided, snapshot) => (
                                                         <div
                                                             ref={provided.innerRef}
@@ -542,18 +507,16 @@ const OnlineManagement = (props) => {
                                                             {...provided.dragHandleProps}
                                                         >
                                                             <div className="online_doors_info_content"
-                                                                // onMouseOver={changeTouch}
-                                                                // onMouseDown={changeTouch2}
-                                                                 onClick={()=>changeTouch(1 , terminalViwer1[0]?.id)}
+                                                                 onClick={() => changeTouch(1, terminalViwer1[0]?.id)}
                                                             >
-                                                                <img src={cursor} className="cursorTouch"/>
+                                                                <img src={cursor} className="cursorTouch"
+                                                                // onClick={() => changeTouch(1, terminalViwer1[0]?.id)}
+                                                                // onClickCapture={() => changeTouch(1, terminalViwer1[0]?.id)}
+                                                                />
                                                                 <div
                                                                     className={`online_doors_info_title ${isDarkMode && 'darkModeBackground'}`}>
                                                                     <h3 className={`${isDarkMode && 'darkModeColor'}`}>
                                                                         {
-                                                                            // terminal_data.length>0 ? terminal_data[0].door_name :
-                                                                            // localStorage.getItem("ternimall") ? localStorage.getItem("ternimall") :
-                                                                            //     ""
                                                                             terminalViwer1[0]?.door_name
                                                                         }
                                                                     </h3>
@@ -571,112 +534,121 @@ const OnlineManagement = (props) => {
                                                                     }
                                                                 </div>
                                                                 {
-                                                                    onlineImg
-                                                                        ? (onlineImg.hasOwnProperty('user_in_db')
-                                                                                ?
-                                                                                <div className="doors_right">
-                                                                                    <div className="doors_time_info">
-                                                                                        <p className="doors_time">{moment(new Date(onlineImg?.guest_user?.created_time)).format("DD.MM.YYYY - HH:mm:ss")}</p>
-                                                                                        {/*<h1 className="doors_time">{moment( onlineImg && onlineImg.guest_user && onlineImg.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
-                                                                                    </div>
-                                                                                    <div className="box_right_top">
-                                                                                        <div className="right_top_info">
-                                                                                            <div className="label_box">
-                                                                                                <div
-                                                                                                    className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.fullname}</div>
-                                                                                            </div>
-                                                                                            <div className="label_box">
-                                                                                                <div
-                                                                                                    className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    // className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg?.user_in_db?.user_type == 1 ? t("Xodim") : onlineImg?.user_in_db?.user_type == 2 ? t("Mehmon") : t("Begona")}</div>
-                                                                                                    className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg?.user_in_db?.user_type == 1 ? t("Xodim") : t("Begona")}</div>
-                                                                                            </div>
-                                                                                            <div className="label_box">
-                                                                                                <div
-                                                                                                    className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg?.user_in_db?.rank == 1 ? t("Oddiy xodim") : onlineImg?.user_in_db?.rank == 2 ? t("Direktor") : onlineImg?.user_in_db?.rank == 3 ? t("VIP") : ''}</div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div className="img_box">
-                                                                                            <img className="door_user_img"
-                                                                                                 src={`${ip}/${onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.id}.jpg`}
-                                                                                                 alt="img"/>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div className="label_box">
-                                                                                        <div
-                                                                                            className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:
-                                                                                        </div>
-                                                                                        <div
-                                                                                            className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg?.guest_user?.auth_type}</div>
-                                                                                        {/*className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg?.user_in_db?.access_type}</div>*/}
-                                                                                    </div>
-                                                                                    {
-                                                                                        Number(onlineImg?.guest_user?.status) !== 1 ?
-                                                                                            <div className="limit_info">
-                                                                                                <div className="limit_info_top">
-                                                                                                    <img
-                                                                                                        className="limit_info_top_img"
-                                                                                                        src={warning}
-                                                                                                        alt=""/>
-                                                                                                    <h1 className="limit_top_title">{t("Xodimning kirish muddati tugagan!")}</h1>
-                                                                                                </div>
-                                                                                                <p className="limit_middle_title">{t("Ruxsat etilgan muddatni uzaytirish uchun")}</p>
-                                                                                                <div
-                                                                                                    className="limit_info_bottom">
-                                                                                                    <h3 className="limit_bottom_title">{t("Sozlamalarga o’ting")}</h3>
-                                                                                                    <img
-                                                                                                        className="limit_bottom_title_img"
-                                                                                                        src={doorNext}
-                                                                                                        alt=""/>
-                                                                                                </div>
-                                                                                            </div> : ``
-                                                                                    }
-
+                                                                    onlineImg ? (onlineImg.hasOwnProperty('user_in_db') ?
+                                                                            <div className="doors_right">
+                                                                                <div className="doors_time_info">
+                                                                                    <p className="doors_time">{moment(new Date(onlineImg?.guest_user?.created_time)).format("DD.MM.YYYY - HH:mm:ss")}</p>
+                                                                                    {/*<h1 className="doors_time">{moment( onlineImg && onlineImg.guest_user && onlineImg.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
                                                                                 </div>
-                                                                                :
-                                                                                <div className="doords_right_no">
-                                                                                    <div className="doors_time_info">
-                                                                                        <p className="doors_time">08.01.2022
-                                                                                            - 08:45:47</p>
-                                                                                        {/*<h1 className="doors_time">{moment( onlineImg && onlineImg.guest_user && onlineImg.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
+                                                                                <div className="box_right_top">
+                                                                                    <div className="right_top_info">
+                                                                                        <div className="label_box">
+                                                                                            <div
+                                                                                                className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:
+                                                                                            </div>
+                                                                                            <div
+                                                                                                className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.fullname}</div>
+                                                                                        </div>
+                                                                                        <div className="label_box">
+                                                                                            <div
+                                                                                                className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:
+                                                                                            </div>
+                                                                                            <div
+                                                                                                // className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg?.user_in_db?.user_type == 1 ? t("Xodim") : onlineImg?.user_in_db?.user_type == 2 ? t("Mehmon") : t("Begona")}</div>
+                                                                                                className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg?.user_in_db?.user_type == 1 ? t("Xodim") : t("Begona")}</div>
+                                                                                        </div>
+                                                                                        <div className="label_box">
+                                                                                            <div
+                                                                                                className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:
+                                                                                            </div>
+                                                                                            <div
+                                                                                                className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>
+                                                                                                {
+                                                                                                    onlineImg?.user_in_db?.rank == 1 ? t("Oddiy xodim") :
+                                                                                                        onlineImg?.user_in_db?.rank == 2 ? t("Direktor") :
+                                                                                                            onlineImg?.user_in_db?.rank == 3 ? t("VIP") :
+                                                                                                                onlineImg?.user_in_db?.rank == 4 ? t("Mehmon") :
+                                                                                                                    onlineImg?.user_in_db?.rank == 5 ? t("Bloklangan") : ''
+                                                                                                }
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div className="img_box">
+                                                                                        <img className="door_user_img"
+                                                                                             src={`${ip}/${onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.id}.jpg`}
+                                                                                             alt="img"/>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div className="label_box">
+                                                                                    <div
+                                                                                        className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:
                                                                                     </div>
                                                                                     <div
-                                                                                        className="doords_right_not_allowed">
-                                                                                        <img className="doors_right_icon"
-                                                                                             src={recIcon} alt=""/>
+                                                                                        // className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg?.guest_user?.auth_type}</div>
+                                                                                        className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>
+                                                                                        {onlineImg?.guest_user?.auth_type === "1" ? t("Yuz") :
+                                                                                            onlineImg?.guest_user?.auth_type === "2" ? t("Barmoq izi") :
+                                                                                                onlineImg?.guest_user?.auth_type === "3" ? t("ID karta") :
+                                                                                                    onlineImg?.guest_user?.auth_type === "4" ? t("Yuz va Barmoq izi") :
+                                                                                                        onlineImg?.guest_user?.auth_type === "6" ? t("Yuz va ID karta") :
+                                                                                                            onlineImg?.guest_user?.auth_type === "8" ? t("Barmoq izi va ID karta") : ''
 
-                                                                                        <h1 className={`not_allowed_title ${isDarkMode && 'darkModeColor'}`}>{t("Ma’lumot topilmadi")}</h1>
-                                                                                        <p className={`not_allowed_text ${isDarkMode && 'darkModeColor'}`}>{t("Ushbu shaxs ma’lumotlar bazasida aniqlanmadi")}</p>
-
-                                                                                        <AddStaff
-                                                                                            isOpenAddStaff={isOpenAddStaff}
-                                                                                            setIsOpenAddStaff={setIsOpenAddStaff}
-                                                                                        />
-                                                                                        <div
-                                                                                            className="not_allowed_buttons">
-                                                                                            <button
-                                                                                                className="not_allowed_buttons_cancel"
-                                                                                                onClick={reject}>{t("Bekor qilish")}</button>
-                                                                                            <button onClick={addNewStaff}
-                                                                                                    className="not_allowed_buttons_registration">{t("Ro’yxatga olish")}</button>
-                                                                                        </div>
-                                                                                        <button onClick={openDoor}
-                                                                                                className="not_allowed_allow">{t("Ruxsat berish")}</button>
-                                                                                    </div>
+                                                                                        }</div>
+                                                                                    {/*className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg?.user_in_db?.access_type}</div>*/}
                                                                                 </div>
+                                                                                {
+                                                                                    Number(onlineImg?.guest_user?.status) !== 1 ?
+                                                                                        <div className="limit_info">
+                                                                                            <div
+                                                                                                className="limit_info_top">
+                                                                                                <img
+                                                                                                    className="limit_info_top_img"
+                                                                                                    src={warning}
+                                                                                                    alt=""/>
+                                                                                                <h1 className="limit_top_title">{t("Xodimning kirish muddati tugagan!")}</h1>
+                                                                                            </div>
+                                                                                            <p className="limit_middle_title">{t("Ruxsat etilgan muddatni uzaytirish uchun")}</p>
+                                                                                            <div
+                                                                                                className="limit_info_bottom">
+                                                                                                <h3 className="limit_bottom_title">{t("Sozlamalarga o’ting")}</h3>
+                                                                                                <img
+                                                                                                    className="limit_bottom_title_img"
+                                                                                                    src={doorNext}
+                                                                                                    alt=""/>
+                                                                                            </div>
+                                                                                        </div> : ``
+                                                                                }
+                                                                            </div>
+                                                                            :
+                                                                            <div className="doords_right_no">
+                                                                                <div className="doors_time_info">
+                                                                                    <p className="doors_time">{moment(new Date(onlineImg?.guest_user?.created_time)).format("DD.MM.YYYY - HH:mm:ss")}</p>
+                                                                                </div>
+                                                                                <div
+                                                                                    className="doords_right_not_allowed">
+                                                                                    <img className="doors_right_icon" src={recIcon} alt=""/>
+                                                                                    <h1 className={`not_allowed_title ${isDarkMode && 'darkModeColor'}`}>{t("Ma’lumot topilmadi")}</h1>
+                                                                                    <p className={`not_allowed_text ${isDarkMode && 'darkModeColor'}`}>{t("Ushbu shaxs ma’lumotlar bazasida aniqlanmadi")}</p>
+                                                                                    <AddStaff
+                                                                                        isOpenAddStaff={isOpenAddStaff}
+                                                                                        setIsOpenAddStaff={setIsOpenAddStaff}
+                                                                                    />
+                                                                                    <div className="not_allowed_buttons">
+                                                                                        <button className="not_allowed_buttons_cancel" onClick={reject}>{t("Bekor qilish")}</button>
+                                                                                        <button onClick={addNewStaff} className="not_allowed_buttons_registration_two">{t("Ro’yxatga olish")}</button>
+                                                                                        {/*<button className="not_allowed_buttons_registration"><Link to="">{t("Ro’yxatga olish")}</Link></button>*/}
+                                                                                    </div>
+                                                                                    <button onClick={openDoor} className="not_allowed_allow">{t("Ruxsat berish")}</button>
+                                                                                </div>
+                                                                            </div>
                                                                         )
                                                                         :
                                                                         <div className="doors_right">
+                                                                            {/*oddiy turgan xolatidagi page*/}
                                                                             <div className="doors_time_info">
+
                                                                                 <p className="doors_time">{t("Aniqlash vaqti")}</p>
+
                                                                                 {/*<h1 className="doors_time">{moment( onlineImg && onlineImg.guest_user && onlineImg.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
                                                                             </div>
                                                                             <div className="box_right_top">
@@ -747,7 +719,7 @@ const OnlineManagement = (props) => {
                     {/*terminal - 2*/}
 
                     {
-                        terminalViwer2?.length > 0  ?
+                        terminalViwer2?.length > 0 ?
                             // terminalViwer["2"]?.length > 0  ?
                             <DragDropContext onDragEnd={onDragEnd2}>
                                 <Droppable droppableId={"droppable"}>
@@ -760,27 +732,24 @@ const OnlineManagement = (props) => {
                                             // onMouseDown={changeTouch2}
                                         >
                                             {items2.map((item, idx) => (
-                                                <Draggable key={item.id} draggableId={item.id} index={idx} >
+                                                <Draggable key={item.id} draggableId={item.id} index={idx}>
                                                     {(provided, snapshot) => (
                                                         <div
                                                             ref={provided.innerRef}
                                                             {...provided.draggableProps}
                                                             {...provided.dragHandleProps}
-
                                                         >
-                                                            <div
-                                                                className={doorTwo === true ? "online_doors_info_content" : "online_doors_info_content d-none"}
-                                                                onClick={()=>changeTouch(2 , terminalViwer2[0]?.id)}
-                                                                // onMouseDown={changeTouch2}
+                                                            <div className="online_doors_info_content"
+                                                                 onClick={() => changeTouch(2, terminalViwer2[0]?.id)}
                                                             >
-                                                                <img src={cursor} className="cursorTouch"/>
+                                                                <img src={cursor} className="cursorTouch"
+                                                                    // onClick={() => changeTouch(1, terminalViwer1[0]?.id)}
+                                                                    // onClickCapture={() => changeTouch(1, terminalViwer1[0]?.id)}
+                                                                />
                                                                 <div
                                                                     className={`online_doors_info_title ${isDarkMode && 'darkModeBackground'}`}>
                                                                     <h3 className={`${isDarkMode && 'darkModeColor'}`}>
                                                                         {
-                                                                            // terminal_data.length>0 ? terminal_data[0].door_name :
-                                                                            // localStorage.getItem("ternimall") ? localStorage.getItem("ternimall") :
-                                                                            //     ""
                                                                             terminalViwer2[0]?.door_name
                                                                         }
                                                                     </h3>
@@ -791,112 +760,127 @@ const OnlineManagement = (props) => {
                                                                             ?
                                                                             <div className="overflov_img">
                                                                                 <img className="doors_left_img"
-                                                                                     src={url2} alt=""/>
+                                                                                     src={url} alt=""/>
                                                                             </div>
                                                                             : <img className="doors_left_default"
                                                                                    src={myImg} alt="img"/>
                                                                     }
                                                                 </div>
                                                                 {
-                                                                    onlineImg2
-                                                                        ? (onlineImg2.hasOwnProperty('user_in_db')
-                                                                                ?
-                                                                                <div className="doors_right">
-                                                                                    <div className="doors_time_info">
-                                                                                        <p className="doors_time">08.01.2022
-                                                                                            - 08:45:47</p>
-                                                                                        {/*<h1 className="doors_time">{moment( onlineImg2 && onlineImg2.guest_user && onlineImg2.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
-                                                                                    </div>
-                                                                                    <div className="box_right_top">
-                                                                                        <div className="right_top_info">
-                                                                                            <div className="label_box">
-                                                                                                <div
-                                                                                                    className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg2 && onlineImg2.user_in_db && onlineImg2.user_in_db.fullname}</div>
+                                                                    onlineImg2 ? (onlineImg2.hasOwnProperty('user_in_db') ?
+                                                                            <div className="doors_right">
+                                                                                <div className="doors_time_info">
+                                                                                    <p className="doors_time">{moment(new Date(onlineImg2?.guest_user?.created_time)).format("DD.MM.YYYY - HH:mm:ss")}</p>
+                                                                                    {/*<h1 className="doors_time">{moment( onlineImg2 && onlineImg2.guest_user && onlineImg2.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
+                                                                                </div>
+                                                                                <div className="box_right_top">
+                                                                                    <div className="right_top_info">
+                                                                                        <div className="label_box">
+                                                                                            <div
+                                                                                                className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:
                                                                                             </div>
-                                                                                            <div className="label_box">
-                                                                                                <div
-                                                                                                    className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg2?.user_in_db?.user_type == 1 ? t("Xodim") : onlineImg2?.user_in_db?.user_type == 2 ? t("Mehmon") : t("Begona")}</div>
-                                                                                            </div>
-                                                                                            <div className="label_box">
-                                                                                                <div
-                                                                                                    className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg2?.user_in_db?.rank == 1 ? t("Oddiy xodim") : onlineImg2?.user_in_db?.rank == 2 ? t("Direktor") : onlineImg2?.user_in_db?.rank == 3 ? t("VIP") : ''}</div>
-                                                                                            </div>
+                                                                                            <div
+                                                                                                className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg2 && onlineImg2.user_in_db && onlineImg2.user_in_db.fullname}</div>
                                                                                         </div>
-                                                                                        <div className="img_box">
-                                                                                            <img className="door_user_img"
-                                                                                                 src={`${ip}/${onlineImg2 && onlineImg2.user_in_db && onlineImg2.user_in_db.id}.jpg`}
-                                                                                                 alt="img"/>
+                                                                                        <div className="label_box">
+                                                                                            <div
+                                                                                                className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:
+                                                                                            </div>
+                                                                                            <div
+                                                                                                // className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg2?.user_in_db?.user_type == 1 ? t("Xodim") : onlineImg2?.user_in_db?.user_type == 2 ? t("Mehmon") : t("Begona")}</div>
+                                                                                                className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg2?.user_in_db?.user_type == 1 ? t("Xodim") : t("Begona")}</div>
+                                                                                        </div>
+                                                                                        <div className="label_box">
+                                                                                            <div
+                                                                                                className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:
+                                                                                            </div>
+                                                                                            <div
+                                                                                                className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>
+                                                                                                {
+                                                                                                    onlineImg2?.user_in_db?.rank == 1 ? t("Oddiy xodim") :
+                                                                                                        onlineImg2?.user_in_db?.rank == 2 ? t("Direktor") :
+                                                                                                            onlineImg2?.user_in_db?.rank == 3 ? t("VIP") :
+                                                                                                                onlineImg2?.user_in_db?.rank == 4 ? t("Mehmon") :
+                                                                                                                    onlineImg2?.user_in_db?.rank == 5 ? t("Bloklangan") : ''
+                                                                                                }
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div className="label_box">
-                                                                                        <div
-                                                                                            className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:
-                                                                                        </div>
-                                                                                        <div
-                                                                                            className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg2?.user_in_db?.access_type}</div>
-                                                                                    </div>
-                                                                                    <div className="limit_info">
-                                                                                        <div className="limit_info_top">
-                                                                                            <img
-                                                                                                className="limit_info_top_img"
-                                                                                                src={warning} alt=""/>
-                                                                                            <h1 className="limit_top_title">{t("Xodimning kirish muddati tugagan!")}</h1>
-                                                                                        </div>
-                                                                                        <p className="limit_middle_title">{t("Ruxsat etilgan muddatni uzaytirish uchun")}</p>
-                                                                                        <div className="limit_info_bottom">
-                                                                                            <h3 className="limit_bottom_title">{t("Sozlamalarga o’ting")}</h3>
-                                                                                            <img
-                                                                                                className="limit_bottom_title_img"
-                                                                                                src={doorNext} alt=""/>
-                                                                                        </div>
+                                                                                    <div className="img_box">
+                                                                                        <img className="door_user_img"
+                                                                                             src={`${ip}/${onlineImg2 && onlineImg2.user_in_db && onlineImg2.user_in_db.id}.jpg`}
+                                                                                             alt="img"/>
                                                                                     </div>
                                                                                 </div>
-                                                                                :
-                                                                                <div className="doords_right_no">
-                                                                                    <div className="doors_time_info">
-                                                                                        <p className="doors_time">08.01.2022
-                                                                                            - 08:45:47</p>
-                                                                                        {/*<h1 className="doors_time">{moment( onlineImg2 && onlineImg2.guest_user && onlineImg2.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
+                                                                                <div className="label_box">
+                                                                                    <div
+                                                                                        className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:
                                                                                     </div>
                                                                                     <div
-                                                                                        className="doords_right_not_allowed">
-                                                                                        <img className="doors_right_icon"
-                                                                                             src={recIcon} alt=""/>
+                                                                                        // className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg2?.guest_user?.auth_type}</div>
+                                                                                        className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>
+                                                                                        {onlineImg2?.guest_user?.auth_type === "1" ? t("Yuz") :
+                                                                                            onlineImg2?.guest_user?.auth_type === "2" ? t("Barmoq izi") :
+                                                                                                onlineImg2?.guest_user?.auth_type === "3" ? t("ID karta") :
+                                                                                                    onlineImg2?.guest_user?.auth_type === "4" ? t("Yuz va Barmoq izi") :
+                                                                                                        onlineImg2?.guest_user?.auth_type === "6" ? t("Yuz va ID karta") :
+                                                                                                            onlineImg2?.guest_user?.auth_type === "8" ? t("Barmoq izi va ID karta") : ''
 
-                                                                                        <h1 className={`not_allowed_title ${isDarkMode && 'darkModeColor'}`}>{t("Ma’lumot topilmadi")}</h1>
-                                                                                        <p className={`not_allowed_text ${isDarkMode && 'darkModeColor'}`}>{t("Ushbu shaxs ma’lumotlar bazasida aniqlanmadi")}</p>
-
-                                                                                        <AddStaff
-                                                                                            isOpenAddStaff={isOpenAddStaff}
-                                                                                            setIsOpenAddStaff={setIsOpenAddStaff}
-                                                                                        />
-                                                                                        <div
-                                                                                            className="not_allowed_buttons">
-                                                                                            <button
-                                                                                                className="not_allowed_buttons_cancel"
-                                                                                                onClick={reject}>{t("Bekor qilish")}</button>
-                                                                                            <button onClick={addNewStaff}
-                                                                                                    className="not_allowed_buttons_registration">{t("Ro’yxatga olish")}</button>
-                                                                                        </div>
-                                                                                        <button onClick={openDoor}
-                                                                                                className="not_allowed_allow">{t("Ruxsat berish")}</button>
-                                                                                    </div>
+                                                                                        }</div>
+                                                                                    {/*className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg2?.user_in_db?.access_type}</div>*/}
                                                                                 </div>
+                                                                                {
+                                                                                    Number(onlineImg2?.guest_user?.status) !== 1 ?
+                                                                                        <div className="limit_info">
+                                                                                            <div
+                                                                                                className="limit_info_top">
+                                                                                                <img
+                                                                                                    className="limit_info_top_img"
+                                                                                                    src={warning}
+                                                                                                    alt=""/>
+                                                                                                <h1 className="limit_top_title">{t("Xodimning kirish muddati tugagan!")}</h1>
+                                                                                            </div>
+                                                                                            <p className="limit_middle_title">{t("Ruxsat etilgan muddatni uzaytirish uchun")}</p>
+                                                                                            <div
+                                                                                                className="limit_info_bottom">
+                                                                                                <h3 className="limit_bottom_title">{t("Sozlamalarga o’ting")}</h3>
+                                                                                                <img
+                                                                                                    className="limit_bottom_title_img"
+                                                                                                    src={doorNext}
+                                                                                                    alt=""/>
+                                                                                            </div>
+                                                                                        </div> : ``
+                                                                                }
+                                                                            </div>
+                                                                            :
+                                                                            <div className="doords_right_no">
+                                                                                <div className="doors_time_info">
+                                                                                    <p className="doors_time">{moment(new Date(onlineImg2?.guest_user?.created_time)).format("DD.MM.YYYY - HH:mm:ss")}</p>
+                                                                                </div>
+                                                                                <div
+                                                                                    className="doords_right_not_allowed">
+                                                                                    <img className="doors_right_icon" src={recIcon} alt=""/>
+                                                                                    <h1 className={`not_allowed_title ${isDarkMode && 'darkModeColor'}`}>{t("Ma’lumot topilmadi")}</h1>
+                                                                                    <p className={`not_allowed_text ${isDarkMode && 'darkModeColor'}`}>{t("Ushbu shaxs ma’lumotlar bazasida aniqlanmadi")}</p>
+                                                                                    <AddStaff
+                                                                                        isOpenAddStaff={isOpenAddStaff}
+                                                                                        setIsOpenAddStaff={setIsOpenAddStaff}
+                                                                                    />
+                                                                                    <div className="not_allowed_buttons">
+                                                                                        <button className="not_allowed_buttons_cancel" onClick={reject}>{t("Bekor qilish")}</button>
+                                                                                        <button onClick={addNewStaff} className="not_allowed_buttons_registration_two">{t("Ro’yxatga olish")}</button>
+                                                                                        {/*<button className="not_allowed_buttons_registration"><Link to="">{t("Ro’yxatga olish")}</Link></button>*/}
+                                                                                    </div>
+                                                                                    <button onClick={openDoor} className="not_allowed_allow">{t("Ruxsat berish")}</button>
+                                                                                </div>
+                                                                            </div>
                                                                         )
                                                                         :
                                                                         <div className="doors_right">
+                                                                            {/*oddiy turgan xolatidagi page*/}
                                                                             <div className="doors_time_info">
-                                                                                <p className="doors_time">08.01.2022 -
-                                                                                    08:45:47</p>
+                                                                                <p className="doors_time">Aniqlash
+                                                                                    vaqti</p>
                                                                                 {/*<h1 className="doors_time">{moment( onlineImg2 && onlineImg2.guest_user && onlineImg2.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
                                                                             </div>
                                                                             <div className="box_right_top">
@@ -964,7 +948,7 @@ const OnlineManagement = (props) => {
                     }
                     {/*teminal - 3*/}
                     {
-                        terminalViwer3?.length > 0  ?
+                        terminalViwer3?.length > 0 ?
                             <DragDropContext onDragEnd={onDragEnd3}>
                                 <Droppable droppableId={"droppable"}>
                                     {(provided, snapshot) => (
@@ -976,187 +960,212 @@ const OnlineManagement = (props) => {
                                             // onMouseDown={changeTouch2}
                                         >
                                             {items3.map((item, idx) => (
-                                                <Draggable key={item.id} draggableId={item.id} index={idx} >
+                                                <Draggable key={item.id} draggableId={item.id} index={idx}>
                                                     {(provided, snapshot) => (
+
                                                         <div
+                                                            {...provided.droppableProps}
                                                             ref={provided.innerRef}
-                                                            {...provided.draggableProps}
-                                                            {...provided.dragHandleProps}
-
+                                                            style={getListStyle(snapshot.isDraggingOver)}
                                                         >
-
-                                                            <div
-                                                                className={doorThree === true ? "online_doors_info_content" : "online_doors_info_content d-none"}
-                                                                onClick={()=>changeTouch(3 , terminalViwer3[0]?.id)}
-                                                                // onMouseDown={changeTouch2}
-                                                            >
-                                                                <img src={cursor} className="cursorTouch"/>
-                                                                <div
-                                                                    className={`online_doors_info_title ${isDarkMode && 'darkModeBackground'}`}>
-                                                                    <h3 className={`${isDarkMode && 'darkModeColor'}`}>
-                                                                        {
-                                                                            // terminal_data.length>0 ? terminal_data[0].door_name :
-                                                                            // localStorage.getItem("ternimall") ? localStorage.getItem("ternimall") :
-                                                                            //     ""
-                                                                            terminalViwer3[0]?.door_name
-                                                                        }
-                                                                    </h3>
-                                                                </div>
-                                                                <div className="door_img_box">
-                                                                    {
-                                                                        onlineImg3
-                                                                            ?
-                                                                            <div className="overflov_img">
-                                                                                <img className="doors_left_img"
-                                                                                     src={url3} alt=""/>
-                                                                            </div>
-                                                                            : <img className="doors_left_default"
-                                                                                   src={myImg} alt="img"/>
-                                                                    }
-                                                                </div>
-                                                                {
-                                                                    onlineImg3
-                                                                        ? (onlineImg3.hasOwnProperty('user_in_db')
-                                                                                ?
-                                                                                <div className="doors_right">
-                                                                                    <div className="doors_time_info">
-                                                                                        <p className="doors_time">08.01.2022
-                                                                                            - 08:45:47</p>
-                                                                                        {/*<h1 className="doors_time">{moment( onlineImg3 && onlineImg3.guest_user && onlineImg3.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
-                                                                                    </div>
-                                                                                    <div className="box_right_top">
-                                                                                        <div className="right_top_info">
-                                                                                            <div className="label_box">
-                                                                                                <div
-                                                                                                    className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg3 && onlineImg3.user_in_db && onlineImg3.user_in_db.fullname}</div>
-                                                                                            </div>
-                                                                                            <div className="label_box">
-                                                                                                <div
-                                                                                                    className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg3?.user_in_db?.user_type == 1 ? t("Xodim") : onlineImg3?.user_in_db?.user_type == 2 ? t("Mehmon") : t("Begona")}</div>
-                                                                                            </div>
-                                                                                            <div className="label_box">
-                                                                                                <div
-                                                                                                    className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg3?.user_in_db?.rank == 1 ? t("Oddiy xodim") : onlineImg3?.user_in_db?.rank == 2 ? t("Direktor") : onlineImg3?.user_in_db?.rank == 3 ? t("VIP") : ''}</div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div className="img_box">
-                                                                                            <img className="door_user_img"
-                                                                                                 src={`${ip}/${onlineImg3 && onlineImg3.user_in_db && onlineImg3.user_in_db.id}.jpg`}
-                                                                                                 alt="img"/>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div className="label_box">
-                                                                                        <div
-                                                                                            className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:
-                                                                                        </div>
-                                                                                        <div
-                                                                                            className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg3?.user_in_db?.access_type}</div>
-                                                                                    </div>
-                                                                                    <div className="limit_info">
-                                                                                        <div className="limit_info_top">
-                                                                                            <img
-                                                                                                className="limit_info_top_img"
-                                                                                                src={warning} alt=""/>
-                                                                                            <h1 className="limit_top_title">{t("Xodimning kirish muddati tugagan!")}</h1>
-                                                                                        </div>
-                                                                                        <p className="limit_middle_title">{t("Ruxsat etilgan muddatni uzaytirish uchun")}</p>
-                                                                                        <div className="limit_info_bottom">
-                                                                                            <h3 className="limit_bottom_title">{t("Sozlamalarga o’ting")}</h3>
-                                                                                            <img
-                                                                                                className="limit_bottom_title_img"
-                                                                                                src={doorNext} alt=""/>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                :
-                                                                                <div className="doords_right_no">
-                                                                                    <div className="doors_time_info">
-                                                                                        <p className="doors_time">08.01.2022
-                                                                                            - 08:45:47</p>
-                                                                                        {/*<h1 className="doors_time">{moment( onlineImg3 && onlineImg3.guest_user && onlineImg3.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
-                                                                                    </div>
-                                                                                    <div
-                                                                                        className="doords_right_not_allowed">
-                                                                                        <img className="doors_right_icon"
-                                                                                             src={recIcon} alt=""/>
-
-                                                                                        <h1 className={`not_allowed_title ${isDarkMode && 'darkModeColor'}`}>{t("Ma’lumot topilmadi")}</h1>
-                                                                                        <p className={`not_allowed_text ${isDarkMode && 'darkModeColor'}`}>{t("Ushbu shaxs ma’lumotlar bazasida aniqlanmadi")}</p>
-
-                                                                                        <AddStaff
-                                                                                            isOpenAddStaff={isOpenAddStaff}
-                                                                                            setIsOpenAddStaff={setIsOpenAddStaff}
-                                                                                        />
-                                                                                        <div
-                                                                                            className="not_allowed_buttons">
-                                                                                            <button
-                                                                                                className="not_allowed_buttons_cancel"
-                                                                                                onClick={reject}>{t("Bekor qilish")}</button>
-                                                                                            <button onClick={addNewStaff}
-                                                                                                    className="not_allowed_buttons_registration">{t("Ro’yxatga olish")}</button>
-                                                                                        </div>
-                                                                                        <button onClick={openDoor}
-                                                                                                className="not_allowed_allow">{t("Ruxsat berish")}</button>
-                                                                                    </div>
-                                                                                </div>
-                                                                        )
-                                                                        :
-                                                                        <div className="doors_right">
-                                                                            <div className="doors_time_info">
-                                                                                <p className="doors_time">08.01.2022 -
-                                                                                    08:45:47</p>
-                                                                                {/*<h1 className="doors_time">{moment( onlineImg3 && onlineImg3.guest_user && onlineImg3.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
-                                                                            </div>
-                                                                            <div className="box_right_top">
-                                                                                <div className="right_top_info">
-                                                                                    <div className="label_box">
-                                                                                        <div
-                                                                                            className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:
-                                                                                        </div>
-                                                                                        <div
-                                                                                            className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
-                                                                                    </div>
-                                                                                    <div className="label_box">
-                                                                                        <div
-                                                                                            className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:
-                                                                                        </div>
-                                                                                        <div
-                                                                                            className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
-                                                                                    </div>
-                                                                                    <div className="label_box">
-                                                                                        <div
-                                                                                            className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:
-                                                                                        </div>
-                                                                                        <div
-                                                                                            className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
-                                                                                    </div>
-
-                                                                                </div>
-
-                                                                                <div className="img_box">
-                                                                                    <img className="no_my_img"
-                                                                                         src={noIMG} alt=""/>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div className="label_box">
+                                                            {items.map((item, idx) => (
+                                                                <Draggable key={item.id} draggableId={item.id} index={idx}>
+                                                                    {(provided, snapshot) => (
+                                                                        <div
+                                                                            ref={provided.innerRef}
+                                                                            {...provided.draggableProps}
+                                                                            {...provided.dragHandleProps}
+                                                                        >
+                                                                            <div className="online_doors_info_content"
+                                                                                 onClick={() => changeTouch(3, terminalViwer3[0]?.id)}
+                                                                            >
+                                                                                <img src={cursor} className="cursorTouch"
+                                                                                    // onClick={() => changeTouch(1, terminalViwer1[0]?.id)}
+                                                                                    // onClickCapture={() => changeTouch(1, terminalViwer1[0]?.id)}
+                                                                                />
                                                                                 <div
-                                                                                    className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:
+                                                                                    className={`online_doors_info_title ${isDarkMode && 'darkModeBackground'}`}>
+                                                                                    <h3 className={`${isDarkMode && 'darkModeColor'}`}>
+                                                                                        {
+                                                                                            terminalViwer3[0]?.door_name
+                                                                                        }
+                                                                                    </h3>
                                                                                 </div>
-                                                                                <div
-                                                                                    className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
+                                                                                <div className="door_img_box">
+                                                                                    {
+                                                                                        onlineImg3
+                                                                                            ?
+                                                                                            <div className="overflov_img">
+                                                                                                <img className="doors_left_img"
+                                                                                                     src={url} alt=""/>
+                                                                                            </div>
+                                                                                            : <img className="doors_left_default"
+                                                                                                   src={myImg} alt="img"/>
+                                                                                    }
+                                                                                </div>
+                                                                                {
+                                                                                    onlineImg3 ? (onlineImg3.hasOwnProperty('user_in_db') ?
+                                                                                            <div className="doors_right">
+                                                                                                <div className="doors_time_info">
+                                                                                                    <p className="doors_time">{moment(new Date(onlineImg3?.guest_user?.created_time)).format("DD.MM.YYYY - HH:mm:ss")}</p>
+                                                                                                    {/*<h1 className="doors_time">{moment( onlineImg3 && onlineImg3.guest_user && onlineImg3.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
+                                                                                                </div>
+                                                                                                <div className="box_right_top">
+                                                                                                    <div className="right_top_info">
+                                                                                                        <div className="label_box">
+                                                                                                            <div
+                                                                                                                className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg3 && onlineImg3.user_in_db && onlineImg3.user_in_db.fullname}</div>
+                                                                                                        </div>
+                                                                                                        <div className="label_box">
+                                                                                                            <div
+                                                                                                                className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                // className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg3?.user_in_db?.user_type == 1 ? t("Xodim") : onlineImg3?.user_in_db?.user_type == 2 ? t("Mehmon") : t("Begona")}</div>
+                                                                                                                className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg3?.user_in_db?.user_type == 1 ? t("Xodim") : t("Begona")}</div>
+                                                                                                        </div>
+                                                                                                        <div className="label_box">
+                                                                                                            <div
+                                                                                                                className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>
+                                                                                                                {
+                                                                                                                    onlineImg3?.user_in_db?.rank == 1 ? t("Oddiy xodim") :
+                                                                                                                        onlineImg3?.user_in_db?.rank == 2 ? t("Direktor") :
+                                                                                                                            onlineImg3?.user_in_db?.rank == 3 ? t("VIP") :
+                                                                                                                                onlineImg3?.user_in_db?.rank == 4 ? t("Mehmon") :
+                                                                                                                                    onlineImg3?.user_in_db?.rank == 5 ? t("Bloklangan") : ''
+                                                                                                                }
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div className="img_box">
+                                                                                                        <img className="door_user_img"
+                                                                                                             src={`${ip}/${onlineImg3 && onlineImg3.user_in_db && onlineImg3.user_in_db.id}.jpg`}
+                                                                                                             alt="img"/>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div className="label_box">
+                                                                                                    <div
+                                                                                                        className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:
+                                                                                                    </div>
+                                                                                                    <div
+                                                                                                        // className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg3?.guest_user?.auth_type}</div>
+                                                                                                        className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>
+                                                                                                        {onlineImg3?.guest_user?.auth_type === "1" ? t("Yuz") :
+                                                                                                            onlineImg3?.guest_user?.auth_type === "2" ? t("Barmoq izi") :
+                                                                                                                onlineImg3?.guest_user?.auth_type === "3" ? t("ID karta") :
+                                                                                                                    onlineImg3?.guest_user?.auth_type === "4" ? t("Yuz va Barmoq izi") :
+                                                                                                                        onlineImg3?.guest_user?.auth_type === "6" ? t("Yuz va ID karta") :
+                                                                                                                            onlineImg3?.guest_user?.auth_type === "8" ? t("Barmoq izi va ID karta") : ''
+
+                                                                                                        }</div>
+                                                                                                    {/*className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg3?.user_in_db?.access_type}</div>*/}
+                                                                                                </div>
+                                                                                                {
+                                                                                                    Number(onlineImg3?.guest_user?.status) !== 1 ?
+                                                                                                        <div className="limit_info">
+                                                                                                            <div
+                                                                                                                className="limit_info_top">
+                                                                                                                <img
+                                                                                                                    className="limit_info_top_img"
+                                                                                                                    src={warning}
+                                                                                                                    alt=""/>
+                                                                                                                <h1 className="limit_top_title">{t("Xodimning kirish muddati tugagan!")}</h1>
+                                                                                                            </div>
+                                                                                                            <p className="limit_middle_title">{t("Ruxsat etilgan muddatni uzaytirish uchun")}</p>
+                                                                                                            <div
+                                                                                                                className="limit_info_bottom">
+                                                                                                                <h3 className="limit_bottom_title">{t("Sozlamalarga o’ting")}</h3>
+                                                                                                                <img
+                                                                                                                    className="limit_bottom_title_img"
+                                                                                                                    src={doorNext}
+                                                                                                                    alt=""/>
+                                                                                                            </div>
+                                                                                                        </div> : ``
+                                                                                                }
+                                                                                            </div>
+                                                                                            :
+                                                                                            <div className="doords_right_no">
+                                                                                                <div className="doors_time_info">
+                                                                                                    <p className="doors_time">{moment(new Date(onlineImg3?.guest_user?.created_time)).format("DD.MM.YYYY - HH:mm:ss")}</p>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    className="doords_right_not_allowed">
+                                                                                                    <img className="doors_right_icon" src={recIcon} alt=""/>
+                                                                                                    <h1 className={`not_allowed_title ${isDarkMode && 'darkModeColor'}`}>{t("Ma’lumot topilmadi")}</h1>
+                                                                                                    <p className={`not_allowed_text ${isDarkMode && 'darkModeColor'}`}>{t("Ushbu shaxs ma’lumotlar bazasida aniqlanmadi")}</p>
+                                                                                                    <AddStaff
+                                                                                                        isOpenAddStaff={isOpenAddStaff}
+                                                                                                        setIsOpenAddStaff={setIsOpenAddStaff}
+                                                                                                    />
+                                                                                                    <div className="not_allowed_buttons">
+                                                                                                        <button className="not_allowed_buttons_cancel" onClick={reject}>{t("Bekor qilish")}</button>
+                                                                                                        <button onClick={addNewStaff} className="not_allowed_buttons_registration_two">{t("Ro’yxatga olish")}</button>
+                                                                                                        {/*<button className="not_allowed_buttons_registration"><Link to="">{t("Ro’yxatga olish")}</Link></button>*/}
+                                                                                                    </div>
+                                                                                                    <button onClick={openDoor} className="not_allowed_allow">{t("Ruxsat berish")}</button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        )
+                                                                                        :
+                                                                                        <div className="doors_right">
+                                                                                            {/*oddiy turgan xolatidagi page*/}
+                                                                                            <div className="doors_time_info">
+                                                                                                <p className="doors_time">Aniqlash
+                                                                                                    vaqti</p>
+                                                                                                {/*<h1 className="doors_time">{moment( onlineImg3 && onlineImg3.guest_user && onlineImg3.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
+                                                                                            </div>
+                                                                                            <div className="box_right_top">
+                                                                                                <div className="right_top_info">
+                                                                                                    <div className="label_box">
+                                                                                                        <div
+                                                                                                            className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                            className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
+                                                                                                    </div>
+                                                                                                    <div className="label_box">
+                                                                                                        <div
+                                                                                                            className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                            className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
+                                                                                                    </div>
+                                                                                                    <div className="label_box">
+                                                                                                        <div
+                                                                                                            className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                            className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
+                                                                                                    </div>
+
+                                                                                                </div>
+
+                                                                                                <div className="img_box">
+                                                                                                    <img className="no_my_img"
+                                                                                                         src={noIMG} alt=""/>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div className="label_box">
+                                                                                                <div
+                                                                                                    className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}></div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                }
                                                                             </div>
                                                                         </div>
-                                                                }
-                                                            </div>
+                                                                    )}
+                                                                </Draggable>
+                                                            ))}
+                                                            {/*{provided.placeholder}*/}
                                                         </div>
                                                     )}
                                                 </Draggable>
@@ -1166,7 +1175,8 @@ const OnlineManagement = (props) => {
                                 </Droppable>
                             </DragDropContext>
                             :
-                            <div className={doorThree === true ? "online_doors_managment" : "online_doors_managment d-none"}>
+                            <div
+                                className={doorThree === true ? "online_doors_managment" : "online_doors_managment d-none"}>
                                 <div className="online_doors_managment_body">
                                     <img src={managmentImg}/>
                                     <h2>Iltimos eshikni tanlang</h2>
@@ -1179,7 +1189,7 @@ const OnlineManagement = (props) => {
                     }
                     {/*terminal -4 */}
                     {
-                        terminalViwer4?.length > 0  ?
+                        terminalViwer4?.length > 0 ?
                             <DragDropContext onDragEnd={onDragEnd4}>
                                 <Droppable droppableId={"droppable"}>
                                     {(provided, snapshot) => (
@@ -1191,28 +1201,25 @@ const OnlineManagement = (props) => {
                                             // onMouseDown={changeTouch2}
                                         >
                                             {items4.map((item, idx) => (
-                                                <Draggable key={item.id} draggableId={item.id} index={idx} >
+                                                <Draggable key={item.id} draggableId={item.id} index={idx}>
                                                     {(provided, snapshot) => (
+
                                                         <div
                                                             ref={provided.innerRef}
                                                             {...provided.draggableProps}
                                                             {...provided.dragHandleProps}
-
                                                         >
-
-                                                            <div
-                                                                className={doorFour === true ? "online_doors_info_content" : "online_doors_info_content d-none"}
-                                                                onClick={()=>changeTouch(4 ,terminalViwer4[0]?.id)}
-                                                                // onMouseDown={changeTouch2}
+                                                            <div className="online_doors_info_content"
+                                                                 onClick={() => changeTouch(4, terminalViwer4[0]?.id)}
                                                             >
-                                                                <img src={cursor} className="cursorTouch"/>
+                                                                <img src={cursor} className="cursorTouch"
+                                                                    // onClick={() => changeTouch(1, terminalViwer1[0]?.id)}
+                                                                    // onClickCapture={() => changeTouch(1, terminalViwer1[0]?.id)}
+                                                                />
                                                                 <div
                                                                     className={`online_doors_info_title ${isDarkMode && 'darkModeBackground'}`}>
                                                                     <h3 className={`${isDarkMode && 'darkModeColor'}`}>
                                                                         {
-                                                                            // terminal_data.length>0 ? terminal_data[0].door_name :
-                                                                            // localStorage.getItem("ternimall") ? localStorage.getItem("ternimall") :
-                                                                            //     ""
                                                                             terminalViwer4[0]?.door_name
                                                                         }
                                                                     </h3>
@@ -1223,112 +1230,127 @@ const OnlineManagement = (props) => {
                                                                             ?
                                                                             <div className="overflov_img">
                                                                                 <img className="doors_left_img"
-                                                                                     src={url4} alt=""/>
+                                                                                     src={url} alt=""/>
                                                                             </div>
                                                                             : <img className="doors_left_default"
                                                                                    src={myImg} alt="img"/>
                                                                     }
                                                                 </div>
                                                                 {
-                                                                    onlineImg4
-                                                                        ? (onlineImg4.hasOwnProperty('user_in_db')
-                                                                                ?
-                                                                                <div className="doors_right">
-                                                                                    <div className="doors_time_info">
-                                                                                        <p className="doors_time">08.01.2022
-                                                                                            - 08:45:47</p>
-                                                                                        {/*<h1 className="doors_time">{moment( onlineImg4 && onlineImg4.guest_user && onlineImg4.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
-                                                                                    </div>
-                                                                                    <div className="box_right_top">
-                                                                                        <div className="right_top_info">
-                                                                                            <div className="label_box">
-                                                                                                <div
-                                                                                                    className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg4 && onlineImg4.user_in_db && onlineImg4.user_in_db.fullname}</div>
+                                                                    onlineImg4 ? (onlineImg4.hasOwnProperty('user_in_db') ?
+                                                                            <div className="doors_right">
+                                                                                <div className="doors_time_info">
+                                                                                    <p className="doors_time">{moment(new Date(onlineImg4?.guest_user?.created_time)).format("DD.MM.YYYY - HH:mm:ss")}</p>
+                                                                                    {/*<h1 className="doors_time">{moment( onlineImg4 && onlineImg4.guest_user && onlineImg4.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
+                                                                                </div>
+                                                                                <div className="box_right_top">
+                                                                                    <div className="right_top_info">
+                                                                                        <div className="label_box">
+                                                                                            <div
+                                                                                                className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:
                                                                                             </div>
-                                                                                            <div className="label_box">
-                                                                                                <div
-                                                                                                    className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg4?.user_in_db?.user_type == 1 ? t("Xodim") : onlineImg4?.user_in_db?.user_type == 2 ? t("Mehmon") : t("Begona")}</div>
-                                                                                            </div>
-                                                                                            <div className="label_box">
-                                                                                                <div
-                                                                                                    className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg4?.user_in_db?.rank == 1 ? t("Oddiy xodim") : onlineImg4?.user_in_db?.rank == 2 ? t("Direktor") : onlineImg4?.user_in_db?.rank == 3 ? t("VIP") : ''}</div>
-                                                                                            </div>
+                                                                                            <div
+                                                                                                className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg4 && onlineImg4.user_in_db && onlineImg4.user_in_db.fullname}</div>
                                                                                         </div>
-                                                                                        <div className="img_box">
-                                                                                            <img className="door_user_img"
-                                                                                                 src={`${ip}/${onlineImg4 && onlineImg4.user_in_db && onlineImg4.user_in_db.id}.jpg`}
-                                                                                                 alt="img"/>
+                                                                                        <div className="label_box">
+                                                                                            <div
+                                                                                                className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Toifasi")}:
+                                                                                            </div>
+                                                                                            <div
+                                                                                                // className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg4?.user_in_db?.user_type == 1 ? t("Xodim") : onlineImg4?.user_in_db?.user_type == 2 ? t("Mehmon") : t("Begona")}</div>
+                                                                                                className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg4?.user_in_db?.user_type == 1 ? t("Xodim") : t("Begona")}</div>
+                                                                                        </div>
+                                                                                        <div className="label_box">
+                                                                                            <div
+                                                                                                className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Lavozimi")}:
+                                                                                            </div>
+                                                                                            <div
+                                                                                                className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>
+                                                                                                {
+                                                                                                    onlineImg4?.user_in_db?.rank == 1 ? t("Oddiy xodim") :
+                                                                                                        onlineImg4?.user_in_db?.rank == 2 ? t("Direktor") :
+                                                                                                            onlineImg4?.user_in_db?.rank == 3 ? t("VIP") :
+                                                                                                                onlineImg4?.user_in_db?.rank == 4 ? t("Mehmon") :
+                                                                                                                    onlineImg4?.user_in_db?.rank == 5 ? t("Bloklangan") : ''
+                                                                                                }
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div className="label_box">
-                                                                                        <div
-                                                                                            className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:
-                                                                                        </div>
-                                                                                        <div
-                                                                                            className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg4?.user_in_db?.access_type}</div>
-                                                                                    </div>
-                                                                                    <div className="limit_info">
-                                                                                        <div className="limit_info_top">
-                                                                                            <img
-                                                                                                className="limit_info_top_img"
-                                                                                                src={warning} alt=""/>
-                                                                                            <h1 className="limit_top_title">{t("Xodimning kirish muddati tugagan!")}</h1>
-                                                                                        </div>
-                                                                                        <p className="limit_middle_title">{t("Ruxsat etilgan muddatni uzaytirish uchun")}</p>
-                                                                                        <div className="limit_info_bottom">
-                                                                                            <h3 className="limit_bottom_title">{t("Sozlamalarga o’ting")}</h3>
-                                                                                            <img
-                                                                                                className="limit_bottom_title_img"
-                                                                                                src={doorNext} alt=""/>
-                                                                                        </div>
+                                                                                    <div className="img_box">
+                                                                                        <img className="door_user_img"
+                                                                                             src={`${ip}/${onlineImg4 && onlineImg4.user_in_db && onlineImg4.user_in_db.id}.jpg`}
+                                                                                             alt="img"/>
                                                                                     </div>
                                                                                 </div>
-                                                                                :
-                                                                                <div className="doords_right_no">
-                                                                                    <div className="doors_time_info">
-                                                                                        <p className="doors_time">08.01.2022
-                                                                                            - 08:45:47</p>
-                                                                                        {/*<h1 className="doors_time">{moment( onlineImg4 && onlineImg4.guest_user && onlineImg4.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
+                                                                                <div className="label_box">
+                                                                                    <div
+                                                                                        className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ruxsat turi")}:
                                                                                     </div>
                                                                                     <div
-                                                                                        className="doords_right_not_allowed">
-                                                                                        <img className="doors_right_icon"
-                                                                                             src={recIcon} alt=""/>
+                                                                                        // className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg4?.guest_user?.auth_type}</div>
+                                                                                        className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>
+                                                                                        {onlineImg4?.guest_user?.auth_type === "1" ? t("Yuz") :
+                                                                                            onlineImg4?.guest_user?.auth_type === "2" ? t("Barmoq izi") :
+                                                                                                onlineImg4?.guest_user?.auth_type === "3" ? t("ID karta") :
+                                                                                                    onlineImg4?.guest_user?.auth_type === "4" ? t("Yuz va Barmoq izi") :
+                                                                                                        onlineImg4?.guest_user?.auth_type === "6" ? t("Yuz va ID karta") :
+                                                                                                            onlineImg4?.guest_user?.auth_type === "8" ? t("Barmoq izi va ID karta") : ''
 
-                                                                                        <h1 className={`not_allowed_title ${isDarkMode && 'darkModeColor'}`}>{t("Ma’lumot topilmadi")}</h1>
-                                                                                        <p className={`not_allowed_text ${isDarkMode && 'darkModeColor'}`}>{t("Ushbu shaxs ma’lumotlar bazasida aniqlanmadi")}</p>
-
-                                                                                        <AddStaff
-                                                                                            isOpenAddStaff={isOpenAddStaff}
-                                                                                            setIsOpenAddStaff={setIsOpenAddStaff}
-                                                                                        />
-                                                                                        <div
-                                                                                            className="not_allowed_buttons">
-                                                                                            <button
-                                                                                                className="not_allowed_buttons_cancel"
-                                                                                                onClick={reject}>{t("Bekor qilish")}</button>
-                                                                                            <button onClick={addNewStaff}
-                                                                                                    className="not_allowed_buttons_registration">{t("Ro’yxatga olish")}</button>
-                                                                                        </div>
-                                                                                        <button onClick={openDoor}
-                                                                                                className="not_allowed_allow">{t("Ruxsat berish")}</button>
-                                                                                    </div>
+                                                                                        }</div>
+                                                                                    {/*className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg4?.user_in_db?.access_type}</div>*/}
                                                                                 </div>
+                                                                                {
+                                                                                    Number(onlineImg4?.guest_user?.status) !== 1 ?
+                                                                                        <div className="limit_info">
+                                                                                            <div
+                                                                                                className="limit_info_top">
+                                                                                                <img
+                                                                                                    className="limit_info_top_img"
+                                                                                                    src={warning}
+                                                                                                    alt=""/>
+                                                                                                <h1 className="limit_top_title">{t("Xodimning kirish muddati tugagan!")}</h1>
+                                                                                            </div>
+                                                                                            <p className="limit_middle_title">{t("Ruxsat etilgan muddatni uzaytirish uchun")}</p>
+                                                                                            <div
+                                                                                                className="limit_info_bottom">
+                                                                                                <h3 className="limit_bottom_title">{t("Sozlamalarga o’ting")}</h3>
+                                                                                                <img
+                                                                                                    className="limit_bottom_title_img"
+                                                                                                    src={doorNext}
+                                                                                                    alt=""/>
+                                                                                            </div>
+                                                                                        </div> : ``
+                                                                                }
+                                                                            </div>
+                                                                            :
+                                                                            <div className="doords_right_no">
+                                                                                <div className="doors_time_info">
+                                                                                    <p className="doors_time">{moment(new Date(onlineImg4?.guest_user?.created_time)).format("DD.MM.YYYY - HH:mm:ss")}</p>
+                                                                                </div>
+                                                                                <div
+                                                                                    className="doords_right_not_allowed">
+                                                                                    <img className="doors_right_icon" src={recIcon} alt=""/>
+                                                                                    <h1 className={`not_allowed_title ${isDarkMode && 'darkModeColor'}`}>{t("Ma’lumot topilmadi")}</h1>
+                                                                                    <p className={`not_allowed_text ${isDarkMode && 'darkModeColor'}`}>{t("Ushbu shaxs ma’lumotlar bazasida aniqlanmadi")}</p>
+                                                                                    <AddStaff
+                                                                                        isOpenAddStaff={isOpenAddStaff}
+                                                                                        setIsOpenAddStaff={setIsOpenAddStaff}
+                                                                                    />
+                                                                                    <div className="not_allowed_buttons">
+                                                                                        <button className="not_allowed_buttons_cancel" onClick={reject}>{t("Bekor qilish")}</button>
+                                                                                        <button onClick={addNewStaff} className="not_allowed_buttons_registration_two">{t("Ro’yxatga olish")}</button>
+                                                                                        {/*<button className="not_allowed_buttons_registration"><Link to="">{t("Ro’yxatga olish")}</Link></button>*/}
+                                                                                    </div>
+                                                                                    <button onClick={openDoor} className="not_allowed_allow">{t("Ruxsat berish")}</button>
+                                                                                </div>
+                                                                            </div>
                                                                         )
                                                                         :
                                                                         <div className="doors_right">
+                                                                            {/*oddiy turgan xolatidagi page*/}
                                                                             <div className="doors_time_info">
-                                                                                <p className="doors_time">08.01.2022 -
-                                                                                    08:45:47</p>
+                                                                                <p className="doors_time">Aniqlash
+                                                                                    vaqti</p>
                                                                                 {/*<h1 className="doors_time">{moment( onlineImg4 && onlineImg4.guest_user && onlineImg4.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
                                                                             </div>
                                                                             <div className="box_right_top">
@@ -1381,7 +1403,8 @@ const OnlineManagement = (props) => {
                                 </Droppable>
                             </DragDropContext>
                             :
-                            <div className={doorFour === true ? "online_doors_managment" : "online_doors_managment d-none"}>
+                            <div
+                                className={doorFour === true ? "online_doors_managment" : "online_doors_managment d-none"}>
                                 <div className="online_doors_managment_body">
                                     <img src={managmentImg}/>
                                     <h2>Iltimos eshikni tanlang</h2>
@@ -1439,8 +1462,9 @@ const OnlineManagement = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        count: state.theme.count
+        count: state.theme.count,
+        onlineManag : state.theme.onlineManag
     }
 }
 
-export default connect(mapStateToProps, {getManagment, putManagment, getTheme})(OnlineManagement);
+export default connect(mapStateToProps, {getManagment, putManagment, getTheme })(OnlineManagement);

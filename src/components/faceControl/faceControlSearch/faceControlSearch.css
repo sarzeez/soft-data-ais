@@ -32,9 +32,8 @@
     box-sizing: border-box;
     border-radius: 10px;
     padding: 0 10px;
-    display: flex;
-    flex-direction: column;
-    align-content: flex-end;
+    display: grid;
+    align-content: space-between;
 }
 
 .left_input {
@@ -45,6 +44,10 @@
 }
 .left_input:hover {
     border: 1px solid #29b85d;
+}
+
+.face_wrapper_inputs{
+    display: grid;
 }
 
 .input_label {
@@ -132,9 +135,26 @@
 }
 
 
-@media only screen and (max-width: 1370px) {
+@media only screen and (max-width: 1470px) {
     .content_inputs {
-        width: 280px;
+        width: 280px!important;
+    }
+    .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector {
+        height: 35px!important;
+    }
+    .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector::after, .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-item, .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-placeholder {
+        line-height: 30px!important;
+    }
+    .input_label {
+        font-size: 14px;
+        margin-bottom: 0px !important;
+        margin-top: 8px !important;
+    }
+    .left_input{
+        height: 35px;
+    }
+    .left_select{
+        height: 33px;
     }
     .content_right {
         width: calc(100% - 280px);
@@ -150,7 +170,24 @@
     }
     .my_cart_wrapper {
         grid-template-columns: 1fr 1fr 1fr ;
+        grid-gap: 7px;
     }
+    .ant-select-lg {
+        font-size: 14px!important;
+    }
+    .ant-select-selection-item{
+        max-width: 103px;
+    }
+    .soft_btn {
+        height: 35px;
+    }
+
+
+    .clear_button{
+        height: 35px;
+
+    }
+
 }
 
 

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Form, Input, Select,} from "antd";
+import {Form, Input, Select, Spin,} from "antd";
 import {ip} from "../../../../ip";
 import {useTranslation} from "react-i18next";
 
@@ -7,6 +7,7 @@ import Modal from "react-modal";
 import finger2 from '../../../../images/finger2.svg';
 import axios from "axios";
 import {BiCheck} from "react-icons/all";
+import loadingGif from '../../../../assets/gif/loading.gif';
 
 import './fingerprint.css';
 
@@ -23,19 +24,23 @@ const FingerprintModal = (props) => {
     const {t} = useTranslation()
     const [requestedFinger, setRequestedFinger] = useState(null);
     const [accessFinger, setAccessFinger] = useState('');
-
+    const [loading, setLoading] = useState(false)
 
     const onChangeFingerprint = (a) =>{
         setAccessFinger(a)
     }
 
     const handleClickFingerprint = () => {
+        setLoading(true)
          axios.post(`${ip}/api/terminal/fingerprint/${accessFinger}`)
             .then(res => {
+                setLoading(false)
                 setRequestedFinger(res.data);
             })
             .catch(err=>{
-                // setLoading(false)
+                setLoading(false)
+                // setRequestedFinger(err.response.data)
+                console.log(err.response)
             })
     }
 
@@ -109,7 +114,6 @@ const FingerprintModal = (props) => {
                                     onChange={onChangeFingerprint}
                                     placeholder ={t("Terminalni tanlang")}
                                 >
-                                    {/*<Select.Option value="">{t("Tanlash")}</Select.Option>*/}
                                     {
                                         terminalIPList?.map((item, index) => (
                                             <Select.Option key = {index} value={item.value}>{item.label}</Select.Option>
@@ -117,18 +121,21 @@ const FingerprintModal = (props) => {
                                     }
                                 </Select>
                             </Form.Item>
+
                             <button
                                 type='button'
                                 className="fingerprint_button"
-                                style={{
-                                    // color: `${accessFinger === '' ? '#000':'#fff'}`,
-                                    // backgroundColor: `${accessFinger === '' ? '#fff':'#29B85D'}`
-                                }}
                                 onClick={handleClickFingerprint}
                             >
-                                <img style={{marginRight: 8}} src={finger2} alt=""/>
+                                {
+                                    loading ?
+                                        <Spin style={{marginRight: 8}}/>
+                                        : <img style={{marginRight: 8}} src={finger2} alt=""/>
+                                }
+
                                 {t("Barmoq izi olish")}
                             </button>
+
                         </div>
 
                         {

@@ -80,9 +80,9 @@
 }
 
 .edit_button {
-    width: 50px;
+    width: 45px;
     height: 35px;
-    background-color: #29B85D;
+    color: #29B85D;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,15 +91,19 @@
     margin: 0 auto;
 }
 
+
 .edit_button:hover {
+    background-color: #29B85D;
+    color: #FFFFFF;
     opacity: 0.9;
+    cursor: pointer;
+
 }
 
 .door_ip_length {
     position: relative;
     cursor: pointer;
     display: inline-block;
-    /*padding: 2px 15px;*/
     border-radius: 5px;
 }
 

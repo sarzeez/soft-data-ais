@@ -26,7 +26,7 @@
 
 .face_control_setting_tab{
     display: grid;
-    grid-template-columns: 6fr 1.7fr;
+    grid-template-columns: 6fr 1.8fr;
     grid-gap: 10px;
 }
 
@@ -45,7 +45,6 @@
     max-height: calc(100vh - 200px);
     border: 1px solid #E5EAFA;
     border-radius: 5px;
-
 }
 .camera_groups_add_new_group_table {
     overflow: auto;
@@ -119,6 +118,7 @@
     border-radius: 4px;
     border: none;
     cursor: pointer;
+    margin-right: 3px;
 }
 .group_delite_button{
     display: flex;
@@ -142,7 +142,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 15px;
+    margin-left: 3px;
     width: 100%;
     height: 40px;
     font-style: normal;
@@ -197,9 +197,64 @@
 .face_control_setting_footer_delite_button:hover {
     opacity: 0.9;
 }
+.add_new_group_buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
+
+@media only screen and (max-width: 1470px) {
+    .face_control_setting {
+        padding: 8px;
+    }
+    .face_control_setting_body {
+        margin-top: 5px;
+        height: calc(100% - 29px);
+    }
+    .face_control_setting_tab_item {
+        height: calc(100vh - 173px);
+    }
+    .face_control_setting_button{
+        height: 35px;
+    }
+    .face_control_setting_footer_delite_button{
+        height: 35px;
+    }
+    .camera_groups{
+        padding-bottom: 6px;
+        max-height: calc(100vh - 174px);
+    }
+    .camera_groups_language{
+        padding: 4px;
+    }
+    .camera_groups_language .ant-input{
+        margin: 0px 5px;
+        height: 22px;
+    }
+    .camera_language_input{
+        margin-bottom: 0!important;
+    }
+    .camera_groups_button{
+        height: 30px;
+        margin-right: 2px;
+    }
+    .camera_groups_button_cancle{
+        height: 30px;
+        margin-top: 0px;
+        margin-left: 3px;
+    }
+    .add_new_group_buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4px;
+    }
+}
 
 
 

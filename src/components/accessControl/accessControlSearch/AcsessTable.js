@@ -29,8 +29,9 @@ const AcsessTable = (props) => {
             render: (text, record) => (
                 <div className='table_user_cell'>
                     <Image
-                        width={40}
-                        style={{borderRadius: '20px', marginRight: '5px', maxWidth: '40px', maxHeight: '40px'}}
+                        className="table_user_cell_img"
+                        // width={40}
+                        // style={{borderRadius: '20px', marginRight: '5px', maxWidth: '40px', maxHeight: '40px'}}
                         src= {`${ip}/${record.user_id}.jpg` }
                         preview = {{
                             src: `${ip}/api/get_history/${record.id}/img`,
@@ -89,6 +90,11 @@ const AcsessTable = (props) => {
             )
         },
         {
+            title: t('Eshik'),
+            dataIndex: 'door_name',
+            // align: 'center'
+        },
+        {
             title: t('Yo\'nalishi'),
             dataIndex: 'direction',
             // align: 'center',
@@ -101,12 +107,6 @@ const AcsessTable = (props) => {
         {
             title: t('Vaqt'),
             dataIndex: 'created_time',
-            // align: 'center'
-        },
-
-        {
-            title: t('Eshik'),
-            dataIndex: 'door_name',
             // align: 'center'
         },
     ];

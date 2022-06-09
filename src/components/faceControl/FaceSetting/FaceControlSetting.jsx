@@ -11,19 +11,19 @@ import CameraTable from "./table/CameraTable";
 import AddCameraModal from "./AddCameraModal/AddCameraModal";
 import AddNewGroupTable from "./AddNewGroup/AddNewGroupTable";
 import AddNewGroup from "./AddNewGroup/AddNewGroup";
+import CameraPagenation from "./pagenation/CameraPagenation";
 
 import axios from "axios";
 import './faceSetting.css';
-import CameraPagenation from "./pagenation/CameraPagenation";
 
 const { TabPane } = Tabs;
 
 const FaceControlSetting = () => {
-    const {t} = useTranslation()
-    const navigate = useNavigate()
+
     const isDarkMode = useSelector(state => state.theme.theme_data)
     const is_refresh_value = useSelector(state => state.theme.is_refresh_value)
-
+    const {t} = useTranslation()
+    const navigate = useNavigate()
     // add camera modal state
     const [isOpenAddCamera, setIsOpenAddCamera] = useState(false);
 
@@ -245,7 +245,7 @@ const FaceControlSetting = () => {
                                             <div className="add_new_group">
                                                 <button onClick={() => setShow(true)} className="camera_groups_button">
                                                     <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
-                                                    {t("Guruh qo’shish")}
+                                                    {t("Guruh qo'shish")}
                                                 </button>
                                                 {
                                                     deleteGroup.length > 0 &&

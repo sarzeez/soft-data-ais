@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Select } from 'antd';
 import { ip } from '../../../../ip';
+import {useTranslation} from "react-i18next";
+
 import axios from 'axios';
 
 import { FiUpload } from 'react-icons/fi';
@@ -8,7 +10,6 @@ import { IoImageOutline } from 'react-icons/io5';
 import loadingGif from '../../../../assets/gif/loading.gif';
 
 import './staffRight.css';
-import {useTranslation} from "react-i18next";
 
 const StaffRight = ({ data, setData, terminalIPList, staffTableIntialValues, imageState, setImageState }) => {
 
