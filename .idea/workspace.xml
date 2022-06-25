@@ -2,65 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bb0976f-af46-48a6-af2c-ded35ca474dc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.rar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/locales/en/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/en/translation.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/locales/ru/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/ru/translation.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/locales/uz/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/uz/translation.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineDoors.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineDoors.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/WorkingHoursReport/working.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/WorkingHoursReport/working.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/WorkingHoursReport/workingHoursReport.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/WorkingHoursReport/workingHoursReport.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/acsessControl.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/acsessControl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-IDCard/IdCardModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-IDCard/IdCardModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-IDCard/idCardModal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-IDCard/idCardModal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/AddStaff.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/IdCardTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/IdCardTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/MiddleBottom.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/MiddleBottom.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffMiddle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffMiddle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffRight.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffRight.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/addStaff.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/addStaff.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/middleBottom.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/middleBottom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/staffMiddle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/staffMiddle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/staffRight.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/staffRight.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/fingerprint/FingerprintModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/fingerprint/FingerprintModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/fingerprint/fingerprint.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/fingerprint/fingerprint.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AcsessTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/accessControlSearch/AcsessTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/AccessControlSetting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/Terminal-modal/AddTerminalModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/Terminal-modal/AddTerminalModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/Terminal-modal/addTerminal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/Terminal-modal/addTerminal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/setting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/setting.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddCameraModal/AddCameraModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddCameraModal/AddCameraModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddCameraModal/addCameraModal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/AddCameraModal/addCameraModal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/FaceControlSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/FaceControlSetting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/faceSetting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/faceSetting.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/FaceControlAnalysis.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/FaceControlAnalysis.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/analysis.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/analysis.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/bodyChart/BodyChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/bodyChart/BodyChart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/lineChart/LineChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/lineChart/LineChart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/miniCharts/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/miniCharts/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/pieChart/PieChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/pieChart/PieChart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/FaceControlSearch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/FaceControlSearch.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/cart/cart.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/cart/cart.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/faceControlSearch.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlSearch/faceControlSearch.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/saidbar/Saidbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/saidbar/Saidbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/saidbar/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/saidbar/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/dashIMG/access.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/dashIMG/analisy.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/dashIMG/dashboard.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/dashIMG/doorKey.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/dashIMG/face.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/dashIMG/search.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/dashIMG/settings.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/dashIMG/table.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ip.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +54,7 @@
       <workItem from="1655870905200" duration="11895000" />
       <workItem from="1655957991399" duration="13923000" />
       <workItem from="1656043931495" duration="9538000" />
-      <workItem from="1656129907556" duration="1688000" />
+      <workItem from="1656129907556" duration="5833000" />
     </task>
     <servers />
   </component>

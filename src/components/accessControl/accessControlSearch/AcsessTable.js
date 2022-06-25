@@ -111,19 +111,7 @@ const AcsessTable = (props) => {
         },
     ];
 
-    // const [state, setState] = useState({
-    //     selectedRowKeys: []
-    // })
 
-    // const onSelectChange = (selectedRowKeys, a) => {
-    //     setState({ selectedRowKeys })
-    // };
-
-    // const { selectedRowKeys } = state;
-    // const rowSelection = {
-    //     selectedRowKeys,
-    //     onChange: onSelectChange,
-    // }
 
         return (
             <Table

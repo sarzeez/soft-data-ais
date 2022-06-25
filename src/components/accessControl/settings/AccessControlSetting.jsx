@@ -328,7 +328,6 @@ const AccessControlSetting = (props) => {
                                 </div>
                             </div>
                         </div>
-
                     </TabPane>
 
                     {/*<TabPane tab={t("Qora ro’yxat")} key="3">*/}
