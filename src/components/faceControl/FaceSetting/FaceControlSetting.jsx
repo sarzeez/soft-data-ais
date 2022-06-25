@@ -243,15 +243,17 @@ const FaceControlSetting = () => {
                                     {
                                         !show ?
                                             <div className="add_new_group">
-                                                <button onClick={() => setShow(true)} className="camera_groups_button">
-                                                    <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
-                                                    {t("Guruh qo'shish")}
-                                                </button>
+                                                
                                                 {
-                                                    deleteGroup.length > 0 &&
+                                                    deleteGroup.length > 0 ?
                                                     <button onClick={handleDeleteGroup}   className="group_delite_button">
                                                         <AiOutlineDelete size={22}/>
                                                         {t("O’chirish")}
+                                                    </button>
+                                                    :
+                                                    <button onClick={() => setShow(true)} className="camera_groups_button">
+                                                        <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
+                                                        {t("Guruh qo'shish")}
                                                     </button>
                                                 }
                                             </div>

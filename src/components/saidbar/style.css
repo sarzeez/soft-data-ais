@@ -39,9 +39,8 @@
     align-items: center;
     height: 65px;
 }
-.logo img{
-    width: 70%;
-}
+
+
 .logoText {
     font-family: quantum;
     font-size: 32px;
@@ -78,12 +77,13 @@
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.11);
 }
 .dashboard{
-    margin: 10px 0 10px 15px !important;
+    /*margin: 10px 0 10px 0px !important;*/
+    margin-top: 15px;
 }
 
-.close_saidbar_title {
 
-    font-family: Open Sans;
+.close_saidbar_title {
+    margin-left: 20px!important;
     font-style: normal;
     font-weight: 600;
     font-size: 12px;
@@ -95,13 +95,13 @@
 }
 
 .saidbar_title {
-    margin-top: 15px;
     font-style: normal;
     font-weight: 600;
     font-size: 10px;
     line-height: 19px;
     color: rgba(000,000,000, 0.4);
     text-transform: uppercase;
+    /*background: #8B0606;*/
 }
 .saidbar_link a{
     font-style: normal;
@@ -129,7 +129,9 @@
 .ant-menu-item .ant-menu-item-icon{
     font-size: 20px;
 }
-
+.ant-menu-submenu-title{
+    padding-left: 20px!important;
+}
 /*-------dashboard color------*/
 .ant-menu-sub.ant-menu-inline {
      background: #FFFFFF!important;
@@ -194,7 +196,6 @@
     font-size: 14px;
 }
 
-
 .ant-switch-checked {
     background: #29b85d;
 }
@@ -221,7 +222,6 @@
 /*content*/
 
 .Content_title {
-    font-family: Open Sans;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
@@ -280,8 +280,15 @@
 
 
 @media only screen and (max-width: 1800px) {
+
+    .saidbar_toggle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .saidbar_link{
         height: 40px!important;
+        padding-left: 45px!important;
     }
     .saidbar_link a{
         font-size: 12px;
@@ -292,6 +299,14 @@
     .ant-menu-title-content{
         font-size: 14px;
     }
+    .logo .logo_img{
+        width: 90%;
+        margin-left: 5px;
+    }
+   .logo .short_logo{
+        width: 50%;
+    }
+
 
 }
 

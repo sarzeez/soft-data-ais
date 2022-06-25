@@ -188,6 +188,18 @@
   "Iltimos eshikni tanlang": "Please select a door",
   "Aniqlash vaqti": "Detection time",
   "Kanal": "Channel",
+  "Qora ro’yxat": "Blacklist",
+
+
+
+  "Yo’nalishi": "Direction",
+  "Eshik nomini kiriting": "Enter the door name",
+  "Yo'nalishni tanlang": "Select a route",
+  "Terminal IP manzil kiriting": "Enter the terminal IP address",
+  "Terminal turini tanlang": "Select the terminal type",
+  "Autentifikatsiya turini tanlang": "Select the type of authentication",
+  "Login kiriting": "Enter your login",
+  "Parol kiriting":"Enter the password",
 
 
 

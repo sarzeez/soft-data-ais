@@ -75,7 +75,6 @@
     border-radius: 5px;
 }
 .input::placeholder{
-    font-family: 'Open Sans';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -86,7 +85,6 @@
     background: #FFFFFF;
     border: 1px solid #F3F3F3;
     border-radius: 5px;
-    font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -96,4 +94,21 @@
     background: #FFFFFF;
     border: 1px solid #F3F3F3;
     border-radius: 5px;
+}
+
+
+
+@media only screen and (max-width: 1470px) {
+    .working_hour_report{
+        width: 100%;
+        height: calc(100vh - 64px);
+        padding: 8px;
+    }
+    .working_hour_report_body {
+        margin-top: 5px;
+        height: calc(100% - 32px);
+    }
+    /*.access_control_setting_tab_item {*/
+    /*    height: calc(100vh - 175px);*/
+    /*}*/
 }

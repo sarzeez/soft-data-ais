@@ -40,11 +40,11 @@ const MiddleBottom = (props) => {
                 setSelectedItems = {setSelectedItems}
             />
             <div className='access_control_add_staff_modal_body_item_fingerprint_buttons'>
-                <button onClick={() => setIsOpenAddFingerprint(true)} type='button'>
+                <button className="add_finger_button" onClick={() => setIsOpenAddFingerprint(true)} type='button'>
                     <img style={{marginRight:8}} src={finger} alt=""/>
                     {t("Qo’shish")}
                 </button>
-                <button onClick={handleDeleteTerminal} type='button'>{t("O’chirish")}</button>
+                <button className="delete_finger_button" onClick={handleDeleteTerminal} type='button'>{t("O’chirish")}</button>
             </div>
         </div>
         </>

@@ -39,7 +39,9 @@ input[type=number] {
   -webkit-box-shadow: 0 0 0 2px rgba(40, 229, 56, 0.2);
   box-shadow: 0 0 0 2px rgba(46, 229, 40, 0.2);
 }
-
+button{
+  height: 40px;
+}
 .ant-select:hover{
   border-color: #29b85d;
 }
@@ -139,11 +141,60 @@ a:hover {
   border-color: #29b85d;
 }
 .ant-pagination-prev, .ant-pagination-next, .ant-pagination-jump-prev, .ant-pagination-jump-next {
-  font-family: Open Sans;
-  line-height: 30px!important;
+  line-height: 0px!important;
 }
 
+.ant-menu.ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title {
+  left: 0;
+  padding: 0 calc(50% - 30px / 2);
+  text-overflow: clip;
+}
+.ant-input-lg {
+  padding: 6px 8px;
+  font-size: 16px;
+}
 
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  padding: 3px 11px 0 11px;
+}
+
+.add_button_and_save_button{
+  margin-right: 8px;
+  height: 40px;
+  padding: 0px 10px;
+  background: #ABFCC8;
+  color: #00752A;
+  border-radius: 5px;
+  border: none;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+}
+.add_button_and_save_button:hover{
+  background: #29B85D;
+  color: #FFFFFF;
+}
+.delete_button{
+  cursor: pointer;
+  border: none;
+  padding: 0px 18px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  height: 40px;
+  background: #FFDEDE;
+  color: #AC0000;
+  display: flex;
+  align-items: center;
+}
+.delete_button:hover{
+  background: #DB4040;
+  color: #FFFFFF;
+}
 
 
 
@@ -178,6 +229,42 @@ a:hover {
   }
   .ant-picker-time-panel {
     width: 120px;
+  }
+  .ant-pagination-item{
+    height: 30px;
+  }
+  .ant-pagination-prev, .ant-pagination-next{
+    height: 30px;
+  }
+  .ant-pagination-options{
+    height: 30px;
+  }
+  .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab{
+    padding: 5px 14px;
+  }
+  .ant-image-mask{
+    width: 100% !important;
+  }
+  /*--header*/
+  .ant-layout-header {
+    height: 55px;
+    padding: 0 50px;
+    line-height: 65px;
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+  }
+
+  .ant-input-lg {
+    padding: 4px 8px;
+    font-size: 16px;
+  }
+  .ant-input-affix-wrapper-lg {
+    padding: 4px 8px;
+    font-size: 16px;
   }
 
 

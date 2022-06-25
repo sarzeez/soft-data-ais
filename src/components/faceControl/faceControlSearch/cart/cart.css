@@ -1,4 +1,5 @@
 .j_card{
+    width: 316px;
     border: 1px solid #DDDDDD;
     border-radius: 10px;
     margin-bottom: 3px;
@@ -167,7 +168,9 @@
 
 
 @media only screen and (max-width: 1870px) {
-
+.j_card{
+    width: 280px;
+}
     .j_cardInfo{
         width: 265px;
         height: 160px;

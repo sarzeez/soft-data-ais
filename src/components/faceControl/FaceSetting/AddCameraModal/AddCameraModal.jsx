@@ -212,7 +212,6 @@ const AddCameraModal = (props) => {
                         </div>
 
 
-
                         <div className="setting_input_lebel_groups">
                             <Form.Item
                                 className="settings_modal_input_label"

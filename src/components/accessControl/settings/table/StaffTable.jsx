@@ -8,7 +8,6 @@ import {RiEditLine} from "react-icons/ri";
 import moment from 'moment';
 
 
-
 const StaffTable = (props) => {
     const {
         staffData,
@@ -18,6 +17,8 @@ const StaffTable = (props) => {
         setCard,
         setFingerPrint
     } = props;
+
+    
     const {t} = useTranslation()
     const isDarkMode = useSelector(state => state.theme.theme_data)
     const lang = localStorage.getItem('i18nextLng');

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ip } from "../../../../ip";
 import {useTranslation} from "react-i18next";
-import { Form } from 'antd';
+import {Form, Spin} from 'antd';
 import Modal from "react-modal";
 import axios from "axios";
 import './addStaff.css';
@@ -35,6 +35,7 @@ function AddStaff(props) {
     const [ isOpenAddTerminal, setIsOpenAddTerminal] = useState(false);
     const [ isOpenAddFingerprint,setIsOpenAddFingerprint] = useState(false);
     const [terminalIPList, setTerminalIPList] = useState([]);
+    const [loading, setLoading] = useState(false)
     const [imageState, setImageState] = useState({
         initial: true,
         uploaded: false,
@@ -70,10 +71,14 @@ function AddStaff(props) {
             notification: false,
             edit: false,
         })
+        setImageState({
+            initial: true,
+            uploaded: false,
+            requested: false
+        })
     }
 
     const onFinish = (value) => {
-        console.log(value)
         const formData = {
             ...value,
             image: data.image,
@@ -83,7 +88,7 @@ function AddStaff(props) {
             valid_to_time: moment(value?.valid_to_time).format("YYYY-MM-DD"),
             valid_from_time: moment(value?.valid_from_time).format("YYYY-MM-DD"),
             fingerprint:  JSON.stringify(fingerPrint),
-            cards: JSON.stringify(card)
+            cards: JSON.stringify(card),
         }
 
         const fd = new FormData();
@@ -92,6 +97,7 @@ function AddStaff(props) {
         if (staffTableIntialValues.edit){
             axios.put(`${ip}/api/terminal/updateuser/${staffTableIntialValues.id}`, fd)
                 .then(response =>{
+                    setLoading(false)
                     cancel()
                     getStaffData(staffPaginationCurrent)
                     setSelectedCard([]);
@@ -103,6 +109,7 @@ function AddStaff(props) {
                     })
                 })
                 .catch(err=>{
+                    setLoading(false)
                     console.log(err?.response?.data)
                 })
         }
@@ -110,10 +117,12 @@ function AddStaff(props) {
             axios.post(`${ip}/api/terminal/adduser`, fd)
                 .then(res => {
                     console.log(res)
+                    setLoading(false)
                     cancel()
                     getStaffData(staffPaginationCurrent)
                 })
                 .catch(err => {
+                    setLoading(false)
                     console.log(err?.response?.data)
                 })
         }
@@ -167,69 +176,72 @@ function AddStaff(props) {
                 onFinishFailed={onFinishFailed}
                 autoComplete="off"
             >
-                <div className="access_control_add_staff_modal">
-                    <h1 className="access_control_add_staff_modal_title">{t("Yangi foydalanuvchi qo'shish")}</h1>
-                    <hr className="access_control_add_staff_modal_subline" />
-                    <div className="access_control_add_staff_modal_body">
 
-                        <div className="access_control_add_staff_modal_body_item_1">
-                            <div className="access_control_add_staff_modal_body_item">
-                                <p className="access_control_add_staff_modal_body_item_title">{t("Ma'lumotlar")}</p>
-                                <Left
-                                    data = {data}
-                                    setData = {setData}
-                                    terminalIPList = {terminalIPList}
-                                    staffTableIntialValues={staffTableIntialValues}
-                                />
 
+                        <div className="access_control_add_staff_modal">
+                            <h1 className="access_control_add_staff_modal_title">{t("Yangi foydalanuvchi qo'shish")}</h1>
+                            <hr className="access_control_add_staff_modal_subline" />
+                            <div className="access_control_add_staff_modal_body">
+
+                                <div className="access_control_add_staff_modal_body_item_1">
+                                    <div className="access_control_add_staff_modal_body_item">
+                                        <p className="access_control_add_staff_modal_body_item_title">{t("Ma'lumotlar")}</p>
+                                        <Left
+                                            data = {data}
+                                            setData = {setData}
+                                            terminalIPList = {terminalIPList}
+                                            staffTableIntialValues={staffTableIntialValues}
+                                        />
+
+                                    </div>
+                                </div>
+
+                                <div className="access_control_add_staff_modal_body_item_2">
+                                    <div className="access_control_add_staff_modal_body_item">
+                                        <p className="access_control_add_staff_modal_body_item_title">{t("ID karta")}</p>
+                                        <StaffMiddle
+                                            staffTableIntialValues={staffTableIntialValues}
+                                            card={card}
+                                            setCard={setCard}
+                                            isOpenAddTerminal={isOpenAddTerminal}
+                                            setIsOpenAddTerminal={setIsOpenAddTerminal}
+                                            selectedCard={selectedCard}
+                                            setSelectedCard={setSelectedCard}
+                                        />
+                                    </div>
+                                    <div className="access_control_add_staff_modal_body_item">
+                                        <p className="access_control_add_staff_modal_body_item_title">{t("Barmoq izi")}</p>
+                                        <MiddleBottom
+                                            terminalIPList={terminalIPList}
+                                            fingerPrint={fingerPrint}
+                                            setFingerPrint={setFingerPrint}
+                                            isOpenAddFingerprint={isOpenAddFingerprint}
+                                            setIsOpenAddFingerprint={setIsOpenAddFingerprint}
+                                            staffTableIntialValues={staffTableIntialValues}
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="access_control_add_staff_modal_body_item">
+                                    <p className="access_control_add_staff_modal_body_item_title">{t("Yuzni aniqlash")}</p>
+                                    <StaffRight
+                                        staffTableIntialValues={staffTableIntialValues}
+                                        data = {data}
+                                        setData = {setData}
+                                        terminalIPList = {terminalIPList}
+                                        imageState={imageState}
+                                        setImageState={setImageState}
+                                    />
+                                    <div className="staff_buttons">
+                                        <button type="button" onClick={cancel} className="addStaff_cancel_button">{t("Bekor qilish")}</button>
+                                        <button className="access_control_add_staff_modal_body_item_3_submit_button" type="submit">
+                                            {t("Saqlash")}
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="access_control_add_staff_modal_body_item_2">
-                            <div className="access_control_add_staff_modal_body_item">
-                                <p className="access_control_add_staff_modal_body_item_title">{t("ID karta")}</p>
-                                <StaffMiddle
-                                    staffTableIntialValues={staffTableIntialValues}
-                                    card={card}
-                                    setCard={setCard}
-                                    isOpenAddTerminal={isOpenAddTerminal}
-                                    setIsOpenAddTerminal={setIsOpenAddTerminal}
-                                    selectedCard={selectedCard}
-                                    setSelectedCard={setSelectedCard}
-                                />
-                            </div>
-                            <div className="access_control_add_staff_modal_body_item">
-                                <p className="access_control_add_staff_modal_body_item_title">{t("Barmoq izi")}</p>
-                                <MiddleBottom
-                                    terminalIPList={terminalIPList}
-                                    fingerPrint={fingerPrint}
-                                    setFingerPrint={setFingerPrint}
-                                    isOpenAddFingerprint={isOpenAddFingerprint}
-                                    setIsOpenAddFingerprint={setIsOpenAddFingerprint}
-                                    staffTableIntialValues={staffTableIntialValues}
-                                />
-                            </div>
-                        </div>
-
-                        <div className="access_control_add_staff_modal_body_item">
-                            <p className="access_control_add_staff_modal_body_item_title">{t("Yuzni aniqlash")}</p>
-                            <StaffRight
-                                staffTableIntialValues={staffTableIntialValues}
-                                data = {data}
-                                setData = {setData}
-                                terminalIPList = {terminalIPList}
-                                imageState={imageState}
-                                setImageState={setImageState}
-                            />
-                          <div className="staff_buttons">
-                              <button type="button" onClick={cancel} className="addStaff_cancel_button">{t("Bekor qilish")}</button>
-                              <button className="access_control_add_staff_modal_body_item_3_submit_button" type="submit">
-                                  {t("Saqlash")}
-                              </button>
-                          </div>
-                        </div>
-                    </div>
-                </div>
             </Form>
         </Modal>
     );

@@ -5,7 +5,6 @@ import {useTranslation} from "react-i18next";
 
 
 
-
 const IdCardTable = ({card, setSelectedItems }) => {
 
     const {t} = useTranslation()

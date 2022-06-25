@@ -105,14 +105,14 @@ const IdCardModal = (props) => {
                             ]}
                         >
                             <Input
-                                type="number"
+                                // type="number"
                                 size="large"
                                 placeholder={t("Kiriting")}
                             />
                         </Form.Item>
                         <div className='access_control_add_staff_terminal_modal_body_buttons'>
-                            <button onClick={() => {setIsOpenAddTerminal(false)}} type='button'>{t("Bekor qilish")}</button>
-                            <button type='submit'>{t("Saqlash")}</button>
+                            <button  className="delete_idcard_button" onClick={() => {setIsOpenAddTerminal(false)}} type='button'>{t("Bekor qilish")}</button>
+                            <button  className="seave_idcard_modal_button" type='submit'>{t("Saqlash")}</button>
                         </div>
                     </div>
                 </div>

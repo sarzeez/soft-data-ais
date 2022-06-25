@@ -48,7 +48,7 @@ const ApexChart = (props) => {
         <div id="chart circle_chart" className="circle_chart">
             {
                 data &&
-                <ReactApexChart options={state.options} series={state.series} type="donut" height={300}/>
+                <ReactApexChart options={state.options} series={state.series} type="donut" width='100%' height='100%'/>
             }
 
             <div className="pieChart_title">

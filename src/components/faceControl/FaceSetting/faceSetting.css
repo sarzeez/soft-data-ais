@@ -6,18 +6,18 @@
 .face_control_setting_body {
     width: 100%;
     margin-top: 10px;
-    height: calc(100% - 42px);
+    height: calc(100% - 40px);
     border-radius: 5px;
-    padding: 10px;
     border: 1px solid #EAEAEA;
-    background-color: #fff;
+    padding: 10px;
+    background-color: #FFFFFF;
 }
 
 /* tabs */
 
 .face_control_setting_tab_item {
     width: 100%;
-    height: calc(100vh - 195px);
+    height: calc(100vh - 187px);
     display: grid;
     grid-template-rows: 1fr 50px;
     overflow: auto;
@@ -34,7 +34,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 10px;
+    /*padding-top: 10px;*/
 }
 /*---Camera setting right--*/
 
@@ -42,7 +42,7 @@
     display: grid;
     align-content: space-between;
     padding: 10px;
-    max-height: calc(100vh - 200px);
+    max-height: calc(100vh - 193px);
     border: 1px solid #E5EAFA;
     border-radius: 5px;
 }
@@ -92,11 +92,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #29B85D;
-    color: #FFFFFF;
+    background: #ABFCC8;
+    color: #00752A;
     border-radius: 5px;
     border: none;
     padding: 0 10px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+}
+.face_control_setting_button:hover{
+    background: #29B85D;
+    color: #FFFFFF;
 }
 .add_new_group{
     display: flex;
@@ -110,15 +118,19 @@
     width: 100%;
     height: 40px;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 600;
     font-size: 14px;
     line-height: 16px;
-    color: #FFFFFF;
-    background: #29B85D;
+    color: #00752A;
+    background: #ABFCC8;
     border-radius: 4px;
     border: none;
     cursor: pointer;
     margin-right: 3px;
+}
+.camera_groups_button:hover{
+    background: #29B85D;
+    color: #FFFFFF;
 }
 .group_delite_button{
     display: flex;
@@ -127,15 +139,20 @@
     width: 100%;
     height: 40px;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 600;
     font-size: 14px;
     line-height: 16px;
-    color: #8B0606;
+    color: #AC0000;
     background: #FFDEDE;
     border-radius: 4px;
     border: none;
     cursor: pointer;
     margin-left: 10px;
+
+}
+.group_delite_button:hover{
+    background: #DB4040;
+    color: #FFFFFF;
 }
 
 .camera_groups_button_cancle{
@@ -146,17 +163,21 @@
     width: 100%;
     height: 40px;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 600;
     font-size: 14px;
     line-height: 16px;
-    color: #8B0606;
+    color: #AC0000;
     background: #FFDEDE;
     border-radius: 4px;
     border: none;
     cursor: pointer;
 }
+.camera_groups_button_cancle:hover{
+    background: #DB4040;
+    color: #FFFFFF;
+}
 .camera_groups_language{
-    padding: 8px;
+    padding: 8px 8px 0 8px;
     border: 1px solid #9EAEC5;
     border-radius: 5px;
     margin-top: 10px!important;
@@ -187,7 +208,7 @@
     font-size: 14px;
     font-weight: 600;
     height: 40px;
-    color: #8B0606;
+    color: #AC0000;
     display: flex;
     align-items: center;
     background-color: #FFDEDE;
@@ -195,6 +216,8 @@
 }
 
 .face_control_setting_footer_delite_button:hover {
+    background: #DB4040;
+    color: #FFFFFF;
     opacity: 0.9;
 }
 .add_new_group_buttons{
@@ -213,10 +236,10 @@
     }
     .face_control_setting_body {
         margin-top: 5px;
-        height: calc(100% - 29px);
+        height: calc(100% - 22px);
     }
     .face_control_setting_tab_item {
-        height: calc(100vh - 173px);
+        height: calc(100vh - 155px);
     }
     .face_control_setting_button{
         height: 35px;
@@ -224,9 +247,12 @@
     .face_control_setting_footer_delite_button{
         height: 35px;
     }
+    .face_control_setting_tab_item_footer {
+        margin-right: 5px;
+    }
     .camera_groups{
         padding-bottom: 6px;
-        max-height: calc(100vh - 174px);
+        max-height: calc(100vh - 160px);
     }
     .camera_groups_language{
         padding: 4px;
@@ -239,13 +265,23 @@
         margin-bottom: 0!important;
     }
     .camera_groups_button{
-        height: 30px;
+        height: 35px;
         margin-right: 2px;
     }
     .camera_groups_button_cancle{
         height: 30px;
         margin-top: 0px;
         margin-left: 3px;
+    }
+    .add_new_group{
+        display: flex;
+        flex-direction: column;
+    }
+    .group_delite_button{
+        width: 100%;
+        height: 35px;
+        margin-left: 0px;
+        margin-top: 5px;
     }
     .add_new_group_buttons{
         display: flex;

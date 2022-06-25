@@ -5,16 +5,7 @@
 .online_doors_title{
     margin-bottom: 10px;
 }
-.online_doors_body{
-    height: calc(100vh - 125px);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 15px;
-    background-color: #FFFFFF;
-    border-radius: 5px;
-    padding: 15px;
-    /*background: red!important;*/
-}
+
 
 .online_doors_info_content{
     background: #FFFFFF;
@@ -68,8 +59,6 @@
 
 .doors_left_img{
     position: relative;
-    /*width: 100%;*/
-    /*height: 100%;*/
     max-width: 355px;
     max-height: 355px;
     border-radius: 5px;
@@ -77,17 +66,6 @@
     overflow: hidden;
 }
 
-/*---time info---*/
-
-.doors_time {
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 33px;
-    color: #29B85D;
-    margin-bottom: 10px!important;
-}
 
 
 /*----doors-right-content---*/
@@ -135,19 +113,22 @@
     border-radius: 5px;
     font-size: 14px;
     font-weight: 600;
-    color: #8B0606;
+    background: #FFDEDE;
+    color: #AC0000;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #FFDEDE;
 }
-.not_allowed_buttons_registration{
+.not_allowed_buttons_cancel:hover{
+    background: #DB4040;
+    color: #FFFFFF;
+}
+.not_allowed_buttons_registration_two{
     width: 170px;
     height: 45px;
     background: #F7F7F7;
     border-radius: 5px;
     border: none;
-    font-family: Open Sans;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -156,26 +137,27 @@
 }
 .not_allowed_allow{
     width: 100%;
-    height: 45px;
-    background: #29B85D;
+    height: 40px;
+    background: #ABFCC8;
+    color: #00752A;
     border-radius: 5px;
     border: none;
 
-    font-family: Open Sans;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 19px;
+
+}
+.not_allowed_allow:hover{
+    background: #29B85D;
     color: #FFFFFF;
 }
 
-
 .doors_right_box{
-    font-family: Open Sans;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
-    line-height: 19px;
     color: #000000;
 }
 
@@ -211,7 +193,6 @@
     margin-bottom: 30px;
 }
 .doors_right_title{
-    font-family: Open Sans;
     font-style: normal;
     font-weight: bold;
     font-size: 28px;
@@ -219,70 +200,12 @@
     color: #000000;
 }
 .doors_right_p{
-    font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 19px;
     color: #717171;
 }
-
-.limit_info{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 90px;
-    background: rgba(255, 0, 0, 0.05);
-    border-radius: 5px;
-    padding: 5px 10px;
-}
-.limit_info_top{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.limit_info_top_img{
-    margin-right: 5px;
-}
-.limit_top_title{
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 22px;
-    color: #000000;
-}
-.limit_middle_title{
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 16px;
-    color: #818589;
-    margin-left: 35px!important;
-    margin-top: 3px !important;
-    margin-bottom: 5px !important;
-}
-.limit_info_bottom{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    cursor: pointer;
-    margin-left: 35px!important;
-}
-.limit_bottom_title{
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 16px;
-    color: #A50000;
-}
-.limit_bottom_title_img{
-    margin-left: 10px;
-}
-
 
 
 /*@media only screen and (max-width: 1800px) {*/

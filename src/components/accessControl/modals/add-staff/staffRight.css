@@ -22,13 +22,18 @@
 .access_control_add_staff_modal_body_item_middle_upload {
     width: 100%;
     height: 100%;
-    background-color: #29B85D;
-    color: #fff;
+    background: #ABFCC8;
+    color: #00752A;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+.access_control_add_staff_modal_body_item_middle_upload:hover {
+    background: #29B85D;
+    color: #FFFFFF;
 }
 
 .access_control_add_staff_modal_body_item_middle_upload:hover {
@@ -42,19 +47,34 @@
 }
 
 .access_control_add_staff_modal_body_item_middle_download {
-    border: none;
+    /*border: none;*/
     border-radius: 5px;
     background-color: #fff;
     border: 1px solid #d9d9d9;
     color: #bebebe;
     cursor: pointer;
-
 }
-
 button:disabled{
 
 }
 
 .access_control_add_staff_modal_body_item_middle_download:hover {
     background-color: rgb(245, 245, 245);
+}
+
+
+
+@media only screen and (max-width: 1470px) {
+    .access_control_add_staff_modal_body_item_middle {
+        width: 100%;
+        display: grid;
+        grid-template-rows: 340px 40px 38px;
+        grid-row-gap: 6px;
+    }
+    .access_control_add_staff_modal_body_item_middle_download{
+        height: 35px!important;
+    }
+    .access_control_add_staff_modal_body_item_middle_upload {
+       height: 35px!important;
+    }
 }

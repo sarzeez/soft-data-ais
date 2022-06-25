@@ -7,7 +7,6 @@ import Modal from "react-modal";
 import finger2 from '../../../../images/finger2.svg';
 import axios from "axios";
 import {BiCheck} from "react-icons/all";
-import loadingGif from '../../../../assets/gif/loading.gif';
 
 import './fingerprint.css';
 

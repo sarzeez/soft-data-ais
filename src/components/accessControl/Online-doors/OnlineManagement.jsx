@@ -18,6 +18,7 @@ import doorNext from "../../../images/doorNext.svg";
 import recIcon from "../../../images/recognationIcon.svg";
 import AddStaff from "../modals/add-staff/AddStaff";
 import noIMG from "../../../images/noIMG.svg";
+import delete_icon from "../../../images/newimages/deleteImg.svg";
 
 import socketIOClient from "socket.io-client";
 import moment from "moment";
@@ -343,10 +344,6 @@ const OnlineManagement = (props) => {
         setTouch(!touch)
     }
 
-    // useEffect(()=>{
-    // changeTouch();
-    // changeTouch2();
-    // },[])
 
     //////////////////////////////////
     //////////////////////////////////
@@ -448,19 +445,20 @@ const OnlineManagement = (props) => {
             <div className="online_doors_content">
                 <div className="online_managment_title">
                     <div className="content_top">
-                        <p className="content_title">{t("Eshiklar boshqaruvi")}</p>
-                        <div className="content_button d-flex align-items-center">
-                            <button type="button" className="btn deleteButton"
+                        <p className="Content_title">{t("Eshiklar boshqaruvi")}</p>
+                        <div className="content_button">
+                            <button type="button"
+                                    className=" deleteButton"
                                     hidden={touch}
-                                //     onMouseLeave={deleteTerminal}
-                                //     onMouseOut={deleteTerminal}
-                                //     onMouseMove={deleteTerminal}
                                     onMouseOver={deleteTerminal}
                             >
-                                <div className="deleteButtonImg">
 
-                                </div>
-                                <span>{t("O’chirish")}</span>
+                                <span className="online_management_delete_button">
+                                       <div className="deleteButtonImg">
+                                           <img className="delete_icon" src={delete_icon} alt=""/>
+                                       </div>
+                                       <span>{t("O’chirish")}</span>
+                                </span>
                             </button>
 
                             <span>{t("Terminallar joylashuvi")} :</span>
@@ -471,13 +469,16 @@ const OnlineManagement = (props) => {
                             ><img src={terminalImg1}/></button>
                             <button type="button"
                                     className={doorOne === true && doorTwo === true && doorThree === false && doorFour === false ? "btn active changeB" : "btn changeB"}
-                                    onClick={() => editingTerminals(2)}><img src={terminalImg2}/></button>
+                                    onClick={() => editingTerminals(2)}><img src={terminalImg2}/>
+                            </button>
                             <button type="button"
                                     className={doorOne === true && doorTwo === true && doorThree === true && doorFour === false ? "btn active changeB" : "btn changeB"}
-                                    onClick={() => editingTerminals(3)}><img src={terminalImg3}/></button>
+                                    onClick={() => editingTerminals(3)}><img src={terminalImg3}/>
+                            </button>
                             <button type="button"
                                     className={doorOne === true && doorTwo === true && doorThree === true && doorFour === true ? "btn active changeB" : "btn changeB"}
-                                    onClick={() => editingTerminals(4)}><img src={terminalImg4}/></button>
+                                    onClick={() => editingTerminals(4)}><img src={terminalImg4}/>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -547,7 +548,8 @@ const OnlineManagement = (props) => {
                                                                                                 className={`doors_right_label ${isDarkMode && 'darkModeColor'}`}>{t("Ism")}:
                                                                                             </div>
                                                                                             <div
-                                                                                                className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.fullname}</div>
+                                                                                                className={`doors_right_box ${isDarkMode && 'darkModeColor'}`}>{onlineImg && onlineImg.user_in_db && onlineImg.user_in_db.fullname}
+                                                                                            </div>
                                                                                         </div>
                                                                                         <div className="label_box">
                                                                                             <div
@@ -599,8 +601,7 @@ const OnlineManagement = (props) => {
                                                                                 {
                                                                                     Number(onlineImg?.guest_user?.status) !== 1 ?
                                                                                         <div className="limit_info">
-                                                                                            <div
-                                                                                                className="limit_info_top">
+                                                                                            <div className="limit_info_top">
                                                                                                 <img
                                                                                                     className="limit_info_top_img"
                                                                                                     src={warning}
@@ -709,7 +710,7 @@ const OnlineManagement = (props) => {
                                 <div className="online_doors_managment_body">
                                     <img src={managmentImg}/>
                                     <h2>Iltimos eshikni tanlang</h2>
-                                    <button type="button" className="btn" onClick={() => upDateViewer(1)}>
+                                    <button type="button" className="online_doors_select_button" onClick={() => upDateViewer(1)}>
                                         Tanlash
                                     </button>
                                 </div>
@@ -760,7 +761,7 @@ const OnlineManagement = (props) => {
                                                                             ?
                                                                             <div className="overflov_img">
                                                                                 <img className="doors_left_img"
-                                                                                     src={url} alt=""/>
+                                                                                     src={url2} alt=""/>
                                                                             </div>
                                                                             : <img className="doors_left_default"
                                                                                    src={myImg} alt="img"/>
@@ -879,8 +880,9 @@ const OnlineManagement = (props) => {
                                                                         <div className="doors_right">
                                                                             {/*oddiy turgan xolatidagi page*/}
                                                                             <div className="doors_time_info">
-                                                                                <p className="doors_time">Aniqlash
-                                                                                    vaqti</p>
+                                                                                <p className="doors_time">
+                                                                                    {t("Aniqlash vaqti")}
+                                                                                </p>
                                                                                 {/*<h1 className="doors_time">{moment( onlineImg2 && onlineImg2.guest_user && onlineImg2.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
                                                                             </div>
                                                                             <div className="box_right_top">
@@ -938,7 +940,7 @@ const OnlineManagement = (props) => {
                                 <div className="online_doors_managment_body">
                                     <img src={managmentImg}/>
                                     <h2>{t("Iltimos eshikni tanlang")}</h2>
-                                    <button type="button" className="btn"
+                                    <button type="button" className="online_doors_select_button"
                                             onClick={() => upDateViewer(2)}
                                     >
                                         {t("Tanlash")}
@@ -997,7 +999,7 @@ const OnlineManagement = (props) => {
                                                                                             ?
                                                                                             <div className="overflov_img">
                                                                                                 <img className="doors_left_img"
-                                                                                                     src={url} alt=""/>
+                                                                                                     src={url3} alt=""/>
                                                                                             </div>
                                                                                             : <img className="doors_left_default"
                                                                                                    src={myImg} alt="img"/>
@@ -1116,8 +1118,9 @@ const OnlineManagement = (props) => {
                                                                                         <div className="doors_right">
                                                                                             {/*oddiy turgan xolatidagi page*/}
                                                                                             <div className="doors_time_info">
-                                                                                                <p className="doors_time">Aniqlash
-                                                                                                    vaqti</p>
+                                                                                                <p className="doors_time">
+                                                                                                    {t("Aniqlash vaqti")}
+                                                                                                </p>
                                                                                                 {/*<h1 className="doors_time">{moment( onlineImg3 && onlineImg3.guest_user && onlineImg3.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
                                                                                             </div>
                                                                                             <div className="box_right_top">
@@ -1180,9 +1183,9 @@ const OnlineManagement = (props) => {
                                 <div className="online_doors_managment_body">
                                     <img src={managmentImg}/>
                                     <h2>Iltimos eshikni tanlang</h2>
-                                    <button type="button" className="btn"
-                                            onClick={() => upDateViewer(3)}
-                                    >Tanlash
+                                    <button type="button" className="online_doors_select_button"
+                                            onClick={() => upDateViewer(3)} >
+                                        Tanlash
                                     </button>
                                 </div>
                             </div>
@@ -1230,7 +1233,7 @@ const OnlineManagement = (props) => {
                                                                             ?
                                                                             <div className="overflov_img">
                                                                                 <img className="doors_left_img"
-                                                                                     src={url} alt=""/>
+                                                                                     src={url4} alt=""/>
                                                                             </div>
                                                                             : <img className="doors_left_default"
                                                                                    src={myImg} alt="img"/>
@@ -1349,8 +1352,9 @@ const OnlineManagement = (props) => {
                                                                         <div className="doors_right">
                                                                             {/*oddiy turgan xolatidagi page*/}
                                                                             <div className="doors_time_info">
-                                                                                <p className="doors_time">Aniqlash
-                                                                                    vaqti</p>
+                                                                                <p className="doors_time">
+                                                                                    {t("Aniqlash vaqti")}
+                                                                                </p>
                                                                                 {/*<h1 className="doors_time">{moment( onlineImg4 && onlineImg4.guest_user && onlineImg4.guest_user.created_time).format("DD.MM.YYYY  HH:mm:ss")}</h1>*/}
                                                                             </div>
                                                                             <div className="box_right_top">
@@ -1408,9 +1412,10 @@ const OnlineManagement = (props) => {
                                 <div className="online_doors_managment_body">
                                     <img src={managmentImg}/>
                                     <h2>Iltimos eshikni tanlang</h2>
-                                    <button type="button" className="btn"
+                                    <button type="button" className="online_doors_select_button"
                                             onClick={() => upDateViewer(4)}
-                                    >Tanlash
+                                    >
+                                        Tanlash
                                     </button>
                                 </div>
                             </div>

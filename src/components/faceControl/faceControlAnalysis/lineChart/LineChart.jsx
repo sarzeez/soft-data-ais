@@ -52,7 +52,6 @@ const LineChart = (props) => {
             },
             stroke: {
                 curve: 'smooth',
-                width: 2
             },
             xaxis: {
                 type: 'number',
@@ -67,12 +66,11 @@ const LineChart = (props) => {
         },
     }
 
-    // console.log(data)
     return (
-        <div id="chart">
+        <div id="chart" className='line_chart'>
             {
                 data && data.data &&
-                <ReactApexChart options={state.options} series={state.series} type="line" width='100%' height={430} />
+                <ReactApexChart options={state.options} series={state.series} type="line"  height='100%' />
             }
         </div>
     )

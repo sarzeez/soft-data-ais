@@ -4,6 +4,7 @@ import ReactApexChart from 'react-apexcharts'
 const ApexChart = (props) => {
   const lang = localStorage.getItem('i18nextLng');
   const { data } = props;
+  // console.log(data);
   const state = {
     series: [{
       name: lang === 'uz'? data?.title_uz : lang === 'ru' ? data?.title_ru : data?.title_en,

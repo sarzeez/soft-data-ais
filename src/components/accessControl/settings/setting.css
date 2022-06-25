@@ -7,7 +7,7 @@
 .access_control_setting_body {
     width: 100%;
     margin-top: 10px;
-    height: calc(100% - 42px);
+    height: calc(100% - 40px);
     border-radius: 5px;
     padding: 10px;
     border: 1px solid #EAEAEA;
@@ -18,7 +18,7 @@
 
 .access_control_setting_tab_item {
     width: 100%;
-    height: calc(100vh - 190px);
+    height: calc(100vh - 191px);
     display: grid;
     grid-template-rows: 1fr 50px;
     overflow: auto;
@@ -55,7 +55,7 @@
     justify-content: center;
 }
 
-.access_control_setting_tab_item_footer_buttons button {
+.access_control_setting_tab_item_footer_buttons .access_delet_button {
     cursor: pointer;
     border: none;
     padding: 0px 18px;
@@ -63,20 +63,40 @@
     font-size: 14px;
     font-weight: 600;
     height: 40px;
-    color: #8B0606;
+    background: #FFDEDE;
+    color: #AC0000;
     display: flex;
     align-items: center;
-    background-color: #FFDEDE;
 }
+.access_delet_button:hover{
+    background: #DB4040;
+    color: #FFFFFF;
+}
+
 
 .access_control_setting_tab_item_footer_buttons button:hover {
     opacity: 0.9;
 }
 
-.add_button {
+.access_control_setting_tab_item_footer_buttons .add_button {
     margin-right: 8px;
-    background-color: #29B85D !important;
-    color: #fff !important;
+    height: 40px;
+    padding: 0px 10px;
+    background: #ABFCC8;
+    color: #00752A;
+    border-radius: 5px;
+    border: none;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+}
+.add_button:hover{
+    background: #29B85D;
+    color: #FFFFFF;
 }
 
 .edit_button {
@@ -141,3 +161,39 @@
 .door_ip_length:hover> .door_ip_length_hover{
     opacity: 1;
 }
+
+
+@media only screen and (max-width: 1470px) {
+    .access_control_setting {
+        height: calc(100vh - 64px);
+        padding: 8px;
+    }
+
+    .access_control_setting_body {
+        margin-top: 5px;
+        height: calc(100% - 22px);
+    }
+    .access_control_setting_tab_item_footer_buttons button {
+        padding: 0px 10px;
+        height: 35px;
+    }
+    .add_button{
+        height: 35px!important;
+    }
+    .access_control_setting_tab_item {
+        height: calc(100vh - 160px);
+    }
+    .access_control_add_staff_terminal_modal_body_buttons {
+        margin-top: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+

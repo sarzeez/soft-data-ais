@@ -136,7 +136,6 @@ const Left = ({ data, setData, terminalIPList, staffTableIntialValues }) => {
                             <span style={{color:"#bfbfbf"}}>{t("Tanlash")}</span>
                         </Select.Option>
                         {
-
                             categoryData[userType - 1]?.map((item, index) => (
                                 <Select.Option key={index} value={item.value}>{t(item.name)}</Select.Option>
                             ))
@@ -161,9 +160,10 @@ const Left = ({ data, setData, terminalIPList, staffTableIntialValues }) => {
 
             </div>
 
+            <p className="access_time_label">Ruxsat etiladigan muddat</p>
             <div className="access_control_add_staff_modal_body_item_left_inputs">
                 <Form.Item
-                    label={t("Ruxsat etiladigan muddat")}
+                    // label={t(" ")}
                     name="valid_from_time"
                     rules={[
                     {
@@ -182,7 +182,7 @@ const Left = ({ data, setData, terminalIPList, staffTableIntialValues }) => {
 
                 </Form.Item>
                 <Form.Item
-                    label=" "
+                    // label=" "
                     name="valid_to_time"
                     rules={[
                     {

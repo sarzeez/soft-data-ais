@@ -97,17 +97,27 @@ const AccessControlSetting = (props) => {
     }
 
     const [state, setState] = useState({selectedRowKeys: []})
-    const onSelectChange = (selectedRowKeys, a) => {
-        setState({ selectedRowKeys })
+    const [terminalSelectionState, setTerminalSelectionState] = useState({selectedRowKeys: []})
+    const [staffSelectionState, setStaffSelectionState] = useState({selectedRowKeys: []})
+    const onTerminalSelectChange = (selectedRowKeys, a) => {
+        setTerminalSelectionState({ selectedRowKeys })
         setDeleteTerminal(a.map(item => item.id));
+    };
+    const onStaffSelectChange = (selectedRowKeys, a) => {
+        setStaffSelectionState({ selectedRowKeys })
         setDeleteStaff(a.map(item => item.id));
     };
 
-    const { selectedRowKeys } = state;
+    const { selectedRowKeys: terminalSelectedRowKeys} = terminalSelectionState;
+    const { selectedRowKeys: staffSelectedRowKeys } = staffSelectionState;
 
-    const rowSelection = {
-        selectedRowKeys,
-        onChange: onSelectChange,
+    const terminalRowSelection = {
+        terminalSelectedRowKeys,
+        onChange: onTerminalSelectChange,
+    }
+    const staffRowSelection = {
+        staffSelectedRowKeys,
+        onChange: onStaffSelectChange,
     }
 
     const getTerminalData = async (id) => {
@@ -238,7 +248,7 @@ const AccessControlSetting = (props) => {
                                     terminalData = {terminalData}
                                     setIsOpenAddTerminal={setIsOpenAddTerminal}
                                     setTerminalTableIntialValues={setTerminalTableIntialValues}
-                                    rowSelection={rowSelection}
+                                    rowSelection={terminalRowSelection}
                                 />
                             </div>
                             <div className='access_control_setting_tab_item_footer'>
@@ -250,7 +260,7 @@ const AccessControlSetting = (props) => {
 
                                     {
                                         deleteTerminal.length > 0 &&
-                                        <button onClick={handleDeleteterminal}>
+                                        <button className="delete_button" onClick={handleDeleteterminal}>
                                             <AiOutlineDelete size={22} style = {{marginRight: '5px'}}/>
                                             {t("O’chirish")}
                                         </button>
@@ -287,7 +297,7 @@ const AccessControlSetting = (props) => {
                                     <StaffTable
                                         isDarkMode={isDarkMode}
                                         staffData = {staffData}
-                                        rowSelection={rowSelection}
+                                        rowSelection={staffRowSelection}
                                         setIsOpenAddStaff={setIsOpenAddStaff}
                                         setStaffTableIntialValues={setStaffTableIntialValues}
                                         setCard={setCard}
@@ -302,7 +312,7 @@ const AccessControlSetting = (props) => {
                                         </button>
                                         {
                                             deleteStaff.length > 0 &&
-                                            <button onClick={handleDeliteStaff}>
+                                            <button className="delete_button" onClick={handleDeliteStaff}>
                                                 <AiOutlineDelete size={22} style = {{marginRight: '5px'}}/>
                                                 {t("O’chirish")}
                                             </button>
@@ -321,21 +331,21 @@ const AccessControlSetting = (props) => {
 
                     </TabPane>
 
-                    <TabPane tab={t("Qora ro’yxat")} key="3">
-                        <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>
-                            <div className='access_control_setting_tab_item_body'>
-                                Qora ro’yxat
-                            </div>
-                        </div>
-                    </TabPane>
+                    {/*<TabPane tab={t("Qora ro’yxat")} key="3">*/}
+                    {/*    <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>*/}
+                    {/*        <div className='access_control_setting_tab_item_body'>*/}
+                    {/*            Qora ro’yxat*/}
+                    {/*        </div>*/}
+                    {/*    </div>*/}
+                    {/*</TabPane>*/}
 
-                    <TabPane tab={t("Online boshqaruv")} key="4">
-                        <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>
-                            <div className='access_control_setting_tab_item_body'>
-                                Online boshqaruv
-                            </div>
-                        </div>
-                    </TabPane>
+                    {/*<TabPane tab={t("Online boshqaruv")} key="4">*/}
+                    {/*    <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>*/}
+                    {/*        <div className='access_control_setting_tab_item_body'>*/}
+                    {/*            {t("Online boshqaruv")}*/}
+                    {/*        </div>*/}
+                    {/*    </div>*/}
+                    {/*</TabPane>*/}
                 </Tabs>
             </div>
 

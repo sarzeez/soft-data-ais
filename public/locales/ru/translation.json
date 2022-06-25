@@ -188,6 +188,18 @@
   "Iltimos eshikni tanlang": "Пожалуйста, выберите дверь",
   "Aniqlash vaqti": "Время обнаружения",
   "Kanal": " Канал",
+  "Qora ro’yxat": "Черный список",
+
+  "Yo’nalishi": "Направление",
+  "Eshik nomini kiriting": "Введите имя двери",
+  "Yo'nalishni tanlang": "Выберите маршрут",
+  "Terminal IP manzil kiriting": "Введите IP-адрес терминала",
+  "Terminal turini tanlang": "Выберите тип терминала",
+  "Autentifikatsiya turini tanlang": "Выберите тип аутентификации",
+  "Login kiriting": "Введите свой логин",
+  "Parol kiriting":"Введите пароль",
+
+
 
 
 

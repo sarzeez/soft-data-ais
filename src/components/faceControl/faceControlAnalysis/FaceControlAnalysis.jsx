@@ -72,22 +72,6 @@ const FaceControlAnalysis = () => {
         //     category: data ? data.data && data.data.map(item => item.part): [],
         //     color: "#11d2c2"
         // },
-        // {
-        //     title: `KIRISH "MAKRO"`,
-        //     mainPercent: data && data.door_2,
-        //     littlePercent: '0.21%',
-        //     data: data ? data.data && data.data.map(item => item.door_2): [],
-        //     category: data ? data.data && data.data.map(item => item.part): [],
-        //     color: "#29B85D"
-        // },
-        // {
-        //     title: `KIRISH "AVTOTURARGOH"`,
-        //     mainPercent: data && data.door_3,
-        //     littlePercent: '0.21%',
-        //     data: data ? data.data && data.data.map(item => item.door_3) : [],
-        //     category: data ? data.data && data.data.map(item => item.part) : [],
-        //     color: "#000"
-        // },
     ]
 
     const colorArray = ["#11d2c2", "#000", "#29B85D", "#B12929", "#0a38c1"]
@@ -159,11 +143,14 @@ const FaceControlAnalysis = () => {
                     <BodyChart data = {data} />
                 </div>
             </div>
+
+
             <div className='analysis-footer'>
                 <div className='analysis-footer-left'>
                     <h2 className='analysis-footer-title' style={{marginBottom: '20px'}}>{t("Yosh bo'yicha ko'rsatkichlar")}</h2>
                     <PieChart data = {population} />
                 </div>
+
                 <div className='analysis-footer-right'>
                     <div className="gender_top">
                         <h2>{t("Jins bo'yicha ko'rsatkichlar")}</h2>
@@ -185,7 +172,10 @@ const FaceControlAnalysis = () => {
                             </div>
                         </div>
                     </div>
-                     <LineChart data = {data} />
+                    <div className='analysis_footer_lineChart'>
+                      <LineChart data = {data} />
+                    </div>
+                     
                 </div>
             </div>
         </div>

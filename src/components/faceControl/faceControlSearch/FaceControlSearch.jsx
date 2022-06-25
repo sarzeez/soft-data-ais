@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {Input, Select, DatePicker,} from "antd";
+import {Input, Select, DatePicker, Button,} from "antd";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -215,6 +215,7 @@ export default function FaceControlSearch() {
                     <div className={`content_inputs ${isDarkMode && 'darkModeCard darkModeBorder'}`}>
 
                         <div className="face_control_inputs">
+
                             <div className="face_control_search_inline_inputs">
                                 <div className="form_input_wrapper">
                                     <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Yoshi')}:</p>
@@ -344,6 +345,7 @@ export default function FaceControlSearch() {
                                     </div>
                                 </div>
                             </div>
+
                             <div className="face_control_search_inline_inputs">
                                 <div className="form_input_wrapper">
                                     <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Guruh')}:</p>

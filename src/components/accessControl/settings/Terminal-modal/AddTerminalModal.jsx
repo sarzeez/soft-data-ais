@@ -86,38 +86,38 @@ const AddTerminalModal = ( props ) => {
                 autoComplete="off"
             >
                 <div className='access_control_add_terminal_modal'>
-                    <h1 className='access_control_add_staff_terminal_modal_title'>Terminal parametrlari</h1>
+                    <h1 className='access_control_add_staff_terminal_modal_title'>{t("Terminal parametrlari")}</h1>
 
                     <div className="access_control_add_terminal_modal_bodiy">
                         <div className="access_control_add_terminal_modal_item">
                             <Form.Item
-                                label="Eshik nomi"
+                                label={t("Eshik nomi")}
                                 name="door_name"
                                 rules={[
                                     {
                                         required: true,
-                                        message: 'Eshik nomini kiriting',
+                                        message: t('Eshik nomini kiriting'),
                                     },
                                 ]}
                             >
                                 <Input
                                     size="large"
-                                    placeholder="Kiriting"
+                                    placeholder={t("Kiriting")}
                                 />
                             </Form.Item>
                             <Form.Item
-                                label="Yo’nalishi"
+                                label={t("Yo’nalishi")}
                                 name="direction"
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Yo'nalishni  tanlang",
+                                        message: t("Yo'nalishni tanlang"),
                                     },
                                 ]}
                             >
                                 <Select
                                     size="large"
-                                    placeholder="Tanlang"
+                                    placeholder={t("Tanlang")}
                                 >
                                     <Select.Option value="Entry">{t("Kirish")}</Select.Option>
                                     <Select.Option value="Exit">{t("Chiqish")}</Select.Option>
@@ -127,33 +127,33 @@ const AddTerminalModal = ( props ) => {
 
                         <div className="access_control_add_terminal_modal_item">
                             <Form.Item
-                                label="Terminal IP manzili"
+                                label={t("Terminal IP manzili")}
                                 name="ip_address"
                                 rules={[
                                     {
                                         required: true,
-                                        message: 'Terminal IP manzil kiriting',
+                                        message: t('Terminal IP manzil kiriting'),
                                     },
                                 ]}
                             >
                                 <Input
                                     size="large"
-                                    placeholder="Kiriting"
+                                    placeholder={t("Kiriting")}
                                 />
                             </Form.Item>
                             <Form.Item
-                                label="Terminal turi"
+                                label={t("Terminal turi")}
                                 name="type"
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Terminal turini tanlang",
+                                        message: t("Terminal turini tanlang"),
                                     },
                                 ]}
                             >
                                 <Select
                                     size="large"
-                                    placeholder="Tanlang"
+                                    placeholder={t("Tanlang")}
                                 >
                                     <Select.Option value="dahua">Dahua</Select.Option>
                                     <Select.Option value="hikvision">Hikvision</Select.Option>
@@ -163,18 +163,18 @@ const AddTerminalModal = ( props ) => {
                         </div>
 
                         <Form.Item
-                            label="Autentifikatsiya turi"
+                            label={t("Autentifikatsiya turi")}
                             name="auth_type"
                             rules={[
                                 {
                                     required: true,
-                                    message: "Autentifikatsiya turini tanlang",
+                                    message: t("Autentifikatsiya turini tanlang"),
                                 },
                             ]}
                         >
                             <Select
                                 size="large"
-                                placeholder="Tanlang"
+                                placeholder={t("Tanlang")}
                             >
                                 <Select.Option value="1">{t("Yuz")}</Select.Option>
                                 <Select.Option value="2">{t("Barmoq izi")}</Select.Option>
@@ -191,27 +191,27 @@ const AddTerminalModal = ( props ) => {
 
                         <div className="access_control_add_terminal_modal_item">
                             <Form.Item
-                                label="Login"
+                                label={t("Login")}
                                 name="username"
                                 rules={[
                                     {
                                         required: true,
-                                        message: 'Login kiriting',
+                                        message: t('Login kiriting'),
                                     },
                                 ]}
                             >
                                 <Input
                                     size="large"
-                                    placeholder="Kiriting"
+                                    placeholder={t("Kiriting")}
                                 />
                             </Form.Item>
                             <Form.Item
-                                label="Parol"
+                                label={t("Parol")}
                                 name="password"
                                 rules={[
                                     {
                                         required: true,
-                                        message: 'Parol kititing',
+                                        message: t('Parol kiriting'),
                                     },
                                 ]}
                             >
@@ -223,8 +223,8 @@ const AddTerminalModal = ( props ) => {
                     </div>
 
                         <div className='access_control_add_staff_terminal_modal_body_buttons'>
-                            <button onClick={cancel} type='button'>Bekor qilish</button>
-                            <button type='submit'>Saqlash</button>
+                            <button className="add_terminal_cancel_button" onClick={cancel} type='button'>{t("Bekor qilish")}</button>
+                            <button className="add_terminal_save_button" type='submit'>{t("Saqlash")}</button>
                         </div>
                 </div>
             </Form>

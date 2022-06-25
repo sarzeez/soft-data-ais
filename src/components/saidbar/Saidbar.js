@@ -14,15 +14,16 @@ import useWindowDimensions from '../../hooks/hooks';
 import 'antd/dist/antd.css';
 
 import logo from '../../images/Logo.svg';
+// import logo from '../../images/taxtLogo.svg';
 import shortlogo from '../../images/shortLogo.svg';
-import face from '../../images/dashIMG/face.svg';
-import search from '../../images/dashIMG/search.svg';
-import setting from '../../images/dashIMG/settings.svg';
-import analisy from '../../images/dashIMG/analisy.svg';
-import access from '../../images/dashIMG/access.svg';
-import tableimg from '../../images/dashIMG/table.svg';
-import doorKey from '../../images/dashIMG/doorKey.svg';
-import working from "../../images/newimages/ishvaqti/time-management 1.png";
+import face from '../../images/dashIcons/face.svg';
+import search from '../../images/dashIcons/search.svg';
+import setting from '../../images/dashIcons/settings.svg';
+import analisy from '../../images/dashIcons/statestc.svg';
+import access from '../../images/dashIcons/access.svg';
+import tableimg from '../../images/dashIcons/table.svg';
+import doorKey from '../../images/dashIcons/doors.svg';
+import working from "../../images/dashIcons/workTime.svg";
 import './style.css';
 
 
@@ -94,9 +95,14 @@ const Saidbar = ({ user, setUser }) => {
                 <Sider width={sidebarWidth} theme={isDarkMode ? 'dark' : 'light'} className={`siderBackColor ${isDarkMode && 'darkModeBackground'}`}  trigger={null} collapsible collapsed={collapsed}>
                     <div className="logo">
                         {
-                            collapsed ? <img src={shortlogo} alt=""/> :  <img src={logo} alt=""/>
+                            collapsed ?  <img className="short_logo" src={shortlogo} alt=""/> :
+                                <img className="logo_img " src={logo} alt=""/>
+                                // <div>  <img className="short_logo" src={shortlogo} alt=""/>
+                                //     <img className="logo_img " src={logo} alt=""/>
+                                // </div>
                         }
                     </div>
+
                     <Menu
                         theme={isDarkMode ? 'dark' : 'light'}
                         className={`siderBackColor_menu ${isDarkMode && 'darkModeBackground'}`}
@@ -144,12 +150,12 @@ const Saidbar = ({ user, setUser }) => {
 
                             {/*ish vaqti hisoboti*/}
 
-                            <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Working Hour Report', 7)} key="7"
-                                       icon={<img src={working} alt=""/>}>
-                                <Link to="/working-hour-report">
-                                    {t("Ish vaqti hisoboti")}
-                                </Link>
-                            </Menu.Item>
+                            {/*<Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Working Hour Report', 7)} key="7"*/}
+                            {/*           icon={<img src={working} alt=""/>}>*/}
+                            {/*    <Link to="/working-hour-report">*/}
+                            {/*        {t("Ish vaqti hisoboti")}*/}
+                            {/*    </Link>*/}
+                            {/*</Menu.Item>*/}
 
                             <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 9)} key="9"
                                        icon={<img src={setting} alt=""/>}>
@@ -165,7 +171,7 @@ const Saidbar = ({ user, setUser }) => {
                 <Layout   className={`site-layout ${isDarkMode && 'darkModeLayautBg'} `}>
 
                     <Header theme={isDarkMode ? 'dark' : 'light'}  className={`site-layout-background headerr ${isDarkMode && 'darkModeBackground'} `} style={{ padding: 0 }}>
-                        <div className={`${isDarkMode && 'darkModeColor'}`}>
+                        <div className={`saidbar_toggle ${isDarkMode && 'darkModeColor'}`}>
                             {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
                                 className: 'trigger',
                                 onClick: toggle,
@@ -227,6 +233,7 @@ const Saidbar = ({ user, setUser }) => {
                             </div>
                         </div>
                     </Header>
+
                     <Content  className={`site-layout-background ${isDarkMode && 'darkModeBackground'}`}>
                         <div className={`content_bottom ${isDarkMode && 'darkModeLayautBg'}`} >
                             <RootPage/>
