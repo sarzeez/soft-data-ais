@@ -6,11 +6,11 @@ import { RiEditLine } from 'react-icons/ri'
 import 'antd/dist/antd.css';
 import {useTranslation} from "react-i18next";
 
-const auth_type = {
-    uz: ['', 'Yuz', 'Barmoq izi', 'ID karta', 'Yuz va Barmoq izi', 'Yuz yoki Barmoq izi', 'Yuz va ID karta', 'Yuz yoki ID karta', 'Barmoq izi va ID karta', 'Barmoq izi yoki ID karta', 'Yuz yoki Barmoq izi yoki ID karta'],
-    ru: ['Лицо', 'Отпечаток пальца', 'ID карта'],
-    en: ['Face', 'Fingerprint', 'ID card']
-}
+// const auth_type = {
+//     uz: ['', 'Yuz', 'Barmoq izi', 'ID karta', 'Yuz va Barmoq izi', 'Yuz yoki Barmoq izi', 'Yuz va ID karta', 'Yuz yoki ID karta', 'Barmoq izi va ID karta', 'Barmoq izi yoki ID karta', 'Yuz yoki Barmoq izi yoki ID karta'],
+//     ru: ['Лицо', 'Отпечаток пальца', 'ID карта'],
+//     en: ['Face', 'Fingerprint', 'ID card']
+// }
 
 const TerminalTable = (props) => {
     const {
@@ -58,10 +58,23 @@ const TerminalTable = (props) => {
         {
             title: t('Autentifikatsiya turi'),
             dataIndex: 'auth_type',
-            // align: 'center',
+            align: 'center',
             render: (text, record) => (
                 <div>
-                    {auth_type[lang][record.auth_type]}
+                    {
+                        record.auth_type ==1 ? t("Yuz"):
+                            record.auth_type ==2 ? t("Barmoq izi"):
+                                record.auth_type ==3 ? t("ID karta"):
+                                    record.auth_type ==4 ? t("Yuz va Barmoq izi"):
+                                        record.auth_type ==5 ? t("Yuz yoki Barmoq izi"):
+                                            record.auth_type ==6 ? t("Yuz va ID karta"):
+                                                record.auth_type ==7 ? t("Yuz yoki ID karta"):
+                                                    record.auth_type ==8 ? t("Barmoq izi va ID karta"):
+                                                        record.auth_type ==9 ? t("Barmoq izi yoki ID karta"):
+                                                            record.auth_type ==10 ? t("Yuz yoki Barmoq izi yoki ID karta"): ""
+
+                    }
+                    {/*{auth_type[lang][record.auth_type]}*/}
                 </div>
             )
         },
@@ -102,14 +115,14 @@ const TerminalTable = (props) => {
         },
     ];
 
-        return (
-            <Table
-               className={` ${isDarkMode && 'darkModeBackground'}`}
-               rowSelection={rowSelection}
-                columns={columnsUz}
-                dataSource={terminalData}
-                pagination={false}
-            />
-        );
+    return (
+        <Table
+            className={` ${isDarkMode && 'darkModeBackground'}`}
+            rowSelection={rowSelection}
+            columns={columnsUz}
+            dataSource={terminalData}
+            pagination={false}
+        />
+    );
 }
 export default TerminalTable

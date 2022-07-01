@@ -319,12 +319,16 @@ const AccessControlSetting = (props) => {
                                         }
                                     </div>
 
-                                    <StaffPagination
-                                        staffPaginationLimit = {staffPaginationLimit}
-                                        staffPaginationCurrent = {staffPaginationCurrent}
-                                        staffPaginationOnChange = {staffPaginationOnChange}
-                                        accessTableTotal = {staffTotal}
-                                    />
+                                    <div className="access-control-pagination" >
+                                        {/*<p className = {`content_total ${isDarkMode && 'darkModeColor'}`}>{t('Jami')}: {staffTotal} </p>*/}
+                                        <StaffPagination
+                                            staffPaginationLimit = {staffPaginationLimit}
+                                            staffPaginationCurrent = {staffPaginationCurrent}
+                                            staffPaginationOnChange = {staffPaginationOnChange}
+                                            accessTableTotal = {staffTotal}
+                                        />
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -338,13 +342,6 @@ const AccessControlSetting = (props) => {
                     {/*    </div>*/}
                     {/*</TabPane>*/}
 
-                    {/*<TabPane tab={t("Online boshqaruv")} key="4">*/}
-                    {/*    <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>*/}
-                    {/*        <div className='access_control_setting_tab_item_body'>*/}
-                    {/*            {t("Online boshqaruv")}*/}
-                    {/*        </div>*/}
-                    {/*    </div>*/}
-                    {/*</TabPane>*/}
                 </Tabs>
             </div>
 

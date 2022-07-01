@@ -5,7 +5,7 @@ import FaceControlAnalysis from '../components/faceControl/faceControlAnalysis/F
 import AccessControlSetting from '../components/accessControl/settings/AccessControlSetting'
 
 
-import NotFound from '../components/notFound/NotFound'
+import NotFound from '../components/notFound/NotFound';
 import AcsessControlTable from "../components/accessControl/accessControlSearch/AccessControlTable";
 import FaceControlSetting from "../components/faceControl/FaceSetting/FaceControlSetting";
 import OnlineManagement from "../components/accessControl/Online-doors/OnlineManagement";
