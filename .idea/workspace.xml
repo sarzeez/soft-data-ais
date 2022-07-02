@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bb0976f-af46-48a6-af2c-ded35ca474dc" name="Changes" comment="">
+    <list default="true" id="5bb0976f-af46-48a6-af2c-ded35ca474dc" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,8 +54,18 @@
       <workItem from="1656420315721" duration="724000" />
       <workItem from="1656481378105" duration="462000" />
       <workItem from="1656685266604" duration="1104000" />
-      <workItem from="1656688474534" duration="1311000" />
+      <workItem from="1656688474534" duration="2924000" />
+      <workItem from="1656694374044" duration="908000" />
+      <workItem from="1656697329962" duration="604000" />
     </task>
+    <task id="LOCAL-00001" summary="commit">
+      <created>1656690543282</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656690543282</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -71,5 +81,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>
