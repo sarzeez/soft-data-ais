@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4da1f399-1a33-4294-b2f1-d056329cbf9f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/cursor.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/newimages/deleteIconn.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/onlineManag/managmentAction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/onlineManag/managmentReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/onlineManag/managmentTypes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineDoors.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineDoors.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineDoors.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/theme/themeActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/theme/themeActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/theme/themeReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/theme/themeReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,8 +163,31 @@
       <workItem from="1649131355331" duration="11305000" />
       <workItem from="1649505658550" duration="62657000" />
       <workItem from="1650311026320" duration="584000" />
-      <workItem from="1650359901851" duration="29656000" />
+      <workItem from="1650359901851" duration="30712000" />
+      <workItem from="1650782888658" duration="756000" />
+      <workItem from="1650931102809" duration="581000" />
+      <workItem from="1651202984500" duration="611000" />
+      <workItem from="1651690282877" duration="2828000" />
+      <workItem from="1652206549546" duration="3388000" />
+      <workItem from="1653755052826" duration="948000" />
+      <workItem from="1653804308694" duration="586000" />
+      <workItem from="1654410586042" duration="611000" />
+      <workItem from="1654448931997" duration="666000" />
+      <workItem from="1654710910683" duration="605000" />
+      <workItem from="1655915430229" duration="587000" />
+      <workItem from="1656093267646" duration="2081000" />
+      <workItem from="1656148845750" duration="1143000" />
+      <workItem from="1656169219308" duration="644000" />
+      <workItem from="1656477884777" duration="577000" />
     </task>
+    <task id="LOCAL-00001" summary="terminal add">
+      <created>1650623370242</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1650623370264</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,12 +208,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="terminal add" />
+    <option name="LAST_COMMIT_MESSAGE" value="terminal add" />
   </component>
   <component name="WindowStateProjectService">
     <state x="134" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1650279776105">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="134" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1360.728@0.0.1360.728" timestamp="1650279776105" />
+    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1650623364067">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1650623364067" />
     <state x="128" y="61" key="MergeDialog" timestamp="1649336601946">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -217,10 +232,18 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="181" y="7" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1650621071527" />
+    <state x="272" y="98" key="Vcs.Push.Dialog.v2" timestamp="1650623575800">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="272" y="98" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1650623575800" />
     <state x="489" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1649336617526">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="489" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1360.728@0.0.1360.728" timestamp="1649336617526" />
+    <state x="397" y="156" key="git4idea.merge.GitPullDialog" timestamp="1650623382624">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="397" y="156" key="git4idea.merge.GitPullDialog/0.0.1360.728@0.0.1360.728" timestamp="1650623382624" />
     <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1650537094875">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
