@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bb0976f-af46-48a6-af2c-ded35ca474dc" name="Changes" comment="commit">
+    <list default="true" id="f8f05d39-a9cc-47db-b1e6-53177aae0b5d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/OnlineManagement.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineDoors.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineDoors.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/Online-doors/onlineManegment.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/Left.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffRight.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/modals/add-staff/StaffRight.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/Terminal-modal/AddTerminalModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/Terminal-modal/AddTerminalModal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessControl/settings/table/StaffTable.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/faceSetting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/FaceSetting/faceSetting.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/FaceControlAnalysis.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/FaceControlAnalysis.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/analysis.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/faceControl/faceControlAnalysis/analysis.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/saidbar/Saidbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/saidbar/Saidbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ip.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ip.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +27,8 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2Aemt2MWm6Bg1QnEwHc7mAuf9gy" />
+  <component name="ProjectId" id="2BXBzMbBOsgihmELHfKgXBcUyVW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -34,57 +47,25 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5bb0976f-af46-48a6-af2c-ded35ca474dc" name="Changes" comment="" />
-      <created>1655378637507</created>
+      <changelist id="f8f05d39-a9cc-47db-b1e6-53177aae0b5d" name="Changes" comment="" />
+      <created>1657042817514</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1655378637507</updated>
-      <workItem from="1655378642766" duration="5063000" />
-      <workItem from="1655439298296" duration="9056000" />
-      <workItem from="1655456662391" duration="11306000" />
-      <workItem from="1655524981288" duration="18188000" />
-      <workItem from="1655698419619" duration="20991000" />
-      <workItem from="1655784437901" duration="4362000" />
-      <workItem from="1655791341250" duration="12507000" />
-      <workItem from="1655870905200" duration="11895000" />
-      <workItem from="1655957991399" duration="13923000" />
-      <workItem from="1656043931495" duration="9538000" />
-      <workItem from="1656129907556" duration="8630000" />
-      <workItem from="1656303674730" duration="5468000" />
-      <workItem from="1656420315721" duration="724000" />
-      <workItem from="1656481378105" duration="462000" />
-      <workItem from="1656685266604" duration="1104000" />
-      <workItem from="1656688474534" duration="2924000" />
-      <workItem from="1656694374044" duration="908000" />
-      <workItem from="1656697329962" duration="604000" />
-      <workItem from="1656758534606" duration="304000" />
+      <updated>1657042817514</updated>
+      <workItem from="1657042822193" duration="886000" />
+      <workItem from="1657108895829" duration="1202000" />
+      <workItem from="1657112025003" duration="4492000" />
+      <workItem from="1657119043366" duration="1614000" />
+      <workItem from="1657128014920" duration="2257000" />
+      <workItem from="1657281910486" duration="294000" />
+      <workItem from="1657298906770" duration="648000" />
+      <workItem from="1657788995487" duration="566000" />
+      <workItem from="1657802727969" duration="220000" />
+      <workItem from="1658153608417" duration="746000" />
     </task>
-    <task id="LOCAL-00001" summary="commit">
-      <created>1656690543282</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1656690543282</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>

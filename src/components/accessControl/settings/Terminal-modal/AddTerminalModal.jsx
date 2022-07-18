@@ -65,7 +65,7 @@ const AddTerminalModal = ( props ) => {
 
     const onFinishFailed = (error) => {
         console.log(error)
-    }
+    } 
 
     return (
         <Modal

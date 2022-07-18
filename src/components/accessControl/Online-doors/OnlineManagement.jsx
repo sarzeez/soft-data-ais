@@ -19,6 +19,7 @@ import recIcon from "../../../images/recognationIcon.svg";
 import AddStaff from "../modals/add-staff/AddStaff";
 import noIMG from "../../../images/noIMG.svg";
 import delete_icon from "../../../images/newimages/deleteImg.svg";
+import jjj from "../../../images/jjj.jpg"
 
 import socketIOClient from "socket.io-client";
 import moment from "moment";
@@ -465,19 +466,23 @@ const OnlineManagement = (props) => {
 
                             <button type="button"
                                     className={doorOne === true && doorTwo === false && doorThree === false && doorFour === false ? "btn active changeB" : "btn changeB"}
-                                    onClick={() => editingTerminals(1)}
-                            ><img src={terminalImg1}/></button>
+                                    onClick={() => editingTerminals(1)} >
+                                <img src={terminalImg1}/>
+                            </button>
                             <button type="button"
                                     className={doorOne === true && doorTwo === true && doorThree === false && doorFour === false ? "btn active changeB" : "btn changeB"}
-                                    onClick={() => editingTerminals(2)}><img src={terminalImg2}/>
+                                    onClick={() => editingTerminals(2)}>
+                                    <img src={terminalImg2}/>
                             </button>
                             <button type="button"
                                     className={doorOne === true && doorTwo === true && doorThree === true && doorFour === false ? "btn active changeB" : "btn changeB"}
-                                    onClick={() => editingTerminals(3)}><img src={terminalImg3}/>
+                                    onClick={() => editingTerminals(3)}>
+                                    <img src={terminalImg3}/>
                             </button>
                             <button type="button"
                                     className={doorOne === true && doorTwo === true && doorThree === true && doorFour === true ? "btn active changeB" : "btn changeB"}
-                                    onClick={() => editingTerminals(4)}><img src={terminalImg4}/>
+                                    onClick={() => editingTerminals(4)}>
+                                    <img src={terminalImg4}/>
                             </button>
                         </div>
                     </div>
@@ -529,6 +534,7 @@ const OnlineManagement = (props) => {
                                                                             <div className="overflov_img">
                                                                                 <img className="doors_left_img"
                                                                                      src={url} alt=""/>
+                                                                                {/*<img className="doors_left_img" src={jjj} alt=""/>*/}
                                                                             </div>
                                                                             : <img className="doors_left_default"
                                                                                    src={myImg} alt="img"/>

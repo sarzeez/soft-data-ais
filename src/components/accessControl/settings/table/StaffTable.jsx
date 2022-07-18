@@ -52,8 +52,9 @@ const StaffTable = (props) => {
             render: (text, record) => (
                 <div className='table_user_cell'>
                     <Image
-                        width={40}
-                        style={{borderRadius: '20px', marginRight: '5px', maxWidth: '40px', maxHeight: '40px'}}
+                        // width={40}
+                        // style={{borderRadius: '20px', marginRight: '5px', maxWidth: '40px', maxHeight: '40px'}}
+                        className="table_user_cell_img"
                         src={`${ip}/${record.image}`}
                         preview={{
                             mask: (

@@ -238,6 +238,11 @@
         margin-top: 5px;
         height: calc(100% - 22px);
     }
+    .face_control_setting_tab{
+        display: grid;
+        grid-template-columns: 6fr 1.9fr;
+        grid-gap: 10px;
+    }
     .face_control_setting_tab_item {
         height: calc(100vh - 155px);
     }
@@ -269,7 +274,7 @@
         margin-right: 2px;
     }
     .camera_groups_button_cancle{
-        height: 30px;
+        height: 35px;
         margin-top: 0px;
         margin-left: 3px;
     }

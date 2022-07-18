@@ -289,8 +289,8 @@
         height: 30px;
         padding: 0 10px;
     }
-     .anaylsis-button-group .ant-picker {
-        height: 30px;
+    .buttons_analysis .anaylsis-button-group .ant-picker {
+        height: 30px!important;
     }
     .analysis-active-button {
         font-size: 14px;

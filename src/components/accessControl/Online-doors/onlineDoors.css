@@ -1,7 +1,4 @@
-.online_doors_content{
-    padding: 10px;
-    height: 878px;
-}
+
 .online_doors_title{
     margin-bottom: 10px;
 }
@@ -57,14 +54,6 @@
     width: 70%;
 }
 
-.doors_left_img{
-    position: relative;
-    max-width: 355px;
-    max-height: 355px;
-    border-radius: 5px;
-    background-color: #1B2531;
-    overflow: hidden;
-}
 
 
 
@@ -206,6 +195,8 @@
     line-height: 19px;
     color: #717171;
 }
+
+
 
 
 /*@media only screen and (max-width: 1800px) {*/

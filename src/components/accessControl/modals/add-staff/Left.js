@@ -179,7 +179,6 @@ const Left = ({ data, setData, terminalIPList, staffTableIntialValues }) => {
                         size="large"
                         style={{borderRadius: '5px'}}
                     />
-
                 </Form.Item>
                 <Form.Item
                     // label=" "

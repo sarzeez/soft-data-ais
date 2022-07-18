@@ -150,12 +150,12 @@ const Saidbar = ({ user, setUser }) => {
 
                             {/*ish vaqti hisoboti*/}
 
-                            {/*<Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Working Hour Report', 7)} key="7"*/}
-                            {/*           icon={<img src={working} alt=""/>}>*/}
-                            {/*    <Link to="/working-hour-report">*/}
-                            {/*        {t("Ish vaqti hisoboti")}*/}
-                            {/*    </Link>*/}
-                            {/*</Menu.Item>*/}
+                            <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Working Hour Report', 7)} key="7"
+                                       icon={<img src={working} alt=""/>}>
+                                <Link to="/working-hour-report">
+                                    {t("Ish vaqti hisoboti")}
+                                </Link>
+                            </Menu.Item>
 
                             <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 9)} key="9"
                                        icon={<img src={setting} alt=""/>}>

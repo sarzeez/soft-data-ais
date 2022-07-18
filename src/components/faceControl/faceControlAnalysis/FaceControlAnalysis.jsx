@@ -102,12 +102,14 @@ const FaceControlAnalysis = () => {
                 <div style={{marginRight: '20px'}} className="content_top">
                     <p  className="Content_title">{t('Statistika')}</p>
                 </div>
-                <div className='anaylsis-button-group'>
-                    <DatePicker placeholder={DayMY} onChange = {value => setDate(value)} style = {{borderTopLeftRadius: '5px', borderBottomLeftRadius: '5px'}} />
-                    <button onClick={() => setActive('daily')} className={`${active === 'daily' ? 'analysis-active-button' : null}`}>{t('Kun')}</button>
-                    <button onClick={() => setActive('week')} className={`${active === 'week' ? 'analysis-active-button' : null}`}>{t('Hafta')}</button>
-                    <button onClick={() => setActive('month')} className={`${active === 'month' ? 'analysis-active-button' : null}`}>{t("Oy")}</button>
-                    <button onClick={() => setActive('year')} className={`${active === 'year' ? 'analysis-active-button' : null}`}>{t("Yil")}</button>
+                <div className="buttons_analysis">
+                    <div className='anaylsis-button-group'>
+                        <DatePicker placeholder={DayMY} onChange = {value => setDate(value)} style = {{borderTopLeftRadius: '5px', borderBottomLeftRadius: '5px'}} />
+                        <button onClick={() => setActive('daily')} className={`${active === 'daily' ? 'analysis-active-button' : null}`}>{t('Kun')}</button>
+                        <button onClick={() => setActive('week')} className={`${active === 'week' ? 'analysis-active-button' : null}`}>{t('Hafta')}</button>
+                        <button onClick={() => setActive('month')} className={`${active === 'month' ? 'analysis-active-button' : null}`}>{t("Oy")}</button>
+                        <button onClick={() => setActive('year')} className={`${active === 'year' ? 'analysis-active-button' : null}`}>{t("Yil")}</button>
+                    </div>
                 </div>
             </div>
 

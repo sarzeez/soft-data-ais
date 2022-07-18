@@ -75,24 +75,7 @@ const StaffRight = ({ data, setData, terminalIPList, staffTableIntialValues, ima
     return (
         <div className="access_control_add_staff_modal_body_item_middle">
                 <div className="access_control_add_staff_modal_body_item_middle_image">
-                       {/*{*/}
-                       {/*    staffTableIntialValues.image*/}
-                       {/*    ?*/}
-                       {/*     <img src={`${ip}/${staffTableIntialValues.image}`} alt='edit'/>*/}
-                       {/*    :*/}
-                       {/*     loading*/}
-                       {/*         ? <img src={loadingGif} alt='loading'/>*/}
-                       {/*         : (*/}
-                       {/*             (view || requestedImage)*/}
-                       {/*                 ? <img src = {view || `${ip}/sign_up_request/${requestedImage}`} alt = 'view'/>*/}
-                       {/*                 : (*/}
-                       {/*                     data.image*/}
-                       {/*                     ? <img src={`${ip}/${staffTableIntialValues.image}`} alt='edit'/>*/}
-                       {/*                     : <IoImageOutline size={75} color='#8E8E8E'/>*/}
-                       {/*                 )*/}
-                       {/*         )*/}
-                       {/* }*/}
-
+                    
                     {/*{*/}
                     {/*    loading*/}
                     {/*    ? <img src={loadingGif} alt='loading'/>*/}
@@ -110,6 +93,7 @@ const StaffRight = ({ data, setData, terminalIPList, staffTableIntialValues, ima
                     {/*        : <IoImageOutline size={75} color='#8E8E8E'/>*/}
                     {/*    )*/}
                     {/*}*/}
+                    
                     {
                         loading
                         ? <img src={loadingGif} alt='loading'/>
