@@ -271,6 +271,10 @@ const WorkingHoursReport = () => {
         const response = await axios.post(`${ip}/api/terminal/timemanagement/${api}/${staffPaginationLimit}/${id}`,
             {fullname:matn,fromDate:date1,toDate:date2,givenDate:date1}
             , headers)
+        setMatn("");
+        setDate1("");
+        setDate2("");
+
         const {data} = response;
         // console.log(data)
         const count = data.count;
