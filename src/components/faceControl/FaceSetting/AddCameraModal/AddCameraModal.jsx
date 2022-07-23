@@ -38,7 +38,8 @@ const AddCameraModal = (props) => {
             group_id: '',
             ip_address: '',
             username: '',
-            password: ''
+            password: '',
+            channel: ''
         })
     }
 
@@ -164,27 +165,52 @@ const AddCameraModal = (props) => {
                             </Form.Item>
                         </div>
 
-                        <Form.Item
-                            className="settings_modal_input_label"
-                            label={t("Kamera turi")}
-                            name="type"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: t('Kamera turini tanlang!'),
-                                },
-                            ]}
-                        >
-                            <Select
-                                placeholder={t("Tanlash")}
-                                className="settings_modal_select"
-                                size="large"
+                        <div className="setting_input_lebel_groups">
+                            <Form.Item
+                                className="settings_modal_input_label"
+                                label={t("Kamera turi")}
+                                name="type"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: t('Kamera turini tanlang!'),
+                                    },
+                                ]}
                             >
-                                <Select.Option value="dahua">{t("Dahua")}</Select.Option>
-                                <Select.Option value="hikvision">{t("Hikvision")}</Select.Option>
-                                <Select.Option value="boshqalar">{t("Boshqalar")}</Select.Option>
-                            </Select>
-                        </Form.Item>
+                                <Select
+                                    placeholder={t("Tanlash")}
+                                    className="settings_modal_select"
+                                    // size="large"
+                                >
+                                    <Select.Option disabled value="">
+                                        <span style={{color:"#bfbfbf"}}>{t("Tanlash")}</span>
+                                    </Select.Option>
+                                    <Select.Option value="dahua">{t("Dahua")}</Select.Option>
+                                    <Select.Option value="hikvision">{t("Hikvision")}</Select.Option>
+                                    <Select.Option value="boshqalar">{t("Boshqalar")}</Select.Option>
+                                </Select>
+                            </Form.Item>
+
+                            <Form.Item
+                                className="settings_modal_input_label"
+                                label={t("Kanal")}
+                                name="channel"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: t("Kanal kiriting!"),
+                                    },
+                                ]}
+                            >
+                                <Input
+                                    className="settings_modal_input"
+                                    placeholder={t("Kiritish")}
+                                    style={{borderRadius: '5px'}}
+                                    type="number"
+                                />
+                            </Form.Item>
+                        </div>
+
 
                         <div className="setting_input_lebel_groups">
                             <Form.Item
@@ -200,9 +226,12 @@ const AddCameraModal = (props) => {
                             >
                                 <Select
                                     className="settings_modal_select"
-                                    size="large"
                                     placeholder={t("Tanlash")}
+                                    // size="large"
                                 >
+                                    <Select.Option disabled value="">
+                                        <span style={{color:"#bfbfbf"}}>{t("Tanlash")}</span>
+                                    </Select.Option>
                                     {
                                         cameraSetting && cameraSetting.map((item, index) => (
                                             <Select.Option key={index} value={item.id}>{item[`name_${lang}`]}</Select.Option>
@@ -224,7 +253,6 @@ const AddCameraModal = (props) => {
                             >
                                 <Input
                                     className="settings_modal_input"
-                                    size="large"
                                     placeholder={t("Kiritish")}
                                     style={{borderRadius: '5px'}}
                                 />
@@ -245,7 +273,6 @@ const AddCameraModal = (props) => {
                             >
                                 <Input
                                     className="settings_modal_input"
-                                    size="large"
                                     placeholder={t("Kiritish")}
                                     style={{borderRadius: '5px'}}
                                 />
@@ -263,7 +290,6 @@ const AddCameraModal = (props) => {
                             >
                                 <Input
                                     className="settings_modal_input"
-                                    size="large"
                                     placeholder={t("Kiritish")}
                                     style={{borderRadius: '5px'}}
                                 />

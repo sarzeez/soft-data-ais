@@ -22,15 +22,11 @@
     color: #000000;
 }
 .settings_modal_input{
-    padding: 10px;
-}
-
-.settings_modal_input .ant-input-prefix{
-    margin-right: 10px;
+    padding: 8px;
 }
 
 .settings_modal_select .ant-select-selector{
-    height: 45px!important;
+    height: 40px!important;
 }
 
 .setting_input_lebel_groups{
@@ -38,14 +34,19 @@
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
 }
+
+.setting_input_lebel_groups .ant-form-item {
+    margin-bottom: 0px !important;
+}
 .add_camera_buttons{
     display: grid;
     grid-template-columns: 200px 200px;
     justify-content: center;
     grid-gap: 15px;
+    margin-top: 15px;
 }
 .add_camera_buttons_cancle{
-    height: 45px;
+    height: 40px;
     background: #FFDEDE;
     color: #AC0000;
     border: 1px solid #EAEAEA;
@@ -57,10 +58,14 @@
     font-size: 14px;
     line-height: 19px;
 }
-.add_camera_buttons_save{
-    height: 45px;
-    background: #29B85D;
+.add_camera_buttons_cancle:hover{
+    background: #DB4040;
     color: #FFFFFF;
+}
+.add_camera_buttons_save{
+    height: 40px;
+    background: #ABFCC8;
+    color: #00752A;
     border-radius: 5px;
     border: none;
     cursor: pointer;
@@ -69,12 +74,49 @@
     font-size: 14px;
     line-height: 19px;
 }
+.add_camera_buttons_save:hover{
+    background: #29B85D;
+    color: #FFFFFF;
+}
 
 .ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before{
     display: none!important;
 }
 
 
+
+
+
+
+@media only screen and (max-width: 1470px) {
+    .camera_settings_modal_content{
+        width: 550px;
+        padding: 10px;
+    }
+    .camera_settings_modal_title{
+        margin-bottom: 3px;
+    }
+    .settings_modal_select .ant-select-selector{
+        height: 35px!important;
+    }
+    .settings_modal_input{
+        height: 35px!important;
+    }
+    .add_camera_buttons_cancle{
+        height: 35px;
+    }
+    .add_camera_buttons_save{
+        height: 35px;
+    }
+     .ant-form-item {
+        margin-bottom: 3px !important;
+    }
+     .add_camera_buttons{
+         margin-top: 15px;
+         margin-bottom: 5px;
+     }
+
+}
 
 
 

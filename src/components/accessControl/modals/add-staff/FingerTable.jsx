@@ -1,23 +1,12 @@
+import {useTranslation} from "react-i18next";
 import React from 'react'
 import { Table } from 'antd';
 import './staffMiddle.css';
 
-const columns = [
-    {
-        title: 'T/r',
-        dataIndex: 'key',
-        width: 60,
-        align: 'center'
-    },
-    {
-        title: 'Nomi',
-        dataIndex: 'name',
-        align: 'center'
-    },
-];
 
-const FingerTable = ({fingerPrint, setSelectedItems}) => {
-
+const FingerTable = ({fingerPrint, setSelectedItems,}) => {
+    // console.log(staffTableIntialValues)
+    const {t} = useTranslation()
     const [state, setState] = React.useState({selectedRowKeys: []})
     const onSelectChange = (selectedRowKeys, a) => {
         setState({ selectedRowKeys })
@@ -29,12 +18,25 @@ const FingerTable = ({fingerPrint, setSelectedItems}) => {
         selectedRowKeys,
         onChange: onSelectChange,
     }
+    const columns = [
+        {
+            title: t('T/r'),
+            dataIndex: 'key',
+            width: 60,
+            align: 'center'
+        },
+        {
+            title: t('Nomi'),
+            dataIndex: 'name',
+            align: 'center'
+        },
+    ];
 
     return (
         <Table
             columns={columns}
             rowSelection={rowSelection}
-            dataSource={fingerPrint}
+            dataSource={fingerPrint }
             pagination={false}
             style={{minHeight: '170px'}}
             scroll={{ y: 129 }}

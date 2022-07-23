@@ -18,7 +18,6 @@ export const getManag = () => (dispatch) => {
         })
 }
 
-
 export const putManag = (index) => (dispatch) => {
     axios.put(ip + "/api/viewer/" + index, {count: index})
         .then((res) => {

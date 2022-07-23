@@ -53,11 +53,11 @@ const AddNewGroupTable = (props) => {
         },
 
         {
-            title: t('Amal'),
+            // title: t('Amal'),
             dataIndex: '',
             render: (text, record) => (
                 <div onClick={() => editGroup(text, record)} className='edit_button'>
-                    <RiEditLine size = {22} color='#fff'/>
+                    <RiEditLine size = {22} />
                 </div>
             ),
             align: 'center'
@@ -73,6 +73,9 @@ const AddNewGroupTable = (props) => {
                 rowSelection={rowSelection}
                 columns={columns}
                 dataSource={languageGroup}
+                // scroll={{
+                //     y: 600,
+                // }}
                 pagination={false}
             />
 

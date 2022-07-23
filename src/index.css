@@ -1,3 +1,4 @@
+
 *{
   margin: 0;
   padding: 0;
@@ -37,7 +38,6 @@ h1, h2, h3, h4, h5, h6, p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   border: 1px solid #ccc;
   background: #fff;
   overflow: auto;
@@ -71,3 +71,4 @@ h1, h2, h3, h4, h5, h6, p {
 .modal_form h1 {
   text-align: center;
 }
+

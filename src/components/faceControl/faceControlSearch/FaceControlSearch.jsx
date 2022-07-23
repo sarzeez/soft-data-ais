@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from "react";
-import {Input, Select, DatePicker,} from "antd";
+import {Input, Select, DatePicker, Button,} from "antd";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { ip } from "../../../ip";
+import { AiOutlineClear, AiOutlineSearch } from 'react-icons/ai'
 import axios from "axios";
 import moment from "moment";
 
-import { AiOutlineClear, AiOutlineSearch } from 'react-icons/ai'
-
-import Cart from './cart/Cart'
+import Cart from './cart/Cart';
 import FaceControlPagination from "./pagination/Pagination";
 import "./faceControlSearch.css";
-
-import { ip } from "../../../ip";
 
 export default function FaceControlSearch() {
 
@@ -215,199 +213,212 @@ export default function FaceControlSearch() {
                 <div className={`content ${isDarkMode && 'darkModeBackground'}`}>
 
                     <div className={`content_inputs ${isDarkMode && 'darkModeCard darkModeBorder'}`}>
-                        <div className="form_input_wrapper">
-                            <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Yoshi')}:</p>
-                            <div className="input_wrapper">
-                                <Input
-                                    className={`left_input ${isDarkMode && 'darkModeInputBackgraund'}`}
-                                    onChange={onChangeAgeFrom}
-                                    value={ageFrom}
-                                    type="number"
-                                    size="large"
-                                    style={{marginRight: "5px", borderRadius: '5px'}}
-                                    placeholder={t('dan')}
-                                />
-                                <Input
-                                    className={`left_input ${isDarkMode && 'darkModeInputBackgraund'}`}
-                                    onChange={onChangeAgeTo}
-                                    value={ageTo}
-                                    type="number"
-                                    size="large"
-                                    style={{borderRadius: '5px'}}
-                                    placeholder={t('gacha')}
-                                />
+
+                        <div className="face_control_inputs">
+
+                            <div className="face_control_search_inline_inputs">
+                                <div className="form_input_wrapper">
+                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Yoshi')}:</p>
+                                    <div className="input_wrapper face_search_inputs">
+                                        <Input
+                                            className={`left_input ${isDarkMode && 'darkModeInputBackgraund'}`}
+                                            onChange={onChangeAgeFrom}
+                                            value={ageFrom}
+                                            type="number"
+                                            size="large"
+                                            style={{marginRight: "2px", borderRadius: '5px'}}
+                                            placeholder={t('dan')}
+                                        />
+                                        <Input
+                                            className={`left_input ${isDarkMode && 'darkModeInputBackgraund'}`}
+                                            onChange={onChangeAgeTo}
+                                            value={ageTo}
+                                            type="number"
+                                            size="large"
+                                            style={{borderRadius: '5px'}}
+                                            placeholder={t('gacha')}
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="form_input_wrapper">
+                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Jinsi')}:</p>
+                                    <div className="input_wrapper face_search_inputs">
+                                        <Select
+                                            className={`left_select ${isDarkMode && 'darkModeInputBackgraund'}`}
+                                            onChange={onChangeGender}
+                                            style={{width: "100%"}}
+                                            size="large"
+                                            defaultValue={gender}
+                                            value={gender}
+                                        >
+                                            <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                            <Select.Option value="1">{t('Erkak')}</Select.Option>
+                                            <Select.Option value="2">{t('Ayol')}</Select.Option>
+                                        </Select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="face_control_search_inline_inputs">
+                                <div className="form_input_wrapper">
+                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Niqob')}:</p>
+                                    <div className="input_wrapper face_search_inputs">
+                                        <Select
+                                            className="left_select"
+                                            onChange={onChangeMask}
+                                            style={{width: "100%"}}
+                                            size="large"
+                                            defaultValue={mask}
+                                            value={mask}
+                                        >
+                                            <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                            <Select.Option value="2">{t("Niqobsiz")}</Select.Option>
+                                            <Select.Option value="3">{t('Niqobli')}</Select.Option>
+
+                                        </Select>
+                                    </div>
+                                </div>
+
+                                <div className="form_input_wrapper">
+                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Kayfiyat')}:</p>
+                                    <div className="input_wrapper face_search_inputs">
+                                        <Select
+                                            className="left_select"
+                                            onChange={onChangeMood}
+                                            style={{width: "100%"}}
+                                            size="large"
+                                            defaultValue={mood}
+                                            value={mood}
+                                        >
+                                            <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                            <Select.Option value="2">{t('Jilmaygan')}</Select.Option>
+                                            <Select.Option value="3">{t('Jahldor')}</Select.Option>
+                                            <Select.Option value="4">{t('Xafa')}</Select.Option>
+                                            <Select.Option value="5">{t('Jirkangan')}</Select.Option>
+                                            <Select.Option value="6">{t("Qo’rqqan")}</Select.Option>
+                                            <Select.Option value="7">{t('Hayratda')}</Select.Option>
+                                            <Select.Option value="8">{t("E’tiborsiz")}</Select.Option>
+                                            <Select.Option value="9">{t("Kulgan")}</Select.Option>
+                                            <Select.Option value="11">{t('Xursand')}</Select.Option>
+                                            <Select.Option value="12">{t('Ikkilangan')}</Select.Option>
+                                            <Select.Option value="13">{t('Baqirgan')}</Select.Option>
+                                        </Select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="face_control_search_inline_inputs">
+                                <div className="form_input_wrapper">
+                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t("Ko’zoynak")}:</p>
+                                    <div className="input_wrapper face_search_inputs">
+                                        <Select
+                                            className="left_select"
+                                            onChange={onChangeGlasses}
+                                            style={{width: "100%"}}
+                                            size="large"
+                                            defaultValue={glasses}
+                                            // value={glasses}
+                                        >
+                                            <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                            <Select.Option value="1">{t("Ko’rishni_tuzatish")}</Select.Option>
+                                            <Select.Option value="14">{t('Quyoshdan_himoya')}</Select.Option>
+                                            <Select.Option value="10">{t('Kozoynaksiz')}</Select.Option>
+                                        </Select>
+                                    </div>
+                                </div>
+                                <div className="form_input_wrapper">
+                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Soqol')}:</p>
+                                    <div className="input_wrapper face_search_inputs">
+                                        <Select
+                                            className="left_select"
+                                            onChange={onChangeBeard}
+                                            style={{width: "100%"}}
+                                            size="large"
+                                            defaultValue={beard}
+                                            value={beard}
+                                        >
+                                            <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                            <Select.Option value="2">{t("Soqolsiz")}</Select.Option>
+                                            <Select.Option value="3">{t('Soqolli')}</Select.Option>
+                                        </Select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="face_control_search_inline_inputs">
+                                <div className="form_input_wrapper">
+                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Guruh')}:</p>
+                                    <div className="input_wrapper face_search_inputs">
+                                        <Select
+                                            style={{width: "100%"}}
+                                            size="large"
+                                            defaultValue={0}
+                                            value={group}
+                                            onChange={onChangeGroup}
+                                        >
+                                            {
+                                                cameraWithGroup.map((item, index) => (
+                                                    <Select.Option key={index} value={index}>{item.name}</Select.Option>
+                                                ))
+                                            }
+                                        </Select>
+                                    </div>
+                                </div>
+                                <div className="form_input_wrapper">
+                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Kamera')}:</p>
+                                    <div className="input_wrapper face_search_inputs">
+                                        <Select
+                                            style={{width: "100%"}}
+                                            size="large"
+                                            defaultValue={'all'}
+                                            value={camera}
+                                            onChange={onChangeCameraOptions}
+                                        >
+                                            <Select.Option value='all'>{t('Hammasi')}</Select.Option>
+                                            {
+                                                cameraWithGroup[group] && cameraWithGroup[group].cameras?.map((item, index) => (
+                                                    <Select.Option key={index}>{item.name}</Select.Option>
+                                                ))
+                                            }
+                                        </Select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div className="form_input_wrapper">
+                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Muddat')}:</p>
+                                <div className="input_wrapper">
+                                    <DatePicker
+                                        className={`left_input ${isDarkMode && 'darkModeInputBackgraund'}`}
+                                        placeholder={`${moment(new Date()).format(
+                                            "YYYY.DD.MM, 00:00:00"
+                                        )}`}
+                                        onChange={onChangeDateFrom}
+                                        size="large"
+                                        style={{width: "100%", borderRadius: '5px'}}
+                                        showTime
+                                        value={dateFrom !== "" ? moment(dateFrom) : ""}
+                                    />
+                                </div>
+                                <div className="input_wrapper" style={{marginTop: "5px"}}>
+                                    <DatePicker
+                                        className={`left_input ${isDarkMode && 'darkModeInputBackgraund'}`}
+                                        placeholder={`${moment(new Date()).format(
+                                            "YYYY.DD.MM, 23:59:59"
+                                        )}`}
+                                        onChange={onChangeDateTo}
+                                        size="large"
+                                        style={{width: "100%", borderRadius: '5px'}}
+                                        showTime
+                                        value={dateTo !== "" ? moment(dateTo) : ""}
+                                    />
+                                </div>
                             </div>
                         </div>
 
-                        <div className="face_control_search_inline_inputs">
-                            <div className="form_input_wrapper">
-                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Jinsi')}:</p>
-                                <div className="input_wrapper face_search_inputs">
-                                    <Select
-                                        className={`left_select ${isDarkMode && 'darkModeInputBackgraund'}`}
-                                        onChange={onChangeGender}
-                                        style={{width: "100%"}}
-                                        size="large"
-                                        defaultValue={gender}
-                                        value={gender}
-                                    >
-                                        <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                        <Select.Option value="1">{t('Erkak')}</Select.Option>
-                                        <Select.Option value="2">{t('Ayol')}</Select.Option>
-                                    </Select>
-                                </div>
-                            </div>
-
-                            <div className="form_input_wrapper">
-                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Niqob')}:</p>
-                                <div className="input_wrapper face_search_inputs">
-                                    <Select
-                                        className="left_select"
-                                        onChange={onChangeMask}
-                                        style={{width: "100%"}}
-                                        size="large"
-                                        defaultValue={mask}
-                                        value={mask}
-                                    >
-                                        <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                        <Select.Option value="1">{t('Niqobli')}</Select.Option>
-                                        <Select.Option value="0">{t("Niqobsiz")}</Select.Option>
-                                    </Select>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="face_control_search_inline_inputs">
-                            <div className="form_input_wrapper">
-                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Kayfiyat')}:</p>
-                                <div className="input_wrapper face_search_inputs">
-                                    <Select
-                                        className="left_select"
-                                        onChange={onChangeMood}
-                                        style={{width: "100%"}}
-                                        size="large"
-                                        defaultValue={mood}
-                                        value={mood}
-                                    >
-                                        <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                        <Select.Option value="2">{t('Jilmaygan')}</Select.Option>
-                                        <Select.Option value="3">{t('Jahldor')}</Select.Option>
-                                        <Select.Option value="4">{t('Xafa')}</Select.Option>
-                                        <Select.Option value="5">{t('Jirkangan')}</Select.Option>
-                                        <Select.Option value="6">{t("Qo’rqqan")}</Select.Option>
-                                        <Select.Option value="7">{t('Hayratda')}</Select.Option>
-                                        <Select.Option value="8">{t("E’tiborsiz")}</Select.Option>
-                                        <Select.Option value="9">{t("Kulgan")}</Select.Option>
-                                        <Select.Option value="11">{t('Xursand')}</Select.Option>
-                                        <Select.Option value="12">{t('Ikkilangan')}</Select.Option>
-                                        <Select.Option value="13">{t('Baqirgan')}</Select.Option>
-                                    </Select>
-                                </div>
-                            </div>
-                            <div className="form_input_wrapper">
-                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t("Ko’zoynak")}:</p>
-                                <div className="input_wrapper face_search_inputs">
-                                    <Select
-                                        className="left_select"
-                                        onChange={onChangeGlasses}
-                                        style={{width: "100%"}}
-                                        size="large"
-                                        defaultValue={glasses}
-                                        value={glasses}
-                                    >
-                                        <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                        <Select.Option value="1">{t("Ko’rishni_tuzatish")}</Select.Option>
-                                        <Select.Option value="14">{t('Quyoshdan_himoya')}</Select.Option>
-                                        <Select.Option value="10">{t('Kozoynaksiz')}</Select.Option>
-                                    </Select>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="face_control_search_inline_inputs">
-                            <div className="form_input_wrapper">
-                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Soqol')}:</p>
-                                <div className="input_wrapper face_search_inputs">
-                                    <Select
-                                        className="left_select"
-                                        onChange={onChangeBeard}
-                                        style={{width: "100%"}}
-                                        size="large"
-                                        defaultValue={beard}
-                                        value={beard}
-                                    >
-                                        <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                        <Select.Option value="1">{t('Soqolli')}</Select.Option>
-                                        <Select.Option value="0">{t("Soqolsiz")}</Select.Option>
-                                    </Select>
-                                </div>
-                            </div>
-                            <div className="form_input_wrapper">
-                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Guruh')}:</p>
-                                <div className="input_wrapper face_search_inputs">
-                                    <Select
-                                        style={{width: "100%"}}
-                                        size="large"
-                                        defaultValue={0}
-                                        value={group}
-                                        onChange={onChangeGroup}
-                                    >
-                                        {
-                                            cameraWithGroup.map((item, index) => (
-                                                <Select.Option key={index} value={index}>{item.name}</Select.Option>
-                                            ))
-                                        }
-                                    </Select>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="form_input_wrapper">
-                            <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Kamera')}:</p>
-                            <div className="input_wrapper face_search_inputs">
-                                <Select
-                                        style={{width: "100%"}}
-                                        size="large"
-                                        defaultValue={'all'}
-                                        value={camera}
-                                        onChange={onChangeCameraOptions}
-                                    >
-                                        <Select.Option value='all'>{t('Hammasi')}</Select.Option>
-                                        {
-                                            cameraWithGroup[group] && cameraWithGroup[group].cameras?.map((item, index) => (
-                                                <Select.Option key={index}>{item.name}</Select.Option>
-                                            ))
-                                        }
-                                    </Select>
-                            </div>
-                        </div>
-                        <div className="form_input_wrapper">
-                            <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Muddat')}:</p>
-                            <div className="input_wrapper">
-                                <DatePicker
-                                    className={`left_input ${isDarkMode && 'darkModeInputBackgraund'}`}
-                                    placeholder={`${moment(new Date()).format(
-                                        "YYYY.DD.MM, 00:00:00"
-                                    )}`}
-                                    onChange={onChangeDateFrom}
-                                    size="large"
-                                    style={{width: "100%", borderRadius: '5px'}}
-                                    showTime
-                                    value={dateFrom !== "" ? moment(dateFrom) : ""}
-                                />
-                            </div>
-                            <div className="input_wrapper" style={{marginTop: "15px"}}>
-                                <DatePicker
-                                    className={`left_input ${isDarkMode && 'darkModeInputBackgraund'}`}
-                                    placeholder={`${moment(new Date()).format(
-                                        "YYYY.DD.MM, 23:59:59"
-                                    )}`}
-                                    onChange={onChangeDateTo}
-                                    size="large"
-                                    style={{width: "100%", borderRadius: '5px'}}
-                                    showTime
-                                    value={dateTo !== "" ? moment(dateTo) : ""}
-                                />
-                            </div>
-                        </div>
-                        <div className="form_input_wrapper add_clear_button" style={{marginTop: "15px"}}>
+                        <div className="form_input_wrapper add_clear_button" style={{marginBottom: 10}}>
                             <div className="input_wrapper">
                                 <button
                                     type="button"

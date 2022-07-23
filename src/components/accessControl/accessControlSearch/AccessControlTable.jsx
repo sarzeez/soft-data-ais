@@ -6,7 +6,6 @@ import {Input, Select, DatePicker} from "antd";
 import {SearchOutlined} from "@ant-design/icons";
 import {AiOutlineClear, AiOutlineSearch} from "react-icons/ai";
 import { useNavigate } from 'react-router-dom';
-
 import axios from 'axios';
 import moment from "moment";
 import './acsessControl.css';
@@ -30,9 +29,23 @@ const AcsessControlTable = () => {
     const [userType, setUserType] = useState('all');
     const [position, setPosition] = useState('all');
     const [direction, setDirection] = useState('all');
+    const [authType, setAuthType] = useState('all');
     const [dateFrom, setDateFrom] = useState('');
     const [dateTo, setDateTo] = useState('');
     const [allowedDoor, setAllowedDoor] = useState([]);
+
+
+    const categoryData = [
+        [
+            {value: 1, name: "Oddiy xodim"},
+            {value: 2, name: "Direktor"},
+            {value: 3, name: "VIP"},
+        ],
+        [
+            {value: 4, name: "Mehmon"},
+            {value: 5, name: "Bloklangan"},
+        ]
+    ]
 
     const onChangeName = (e) =>{
         setName(e.target.value);
@@ -55,6 +68,10 @@ const AcsessControlTable = () => {
         setPosition(e)
     };
 
+    const onChangeAuthType=(e) =>{
+        setAuthType(e)
+    }
+
     const onChangeDirection=(e) =>{
         setDirection(e)
     }
@@ -73,6 +90,7 @@ const AcsessControlTable = () => {
             device_name: deviceName,
             rank: position,
             user_type: userType,
+            auth_type: authType,
             direction: direction,
             fromDate: dateFrom,
             toDate: dateTo,
@@ -88,8 +106,9 @@ const AcsessControlTable = () => {
                 created_time: moment(item.created_time).format('DD.MM.YYYY, HH:mm:ss'),
                 direction: item.direction,
                 door_name: item.door_name,
-                user_type: item.user_type === 1 ? t('Xodim') : item.user_type === 2 ? t('Mehmon') : t('Begona'),
-                rank: item.rank == 1 ? t('Oddiy xodim') : item.rank == 2 ? t('Direktor') : item.rank == 3 ? t('VIP') : '—',
+                user_type: item.user_type,
+                rank: item.rank ,
+                auth_type: item.auth_type
             }
         ))
         setAccessTableData(newData)
@@ -107,6 +126,7 @@ const AcsessControlTable = () => {
         setDeviceName('all')
         setPosition('all')
         setUserType('all')
+        setAuthType('all')
         setDirection('all')
 
         setDateFrom('')
@@ -160,130 +180,162 @@ const AcsessControlTable = () => {
 
                 <div className={`acsess_content ${isDarkMode && 'darkModeBackground'}`}>
                     <div className="acsess_left">
-                        <div className="form_input_wrapper">
-                            <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Ism')}</p>
-                            <div className="input_wrappe">
-                                <Input
-                                    className={`left_input ${isDarkMode && 'darkModeColor'}`}
-                                    onChange={onChangeName}
-                                    value={name}
-                                    type="text"
-                                    size="large"
-                                    style={{marginRight: "10px", borderRadius: '5px'}}
-                                    placeholder={t('Kiriting')}
-                                />
+                        <div className="acsess_left_inputs">
+                            <div className="form_input_wrapper">
+                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Ism')}</p>
+                                <div className="input_wrappe">
+                                    <Input
+                                        className={`left_input ${isDarkMode && 'darkModeColor'}`}
+                                        onChange={onChangeName}
+                                        value={name}
+                                        type="text"
+                                        size="large"
+                                        style={{marginRight: "10px", borderRadius: '5px'}}
+                                        placeholder={t('Kiriting')}
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="access_control_table_inline_inputs">
+                                <div className="form_input_wrapper">
+                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Toifasi')}</p>
+                                    <div className="input_wrapper">
+                                        <Select
+                                            className={`left_select ${isDarkMode && 'darkModeColor'}`}
+                                            size="large"
+                                            style={{width: "100%"}}
+                                            placeholder={"Kiriting"}
+                                            onChange={onChangeUserType}
+                                            value={userType}
+                                            defaultValue={userType}
+                                        >
+                                            <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                            <Select.Option value="1">{t("Xodim")}</Select.Option>
+                                            <Select.Option value="2">{t("Begona")}</Select.Option>
+                                        </Select>
+                                    </div>
+                                </div>
+
+                                <div className="form_input_wrapper">
+                                    <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Lavozimi')}</p>
+                                    <div className="input_wrapper">
+                                        <Select
+                                            className={`left_select ${isDarkMode && 'darkModeColor'}`}
+                                            size="large"
+                                            style={{width: "100%"}}
+                                            onChange={onChangePosition}
+                                            defaultValue={position}
+                                            value={position}
+                                        >
+                                            <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                            {
+
+                                                categoryData[userType -1 ]?.map((item, index) => (
+                                                    <Select.Option key={index} value={item.value}>{t(item.name)}</Select.Option>
+                                                ))
+                                            }
+                                        </Select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div className="form_input_wrapper">
+                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t("Tasdiq turi")}</p>
+                                <div className="input_wrapper">
+                                    <Select
+                                        className={`left_select ${isDarkMode && 'darkModeColor'}`}
+                                        onChange={onChangeAuthType}
+                                        style={{width: "100%"}}
+                                        size="large"
+                                        defaultValue={authType}
+                                        value={authType}
+                                    >
+                                        <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                        <Select.Option value="1">{t("Yuz")}</Select.Option>
+                                        <Select.Option value="2">{t("Barmoq izi")}</Select.Option>
+                                        <Select.Option value="3">{t("ID karta")}</Select.Option>
+                                        <Select.Option value="4">{t("Yuz va Barmoq izi")}</Select.Option>
+                                        <Select.Option value="6">{t("Yuz va ID karta")}</Select.Option>
+                                        <Select.Option value="8">{t("Barmoq izi va ID karta")}</Select.Option>
+                                    </Select>
+                                </div>
+                            </div>
+
+                            <div className="form_input_wrapper">
+                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Eshik')}</p>
+                                <div className="input_wrapper">
+                                    <Select
+                                        className={`left_select ${isDarkMode && 'darkModeColor'}`}
+                                        style={{width: "100%"}}
+                                        size="large"
+                                        defaultValue={'all'}
+                                        onChange={onChangeDeviceName}
+                                    >
+                                        <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                        {
+                                            allowedDoor.map((item, index) => (
+                                                <Select.Option key={index} >{item.door_name}</Select.Option>
+                                            ))
+                                        }
+                                    </Select>
+                                </div>
+                            </div>
+
+                            <div className="form_input_wrapper">
+                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t("Yo'nalishi")}</p>
+                                <div className="input_wrapper">
+                                    <Select
+                                        className={`left_select ${isDarkMode && 'darkModeColor'}`}
+                                        onChange={onChangeDirection}
+                                        style={{width: "100%"}}
+                                        size="large"
+                                        defaultValue={direction}
+                                        value={direction}
+                                    >
+                                        <Select.Option value="all">{t('Hammasi')}</Select.Option>
+                                        <Select.Option value="Entry">{t("Kirish")}</Select.Option>
+                                        <Select.Option value="Exit">{t("Chiqish")}</Select.Option>
+                                    </Select>
+                                </div>
+                            </div>
+
+
+
+                            <div className="form_input_wrapper">
+                                <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Muddat')}:</p>
+                                <div className="input_wrapper">
+                                    <DatePicker
+                                        className={`left_input ${isDarkMode && 'darkModeColor'}`}
+                                        placeholder={`${moment(new Date()).format(
+                                            "YYYY.DD.MM, 00:00:00"
+                                        )}`}
+                                        onChange={onChangeDateFrom}
+                                        size="large"
+                                        style={{width: "100%", borderRadius: '5px'}}
+                                        showTime
+                                        value={dateFrom !== "" ? moment(dateFrom) : ""}
+                                    />
+                                </div>
+                                <div className="input_wrapper" style={{marginTop: "5px"}}>
+                                    <DatePicker
+                                        className={`left_input ${isDarkMode && 'darkModeColor'}`}
+                                        placeholder={`${moment(new Date()).format(
+                                            "YYYY.DD.MM, 26:59:59"
+                                        )}`}
+                                        onChange={onChangeDateTo}
+                                        size="large"
+                                        style={{width: "100%", borderRadius: '5px'}}
+                                        showTime
+                                        value={dateTo !== "" ? moment(dateTo) : ""}
+                                    />
+                                </div>
                             </div>
                         </div>
 
-                        <div className="form_input_wrapper">
-                            <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Eshik')}</p>
-                            <div className="input_wrapper">
-                                <Select
-                                    className={`left_select ${isDarkMode && 'darkModeColor'}`}
-                                    style={{width: "100%"}}
-                                    size="large"
-                                    defaultValue={'all'}
-                                    onChange={onChangeDeviceName}
-                                >
-                                    <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                    {
-                                        allowedDoor.map((item, index) => (
-                                            <Select.Option key={index} >{item.door_name}</Select.Option>
-                                        ))
-                                    }
-                                </Select>
-                            </div>
-                        </div>
 
-                        <div className="form_input_wrapper">
-                            <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Toifasi')}</p>
-                            <div className="input_wrapper">
-                                <Select
-                                    className={`left_select ${isDarkMode && 'darkModeColor'}`}
-                                    onChange={onChangeUserType}
-                                    style={{width: "100%"}}
-                                    size="large"
-                                    defaultValue={userType}
-                                    value={userType}
-                                >
-                                    <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                    <Select.Option value="1">{t('Xodim')}</Select.Option>
-                                    <Select.Option value="2">{t('Mehmon ')}</Select.Option>
-                                    <Select.Option value="3">{t('Begona')}</Select.Option>
-                                </Select>
-                            </div>
-                        </div>
-
-                        <div className="form_input_wrapper">
-                            <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Lavozimi')}</p>
-                            <div className="input_wrapper">
-                                <Select
-                                    className={`left_select ${isDarkMode && 'darkModeColor'}`}
-                                    onChange={onChangePosition}
-                                    style={{width: "100%"}}
-                                    size="large"
-                                    defaultValue={position}
-                                    value={position}
-                                >
-                                    <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                    <Select.Option value="1">{t("Oddiy xodim")}</Select.Option>
-                                    <Select.Option value="2">{t("Direktor")}</Select.Option>
-                                    <Select.Option value="3">{t("VIP")}</Select.Option>
-                                </Select>
-                            </div>
-                        </div>
-
-                        <div className="form_input_wrapper">
-                            <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t("Yo'nalishi")}</p>
-                            <div className="input_wrapper">
-                                <Select
-                                    className={`left_select ${isDarkMode && 'darkModeColor'}`}
-                                    onChange={onChangeDirection}
-                                    style={{width: "100%"}}
-                                    size="large"
-                                    defaultValue={direction}
-                                    value={direction}
-                                >
-                                    <Select.Option value="all">{t('Hammasi')}</Select.Option>
-                                    <Select.Option value="Entry">{t("Kirish")}</Select.Option>
-                                    <Select.Option value="Exit">{t("Chiqish")}</Select.Option>
-                                </Select>
-                            </div>
-                        </div>
-
-
-
-                        <div className="form_input_wrapper">
-                            <p className={`input_label ${isDarkMode && 'darkModeColor'}`}>{t('Muddat')}:</p>
-                            <div className="input_wrapper">
-                                <DatePicker
-                                    className={`left_input ${isDarkMode && 'darkModeColor'}`}
-                                    placeholder={`${moment(new Date()).format(
-                                        "YYYY.DD.MM, 00:00:00"
-                                    )}`}
-                                    onChange={onChangeDateFrom}
-                                    size="large"
-                                    style={{width: "100%", borderRadius: '5px'}}
-                                    showTime
-                                    value={dateFrom !== "" ? moment(dateFrom) : ""}
-                                />
-                            </div>
-                            <div className="input_wrapper" style={{marginTop: "15px"}}>
-                                <DatePicker
-                                    className={`left_input ${isDarkMode && 'darkModeColor'}`}
-                                    placeholder={`${moment(new Date()).format(
-                                        "YYYY.DD.MM, 26:59:59"
-                                    )}`}
-                                    onChange={onChangeDateTo}
-                                    size="large"
-                                    style={{width: "100%", borderRadius: '5px'}}
-                                    showTime
-                                    value={dateTo !== "" ? moment(dateTo) : ""}
-                                />
-                            </div>
-                        </div>
-
-                        <div className="form_input_wrapper add_clear_button" style={{marginTop: "20px"}}>
+                        <div className="form_input_wrapper add_clear_button" style={{marginTop: "5px"}}>
                             <div className="input_wrapper">
                                 <button
                                     type="button"
@@ -309,7 +361,6 @@ const AcsessControlTable = () => {
                                 </button>
                             </div>
                         </div>
-
                     </div>
 
                     <div className={`acsess_right ${isDarkMode && 'darkModeBackground darkModeBorder'} `}>

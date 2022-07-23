@@ -5,6 +5,7 @@ import ReactApexChart from 'react-apexcharts'
 const ApexChart = (props) => {
     const {t} = useTranslation()
     const { data }=props;
+    
     // const chartWidth = width < 1370 ? 680 : 1200
     // const chartHeight = width < 1370 ? 320 : 420
 

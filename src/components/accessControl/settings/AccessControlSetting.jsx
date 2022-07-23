@@ -1,27 +1,28 @@
 import React, { useState, useEffect} from 'react';
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import axios from "axios";
-import moment from 'moment';
 import { Tabs } from 'antd';
 import { MdOutlineAddCircleOutline } from 'react-icons/md';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { ip } from '../../../ip';
 import {useTranslation} from "react-i18next";
+import axios from "axios";
+import moment from 'moment';
 
 import TerminalTable from './table/TerminalTable'
 import StaffTable from './table/StaffTable'
 import TerminalPagination from './paginations/TerminalPagination';
 import StaffPagination from './paginations/StaffPagination';
 import AddStaff from '../modals/add-staff/AddStaff';
-
-import './setting.css';
 import AddTerminalModal from "./Terminal-modal/AddTerminalModal";
+import './setting.css';
+import OnlineManagement from "../Online-doors/OnlineManagement";
+import {connect} from "react-redux";
+import {getTheme} from "../../../redux";
 
 const { TabPane } = Tabs;
 
-const AccessControlSetting = () => {
-
+const AccessControlSetting = (props) => {
     const isDarkMode = useSelector(state => state.theme.theme_data)
     const is_refresh_value = useSelector(state => state.theme.is_refresh_value)
     const {t} = useTranslation()
@@ -44,19 +45,27 @@ const AccessControlSetting = () => {
     const [staffPaginationCurrent, setStaffPaginationCurrent] = useState(1)
     const [staffData, setStaffData] = useState([])
     const [staffTotal, setStaffTotal] = useState(null)
+    const [selectedCard , setSelectedCard] = useState([]);
+    const [card, setCard] = useState([]);
+    const [fingerPrint, setFingerPrint] = useState([]);
 
     const [staffTableIntialValues, setStaffTableIntialValues] = useState({
         fullname: '',
         gender: '',
-        rank: '',
         user_type: '',
+        rank: '',
         door_ip: [],
         access_type: '',
         valid_from_time: '',
         valid_to_time: '',
         image: '',
         notification: false,
+        cards: [],
+        fingerPrint: [],
+        edit: false,
     })
+
+    // console.log(staffTableIntialValues)
 
     // delete button
     const [deleteStaff, setDeleteStaff] = useState([])
@@ -74,6 +83,9 @@ const AccessControlSetting = () => {
 
     const addNewStaff = () => {
         setIsOpenAddStaff(true)
+        setSelectedCard([])
+        setCard([])
+        setFingerPrint([])
     }
 
     const addNewTerminal = () =>{
@@ -85,17 +97,27 @@ const AccessControlSetting = () => {
     }
 
     const [state, setState] = useState({selectedRowKeys: []})
-    const onSelectChange = (selectedRowKeys, a) => {
-        setState({ selectedRowKeys })
+    const [terminalSelectionState, setTerminalSelectionState] = useState({selectedRowKeys: []})
+    const [staffSelectionState, setStaffSelectionState] = useState({selectedRowKeys: []})
+    const onTerminalSelectChange = (selectedRowKeys, a) => {
+        setTerminalSelectionState({ selectedRowKeys })
         setDeleteTerminal(a.map(item => item.id));
+    };
+    const onStaffSelectChange = (selectedRowKeys, a) => {
+        setStaffSelectionState({ selectedRowKeys })
         setDeleteStaff(a.map(item => item.id));
     };
 
-    const { selectedRowKeys } = state;
+    const { selectedRowKeys: terminalSelectedRowKeys} = terminalSelectionState;
+    const { selectedRowKeys: staffSelectedRowKeys } = staffSelectionState;
 
-    const rowSelection = {
-        selectedRowKeys,
-        onChange: onSelectChange,
+    const terminalRowSelection = {
+        terminalSelectedRowKeys,
+        onChange: onTerminalSelectChange,
+    }
+    const staffRowSelection = {
+        staffSelectedRowKeys,
+        onChange: onStaffSelectChange,
     }
 
     const getTerminalData = async (id) => {
@@ -119,6 +141,7 @@ const AccessControlSetting = () => {
     ))
         setTerminalData(newData)
     }
+
     // get staff data
     const getStaffData = async (id) => {
         const response = await axios.get(`${ip}/api/terminal/getusers/${staffPaginationLimit}/${id}`)
@@ -128,14 +151,13 @@ const AccessControlSetting = () => {
         const newData = data.data.map((item, index) => (
             {
                 ...item,
-                key: index + 1 + (data.current_page - 1) * staffPaginationLimit,
-                valid_from_time: '',   //moment(item.valid_from_time).format('DD.MM.YYYY, HH:mm:ss'),
-                valid_to_time: '',   //moment(item.valid_to_time).format('DD.MM.YYYY, HH:mm:ss'),
+                key: index + 1 ,
+                valid_from_time:  moment(item.valid_from_time),
+                valid_to_time: moment(item.valid_to_time),
                 direction: item.direction,
                 door_name: item.door_name,
-                user_type: item.user_type === 1 ? t('Xodim') : item.user_type === 2 ? t('Mehmon') : t('Begona'),
-                rank: item.rank == 1 ? t('Oddiy xodim') : item.rank == 2 ? t('Direktor') : item.rank == 3 ? t('VIP') : '',
-                access_type: item.access_type === 0 ? t('Yuz') : item.access_type === 1 ? t('Barmoq izi') : item.access_type ===2 ? t('Yuz yoki Barmoq izi') : 'Yuz va Barmoq izi'
+                user_type: item.user_type ,
+                rank: item.rank,
             }
         ))
         setStaffData(newData)
@@ -165,6 +187,7 @@ const AccessControlSetting = () => {
             })
     }
 
+
     const terminalPaginationOnChange = (e = 1, option) => {
         getTerminalData(e)
         setTerminalPaginationCurrent(e)
@@ -193,7 +216,7 @@ const AccessControlSetting = () => {
         if(!is_refresh_value) {
             navigate('/face-control-search')
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
@@ -225,7 +248,7 @@ const AccessControlSetting = () => {
                                     terminalData = {terminalData}
                                     setIsOpenAddTerminal={setIsOpenAddTerminal}
                                     setTerminalTableIntialValues={setTerminalTableIntialValues}
-                                    rowSelection={rowSelection}
+                                    rowSelection={terminalRowSelection}
                                 />
                             </div>
                             <div className='access_control_setting_tab_item_footer'>
@@ -234,9 +257,10 @@ const AccessControlSetting = () => {
                                         <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
                                         {t("Terminal qo'shish")}
                                     </button>
+
                                     {
                                         deleteTerminal.length > 0 &&
-                                        <button onClick={handleDeleteterminal}>
+                                        <button className="delete_button" onClick={handleDeleteterminal}>
                                             <AiOutlineDelete size={22} style = {{marginRight: '5px'}}/>
                                             {t("O’chirish")}
                                         </button>
@@ -259,7 +283,13 @@ const AccessControlSetting = () => {
                             staffTableIntialValues={staffTableIntialValues}
                             setStaffTableIntialValues={setStaffTableIntialValues}
                             getStaffData={getStaffData}
-                            setStaffPaginationCurrent ={setStaffPaginationCurrent}
+                            staffPaginationCurrent={staffPaginationCurrent}
+                            selectedCard={selectedCard}
+                            setSelectedCard={setSelectedCard}
+                            card={card}
+                            setCard={setCard}
+                            fingerPrint={fingerPrint}
+                            setFingerPrint={setFingerPrint}
                         />
                         <div className="access_control_setting_tab">
                             <div className='access_control_setting_tab_item'>
@@ -267,9 +297,11 @@ const AccessControlSetting = () => {
                                     <StaffTable
                                         isDarkMode={isDarkMode}
                                         staffData = {staffData}
-                                        rowSelection={rowSelection}
+                                        rowSelection={staffRowSelection}
                                         setIsOpenAddStaff={setIsOpenAddStaff}
                                         setStaffTableIntialValues={setStaffTableIntialValues}
+                                        setCard={setCard}
+                                        setFingerPrint={setFingerPrint}
                                     />
                                 </div>
                                 <div className='access_control_setting_tab_item_footer'>
@@ -280,41 +312,35 @@ const AccessControlSetting = () => {
                                         </button>
                                         {
                                             deleteStaff.length > 0 &&
-                                            <button onClick={handleDeliteStaff}>
+                                            <button className="delete_button" onClick={handleDeliteStaff}>
                                                 <AiOutlineDelete size={22} style = {{marginRight: '5px'}}/>
                                                 {t("O’chirish")}
                                             </button>
                                         }
                                     </div>
 
-                                    <StaffPagination
-                                        staffPaginationLimit = {staffPaginationLimit}
-                                        staffPaginationCurrent = {staffPaginationCurrent}
-                                        staffPaginationOnChange = {staffPaginationOnChange}
-                                        accessTableTotal = {staffTotal}
-                                    />
+                                    <div className="access-control-pagination" >
+                                        {/*<p className = {`content_total ${isDarkMode && 'darkModeColor'}`}>{t('Jami')}: {staffTotal} </p>*/}
+                                        <StaffPagination
+                                            staffPaginationLimit = {staffPaginationLimit}
+                                            staffPaginationCurrent = {staffPaginationCurrent}
+                                            staffPaginationOnChange = {staffPaginationOnChange}
+                                            accessTableTotal = {staffTotal}
+                                        />
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
-
                     </TabPane>
 
-                    <TabPane tab={t("Autentifikatsiya sozlamalari")} key="3">
-                        <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>
-                            <div className='access_control_setting_tab_item_body'>
-                                Autentifikatsiya sozlamalari
-                            </div>
-                        </div>
-                    </TabPane>
-
-                    <TabPane tab={t("Online boshqaruv")} key="4">
-                        <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>
-                            <div className='access_control_setting_tab_item_body'>
-                                Online boshqaruv
-                            </div>
-                        </div>
-                    </TabPane>
-
+                    {/*<TabPane tab={t("Qora ro’yxat")} key="3">*/}
+                    {/*    <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>*/}
+                    {/*        <div className='access_control_setting_tab_item_body'>*/}
+                    {/*            Qora ro’yxat*/}
+                    {/*        </div>*/}
+                    {/*    </div>*/}
+                    {/*</TabPane>*/}
 
                 </Tabs>
             </div>
@@ -322,5 +348,10 @@ const AccessControlSetting = () => {
         </div>
     )
 };
+const mapStateToProps = (state) =>{
+    return{
+        onlineManag : state.theme.onlineManag
+    }
+}
 
-export default AccessControlSetting;
+export default connect(mapStateToProps , {getTheme})(AccessControlSetting);

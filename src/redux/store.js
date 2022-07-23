@@ -8,7 +8,7 @@ import {managmentReducer} from "./onlineManag/managmentReducer";
 
 const rootReducer = combineReducers ({
     theme: themeReducer,
-    manag : managmentReducer,
+    terminal : managmentReducer,
 })
 
 const store = createStore(rootReducer);

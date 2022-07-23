@@ -4,6 +4,7 @@ import ReactApexChart from 'react-apexcharts'
 const ApexChart = (props) => {
   const lang = localStorage.getItem('i18nextLng');
   const { data } = props;
+  // console.log(data);
   const state = {
     series: [{
       name: lang === 'uz'? data?.title_uz : lang === 'ru' ? data?.title_ru : data?.title_en,
@@ -59,7 +60,7 @@ const ApexChart = (props) => {
       <div id="chart" className='mini-charts'>
         {
           data && data.data && 
-            <ReactApexChart options={state.options} series={state.series} type="area" width={340} height={120} />
+            <ReactApexChart options={state.options} series={state.series} type="area" width={355} height={120} />
         }
       </div>
     )

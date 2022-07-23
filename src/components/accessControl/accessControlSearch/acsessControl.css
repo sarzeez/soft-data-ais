@@ -1,5 +1,4 @@
 .accsessControl{
-    /*min-height: calc(100vh - 64px);*/
     padding: 10px;
 }
 .acsess_content{
@@ -8,8 +7,9 @@
     min-height: 100%;
     padding: 10px;
     background: #FFFFFF;
-    border-radius: 10px;
-    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #EAEAEA;
+    margin-top: 8px;
 }
 
 .acsess_content_top {
@@ -18,25 +18,22 @@
 }
 
 .acsess_left{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
-    width: 320px;
+    display: grid;
+    align-content: space-between;
+    width: 250px;
     border-radius: 10px;
     padding: 5px;
     border: 1px solid #EBEEF4;
 }
 .acsess_right{
-    width: calc(100% - 320px);
-    min-height: calc(100vh - 146px);
-    max-height: calc(100vh - 146px);
-    border-radius: 10px;
+    width: calc(100% - 250px);
+    min-height: calc(100vh - 148px);
+    border-radius: 2px;
     overflow: auto;
     margin-left: 10px;
 }
 .input_wrapper{
     display: flex;
-    /* align-content: flex-end; */
     width: 100%;
 }
 
@@ -54,9 +51,15 @@
     align-items: center;
     grid-column-gap: 5px;
 }
-
-.table_user_cell .ant-image-mask {
+.table_user_cell_img{
+    /*width: 40px;*/
     border-radius: 20px;
+    margin-right: 5px;
+    max-width: 40px;
+    max-height: 40px;
+}
+.table_user_cell .ant-image-mask {
+    border-radius: 90px;
 }
 
 .table_item_image_wrapper {
@@ -84,9 +87,54 @@
     top: 0;
     z-index: 10;
 }
-.ant-table-tbody > tr > td {
-    padding: 4.2px !important;
+
+
+
+
+
+
+/*.ant-table-tbody > tr > td {*/
+/*    padding: 4.2px !important;*/
+/*}*/
+
+
+
+
+@media only screen and (max-width: 1470px) {
+    .acsess_content{
+        height: calc(100vh - 103px);
+    }
+    .accsessControl{
+        padding: 4px 8px 8px 8px;
+    }
+    .acsess_content{
+        margin-top: 4px;
+    }
+    .acsess_left{
+        width: 230px;
+        padding: 0 5px 5px 5px!important;
+    }
+    .acsess_right{
+        width: calc(100% - 230px);
+        min-height: calc(100vh - 137px);
+    }
+.access_control_table_inline_inputs{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    grid-column-gap: 5px;
 }
+    .table_user_cell_img{
+        max-width: 22px;
+        max-height: 22px;
+    }
+    .ant-image-mask{
+        width: 22px;
+    }
+}
+
+
+
 
 
 

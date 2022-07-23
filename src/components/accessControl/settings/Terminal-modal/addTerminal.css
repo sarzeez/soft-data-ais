@@ -16,3 +16,54 @@
     border-radius: 5px;
 }
 
+.add_terminal_cancel_button{
+    cursor: pointer;
+    border: none;
+    padding: 0px 40px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    height: 40px;
+    background: #FFDEDE;
+    color: #AC0000;
+    display: flex;
+    align-items: center;
+}
+.add_terminal_cancel_button:hover{
+    background: #DB4040;
+    color: #FFFFFF;
+}
+.add_terminal_save_button{
+    height: 40px;
+    padding: 0px 40px;
+    background: #ABFCC8;
+    color: #00752A;
+    border-radius: 5px;
+    border: none;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+}
+
+.add_terminal_save_button:hover{
+    background: #29B85D;
+    color: #FFFFFF;
+}
+
+
+
+@media only screen and (max-width: 1470px) {
+    .access_control_add_terminal_modal{
+        padding: 15px 20px;
+    }
+    .add_terminal_cancel_button{
+        height: 35px!important;
+    }
+    .add_terminal_save_button{
+        height: 35px;
+    }
+}

@@ -9,20 +9,17 @@ import loginImg from '../../images/loginImg.svg';
 import loginIcon from '../../images/userIcon.png';
 import lickIcon from '../../images/lockIcon.png';
 
-// import softlogo from '../../images/softdatalogo.png';
 import './login.css'
-
 
 const Login = ({ setUser }) => {
     const [token, setToken] = useState(null)
-    // const [error, setError] = useState(false)
 
     const initialValues = {
         login: '',
         password: ''
     }
     const validationSchema = Yup.object({
-        login: Yup.string().required('login kritilmagan ...'),
+        login: Yup.string().required('login kiritilmagan ...'),
         password: Yup.string().required('parol kiritilmagan...'),
     })
 

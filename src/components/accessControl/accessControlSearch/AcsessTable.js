@@ -1,20 +1,18 @@
 import React from 'react';
 import { Table, Image  } from 'antd';
 import { useSelector } from "react-redux";
-
-import { AiOutlineUser } from 'react-icons/ai'
-
+import { AiOutlineUser } from 'react-icons/ai';
+import {useTranslation} from "react-i18next";
 import {ip} from '../../../ip';
 
 import './acsessControl.css';
 import 'antd/dist/antd.css';
-import {useTranslation} from "react-i18next";
-
 
 
 const AcsessTable = (props) => {
-    const { accessTableData } = props;
 
+    const { accessTableData } = props;
+    // console.log(accessTableData)
     const {t} = useTranslation();
 
     const isDarkMode = useSelector(state => state.theme.theme_data)
@@ -23,7 +21,7 @@ const AcsessTable = (props) => {
         {
             title: t('T/r'),
             dataIndex: 'key',
-            align: 'center'
+            // align: 'center'
         },
         {
             title: t('Ism'),
@@ -31,9 +29,10 @@ const AcsessTable = (props) => {
             render: (text, record) => (
                 <div className='table_user_cell'>
                     <Image
-                        width={40}
-                        style={{borderRadius: '20px', marginRight: '5px', maxWidth: '40px', maxHeight: '40px'}}
-                        src={`${ip}/${record.user_id}.jpg`}
+                        className="table_user_cell_img"
+                        // width={40}
+                        // style={{borderRadius: '20px', marginRight: '5px', maxWidth: '40px', maxHeight: '40px'}}
+                        src= {`${ip}/${record.user_id}.jpg` }
                         preview = {{
                             src: `${ip}/api/get_history/${record.id}/img`,
                             mask: (
@@ -46,20 +45,59 @@ const AcsessTable = (props) => {
                 </div>
             ),
         },
+
         {
             title: t('Toifasi'),
             dataIndex: 'user_type',
-            align: 'center'
+            // align: 'center',
+            render:(text, record)=>(
+                <div>
+                    {record?.user_type == 1 ? t("Xodim") :  t("Begona")}
+                </div>
+            )
         },
         {
             title: t('Lavozimi'),
             dataIndex: 'rank',
-            align: 'center'
+            // align: 'center',
+            render:(text, record)=>(
+                <div>
+                    {record.rank ==1 ? t('Oddiy xodim') :
+                        record.rank ==2 ? t("Direktor") :
+                            record.rank ==3 ? t("VIP"):
+                                record.rank ==4 ? t("Mehmon"):
+                                    record.rank == 5 ? "Bloklangan" : "-"
+
+                    }
+                </div>
+            )
+        },
+
+        {
+            title: t('Tasdiq turi'),
+            dataIndex: 'auth_type',
+            // align: 'center',
+            render:(text, record) =>(
+                <div>
+                    {record?.auth_type === 1 ? t("Yuz") :
+                        record.auth_type === 2 ? t("Barmoq izi") :
+                            record.auth_type === 3 ? t("ID karta") :
+                                record.auth_type === 4 ? t("Yuz va Barmoq izi") :
+                                    record.auth_type === 6 ? t("Yuz va ID karta") :
+                                        record.auth_type === 8 ? t("Barmoq izi va ID karta") : ''
+                    }
+                </div>
+            )
+        },
+        {
+            title: t('Eshik'),
+            dataIndex: 'door_name',
+            // align: 'center'
         },
         {
             title: t('Yo\'nalishi'),
             dataIndex: 'direction',
-            align: 'center',
+            // align: 'center',
             render: (text, record) => (
                 <div>
                     {record?.direction == 'Exit' ? t("Chiqdi") : t("Kirdi")}
@@ -67,36 +105,13 @@ const AcsessTable = (props) => {
             )
         },
         {
-            title: t('Tasdiq turi'),
-            dataIndex: 'rank',
-            align: 'center'
-        },
-        {
             title: t('Vaqt'),
             dataIndex: 'created_time',
-            align: 'center'
-        },
-
-        {
-            title: t('Eshik'),
-            dataIndex: 'door_name',
-            align: 'center'
+            // align: 'center'
         },
     ];
 
-    // const [state, setState] = useState({
-    //     selectedRowKeys: []
-    // })
 
-    // const onSelectChange = (selectedRowKeys, a) => {
-    //     setState({ selectedRowKeys })
-    // };
-
-    // const { selectedRowKeys } = state;
-    // const rowSelection = {
-    //     selectedRowKeys,
-    //     onChange: onSelectChange,
-    // }
 
         return (
             <Table

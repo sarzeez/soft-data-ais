@@ -6,18 +6,18 @@
 .face_control_setting_body {
     width: 100%;
     margin-top: 10px;
-    height: calc(100% - 42px);
+    height: calc(100% - 40px);
     border-radius: 5px;
-    padding: 10px;
     border: 1px solid #EAEAEA;
-    background-color: #fff;
+    padding: 10px;
+    background-color: #FFFFFF;
 }
 
 /* tabs */
 
 .face_control_setting_tab_item {
     width: 100%;
-    height: calc(100vh - 205px);
+    height: calc(100vh - 187px);
     display: grid;
     grid-template-rows: 1fr 50px;
     overflow: auto;
@@ -26,7 +26,7 @@
 
 .face_control_setting_tab{
     display: grid;
-    grid-template-columns: 6fr 1.7fr;
+    grid-template-columns: 6fr 1.8fr;
     grid-gap: 10px;
 }
 
@@ -34,17 +34,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 10px;
+    /*padding-top: 10px;*/
 }
 /*---Camera setting right--*/
 
 .camera_groups{
+    display: grid;
+    align-content: space-between;
     padding: 10px;
-    height: calc(100vh - 205px);
+    max-height: calc(100vh - 193px);
     border: 1px solid #E5EAFA;
     border-radius: 5px;
+}
+.camera_groups_add_new_group_table {
     overflow: auto;
 }
+
 .camera_groups_item{
     display: flex;
     justify-content: space-between;
@@ -52,6 +57,7 @@
     padding: 10px 0 10px 5px;
     border-bottom: 1px solid  #E5EAFA;
 }
+
 .camera_groups_item h4{
     font-style: normal;
     font-weight: 500;
@@ -86,16 +92,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #29B85D;
-    color: #FFFFFF;
+    background: #ABFCC8;
+    color: #00752A;
     border-radius: 5px;
     border: none;
     padding: 0 10px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+}
+.face_control_setting_button:hover{
+    background: #29B85D;
+    color: #FFFFFF;
 }
 .add_new_group{
     display: flex;
     flex-direction: row;
-    margin-top: 15px;
+    margin-top: 5px;
 }
 .camera_groups_button{
     display: flex;
@@ -104,14 +118,19 @@
     width: 100%;
     height: 40px;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 600;
     font-size: 14px;
     line-height: 16px;
-    color: #FFFFFF;
-    background: #29B85D;
+    color: #00752A;
+    background: #ABFCC8;
     border-radius: 4px;
     border: none;
     cursor: pointer;
+    margin-right: 3px;
+}
+.camera_groups_button:hover{
+    background: #29B85D;
+    color: #FFFFFF;
 }
 .group_delite_button{
     display: flex;
@@ -120,42 +139,52 @@
     width: 100%;
     height: 40px;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 600;
     font-size: 14px;
     line-height: 16px;
-    color: #8B0606;
+    color: #AC0000;
     background: #FFDEDE;
     border-radius: 4px;
     border: none;
     cursor: pointer;
     margin-left: 10px;
+
+}
+.group_delite_button:hover{
+    background: #DB4040;
+    color: #FFFFFF;
 }
 
 .camera_groups_button_cancle{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 15px;
+    margin-left: 3px;
     width: 100%;
     height: 40px;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 600;
     font-size: 14px;
     line-height: 16px;
-    color: #8B0606;
+    color: #AC0000;
     background: #FFDEDE;
     border-radius: 4px;
     border: none;
     cursor: pointer;
 }
+.camera_groups_button_cancle:hover{
+    background: #DB4040;
+    color: #FFFFFF;
+}
 .camera_groups_language{
-    padding: 10px;
+    padding: 8px 8px 0 8px;
     border: 1px solid #9EAEC5;
     border-radius: 5px;
-    margin-top: 15px!important;
+    margin-top: 10px!important;
 }
+
 .camera_language_input{
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     border: none;
     background-color: #F9F9F9;
 }
@@ -179,7 +208,7 @@
     font-size: 14px;
     font-weight: 600;
     height: 40px;
-    color: #8B0606;
+    color: #AC0000;
     display: flex;
     align-items: center;
     background-color: #FFDEDE;
@@ -187,11 +216,86 @@
 }
 
 .face_control_setting_footer_delite_button:hover {
+    background: #DB4040;
+    color: #FFFFFF;
     opacity: 0.9;
+}
+.add_new_group_buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 
 
+
+@media only screen and (max-width: 1470px) {
+    .face_control_setting {
+        padding: 8px;
+    }
+    .face_control_setting_body {
+        margin-top: 5px;
+        height: calc(100% - 22px);
+    }
+    .face_control_setting_tab{
+        display: grid;
+        grid-template-columns: 6fr 1.9fr;
+        grid-gap: 10px;
+    }
+    .face_control_setting_tab_item {
+        height: calc(100vh - 155px);
+    }
+    .face_control_setting_button{
+        height: 35px;
+    }
+    .face_control_setting_footer_delite_button{
+        height: 35px;
+    }
+    .face_control_setting_tab_item_footer {
+        margin-right: 5px;
+    }
+    .camera_groups{
+        padding-bottom: 6px;
+        max-height: calc(100vh - 160px);
+    }
+    .camera_groups_language{
+        padding: 4px;
+    }
+    .camera_groups_language .ant-input{
+        margin: 0px 5px;
+        height: 22px;
+    }
+    .camera_language_input{
+        margin-bottom: 0!important;
+    }
+    .camera_groups_button{
+        height: 35px;
+        margin-right: 2px;
+    }
+    .camera_groups_button_cancle{
+        height: 35px;
+        margin-top: 0px;
+        margin-left: 3px;
+    }
+    .add_new_group{
+        display: flex;
+        flex-direction: column;
+    }
+    .group_delite_button{
+        width: 100%;
+        height: 35px;
+        margin-left: 0px;
+        margin-top: 5px;
+    }
+    .add_new_group_buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4px;
+    }
+}
 
 
 

@@ -26,6 +26,8 @@ export const getManagment = () =>{
             console.log(res)
         })
 }
-export const putManagment = (index) =>{
 
+export const putManagment =(index)=>{
+    console.log("redux ga keldi :" + index)
 }
+

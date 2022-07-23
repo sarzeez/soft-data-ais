@@ -118,8 +118,11 @@ const AddNewGroup = (props) => {
                                     prefix={<img src={engliz} alt="uz"/>}
                                 />
                             </Form.Item>
-                            <button type="submit" className="camera_groups_button">{t("Saqlash")}</button>
-                            <button type="button" onClick={cancel} className="camera_groups_button_cancle">{t("Bekor qilish")}</button>
+                            <div className="add_new_group_buttons">
+                                <button type="submit" className="camera_groups_button">{t("Saqlash")}</button>
+                                <button type="button" onClick={cancel} className="camera_groups_button_cancle">{t("Bekor qilish")}</button>
+                            </div>
+
                         </div>
             </Form>
         </div>

@@ -11,19 +11,19 @@ import CameraTable from "./table/CameraTable";
 import AddCameraModal from "./AddCameraModal/AddCameraModal";
 import AddNewGroupTable from "./AddNewGroup/AddNewGroupTable";
 import AddNewGroup from "./AddNewGroup/AddNewGroup";
+import CameraPagenation from "./pagenation/CameraPagenation";
 
 import axios from "axios";
 import './faceSetting.css';
-import CameraPagenation from "./pagenation/CameraPagenation";
 
 const { TabPane } = Tabs;
 
 const FaceControlSetting = () => {
-    const {t} = useTranslation()
-    const navigate = useNavigate()
+
     const isDarkMode = useSelector(state => state.theme.theme_data)
     const is_refresh_value = useSelector(state => state.theme.is_refresh_value)
-
+    const {t} = useTranslation()
+    const navigate = useNavigate()
     // add camera modal state
     const [isOpenAddCamera, setIsOpenAddCamera] = useState(false);
 
@@ -36,7 +36,8 @@ const FaceControlSetting = () => {
         group_id: '',
         ip_address: '',
         username: '',
-        password: ''
+        password: '',
+        channel: '',
     })
 
     // group initial values
@@ -52,7 +53,7 @@ const FaceControlSetting = () => {
 
 
 
-    const [cameraPaginationLimit, setCameraPaginationLimit] = useState(14);
+    const [cameraPaginationLimit, setCameraPaginationLimit] = useState(15);
     const [cameraPaginationCurrent, setCameraPaginationCurrent] = useState(1);
     const [cameraTotal, setCameraTotal] = useState(null);
     const [show, setShow] = useState(false);
@@ -92,6 +93,7 @@ const FaceControlSetting = () => {
                 ip_address: item.ip_address,
                 username: item.username,
                 password: item.password,
+                channel: item.channel
             }
         ))
         setCameraData(newData)
@@ -138,7 +140,7 @@ const FaceControlSetting = () => {
                 getCameraGroup();
             })
             .catch(err => {
-                // console.log(err?.response?.data)
+                console.log(err?.response?.data)
             })
     }
 
@@ -227,50 +229,58 @@ const FaceControlSetting = () => {
                             </div>
 
                             <div className="camera_groups">
-                                <AddNewGroupTable
-                                    languageGroup={languageGroup}
-                                    isDarkMode={isDarkMode}
-                                    setDeleteGroup={setDeleteGroup}
-                                    setGroupInitialValues = {setGroupInitialValues}
-                                    setShow={setShow}
-                                />
-                                {
-                                    !show ?
-                                        <div className="add_new_group">
-                                            <button onClick={() => setShow(true)} className="camera_groups_button">
-                                                <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
-                                                {t("Guruh qo’shish")}
-                                            </button>
-                                            {
-                                                deleteGroup.length > 0 &&
-                                                <button onClick={handleDeleteGroup}   className="group_delite_button">
-                                                    <AiOutlineDelete size={22}/>
-                                                    {t("O’chirish")}
-                                                </button>
-                                            }
-                                        </div>
-                                        :
-                                        <AddNewGroup
-                                            groupIntialValues={groupIntialValues}
-                                            setGroupInitialValues={setGroupInitialValues}
-                                            show={show}
-                                            setShow={setShow}
-                                            cameraPaginationCurrent={cameraPaginationCurrent}
-                                            getCameraGroup={getCameraGroup}
-                                            languageGroup={languageGroup}
-                                        />
-                                }
+                                <div className="camera_groups_add_new_group_table">
+                                    <AddNewGroupTable
+                                        languageGroup={languageGroup}
+                                        isDarkMode={isDarkMode}
+                                        setDeleteGroup={setDeleteGroup}
+                                        setGroupInitialValues = {setGroupInitialValues}
+                                        setShow={setShow}
+                                    />
+                                </div>
+
+                                <div className="add_new_group_content">
+                                    {
+                                        !show ?
+                                            <div className="add_new_group">
+                                                
+                                                {
+                                                    deleteGroup.length > 0 ?
+                                                    <button onClick={handleDeleteGroup}   className="group_delite_button">
+                                                        <AiOutlineDelete size={22}/>
+                                                        {t("O’chirish")}
+                                                    </button>
+                                                    :
+                                                    <button onClick={() => setShow(true)} className="camera_groups_button">
+                                                        <MdOutlineAddCircleOutline size={24} style = {{marginRight: '5px'}}/>
+                                                        {t("Guruh qo'shish")}
+                                                    </button>
+                                                }
+                                            </div>
+                                            :
+                                            <AddNewGroup
+                                                groupIntialValues={groupIntialValues}
+                                                setGroupInitialValues={setGroupInitialValues}
+                                                show={show}
+                                                setShow={setShow}
+                                                cameraPaginationCurrent={cameraPaginationCurrent}
+                                                getCameraGroup={getCameraGroup}
+                                                languageGroup={languageGroup}
+                                            />
+                                    }
+                                </div>
+
                             </div>
                         </div>
                     </TabPane>
 
-                    <TabPane tab={t("Autentifikatsiya sozlamalari")} key="2">
-                        <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>
-                            <div className='access_control_setting_tab_item_body'>
-                                Autentifikatsiya sozlamalari
-                            </div>
-                        </div>
-                    </TabPane>
+                    {/*<TabPane tab={t("Autentifikatsiya sozlamalari")} key="2">*/}
+                    {/*    <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>*/}
+                    {/*        <div className='access_control_setting_tab_item_body'>*/}
+                    {/*            Autentifikatsiya sozlamalari*/}
+                    {/*        </div>*/}
+                    {/*    </div>*/}
+                    {/*</TabPane>*/}
 
                     {/*<TabPane tab={t("Statistika sozlamalari")} key="3">*/}
                     {/*    <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>*/}
