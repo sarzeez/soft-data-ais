@@ -91,12 +91,29 @@ const StaffTable = (props) => {
         },
         {
             title: t('Toifasi'),
-            dataIndex: 'user_type',
+            render: (text, record) => (
+                <div className='door_ip_length'>
+                    <p>
+                        {record.user_type === 1 ? t("Xodim") : (record.user_type===2 ? t("Mehmon") : t("Begona"))}
+                        {/*// user_type: item.user_type === 1 ? t('Xodim') : (item.user_type === 2 ? t('Mehmon') : t('Begona')),*/}
+
+                    </p>
+                </div>
+            )
+            // dataIndex: 'user_type',
             // align: 'center'
         },
         {
             title: t('Lavozimi'),
-            dataIndex: 'rank',
+            render: (text, record) => (
+                <div className='door_ip_length'>
+                    <p>
+                        {record.rank === 1 ? t("Oddiy xodim") : (record.rank===2 ? t("Direktor") : (record.rank===3 ? t("VIP") : ""))}
+                         {/*rank: item.rank == 1 ? t('Oddiy xodim') : (item.rank == 2 ? t('Direktor') : (item.rank == 3 ? t('VIP') : '')),*/}
+                    </p>
+                </div>
+            )
+            // dataIndex: 'rank',
             // align: 'center'
         },
         {
@@ -105,8 +122,9 @@ const StaffTable = (props) => {
                 <div className='door_ip_length'>
                     <p>
                         {/*{record.door_ip.length}*/}
-                        {record.late_time}
-                        {/*{lang==="uz" ? record.late_time.uz : (lang==="en" ? record.late_time.en : record.late_time.ru)}*/}
+                        {/*{record.late_time}*/}
+                        {/*{record.late_time.uz}*/}
+                        {lang==="uz" ? record.late_time.uz : (lang==="en" ? record.late_time.en : record.late_time.ru)}
                         {/*{console.log(record.late_time.ru)}*/}
                     </p>
                     <div className='door_ip_length_hover'>
@@ -126,11 +144,10 @@ const StaffTable = (props) => {
                 <div className='door_ip_length'>
                     <p>
                         {/*{record.door_ip.length}*/}
-                        {record.early_go_time}
-                        {/*{lang==="uz" ? record.early_go_time.uz : (lang==="en" ? record.early_go_time.en : record.early_go_time.ru)}*/}
+                        {/*{record.early_go_time}*/}
+                        {lang==="uz" ? record.early_go_time.uz : (lang==="en" ? record.early_go_time.en : record.early_go_time.ru)}
                     </p>
                     <div className='door_ip_length_hover'>
-                        {/*{record.door_ip.join(' ')}*/}
                         <div className='door_ip_length_hover_rectangel'>
 
                         </div>
@@ -140,17 +157,15 @@ const StaffTable = (props) => {
         },
         {
             title: t('Umumiy jarima vaqti'),
-            // dataIndex: 'card_id',
-            // align: 'center',
+
             render: (text, record) => (
                 <div className='door_ip_length'>
                     <p>
                         {/*{record.door_ip.length}*/}
-                        {record.all_fine_time}
-                        {/*{lang==="uz" ? record.all_fine_time.uz : (lang==="en" ? record.all_fine_time.en :record.all_fine_time.ru)}*/}
+                        {/*{record.all_fine_time}*/}
+                        {lang==="uz" ? record.all_fine_time.uz : (lang==="en" ? record.all_fine_time.en :record.all_fine_time.ru)}
                     </p>
                     <div className='door_ip_length_hover'>
-                        {/*{record.door_ip.join(' ')}*/}
                         <div className='door_ip_length_hover_rectangel'>
 
                         </div>

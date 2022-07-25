@@ -188,13 +188,16 @@ const WorkingHoursReport = () => {
             {
                 ...item,
                 key: index + 1 + (data.current_page - 1) * staffPaginationLimit,
-                user_type: item.user_type === 1 ? t('Xodim') : item.user_type === 2 ? t('Mehmon') : t('Begona'),
-                rank: item.rank == 1 ? t('Oddiy xodim') : item.rank == 2 ? t('Direktor') : item.rank == 3 ? t('VIP') : '',
-                // late_time: item.late_time,
-                late_time: lang==="uz" ? item.late_time.uz :(lang==="ru" ? item.late_time.ru : item.late_time.en),
-                early_go_time: lang==="uz" ? item.early_go_time.uz :(lang==="ru" ? item.early_go_time.ru : item.early_go_time.en),
-                all_fine_time: lang==="uz" ? item.all_fine_time.uz :(lang==="ru" ? item.all_fine_time.ru : item.all_fine_time.en),
-                // all_fine_time: item.all_fine_time,
+                user_type: item.user_type,
+                // user_type: item.user_type === 1 ? t('Xodim') : (item.user_type === 2 ? t('Mehmon') : t('Begona')),
+                rank: item.rank,
+                // rank: item.rank == 1 ? t('Oddiy xodim') : (item.rank == 2 ? t('Direktor') : (item.rank == 3 ? t('VIP') : '')),
+                late_time: item.late_time,
+                early_go_time : item.early_go_time,
+                all_fine_time: item.all_fine_time,
+                // late_time: lang==="uz" ? item.late_time.uz :(lang==="ru" ? item.late_time.ru : item.late_time.en),
+                // early_go_time: lang==="uz" ? item.early_go_time.uz :(lang==="ru" ? item.early_go_time.ru : item.early_go_time.en),
+                // all_fine_time: lang==="uz" ? item.all_fine_time.uz :(lang==="ru" ? item.all_fine_time.ru : item.all_fine_time.en),
                 absence_count: item.absence_count
             }
         ))
