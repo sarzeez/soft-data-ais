@@ -2,16 +2,19 @@ import React, {useEffect, useState} from 'react';
 import "./working.css";
 import {useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import {Button, DatePicker, Input, Radio, Space, Tabs} from "antd";
+import {Button, DatePicker, Input, Radio, Space, Tabs,ConfigProvider} from "antd";
 import AddStaff from "../modals/add-staff/AddStaff";
 import StaffTable from "../settings/table/StaffTable";
 import StaffTable2 from "./StaffTable2";
 import StaffPagination from "../settings/paginations/StaffPagination";
 import axios from "axios";
 import {ip} from "../../../ip";
-import moment from "moment";
 import {useTranslation} from "react-i18next";
 import search from "../../../images/newimages/ishvaqti/Vector.png";
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+import locale from 'antd/es/date-picker/locale/zh_CN';
+
 
 const {TabPane} = Tabs;
 
@@ -129,7 +132,7 @@ const WorkingHoursReport = () => {
 
     // get staff data
     const [allStaff, setAllStaff] = useState([]);
-    const [date1, setDate1] = useState("");
+    const [date1, setDate1] = useState("0000-00-00");
     const [date2, setDate2] = useState("");
 
     const [value, setValue] = React.useState("all");
@@ -153,27 +156,28 @@ const WorkingHoursReport = () => {
         // console.log(e.target.value)
         setMatn(e.target.value)
     }
-    const dataa = {
-        fullname: matn,
-        fromDate: date1,
-        // toDate: date2
-    };
-    const dataa2 = {
-        fullname: matn,
-        givenDate: date1,
-    };
+    // const dataa = {
+    //     fullname: matn,
+    //     fromDate: date1,
+    //     // toDate: date2
+    // };
+    // const dataa2 = {
+    //     fullname: matn,
+    //     givenDate: date1,
+    // };
     const headers = {'Content-Type': 'application/json'}
 
     useEffect(() => {
         console.log(value)
-        getStaffData(staffPaginationCurrent , value)
+        getStaffData(staffPaginationCurrent, value)
         setStaffPaginationCurrent(1);
-    }, [value , setValue]);
+
+    }, [value, setValue]);
 
     const lang = localStorage.getItem('i18nextLng');
-    const getStaffData = async (id , api) => {
+    const getStaffData = async (id, api) => {
         const response = await axios.post(`${ip}/api/terminal/timemanagement/${api}/${staffPaginationLimit}/${id}`,
-            {fullname:matn,fromDate:date1,toDate:date2,givenDate:date1}
+            {fullname: matn, fromDate: date1, toDate: date2, givenDate: date1}
             , headers)
         setMatn("");
         setDate1("");
@@ -193,7 +197,7 @@ const WorkingHoursReport = () => {
                 rank: item.rank,
                 // rank: item.rank == 1 ? t('Oddiy xodim') : (item.rank == 2 ? t('Direktor') : (item.rank == 3 ? t('VIP') : '')),
                 late_time: item.late_time,
-                early_go_time : item.early_go_time,
+                early_go_time: item.early_go_time,
                 all_fine_time: item.all_fine_time,
                 // late_time: lang==="uz" ? item.late_time.uz :(lang==="ru" ? item.late_time.ru : item.late_time.en),
                 // early_go_time: lang==="uz" ? item.early_go_time.uz :(lang==="ru" ? item.early_go_time.ru : item.early_go_time.en),
@@ -203,8 +207,8 @@ const WorkingHoursReport = () => {
         ))
         setStaffData(newData)
     }
-    const handleSearch = () =>{
-        getStaffData(staffPaginationCurrent , value)
+    const handleSearch = () => {
+        getStaffData(staffPaginationCurrent, value)
     }
 
 
@@ -239,12 +243,12 @@ const WorkingHoursReport = () => {
     }
 
     const staffPaginationOnChange = (e = 1, option) => {
-        getStaffData(e,value)
+        getStaffData(e, value)
         setStaffPaginationCurrent(e)
         setStaffPaginationLimit(option)
     }
     useEffect(() => {
-        getStaffData(staffPaginationCurrent,value);
+        getStaffData(staffPaginationCurrent, value);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [staffPaginationLimit, staffPaginationCurrent])
 
@@ -292,17 +296,23 @@ const WorkingHoursReport = () => {
                                         <div className="staf-table-navbar">
                                             <div className="d-flex">
                                                 <Radio.Group onChange={onChange} value={value} className="radioCheck">
-                                                    <Radio value={"all"} className={value === "all" ? "radio1 active" : "radio1"}
-                                                           >{t('Hammasi')}</Radio>
-                                                    <Radio value={"s"} className={value ==="s" ? "radio1 active" : "radio1"}
-                                                           >{t('Kelganlar')}</Radio>
-                                                    <Radio value={"absence"} className={value ==="absence" ? "radio1 active" : "radio1"}
-                                                           >{t('Kelmaganlar')}</Radio>
-                                                    <Radio value={"late"} className={value ==="late" ? "radio1 active" : "radio1"}
-                                                           >{t('Kechikkanlar')}</Radio>
-                                                    <Radio value={"earlygo"} className={value ==="earlygo" ? "radio1 active" : "radio1"}
-                                                           >{t('Barvaqt ketganlar')}</Radio>
-                                                    <Radio value={"exist"} className={value ==="exist" ? "radio1 active" : "radio1"}
+                                                    <Radio value={"all"}
+                                                           className={value === "all" ? "radio1 active" : "radio1"}
+                                                    >{t('Hammasi')}</Radio>
+                                                    <Radio value={"s"}
+                                                           className={value === "s" ? "radio1 active" : "radio1"}
+                                                    >{t('Kelganlar')}</Radio>
+                                                    <Radio value={"absence"}
+                                                           className={value === "absence" ? "radio1 active" : "radio1"}
+                                                    >{t('Kelmaganlar')}</Radio>
+                                                    <Radio value={"late"}
+                                                           className={value === "late" ? "radio1 active" : "radio1"}
+                                                    >{t('Kechikkanlar')}</Radio>
+                                                    <Radio value={"earlygo"}
+                                                           className={value === "earlygo" ? "radio1 active" : "radio1"}
+                                                    >{t('Barvaqt ketganlar')}</Radio>
+                                                    <Radio value={"exist"}
+                                                           className={value === "exist" ? "radio1 active" : "radio1"}
                                                     >{t('Hozirda mavjud hodimlar')}</Radio>
                                                 </Radio.Group>
                                             </div>
@@ -312,16 +322,24 @@ const WorkingHoursReport = () => {
                                                            onChange={onChangeText} value={matn}/>
                                                 </div>
                                                 <Space direction="gorizontal">
-                                                    <DatePicker className="selectedDate" onChange={onChangeee}/>
+                                                    <DatePicker className="selectedDate"
+                                                                onChange={onChangeee}
+                                                                placeholder={`${moment(new Date()).format("YYYY.DD.MM")}`}
+                                                                value={date1 !== "" ? moment(date1) : ""}
+
+                                                    />
                                                     {
                                                         value === "all" ?
                                                             <DatePicker className="selectedDate"
-                                                                        onChange={onChangeee2}/>
+                                                                        onChange={onChangeee2}
+                                                                        placeholder={`${moment(new Date()).format("YYYY.DD.MM")}`}
+                                                                        value={date2 !== "" ? moment(date2) : ""}
+                                                            />
                                                             : ""
                                                     }
                                                 </Space>
                                                 <button className="button ml-1"
-                                                onClick={handleSearch}><img src={search}/></button>
+                                                        onClick={handleSearch}><img src={search}/></button>
                                             </div>
                                         </div>
                                         <StaffTable2

@@ -101,7 +101,12 @@
     border: 1px solid #F3F3F3;
     border-radius: 5px;
 }
-
+.door_ip_length_hover_rectangel{
+    display: none!important;
+}
+.door_ip_length_hover{
+    display: none!important;
+}
 
 
 @media only screen and (max-width: 1470px) {
