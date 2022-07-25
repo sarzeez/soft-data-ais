@@ -165,108 +165,12 @@ const WorkingHoursReport = () => {
     const headers = {'Content-Type': 'application/json'}
 
     useEffect(() => {
-        // value == 1 ? axios.post(`${ip}/api/terminal/timemanagement/all/${staffPaginationLimit}/1`, dataa, headers)
-        //     .then((res) => {
-        //         const {data} = res;
-        //         const count = data.count;
-        //         setStaffTotal(count)
-        //         const newData = data.data.map((item, index) => (
-        //             {
-        //                 ...item,
-        //                 key: index + 1 + (data.current_page - 1) * staffPaginationLimit,
-        //                 user_type: item.user_type === 1 ? t('Xodim') : item.user_type === 2 ? t('Mehmon') : t('Begona'),
-        //                 rank: item.rank == 1 ? t('Oddiy xodim') : item.rank == 2 ? t('Direktor') : item.rank == 3 ? t('VIP') : '',
-        //                 late_time: item.late_time.uz,
-        //                 early_go_time: item.early_go_time.uz,
-        //                 all_fine_time: item.all_fine_time.uz,
-        //                 absence_count: item.absence_count
-        //             }
-        //         ))
-        //         setStaffData(newData)
-        //     }) : (
-        //     value == 2 ? axios.post(`${ip}/api/terminal/timemanagement/exist/${staffPaginationLimit}/1`, dataa2, headers)
-        //         .then((res) => {
-        //             const {data} = res;
-        //             const count = data.count;
-        //             setStaffTotal(count)
-        //             const newData = data.data.map((item, index) => (
-        //                 {
-        //                     ...item,
-        //                     key: index + 1 + (data.current_page - 1) * staffPaginationLimit,
-        //                     user_type: item.user_type === 1 ? t('Xodim') : item.user_type === 2 ? t('Mehmon') : t('Begona'),
-        //                     rank: item.rank == 1 ? t('Oddiy xodim') : item.rank == 2 ? t('Direktor') : item.rank == 3 ? t('VIP') : '',
-        //                     late_time: item.late_time.uz,
-        //                     early_go_time: item.early_go_time.uz,
-        //                     all_fine_time: item.all_fine_time.uz,
-        //                     absence_count: item.absence_count
-        //                 }
-        //             ))
-        //             setStaffData(newData)
-        //         }) : (
-        //         value == 3 ? axios.post(`${ip}/api/terminal/timemanagement/absence/${staffPaginationLimit}/1`, dataa2, headers)
-        //             .then((res) => {
-        //                 const {data} = res;
-        //                 const count = data.count;
-        //                 setStaffTotal(count)
-        //                 const newData = data.data.map((item, index) => (
-        //                     {
-        //                         ...item,
-        //                         key: index + 1 + (data.current_page - 1) * staffPaginationLimit,
-        //                         user_type: item.user_type === 1 ? t('Xodim') : item.user_type === 2 ? t('Mehmon') : t('Begona'),
-        //                         rank: item.rank == 1 ? t('Oddiy xodim') : item.rank == 2 ? t('Direktor') : item.rank == 3 ? t('VIP') : '',
-        //                         late_time: item.late_time.uz,
-        //                         early_go_time: item.early_go_time.uz,
-        //                         all_fine_time: item.all_fine_time.uz,
-        //                         absence_count: item.absence_count
-        //                     }
-        //                 ))
-        //                 setStaffData(newData)
-        //             }) : (
-        //             value == 4 ? axios.post(`${ip}/api/terminal/timemanagement/late/${staffPaginationLimit}/1`, dataa2, headers)
-        //                     .then((res) => {
-        //                         const {data} = res;
-        //                         const count = data.count;
-        //                         setStaffTotal(count)
-        //                         const newData = data.data.map((item, index) => (
-        //                             {
-        //                                 ...item,
-        //                                 key: index + 1 + (data.current_page - 1) * staffPaginationLimit,
-        //                                 user_type: item.user_type === 1 ? t('Xodim') : item.user_type === 2 ? t('Mehmon') : t('Begona'),
-        //                                 rank: item.rank == 1 ? t('Oddiy xodim') : item.rank == 2 ? t('Direktor') : item.rank == 3 ? t('VIP') : '',
-        //                                 late_time: item.late_time.uz,
-        //                                 early_go_time: item.early_go_time.uz,
-        //                                 all_fine_time: item.all_fine_time.uz,
-        //                                 absence_count: item.absence_count
-        //                             }
-        //                         ))
-        //                         setStaffData(newData)
-        //                     }) :
-        //                 axios.post(`${ip}/api/terminal/timemanagement/earlygo/${staffPaginationLimit}/1`, dataa2, headers)
-        //                     .then((res) => {
-        //                         const {data} = res;
-        //                         const count = data.count;
-        //                         setStaffTotal(count)
-        //                         const newData = data.data.map((item, index) => (
-        //                             {
-        //                                 ...item,
-        //                                 key: index + 1 + (data.current_page - 1) * staffPaginationLimit,
-        //                                 user_type: item.user_type === 1 ? t('Xodim') : item.user_type === 2 ? t('Mehmon') : t('Begona'),
-        //                                 rank: item.rank == 1 ? t('Oddiy xodim') : item.rank == 2 ? t('Direktor') : item.rank == 3 ? t('VIP') : '',
-        //                                 late_time: item.late_time.uz,
-        //                                 early_go_time: item.early_go_time.uz,
-        //                                 all_fine_time: item.all_fine_time.uz,
-        //                                 absence_count: item.absence_count
-        //                             }
-        //                         ))
-        //                         setStaffData(newData)
-        //                     })
-        //         )
-        //     )
-        // )
         console.log(value)
         getStaffData(staffPaginationCurrent , value)
+        setStaffPaginationCurrent(1);
     }, [value , setValue]);
 
+    const lang = localStorage.getItem('i18nextLng');
     const getStaffData = async (id , api) => {
         const response = await axios.post(`${ip}/api/terminal/timemanagement/${api}/${staffPaginationLimit}/${id}`,
             {fullname:matn,fromDate:date1,toDate:date2,givenDate:date1}
@@ -279,15 +183,18 @@ const WorkingHoursReport = () => {
         // console.log(data)
         const count = data.count;
         setStaffTotal(count)
+
         const newData = data.data.map((item, index) => (
             {
                 ...item,
                 key: index + 1 + (data.current_page - 1) * staffPaginationLimit,
                 user_type: item.user_type === 1 ? t('Xodim') : item.user_type === 2 ? t('Mehmon') : t('Begona'),
                 rank: item.rank == 1 ? t('Oddiy xodim') : item.rank == 2 ? t('Direktor') : item.rank == 3 ? t('VIP') : '',
-                late_time: item.late_time.uz,
-                early_go_time: item.early_go_time.uz,
-                all_fine_time: item.all_fine_time.uz,
+                // late_time: item.late_time,
+                late_time: lang==="uz" ? item.late_time.uz :(lang==="ru" ? item.late_time.ru : item.late_time.en),
+                early_go_time: lang==="uz" ? item.early_go_time.uz :(lang==="ru" ? item.early_go_time.ru : item.early_go_time.en),
+                all_fine_time: lang==="uz" ? item.all_fine_time.uz :(lang==="ru" ? item.all_fine_time.ru : item.all_fine_time.en),
+                // all_fine_time: item.all_fine_time,
                 absence_count: item.absence_count
             }
         ))
@@ -334,7 +241,7 @@ const WorkingHoursReport = () => {
         setStaffPaginationLimit(option)
     }
     useEffect(() => {
-        getStaffData(staffPaginationCurrent,value)
+        getStaffData(staffPaginationCurrent,value);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [staffPaginationLimit, staffPaginationCurrent])
 
@@ -366,7 +273,7 @@ const WorkingHoursReport = () => {
             <div className="working_hour_report">
                 <div className='working_hour_report_header'>
                     <div className="acsess_content_top">
-                        <p className={`Content_title darkModeColor'}`}>Ish vaqtini hisobga olish</p>
+                        <p className={`Content_title darkModeColor'}`}>{t('Ish vaqtini hisobga olish')}</p>
                     </div>
                 </div>
 
@@ -375,7 +282,7 @@ const WorkingHoursReport = () => {
 
                     <Tabs onChange={onChangeTabs} type="card" defaultActiveKey="1">
 
-                        <TabPane tab={"Intizom bo'yicha hisobotlar"} key="2">
+                        <TabPane tab={t('Intizom boyicha hisobotlar')} key="2">
                             <div className="access_control_setting_tab">
                                 <div className='access_control_setting_tab_item'>
                                     <div className='access_control_setting_tab_item_body'>
@@ -383,20 +290,22 @@ const WorkingHoursReport = () => {
                                             <div className="d-flex">
                                                 <Radio.Group onChange={onChange} value={value} className="radioCheck">
                                                     <Radio value={"all"} className={value === "all" ? "radio1 active" : "radio1"}
-                                                           >Hammasi</Radio>
-                                                    <Radio value={"exist"} className={value ==="exist" ? "radio1 active" : "radio1"}
-                                                           >Hozirda mavjud hodimlar</Radio>
+                                                           >{t('Hammasi')}</Radio>
+                                                    <Radio value={"s"} className={value ==="s" ? "radio1 active" : "radio1"}
+                                                           >{t('Kelganlar')}</Radio>
                                                     <Radio value={"absence"} className={value ==="absence" ? "radio1 active" : "radio1"}
-                                                           >Kelmaganlar</Radio>
+                                                           >{t('Kelmaganlar')}</Radio>
                                                     <Radio value={"late"} className={value ==="late" ? "radio1 active" : "radio1"}
-                                                           >Kechikkanlar</Radio>
+                                                           >{t('Kechikkanlar')}</Radio>
                                                     <Radio value={"earlygo"} className={value ==="earlygo" ? "radio1 active" : "radio1"}
-                                                           >Barvaqt ketganlar</Radio>
+                                                           >{t('Barvaqt ketganlar')}</Radio>
+                                                    <Radio value={"exist"} className={value ==="exist" ? "radio1 active" : "radio1"}
+                                                    >{t('Hozirda mavjud hodimlar')}</Radio>
                                                 </Radio.Group>
                                             </div>
                                             <div className="d-flex align-items-center mt-3">
                                                 <div className="d-flex align-items-center mr-2">
-                                                    <Input placeholder="Izlash" className="input" name="fullname"
+                                                    <Input placeholder={t('Izlash')} className="input" name="fullname"
                                                            onChange={onChangeText} value={matn}/>
                                                 </div>
                                                 <Space direction="gorizontal">

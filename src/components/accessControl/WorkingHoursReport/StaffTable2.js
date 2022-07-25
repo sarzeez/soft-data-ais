@@ -30,7 +30,9 @@ const StaffTable = (props) => {
     // function onChangeee(date, dateString) {
     //     console.log(date, dateString);
     // }
-
+    // console.log(localStorage.getItem('i18nextLng'))
+    const lang = localStorage.getItem('i18nextLng');
+    console.log(lang)
     const {
         staffData,
         rowSelection,
@@ -104,6 +106,8 @@ const StaffTable = (props) => {
                     <p>
                         {/*{record.door_ip.length}*/}
                         {record.late_time}
+                        {/*{lang==="uz" ? record.late_time.uz : (lang==="en" ? record.late_time.en : record.late_time.ru)}*/}
+                        {/*{console.log(record.late_time.ru)}*/}
                     </p>
                     <div className='door_ip_length_hover'>
                         {/*{record.door_ip.join(' ')}*/}
@@ -123,6 +127,7 @@ const StaffTable = (props) => {
                     <p>
                         {/*{record.door_ip.length}*/}
                         {record.early_go_time}
+                        {/*{lang==="uz" ? record.early_go_time.uz : (lang==="en" ? record.early_go_time.en : record.early_go_time.ru)}*/}
                     </p>
                     <div className='door_ip_length_hover'>
                         {/*{record.door_ip.join(' ')}*/}
@@ -142,6 +147,7 @@ const StaffTable = (props) => {
                     <p>
                         {/*{record.door_ip.length}*/}
                         {record.all_fine_time}
+                        {/*{lang==="uz" ? record.all_fine_time.uz : (lang==="en" ? record.all_fine_time.en :record.all_fine_time.ru)}*/}
                     </p>
                     <div className='door_ip_length_hover'>
                         {/*{record.door_ip.join(' ')}*/}
