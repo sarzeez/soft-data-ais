@@ -2,20 +2,33 @@ import React, {useEffect, useState} from 'react';
 import "./working.css";
 import {useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import {Tabs} from "antd";
+import {Button, DatePicker, Input, Radio, Space, Tabs,ConfigProvider} from "antd";
 import AddStaff from "../modals/add-staff/AddStaff";
 import StaffTable from "../settings/table/StaffTable";
 import StaffTable2 from "./StaffTable2";
 import StaffPagination from "../settings/paginations/StaffPagination";
 import axios from "axios";
 import {ip} from "../../../ip";
-import moment from "moment";
 import {useTranslation} from "react-i18next";
+import search from "../../../images/newimages/ishvaqti/Vector.png";
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+import locale from 'antd/es/date-picker/locale/zh_CN';
 
-const { TabPane } = Tabs;
+
+const {TabPane} = Tabs;
 
 
 const WorkingHoursReport = () => {
+
+
+    // const onChange = e => {
+    //     console.log('radio checked', e.target.value);
+    //     setValue(e.target.value);
+    //
+    // };
+
+
     const isDarkMode = useSelector(state => state.theme.theme_data)
 
     const {t} = useTranslation()
@@ -73,7 +86,7 @@ const WorkingHoursReport = () => {
         setIsOpenAddStaff(true)
     }
 
-    const addNewTerminal = () =>{
+    const addNewTerminal = () => {
         setIsOpenAddTerminal(true)
     }
 
@@ -83,12 +96,12 @@ const WorkingHoursReport = () => {
 
     const [state, setState] = useState({selectedRowKeys: []})
     const onSelectChange = (selectedRowKeys, a) => {
-        setState({ selectedRowKeys })
+        setState({selectedRowKeys})
         setDeleteTerminal(a.map(item => item.id));
         setDeleteStaff(a.map(item => item.id));
     };
 
-    const { selectedRowKeys } = state;
+    const {selectedRowKeys} = state;
 
     const rowSelection = {
         selectedRowKeys,
@@ -97,7 +110,7 @@ const WorkingHoursReport = () => {
 
     const getTerminalData = async (id) => {
         const response = await axios.get(`${ip}/api/terminals/${terminalPaginationLimit}/${id}`)
-        const { data } = response;
+        const {data} = response;
         const count = data.count;
         setTerminalTotal(count)
         const newData = data.data.map((item, index) => (
@@ -116,45 +129,106 @@ const WorkingHoursReport = () => {
         ))
         setTerminalData(newData)
     }
+
     // get staff data
-    const getStaffData = async (id) => {
-        const response = await axios.get(`${ip}/api/terminal/getusers/${staffPaginationLimit}/${id}`)
-        const { data } = response;
+    const [allStaff, setAllStaff] = useState([]);
+    const [date1, setDate1] = useState("0000-00-00");
+    const [date2, setDate2] = useState("");
+
+    const [value, setValue] = React.useState("all");
+    const onChange = e => {
+        // console.log('radio checked', e.target.value);
+        setValue(e.target.value);
+    };
+
+    function onChangeee(date, dateString) {
+        console.log(dateString);
+        setDate1(dateString)
+    }
+
+    function onChangeee2(date2, dateString2) {
+        console.log(dateString2);
+        setDate2(dateString2);
+    }
+
+    const [matn, setMatn] = useState("");
+    const onChangeText = (e) => {
+        // console.log(e.target.value)
+        setMatn(e.target.value)
+    }
+    // const dataa = {
+    //     fullname: matn,
+    //     fromDate: date1,
+    //     // toDate: date2
+    // };
+    // const dataa2 = {
+    //     fullname: matn,
+    //     givenDate: date1,
+    // };
+    const headers = {'Content-Type': 'application/json'}
+
+    useEffect(() => {
+        console.log(value)
+        getStaffData(staffPaginationCurrent, value)
+        setStaffPaginationCurrent(1);
+
+    }, [value, setValue]);
+
+    const lang = localStorage.getItem('i18nextLng');
+    const getStaffData = async (id, api) => {
+        const response = await axios.post(`${ip}/api/terminal/timemanagement/${api}/${staffPaginationLimit}/${id}`,
+            {fullname: matn, fromDate: date1, toDate: date2, givenDate: date1}
+            , headers)
+        setMatn("");
+        setDate1("");
+        setDate2("");
+
+        const {data} = response;
+        // console.log(data)
         const count = data.count;
         setStaffTotal(count)
+
         const newData = data.data.map((item, index) => (
             {
                 ...item,
                 key: index + 1 + (data.current_page - 1) * staffPaginationLimit,
-                valid_from_time: '',   //moment(item.valid_from_time).format('DD.MM.YYYY, HH:mm:ss'),
-                valid_to_time: '',   //moment(item.valid_to_time).format('DD.MM.YYYY, HH:mm:ss'),
-                direction: item.direction,
-                door_name: item.door_name,
-                user_type: item.user_type === 1 ? t('Xodim') : item.user_type === 2 ? t('Mehmon') : t('Begona'),
-                rank: item.rank == 1 ? t('Oddiy xodim') : item.rank == 2 ? t('Direktor') : item.rank == 3 ? t('VIP') : '',
-                access_type: item.access_type === 0 ? t('Yuz') : item.access_type === 1 ? t('Barmoq izi') : item.access_type ===2 ? t('Yuz yoki Barmoq izi') : 'Yuz va Barmoq izi'
+                user_type: item.user_type,
+                // user_type: item.user_type === 1 ? t('Xodim') : (item.user_type === 2 ? t('Mehmon') : t('Begona')),
+                rank: item.rank,
+                // rank: item.rank == 1 ? t('Oddiy xodim') : (item.rank == 2 ? t('Direktor') : (item.rank == 3 ? t('VIP') : '')),
+                late_time: item.late_time,
+                early_go_time: item.early_go_time,
+                all_fine_time: item.all_fine_time,
+                // late_time: lang==="uz" ? item.late_time.uz :(lang==="ru" ? item.late_time.ru : item.late_time.en),
+                // early_go_time: lang==="uz" ? item.early_go_time.uz :(lang==="ru" ? item.early_go_time.ru : item.early_go_time.en),
+                // all_fine_time: lang==="uz" ? item.all_fine_time.uz :(lang==="ru" ? item.all_fine_time.ru : item.all_fine_time.en),
+                absence_count: item.absence_count
             }
         ))
         setStaffData(newData)
     }
+    const handleSearch = () => {
+        getStaffData(staffPaginationCurrent, value)
+    }
 
-    const handleDeliteStaff = () =>{
+
+    const handleDeliteStaff = () => {
         axios.delete(`${ip}/api/terminal/deleteusers`, {data: deleteStaff})
-            .then(res =>{
+            .then(res => {
                 getStaffData(staffPaginationCurrent);
                 setState({selectedRowKeys: []})
                 setDeleteStaff([])
             })
-            .catch(err=>{
+            .catch(err => {
                 console.log(err?.response?.data)
             })
     }
 
-    const handleDeleteterminal =() =>{
-        axios.delete(`${ip}/api/terminal/delete`,{data: deleteTerminal})
-            .then(res =>{
+    const handleDeleteterminal = () => {
+        axios.delete(`${ip}/api/terminal/delete`, {data: deleteTerminal})
+            .then(res => {
                 getTerminalData(terminalPaginationCurrent);
-                setState({selectedRowsKeys:[]})
+                setState({selectedRowsKeys: []})
                 setDeleteTerminal([])
             })
             .catch(err => {
@@ -169,64 +243,108 @@ const WorkingHoursReport = () => {
     }
 
     const staffPaginationOnChange = (e = 1, option) => {
-        getStaffData(e)
+        getStaffData(e, value)
         setStaffPaginationCurrent(e)
         setStaffPaginationLimit(option)
     }
+    useEffect(() => {
+        getStaffData(staffPaginationCurrent, value);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [staffPaginationLimit, staffPaginationCurrent])
+
 
     useEffect(() => {
         getTerminalData(terminalPaginationCurrent)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [terminalPaginationLimit, terminalPaginationCurrent])
 
-    useEffect(() => {
-        getStaffData(staffPaginationCurrent)
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [staffPaginationLimit, staffPaginationCurrent])
-
-
-
 
     // redirect
     useEffect(() => {
-        if(!is_refresh_value) {
+        if (!is_refresh_value) {
             navigate('/face-control-search')
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
 
-    return (
-        <div>
+    // new tabs
 
+
+    // new tabs
+
+
+    return (
+
+        <div>
             <div className="working_hour_report">
                 <div className='working_hour_report_header'>
                     <div className="acsess_content_top">
-                        <p className= {`Content_title darkModeColor'}`} >Ish vaqtini hisobga olish</p>
+                        <p className={`Content_title darkModeColor'}`}>{t('Ish vaqtini hisobga olish')}</p>
                     </div>
                 </div>
 
                 <div className="working_hour_report_body">
 
+
                     <Tabs onChange={onChangeTabs} type="card" defaultActiveKey="1">
 
-                        <TabPane tab={"Intizom bo'yicha hisobotlar"} key="2">
-                            <AddStaff
-                                isOpenAddStaff = {isOpenAddStaff}
-                                setIsOpenAddStaff = {setIsOpenAddStaff}
-                                staffTableIntialValues={staffTableIntialValues}
-                                setStaffTableIntialValues={setStaffTableIntialValues}
-                                getStaffData={getStaffData}
-                                setStaffPaginationCurrent ={setStaffPaginationCurrent}
-                            />
+                        <TabPane tab={t('Intizom boyicha hisobotlar')} key="2">
                             <div className="access_control_setting_tab">
                                 <div className='access_control_setting_tab_item'>
                                     <div className='access_control_setting_tab_item_body'>
+                                        <div className="staf-table-navbar">
+                                            <div className="d-flex">
+                                                <Radio.Group onChange={onChange} value={value} className="radioCheck">
+                                                    <Radio value={"all"}
+                                                           className={value === "all" ? "radio1 active" : "radio1"}
+                                                    >{t('Hammasi')}</Radio>
+                                                    <Radio value={"s"}
+                                                           className={value === "s" ? "radio1 active" : "radio1"}
+                                                    >{t('Kelganlar')}</Radio>
+                                                    <Radio value={"absence"}
+                                                           className={value === "absence" ? "radio1 active" : "radio1"}
+                                                    >{t('Kelmaganlar')}</Radio>
+                                                    <Radio value={"late"}
+                                                           className={value === "late" ? "radio1 active" : "radio1"}
+                                                    >{t('Kechikkanlar')}</Radio>
+                                                    <Radio value={"earlygo"}
+                                                           className={value === "earlygo" ? "radio1 active" : "radio1"}
+                                                    >{t('Barvaqt ketganlar')}</Radio>
+                                                    <Radio value={"exist"}
+                                                           className={value === "exist" ? "radio1 active" : "radio1"}
+                                                    >{t('Hozirda mavjud hodimlar')}</Radio>
+                                                </Radio.Group>
+                                            </div>
+                                            <div className="d-flex align-items-center mt-3">
+                                                <div className="d-flex align-items-center mr-2">
+                                                    <Input placeholder={t('Izlash')} className="input" name="fullname"
+                                                           onChange={onChangeText} value={matn}/>
+                                                </div>
+                                                <Space direction="gorizontal">
+                                                    <DatePicker className="selectedDate"
+                                                                onChange={onChangeee}
+                                                                placeholder={`${moment(new Date()).format("YYYY.DD.MM")}`}
+                                                                value={date1 !== "" ? moment(date1) : ""}
 
-
+                                                    />
+                                                    {
+                                                        value === "all" ?
+                                                            <DatePicker className="selectedDate"
+                                                                        onChange={onChangeee2}
+                                                                        placeholder={`${moment(new Date()).format("YYYY.DD.MM")}`}
+                                                                        value={date2 !== "" ? moment(date2) : ""}
+                                                            />
+                                                            : ""
+                                                    }
+                                                </Space>
+                                                <button className="button ml-1"
+                                                        onClick={handleSearch}><img src={search}/></button>
+                                            </div>
+                                        </div>
                                         <StaffTable2
                                             isDarkMode={isDarkMode}
-                                            staffData = {staffData}
+                                            staffData={staffData}
                                             rowSelection={rowSelection}
                                             setIsOpenAddStaff={setIsOpenAddStaff}
                                             setStaffTableIntialValues={setStaffTableIntialValues}
@@ -246,34 +364,16 @@ const WorkingHoursReport = () => {
                                             {/*    </button>*/}
                                             {/*}*/}
                                         </div>
-
                                         <StaffPagination
-                                            staffPaginationLimit = {staffPaginationLimit}
-                                            staffPaginationCurrent = {staffPaginationCurrent}
-                                            staffPaginationOnChange = {staffPaginationOnChange}
-                                            accessTableTotal = {staffTotal}
+                                            staffPaginationLimit={staffPaginationLimit}
+                                            staffPaginationCurrent={staffPaginationCurrent}
+                                            staffPaginationOnChange={staffPaginationOnChange}
+                                            accessTableTotal={staffTotal}
                                         />
                                     </div>
                                 </div>
                             </div>
-
                         </TabPane>
-
-                        {/*<TabPane tab={t("Autentifikatsiya sozlamalari")} key="3">*/}
-                        {/*    <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>*/}
-                        {/*        <div className='access_control_setting_tab_item_body'>*/}
-                        {/*            Autentifikatsiya sozlamalari*/}
-                        {/*        </div>*/}
-                        {/*    </div>*/}
-                        {/*</TabPane>*/}
-
-                        {/*<TabPane tab={t("Online boshqaruv")} key="4">*/}
-                        {/*    <div className='access_control_setting_tab_item access_control_setting_tab_item_single'>*/}
-                        {/*        <div className='access_control_setting_tab_item_body'>*/}
-                        {/*            Online boshqaruv*/}
-                        {/*        </div>*/}
-                        {/*    </div>*/}
-                        {/*</TabPane>*/}
                     </Tabs>
 
                 </div>

@@ -40,8 +40,9 @@
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
-    color: #A7A7A8;
+    font-size: 15px;
+    line-height: 22px;
+    color: #838383;
 }
 .radio1:first-child{
     padding: 0;
@@ -50,13 +51,15 @@
     color: black;
 }
 .button{
-    height: 38px;
+    height: 38px!important;
+    width: 45px;
     background: #29B85D;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 0;
+    margin-left: 14px!important;
 }
 .button:hover{
     box-shadow: none;
@@ -69,7 +72,7 @@
     border: 0;
 }
 .input{
-    height: 40px;
+    height: 40px!important;
     background: #FFFFFF;
     border: 1px solid #F3F3F3;
     border-radius: 5px;
@@ -81,7 +84,7 @@
     color: #828CA9;
 }
 .selectedDate{
-    height: 40px;
+    height: 40px!important;
     background: #FFFFFF;
     border: 1px solid #F3F3F3;
     border-radius: 5px;
@@ -90,12 +93,20 @@
     font-size: 14px;
     color: #828CA9;
 }
+.ant-picker-suffix{
+    /*background: #25b864!important;*/
+}
 .tableAll{
     background: #FFFFFF;
     border: 1px solid #F3F3F3;
     border-radius: 5px;
 }
-
+.door_ip_length_hover_rectangel{
+    display: none!important;
+}
+.door_ip_length_hover{
+    display: none!important;
+}
 
 
 @media only screen and (max-width: 1470px) {
@@ -111,4 +122,25 @@
     /*.access_control_setting_tab_item {*/
     /*    height: calc(100vh - 175px);*/
     /*}*/
+}
+.user_img{
+    position: relative;
+}
+.imgActiveIcon{
+    position: absolute;
+    background: #29B85D;
+    bottom: 10px;
+    right: -2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.imgNeActiveIcon{
+    position: absolute;
+    background: #FD1212;
+    bottom: 10px;
+    right: -2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
 }

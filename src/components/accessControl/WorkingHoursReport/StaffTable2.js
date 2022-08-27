@@ -1,9 +1,9 @@
-import React from 'react';
-import { Table, Image  } from 'antd';
+import React, {useEffect, useState} from 'react';
+import {Table, Image} from 'antd';
 import moment from 'moment';
-import { useSelector } from "react-redux";
+import {useSelector} from "react-redux";
 
-import { AiOutlineUser } from 'react-icons/ai'
+import {AiOutlineUser} from 'react-icons/ai'
 
 // import {ip} from '../../../../ip';
 import {ip} from "../../../ip";
@@ -12,28 +12,35 @@ import {RiEditLine} from "react-icons/ri";
 import search from "../../../images/newimages/ishvaqti/Vector.png";
 
 import 'antd/dist/antd.css';
-import { Radio , Input , Button } from 'antd';
-import { DatePicker, Space } from 'antd';
+import {Radio, Input, Button} from 'antd';
+import {DatePicker, Space} from 'antd';
 import "./working.css";
+import axios from "axios";
 
 const StaffTable = (props) => {
 
-    const [value, setValue] = React.useState(1);
-
-    const onChange = e => {
-        console.log('radio checked', e.target.value);
-        setValue(e.target.value);
-    };
-    function onChangeee(date, dateString) {
-        console.log(date, dateString);
-    }
-
+    // const [value, setValue] = React.useState(1);
+    //
+    // const onChange = e => {
+    //     console.log('radio checked', e.target.value);
+    //     setValue(e.target.value);
+    // };
+    //
+    //
+    // function onChangeee(date, dateString) {
+    //     console.log(date, dateString);
+    // }
+    // console.log(localStorage.getItem('i18nextLng'))
+    const lang = localStorage.getItem('i18nextLng');
+    console.log(lang)
     const {
         staffData,
         rowSelection,
         setIsOpenAddStaff,
         setStaffTableIntialValues,
     } = props;
+    // console.log(staffData)
+
     const {t} = useTranslation()
     const isDarkMode = useSelector(state => state.theme.theme_data)
 
@@ -58,42 +65,70 @@ const StaffTable = (props) => {
             dataIndex: 'fullname',
             render: (text, record) => (
                 <div className='table_user_cell'>
-                    <Image
-                        width={40}
-                        style={{borderRadius: '20px', marginRight: '5px', maxWidth: '40px', maxHeight: '40px'}}
-                        src={`${ip}/${record.image}`}
-                        preview = {{
-                            mask: (
-                                <AiOutlineUser size={20} />
-                            ),
-                            maskClassName: 'customize-mask',
-                        }}
-                    />
+                    <div className="user_img">
+                        <Image
+                            width={40}
+                            style={{borderRadius: '20px', marginRight: '5px', maxWidth: '40px', maxHeight: '40px'}}
+                            src={`${ip}/${record.image}`}
+                            preview={{
+                                mask: (
+                                    <AiOutlineUser size={20}/>
+                                ),
+                                maskClassName: 'customize-mask',
+                            }}
+                        >
+                        </Image>
+                        {/*imgNeActiveIcon*/}
+                        {/*<span className={`${record.notification===true ? "imgActiveIcon":"imgNeActiveIcon" }`}>*/}
+                        <span className={"imgNeActiveIcon"}>
+
+                        </span>
+                    </div>
+
                     <p>{record.fullname}</p>
                 </div>
             ),
         },
         {
             title: t('Toifasi'),
-            dataIndex: 'user_type',
+            render: (text, record) => (
+                <div className='door_ip_length'>
+                    <p>
+                        {record.user_type === 1 ? t("Xodim") : (record.user_type===2 ? t("Mehmon") : t("Begona"))}
+                        {/*// user_type: item.user_type === 1 ? t('Xodim') : (item.user_type === 2 ? t('Mehmon') : t('Begona')),*/}
+
+                    </p>
+                </div>
+            )
+            // dataIndex: 'user_type',
             // align: 'center'
         },
         {
             title: t('Lavozimi'),
-            dataIndex: 'rank',
+            render: (text, record) => (
+                <div className='door_ip_length'>
+                    <p>
+                        {record.rank === 1 ? t("Oddiy xodim") : (record.rank===2 ? t("Direktor") : (record.rank===3 ? t("VIP") : ""))}
+                         {/*rank: item.rank == 1 ? t('Oddiy xodim') : (item.rank == 2 ? t('Direktor') : (item.rank == 3 ? t('VIP') : '')),*/}
+                    </p>
+                </div>
+            )
+            // dataIndex: 'rank',
             // align: 'center'
         },
         {
             title: t('Kechikkan vaqti'),
-            // dataIndex: 'door_ip',
-            // align: 'center',
             render: (text, record) => (
                 <div className='door_ip_length'>
                     <p>
-                        {record.door_ip.length}
+                        {/*{record.door_ip.length}*/}
+                        {/*{record.late_time}*/}
+                        {/*{record.late_time.uz}*/}
+                        {lang==="uz" ? record.late_time.uz : (lang==="en" ? record.late_time.en : record.late_time.ru)}
+                        {/*{console.log(record.late_time.ru)}*/}
                     </p>
                     <div className='door_ip_length_hover'>
-                        {record.door_ip.join(' ')}
+                        {/*{record.door_ip.join(' ')}*/}
                         <div className='door_ip_length_hover_rectangel'>
 
                         </div>
@@ -101,61 +136,64 @@ const StaffTable = (props) => {
                 </div>
             )
         },
-        // {
-        //     title: t('Ruxsat turi'),
-        //     dataIndex: 'access_type',
-        //     align: 'center'
-        // },
         {
             title: t('Erta ketish vaqti'),
             // dataIndex: 'cards',
             // align: 'center',
             render: (text, record) => (
                 <div className='door_ip_length'>
-                    {
-                        record.cards.length>0?
-                            <>
-                                <p>
-                                    {record.cards.length}
-                                </p>
-                                <div className='door_ip_length_hover'>
-                                    {record.cards.map(e => e.id).join(`, `)}
-                                    <div className='door_ip_length_hover_rectangel'></div>
-                                </div>
-                            </>: '—'
-                    }
+                    <p>
+                        {/*{record.door_ip.length}*/}
+                        {/*{record.early_go_time}*/}
+                        {lang==="uz" ? record.early_go_time.uz : (lang==="en" ? record.early_go_time.en : record.early_go_time.ru)}
+                    </p>
+                    <div className='door_ip_length_hover'>
+                        <div className='door_ip_length_hover_rectangel'>
+
+                        </div>
+                    </div>
                 </div>
             )
         },
         {
             title: t('Umumiy jarima vaqti'),
-            // dataIndex: 'card_id',
-            // align: 'center',
+
             render: (text, record) => (
                 <div className='door_ip_length'>
-                    {record.fingerprint.length > 0 ?
-                        <>
-                            <p>
-                                {record.fingerprint.length}
-                            </p>
-                            <div className='door_ip_length_hover'>
-                                {record.fingerprint.map(e => e.name).join(`, `)}
-                                <div className='door_ip_length_hover_rectangel'>
+                    <p>
+                        {/*{record.door_ip.length}*/}
+                        {/*{record.all_fine_time}*/}
+                        {lang==="uz" ? record.all_fine_time.uz : (lang==="en" ? record.all_fine_time.en :record.all_fine_time.ru)}
+                    </p>
+                    <div className='door_ip_length_hover'>
+                        <div className='door_ip_length_hover_rectangel'>
 
-                                </div>
-                            </div>
-                        </>
-                        : "—"
-                    }
+                        </div>
+                    </div>
                 </div>
             )
         },
         {
             title: t('Kelmagan kunlari'),
             dataIndex: 'valid_from_time',
-            render: (text, record) => {
-                return `${moment(record.valid_from_time).format('DD.MM.YYYY')} - ${moment(record.valid_to_time).format('DD.MM.YYYY')}`
-            },
+            render: (text, record) =>
+                (
+                    <div className='door_ip_length'>
+                        <p>
+                            {/*{record.door_ip.length}*/}
+                            {record.absence_count}
+                        </p>
+                        <div className='door_ip_length_hover'>
+                            {/*{record.door_ip.join(' ')}*/}
+                            <div className='door_ip_length_hover_rectangel'>
+
+                            </div>
+                        </div>
+                    </div>
+                )
+            // {
+            //     return `${moment(record.valid_from_time).format('DD.MM.YYYY')} - ${moment(record.valid_to_time).format('DD.MM.YYYY')}`
+            // },
             // align: 'center'
         },
         // {
@@ -170,39 +208,18 @@ const StaffTable = (props) => {
         // },
     ];
 
+
     return (
         <div className="">
-            <div className="staf-table-navbar">
-                <div className="d-flex">
-                    <Radio.Group onChange={onChange} value={value} className="radioCheck" >
-                        <Radio value={1} className={value==1 ? "radio1 active" : "radio1"} >Hammasi</Radio>
-                        <Radio value={2} className={value==2 ? "radio1 active" : "radio1"}>Hozirda mavjud hodimlar</Radio>
-                        <Radio value={3} className={value==3 ? "radio1 active" : "radio1"}>Kelmaganlar</Radio>
-                        <Radio value={4} className={value==4 ? "radio1 active" : "radio1"}>Kechikkanlar</Radio>
-                        <Radio value={5} className={value==5 ? "radio1 active" : "radio1"}>Barvaqt ketganlar</Radio>
-                    </Radio.Group>
-                </div>
-                <div className="d-flex align-items-center mt-3">
-                    <div className="d-flex align-items-center mr-3">
-                        <Input placeholder="Izlash" className="input"/>
-                        <Button className="button ml-1"><img src={search}/></Button>
-                    </div>
-                    <Space direction="gorizontal">
-                        <DatePicker className="selectedDate" onChange={onChangeee} />
-                        <DatePicker className="selectedDate" onChange={onChangeee} />
-                    </Space>
-                </div>
-            </div>
             <div className="tableAll">
                 <Table
-                    className={` ${isDarkMode && 'darkModeBackground'}`}
-                    rowSelection={rowSelection}
+                    className={`${isDarkMode && 'darkModeBackground'}`}
                     columns={columns}
+                    // rowSelection={rowSelection}
                     dataSource={staffData}
                     pagination={false}
                 />
             </div>
-
         </div>
     );
 }

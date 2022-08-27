@@ -8,7 +8,6 @@
   "Jadval": "Jadval",
   "online_boshqaruv": "Eshiklar boshqaruvi",
   "Eshiklar boshqaruvi": "Eshiklar boshqaruvi",
-
   "Ism": "Ism",
   "Jami": "Jami",
   "Yoshi": "Yoshi",
@@ -26,11 +25,11 @@
   "Ko’zoynak": "Ko’zoynak",
   "Ko’rishni_tuzatish": "Optik ko'zoynak",
   "Kozoynaksiz": "Ko'zoynaksiz",
-  "Quyoshdan_himoya":  "Quyoshdan himoya",
-  "Guruh":  "Guruh",
-  "Kamera":  "Kamera",
+  "Quyoshdan_himoya": "Quyoshdan himoya",
+  "Guruh": "Guruh",
+  "Kamera": "Kamera",
   "Muddat": "Muddat",
-  "Kayfiyat":  "Kayfiyat",
+  "Kayfiyat": "Kayfiyat",
   "Jilmaygan": "Jilmaygan",
   "Jahldor": "Jahldor",
   "Xafa": "Xafa",
@@ -44,12 +43,10 @@
   "Baqirgan": "Baqirgan",
   "Qidirish": "Qidirish",
   "Filterni tozalash": "Filterni tozalash",
-
   "T/r": "T/r",
   "Lavozimi": "Lavozimi",
   "Yo'nalishi": "Yo'nalishi",
   "Vaqt": "Vaqt",
-
   "Yosh bola": "Yosh bola",
   "O'smir": "O'smir",
   "O'spirin": "O'spirin",
@@ -59,7 +56,6 @@
   "Niqobli": "Niqobli",
   "Niqobsiz": "Niqobsiz",
   "Soqolsiz": "Soqolsiz",
-
   "Kun": "Kun",
   "Hafta": "Hafta",
   "Oy": "Oy",
@@ -76,7 +72,6 @@
   "O'rta yoshdagilar": "O'rta yoshlilar",
   "Katta yoshdagilar": "Katta yoshlilar",
   "Keksalar": "Keksalar",
-
   "Yuzni aniqlash sozlamalar": "Yuzni aniqlash sozlamalari",
   "Autentifikatsiya sozlamalari": "Autentifikatsiya sozlamalari",
   "Kamera parametrlari": "Kamera parametrlari",
@@ -93,7 +88,7 @@
   "Dahua": "Dahua",
   "Hikvision": "Hikvision",
   "Guruh turini tanlang!": "Guruhni tanlang!",
-  "IP manzil kiriting!":  "IP manzil kiriting!",
+  "IP manzil kiriting!": "IP manzil kiriting!",
   "Kiritish": "Kiritish",
   "Login kiriting!": "Loginni kiriting!",
   "Parol kiriting!": "Parolni kiriting!",
@@ -103,21 +98,18 @@
   "O’chirish": "O’chirish",
   "Guruh qo'shish": "Guruh qo’shish",
   "Statistika sozlamalari": "Statistika sozlamalari",
-
   "Kiriting": "Kiriting",
   "Eshik": "Eshik",
   "Toifasi": "Toifasi",
   "Mehmon": "Mehmon",
   "Begona": "Begona",
   "Xodim": "Xodim",
-
   "Oddiy xodim": "Oddiy ishchi",
   "Direktor": "Direktor",
   "VIP": "VIP",
   "Kirish": "Kirish",
   "Chiqish": "Chiqish",
   "Ruxsat turi": "Ruxsat turi",
-
   "Online boshqaruv": "Online boshqaruv",
   "Ruxsat etilgan muddatni uzaytirish uchun": "Ruxsat etilgan muddatni uzaytirish uchun",
   "Sozlamalarga o’ting": "Sozlamalarga o’ting",
@@ -131,12 +123,11 @@
   "Terminal qo'shish": "Terminal qo'shish",
   "Xodimlar": "Xodimlar",
   "Xodim qo'shish": "Xodim qo'shish",
-  "Yangi foydalanuvchi qo'shish":"Yangi foydalanuvchi qo'shish",
-  "Ma'lumotlar":"Ma'lumotlar",
-  "Yuzni aniqlash":"Yuzni aniqlash",
-  "ID karta":"ID karta",
-  "Xodimning kirib/chiqish ma’lumotlari haqida bildirishnoma olishni istaysizmi?":"Xodimning kirib/chiqish ma’lumotlari haqida bildirishnoma olishni istaysizmi?",
-
+  "Yangi foydalanuvchi qo'shish": "Yangi foydalanuvchi qo'shish",
+  "Ma'lumotlar": "Ma'lumotlar",
+  "Yuzni aniqlash": "Yuzni aniqlash",
+  "ID karta": "ID karta",
+  "Xodimning kirib/chiqish ma’lumotlari haqida bildirishnoma olishni istaysizmi?": "Xodimning kirib/chiqish ma’lumotlari haqida bildirishnoma olishni istaysizmi?",
   "Kirish eshiklari": "Eshiklar",
   "Cheklov": "Cheklov",
   "ID karta turi": "ID karta turi",
@@ -164,7 +155,7 @@
   "Kirishlar soni": "Kirishlar soni",
   "Kirishlar sonini kiriting": "Kirishlar sonini kiriting",
   "Muddatni tanlang": "Muddatni tanlang",
-   "Boshqalar": "Boshqalar",
+  "Boshqalar": "Boshqalar",
   "Karta turuni tanlang": "Karta turuni tanlang",
   "Karta raqamini kiriting": "Karta raqamini kiriting",
   "Ruxsat etiladigan muddat": "Ruxsat etiladigan muddat",
@@ -196,22 +187,30 @@
   "Terminal turini tanlang": "Terminal turini tanlang",
   "Autentifikatsiya turini tanlang": "Autentifikatsiya turini tanlang",
   "Login kiriting": "Login kiriting",
-  "Parol kititing":"Parol kititing",
+  "Parol kititing": "Parol kititing",
   "Kirdi": "Kirdi",
   "Chiqdi": "Chiqdi",
 
 
 
-
-
-
+  "Ish vaqtini hisobga olish": "Ish vaqtini hisobga olish",
+  "Intizom boyicha hisobotlar" : "Intizom bo'yicha hisobotlar",
+  "Izlash": "Izlash",
+  "Kechikkan vaqti": "Kechikkan vaqti",
+  "Erta ketish vaqti": "Erta ketish vaqti",
+  "Umumiy jarima vaqti": "Umumiy jarima vaqti",
+  "Kelmagan kunlari": "Kelmagan kunlari",
+  "Hammasi": "Hammasi",
+  "Kelganlar": "Kelganlar",
+  "Kelmaganlar": "Kelmaganlar",
+  "Kechikkanlar": "Kechikkanlar",
+  "Barvaqt ketganlar": "Barvaqt ketganlar",
+  "Hozirda mavjud hodimlar": "Hozirda mavjud hodimlar",
 
 
 
 
   "ll": "l"
-
-
 }
 
 
