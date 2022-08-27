@@ -12,6 +12,7 @@ import lickIcon from '../../images/lockIcon.png';
 import './login.css'
 
 const Login = ({ setUser }) => {
+    
     const [token, setToken] = useState(null)
 
     const initialValues = {
@@ -53,7 +54,6 @@ const Login = ({ setUser }) => {
         <div className="login_page">
             <div className="page_left">
                 <img  className="left_img" src={loginImg} alt=""/>
-
                 {/*<img className="left_img_logo" src={softlogo} alt=""/>*/}
             </div>
 

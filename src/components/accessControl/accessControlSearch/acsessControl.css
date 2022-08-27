@@ -128,8 +128,9 @@
         max-width: 22px;
         max-height: 22px;
     }
-    .ant-image-mask{
-        width: 22px;
+    .table_user_cell_img .ant-image-mask .customize-mask{
+        width: 12px;
+
     }
 }
 

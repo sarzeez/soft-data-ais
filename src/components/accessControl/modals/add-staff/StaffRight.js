@@ -106,6 +106,7 @@ const StaffRight = ({ data, setData, terminalIPList, staffTableIntialValues, ima
                                         : <img src={`${ip}/sign_up_request/${requestedImage}`} alt='requested'/>)
                                     )
                                 : (
+                    
                                     imageState.initial
                                     ?  <IoImageOutline size={75} color='#8E8E8E'/>
                                     : (imageState.uploaded
