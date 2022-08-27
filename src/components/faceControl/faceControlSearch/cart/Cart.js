@@ -100,9 +100,6 @@ const Cart = ({item, isDarkMode}) => {
     return (
         <>
             <div className={`j_card ${isDarkMode && 'darkModeCard darkModeBorder'}`}>
-                {/*{*/}
-                {/*    cardAlert ? <div className="card_alert"><Alert message={cardAlert} type="error" closable showIcon/></div> : ''*/}
-                {/*}*/}
                 <div className="j_cardInfo">
                     <div className="j_cardInfoTop">
                         <div className="j_cardInfoTopLeft">
