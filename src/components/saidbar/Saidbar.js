@@ -22,6 +22,11 @@ import setting from '../../images/dashIcons/settings.svg';
 import analisy from '../../images/dashIcons/statestc.svg';
 import access from '../../images/dashIcons/access.svg';
 import tableimg from '../../images/dashIcons/table.svg';
+
+import parking from '../../images/dashIcons/Parking/parking.svg';
+import car from '../../images/dashIcons/Parking/p-car.svg';
+import phistir from '../../images/dashIcons/Parking/p-history.svg';
+
 import doorKey from '../../images/dashIcons/doors.svg';
 import working from "../../images/dashIcons/workTime.svg";
 import './style.css';
@@ -35,7 +40,7 @@ const Saidbar = ({ user, setUser }) => {
     const {t, i18n} = useTranslation()
     const [lang, setLang] = useState(localStorage.getItem('i18nextLng') || 'uz')
     const [openKeys, setOpenKeys] = React.useState(['sub1']);
-    const rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
+    const rootSubmenuKeys = ['sub1', 'sub2', 'sub3'];
 
     const { width } = useWindowDimensions();
     const sidebarWidth = width < 1370 ? 200 : 300;
@@ -113,6 +118,7 @@ const Saidbar = ({ user, setUser }) => {
                         defaultOpenKeys={['sub1']}
                     >
                         <LogoComponent />
+
                         <SubMenu key="sub1" icon={<img src={face} alt=""/>} title={t('yuzni_aniqlash')} >
                             <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Face Control Qidiruv', 2)}
                                        key="2" icon={<img src={search} alt=""/>}>
@@ -141,12 +147,12 @@ const Saidbar = ({ user, setUser }) => {
                                     {t('Jadval')}
                                 </Link>
                             </Menu.Item>
-                            <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control Online Doors', 8)}  key="8"
-                                       icon={<img src={doorKey} alt=""/>}   >
-                                <Link to="/access-control-online-doors">
-                                    {t('Eshiklar boshqaruvi')}
-                                </Link>
-                            </Menu.Item>
+                            {/*<Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control Online Doors', 8)}  key="8"*/}
+                            {/*           icon={<img src={doorKey} alt=""/>}   >*/}
+                            {/*    <Link to="/access-control-online-doors">*/}
+                            {/*        {t('Eshiklar boshqaruvi')}*/}
+                            {/*    </Link>*/}
+                            {/*</Menu.Item>*/}
 
                             {/*ish vaqti hisoboti*/}
 
@@ -163,6 +169,23 @@ const Saidbar = ({ user, setUser }) => {
                                     {t('Sozlamalar')}
                                 </Link>
                             </Menu.Item>
+                        </SubMenu>
+
+                        <SubMenu key="sub3" icon={<img src={parking} alt=""/>} title={t('Parking Control')}>
+                            <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Access Control', 10)} key="10"
+                                       icon={<img src={car} alt=""/>}>
+                                <Link to="/cars">
+                                    {t('Mavjud avtomonillar')}
+                                </Link>
+                            </Menu.Item>
+
+                            <Menu.Item className="saidbar_link" onClick={() => handleClickListItem('Working Hour Report', 11)} key="11"
+                                       icon={<img src={phistir} alt=""/>}>
+                                <Link to="/">
+                                    {t("Hisobot")}
+                                </Link>
+                            </Menu.Item>
+
                         </SubMenu>
                     </Menu>
                 </Sider>
