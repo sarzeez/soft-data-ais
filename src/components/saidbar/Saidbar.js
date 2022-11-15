@@ -56,7 +56,7 @@ const Saidbar = ({ user, setUser }) => {
     const handleChangeTheme = (state) => {
         dispatch(getTheme(state))
     }
-
+    console.log(handleChangeTheme)
     const handleClickListItem = (title, id) => {
         // setCheckedItemTitle(title)
         dispatch(isRefresh(id));
